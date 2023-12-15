@@ -1,0 +1,50 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+
+<svg xmlns="http://www.w3.org/2000/svg" 
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+    width="87.12pt"
+    height="87.4pt"
+    viewBox="0 0 87.12 87.4">
+<defs/>
+
+<ellipse id="shape0"
+    transform="matrix(-1.08436509755336 -0.00749082818091951 0.00749082818091951 -1.08436509755336 84.8025214446835 83.2935203692156)"
+    rx="38.28"
+    ry="35.64"
+    cx="38.28" 
+    cy="35.64"
+    fill="#486fa7d9"
+    fill-opacity="0.764705882352941" 
+    fill-rule="evenodd"
+    stroke-opacity="0"
+    stroke="#000000"
+    stroke-width="0"
+    stroke-linecap="square"
+    stroke-linejoin="bevel"/>
+ 
+<ellipse id="shape01" 
+    transform="matrix(-0.999976108879123 -0.00690786639438974 0.00690786639438974 -0.999976108879123 48.1791775290071 25.6492202299626)"
+    rx="5.38689986367379" 
+    ry="5.05843035979124" 
+    cx="5.38689986367379" 
+    cy="5.05843035979124" 
+    fill="#001e62"
+    stroke="#001e62" 
+    stroke-width="2.1624"
+    stroke-linecap="square"
+    stroke-linejoin="bevel"/>
+ 
+<path id="shape1" 
+    transform="matrix(0.999999968473577 0 0 0.999999968473577 43.559998626709 38.6017135753823)"
+    fill="none"
+    stroke="#001e62" 
+    stroke-width="12.0024"
+    stroke-linecap="square"
+    stroke-linejoin="miter"
+    stroke-miterlimit="2"
+    d="M0 28.5105L0 0"
+    sodipodi:nodetypes="cc"/>
+ 
+</svg>

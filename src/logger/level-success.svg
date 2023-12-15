@@ -1,0 +1,40 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+
+<svg xmlns="http://www.w3.org/2000/svg" 
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:krita="http://krita.org/namespaces/svg/krita"
+    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+    width="87.12pt"
+    height="78.72pt"
+    viewBox="0 0 87.12 78.72">
+
+<defs/>
+
+    <ellipse id="shape0" 
+        transform="matrix(-1.08436509755336 -0.00749082818091951 0.00749082818091951 -1.08436509755336 84.8025214446835 78.2935203692156)" 
+        rx="38.28" 
+        ry="35.64" 
+        cx="38.28" 
+        cy="35.64" 
+        fill="#61a561de" 
+        fill-opacity="0.764705882352941" 
+        fill-rule="evenodd" 
+        stroke-opacity="0" 
+        stroke="#000000" 
+        stroke-width="0" 
+        stroke-linecap="square" 
+        stroke-linejoin="bevel"/>
+
+    <path id="shape0"
+        transform="matrix(0.954282433287415 0.298906402606318 -0.298906402606318 0.954282433287415 27.778474806768 15.2325160919788)" 
+        fill="none" 
+        stroke="#005200" 
+        stroke-width="12" 
+        stroke-linecap="square" 
+        stroke-linejoin="miter" 
+        stroke-miterlimit="1.92" 
+        krita:marker-fill-method="auto"
+        d="M0 26.2937C6.81446 31.3897 12.2185 35.6077 16.2122 38.9479C20.95 27.6324 27.2459 15.1484 37.0943 0" 
+        sodipodi:nodetypes="ccc"/>
+</svg>

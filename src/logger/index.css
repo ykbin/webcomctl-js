@@ -1,0 +1,270 @@
+@media (device-width < 550px)
+{
+  div.logger div[class*="logger-level"] span
+  {
+    min-width: 100px;
+    height: 140px;
+    background-size: 50px;
+  }
+  div.logger > div[class*="logger-level"]
+  {
+    animation-name: logger-anime-mob;
+    border-radius: 20px;
+  }
+  body div.logger h3
+  {
+    font-size: 40px;
+  }
+  div.logger div[class*="logger-level"] span + span 
+  {
+    min-width: 380px;
+    font-size: 40px;
+    line-height: 34px;
+  }
+  div.logger div[class*="logger-level"] span + span span
+  {
+    font-size: 30px;
+  }
+  div.logger div[class*="logger-level"] span + span + span
+  {
+    min-width: 60px;
+  }
+}
+
+@keyframes logger-anime
+{
+  0%
+  {
+    border: 1px solid #00000045;
+    height: 0px;
+    width: 0px;
+    margin-bottom: 5px;
+  }
+  3%
+  {
+    border: 1px solid #00000045;
+    height: 70px;
+    width: 0px;
+    margin-bottom: 5px;
+  }
+  5%
+  {
+    border: 1px solid #00000045;
+    height: 70px;
+    width: 280px;
+  }
+  95%
+  {
+    border: 1px solid #00000045;
+    height: 70px;
+    width: 280px;
+    margin-bottom: 5px;
+  }
+  100% 
+  {
+    border: 0px solid #00000045;
+    height: 70px;
+    width: 0px;
+    margin-bottom: 5px;
+  }
+}
+
+@keyframes logger-anime-mob
+{
+  0%
+  {
+    border: 2px solid #00000045;
+    height: 0px;
+    width: 0px;
+    margin-bottom: 5px;
+  }
+  3%
+  {
+    border: 2px solid #00000045;
+    height: 140px;
+    width: 0px;
+    margin-bottom: 5px;
+  }
+  5%
+  {
+    border: 2px solid #00000045;
+    height: 140px;
+    width: 560px;
+  }
+  95%
+  {
+    border: 2px solid #00000045;
+    height: 140px;
+    width: 560px;
+    margin-bottom: 5px;
+  }
+  100% 
+  {
+    border: 0px solid #00000045;
+    height: 140px;
+    width: 0px;
+    margin-bottom: 5px;
+  }
+}
+
+div.logger > div
+{
+  animation-name: logger-anime;
+  animation-duration: 10s;
+  animation-iteration-count: 1;
+  display: flex;
+  text-align: center;
+  font-size: 15px;
+  border-radius: 10px;
+  border: 0px solid #00000045;
+  overflow: hidden;
+  cursor: default;
+  margin-bottom: 5px;
+  height: 0px;
+  width: 0px;
+  box-sizing: content-box;
+}
+
+div.logger h1,
+div.logger h2,
+div.logger h3,
+div.logger h4,
+div.logger h5,
+div.logger h6
+{
+  margin: 0px;
+  padding: 0px;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.logger
+{
+  position: fixed;
+  z-index: 999;
+  bottom: 15px;
+  right: 15px;
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+div.logger div.logger-level-error
+{
+  background-color: #efbdbde6;
+  color: #620000;
+}
+	  
+div.logger div.logger-level-warning
+{
+  background-color: #efe7a2e8;
+  color: #623f00;
+}
+	  
+div.logger div.logger-level-info
+{
+  background-color:#c8fffae6;
+  color: #001e62;
+}
+
+div.logger div.logger-level-success
+{
+  background-color: #a7ffa7e6;
+  color: #005200;
+}
+
+div.logger > div > span
+{
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 35px;
+  width: 50px;
+  height: 70px;
+  flex-shrink: 0;
+}
+
+div.logger-level-error > span
+{
+  background-image: url(level-error.svg);
+}
+
+div.logger-level-info > span
+{
+  background-image: url(level-info.svg);
+}
+
+div.logger-level-warning > span
+{
+  background-image: url(level-warning.svg);
+}
+
+div.logger-level-success > span
+{
+  background-image: url(level-success.svg);
+}
+
+div.logger div span + span
+{
+  margin-top: 3px;
+  width: 200px;
+  height: auto;
+  font-size: 18px;
+  line-height: 17px;
+  background-image: none;
+  flex-shrink: 0;
+}
+    
+div.logger div span + span > span
+{
+  display: block;
+  background-image: none;
+  height: auto;
+  min-width: auto;
+  font-size: 14px;
+}
+
+div.logger div span + span + span
+{
+  display: flex;
+  width: 30px;
+  min-width: auto;
+  justify-content: center;
+  height: 15px;
+  cursor: pointer;
+  user-select: none;
+  flex-shrink: 0;
+}
+
+div.logger div span + span + span > span
+{
+  background-image: url(close.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 15px;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+}
+
+div.logger div.logger-level-error span + span + span > span:hover
+{
+  background-color: #df8181d4;
+}
+
+div.logger div.logger-level-success span + span + span > span:hover
+{
+  background-color: #81df86d4;
+}
+
+div.logger div.logger-level-warning span + span + span > span:hover
+{
+  background-color: #dfb881d4;
+}
+
+div.logger div.logger-level-info span + span + span > span:hover
+{
+  background-color: #81c3dfd4;
+}
