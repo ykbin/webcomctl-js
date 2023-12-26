@@ -40,6 +40,13 @@ const log = function(title, level, logFunc, ...args) {
 
 class UILoggerControl {
   constructor(param) {
+    this._id = param.id;
+    this._element = null;
+
+    if (param.element) {
+      this.element = param.element;
+    }
+
     this._messageCache = [];
     this._appendMessage = (element) => this._messageCache.push(element);
     
@@ -47,13 +54,6 @@ class UILoggerControl {
     this.success = log.bind(this, "Success", kLevelSuccessCSS, console.log);
     this.warning = log.bind(this, "Warning", kLevelWarningCSS, console.warn);
     this.error = log.bind(this, "Error", kLevelErrorCSS, console.error);
-    
-    this._id = param.id;
-    this._element = null;
-
-    if (param.element) {
-      this.element = param.element;
-    }
   }
 
   get id() {
@@ -85,7 +85,7 @@ class UILoggerControl {
   }
 };
 
-let isLoaded = false;
+let _isLoaded = false;
 const _controls = [];
 
 const getControlById = (id) => {
@@ -111,7 +111,7 @@ NQDOM.documentReady(() => {
     if (!ctl.element)
       throw `UILoggerControl with '${ctl._id}' id not exists`;
   }
-  isLoaded = true;
+  _isLoaded = true;
 });
 
 export default {
@@ -123,7 +123,7 @@ export default {
   },
   get(id) {
     let control = getControlById(id);
-    if (!control && !isLoaded) {
+    if (!control && !_isLoaded) {
       control = new UILoggerControl({id});
       _controls.push(control);
     }
