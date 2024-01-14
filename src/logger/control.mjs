@@ -40,20 +40,20 @@ const log = function(title, level, logFunc, ...args) {
 
 class UILoggerControl {
   constructor(param) {
+    this._messageCache = [];
+    this._appendMessage = (element) => this._messageCache.push(element);
+
+    this.info = log.bind(this, "Info", kLevelInfoCSS, console.info);
+    this.success = log.bind(this, "Success", kLevelSuccessCSS, console.log);
+    this.warning = log.bind(this, "Warning", kLevelWarningCSS, console.warn);
+    this.error = log.bind(this, "Error", kLevelErrorCSS, console.error);
+
     this._id = param.id;
     this._element = null;
 
     if (param.element) {
       this.element = param.element;
     }
-
-    this._messageCache = [];
-    this._appendMessage = (element) => this._messageCache.push(element);
-    
-    this.info = log.bind(this, "Info", kLevelInfoCSS, console.info);
-    this.success = log.bind(this, "Success", kLevelSuccessCSS, console.log);
-    this.warning = log.bind(this, "Warning", kLevelWarningCSS, console.warn);
-    this.error = log.bind(this, "Error", kLevelErrorCSS, console.error);
   }
 
   get id() {
