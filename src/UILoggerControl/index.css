@@ -1,37 +1,37 @@
 @media (device-width < 550px)
 {
-  div.logger div[class*="logger-level"] span
+  div.uic-logger-root div[class*="uic-logger-lvl"] span
   {
     min-width: 100px;
     height: 140px;
     background-size: 50px;
   }
-  div.logger > div[class*="logger-level"]
+  div.uic-logger-root > div[class*="uic-logger-lvl"]
   {
-    animation-name: logger-anime-mob;
+    animation-name: uic-logger-anime-mob;
     border-radius: 20px;
   }
-  body div.logger h3
+  div.uic-logger-root h3
   {
     font-size: 40px;
   }
-  div.logger div[class*="logger-level"] span + span 
+  div.uic-logger-root div[class*="uic-logger-lvl"] span + span 
   {
     min-width: 380px;
     font-size: 40px;
     line-height: 34px;
   }
-  div.logger div[class*="logger-level"] span + span span
+  div.uic-logger-root div[class*="uic-logger-lvl"] span + span span
   {
     font-size: 30px;
   }
-  div.logger div[class*="logger-level"] span + span + span
+  div.uic-logger-root div[class*="uic-logger-lvl"] span + span + span
   {
     min-width: 60px;
   }
 }
 
-@keyframes logger-anime
+@keyframes uic-logger-anime
 {
   0%
   {
@@ -69,7 +69,7 @@
   }
 }
 
-@keyframes logger-anime-mob
+@keyframes uic-logger-anime-mob
 {
   0%
   {
@@ -107,9 +107,9 @@
   }
 }
 
-div.logger > div
+.uic-logger-root > div
 {
-  animation-name: logger-anime;
+  animation-name: uic-logger-anime;
   animation-duration: 10s;
   animation-iteration-count: 1;
   display: flex;
@@ -125,12 +125,12 @@ div.logger > div
   box-sizing: content-box;
 }
 
-div.logger h1,
-div.logger h2,
-div.logger h3,
-div.logger h4,
-div.logger h5,
-div.logger h6
+.uic-logger-root h1,
+.uic-logger-root h2,
+.uic-logger-root h3,
+.uic-logger-root h4,
+.uic-logger-root h5,
+.uic-logger-root h6
 {
   margin: 0px;
   padding: 0px;
@@ -138,7 +138,7 @@ div.logger h6
   font-weight: 400;
 }
 
-.logger
+.uic-logger-root
 {
   position: fixed;
   z-index: 999;
@@ -152,31 +152,31 @@ div.logger h6
   overflow: hidden;
 }
 
-div.logger div.logger-level-error
+.uic-logger-root .uic-logger-lvlerror
 {
   background-color: #efbdbde6;
   color: #620000;
 }
 	  
-div.logger div.logger-level-warning
+.uic-logger-root .uic-logger-lvlwarn
 {
   background-color: #efe7a2e8;
   color: #623f00;
 }
 	  
-div.logger div.logger-level-info
+.uic-logger-root .uic-logger-lvlinfo
 {
   background-color:#c8fffae6;
   color: #001e62;
 }
 
-div.logger div.logger-level-success
+.uic-logger-root .uic-logger-lvlsuccess
 {
   background-color: #a7ffa7e6;
   color: #005200;
 }
 
-div.logger > div > span
+.uic-logger-root > div > span
 {
   background-repeat: no-repeat;
   background-position: center;
@@ -186,27 +186,27 @@ div.logger > div > span
   flex-shrink: 0;
 }
 
-div.logger-level-error > span
+.uic-logger-lvlerror > span
 {
   background-image: url(level-error.svg);
 }
 
-div.logger-level-info > span
+.uic-logger-lvlinfo > span
 {
   background-image: url(level-info.svg);
 }
 
-div.logger-level-warning > span
+.uic-logger-lvlwarn > span
 {
   background-image: url(level-warning.svg);
 }
 
-div.logger-level-success > span
+.uic-logger-lvlsuccess > span
 {
   background-image: url(level-success.svg);
 }
 
-div.logger div span + span
+.uic-logger-root div span + span
 {
   margin-top: 3px;
   width: 200px;
@@ -216,8 +216,8 @@ div.logger div span + span
   background-image: none;
   flex-shrink: 0;
 }
-    
-div.logger div span + span > span
+
+.uic-logger-root div span + span > span
 {
   display: block;
   background-image: none;
@@ -226,7 +226,7 @@ div.logger div span + span > span
   font-size: 14px;
 }
 
-div.logger div span + span + span
+.uic-logger-root div span + span + span
 {
   display: flex;
   width: 30px;
@@ -238,7 +238,7 @@ div.logger div span + span + span
   flex-shrink: 0;
 }
 
-div.logger div span + span + span > span
+.uic-logger-root div span + span + span > span
 {
   background-image: url(close.svg);
   background-repeat: no-repeat;
@@ -249,22 +249,22 @@ div.logger div span + span + span > span
   border-radius: 50%;
 }
 
-div.logger div.logger-level-error span + span + span > span:hover
+.uic-logger-root .uic-logger-lvlerror span + span + span > span:hover
 {
   background-color: #df8181d4;
 }
 
-div.logger div.logger-level-success span + span + span > span:hover
+.uic-logger-root .uic-logger-lvlsuccess span + span + span > span:hover
 {
   background-color: #81df86d4;
 }
 
-div.logger div.logger-level-warning span + span + span > span:hover
+.uic-logger-root .uic-logger-lvlwarn span + span + span > span:hover
 {
   background-color: #dfb881d4;
 }
 
-div.logger div.logger-level-info span + span + span > span:hover
+.uic-logger-root .uic-logger-lvlinfo span + span + span > span:hover
 {
   background-color: #81c3dfd4;
 }
