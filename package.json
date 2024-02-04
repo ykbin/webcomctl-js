@@ -21,6 +21,6 @@
   },
   "homepage": "https://github.com/yakubins/webcomctl-js#readme",
   "dependencies": {
-    "webnetq-js": "github:yakubins/webnetq-js#impl_control_manager"
+    "webnetq-js": "github:yakubins/webnetq-js"
   }
 }
