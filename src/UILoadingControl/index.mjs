@@ -16,7 +16,6 @@ const _rootHTML =`
 export default class UILoadingControl extends BaseControl {
   static get template() { return {
     name: 'Loading',
-    metaUrl: import.meta.url,
     rootHTML: _rootHTML,
     rootClass:  CLASS.ROOT,
   } }

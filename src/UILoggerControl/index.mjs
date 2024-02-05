@@ -37,7 +37,6 @@ const createMessage = (level, title, text, clickCallback) => {
 export default class UILoggerControl extends BaseControl {
   static get template() { return {
     name: 'Logger',
-    metaUrl: import.meta.url,
     rootHTML: _rootHTML,
     rootClass:  CLASS.ROOT,
   } }
