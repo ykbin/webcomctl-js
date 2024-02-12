@@ -48,7 +48,7 @@ export default class UILoggerControl extends BaseControl {
       logFunc.apply(null, [ title, "-", ...args ]);
       const messageElm = createMessage(level, title, args.join(' '), () => { element.remove() });
       while (element.children.length > 3) {
-        mesParent.removeChild(element.children[1]);
+        element.removeChild(element.children[1]);
       }
       element.appendChild(messageElm);
     };
