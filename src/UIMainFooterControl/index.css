@@ -1,0 +1,129 @@
+.uic-mfooter-root
+{
+  grid-area: footer;
+  display: grid;
+  grid-template-columns: 1fr 110px;
+  height: 90px;
+  width: 100%;
+  padding: 15px 15px 0px 15px;
+  box-sizing: border-box;
+  border-top: 1px solid #aab9cb;
+  background-color: #f8f8f81a;
+}
+
+.uic-mfooter-list
+{
+  display: grid;
+  grid-template-columns: minmax(auto,auto) minmax(auto,auto) minmax(auto,auto);
+  justify-content: center;
+  grid-gap: 7%;
+  margin-bottom: 10px;
+  font-family: "Roboto","Oxygen","Ubuntu",
+               "Cantarell","Fira Sans","Droid Sans",
+               "Helvetica Neue",sans-serif;
+}
+
+.uic-mfooter-list > div
+{
+  font-size: 18px;
+  text-align: center;
+}
+
+.uic-mfooter-list > div span
+{
+  display: block;
+  margin-bottom: 5px;
+}
+
+.uic-mfooter-list > div > div
+{
+  display: block;
+  color: #4e4e4e;
+  font-size: 16px;
+}
+
+.uic-mfooter-version
+{
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  width: 100%;
+  padding: 0px 5px 5px 0px;
+  font-family: Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  color: #878787;
+  box-sizing: border-box;
+}
+
+.uic-mfooter-version > span
+{
+  margin-left: 5px;
+}
+
+.uic-mfooter-root a
+{
+  display: block;
+  color: #5063b1;
+  font-size: 16px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.dark-mode .uic-mfooter-root
+{
+  border-top: 1px solid #aab9cb8c;
+}
+
+.dark-mode .uic-mfooter-list > div > div
+{
+  color: #8b8b8b;
+}
+
+@media (device-width < 550px)
+{
+  .uic-mfooter-root
+  {
+    grid-template-columns: 1fr 150px;
+    justify-content: start;
+    height: 250px;
+  }
+  .uic-mfooter-list
+  {
+    grid-template-columns: minmax(auto,auto) minmax(auto,auto);
+  }
+  .uic-mfooter-list > div:nth-child(3)
+  {
+    grid-column: 1/3;
+    justify-self: center;
+  }
+  .uic-mfooter-list > div > span
+  {
+    text-align: center;
+    font-size: 33px;
+  }
+  .uic-mfooter-root a 
+  {
+    font-size: 30px;
+  }
+  .uic-mfooter-list > div
+  {
+    font-size: 25px;
+  }
+  .uic-mfooter-list > div > div
+  {
+    font-size: 28px;
+  }
+  .uic-mfooter-root address,
+  .uic-mfooter-version
+  {
+    font-size: 30px;
+  }
+}
+
+@media (device-width <= 300px)
+{
+  .uic-mfooter-root
+  {
+    height: 250px;
+  }
+}
