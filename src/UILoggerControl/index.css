@@ -1,6 +1,29 @@
+:root
+{
+  --uic-logger-root-bor: #00000045;
+  --uic-logger-lvlerror-bg: #efbdbde6;
+  --uic-logger-lvlerror-col: #620000;
+  --uic-logger-lvlerror-img: url(level-error.svg);
+  --uic-logger-lvlwarn-bg: #efe7a2e8;
+  --uic-logger-lvlwarn-col: #623f00;
+  --uic-logger-lvlwarn-img: url(level-warning.svg);
+  --uic-logger-lvlinfo-bg: #c8fffae6;
+  --uic-logger-lvlinfo-col: #001e62;
+  --uic-logger-lvlinfo-img: url(level-info.svg);
+  --uic-logger-lvlsuccess-bg: #a7ffa7e6;
+  --uic-logger-lvlsuccess-col: #005200;
+  --uic-logger-lvlsuccess-img: url(level-success.svg);
+  --uic-logger-root-x: url(close.svg);
+  --uic-logger-root-x-error: #df8181d4;
+  --uic-logger-root-x-success: #81df86d4;
+  --uic-logger-root-x-warn: #dfb881d4;
+  --uic-logger-root-x-info: #81c3dfd4;
+  --uic-logger-anime-bor: #00000045;
+}
+
 @media (device-width < 550px)
 {
-  div.uic-logger-root div[class*="uic-logger-lvl"] span
+  div.uic-logger-root div[class*="uic-logger-lvl"] > div
   {
     min-width: 100px;
     height: 140px;
@@ -15,19 +38,27 @@
   {
     font-size: 40px;
   }
-  div.uic-logger-root div[class*="uic-logger-lvl"] span + span 
+  div.uic-logger-root div[class*="uic-logger-lvl"] > span 
   {
     min-width: 380px;
     font-size: 40px;
     line-height: 34px;
   }
-  div.uic-logger-root div[class*="uic-logger-lvl"] span + span span
+  div.uic-logger-root div[class*="uic-logger-lvl"] > span > span
   {
     font-size: 30px;
   }
-  div.uic-logger-root div[class*="uic-logger-lvl"] span + span + span
+  div.uic-logger-root div[class*="uic-logger-lvl"] > s
   {
-    min-width: 60px;
+    width: 60px;
+    height: 100%;
+    padding-top: 10px;
+  }
+  div.uic-logger-root div[class*="uic-logger-lvl"] > s > span
+  {
+    width: 100%;
+    height: 35%;
+    background-size: contain;
   }
 }
 
@@ -35,34 +66,34 @@
 {
   0%
   {
-    border: 1px solid #00000045;
+    border: 1px solid var(--uic-logger-anime-bor);
     height: 0px;
     width: 0px;
     margin-bottom: 5px;
   }
   3%
   {
-    border: 1px solid #00000045;
+    border: 1px solid var(--uic-logger-anime-bor);
     height: 70px;
     width: 0px;
     margin-bottom: 5px;
   }
   5%
   {
-    border: 1px solid #00000045;
+    border: 1px solid var(--uic-logger-anime-bor);
     height: 70px;
     width: 280px;
   }
   95%
   {
-    border: 1px solid #00000045;
+    border: 1px solid var(--uic-logger-anime-bor);
     height: 70px;
     width: 280px;
     margin-bottom: 5px;
   }
   100% 
   {
-    border: 0px solid #00000045;
+    border: 0px solid var(--uic-logger-anime-bor);
     height: 70px;
     width: 0px;
     margin-bottom: 5px;
@@ -73,38 +104,52 @@
 {
   0%
   {
-    border: 2px solid #00000045;
+    border: 2px solid var(--uic-logger-anime-bor);
     height: 0px;
     width: 0px;
     margin-bottom: 5px;
   }
   3%
   {
-    border: 2px solid #00000045;
+    border: 2px solid var(--uic-logger-anime-bor);
     height: 140px;
     width: 0px;
     margin-bottom: 5px;
   }
   5%
   {
-    border: 2px solid #00000045;
+    border: 2px solid var(--uic-logger-anime-bor);
     height: 140px;
     width: 560px;
   }
   95%
   {
-    border: 2px solid #00000045;
+    border: 2px solid var(--uic-logger-anime-bor);
     height: 140px;
     width: 560px;
     margin-bottom: 5px;
   }
   100% 
   {
-    border: 0px solid #00000045;
+    border: 0px solid var(--uic-logger-anime-bor);
     height: 140px;
     width: 0px;
     margin-bottom: 5px;
   }
+}
+
+.uic-logger-root
+{
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 999;
 }
 
 .uic-logger-root > div
@@ -113,15 +158,15 @@
   animation-duration: 10s;
   animation-iteration-count: 1;
   display: flex;
-  text-align: center;
-  font-size: 15px;
-  border-radius: 10px;
-  border: 0px solid #00000045;
-  overflow: hidden;
-  cursor: default;
-  margin-bottom: 5px;
   height: 0px;
   width: 0px;
+  margin-bottom: 5px;
+  font-size: 15px;
+  border-radius: 10px;
+  border: 0px solid var(--uic-logger-root-bor);
+  text-align: center;
+  cursor: default;
+  overflow: hidden;
   box-sizing: content-box;
 }
 
@@ -138,133 +183,114 @@
   font-weight: 400;
 }
 
-.uic-logger-root
-{
-  position: fixed;
-  z-index: 999;
-  bottom: 15px;
-  right: 15px;
-  display: flex;
-  align-items: flex-end;
-  flex-wrap: nowrap;
-  justify-content: flex-start;
-  flex-direction: column;
-  overflow: hidden;
-}
-
 .uic-logger-root .uic-logger-lvlerror
 {
-  background-color: #efbdbde6;
-  color: #620000;
+  background-color: var(--uic-logger-lvlerror-bg);
+  color: var(--uic-logger-lvlerror-col);
 }
 	  
 .uic-logger-root .uic-logger-lvlwarn
 {
-  background-color: #efe7a2e8;
-  color: #623f00;
+  background-color: var(--uic-logger-lvlwarn-bg);
+  color: var(--uic-logger-lvlwarn-col);
 }
 	  
 .uic-logger-root .uic-logger-lvlinfo
 {
-  background-color:#c8fffae6;
-  color: #001e62;
+  background-color:var(--uic-logger-lvlinfo-bg);
+  color: var(--uic-logger-lvlinfo-col);
 }
 
 .uic-logger-root .uic-logger-lvlsuccess
 {
-  background-color: #a7ffa7e6;
-  color: #005200;
+  background-color: var(--uic-logger-lvlsuccess-bg);
+  color: var(--uic-logger-lvlsuccess-col);
+}
+
+.uic-logger-root > div > div
+{
+  width: 50px;
+  height: 70px;
+  background-size: 35px;
+  background-repeat: no-repeat;
+  background-position: center;
+  flex-shrink: 0;
+}
+
+.uic-logger-lvlerror > div
+{
+  background-image: var(--uic-logger-lvlerror-img);
+}
+
+.uic-logger-lvlinfo > div
+{
+  background-image: var(--uic-logger-lvlinfo-img);
+}
+
+.uic-logger-lvlwarn > div
+{
+  background-image: var(--uic-logger-lvlwarn-img);
+}
+
+.uic-logger-lvlsuccess > div
+{
+  background-image: var(--uic-logger-lvlsuccess-img);
 }
 
 .uic-logger-root > div > span
 {
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 35px;
-  width: 50px;
-  height: 70px;
-  flex-shrink: 0;
-}
-
-.uic-logger-lvlerror > span
-{
-  background-image: url(level-error.svg);
-}
-
-.uic-logger-lvlinfo > span
-{
-  background-image: url(level-info.svg);
-}
-
-.uic-logger-lvlwarn > span
-{
-  background-image: url(level-warning.svg);
-}
-
-.uic-logger-lvlsuccess > span
-{
-  background-image: url(level-success.svg);
-}
-
-.uic-logger-root div span + span
-{
   margin-top: 3px;
   width: 200px;
-  height: auto;
   font-size: 18px;
   line-height: 17px;
-  background-image: none;
   flex-shrink: 0;
 }
 
-.uic-logger-root div span + span > span
+.uic-logger-root > div >  span > span
 {
   display: block;
-  background-image: none;
-  height: auto;
-  min-width: auto;
   font-size: 14px;
 }
 
-.uic-logger-root div span + span + span
+.uic-logger-root > div > s
 {
   display: flex;
-  width: 30px;
-  min-width: auto;
   justify-content: center;
+  width: 30px;
   height: 15px;
+  padding-top: 3px;
   cursor: pointer;
   user-select: none;
   flex-shrink: 0;
 }
 
-.uic-logger-root div span + span + span > span
+.uic-logger-root > div > s > span
 {
-  background-image: url(close.svg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 15px;
   height: 15px;
   width: 15px;
   border-radius: 50%;
+  background-size: 15px;
+  background-image: var(--uic-logger-root-x);
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
-.uic-logger-root .uic-logger-lvlerror span + span + span > span:hover
+.uic-logger-root .uic-logger-lvlerror > s > span:hover
 {
-  background-color: #df8181d4;
+  background-color: var(--uic-logger-root-x-error);
 }
 
-.uic-logger-root .uic-logger-lvlsuccess span + span + span > span:hover
+.uic-logger-root .uic-logger-lvlsuccess > s > span:hover
 {
-  background-color: #81df86d4;
+  background-color: var(--uic-logger-root-x-success);
 }
 
-.uic-logger-root .uic-logger-lvlwarn span + span + span > span:hover
+.uic-logger-root .uic-logger-lvlwarn > s > span:hover
 {
-  background-color: #dfb881d4;
+  background-color: var(--uic-logger-root-x-warn);
 }
 
-.uic-logger-root .uic-logger-lvlinfo span + span + span > span:hover
+.uic-logger-root .uic-logger-lvlinfo > s > span:hover
 {
-  background-color: #81c3dfd4;
+  background-color: var(--uic-logger-root-x-info);
 }

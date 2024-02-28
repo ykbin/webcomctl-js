@@ -17,9 +17,9 @@ const _rootHTML =`
 
 const _itemHTML =`
 <div>
-  <span></span>
+  <div></div>
   <span><h3 class="${CLASS.TITLE}"></h3><span class="${CLASS.TEXT}"></span></span>
-  <span><span class="${CLASS.CLOSE}"></span></span>
+  <s><span class="${CLASS.CLOSE}"></span></s>
 </div>
 `;
 

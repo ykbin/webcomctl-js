@@ -3,9 +3,7 @@
   --uic-mfooter-root-bg: #f8f8f81a;
   --uic-mfooter-root-us: #5063b1;
   --uic-mfooter-version: #878787;
-}
-
-[data-theme="light"]{
+  /*light*/
   --uic-mfooter-root-border: #aab9cb;
   --uic-mfooter-list: #4e4e4e;
 }

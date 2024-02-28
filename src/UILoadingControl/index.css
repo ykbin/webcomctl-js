@@ -1,3 +1,9 @@
+:root
+{
+  --uic-loading-root-bg: #1e1e1e91;
+  --uic-loading-show-img: url(file-upload.svg);
+}
+
 .uic-loading-root
 {
   display: none;
@@ -10,7 +16,7 @@
   bottom: 0;
   z-index: 100;
   min-height: 555px;
-  background-color: #1e1e1e91;
+  background-color: var(--uic-loading-root-bg);
 }
 
 .uic-loading-show
@@ -31,7 +37,7 @@
 {
   width: 20%;
   height: 20%;
-  background-image: url(file-upload.svg);
+  background-image: var(--uic-loading-show-img);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
