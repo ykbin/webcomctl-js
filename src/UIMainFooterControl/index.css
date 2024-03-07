@@ -8,15 +8,21 @@
   --uic-mfooter-list: #4e4e4e;
 }
 
-[data-theme="dark"]{
+[data-theme="dark"]
+{
   --uic-mfooter-root-border: #aab9cb8c;
   --uic-mfooter-list: #8b8b8b;
 }
 
+.uic-mfooter-root *
+{
+  box-sizing: border-box;
+}
 
 .uic-mfooter-root
 {
   grid-area: footer;
+  flex-shrink: 0;
   display: grid;
   grid-template-columns: 1fr 110px;
   height: 90px;

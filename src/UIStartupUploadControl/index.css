@@ -25,6 +25,11 @@
   display: none;
 }
 
+.uic-strupl-root *
+{
+  box-sizing: border-box;
+}
+
 .uic-strupl-fdrop
 {
   align-self: center;
