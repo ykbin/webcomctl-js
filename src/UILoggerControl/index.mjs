@@ -23,13 +23,13 @@ const _itemHTML =`
 </div>
 `;
 
-const createMessage = (level, title, text, clickCallback) => {
+const createMessage = (level, title, text) => {
   const element = NQDOM.createElement(_itemHTML);
   element.classList.add(level);
 
   NQDOM.getElementByClassName(element, CLASS.TITLE).textContent = title;
   NQDOM.getElementByClassName(element, CLASS.TEXT).textContent = text;
-  NQDOM.getElementByClassName(element, CLASS.CLOSE).addEventListener("click", clickCallback);
+  NQDOM.getElementByClassName(element, CLASS.CLOSE).addEventListener("click", () => element.remove());
 
   return element;
 };
@@ -46,7 +46,7 @@ export default class UILoggerControl extends BaseControl {
 
     const log = (title, level, logFunc, ...args) => {
       logFunc.apply(null, [ title, "-", ...args ]);
-      const messageElm = createMessage(level, title, args.join(' '), () => { element.remove() });
+      const messageElm = createMessage(level, title, args.join(' '));
       while (element.children.length > 3) {
         element.removeChild(element.children[1]);
       }
