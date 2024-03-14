@@ -6,8 +6,7 @@ const CLASS = {
 };
 
 const _rootHTML = `
-<div class="${CLASS.ROOT} ${CLASS.PORT} notranslate" translate="no">
-</div>
+<div class="${CLASS.ROOT} ${CLASS.PORT}"></div>
 `;
 
 export default class UIViewBlockControl extends BaseControl {
