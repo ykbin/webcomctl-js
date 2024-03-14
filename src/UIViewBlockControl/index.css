@@ -1,0 +1,28 @@
+.uic-viewblk-root
+{
+  display: flex;
+  height: 100%;
+  min-height: 300px;
+  padding-top: 3px;
+  overflow: hidden;
+  /*overflow: auto;*/
+}
+
+.uic-viewblk-root > div 
+{
+  min-width: 285px;
+  flex-shrink: 0;
+  contain: paint;
+}
+
+.uic-viewblk-root > div:last-child
+{
+  flex-grow: 1;
+  flex-shrink: initial;
+}
+
+.uic-viewblk-root > div:last-child > div
+{
+  border: none;
+  border-right: none;
+}
