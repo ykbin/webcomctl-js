@@ -4,4 +4,6 @@
   flex-direction: column;
   height: inherit;
   width: inherit;
+  min-height: 670px;
+  overflow: hidden;
 }

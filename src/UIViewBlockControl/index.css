@@ -2,7 +2,6 @@
 {
   display: flex;
   height: 100%;
-  min-height: 300px;
   padding-top: 3px;
   overflow: hidden;
   /*overflow: auto;*/
