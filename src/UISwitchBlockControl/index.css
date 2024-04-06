@@ -1,0 +1,16 @@
+.uic-swtch-root
+{
+  height: 100%;
+  width: inherit;
+}
+
+.uic-swtch-nth1 > div:nth-child(2),
+.uic-swtch-nth2 > div:first-child
+{
+  display: none;
+}
+
+.uic-swtch-nth2
+{
+  overflow-x: hidden;
+}

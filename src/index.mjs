@@ -4,3 +4,4 @@ export { default as UIStartupUploadControl } from './UIStartupUploadControl/inde
 export { default as UIMainFooterControl } from './UIMainFooterControl/index.mjs';
 export { default as UIVerticalBlockControl } from './UIVerticalBlockControl/index.mjs';
 export { default as UIViewBlockControl } from './UIViewBlockControl/index.mjs';
+export { default as UISwitchBlockControl } from './UISwitchBlockControl/index.mjs';
