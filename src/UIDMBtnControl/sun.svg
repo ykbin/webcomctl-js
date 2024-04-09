@@ -1,0 +1,94 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+
+<svg xmlns="http://www.w3.org/2000/svg" 
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    width="242.88pt"
+    height="244.32pt"
+    viewBox="0 0 242.88 244.32">
+<defs/>
+
+<circle id="shape0"
+  transform="matrix(0.999999843578992 0 0 0.999999843578992 79.6199832222377 79.6199782720173)"
+  r="42.0000065696834"
+  cx="42.0000065696834"
+  cy="42.0000065696834"
+  fill="none"
+  stroke="#6a6a6a"
+  stroke-width="24"
+  stroke-linecap="square"
+  stroke-linejoin="bevel"/>
+
+<path id="shape1"
+  transform="matrix(0.999999843578992 0 0 0.999999843578992 120.175619278377 19.2185630692933)"
+  fill="none"
+  stroke="#6a6a6a"
+  stroke-width="24"
+  stroke-linecap="round"
+  stroke-linejoin="bevel"
+  d="M0.0424264 0C-0.0175597 5.70109 0.0599861 6.47588 0 12.177"/>
+
+<path id="shape2"
+  transform="matrix(-0.999999843578992 0 0 0.999999843578992 122.608136500409 212.460007456943)"
+  fill="none"
+  stroke="#6a6a6a"
+  stroke-width="24"
+  stroke-linecap="round"
+  stroke-linejoin="bevel"
+  d="M0.03 0C-0.0124166 5.47247 0.0424166 6.21619 0 11.6887"/>
+
+<path id="shape3"
+  transform="matrix(-0.730636097244478 -0.682766856665854 -0.682766856665854 0.730636097244478 191.246991025097 46.7290536648069)"
+  fill="none"
+  stroke="#6a6a6a"
+  stroke-width="24"
+  stroke-linecap="round"
+  stroke-linejoin="bevel"
+  d="M0.06 0C-0.0248332 5.45854 0.0848332 6.20036 0 11.659"/>
+
+<path id="shape4"
+  transform="matrix(0.730636097244478 -0.682766856665854 -0.682766856665854 -0.730636097244478 194.005224389786 194.523114161652)"
+  fill="none"
+  stroke="#6a6a6a"
+  stroke-width="24"
+  stroke-linecap="round"
+  stroke-linejoin="bevel"
+  d="M0.0424264 0C-0.0175597 5.56141 0.059986 6.31722 0 11.8786"/>
+
+<path id="shape5"
+  transform="matrix(0.737306395820731 -0.675558262357776 0.675558262357776 0.737306395820731 48.9328511071018 49.8271958577994)"
+  fill="none"
+  stroke="#6a6a6a"
+  stroke-width="24"
+  stroke-linecap="round"
+  stroke-linejoin="bevel"
+  d="M0.03 0C-0.0124166 5.16736 0.0424166 5.86962 0 11.0371"/>
+
+<path id="shape6"
+  transform="matrix(-0.698088652415368 -0.716011117600075 0.716011117600075 -0.698088652415368 49.3502566515101 194.100222707684)" 
+  fill="none"
+  stroke="#6a6a6a"
+  stroke-width="24"
+  stroke-linecap="round"
+  stroke-linejoin="bevel"
+  d="M0.0556992 0C-0.0230532 5.17993 0.0787524 5.8839 0 11.0639"/>
+
+<path id="shape7"
+  transform="matrix(0.0213751495406396 0.999771368933979 -0.999771368933979 0.0213751495406396 224.430993470255 120.31211192921)"
+  fill="none"
+  stroke="#6a6a6a"
+  stroke-width="24"
+  stroke-linecap="round"
+  stroke-linejoin="bevel"
+  d="M0.0452947 0C-0.0187468 5.4915 0.0640416 6.23781 0 11.7293"/>
+
+<path id="shape8"
+  transform="matrix(0.0213751495406395 0.999771368933979 -0.999771368933979 0.0213751495406395 30.7800011015469 122.16)"
+  fill="none"
+  stroke="#6a6a6a"
+  stroke-width="24"
+  stroke-linecap="round"
+  stroke-linejoin="bevel"
+  d="M0.0515737 0C-0.0213456 5.56666 0.0729197 6.32318 0 11.8899"/>
+
+</svg>
