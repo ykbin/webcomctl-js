@@ -1,0 +1,67 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+
+<svg xmlns="http://www.w3.org/2000/svg" 
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    width="44.928pt"
+    height="39.6pt"
+    viewBox="0 0 44.928 39.6">
+<defs/>
+
+<path id="shape0"
+  transform="matrix(0.999999952401283 0 0 0.999999952401283 2.0205041573357 0.973736161215543)"
+  fill="none"
+  stroke="black"
+  stroke-width="2"
+  stroke-linecap="square"
+  stroke-linejoin="bevel"
+  d="M36.6949 10.8379C36.6912 10.0418 36.7989 8.45543 36.6597 7.04425C36.6594 5.29697 36.0116 4.33398 34.541 4.36803C32.2098 4.27954 29.2183 4.30313 25.7171 4.31487L13.9838 4.1432C13.6 2.12479 14.7299 -0.296781 11.5149 0.0298057C6.9137 0.207028 4.14742 0.117193 2.49351 0.100802C1.08506 -0.00876082 0.0150062 0.350224 0.154819 2.38441C-0.0855896 3.73545 -0.00146124 26.0889 0.1095 31.3963C-0.224993 34.7754 1.32647 36.2893 4.76389 35.9379C9.1482 36.1864 12.986 36.2308 16.2772 36.071L32.2296 35.6043"/>
+
+<path id="shape1"
+  transform="matrix(0.999999952401283 0 0 0.999999952401283 2.76000732405632 13.3284252904522)"
+  fill="none"
+  stroke="black"
+  stroke-width="2"
+  stroke-linecap="square"
+  stroke-linejoin="bevel"
+  d="M0 22.1916L4.33717 1.90919C4.59358 0.177831 5.59601 0.0984084 6.6282 0.0848528L11.1254 0"/>
+
+<path id="shape2"
+  transform="matrix(0.999999952401283 0 0 0.999999952401283 32.6700165197047 13.3114855182381)"
+  fill="none"
+  stroke="black"
+  stroke-width="2"
+  stroke-linecap="square"
+  stroke-linejoin="bevel"
+  d="M0 0.128552L9.42 0.0085515C10.9006 -0.112131 11.2258 1.05231 10.95 3.00855L8.13 17.1986L8.13 17.1986"/>
+
+<ellipse id="shape3"
+  transform="matrix(0.999999952401283 0 0 0.999999952401283 15.9672784594774 11.0373781558884)"
+  rx="7.32000000000001"
+  ry="7.46704754396706"
+  cx="7.32000000000001"
+  cy="7.46704754396706"
+  fill="none"
+  stroke="black"
+  stroke-width="2.5"
+  stroke-linecap="square"
+  stroke-linejoin="bevel"/>
+
+<path id="shape4"
+  transform="matrix(0.999999952401283 0 0 0.999999952401283 28.5599974631964 24.4799989195296)"
+  fill="none"
+  stroke="black"
+  stroke-width="3"
+  stroke-linecap="round"
+  stroke-linejoin="bevel"
+  d="M13.05 13.32L0 0"/>
+
+<path id="shape5"
+  transform="matrix(0.999999952401283 0 0 0.999999952401283 18.4658933565027 13.5373615587253)"
+  fill="none"
+  stroke="black"
+  stroke-width="0.864"
+  stroke-linecap="round"
+  stroke-linejoin="bevel"
+  d="M0.362107 7.19864C-1.15597 2.06463 2.37817 -0.680826 5.7808 0.145155"/>
+</svg>
