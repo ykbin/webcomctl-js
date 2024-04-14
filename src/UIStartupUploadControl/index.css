@@ -3,11 +3,12 @@
   --uic-strupl-des: #afafaf;
   --uic-strupl-dhide-bg: #fafafa;
   --uic-strupl-fdrop-borImg: #ebebeb00;
-  --uic-strupl-fdrop-borImg2: #afafaf;
+  --uic-strupl-fdrop-borImg2: #dfdfdf;
   --uic-strupl-img: url(up-file.svg);
   --uic-strupl-bor: transparent;
-  --uic-strupl-fdbtn-col: #afafaf;
-  --uic-strupl-fdbtn-hov: #e2e2e2;
+  --uic-strupl-fdbtn-col: #a6a6a6;
+  --uic-strupl-fdbtn-bor: #c1c1c1;
+  --uic-strupl-fdbtn-hov: #4545450f;
   --uic-strupl-fdbtn-img: url(search.svg);
 }
 
@@ -120,7 +121,7 @@
   color: var(--uic-strupl-fdbtn-col);
   font-size: 45px;
   text-align: center;
-  border: 3px solid;
+  border: 3px solid var(--uic-strupl-fdbtn-bor);
   border-radius: 5px;
   padding: 5px 10px 5px 30px;
   cursor: pointer;

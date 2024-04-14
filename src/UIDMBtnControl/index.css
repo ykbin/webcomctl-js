@@ -43,7 +43,7 @@
 
 @media (device-width < 550px)
 {
-  .uic-dmbtn-toggle
+  .uic-dmbtn-root
   {
     width: 60px;
     height: 60px;
