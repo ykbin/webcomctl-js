@@ -1,15 +1,10 @@
 :root
 {
-  --uic-hdrupl-col: #6a6a6a;
-  --uic-hdrupl-hclr: black;
-  --uic-hdrupl-bg: #dddddd40;
   --uic-hdrupl-dimg: url(search_default.svg);
   --uic-hdrupl-himg: url(search_hover.svg);
-}
-
-.uic-hdrupl-root *
-{
-  box-sizing: border-box;
+  --uic-hdrupl-dclr: #6a6a6a;
+  --uic-hdrupl-hclr: black;
+  --uic-hdrupl-bg: #dddddd40;
 }
 
 .uic-hdrupl-root > input
@@ -30,10 +25,11 @@
   height: min-content;
   margin: 0px 5px;
   padding: 0px 5px;
-  color: var(--uic-hdrupl-col);
+  color: var(--uic-hdrupl-dclr);
   font-size: 28px;
   cursor: pointer;
   user-select: none;
+  box-sizing: border-box;
 }
 
 .uic-hdrupl-root > span
@@ -53,13 +49,12 @@
   color: var(--uic-hdrupl-hclr);
   background-color: var(--uic-hdrupl-bg);
   border-radius: 5px;
-  transition: color 0.5s;
+  transition: background-color 0.2s;
 }
 
 .uic-hdrupl-root:hover span 
 {
   background-image: var(--uic-hdrupl-himg);
-  transition: background-image 0.5s;
 }
 
 @media (device-width < 550px)

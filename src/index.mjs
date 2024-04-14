@@ -6,4 +6,5 @@ export { default as UIVerticalBlockControl } from './UIVerticalBlockControl/inde
 export { default as UIViewBlockControl } from './UIViewBlockControl/index.mjs';
 export { default as UISwitchBlockControl } from './UISwitchBlockControl/index.mjs';
 export { default as UIDMBtnControl } from './UIDMBtnControl/index.mjs';
+export { default as UIHdrHomeButtonControl } from './UIHdrHomeButtonControl/index.mjs';
 export { default as UIHdrUploadButtonControl } from './UIHdrUploadButtonControl/index.mjs';
