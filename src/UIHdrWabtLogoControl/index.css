@@ -1,0 +1,78 @@
+:root
+{
+  /*light*/
+  --uic-hdrwabt-fimg: url(favicon1.svg);
+  --uic-hdrwabt-himg: url(header1.svg);
+}
+
+[data-theme="dark"]
+{
+  --uic-hdrwabt-himg: url(header2.svg);
+  --uic-hdrwabt-fimg: url(favicon2.svg);
+}
+
+.uic-hdrwabt-root h2,
+.uic-hdrwabt-root h3
+{
+  margin: 0px;
+  padding: 0px;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.uic-hdrwabt-root *
+{
+  box-sizing: border-box;
+}
+
+.uic-hdrwabt-root
+{
+  display: flex;
+  height: 33px;
+}
+
+.uic-hdrwabt-root > h3
+{
+  width: 35px;
+  background-image: var(--uic-hdrwabt-fimg);
+}
+
+.uic-hdrwabt-root > h3
+{
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  margin-right: 7px;
+  flex-shrink: 0;
+}
+
+.uic-hdrwabt-root > h2
+{
+  width: 77px;
+  background-size: 180px;
+  background-position-y: center;
+  background-position-x: left;
+  background-image: var(--uic-hdrwabt-himg);
+}
+
+.uic-hdrwabt-root > h2
+{
+  height: 100%;
+  background-repeat: no-repeat;
+  margin-right: 15px;
+  flex-shrink: 0;
+}
+
+@media (device-width < 550px)
+{
+  .uic-hdrwabt-root > h2
+  {
+    width: 185px;
+    background-size: 425px;
+  }
+  .uic-hdrwabt-root > h3
+  {
+    display: none;
+  }
+}
