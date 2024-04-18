@@ -1,0 +1,228 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+
+<svg xmlns="http://www.w3.org/2000/svg" 
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    width="212.8pt"
+    height="210.92pt"
+    viewBox="0 0 212.8 210.92">
+<defs/>
+
+<circle id="shape0"
+    transform="matrix(0.999992300185161 0.0039207982538119 -0.0039207982538119 0.999992300185161 9.71039420988964 55.2569006436744)"
+    r="15"
+    cx="15"
+    cy="15"
+    fill="#000000"
+    fill-rule="evenodd"
+    stroke-opacity="0"
+    stroke="#000000"
+    stroke-width="0"
+    stroke-linecap="square"
+    stroke-linejoin="bevel">
+
+    <animate
+        attributeName="fill"
+        values="transparent; #424242; gray; #00000045; #00000045; transparent; transparent; transparent"
+        dur="1s"
+        repeatCount="indefinite"/>
+
+    <animate
+        attributeName="r"
+        values="15; 25; 21; 19; 17; 15; 15; 15 "
+        dur="1s"
+        repeatCount="indefinite"/>
+
+</circle>
+
+<circle id="shape1"
+    transform="matrix(0.999992300185161 0.0039207982538119 -0.0039207982538119 0.999992300185161 9.13701328550167 124.681164919355)"
+    r="15"
+    cx="15"
+    cy="15"
+    fill="#000000"
+    fill-rule="evenodd"
+    stroke-opacity="0"
+    stroke="#000000"
+    stroke-width="0"
+    stroke-linecap="square"
+    stroke-linejoin="bevel">
+
+    <animate
+        attributeName="fill"
+        values="#424242; gray; #00000045; #00000045; transparent; transparent; transparent; transparent"
+        dur="1s"
+        repeatCount="indefinite"/>
+
+    <animate
+        attributeName="r"
+        values="25; 21; 19; 17; 15; 15; 15; 15"
+        dur="1s"
+        repeatCount="indefinite"/>
+
+</circle>
+
+<circle id="shape2"
+    transform="matrix(0.999992300185161 0.0039207982538119 -0.0039207982538119 0.999992300185161 53.2473054088728 169.427264348435)"
+    r="15"
+    cx="15"
+    cy="15"
+    fill="#000000"
+    fill-rule="evenodd"
+    stroke-opacity="0"
+    stroke="#000000"
+    stroke-width="0"
+    stroke-linecap="square"
+    stroke-linejoin="bevel">
+
+    <animate
+        attributeName="fill"
+        values=" gray; #00000045; #00000045; transparent; transparent; transparent; transparent; #424242"
+        dur="1s"
+        repeatCount="indefinite"/>
+
+    <animate
+        attributeName="r"
+        values="21; 19; 17; 15; 15; 15; 15; 25"
+        dur="1s"
+        repeatCount="indefinite"/>
+
+
+</circle>
+
+<circle id="shape3"
+    transform="matrix(0.999999986544278 0 0 0.999999986544278 119.39998886047 171.439994374975)"
+    r="15"
+    cx="15"
+    cy="15"
+    fill="#000000"
+    fill-rule="evenodd"
+    stroke-opacity="0"
+    stroke="#000000"
+    stroke-width="0"
+    stroke-linecap="square"
+    stroke-linejoin="bevel">
+
+    <animate
+        attributeName="fill"
+        values="#00000045; #00000045; transparent; transparent; transparent; transparent; #424242; gray"
+        dur="1s"
+        repeatCount="indefinite"/>
+
+    <animate
+        attributeName="r"
+        values="19; 17; 15; 15; 15; 15; 25; 21"
+        dur="1s"
+        repeatCount="indefinite"/>
+
+</circle>
+
+<circle id="shape4"
+    transform="matrix(0.999999986544278 0 0 0.999999986544278 168.119988206422 124.279994967101)"
+    r="15"
+    cx="15"
+    cy="15"
+    fill="#000000"
+    fill-rule="evenodd"
+    stroke-opacity="0"
+    stroke="#000000"
+    stroke-width="0"
+    stroke-linecap="square"
+    stroke-linejoin="bevel">
+
+    <animate
+        attributeName="fill"
+        values="#00000045; transparent; transparent; transparent; transparent; #424242; gray; #00000045"
+        dur="1s"
+        repeatCount="indefinite"/>
+
+    <animate
+        attributeName="r"
+        values="17; 15; 15; 15; 15; 25; 21; 19"
+        dur="1s"
+        repeatCount="indefinite"/>
+
+</circle>
+
+<circle id="shape5"
+    transform="matrix(0.999999986544278 0 0 0.999999986544278 168.88969394869 57.9636751448178)"
+    r="15"
+    cx="15"
+    cy="15"
+    fill="#000000"
+    fill-rule="evenodd"
+    stroke-opacity="0"
+    stroke="#000000"
+    stroke-width="0"
+    stroke-linecap="square"
+    stroke-linejoin="bevel">
+
+    <animate
+        attributeName="fill"
+        values="transparent; transparent; transparent; transparent; #424242; gray; #00000045; #00000045"
+        dur="1s"
+        repeatCount="indefinite"/>
+
+    <animate
+        attributeName="r"
+        values="15; 15; 15; 15; 25; 21; 19; 17"
+        dur="1s"
+        repeatCount="indefinite"/>
+
+
+</circle>
+
+<circle id="shape6"
+    transform="matrix(0.999999986544278 0 0 0.999999986544278 119.879998394102 9.68000235979925)"
+    r="15"
+    cx="15"
+    cy="15"
+    fill="#000000"
+    fill-rule="evenodd"
+    stroke-opacity="0"
+    stroke="#000000"
+    stroke-width="0"
+    stroke-linecap="square"
+    stroke-linejoin="bevel">
+
+    <animate
+        attributeName="fill"
+        values="transparent; transparent; transparent; #424242; gray; #00000045; #00000045; transparent"
+        dur="1s"
+        repeatCount="indefinite"/>
+
+    <animate
+        attributeName="r"
+        values="15; 15; 15; 25; 21; 19; 17; 15"
+        dur="1s"
+        repeatCount="indefinite"/>
+
+</circle>
+
+<circle id="shape7"
+    transform="matrix(0.999992300185161 0.0039207982538119 -0.0039207982538119 0.999992300185161 54.7352435300441 9.37690392274632)"
+    r="15"
+    cx="15"
+    cy="15"
+    fill="#000000"
+    fill-rule="evenodd"
+    stroke-opacity="0"
+    stroke="#000000"
+    stroke-width="0"
+    stroke-linecap="square"
+    stroke-linejoin="bevel">
+
+    <animate
+        attributeName="fill"
+        values="transparent; transparent; #424242; gray; #00000045; #00000045; transparent; transparent"
+        dur="1s"
+        repeatCount="indefinite"/>
+
+    <animate
+        attributeName="r"
+        values="15; 15; 25; 21; 19; 17; 15; 15"
+        dur="1s"
+        repeatCount="indefinite"/>
+
+</circle>
+</svg>
