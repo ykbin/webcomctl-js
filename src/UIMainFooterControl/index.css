@@ -21,7 +21,6 @@
 
 .uic-mfooter-root
 {
-  grid-area: footer;
   flex-shrink: 0;
   display: grid;
   grid-template-columns: 1fr 110px;
