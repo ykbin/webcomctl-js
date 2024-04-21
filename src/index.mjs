@@ -11,5 +11,6 @@ export { default as UIDMBtnControl } from './UIDMBtnControl/index.mjs';
 export { default as UIHdrHomeButtonControl } from './UIHdrHomeButtonControl/index.mjs';
 export { default as UIHdrUploadButtonControl } from './UIHdrUploadButtonControl/index.mjs';
 export { default as UIHdrWabtLogoControl } from './UIHdrWabtLogoControl/index.mjs';
+export { default as UIHdrWsckLogoControl } from './UIHdrWsckLogoControl/index.mjs';
 export { default as UILeftBlockControl } from './UILeftBlockControl/index.mjs';
 export { default as UIRightBlockControl } from './UIRightBlockControl/index.mjs';

@@ -1,0 +1,64 @@
+:root{
+
+  /*light*/
+  --uic-hdrwsck-fimg: url(favicon1.svg);
+  --uic-hdrwsck-himg: url(header1.svg);
+}
+
+[data-theme="dark"]{
+  --uic-hdrwsck-fimg: url(favicon2.svg);
+  --uic-hdrwsck-himg: url(header2.svg);
+}
+
+.uic-hdrwsck-root h2,
+.uic-hdrwsck-root h3
+{
+  margin: 0px;
+  padding: 0px;
+  font-size: 1em;
+  font-weight: 400;
+}
+
+.uic-hdrwsck-root
+{
+  display: flex;
+  height: inherit;
+}
+
+.uic-hdrwsck-root > h3
+{
+  height: 100%;
+  width: 40px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  background-image: var(--uic-hdrwsck-fimg);
+  margin-right: 7px;
+  flex-shrink: 0;
+}
+
+.uic-hdrwsck-root > h2
+{
+  height: 100%;
+  width: 145px;
+  margin-right: 15px;
+  background-size: 180px;
+  background-position-y: center;
+  background-position-x: left;
+  background-repeat: no-repeat;
+  background-image: var(--uic-hdrwsck-himg);
+  flex-shrink: 0;
+}
+
+@media (device-width < 550px)
+{
+  .uic-hdrwsck-root > h3
+  {
+    display: none;
+  }
+  .uic-hdrwsck-root > h2
+  {
+    width: 330px;
+    background-size: 410px;
+  }
+}
