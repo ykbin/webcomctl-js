@@ -7,8 +7,8 @@
 
 [data-theme="dark"]
 {
-  --uic-hdrwabt-himg: url(header2.svg);
   --uic-hdrwabt-fimg: url(favicon2.svg);
+  --uic-hdrwabt-himg: url(header2.svg);
 }
 
 .uic-hdrwabt-root h2,
