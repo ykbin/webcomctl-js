@@ -1,6 +1,6 @@
 :root
 {
-  --uic-mfooter-root-bg: #f8f8f81a;
+  --uic-mfooter-root-bg: #fdfdfd;
   --uic-mfooter-root-us: #5063b1;
   --uic-mfooter-version: #878787;
   /*light*/
@@ -12,6 +12,7 @@
 {
   --uic-mfooter-root-border: #aab9cb8c;
   --uic-mfooter-list: #8b8b8b;
+  --uic-mfooter-root-bg: #2e2e2e;
 }
 
 .uic-mfooter-root *

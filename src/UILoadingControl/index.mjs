@@ -7,9 +7,7 @@ const CLASS = {
 
 const _rootHTML =`
 <div class="${CLASS.ROOT}">
-<div>
   <div></div>
-</div>
 </div>
 `;
 

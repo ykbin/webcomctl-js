@@ -22,21 +22,14 @@
 .uic-loading-show
 {
   display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .uic-loading-show > div
 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-}
-
-.uic-loading-show > div > div
-{
-  width: 20%;
-  height: 20%;
+  width: 160px;
+  height: 160px;
   background-image: var(--uic-loading-show-img);
   background-repeat: no-repeat;
   background-size: contain;
@@ -45,9 +38,9 @@
 
 @media (device-width < 550px)
 {
-  .uic-loading-show > div > div
+  .uic-loading-show > div
   {
-    width: 30%;
-    height: 30%;
+    width: 320px;
+    height: 320px;
   }
 }
