@@ -22,7 +22,7 @@
 .uic-hdrwsck-root
 {
   display: flex;
-  height: inherit;
+  height: 33px;
 }
 
 .uic-hdrwsck-root > h3
@@ -52,6 +52,10 @@
 
 @media (device-width < 550px)
 {
+  .uic-hdrwsck-root
+  {
+    height: 130px;
+  }
   .uic-hdrwsck-root > h3
   {
     display: none;
