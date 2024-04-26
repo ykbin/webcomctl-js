@@ -66,6 +66,10 @@
 
 @media (device-width < 550px)
 {
+  .uic-hdrwabt-root
+  {
+    height: 130px;
+  }
   .uic-hdrwabt-root > h2
   {
     width: 185px;
