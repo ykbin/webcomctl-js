@@ -1,0 +1,70 @@
+:root
+{
+  /*light*/
+  --com-hdrhex-fimg: url(favicon1.svg);
+  --uic-hdrhex-himg: url(header1.svg);
+}
+
+[data-theme="dark"]
+{
+  --com-hdrhex-fimg: url(favicon2.svg);
+  --uic-hdrhex-himg: url(header2.svg);
+}
+
+.uic-hdrhex-root h2,
+.uic-hdrhex-root h3
+{
+  margin: 0px;
+  padding: 0px;
+  font-size: 1em;
+  font-weight: 400;
+}
+
+.uic-hdrhex-root
+{
+  display: flex;
+  height: 33px;
+}
+
+.uic-hdrhex-root > h3
+{
+  height: 100%;
+  width: 56px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  background-image: var(--com-hdrhex-fimg);
+  margin-right: 7px;
+  flex-shrink: 0;
+}
+
+.uic-hdrhex-root > h2
+{
+  height: 100%;
+  width: 106px;
+  background-size: 180px;
+  background-position-y: center;
+  background-position-x: left;
+  background-repeat: no-repeat;
+  background-image: var(--uic-hdrhex-himg);
+  margin-right: 15px;
+  flex-shrink: 0;
+}
+
+@media (device-width < 550px)
+{
+  .uic-hdrhex-root
+  {
+    height: 130px;
+  }
+  .uic-hdrhex-root > h3
+  {
+    display: none;
+  }
+  .uic-hdrhex-root > h2
+  {
+    width: 280px;
+    background-size: 360px;
+  }
+}
+
