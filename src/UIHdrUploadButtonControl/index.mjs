@@ -1,21 +1,14 @@
 import { BaseControl, Random } from 'webnetq-js';
+import { NAME, HTML, CLASS, CSS } from './template.mjs';
 
-const CLASS = {
-  ROOT: "uic-hdrupl-root",
-  HIDDEN: "uic-hdrupl-hidden",
+export const template = {
+  NAME, HTML, CLASS, CSS,
 };
-
-const _rootHTML = `
-<label class="${CLASS.ROOT} ${CLASS.HIDDEN} notranslate" translate="no">
-  <span></span>Upload
-  <!--<input type="file">-->
-</label>
-`;
 
 export default class UIHdrUploadButtonControl extends BaseControl {
   static get template() { return {
-    name: 'HdrUploadButton',
-    rootHTML: _rootHTML,
+    name: NAME,
+    rootHTML: HTML,
     rootClass:  CLASS.ROOT,
   } }
 

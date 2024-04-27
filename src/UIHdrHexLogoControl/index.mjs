@@ -1,21 +1,15 @@
 import { BaseControl } from 'webnetq-js';
+import { NAME, HTML, CLASS, CSS } from './template.mjs';
 
-const CLASS = {
-  ROOT: "uic-hdrhex-root",
+export const template = {
+  NAME, HTML, CLASS, CSS,
 };
-
-const _rootHTML = `
-<div class="${CLASS.ROOT}">
-  <h3></h3>
-  <h2></h2>
-</div>
-`;
 
 export default class UIHdrHexLogoControl extends BaseControl {
   static get template() { return {
-    name: 'HdrHexLogo',
-    rootHTML: _rootHTML,
-    rootClass:  CLASS.ROOT,
+    name: NAME,
+    rootHTML: HTML,
+    rootClass: CLASS.ROOT,
   } }
 
   constructor(element) {

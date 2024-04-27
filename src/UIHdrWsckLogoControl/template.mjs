@@ -1,17 +1,32 @@
-:root{
+export const NAME = 'HdrWabtLogo';
 
+export const CLASS = {
+  ROOT: "uic-hdrwsck-root",
+};
+
+export const HTML = `
+<div class="${CLASS.ROOT}">
+  <h3></h3>
+  <h2></h2>
+</div>
+`;
+
+export const CSS = `
+:root
+{
   /*light*/
   --uic-hdrwsck-fimg: url(favicon1.svg);
   --uic-hdrwsck-himg: url(header1.svg);
 }
 
-[data-theme="dark"]{
+[data-theme="dark"]
+{
   --uic-hdrwsck-fimg: url(favicon2.svg);
   --uic-hdrwsck-himg: url(header2.svg);
 }
 
-.uic-hdrwsck-root h2,
-.uic-hdrwsck-root h3
+.${CLASS.ROOT} h2,
+.${CLASS.ROOT} h3
 {
   margin: 0px;
   padding: 0px;
@@ -19,13 +34,13 @@
   font-weight: 400;
 }
 
-.uic-hdrwsck-root
+.${CLASS.ROOT}
 {
   display: flex;
   height: 33px;
 }
 
-.uic-hdrwsck-root > h3
+.${CLASS.ROOT} > h3
 {
   height: 100%;
   width: 40px;
@@ -37,7 +52,7 @@
   flex-shrink: 0;
 }
 
-.uic-hdrwsck-root > h2
+.${CLASS.ROOT} > h2
 {
   height: 100%;
   width: 145px;
@@ -52,17 +67,18 @@
 
 @media (device-width < 550px)
 {
-  .uic-hdrwsck-root
+  .${CLASS.ROOT}
   {
     height: 130px;
   }
-  .uic-hdrwsck-root > h3
+  .${CLASS.ROOT} > h3
   {
     display: none;
   }
-  .uic-hdrwsck-root > h2
+  .${CLASS.ROOT} > h2
   {
     width: 330px;
     background-size: 410px;
   }
 }
+`;

@@ -1,6 +1,19 @@
+export const NAME = 'HdrWabtLogo';
+
+export const CLASS = {
+  ROOT: "uic-hdrwabt-root",
+};
+
+export const HTML = `
+<div class="${CLASS.ROOT}">
+  <h3></h3>
+  <h2></h2>
+</div>
+`;
+
+export const CSS = `
 :root
 {
-  /*light*/
   --uic-hdrwabt-fimg: url(favicon1.svg);
   --uic-hdrwabt-himg: url(header1.svg);
 }
@@ -11,8 +24,8 @@
   --uic-hdrwabt-himg: url(header2.svg);
 }
 
-.uic-hdrwabt-root h2,
-.uic-hdrwabt-root h3
+.${CLASS.ROOT} h2,
+.${CLASS.ROOT} h3
 {
   margin: 0px;
   padding: 0px;
@@ -20,24 +33,24 @@
   font-weight: 400;
 }
 
-.uic-hdrwabt-root *
+.${CLASS.ROOT} *
 {
   box-sizing: border-box;
 }
 
-.uic-hdrwabt-root
+.${CLASS.ROOT}
 {
   display: flex;
   height: 33px;
 }
 
-.uic-hdrwabt-root > h3
+.${CLASS.ROOT} > h3
 {
   width: 35px;
   background-image: var(--uic-hdrwabt-fimg);
 }
 
-.uic-hdrwabt-root > h3
+.${CLASS.ROOT} > h3
 {
   height: 100%;
   background-repeat: no-repeat;
@@ -47,7 +60,7 @@
   flex-shrink: 0;
 }
 
-.uic-hdrwabt-root > h2
+.${CLASS.ROOT} > h2
 {
   width: 77px;
   background-size: 180px;
@@ -56,7 +69,7 @@
   background-image: var(--uic-hdrwabt-himg);
 }
 
-.uic-hdrwabt-root > h2
+.${CLASS.ROOT} > h2
 {
   height: 100%;
   background-repeat: no-repeat;
@@ -66,17 +79,18 @@
 
 @media (device-width < 550px)
 {
-  .uic-hdrwabt-root
+  .${CLASS.ROOT}
   {
     height: 130px;
   }
-  .uic-hdrwabt-root > h2
+  .${CLASS.ROOT} > h2
   {
     width: 185px;
     background-size: 425px;
   }
-  .uic-hdrwabt-root > h3
+  .${CLASS.ROOT} > h3
   {
     display: none;
   }
 }
+`;

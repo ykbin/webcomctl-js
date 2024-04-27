@@ -1,3 +1,17 @@
+export const NAME = 'DMBtn';
+
+export const CLASS = {
+  ROOT: "uic-dmbtn-root",
+  TOGGLE: "uic-dmbtn-toggle",
+};
+
+export const HTML = `
+<div class="${CLASS.ROOT}">
+  <span class="${CLASS.TOGGLE}"></span>
+</div>
+`;
+
+export const CSS = `
 :root
 {
   --uic-dmbtn-bor: #6a6a6a;
@@ -13,7 +27,7 @@
   --uic-dmbtn-bg: #ffffff21;
 }
 
-.uic-dmbtn-root
+.${CLASS.ROOT}
 {
   display: block;
   height: 28px;
@@ -23,12 +37,12 @@
   box-sizing: border-box;
 }
 
-.uic-dmbtn-root:hover
+.${CLASS.ROOT}:hover
 {
   background-color: var(--uic-dmbtn-bg);
 }
 
-.uic-dmbtn-toggle
+.${CLASS.TOGGLE}
 {
   background-image: var(--uic-dmbtn-img);
   display: block;
@@ -43,9 +57,10 @@
 
 @media (device-width < 550px)
 {
-  .uic-dmbtn-root
+  .${CLASS.ROOT}
   {
     width: 60px;
     height: 60px;
   }
 }
+`;

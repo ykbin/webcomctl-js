@@ -1,20 +1,14 @@
 import { BaseControl } from "webnetq-js";
+import { NAME, HTML, CLASS, CSS } from './template.mjs';
 
-const CLASS = {
-  ROOT: 'uic-loading-root',
-  SHOW: 'uic-loading-show',
+export const template = {
+  NAME, HTML, CLASS, CSS,
 };
-
-const _rootHTML =`
-<div class="${CLASS.ROOT}">
-  <div></div>
-</div>
-`;
 
 export default class UILoadingControl extends BaseControl {
   static get template() { return {
-    name: 'Loading',
-    rootHTML: _rootHTML,
+    name: NAME,
+    rootHTML: HTML,
     rootClass:  CLASS.ROOT,
   } }
 

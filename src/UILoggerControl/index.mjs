@@ -1,19 +1,9 @@
 import { NQDOM, BaseControl } from "webnetq-js";
+import { NAME, HTML, CLASS, CSS } from './template.mjs';
 
-const CLASS = {
-  ROOT: 'uic-logger-root',
-  CLOSE: 'uic-logger-close',
-  TITLE: 'uic-logger-title',
-  TEXT: 'uic-logger-text',
-  INFO: 'uic-logger-lvlinfo',
-  SUCCESS: 'uic-logger-lvlsuccess',
-  WARNING: 'uic-logger-lvlwarn',
-  ERROR: 'uic-logger-lvlerror',
+export const template = {
+  NAME, HTML, CLASS, CSS,
 };
-
-const _rootHTML =`
-<div class="${CLASS.ROOT}"></div>
-`;
 
 const _itemHTML =`
 <div>
@@ -36,8 +26,8 @@ const createMessage = (level, title, text) => {
 
 export default class UILoggerControl extends BaseControl {
   static get template() { return {
-    name: 'Logger',
-    rootHTML: _rootHTML,
+    name: NAME,
+    rootHTML: HTML,
     rootClass:  CLASS.ROOT,
   } }
 

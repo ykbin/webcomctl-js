@@ -1,3 +1,18 @@
+export const NAME = 'HdrUploadButton';
+
+export const CLASS = {
+  ROOT: "uic-hdrupl-root",
+  HIDDEN: "uic-hdrupl-hidden",
+};
+
+export const HTML = `
+<label class="${CLASS.ROOT} ${CLASS.HIDDEN} notranslate" translate="no">
+  <span></span>Upload
+  <!--<input type="file">-->
+</label>
+`;
+
+export const CSS = `
 :root
 {
   --uic-hdrupl-dimg: url(search_default.svg);
@@ -7,17 +22,17 @@
   --uic-hdrupl-bg: #dddddd40;
 }
 
-.uic-hdrupl-root > input
+.${CLASS.ROOT} > input
 {
   display: none;
 }
 
-.uic-hdrupl-hidden
+.${CLASS.HIDDEN}
 {
   visibility: hidden;
 }
 
-.uic-hdrupl-root
+.${CLASS.ROOT}
 {
   display: flex;
   align-items: center;
@@ -33,7 +48,7 @@
   font-family: serif;
 }
 
-.uic-hdrupl-root > span
+.${CLASS.ROOT} > span
 {
   display: block;
   width: 30px;
@@ -45,7 +60,7 @@
   background-size: contain;
 }
 
-.uic-hdrupl-root:hover 
+.${CLASS.ROOT}:hover 
 {
   color: var(--uic-hdrupl-hclr);
   background-color: var(--uic-hdrupl-bg);
@@ -53,20 +68,21 @@
   transition: background-color 0.2s;
 }
 
-.uic-hdrupl-root:hover span 
+.${CLASS.ROOT}:hover span 
 {
   background-image: var(--uic-hdrupl-himg);
 }
 
 @media (device-width < 550px)
 {
-  .uic-hdrupl-root > span
+  .${CLASS.ROOT} > span
   {
     width: 60px;
     height: 55px;
   }
-  .uic-hdrupl-root
+  .${CLASS.ROOT}
   {
     font-size: 60px;
   }
 }
+`;

@@ -1,6 +1,6 @@
 {
   "name": "webcomctl-js",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Common controls library for the Web",
   "type": "module",
   "main": "src/index.mjs",

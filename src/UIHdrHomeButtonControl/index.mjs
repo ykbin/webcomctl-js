@@ -1,20 +1,14 @@
 import { BaseControl } from 'webnetq-js';
+import { NAME, HTML, CLASS, CSS } from './template.mjs';
 
-const CLASS = {
-  ROOT: "uic-hdrhm-root",
+export const template = {
+  NAME, HTML, CLASS, CSS,
 };
-
-const _rootHTML = `
-<a class="${CLASS.ROOT}" href="\${ENV:HOST_URL}" draggable="false">
-  <div></div>
-  <span class="notranslate" translate="no">Home</span>
-</a>
-`;
 
 export default class UIHdrHomeButtonControl extends BaseControl {
   static get template() { return {
-    name: 'HdrHomeButton',
-    rootHTML: _rootHTML,
+    name: NAME,
+    rootHTML: HTML,
     rootClass:  CLASS.ROOT,
   } }
 

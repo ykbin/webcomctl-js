@@ -1,33 +1,14 @@
-import { NQDOM, BaseControl } from 'webnetq-js';
+import { NQDOM, BaseControl, Random } from 'webnetq-js';
+import { NAME, HTML, CLASS, CSS } from './template.mjs';
 
-const CLASS = {
-  ROOT: 'uic-strupl-root',
-  INPUT: 'uic-strupl-input',
-  FDROP: 'uic-strupl-fdrop',
-  DSHOW: 'uic-strupl-dshow',
-  DHIDE: 'uic-strupl-dhide',
+export const template = {
+  NAME, HTML, CLASS, CSS,
 };
-
-const _rootHTML = `
-<div class="${CLASS.ROOT}" align="center">
-  <h2>Drop your file</h2>
-  <h2>Upload your file</h2>
-  <div class="${CLASS.FDROP} ${CLASS.DHIDE}">
-    <div>
-      <div class="uic-strupl-fdimg"></div>
-      <div class="uic-strupl-fdbtn">
-        <label for="uic-strupl-input" class="notranslate" translate="no"><span></span>Upload</label>
-        <input id="uic-strupl-input" class="${CLASS.INPUT}" type="file">
-      </div>
-    </div>
-  </div>
-</div>
-`;
 
 export default class UIStartupUploadControl extends BaseControl {
   static get template() { return {
-    name: 'StartupUpload',
-    rootHTML: _rootHTML,
+    name: NAME,
+    rootHTML: HTML,
     rootClass:  CLASS.ROOT,
   } }
 
@@ -80,6 +61,7 @@ export default class UIStartupUploadControl extends BaseControl {
       });
     }
 
+    const inputId = Random.nextElementId();
     this._inputElm = NQDOM.getElementByClassName(element, CLASS.INPUT);
     this._inputElm && this._inputElm.addEventListener("input", (event) => {
       const files = event.target.files;

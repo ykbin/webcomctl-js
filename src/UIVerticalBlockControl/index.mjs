@@ -1,18 +1,14 @@
 import { BaseControl } from 'webnetq-js';
+import { NAME, HTML, CLASS, CSS } from './template.mjs';
 
-const CLASS = {
-  ROOT: "uic-vrtblk-root",
-  PORT: "uic-vrtblk-port",
+export const template = {
+  NAME, HTML, CLASS, CSS,
 };
-
-const _rootHTML = `
-<div class="${CLASS.ROOT} ${CLASS.PORT}"></div>
-`;
 
 export default class UIVerticalBlockControl extends BaseControl {
   static get template() { return {
-    name: 'VerticalBlock',
-    rootHTML: _rootHTML,
+    name: NAME,
+    rootHTML: HTML,
     rootClass:  CLASS.ROOT,
     portClass:  CLASS.PORT,
   } }

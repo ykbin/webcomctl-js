@@ -1,21 +1,14 @@
 import { BaseControl, Random } from 'webnetq-js';
+import { NAME, HTML, CLASS, CSS } from './template.mjs';
 
-const CLASS = {
-  ROOT: "uic-csupl-root",
-  LOAD: "uic-csupl-load",
+export const template = {
+  NAME, HTML, CLASS, CSS,
 };
-
-const _rootHTML = `
-<div class="${CLASS.ROOT}">
-  <span></span>
-  <label class="notranslate" translate="no">Upload</label>
-</div>
-`;
 
 export default class UICntSmUploadButtonControl  extends BaseControl {
   static get template() { return {
-    name: 'CntSmUploadButton',
-    rootHTML: _rootHTML,
+    name: NAME,
+    rootHTML: HTML,
     rootClass:  CLASS.ROOT,
   } }
 

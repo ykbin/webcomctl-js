@@ -1,18 +1,31 @@
+export const NAME = 'HdrHexLogo';
+
+export const CLASS = {
+  ROOT: "uic-hdrhex-root",
+};
+
+export const HTML = `
+<div class="${CLASS.ROOT}">
+  <h3></h3>
+  <h2></h2>
+</div>
+`;
+
+export const CSS = `
 :root
 {
-  /*light*/
-  --com-hdrhex-fimg: url(favicon1.svg);
+  --uic-hdrhex-fimg: url(favicon1.svg);
   --uic-hdrhex-himg: url(header1.svg);
 }
 
 [data-theme="dark"]
 {
-  --com-hdrhex-fimg: url(favicon2.svg);
+  --uic-hdrhex-fimg: url(favicon2.svg);
   --uic-hdrhex-himg: url(header2.svg);
 }
 
-.uic-hdrhex-root h2,
-.uic-hdrhex-root h3
+.${CLASS.ROOT} h2,
+.${CLASS.ROOT} h3
 {
   margin: 0px;
   padding: 0px;
@@ -20,25 +33,25 @@
   font-weight: 400;
 }
 
-.uic-hdrhex-root
+.${CLASS.ROOT}
 {
   display: flex;
   height: 33px;
 }
 
-.uic-hdrhex-root > h3
+.${CLASS.ROOT} > h3
 {
   height: 100%;
   width: 56px;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-  background-image: var(--com-hdrhex-fimg);
+  background-image: var(--uic-hdrhex-fimg);
   margin-right: 7px;
   flex-shrink: 0;
 }
 
-.uic-hdrhex-root > h2
+.${CLASS.ROOT} > h2
 {
   height: 100%;
   width: 106px;
@@ -53,18 +66,18 @@
 
 @media (device-width < 550px)
 {
-  .uic-hdrhex-root
+  .${CLASS.ROOT}
   {
     height: 130px;
   }
-  .uic-hdrhex-root > h3
+  .${CLASS.ROOT} > h3
   {
     display: none;
   }
-  .uic-hdrhex-root > h2
+  .${CLASS.ROOT} > h2
   {
     width: 280px;
     background-size: 360px;
   }
 }
-
+`;

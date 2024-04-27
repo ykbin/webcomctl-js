@@ -1,18 +1,14 @@
 import { BaseControl } from 'webnetq-js';
+import { NAME, HTML, CLASS, CSS } from './template.mjs';
 
-const CLASS = {
-  ROOT: "uic-lftblk-root",
-  PORT: "uic-lftblk-port",
+export const template = {
+  NAME, HTML, CLASS, CSS,
 };
-
-const _rootHTML = `
-<div class="${CLASS.ROOT} ${CLASS.PORT}"></div>
-`;
 
 export default class UILeftBlockControl extends BaseControl {
   static get template() { return {
-    name: 'LeftBlock',
-    rootHTML: _rootHTML,
+    name: NAME,
+    rootHTML: HTML,
     rootClass:  CLASS.ROOT,
     portClass:  CLASS.PORT,
   } }

@@ -1,15 +1,9 @@
 import { BaseControl, NQDOM, Setting } from 'webnetq-js';
+import { NAME, HTML, CLASS, CSS } from './template.mjs';
 
-const CLASS = {
-  ROOT: "uic-dmbtn-root",
-  TOGGLE: "uic-dmbtn-toggle",
+export const template = {
+  NAME, HTML, CLASS, CSS,
 };
-
-const _rootHTML = `
-<div class="${CLASS.ROOT}">
-  <span class="${CLASS.TOGGLE}"></span>
-</div>
-`;
 
 const kDarkModeTip = "Toggle dark mode";
 const kLightModeTip = "Toggle light mode";
@@ -22,8 +16,8 @@ if (hasDocument && document.documentElement) {
 
 export default class UIDMBtnControl extends BaseControl {
   static get template() { return {
-    name: 'DMBtn',
-    rootHTML: _rootHTML,
+    name: NAME,
+    rootHTML: HTML,
     rootClass:  CLASS.ROOT,
   } }
 

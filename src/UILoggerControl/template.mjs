@@ -1,3 +1,21 @@
+export const NAME = 'Logger';
+
+export const CLASS = {
+  ROOT: 'uic-logger-root',
+  CLOSE: 'uic-logger-close',
+  TITLE: 'uic-logger-title',
+  TEXT: 'uic-logger-text',
+  INFO: 'uic-logger-lvlinfo',
+  SUCCESS: 'uic-logger-lvlsuccess',
+  WARNING: 'uic-logger-lvlwarn',
+  ERROR: 'uic-logger-lvlerror',
+};
+
+export const HTML = `
+<div class="${CLASS.ROOT}"></div>
+`;
+
+export const CSS = `
 :root
 {
   --uic-logger-root-bor: #00000045;
@@ -294,3 +312,4 @@
 {
   background-color: var(--uic-logger-root-x-info);
 }
+`;

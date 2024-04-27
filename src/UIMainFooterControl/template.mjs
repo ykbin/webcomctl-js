@@ -1,3 +1,32 @@
+export const NAME = 'MainFooter';
+
+export const CLASS = {
+  ROOT: 'uic-mfooter-root',
+  LIST: 'uic-mfooter-list',
+  VERSION: 'uic-mfooter-version',
+};
+
+export const HTML = `
+<footer class="${CLASS.ROOT}">
+  <div class="${CLASS.LIST}">
+    <div>
+      <span class="notranslate" translate="no">UTILSPOT</span>
+      <div>We create websites with inspiration</div>
+    </div>
+    <div>
+      <span>Our catalog</span>
+      <a href="\${ENV:HOST_URL}" class="notranslate" draggable="false" translate="no">\${ENV:HOST}</a>
+    </div>
+    <div>
+      <span>Contact us</span>
+      <div class="notranslate" translate="no"><address>\${ENV:EMAIL}</address></div>
+    </div>
+  </div>
+  <i class="${CLASS.VERSION} notranslate" translate="no">Version<span>\${ENV:VERSION}</span></i>
+</footer>
+`;
+
+export const CSS = `
 :root
 {
   --uic-mfooter-root-bg: #fdfdfd;
@@ -6,7 +35,7 @@
   /*light*/
   --uic-mfooter-root-bg: #fbfbfb;
   --uic-mfooter-root-border: #aab9cb;
-  --uic-mfooter-list: #4e4e4e;
+  --uic-mfooter-clr: #4e4e4e;
   --footer-linkbl: #878787;
 }
 
@@ -14,22 +43,22 @@
 {
   --uic-mfooter-root-bg: #292929;
   --uic-mfooter-root-border: #aab9cb8c;
-  --uic-mfooter-list: #8b8b8b;
+  --uic-mfooter-clr: #8b8b8b;
   --uic-mfooter-root-bg: #2e2e2e;
 }
 
-.uic-mfooter-root *
+.${CLASS.ROOT} *
 {
   box-sizing: border-box;
 }
 
-.uic-mfooter-root a.uic-mfooter-linkbl
+.${CLASS.ROOT} a.uic-mfooter-linkbl
 {
   pointer-events: none;
   color: var(--footer-linkbl);
 }
 
-.uic-mfooter-root
+.${CLASS.ROOT}
 {
   flex-shrink: 0;
   display: grid;
@@ -42,38 +71,36 @@
   background-color: var(--uic-mfooter-root-bg);
 }
 
-.uic-mfooter-list
+.${CLASS.LIST}
 {
   display: grid;
   grid-template-columns: minmax(auto,auto) minmax(auto,auto) minmax(auto,auto);
   justify-content: center;
   grid-gap: 7%;
   margin-bottom: 10px;
-  font-family: "Roboto","Oxygen","Ubuntu",
-               "Cantarell","Fira Sans","Droid Sans",
-               "Helvetica Neue",sans-serif;
+  font-family: "Roboto","Oxygen","Ubuntu", "Cantarell","Fira Sans","Droid Sans", "Helvetica Neue",sans-serif;
 }
 
-.uic-mfooter-list > div
+.${CLASS.LIST} > div
 {
   font-size: 18px;
   text-align: center;
 }
 
-.uic-mfooter-list > div span
+.${CLASS.LIST} > div span
 {
   display: block;
   margin-bottom: 5px;
 }
 
-.uic-mfooter-list > div > div
+.${CLASS.LIST} > div > div
 {
   display: block;
-  color: var(--uic-mfooter-list);
+  color: var(--uic-mfooter-clr);
   font-size: 16px;
 }
 
-.uic-mfooter-version
+.${CLASS.VERSION}
 {
   display: flex;
   align-items: flex-end;
@@ -86,12 +113,12 @@
   box-sizing: border-box;
 }
 
-.uic-mfooter-version > span
+.${CLASS.VERSION} > span
 {
   margin-left: 5px;
 }
 
-.uic-mfooter-root a
+.${CLASS.ROOT} a
 {
   display: block;
   color: var(--uic-mfooter-root-us);
@@ -102,40 +129,40 @@
 
 @media (device-width < 550px)
 {
-  .uic-mfooter-root
+  .${CLASS.ROOT}
   {
     grid-template-columns: 1fr 150px;
     justify-content: start;
     height: 250px;
   }
-  .uic-mfooter-list
+  .${CLASS.LIST}
   {
     grid-template-columns: minmax(auto,auto) minmax(auto,auto);
   }
-  .uic-mfooter-list > div:nth-child(3)
+  .${CLASS.LIST} > div:nth-child(3)
   {
     grid-column: 1/3;
     justify-self: center;
   }
-  .uic-mfooter-list > div > span
+  .${CLASS.LIST} > div > span
   {
     text-align: center;
     font-size: 33px;
   }
-  .uic-mfooter-root a 
+  .${CLASS.ROOT} a 
   {
     font-size: 30px;
   }
-  .uic-mfooter-list > div
+  .${CLASS.LIST} > div
   {
     font-size: 25px;
   }
-  .uic-mfooter-list > div > div
+  .${CLASS.LIST} > div > div
   {
     font-size: 28px;
   }
-  .uic-mfooter-root address,
-  .uic-mfooter-version
+  .${CLASS.ROOT} address,
+  .${CLASS.VERSION}
   {
     font-size: 30px;
   }
@@ -143,8 +170,9 @@
 
 @media (device-width <= 300px)
 {
-  .uic-mfooter-root
+  .${CLASS.ROOT}
   {
     height: 250px;
   }
 }
+`;

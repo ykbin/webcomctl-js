@@ -1,20 +1,14 @@
 import { BaseControl } from 'webnetq-js';
+import { NAME, HTML, CLASS, CSS } from './template.mjs';
 
-const CLASS = {
-  ROOT: "uic-swtch-root",
-  PORT: "uic-swtch-port",
-  NTH1: 'uic-swtch-nth1',
-  NTH2: 'uic-swtch-nth2',
+export const template = {
+  NAME, HTML, CLASS, CSS,
 };
-
-const _rootHTML = `
-<div class="${CLASS.ROOT} ${CLASS.PORT} ${CLASS.NTH1}"></div>
-`;
 
 export default class UISwitchBlockControl  extends BaseControl {
   static get template() { return {
-    name: 'SwitchBlock',
-    rootHTML: _rootHTML,
+    name: NAME,
+    rootHTML: HTML,
     rootClass:  CLASS.ROOT,
     portClass:  CLASS.PORT,
   } }

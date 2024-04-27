@@ -1,3 +1,17 @@
+export const NAME = 'HdrHomeButton';
+
+export const CLASS = {
+  ROOT: "uic-hdrhm-root",
+};
+
+export const HTML = `
+<a class="${CLASS.ROOT}" href="\${ENV:HOST_URL}" draggable="false">
+  <div></div>
+  <span class="notranslate" translate="no">Home</span>
+</a>
+`;
+
+export const CSS = `
 :root
 {
   --uic-hdrhm-home: url(home_default.svg);
@@ -8,7 +22,7 @@
   --uic-hdrhm-bdr: transparent;
 }
 
-.uic-hdrhm-root
+.${CLASS.ROOT}
 {
   display: flex;
   align-items: center;
@@ -23,7 +37,7 @@
   font-family: serif;
 }
 
-.uic-hdrhm-root:hover
+.${CLASS.ROOT}:hover
 {
   color: var(--uic-hdrhm-hclr);
   background-color: var(--uic-hdrhm-gr);
@@ -31,12 +45,12 @@
   transition: background-color 0.2s;
 }
 
-.uic-hdrhm-root:hover > div
+.${CLASS.ROOT}:hover > div
 {
   background-image: var(--uic-hdrhm-himg);
 }
 
-.uic-hdrhm-root > div
+.${CLASS.ROOT} > div
 {
   width: 40px;
   height: 30px;
@@ -49,7 +63,7 @@
   box-sizing: border-box;
 }
 
-.uic-hdrhm-root > span
+.${CLASS.ROOT} > span
 {
   display: flex;
   align-items: center;
@@ -60,13 +74,14 @@
 
 @media (device-width < 550px)
 {
-  .uic-hdrhm-root > div
+  .${CLASS.ROOT} > div
   {
     width: 60px;
     height: 55px;
   }
-  .uic-hdrhm-root > span
+  .${CLASS.ROOT} > span
   {
     font-size: 60px;
   }
 }
+`;

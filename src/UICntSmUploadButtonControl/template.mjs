@@ -1,6 +1,21 @@
+export const NAME = 'CntSmUploadButton';
+
+export const CLASS = {
+  ROOT: "uic-csupl-root",
+  LOAD: "uic-csupl-load",
+};
+
+export const HTML = `
+<div class="${CLASS.ROOT}">
+  <span></span>
+  <label class="notranslate" translate="no">Upload</label>
+</div>
+`;
+
+export const CSS = `
 :root
 {
-  --uic-csupl-load: url(load.svg);
+  --uic-csupl-limg: url(load.svg);
   --uic-csupl-clr: #c50000;
   --uic-csupl-brd: #c50000;
   --uic-csupl-ldclr: #c5000078;
@@ -16,12 +31,12 @@
   --uic-csupl-hbg: #ba8f8f29;
 }
 
-.uic-csupl-root input
+.${CLASS.ROOT} input
 {
    display: none;
 }
 
-.uic-csupl-root
+.${CLASS.ROOT}
 {
   display: flex;
   align-items: center;
@@ -33,7 +48,7 @@
   float: right;
 }
 
-.uic-csupl-root
+.${CLASS.ROOT}
 {
   background-color: var(--uic-csupl-dbg);
   color: var(--uic-csupl-clr);
@@ -41,12 +56,12 @@
   cursor: pointer;
 }
 
-.uic-csupl-root:hover 
+.${CLASS.ROOT}:hover 
 {
   background-color: var(--uic-csupl-hbg);
 }
 
-.uic-csupl-root > label
+.${CLASS.ROOT} > label
 {
   display: grid;
   justify-content: center;
@@ -57,7 +72,7 @@
   flex-shrink: 0;
 }
 
-.uic-csupl-load
+.${CLASS.LOAD}
 {
   background-color: var(--uic-csupl-hbg);
   color: var(--uic-csupl-ldclr);
@@ -66,14 +81,14 @@
   pointer-events: none;
 }
 
-.uic-csupl-load > span
+.${CLASS.LOAD} > span
 {
   position: relative;
   left: 39%;
   display: block;
   width: 33px;
   height: 100%;
-  background-image: var(--uic-csupl-load);
+  background-image: var(--uic-csupl-limg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -81,7 +96,7 @@
   flex-shrink: 0;
 }
 
-.uic-csupl-load label
+.${CLASS.LOAD} label
 {
   position: relative;
   right: 33px;
@@ -89,7 +104,7 @@
 
 @media (device-width < 550px)
 {
-  .uic-csupl-root
+  .${CLASS.ROOT}
   {
     width: 280px;
     height: 64px;
@@ -97,12 +112,13 @@
     font-size: 48px;
     margin-top: 10px;
   }
-  .uic-csupl-load span
+  .${CLASS.LOAD} span
   {
     width: 66px;
   }
-  .uic-csupl-load label
+  .${CLASS.LOAD} label
   {
     right: 66px;
   }
 }
+`;

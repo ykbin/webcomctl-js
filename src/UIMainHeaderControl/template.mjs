@@ -1,3 +1,15 @@
+export const NAME = 'MainHeader';
+
+export const CLASS = {
+  ROOT: "uic-mhdr-root",
+  PORT: "uic-mhdr-port",
+};
+
+export const HTML = `
+<header class="${CLASS.ROOT} ${CLASS.PORT}" draggable="false"></header>
+`;
+
+export const CSS = `
 :root
 {
   /*light*/
@@ -15,7 +27,7 @@
   --uic-mhdr-bs2: rgb(23 23 26 / 60%);
 }
 
-.uic-mhdr-root
+.${CLASS.ROOT}
 {
   position: relative;
   display: flex;
@@ -33,8 +45,9 @@
 
 @media (device-width < 550px)
 {
-  .uic-mhdr-root
+  .${CLASS.ROOT}
   {
     height: 130px;
   }
 }
+`;

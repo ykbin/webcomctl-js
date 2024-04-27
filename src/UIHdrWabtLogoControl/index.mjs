@@ -1,20 +1,14 @@
 import { BaseControl } from 'webnetq-js';
+import { NAME, HTML, CLASS, CSS } from './template.mjs';
 
-const CLASS = {
-  ROOT: "uic-hdrwabt-root",
+export const template = {
+  NAME, HTML, CLASS, CSS,
 };
-
-const _rootHTML = `
-<div class="${CLASS.ROOT}">
-  <h3></h3>
-  <h2></h2>
-</div>
-`;
 
 export default class UIHdrWabtLogoControl extends BaseControl {
   static get template() { return {
-    name: 'HdrWabtLogo',
-    rootHTML: _rootHTML,
+    name: NAME,
+    rootHTML: HTML,
     rootClass:  CLASS.ROOT,
   } }
 
