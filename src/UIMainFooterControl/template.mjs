@@ -29,7 +29,6 @@ export const HTML = `
 export const CSS = `
 :root
 {
-  --uic-mfooter-root-bg: #fdfdfd;
   --uic-mfooter-root-us: #5063b1;
   --uic-mfooter-version: #878787;
   /*light*/
@@ -41,7 +40,6 @@ export const CSS = `
 
 [data-theme="dark"]
 {
-  --uic-mfooter-root-bg: #292929;
   --uic-mfooter-root-border: #aab9cb8c;
   --uic-mfooter-clr: #8b8b8b;
   --uic-mfooter-root-bg: #2e2e2e;
