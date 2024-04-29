@@ -15,5 +15,6 @@ export { default as UIHdrWsckLogoControl } from './UIHdrWsckLogoControl/index.mj
 export { default as UIHdrHexLogoControl } from './UIHdrHexLogoControl/index.mjs';
 export { default as UIHdrCntLogoControl } from './UIHdrCntLogoControl/index.mjs';
 export { default as UIHdrImgLogoControl } from './UIHdrImgLogoControl/index.mjs';
+export { default as UIHdrDbcLogoControl } from './UIHdrDbcLogoControl/index.mjs';
 export { default as UILeftBlockControl } from './UILeftBlockControl/index.mjs';
 export { default as UIRightBlockControl } from './UIRightBlockControl/index.mjs';
