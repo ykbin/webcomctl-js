@@ -76,7 +76,7 @@ export const CSS = `
   }
   .${CLASS.ROOT} > h2
   {
-    width: 280px;
+    width: 210px;
     background-size: 360px;
   }
 }

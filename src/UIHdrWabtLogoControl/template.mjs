@@ -85,7 +85,7 @@ export const CSS = `
   }
   .${CLASS.ROOT} > h2
   {
-    width: 185px;
+    width: 170px;
     background-size: 425px;
   }
   .${CLASS.ROOT} > h3

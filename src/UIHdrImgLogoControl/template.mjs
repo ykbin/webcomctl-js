@@ -75,7 +75,7 @@ export const CSS = `
   }
   .${CLASS.ROOT} > h2
   {
-    width: 280px;
+    width: 270px;
   }
 }
 `;
