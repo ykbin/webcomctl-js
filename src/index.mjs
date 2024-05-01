@@ -1,5 +1,6 @@
 export { default as UILoggerControl } from './UILoggerControl/index.mjs';
 export { default as UILoadingControl } from './UILoadingControl/index.mjs';
+export { default as UIDropFileControl } from './UIDropFileControl/index.mjs';
 export { default as UIStartupUploadControl } from './UIStartupUploadControl/index.mjs';
 export { default as UICntSmUploadButtonControl } from './UICntSmUploadButtonControl/index.mjs';
 export { default as UIMainHeaderControl } from './UIMainHeaderControl/index.mjs';
