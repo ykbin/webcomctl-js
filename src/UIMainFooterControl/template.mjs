@@ -4,25 +4,27 @@ export const CLASS = {
   ROOT: 'uic-mfooter-root',
   LIST: 'uic-mfooter-list',
   VERSION: 'uic-mfooter-version',
+  LINK_ON: 'uic-mfooter-lnon',
+  LINK_OFF: 'uic-mfooter-lnoff',
 };
 
 export const HTML = `
-<footer class="${CLASS.ROOT}">
+<footer class="${CLASS.ROOT} notranslate" translate="no">
   <div class="${CLASS.LIST}">
     <div>
-      <span class="notranslate" translate="no">UTILSPOT</span>
+      <span>UTILSPOT</span>
       <div>We create websites with inspiration</div>
     </div>
     <div>
       <span>Our catalog</span>
-      <a href="\${ENV:HOST_URL}" class="notranslate" draggable="false" translate="no">\${ENV:HOST}</a>
+      <a class="${CLASS.LINK_ON}" href="\${ENV:HOST_URL}" draggable="false">\${ENV:HOST}</a>
     </div>
     <div>
       <span>Contact us</span>
-      <div class="notranslate" translate="no"><address>\${ENV:EMAIL}</address></div>
+      <div><address>\${ENV:EMAIL}</address></div>
     </div>
   </div>
-  <i class="${CLASS.VERSION} notranslate" translate="no">Version<span>\${ENV:VERSION}</span></i>
+  <i class="${CLASS.VERSION}">Version<span>\${ENV:VERSION}</span></i>
 </footer>
 `;
 
@@ -50,7 +52,7 @@ export const CSS = `
   box-sizing: border-box;
 }
 
-.${CLASS.ROOT} a.uic-mfooter-linkbl
+.${CLASS.ROOT} a.${CLASS.LINK_OFF}
 {
   pointer-events: none;
   color: var(--footer-linkbl);

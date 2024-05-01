@@ -5,6 +5,19 @@ export const template = {
   NAME, HTML, CLASS, CSS,
 };
 
+function isLocationEqual(href) {
+  if (typeof document === 'object') {
+    const currHref = document.location.href;
+    if (currHref === href) {
+      return true;
+    }
+    if (!href.endsWith('/')) {
+      return currHref === (href + '/');
+    }
+  }
+  return false;
+}
+
 export default class UIMainFooterControl extends BaseControl {
   static get template() { return {
     name: NAME,
@@ -14,5 +27,10 @@ export default class UIMainFooterControl extends BaseControl {
 
   constructor(element) {
     super(element);
+    const linkElm = element.querySelector(`a.${CLASS.LINK_ON}`);
+    if (linkElm && isLocationEqual(linkElm.href)) {
+      linkElm.classList.remove(CLASS.LINK_ON);
+      linkElm.classList.add(CLASS.LINK_OFF);
+    }
   }
 };
