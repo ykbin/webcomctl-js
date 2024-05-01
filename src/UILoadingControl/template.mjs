@@ -1,5 +1,10 @@
 export const NAME = 'Loading';
 
+const VAR = {
+  BGROUND_COLOR: '#1e1e1e91',
+  IMAGE_FILE: 'file-upload.svg',
+};
+
 export const CLASS = {
   ROOT: 'uic-loading-root',
   SHOW: 'uic-loading-show',
@@ -12,12 +17,6 @@ export const HTML = `
 `;
 
 export const CSS = `
-:root
-{
-  --uic-loading-bg: #1e1e1e91;
-  --uic-loading-img: url(file-upload.svg);
-}
-
 .${CLASS.ROOT}
 {
   display: none;
@@ -30,7 +29,7 @@ export const CSS = `
   bottom: 0;
   z-index: 100;
   min-height: 555px;
-  background-color: var(--uic-loading-bg);
+  background-color: ${VAR.BGROUND_COLOR};
 }
 
 .${CLASS.SHOW}
@@ -44,7 +43,7 @@ export const CSS = `
 {
   width: 160px;
   height: 160px;
-  background-image: var(--uic-loading-img);
+  background-image: url(${VAR.IMAGE_FILE});
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
