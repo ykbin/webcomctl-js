@@ -1,8 +1,6 @@
-export default {
-  Desktop: {
+export const Desktop = {
+};
 
-  },
-  Mobile: {
-    deviceWidth: '550px',
-  },
+export const Mobile = {
+  deviceWidth: '550px',
 };
