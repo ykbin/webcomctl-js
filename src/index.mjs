@@ -19,3 +19,4 @@ export { default as UIHdrImgLogoControl } from './UIHdrImgLogoControl/index.mjs'
 export { default as UIHdrDbcLogoControl } from './UIHdrDbcLogoControl/index.mjs';
 export { default as UILeftBlockControl } from './UILeftBlockControl/index.mjs';
 export { default as UIRightBlockControl } from './UIRightBlockControl/index.mjs';
+export { default as UIHorizontalBlockControl } from './UIHorizontalBlockControl/index.mjs';
