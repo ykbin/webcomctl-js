@@ -1,3 +1,5 @@
+import { Mobile } from '../lib/Settings.mjs';
+
 export const NAME = 'DMBtn';
 
 export const CLASS = {
@@ -55,7 +57,7 @@ export const CSS = `
   box-sizing: border-box;
 }
 
-@media (device-width < 550px)
+@media (device-width < ${Mobile.deviceWidth})
 {
   .${CLASS.ROOT}
   {

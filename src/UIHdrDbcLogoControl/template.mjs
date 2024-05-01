@@ -1,3 +1,5 @@
+import { Mobile } from '../lib/Settings.mjs';
+
 export const NAME = 'HdrDbcLogo';
 
 export const CLASS = {
@@ -64,7 +66,7 @@ export const CSS = `
   flex-shrink: 0;
 }
 
-@media (device-width < 550px)
+@media (device-width < ${Mobile.deviceWidth})
 {
   .${CLASS.ROOT}
   {

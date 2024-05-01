@@ -1,3 +1,5 @@
+import { Mobile } from '../lib/Settings.mjs';
+
 export const NAME = 'CntSmUploadButton';
 
 export const CLASS = {
@@ -102,7 +104,7 @@ export const CSS = `
   right: 33px;
 }
 
-@media (device-width < 550px)
+@media (device-width < ${Mobile.deviceWidth})
 {
   .${CLASS.ROOT}
   {

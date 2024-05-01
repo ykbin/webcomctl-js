@@ -1,3 +1,5 @@
+import { Mobile } from '../lib/Settings.mjs';
+
 export const NAME = 'HdrCntLogo';
 
 export const CLASS = {
@@ -14,7 +16,6 @@ export const HTML = `
 export const CSS = `
 :root
 {
-  /*light*/
   --uic-hdrcnt-fimg: url(favicon1.svg);
   --uic-hdrcnt-himg: url(header1.svg);
 }
@@ -65,7 +66,7 @@ export const CSS = `
   flex-shrink: 0;
 }
 
-@media (device-width < 550px)
+@media (device-width < ${Mobile.deviceWidth})
 {
   .${CLASS.ROOT}
   {
