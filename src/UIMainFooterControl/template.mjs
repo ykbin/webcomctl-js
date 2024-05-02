@@ -1,4 +1,11 @@
+import { Mobile } from '../lib/Settings.mjs';
+
 export const NAME = 'MainFooter';
+
+const VAR = {
+  LINK_COLOR: '#5063b1',
+  VERSION_COLOR: '#878787',
+};
 
 export const CLASS = {
   ROOT: 'uic-mfooter-root',
@@ -31,9 +38,7 @@ export const HTML = `
 export const CSS = `
 :root
 {
-  --uic-mfooter-root-us: #5063b1;
-  --uic-mfooter-version: #878787;
-  /*light*/
+  --uic-mfooter-col: black;
   --uic-mfooter-root-bg: #fbfbfb;
   --uic-mfooter-root-border: #aab9cb;
   --uic-mfooter-clr: #4e4e4e;
@@ -42,6 +47,8 @@ export const CSS = `
 
 [data-theme="dark"]
 {
+  --uic-mfooter-col: white;
+  --uic-mfooter-root-bg: #292929;
   --uic-mfooter-root-border: #aab9cb8c;
   --uic-mfooter-clr: #8b8b8b;
   --uic-mfooter-root-bg: #2e2e2e;
@@ -68,7 +75,9 @@ export const CSS = `
   padding: 15px 15px 0px 15px;
   box-sizing: border-box;
   border-top: 1px solid var(--uic-mfooter-root-border);
+  color: var(--uic-mfooter-col);
   background-color: var(--uic-mfooter-root-bg);
+  font-family: Helvetica, Arial, sans-serif;
 }
 
 .${CLASS.LIST}
@@ -109,7 +118,7 @@ export const CSS = `
   padding: 0px 5px 5px 0px;
   font-family: Helvetica,Arial,sans-serif;
   font-size: 14px;
-  color: var(--uic-mfooter-version);
+  color: ${VAR.VERSION_COLOR};
   box-sizing: border-box;
 }
 
@@ -121,13 +130,13 @@ export const CSS = `
 .${CLASS.ROOT} a
 {
   display: block;
-  color: var(--uic-mfooter-root-us);
+  color: ${VAR.LINK_COLOR};
   font-size: 16px;
   cursor: pointer;
   text-decoration: none;
 }
 
-@media (device-width < 550px)
+@media (device-width < ${Mobile.deviceWidth})
 {
   .${CLASS.ROOT}
   {
