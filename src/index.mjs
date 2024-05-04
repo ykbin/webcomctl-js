@@ -22,3 +22,4 @@ export { default as UIRightBlockControl } from './UIRightBlockControl/index.mjs'
 export { default as UIHorizontalBlockControl } from './UIHorizontalBlockControl/index.mjs';
 export { default as UIDropBlockControl } from './UIDropBlockControl/index.mjs';
 export { default as UIDragDropToViewControl } from './UIDragDropToViewControl/index.mjs';
+export { default as UIMainBlockControl } from './UIMainBlockControl/index.mjs';
