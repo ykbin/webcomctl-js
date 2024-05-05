@@ -24,3 +24,4 @@ export { default as UIDropBlockControl } from './UIDropBlockControl/index.mjs';
 export { default as UIDragDropToViewControl } from './UIDragDropToViewControl/index.mjs';
 export { default as UIMainBlockControl } from './UIMainBlockControl/index.mjs';
 export { default as UIPageTabControl } from './UIPageTabControl/index.mjs';
+export { default as UIPagePanelControl } from './UIPagePanelControl/index.mjs';

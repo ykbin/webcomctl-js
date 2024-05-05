@@ -1,0 +1,37 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+
+<svg xmlns="http://www.w3.org/2000/svg" 
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    width="387pt"
+    height="376.056pt"
+    viewBox="0 0 387 376.056">
+<defs/>
+
+<path id="shape0"
+  transform="translate(27.4999993452364, 245.249998824889)"
+  fill="none" stroke="#747474"
+  stroke-width="47"
+  stroke-linecap="square"
+  stroke-linejoin="miter"
+  stroke-miterlimit="2.016"
+  d="M0 0L0.904119 94.5306L329.087 95.2377L328.471 0.131813"/>
+
+<path id="shape1"
+  transform="translate(92.7508352558762, 167.246524592995)"
+  fill="none"
+  stroke="#747474"
+  stroke-width="40"
+  stroke-linecap="square"
+  stroke-linejoin="round"
+  d="M0 0L100.763 107.127L196.576 0.353553"/>
+
+<path id="shape2"
+  transform="translate(191.750005221183, 26.2500019754854)"
+  fill="none"
+  stroke="#747474"
+  stroke-width="42"
+  stroke-linecap="square"
+  stroke-linejoin="bevel"
+  d="M0 0L1.23321 215.42"/>
+</svg>
