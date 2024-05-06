@@ -1,4 +1,14 @@
+import { HEADER_MOBILE_DEVICE_WIDTH } from '../lib/WickedTheme.mjs';
+import { HEADER_FONT_SIZE } from '../lib/WickedTheme.mjs';
+import { HEADER_FONT_COLOR } from '../lib/WickedTheme.mjs';
+import { HEADER_FONT_FAMILY } from '../lib/WickedTheme.mjs';
+import { HEADER_BACKGROUND_COLOR } from '../lib/WickedTheme.mjs';
+import { HEADER_COLOR_HOVER } from '../lib/WickedTheme.mjs';
+
 export const NAME = 'HdrUploadButton';
+
+const IMAGE_DEFAULT = 'url(search_default.svg)';
+const IMAGE_HOVER = 'url(search_hover.svg)';
 
 export const CLASS = {
   ROOT: "uic-hdrupl-root",
@@ -13,15 +23,6 @@ export const HTML = `
 `;
 
 export const CSS = `
-:root
-{
-  --uic-hdrupl-dimg: url(search_default.svg);
-  --uic-hdrupl-himg: url(search_hover.svg);
-  --uic-hdrupl-dclr: #6a6a6a;
-  --uic-hdrupl-hclr: black;
-  --uic-hdrupl-bg: #dddddd40;
-}
-
 .${CLASS.ROOT} > input
 {
   display: none;
@@ -40,12 +41,12 @@ export const CSS = `
   height: min-content;
   margin: 0px 5px;
   padding: 0px 5px;
-  color: var(--uic-hdrupl-dclr);
-  font-size: 28px;
+  color: ${HEADER_FONT_COLOR};
+  font-size: ${HEADER_FONT_SIZE};
   cursor: pointer;
   user-select: none;
   box-sizing: border-box;
-  font-family: serif;
+  font-family: ${HEADER_FONT_FAMILY};
 }
 
 .${CLASS.ROOT} > span
@@ -54,7 +55,7 @@ export const CSS = `
   width: 30px;
   height: 25px;
   margin-right: 10px;
-  background-image: var(--uic-hdrupl-dimg);
+  background-image: ${IMAGE_DEFAULT};
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -62,18 +63,18 @@ export const CSS = `
 
 .${CLASS.ROOT}:hover 
 {
-  color: var(--uic-hdrupl-hclr);
-  background-color: var(--uic-hdrupl-bg);
-  border-radius: 5px;
+  color: ${HEADER_COLOR_HOVER};
+  background-color: ${HEADER_BACKGROUND_COLOR};
+  border-radius: ${HEADER_BORDER_RADIUS_HOVER};
   transition: background-color 0.2s;
 }
 
 .${CLASS.ROOT}:hover span 
 {
-  background-image: var(--uic-hdrupl-himg);
+  background-image: ${IMAGE_HOVER};
 }
 
-@media (device-width < 550px)
+@media (device-width < ${HEADER_MOBILE_DEVICE_WIDTH})
 {
   .${CLASS.ROOT} > span
   {

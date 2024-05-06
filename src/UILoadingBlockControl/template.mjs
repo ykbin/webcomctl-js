@@ -19,7 +19,7 @@ export const HTML = `
 `;
 
 export const CSS = `
-.${CLASS.UNLOAD} s
+.${CLASS.UNLOAD} > s
 {
   text-decoration: none;
 }

@@ -1,4 +1,4 @@
-import { Mobile } from '../lib/Settings.mjs';
+import { HEADER_MOBILE_DEVICE_WIDTH } from '../lib/WickedTheme.mjs';
 
 export const NAME = 'HdrCntLogo';
 
@@ -66,7 +66,7 @@ export const CSS = `
   flex-shrink: 0;
 }
 
-@media (device-width < ${Mobile.deviceWidth})
+@media (device-width < ${HEADER_MOBILE_DEVICE_WIDTH})
 {
   .${CLASS.ROOT}
   {

@@ -1,3 +1,5 @@
+import { HEADER_MOBILE_DEVICE_WIDTH } from '../lib/WickedTheme.mjs';
+
 export const NAME = 'HdrImgLogo';
 
 export const CLASS = {
@@ -63,7 +65,7 @@ export const CSS = `
   flex-shrink: 0;
 }
 
-@media (device-width < 550px)
+@media (device-width < ${HEADER_MOBILE_DEVICE_WIDTH})
 {
   .${CLASS.ROOT}
   {

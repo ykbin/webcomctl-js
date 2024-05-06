@@ -1,4 +1,5 @@
-import { Mobile } from '../lib/Settings.mjs';
+import { HEADER_MOBILE_DEVICE_WIDTH } from '../lib/WickedTheme.mjs';
+import { HEADER_FONT_COLOR } from '../lib/WickedTheme.mjs';
 
 export const NAME = 'DMBtn';
 
@@ -16,9 +17,6 @@ export const HTML = `
 export const CSS = `
 :root
 {
-  --uic-dmbtn-bor: #6a6a6a;
-  --uic-dmbtn-bor2: transparent;
-  /*light*/
   --uic-dmbtn-img: url(moon.svg);
   --uic-dmbtn-bg: #7b7b7b21;
 }
@@ -35,7 +33,7 @@ export const CSS = `
   height: 28px;
   width: 28px;
   border-radius: 50%;
-  border: 1px solid var(--uic-dmbtn-bor);
+  border: 1px solid ${HEADER_FONT_COLOR};
   box-sizing: border-box;
 }
 
@@ -50,14 +48,14 @@ export const CSS = `
   display: block;
   height: 100%;
   width: 100%;
-  border: 3px solid var(--uic-dmbtn-bor2);
+  border: 3px solid ${HEADER_FONT_COLOR};
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
   box-sizing: border-box;
 }
 
-@media (device-width < ${Mobile.deviceWidth})
+@media (device-width < ${HEADER_MOBILE_DEVICE_WIDTH})
 {
   .${CLASS.ROOT}
   {

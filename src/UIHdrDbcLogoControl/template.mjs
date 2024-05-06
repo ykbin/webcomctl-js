@@ -1,4 +1,4 @@
-import { Mobile } from '../lib/Settings.mjs';
+import { HEADER_MOBILE_DEVICE_WIDTH } from '../lib/WickedTheme.mjs';
 
 export const NAME = 'HdrDbcLogo';
 
@@ -16,7 +16,6 @@ export const HTML = `
 export const CSS = `
 :root
 {
-  /*light*/
   --uic-hdrdbc-fimg: url(favicon1.svg);
   --uic-hdrdbc-himg: url(header1.svg);
 }
@@ -66,7 +65,7 @@ export const CSS = `
   flex-shrink: 0;
 }
 
-@media (device-width < ${Mobile.deviceWidth})
+@media (device-width < ${HEADER_MOBILE_DEVICE_WIDTH})
 {
   .${CLASS.ROOT}
   {

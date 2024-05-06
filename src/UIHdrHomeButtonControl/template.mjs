@@ -1,4 +1,15 @@
+import { HEADER_MOBILE_DEVICE_WIDTH } from '../lib/WickedTheme.mjs';
+import { HEADER_FONT_SIZE } from '../lib/WickedTheme.mjs';
+import { HEADER_FONT_COLOR } from '../lib/WickedTheme.mjs';
+import { HEADER_FONT_FAMILY } from '../lib/WickedTheme.mjs';
+import { HEADER_BACKGROUND_COLOR } from '../lib/WickedTheme.mjs';
+import { HEADER_BORDER_RADIUS_HOVER } from '../lib/WickedTheme.mjs';
+import { HEADER_COLOR_HOVER } from '../lib/WickedTheme.mjs';
+
 export const NAME = 'HdrHomeButton';
+
+const IMAGE_DEFAULT = 'url(home_default.svg)';
+const IMAGE_HOVER = 'url(home_hover.svg)';
 
 export const CLASS = {
   ROOT: "uic-hdrhm-root",
@@ -12,53 +23,43 @@ export const HTML = `
 `;
 
 export const CSS = `
-:root
-{
-  --uic-hdrhm-home: url(home_default.svg);
-  --uic-hdrhm-himg: url(home_hover.svg);
-  --uic-hdrhm-dclr: #6a6a6a;
-  --uic-hdrhm-hclr: black;
-  --uic-hdrhm-gr: #dddddd40;
-  --uic-hdrhm-bdr: transparent;
-}
-
 .${CLASS.ROOT}
 {
   display: flex;
   align-items: center;
   width: min-content;
   height: min-content;
-  color: var(--uic-hdrhm-dclr);
+  color: ${HEADER_FONT_COLOR};
   cursor: pointer;
   flex-shrink: 0;
   user-select: none;
   text-decoration: none;
   box-sizing: border-box;
-  font-family: serif;
+  font-family: ${HEADER_FONT_FAMILY};
 }
 
 .${CLASS.ROOT}:hover
 {
-  color: var(--uic-hdrhm-hclr);
-  background-color: var(--uic-hdrhm-gr);
-  border-radius: 5px;
+  color: ${HEADER_COLOR_HOVER};
+  background-color: ${HEADER_BACKGROUND_COLOR};
+  border-radius: ${HEADER_BORDER_RADIUS_HOVER};
   transition: background-color 0.2s;
 }
 
 .${CLASS.ROOT}:hover > div
 {
-  background-image: var(--uic-hdrhm-himg);
+  background-image: ${IMAGE_HOVER};
 }
 
 .${CLASS.ROOT} > div
 {
   width: 40px;
   height: 30px;
-  background-image: var(--uic-hdrhm-home);
+  background-image: ${IMAGE_DEFAULT};
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-  border: 4px solid var(--uic-hdrhm-bdr);
+  border: 4px solid transparent;
   flex-shrink: 0;
   box-sizing: border-box;
 }
@@ -67,12 +68,12 @@ export const CSS = `
 {
   display: flex;
   align-items: center;
-  font-size: 28px;
+  font-size: ${HEADER_FONT_SIZE};
   margin: 0px 7px 0px 5px;
   flex-shrink: 0;
 }
 
-@media (device-width < 550px)
+@media (device-width < ${HEADER_MOBILE_DEVICE_WIDTH})
 {
   .${CLASS.ROOT} > div
   {
