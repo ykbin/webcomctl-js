@@ -48,7 +48,7 @@ export const CSS = `
   display: block;
   height: 100%;
   width: 100%;
-  border: 3px solid ${HEADER_FONT_COLOR};
+  border: 3px solid transparent;
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
