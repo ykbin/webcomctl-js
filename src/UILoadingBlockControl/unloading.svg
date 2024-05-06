@@ -1,0 +1,298 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+
+<svg xmlns="http://www.w3.org/2000/svg" 
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    width="428.4pt"
+    height="428.4pt"
+    viewBox="0 0 428.4 428.4">
+    <defs/>
+
+    <path id="shape0"
+      transform="matrix(1.00000001405607 1.95532285836018e-05 -1.95532285836018e-05 1.00000001405607 221.63838968626 24.6755863008087)"
+      fill="none"
+      stroke="#2f4476"
+      stroke-width="24"
+      stroke-linecap="square"
+      stroke-linejoin="miter"
+      stroke-miterlimit="2"
+      d="M0 0L0 76.8932">
+
+      <animate
+        attributeName="stroke-opacity"
+        values="1; 0.05;
+                0.1;0.2;
+                0.25; 0.3;
+                0.35; 0.4;
+                0.5; 0.65;
+                0.8; 0.85"
+        dur="1s"
+        repeatCount="indefinite"/>
+
+    </path>
+
+    <path id="shape1"
+      transform="matrix(0.859935116647088 0.510403393064389 -0.510403393064389 0.859935116647088 314.76053200855 49.067706333126)"
+      fill="none"
+      stroke-opacity="0.85"
+      stroke="#2f4476"
+      stroke-width="24"
+      stroke-linecap="square"
+      stroke-linejoin="miter"
+      stroke-miterlimit="1.91999995708466"
+      d="M0 0L0 77.6094">
+
+      <animate
+        attributeName="stroke-opacity"
+        values="0.85; 1;
+                0.05; 0.1;
+                0.2; 0.25;
+                0.3; 0.35;
+                0.4; 0.5;
+                0.65; 0.8"
+        dur="1s"
+        repeatCount="indefinite"/>
+
+    </path>
+
+    <path id="shape2"
+      transform="matrix(0.528068059224763 0.849202068603868 -0.849202068603868 0.528068059224763 384.36848900585 118.556665617719)"
+      fill="none"
+      stroke-opacity="0.8"
+      stroke="#2f4476"
+      stroke-width="24"
+      stroke-linecap="square"
+      stroke-linejoin="miter"
+      stroke-miterlimit="2"
+      d="M0 0L0 77.0344">
+
+      <animate
+        attributeName="stroke-opacity"
+        values="0.8; 0.85;
+                1; 0.05;
+                0.1;0.2;
+                0.25; 0.3;
+                0.35; 0.4;
+                0.5; 0.65"
+        dur="1s"
+        repeatCount="indefinite"/>
+
+    </path>
+
+    <path id="shape3"
+      transform="matrix(-0.0134430800098042 0.999909651965792 -0.999909651965792 -0.0134430800098042 408.830848106009 213.456586044865)"
+      fill="none"
+      stroke-opacity="0.65"
+      stroke="#2f4476"
+      stroke-width="24"
+      stroke-linecap="square"
+      stroke-linejoin="miter"
+      stroke-miterlimit="2"
+      d="M0 0L0 75.7899">
+
+      <animate
+        attributeName="stroke-opacity"
+        values="0.65; 0.8;
+                0.85; 1;
+                0.05; 0.1;
+                0.2; 0.25;
+                0.3; 0.35;
+                0.4; 0.5"
+        dur="1s"
+        repeatCount="indefinite"/>
+
+    </path>
+
+    <path id="shape4"
+      transform="matrix(-0.509271687653005 0.860605819553628 -0.860605819553628 -0.509271687653005 384.24254055625 307.991058570107)"
+      fill="none"
+      stroke-opacity="0.5"
+      stroke="#2f4476"
+      stroke-width="24"
+      stroke-linecap="square"
+      stroke-linejoin="miter"
+      stroke-miterlimit="2"
+      d="M0 0L0 76.2954">
+
+      <animate
+        attributeName="stroke-opacity"
+        values="0.5; 0.65;
+                0.8; 0.85;
+                1; 0.05;
+                0.1;0.2;
+                0.25; 0.3;
+                0.35; 0.4"
+        dur="1s"
+        repeatCount="indefinite"/>
+
+    </path>
+
+    <path id="shape5"
+      transform="matrix(-0.8756836170488 0.482885319021868 -0.482885319021868 -0.8756836170488 315.300320176464 377.306275874517)"
+      fill="none"
+      stroke-opacity="0.4"
+      stroke="#2f4476"
+      stroke-width="24"
+      stroke-linecap="square"
+      stroke-linejoin="miter"
+      stroke-miterlimit="2"
+      d="M0 0L0 76.0752">
+
+      <animate
+        attributeName="stroke-opacity"
+        values="0.4; 0.5;
+                0.65; 0.8;
+                0.85; 1;
+                0.05; 0.1;
+                0.2; 0.25;
+                0.3; 0.35"
+        dur="1s"
+        repeatCount="indefinite"/>
+
+    </path>
+
+    <path id="shape6"
+      transform="matrix(-0.999920710473719 -0.012593699230178 0.012593699230178 -0.999920710473719 220.794183993928 401.258937834073)"
+      fill="none"
+      stroke-opacity="0.35"
+      stroke="#2f4476"
+      stroke-width="24"
+      stroke-linecap="square"
+      stroke-linejoin="miter"
+      stroke-miterlimit="2"
+      d="M0 0L0 74.3209">
+
+      <animate
+        attributeName="stroke-opacity"
+        values="0.35; 0.4;
+                0.5; 0.65;
+                0.8; 0.85;
+                1; 0.05;
+                0.1;0.2;
+                0.25; 0.3"
+        dur="1s"
+        repeatCount="indefinite"/>
+
+    </path>
+
+    <path id="shape7"
+      transform="matrix(-0.853354703399606 -0.521330776647945 0.521330776647945 -0.853354703399606 125.81364125347 376.605805495035)"
+      fill="none"
+      stroke-opacity="0.3"
+      stroke="#2f4476"
+      stroke-width="24"
+      stroke-linecap="square"
+      stroke-linejoin="miter"
+      stroke-miterlimit="2"
+      d="M0 0L0 75.2038">
+
+      <animate
+        attributeName="stroke-opacity"
+        values="0.3; 0.35;
+                0.4; 0.5;
+                0.65; 0.8;
+                0.85; 1;
+                0.05; 0.1;
+                0.2; 0.25"
+        dur="1s"
+        repeatCount="indefinite"/>
+
+    </path>
+
+    <path id="shape8"
+      transform="matrix(-0.518849090191083 -0.854865866731425 0.854865866731425 -0.518849090191083 58.6921270844278 307.096100292281)"
+      fill="none"
+      stroke-opacity="0.25"
+      stroke="#2f4476"
+      stroke-width="24"
+      stroke-linecap="square"
+      stroke-linejoin="miter"
+      stroke-miterlimit="2"
+      d="M0 0L0 73.9462">
+
+      <animate
+        attributeName="stroke-opacity"
+        values="0.25; 0.3;
+                0.35; 0.4;
+                0.5; 0.65;
+                0.8; 0.85;
+                1; 0.05;
+                0.1;0.2"
+        dur="1s"
+        repeatCount="indefinite"/>
+
+    </path>
+
+    <path id="shape9"
+      transform="matrix(-0.0276937167254455 -0.999616469726492 0.999616469726492 -0.0276937167254455 32.3856946555685 212.308513591867)"
+      fill="none"
+      stroke-opacity="0.152941176470588"
+      stroke="#2f4476"
+      stroke-width="24"
+      stroke-linecap="square"
+      stroke-linejoin="miter"
+      stroke-miterlimit="2"
+      d="M0 0L0 75.6548">
+
+      <animate
+        attributeName="stroke-opacity"
+        values="0.152941176470588; 0.25;
+                0.3; 0.35;
+                0.4; 0.5;
+                0.65; 0.8;
+                0.85; 1;
+                0.05; 0.1"
+        dur="1s"
+        repeatCount="indefinite"/>
+
+    </path>
+
+    <path id="shape10"
+      transform="matrix(0.49792723882518 -0.867218826669758 0.867218826669758 0.49792723882518 57.1541969254563 118.72010329482)"
+      fill="none"
+      stroke-opacity="0.1"
+      stroke="#2f4476"
+      stroke-width="24"
+      stroke-linecap="square"
+      stroke-linejoin="miter"
+      stroke-miterlimit="2"
+      d="M0 0L0 76.6637">
+
+      <animate
+        attributeName="stroke-opacity"
+        values="0.1;0.2;
+                0.25; 0.3;
+                0.35; 0.4;
+                0.5; 0.65;
+                0.8; 0.85;
+                1; 0.05"
+        dur="1s"
+        repeatCount="indefinite"/>
+
+    </path>
+
+    <path id="shape11"
+      transform="matrix(0.871420223171127 -0.490537280074543 0.490537280074543 0.871420223171127 126.165659939853 49.417506370804)"
+      fill="none"
+      stroke-opacity="0.05"
+      stroke="#2f4476"
+      stroke-width="24"
+      stroke-linecap="square"
+      stroke-linejoin="miter"
+      stroke-miterlimit="2"
+      d="M0 0L0 77.3246">
+
+      <animate
+        attributeName="stroke-opacity"
+        values="0.05; 0.1;
+                0.2; 0.25;
+                0.3; 0.35;
+                0.4; 0.5;
+                0.65; 0.8;
+                0.85; 1"
+        dur="1s"
+        repeatCount="indefinite"/>
+
+    </path>
+
+</svg>
