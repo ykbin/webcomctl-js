@@ -4,6 +4,7 @@ import { HEADER_FONT_COLOR } from '../lib/WickedTheme.mjs';
 import { HEADER_FONT_FAMILY } from '../lib/WickedTheme.mjs';
 import { HEADER_BACKGROUND_COLOR } from '../lib/WickedTheme.mjs';
 import { HEADER_COLOR_HOVER } from '../lib/WickedTheme.mjs';
+import { HEADER_BORDER_RADIUS_HOVER } from '../lib/WickedTheme.mjs';
 
 export const NAME = 'HdrUploadButton';
 
