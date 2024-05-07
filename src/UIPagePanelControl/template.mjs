@@ -252,7 +252,7 @@ export const CSS = `
   flex-shrink: 0;
 }
 
-.${CLASS.PSNTLIST} > ${CLASS.PSNTACTV} > span
+.${CLASS.PSNTLIST} > .${CLASS.PSNTACTV} > span
 {
   color: var(--uic-pagpnl-plist-act);
 }
@@ -277,7 +277,8 @@ export const CSS = `
   border-bottom: 2px solid var(--uic-pagpnl-plist-hov);
 }
 
-.${CLASS.PSNTLIST} > ${CLASS.PSNTACTV} > span::after
+.${CLASS.PSNTLIST} > .${CLASS.PSNTACTV}:hover > span::after,
+.${CLASS.PSNTLIST} > .${CLASS.PSNTACTV} > span::after
 {
   width: 35px;
   border-bottom: 2px solid ${VAR.PLIST_SEL};
