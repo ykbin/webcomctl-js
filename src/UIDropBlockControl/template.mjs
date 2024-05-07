@@ -71,7 +71,7 @@ export const CSS = `
   background-color: ${VAR.RC_BACKGROUND};
 }
 
-.${CLASS.NONE}
+span.${CLASS.NONE}
 {
   display: none;
 }
