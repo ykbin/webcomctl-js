@@ -19,7 +19,16 @@ export const HTML = `
 `;
 
 export const CSS = `
-.${CLASS.UNLOAD} s
+.${CLASS.ROOT},
+.${CLASS.PORT}
+{
+  display: flex;
+  flex-direction: column;
+  width: inherit;
+  height: inherit;
+}
+
+.${CLASS.UNLOAD} > s
 {
   text-decoration: none;
 }
