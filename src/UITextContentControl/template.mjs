@@ -5,7 +5,7 @@ export const NAME = 'TextContent';
 const BLUE_COLOR = '#0000ff';
 const OFFSET_COLOR = 'rgb(197, 6, 11)';
 const SCROLLBAR_THUMB_COLOR = '#b5b5b5c7';
-const SCROLLBAR_TRACK_COLOR = '#b5b5b5c7';
+const SCROLLBAR_TRACK_COLOR = 'transparent';
 
 export const CLASS = {
   ROOT: "uic-txtcnt-root",
