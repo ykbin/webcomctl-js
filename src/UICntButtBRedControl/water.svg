@@ -1,0 +1,38 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+
+<svg xmlns="http://www.w3.org/2000/svg" 
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    width="154.56pt"
+    height="49.68pt"
+    viewBox="0 0 154.56 49.68">
+
+<defs>
+
+  <linearGradient id="gradient0" gradientUnits="objectBoundingBox" x1="0.499203093696251" y1="-0.0452922185457413" x2="0.499203093696251" y2="1.12340459760385" spreadMethod="pad">
+   <stop stop-color="#0078ef" offset="0.0201" stop-opacity="1"/>
+   <stop stop-color="#002a54" offset="0.8523" stop-opacity="1"/>
+  </linearGradient>
+  
+ </defs>
+
+<path id="shape0" 
+  transform="matrix(0.999999910695702 0 0 0.999999910695702 -0.240000481988264 0.0852181968794052)" 
+  fill="url(#gradient0)" 
+  fill-rule="evenodd"
+  fill-opacity="0.5"
+  stroke-opacity="0" 
+  stroke="#000000"
+  stroke-width="0" 
+  stroke-linecap="square" 
+  stroke-linejoin="bevel" 
+  d="M0 1.36228L0.0112354 49.5947L155.276 49.5947L155.276 1.35853C155.459 1.62595 131.594 5.03149 79.9168 1.36035C58.3171 1.14346 35.122 -1.59018 0 1.36228Z">
+
+    <animate id="tc"
+      attributeName="d"
+      values="M0 1.36228L0.0112354 49.5947L155.276 49.5947L155.276 1.35853C155.459 1.62595 131.594 5.03149 79.9168 1.36035C58.3171 1.14346 35.122 -1.59018 0 1.36228Z; M0 1.3366L0.0112354 49.569L155.276 49.569L155.276 1.33285C155.514 0.968465 132.249 -1.47593 79.9168 1.33467C58.1026 2.10444 33.8854 4.07242 0 1.3366Z; M0 1.36228L0.0112354 49.5947L155.276 49.5947L155.276 1.35853C155.459 1.62595 131.594 5.03149 79.9168 1.36035C58.3171 1.14346 35.122 -1.59018 0 1.36228Z" 
+      dur="2s"
+      repeatCount="indefinite"/>
+
+</path>
+</svg>
