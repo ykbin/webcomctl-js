@@ -7,7 +7,7 @@ export const CLASS = {
 
 export const HTML = `
 <div class="${CLASS.ROOT}">
-  <img class="${CLASS.CONTENT}" src="http://kikodiss.utilspot.com/pic/26.png"/>
+  <img class="${CLASS.CONTENT}"/>
 </div>
 `;
 

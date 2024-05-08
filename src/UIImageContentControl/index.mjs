@@ -13,7 +13,17 @@ export default class UIImageContentControl extends BaseControl {
     portClass:  CLASS.PORT,
   } }
 
+  _imageElm;
+
   constructor(element) {
     super(element);
+    
+    this._imageElm = element.querySelector("." + CLASS.CONTENT);
+  }
+
+  setContent(url) {
+    if (this._imageElm) {
+      this._imageElm.src = url;
+    }
   }
 };
