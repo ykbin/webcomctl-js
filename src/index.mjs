@@ -28,3 +28,4 @@ export { default as UIPageTabControl } from './UIPageTabControl/index.mjs';
 export { default as UIPagePanelControl } from './UIPagePanelControl/index.mjs';
 export { default as UILoadingBlockControl } from './UILoadingBlockControl/index.mjs';
 export { default as UISplitterBlockControl } from './UISplitterBlockControl/index.mjs';
+export { default as UIScrollControl } from './UIScrollControl/index.mjs';
