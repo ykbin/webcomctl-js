@@ -31,3 +31,4 @@ export { default as UISplitterBlockControl } from './UISplitterBlockControl/inde
 export { default as UIScrollControl } from './UIScrollControl/index.mjs';
 export { default as UIHexHorizontalBlockControl } from './UIScrollControl/index.mjs';
 export { default as UITextContentControl } from './UITextContentControl/index.mjs';
+export { default as UIImageContentControl } from './UIImageContentControl/index.mjs';
