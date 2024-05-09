@@ -1,0 +1,62 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+
+<svg xmlns="http://www.w3.org/2000/svg" 
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    width="218.88pt"
+    height="220.32pt"
+    viewBox="0 0 218.88 220.32">
+<defs/>
+<path id="shape0"
+    transform="matrix(0.999999867025814 0 0 0.999999867025814 25.4787041236586 53.2132163587245)"
+    fill="none"
+    stroke="#ffffff"
+    stroke-width="3"
+    stroke-linecap="square"
+    stroke-linejoin="bevel"
+    d="M35.7213 0.0667764C22.3484 -1.72125 1.48808 32.8327 0.0812963 51.5468C-1.3157 95.219 15.2918 123.145 49.9039 135.325C78.395 142.858 100.149 139.91 117.412 129.978C128.134 123.809 147.758 108.068 144.921 104.227C136.539 107.577 115.662 110.143 95.0977 104.921C79.7026 101.274 59.3114 85.4589 58.5789 84.416C51.339 78.332 43.5115 67.5243 37.4451 55.5454C27.9983 35.2179 29.9942 16.0533 35.7213 0.0667764Z"/>
+
+<path id="shape01"
+    transform="matrix(0.999999945046813 0 0 0.999999945046813 147.634627085878 32.4428703270888)"
+    fill="none"
+    stroke="#ffffff"
+    stroke-width="2.00999999999984"
+    stroke-linecap="round"
+    stroke-linejoin="bevel"
+    d="M0 0L26.3949 26.1926"/>
+
+<path id="shape1"
+    transform="matrix(0.999999945046813 0 0 0.999999945046813 147.654493293426 31.9567372009024)"
+    fill="none" stroke="#ffffff"
+    stroke-width="2.00999999999984"
+    stroke-linecap="round"
+    stroke-linejoin="bevel"
+    d="M0 27.5538L27.027 0"/>
+
+<path id="shape011"
+    transform="matrix(0.999999945046813 0 0 0.999999945046813 132.091996229405 45.8229999881937)"
+    fill="none" stroke="#ffffff"
+    stroke-width="2.00999999999984"
+    stroke-linecap="square"
+    stroke-linejoin="bevel" d="M0 0L59 0"/>
+
+<path id="shape11"
+    transform="matrix(0.999999945046813 0 0 0.999999945046813 161.025470907099 16.0026416062867)"
+    fill="none" stroke="#ffffff"
+    stroke-width="2.00999999999984"
+    stroke-linecap="square"
+    stroke-linejoin="bevel"
+    d="M0.129022 59.1954L0 0"/>
+
+<circle id="shape02"
+    transform="matrix(0.999999945046813 0 0 0.999999945046813 158.091992185661 43.4479985714832)"
+    r="2.99999999999976"
+    cx="2.99999999999976"
+    cy="2.99999999999976"
+    fill="#ffffff"
+    fill-rule="evenodd"
+    stroke="#ffffff"
+    stroke-width="2.00999999999984"
+    stroke-linecap="square"
+    stroke-linejoin="bevel"/>
+</svg>

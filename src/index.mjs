@@ -32,3 +32,4 @@ export { default as UIScrollControl } from './UIScrollControl/index.mjs';
 export { default as UIHexHorizontalBlockControl } from './UIScrollControl/index.mjs';
 export { default as UITextContentControl } from './UITextContentControl/index.mjs';
 export { default as UIImageContentControl } from './UIImageContentControl/index.mjs';
+export { default as UIDMKikoBtnControl } from './UIDMKikoBtnControl/index.mjs';
