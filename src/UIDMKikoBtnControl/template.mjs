@@ -32,6 +32,7 @@ export const CSS = `
   border: 2px solid ${BORDER_COLOR};
   margin: 10px;
   border-radius: 10px;
+  overflow: hidden;
 }
 
 .${CLASS.ROOT} > div
