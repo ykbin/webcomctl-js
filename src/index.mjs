@@ -33,3 +33,4 @@ export { default as UIHexHorizontalBlockControl } from './UIScrollControl/index.
 export { default as UITextContentControl } from './UITextContentControl/index.mjs';
 export { default as UIImageContentControl } from './UIImageContentControl/index.mjs';
 export { default as UIDMKikoBtnControl } from './UIDMKikoBtnControl/index.mjs';
+export { default as UIDebugBtnListControl } from './UIDebugBtnListControl/index.mjs';
