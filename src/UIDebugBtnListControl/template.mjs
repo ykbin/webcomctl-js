@@ -5,11 +5,7 @@ export const CLASS = {
 };
 
 export const HTML = `
-<div class="${CLASS.ROOT}">
-  <div>Button-1</div>
-  <div>Button-2</div>
-  <div>Button-3</div>
-</div>
+<div class="${CLASS.ROOT}"></div>
 `;
 
 export const CSS = `
