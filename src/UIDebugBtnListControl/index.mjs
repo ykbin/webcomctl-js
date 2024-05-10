@@ -23,5 +23,6 @@ export default class UIDebugBtnListControl extends BaseControl {
     if (params.onclick) {
       btnElm.addEventListener("click", (event) => params.onclick(event));
     }
+    this.element.appendChild(btnElm);
   }
 };
