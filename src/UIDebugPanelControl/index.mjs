@@ -5,7 +5,7 @@ export const template = {
   NAME, HTML, CLASS, CSS,
 };
 
-export default class UIDebugBtnListControl extends BaseControl {
+export default class UIDebugPanelControl extends BaseControl {
   static get template() { return {
     name: NAME,
     rootHTML: HTML,

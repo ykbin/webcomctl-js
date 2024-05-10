@@ -1,4 +1,4 @@
-export const NAME = 'DebugBtnList';
+export const NAME = 'DebugPanel';
 
 export const CLASS = {
   ROOT: "uic-dbgbtns-root",
