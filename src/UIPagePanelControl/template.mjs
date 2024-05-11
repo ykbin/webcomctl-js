@@ -1,4 +1,5 @@
-import { Mobile } from '../lib/Settings.mjs';
+import { COMMON_MOBILE_DEVICE_WIDTH } from '../lib/WickedTheme.mjs';
+import { TOOLBAR_FONT_FAMALY } from '../lib/WickedTheme.mjs';
 
 export const NAME = 'PagePanel';
 
@@ -54,9 +55,9 @@ export const CSS = `
 :root
 {
   --uic-pagpnl-col: #f3f3f3;
+  --uic-pagpnl-hov: #e0e3e7;
   --uic-pagpnl-bor-col: rgb(197 195 195);
   --uic-pagpnl-ctype-col: #696969;
-  --uic-pagpnl-hov: #e0e3e7;
   --uic-pagpnl-plist-act: black;
   --uic-pagpnl-plist-hov: rgb(206 206 206);
 }
@@ -64,9 +65,9 @@ export const CSS = `
 [data-theme="dark"]
 {
   --uic-pagpnl-col: #252525;
+  --uic-pagpnl-hov: #444444;
   --uic-pagpnl-bor-col:#5f5f5f4a;
   --uic-pagpnl-ctype-col: #a7a7a7;
-  --uic-pagpnl-hov: #444444;
   --uic-pagpnl-plist-act: #c8c8c8;
   --uic-pagpnl-plist-hov: rgb(116 115 115);
 }
@@ -85,7 +86,7 @@ export const CSS = `
   box-shadow: 0px 1.6px 3.6px ${VAR.BS1}, 0px 0px 2.9px ${VAR.BS2};
   flex-shrink: 0;
   user-select: none;
-  font-family: Helvetica,Arial,sans-serif;
+  font-family: ${TOOLBAR_FONT_FAMALY};
   z-index: 1;
 }
 
@@ -287,7 +288,7 @@ export const CSS = `
   transition-delay: 0.1s;
 }
 
-@media (device-width < ${Mobile.deviceWidth})
+@media (device-width < ${COMMON_MOBILE_DEVICE_WIDTH})
 {
   .${CLASS.ROOT}
   {

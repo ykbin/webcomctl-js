@@ -1,4 +1,5 @@
-import { Mobile } from '../lib/Settings.mjs';
+import { COMMON_MOBILE_DEVICE_WIDTH } from '../lib/WickedTheme.mjs';
+import { TOOLBAR_FONT_FAMALY } from '../lib/WickedTheme.mjs';
 
 export const NAME = 'PageTab';
 
@@ -30,20 +31,20 @@ export const ITEM_HTML = `
 export const CSS = `
 :root
 {
+  --uic-pagtab-act-bg: #f3f3f3;
+  --uic-pagtab-hov: #e0e3e7;
   --uic-pagtab-col: #a7a7a7;
   --uic-pagtab-bg: #ebebeb;
   --uic-pagtab-act-col: black;
-  --uic-pagtab-act-bg: #f3f3f3;
-  --uic-pagtab-hov: #e0e3e7;
 }
 
 [data-theme="dark"]
 {
+  --uic-pagtab-act-bg: #252525;
+  --uic-pagtab-hov: #7474743d;
   --uic-pagtab-col: #ffffff9e;
   --uic-pagtab-bg: #242424e6;
   --uic-pagtab-act-col: #c8c8c8;
-  --uic-pagtab-act-bg: #252525;
-  --uic-pagtab-hov: #7474743d;
 }
 
 .${CLASS.ROOT}
@@ -56,7 +57,7 @@ export const CSS = `
   letter-spacing: 2px;
   flex-shrink: 0;
   user-select: none;
-  font-family: Helvetica,Arial,sans-serif;
+  font-family: ${TOOLBAR_FONT_FAMALY};
   text-decoration: none;
 }
 
@@ -132,7 +133,7 @@ div.${CLASS.FOCUS}
   background-color: ${VAR.HOVXCLR};
 }
 
-@media (device-width < ${Mobile.deviceWidth})
+@media (device-width < ${COMMON_MOBILE_DEVICE_WIDTH})
 {
   .${CLASS.ROOT}
   {

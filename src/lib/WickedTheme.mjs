@@ -6,3 +6,4 @@ export const HEADER_FONT_FAMILY = 'serif';
 export const HEADER_BACKGROUND_COLOR = '#dddddd40';
 export const HEADER_BORDER_RADIUS_HOVER = '5px';
 export const HEADER_COLOR_HOVER = 'black';
+export const TOOLBAR_FONT_FAMALY = 'Helvetica, Arial, sans-serif';
