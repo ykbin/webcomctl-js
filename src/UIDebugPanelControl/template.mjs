@@ -11,7 +11,7 @@ export const HTML = `
 export const CSS = `
 .${CLASS.ROOT}
 {
-  position: absolute;
+  position: fixed;
   bottom: 2px;
   left: 2px;
   width: auto;
@@ -23,6 +23,7 @@ export const CSS = `
   font-family: "Nunito Sans", -apple-system, BlinkMacSystemFont,
                 "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
                 "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  cursor: default;
 }
 
 .${CLASS.ROOT} *
@@ -41,6 +42,7 @@ export const CSS = `
   margin-bottom: 5px;
   color: white;
   background-color: #488ee9;
+  cursor: pointer;
 }
 
 .${CLASS.ROOT} > div:hover
