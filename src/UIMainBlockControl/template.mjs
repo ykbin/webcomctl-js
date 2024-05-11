@@ -35,15 +35,17 @@ export const CSS = `
 
 .${CLASS.ROOT}
 {
-  display: flex;
-  flex-direction: column;
   height: 100%;
   width: 100%;
   overflow: auto;
 }
 
-.${CLASS.ROOT} > *
+.${CLASS.ROOT} > div
 {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
   min-width: 685px;
 }
 `;
