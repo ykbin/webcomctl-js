@@ -11,7 +11,9 @@ export const CLASS = {
 };
 
 export const HTML = `
-<div class="${CLASS.ROOT} ${CLASS.PORT}"></div>
+<div class="${CLASS.ROOT}">
+  <div class="${CLASS.PORT}"></div>
+</div>
 `;
 
 export const CSS = `
