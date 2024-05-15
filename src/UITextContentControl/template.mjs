@@ -62,7 +62,8 @@ export const CSS = `
 
 .${CLASS.ROOT} > ul::-webkit-scrollbar
 {
-  display: none;
+  width: 0;
+  height: 10px;
 }
 
 .${CLASS.ROOT}
@@ -100,7 +101,7 @@ export const CSS = `
   text-align: center;
   border-right: 1px solid var(--uic-txtcnt-bor);
   overflow-y: auto;
-  overflow-x: hidden;
+  overflow-x: scroll;
 }
 
 .${CLASS.ROOT} > ul:empty
