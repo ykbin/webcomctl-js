@@ -76,6 +76,12 @@ export const CSS = `
   line-height: 1.4em;
   color: var(--uic-txtcnt-col);
   font-family: monospace;
+  box-sizing: border-box;
+}
+
+.${CLASS.ROOT} > *
+{
+  box-sizing: border-box;
 }
 
 .${CLASS.ROOT} > div

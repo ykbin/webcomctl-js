@@ -59,6 +59,12 @@ export const CSS = `
   user-select: none;
   font-family: ${TOOLBAR_FONT_FAMALY};
   text-decoration: none;
+  box-sizing: border-box;
+}
+
+.${CLASS.ROOT} > *
+{
+  box-sizing: border-box;
 }
 
 .${CLASS.ROOT} > div
@@ -138,7 +144,7 @@ div.${CLASS.FOCUS}
   .${CLASS.ROOT}
   {
     height: 50px;
-    font-size: 1.4em;
+    font-size: 28px;
   }
 
   .${CLASS.ROOT} > div

@@ -16,7 +16,7 @@ export const CSS = `
   height: 100%;
   padding-top: 3px;
   overflow: hidden;
-  /*overflow: auto;*/
+  box-sizing: border-box;
 }
 
 .${CLASS.ROOT} > div 

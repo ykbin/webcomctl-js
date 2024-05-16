@@ -88,6 +88,12 @@ export const CSS = `
   user-select: none;
   font-family: ${TOOLBAR_FONT_FAMALY};
   z-index: 1;
+  box-sizing: border-box;
+}
+
+.${CLASS.ROOT} > *
+{
+  box-sizing: border-box;
 }
 
 .${CLASS.DOWNLOAD}
@@ -192,6 +198,8 @@ export const CSS = `
   height: inherit;
   padding: 5px 10px;
   border-radius: 2px;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .${CLASS.CTSHOW} > div,
@@ -294,7 +302,7 @@ export const CSS = `
   {
     align-items: center;
     height: 50px;
-    font-size: 1.4em;
+    font-size: 28px;
   }
 
   .${CLASS.CODETYPE}
@@ -319,7 +327,20 @@ export const CSS = `
 
   .${CLASS.CTSHOW} > span > ul
   {
-    width: auto;
+    width: 360px;
+    padding: 10px 0px;
+    border-end-end-radius: 5px;
+    border-end-start-radius: 5px;
+  }
+
+  .${CLASS.CTSHOW} > span > ul > li
+  {
+    padding: 10px;
+  }
+
+  .${CLASS.CTSHOW} > span > ul > li > span
+  {
+    padding: 10px 10px;
   }
 
   .${CLASS.PSNTLIST} > div > span

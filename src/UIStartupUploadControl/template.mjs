@@ -16,8 +16,10 @@ export const HTML = `
     <div>
       <div class="uic-strupl-fdimg"></div>
       <div class="uic-strupl-fdbtn">
-        <label for="uic-strupl-input" class="notranslate" translate="no"><span></span>Upload</label>
-        <input id="uic-strupl-input" class="${CLASS.INPUT}" type="file">
+        <label for="uic-strupl-input" class="notranslate" translate="no">
+          <span></span>Upload
+          <input id="uic-strupl-input" class="${CLASS.INPUT}" type="file">
+        </label>
       </div>
     </div>
   </div>
@@ -46,8 +48,7 @@ export const CSS = `
   --uic-strupl-dhide-bg: transparent;
 }
 
-.uic-strupl-input,
-.uic-strupl-fdbtn label + input,
+.uic-strupl-fdbtn label > input,
 .uic-strupl-root > h2 + h2
 {
   display: none;
@@ -78,6 +79,7 @@ export const CSS = `
   min-height: 570px;
   padding: 20px 20px;
   user-select: none;
+  box-sizing: border-box;
 }
 
 .uic-strupl-root > h2 

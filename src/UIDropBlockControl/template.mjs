@@ -69,6 +69,7 @@ export const CSS = `
   border: 1px solid ${VAR.RC_BORDER};
   border-radius: 3px;
   background-color: ${VAR.RC_BACKGROUND};
+  box-sizing: border-box;
 }
 
 span.${CLASS.NONE}
