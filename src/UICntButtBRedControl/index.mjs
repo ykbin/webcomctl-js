@@ -28,8 +28,7 @@ export default class UICntButtBRedControl extends BaseControl {
       const inputElm = document.createElement('input');
       inputElm.id = inputId;
       inputElm.type = "file";
-      
-      this.registerEvent(UPLOAD_EVENT);
+
       inputElm.addEventListener("input", (event) => {
         const files = event.target.files;
         this.dispatchEvent(UPLOAD_EVENT, {files});
@@ -45,6 +44,8 @@ export default class UICntButtBRedControl extends BaseControl {
       this._heightElm.style.height = "0";
       this._heightElm.innerText = "";
     }
+
+    this.registerEvent(UPLOAD_EVENT);
   }
 
   loadProcess(value) {

@@ -5,6 +5,8 @@ export const template = {
   NAME, HTML, CLASS, CSS,
 };
 
+const UPLOAD_EVENT = 'upload';
+
 export default class UICntSmUploadButtonControl  extends BaseControl {
   static get template() { return {
     name: NAME,
@@ -14,9 +16,6 @@ export default class UICntSmUploadButtonControl  extends BaseControl {
 
   _rootElm;
   _loadEnable = false;
-  _listeners = {
-    upload: [],
-  };
 
   constructor(element) {
     super(element);
@@ -28,16 +27,19 @@ export default class UICntSmUploadButtonControl  extends BaseControl {
     
       const inputElm = document.createElement('input');
       inputElm.id = inputId;
-      inputElm.type="file";
+      inputElm.type = "file";
+
       inputElm.addEventListener("input", (event) => {
         const files = event.target.files;
-        this.dispatchEvent('upload', {files});
+        this.dispatchEvent(UPLOAD_EVENT, {files});
         event.target.value = null;
       });
   
       lableElm.appendChild(inputElm);
       lableElm.setAttribute('for', inputId);
     }
+
+    this.registerEvent(UPLOAD_EVENT);
   }
 
   get loadEnable() { return this._loadEnable; }
@@ -47,13 +49,5 @@ export default class UICntSmUploadButtonControl  extends BaseControl {
       this._rootElm.classList[method](CLASS.LOAD);
       this._loadEnable = value;
     }
-  }
-
-  dispatchEvent(type, event) {
-    this._listeners[type].forEach(listener => listener(event));
-  }
-
-  addEventListener(type, listener) {
-    this._listeners[type].push(listener);
   }
 };

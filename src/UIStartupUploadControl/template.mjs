@@ -2,7 +2,6 @@ export const NAME = 'StartupUpload';
 
 export const CLASS = {
   ROOT: 'uic-strupl-root',
-  INPUT: 'uic-strupl-input', // DOTO: Remove this class
   FDROP: 'uic-strupl-fdrop',
   DSHOW: 'uic-strupl-dshow',
   DHIDE: 'uic-strupl-dhide',
@@ -18,7 +17,6 @@ export const HTML = `
       <div class="uic-strupl-fdbtn">
         <label for="uic-strupl-input" class="notranslate" translate="no">
           <span></span>Upload
-          <input id="uic-strupl-input" class="${CLASS.INPUT}" type="file">
         </label>
       </div>
     </div>

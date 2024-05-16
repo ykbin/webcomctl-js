@@ -5,6 +5,8 @@ export const template = {
   NAME, HTML, CLASS, CSS,
 };
 
+const UPLOAD_EVENT = 'upload';
+
 export default class UIStartupUploadControl extends BaseControl {
   static get template() { return {
     name: NAME,
@@ -14,9 +16,6 @@ export default class UIStartupUploadControl extends BaseControl {
 
   _fdropElm;
   _inputElm;
-  _listeners = {
-    upload: [],
-  };
 
   constructor(element) {
     super(element);
@@ -56,25 +55,29 @@ export default class UIStartupUploadControl extends BaseControl {
               files.push(file);
             }
           }
-          this.dispatchEvent('upload', { kind: 'drop', files });
+          this.dispatchEvent(UPLOAD_EVENT, { kind: 'drop', files });
         }
       });
     }
 
-    const inputId = Random.nextElementId();
-    this._inputElm = NQDOM.getElementByClassName(element, CLASS.INPUT);
-    this._inputElm && this._inputElm.addEventListener("input", (event) => {
-      const files = event.target.files;
-      this.dispatchEvent('upload', { kind: 'input', files });
-      event.target.value = null;
-    });
-  }
+    const lableElm = element.querySelector('label');
+    if (lableElm) {
+      const inputId = Random.nextElementId();
+    
+      const inputElm = document.createElement('input');
+      inputElm.id = inputId;
+      inputElm.type = "file";
 
-  dispatchEvent(type, event) {
-    this._listeners[type].forEach(listener => listener(event));
-  }
+      inputElm.addEventListener("input", (event) => {
+        const files = event.target.files;
+        this.dispatchEvent(UPLOAD_EVENT, { kind: 'input', files });
+        event.target.value = null;
+      });
+  
+      lableElm.appendChild(inputElm);
+      lableElm.setAttribute('for', inputId);
+    }
 
-  addEventListener(type, listener) {
-    this._listeners[type].push(listener);
+    this.registerEvent(UPLOAD_EVENT);
   }
 };
