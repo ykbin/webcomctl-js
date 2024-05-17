@@ -6,7 +6,7 @@ export const CLASS = {
 };
 
 export const HTML = `
-<div class="${CLASS.ROOT}">
+<div class="${CLASS.ROOT}" draggable="false">
   <img class="${CLASS.CONTENT}"/>
 </div>
 `;

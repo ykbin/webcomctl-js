@@ -13,6 +13,7 @@ export default class UIImageContentControl extends BaseControl {
     portClass:  CLASS.PORT,
   } }
 
+  _urlRef = null;
   _imageElm;
 
   constructor(element) {
@@ -21,9 +22,23 @@ export default class UIImageContentControl extends BaseControl {
     this._imageElm = element.querySelector("." + CLASS.CONTENT);
   }
 
-  setContent(url) {
-    if (this._imageElm) {
-      this._imageElm.src = url;
+  setContent(params) {
+    if (!this._imageElm)
+      return;
+
+    if (this._urlRef) {
+      window.URL.revokeObjectURL(this._urlRef);
+      this._urlRef = null;
     }
+
+    let url = null;
+    if (typeof params === 'string')
+      url = params;
+    else {
+      this._urlRef = window.URL.createObjectURL(params);
+      url = this._urlRef;
+    }
+
+    this._imageElm.src = url;
   }
 };
