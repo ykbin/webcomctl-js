@@ -1,4 +1,4 @@
-import { BaseControl } from 'webnetq-js';
+import { BaseControl, Util } from 'webnetq-js';
 import { NAME, HTML, CLASS, CSS } from './template.mjs';
 
 export const template = {
@@ -27,7 +27,7 @@ export default class UIImageContentControl extends BaseControl {
       return;
 
     if (this._urlRef) {
-      window.URL.revokeObjectURL(this._urlRef);
+      Util.revokeObjectURL(this._urlRef);
       this._urlRef = null;
     }
 
@@ -35,7 +35,7 @@ export default class UIImageContentControl extends BaseControl {
     if (typeof params === 'string')
       url = params;
     else {
-      this._urlRef = window.URL.createObjectURL(params);
+      this._urlRef = Util.createObjectURL(params);
       url = this._urlRef;
     }
 
