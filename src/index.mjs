@@ -34,4 +34,3 @@ export { default as UITextContentControl } from './UITextContentControl/index.mj
 export { default as UIImageContentControl } from './UIImageContentControl/index.mjs';
 export { default as UIDMKikoBtnControl } from './UIDMKikoBtnControl/index.mjs';
 export { default as UIDebugPanelControl } from './UIDebugPanelControl/index.mjs';
-export { default as UIBodyControl } from './UIBodyControl/index.mjs';
