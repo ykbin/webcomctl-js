@@ -9,12 +9,12 @@ export const HTML = `
 <!DOCTYPE html>
 <html data-theme="light">
   <head></head>
-  <body class="${CLASS.PORT}"></body>
+  <body class="${CLASS.ROOT}"></body>
 </html>
 `;
 
 export const CSS = `
-.body
+.${CLASS.ROOT}
 {
   position: fixed;
   cursor: default;
