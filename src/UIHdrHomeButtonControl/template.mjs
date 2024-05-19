@@ -3,6 +3,7 @@ import { HEADER_FONT_SIZE } from '../lib/WickedTheme.mjs';
 import { HEADER_FONT_COLOR } from '../lib/WickedTheme.mjs';
 import { HEADER_FONT_FAMILY } from '../lib/WickedTheme.mjs';
 import { HEADER_BACKGROUND_COLOR } from '../lib/WickedTheme.mjs';
+import { HEADER_BACKGROUND_COLOR_DARK } from '../lib/WickedTheme.mjs';
 import { HEADER_BORDER_RADIUS_HOVER } from '../lib/WickedTheme.mjs';
 import { HEADER_COLOR_HOVER } from '../lib/WickedTheme.mjs';
 
@@ -16,32 +17,45 @@ export const CLASS = {
 };
 
 export const HTML = `
-<a class="${CLASS.ROOT}" href="\${ENV:HOST_URL}" draggable="false">
+<a class="${CLASS.ROOT} notranslate" translate="no" href="\${ENV:HOST_URL}" draggable="false">
   <div></div>
-  <span class="notranslate" translate="no">Home</span>
+  <span>Home</span>
 </a>
 `;
 
 export const CSS = `
+:root
+{
+  --uic-hdrhm-btnbg: ${HEADER_BACKGROUND_COLOR};
+}
+
+[data-theme="dark"]
+{
+  --uic-hdrhm-btnbg: ${HEADER_BACKGROUND_COLOR_DARK};
+}
+
 .${CLASS.ROOT}
 {
   display: flex;
   align-items: center;
   width: min-content;
   height: min-content;
+  margin: 0px 5px;
+  padding-right: 5px;
   color: ${HEADER_FONT_COLOR};
+  font-family: ${HEADER_FONT_FAMILY};
+  font-size: ${HEADER_FONT_SIZE};
   cursor: pointer;
-  flex-shrink: 0;
   user-select: none;
   text-decoration: none;
   box-sizing: border-box;
-  font-family: ${HEADER_FONT_FAMILY};
+  flex-shrink: 0;
 }
 
 .${CLASS.ROOT}:hover
 {
   color: ${HEADER_COLOR_HOVER};
-  background-color: ${HEADER_BACKGROUND_COLOR};
+  background-color: var(--uic-hdrhm-btnbg);
   border-radius: ${HEADER_BORDER_RADIUS_HOVER};
   transition: background-color 0.2s;
 }
@@ -55,22 +69,14 @@ export const CSS = `
 {
   width: 40px;
   height: 30px;
+  margin-right: 5px;
+  border: 4px solid transparent;
   background-image: ${IMAGE_DEFAULT};
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-  border: 4px solid transparent;
   flex-shrink: 0;
   box-sizing: border-box;
-}
-
-.${CLASS.ROOT} > span
-{
-  display: flex;
-  align-items: center;
-  font-size: ${HEADER_FONT_SIZE};
-  margin: 0px 7px 0px 5px;
-  flex-shrink: 0;
 }
 
 @media (device-width < ${HEADER_MOBILE_DEVICE_WIDTH})
