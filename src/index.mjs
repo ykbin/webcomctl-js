@@ -28,8 +28,6 @@ export { default as UIPageTabControl } from './UIPageTabControl/index.mjs';
 export { default as UIPagePanelControl } from './UIPagePanelControl/index.mjs';
 export { default as UILoadingBlockControl } from './UILoadingBlockControl/index.mjs';
 export { default as UISplitterBlockControl } from './UISplitterBlockControl/index.mjs';
-export { default as UIScrollControl } from './UIScrollControl/index.mjs';
-export { default as UIHexHorizontalBlockControl } from './UIScrollControl/index.mjs';
 export { default as UITextContentControl } from './UITextContentControl/index.mjs';
 export { default as UIImageContentControl } from './UIImageContentControl/index.mjs';
 export { default as UIDMKikoBtnControl } from './UIDMKikoBtnControl/index.mjs';
