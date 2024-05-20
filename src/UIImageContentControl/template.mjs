@@ -23,6 +23,7 @@ export const CSS = `
   border-radius: 10px;
   flex-shrink: 0;
   box-sizing: border-box;
+  background-color: white;
 }
 
 .${CLASS.ROOT} img

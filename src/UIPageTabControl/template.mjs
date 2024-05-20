@@ -41,7 +41,7 @@ export const CSS = `
 [data-theme="dark"]
 {
   --uic-pagtab-act-bg: #252525;
-  --uic-pagtab-hov: #7474743d;
+  --uic-pagtab-hov: #313131;
   --uic-pagtab-col: #ffffff9e;
   --uic-pagtab-bg: #242424e6;
   --uic-pagtab-act-col: #c8c8c8;

@@ -49,7 +49,6 @@ export const CSS = `
 .${CLASS.ROOT}
 {
   display: flex;
-  align-items: center;
   width: min-content;
   height: min-content;
   margin: 0px 5px;
@@ -67,7 +66,6 @@ export const CSS = `
   display: block;
   width: 40px;
   height: 30px;
-  margin-right: 5px;
   border: 4px solid transparent;
   background-image: ${IMAGE_DEFAULT};
   background-repeat: no-repeat;

@@ -76,6 +76,7 @@ export const CSS = `
   line-height: 1.4em;
   color: var(--uic-txtcnt-col);
   font-family: monospace;
+  background-color: white;
   box-sizing: border-box;
 }
 

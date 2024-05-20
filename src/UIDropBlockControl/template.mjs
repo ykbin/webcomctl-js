@@ -28,17 +28,6 @@ export const HTML = `
 `;
 
 export const CSS = `
-.${CLASS.ROOT}::-webkit-scrollbar
-{
-  width: 10px;
-  height: 10px;
-}
-
-.${CLASS.ROOT}::-webkit-scrollbar-thumb
-{
-  background-color: ${VAR.SCTHUMB_BACKGROUND};
-  border-radius: 10px;
-}
 
 .${CLASS.ROOT}::-webkit-scrollbar-track,
 .${CLASS.ROOT}::-webkit-scrollbar-corner
