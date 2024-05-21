@@ -18,8 +18,8 @@ export const CSS = `
   width: inherit;
 }
 
-.${CLASS.NTH1} > div:nth-child(2),
-.${CLASS.NTH2} > div:first-child
+.${CLASS.NTH1} > *:nth-child(2),
+.${CLASS.NTH2} > *:first-child
 {
   display: none;
 }
