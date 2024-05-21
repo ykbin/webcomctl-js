@@ -54,7 +54,7 @@
 <rect id="shape03"
   transform="matrix(0.927271050841652 0 0 0.925775427522841 5.24839417843679 4.76467628192594)"
   fill="none"
-  stroke="#000000"
+  stroke="rgb(91 91 91)"
   stroke-width="8.24999999999934"
   stroke-linecap="square"
   stroke-linejoin="miter"
