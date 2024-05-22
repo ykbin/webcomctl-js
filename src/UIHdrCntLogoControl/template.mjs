@@ -11,7 +11,6 @@ const bytes = await readFile(path.resolve(__dirname, './favicon1.svg'), { encodi
 const result = optimize(bytes, {
   plugins: [
     { removeStyleElement: true },
-    { removeViewBox: true },
   ]
 });
 
