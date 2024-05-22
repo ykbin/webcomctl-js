@@ -32,7 +32,7 @@ export const CSS = `
   align-items: center;
   width: 100%;
   height: 100%;
-  padding: 40px 40px 0px 40px;
+  padding: 40px;
   box-sizing: border-box;
   background-color: var(--uic-imgcnt-bg);
 }
