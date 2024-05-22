@@ -1,4 +1,6 @@
 import { COMMON_MOBILE_DEVICE_WIDTH } from '../lib/WickedTheme.mjs';
+import { UIC_CONTENT_BACKGROUND_COLOR } from '../lib/WickedTheme.mjs';
+import { UIC_CONTENT_BACKGROUND_COLOR_DARK } from '../lib/WickedTheme.mjs';
 
 export const NAME = 'TextContent';
 
@@ -25,12 +27,14 @@ export const HTML = `
 export const CSS = `
 :root
 {
+  --uic-txtcnt-bg: ${ UIC_CONTENT_BACKGROUND_COLOR };
   --uic-txtcnt-col: black;
   --uic-txtcnt-bor: #e6e6e6;
 }
 
 [data-theme="dark"]
 {
+  --uic-txtcnt-bg: ${ UIC_CONTENT_BACKGROUND_COLOR_DARK };
   --uic-txtcnt-col: #ffffff9e;
   --uic-txtcnt-bor: #5f5f5f4a;
 }
@@ -76,7 +80,7 @@ export const CSS = `
   line-height: 1.4em;
   color: var(--uic-txtcnt-col);
   font-family: monospace;
-  background-color: white;
+  background-color: var(--uic-txtcnt-bg);
   box-sizing: border-box;
 }
 

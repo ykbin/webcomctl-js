@@ -167,7 +167,7 @@ export const CSS = `
   justify-content: flex-start;
   flex-direction: column;
   overflow: hidden;
-  z-index: 999;
+  z-index: 2;
 }
 
 .uic-logger-root > div

@@ -20,16 +20,6 @@ export const CSS = `
 .${CLASS.ROOT}
 {
   display: none;
-  align-items: center;
-  justify-content: center;
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  z-index: 100;
-  min-height: 555px;
-  background-color: ${VAR.BGROUND_COLOR};
 }
 
 .${CLASS.SHOW}
@@ -37,12 +27,21 @@ export const CSS = `
   display: flex;
   align-items: center;
   justify-content: center;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  min-height: 555px;
+  z-index: 3;
+  background-color: ${VAR.BGROUND_COLOR};
 }
 
 .${CLASS.SHOW} > div
 {
-  width: 160px;
-  height: 160px;
+  width: 100%;
+  height: 100%;
+  max-width: 160px;
   background-image: url(${VAR.IMAGE_FILE});
   background-repeat: no-repeat;
   background-size: contain;

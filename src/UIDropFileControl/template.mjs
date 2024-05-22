@@ -34,7 +34,7 @@ export const CSS = `
   right: 0;
   min-height: 555px;
   background-color: var(--uic-dropfile-bg);
-  z-index: 900;
+  z-index: 3;
 }
 
 .${CLASS.ROOT} > div

@@ -4,7 +4,6 @@ const VAR = {
   RC_BORDER: '#0985b7',
   RC_BACKGROUND: 'rgb(5 79 171 / 60%)',
   SCTHUMB_BACKGROUND: '#b5b5b5c7',
-  SCTRACK_BACKGROUND: 'transparent',
 };
 
 export const CLASS = {
@@ -28,12 +27,6 @@ export const HTML = `
 `;
 
 export const CSS = `
-
-.${CLASS.ROOT}::-webkit-scrollbar-track,
-.${CLASS.ROOT}::-webkit-scrollbar-corner
-{
-  background-color: ${VAR.SCTRACK_BACKGROUND};
-}
 
 .${CLASS.ROOT}
 {

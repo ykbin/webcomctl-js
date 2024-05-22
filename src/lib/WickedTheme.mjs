@@ -8,3 +8,5 @@ export const HEADER_BACKGROUND_COLOR_DARK = '#181818';
 export const HEADER_COLOR_HOVER = '#3a3a3a';
 export const HEADER_BORDER_RADIUS_HOVER = '5px';
 export const TOOLBAR_FONT_FAMALY = 'Helvetica, Arial, sans-serif';
+export const UIC_CONTENT_BACKGROUND_COLOR = 'white';
+export const UIC_CONTENT_BACKGROUND_COLOR_DARK = 'rgb(23, 23, 26)';

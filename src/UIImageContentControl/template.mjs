@@ -1,3 +1,6 @@
+import { UIC_CONTENT_BACKGROUND_COLOR } from '../lib/WickedTheme.mjs';
+import { UIC_CONTENT_BACKGROUND_COLOR_DARK } from '../lib/WickedTheme.mjs';
+
 export const NAME = 'ImageContent';
 
 export const CLASS = {
@@ -12,6 +15,16 @@ export const HTML = `
 `;
 
 export const CSS = `
+:root
+{
+  --uic-imgcnt-bg: ${ UIC_CONTENT_BACKGROUND_COLOR };
+}
+
+[data-theme="dark"]
+{
+  --uic-imgcnt-bg: ${ UIC_CONTENT_BACKGROUND_COLOR_DARK };
+}
+
 .${CLASS.ROOT}
 {
   display: flex;
@@ -20,18 +33,16 @@ export const CSS = `
   width: 100%;
   height: 100%;
   padding: 40px 40px 0px 40px;
-  border-radius: 10px;
-  flex-shrink: 0;
   box-sizing: border-box;
-  background-color: white;
+  background-color: var(--uic-imgcnt-bg);
 }
 
 .${CLASS.ROOT} img
 {
   height: auto;
   width: auto;
-  max-width: calc(100% - 80px);
-  max-height: calc(100% - 80px);
+  max-width: 100%;
+  max-height: 100%;
   border: 1px solid;
   border-color: #f3f3f3;
   background-color: #d6d6d6;
