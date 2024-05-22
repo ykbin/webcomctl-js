@@ -1,10 +1,10 @@
 import { loadSvgAsCssUrlAsync } from '../lib/SVG.mjs';
 import { HEADER_MOBILE_DEVICE_WIDTH } from '../lib/WickedTheme.mjs';
 
-const favicon1 = loadSvgAsCssUrlAsync(import.meta.url, './favicon1.svg');
-const header1 = loadSvgAsCssUrlAsync(import.meta.url, './header1.svg');
-const favicon2 = loadSvgAsCssUrlAsync(import.meta.url, './favicon2.svg');
-const header2 = loadSvgAsCssUrlAsync(import.meta.url, './header2.svg');
+const favicon1 = await loadSvgAsCssUrlAsync(import.meta.url, './favicon1.svg');
+const header1 = await loadSvgAsCssUrlAsync(import.meta.url, './header1.svg');
+const favicon2 = await loadSvgAsCssUrlAsync(import.meta.url, './favicon2.svg');
+const header2 = await loadSvgAsCssUrlAsync(import.meta.url, './header2.svg');
 
 export const NAME = 'HdrCntLogo';
 
