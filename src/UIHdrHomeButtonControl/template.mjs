@@ -11,6 +11,8 @@ import { loadSvgAsCssUrlAsync } from '../lib/SVG.mjs';
 const MAIN_IMG = await loadSvgAsCssUrlAsync(import.meta.url, './home_default.svg');
 const HOVER_IMG = await loadSvgAsCssUrlAsync(import.meta.url, './home_hover.svg');
 
+export const NAME = 'HdrHomeButton';
+
 export const CLASS = {
   ROOT: "uic-hdrhm-root",
 };
