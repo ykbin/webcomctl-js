@@ -10,7 +10,13 @@ const __dirname = path.dirname(__filename);
 const bytes = await readFile(path.resolve(__dirname, './favicon1.svg'), { encoding: 'utf8', flag: 'r' });
 const result = optimize(bytes, {
   plugins: [
-    { removeStyleElement: true },
+    { name: 'removeDoctype', active: true },
+    { name: 'removeComments', active: true },
+    { name: 'cleanupNumericValues', params: { floatPrecision: 2 } },
+    { name: 'convertColors', params: { names2hex: true, rgb2hex: true } },
+    { name: 'removeMetadata', active: true },
+    { name: 'removeTitle', active: true },
+    { name: 'removeDesc', active: true },
   ]
 });
 
