@@ -1,6 +1,6 @@
 import { HEADER_MOBILE_DEVICE_WIDTH } from '../lib/WickedTheme.mjs';
 import { optimize } from 'svgo';
-const { readFile } = require('node:fs/promises');
+import { readFile } from 'node:fs/promises';
 
 const bytes = await readFile('./favicon1.svg', { encoding: 'utf8', flag: 'r' });
 const result = optimize(bytes, {
@@ -13,7 +13,7 @@ const result = optimize(bytes, {
   ]
 });
 
-console.log(result.data);
+console.log('>>>', result.data);
 
 export const NAME = 'HdrCntLogo';
 
