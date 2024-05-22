@@ -32,7 +32,7 @@ export const CSS = `
   align-items: center;
   width: 100%;
   height: 100%;
-  padding: 40px 40px 0px 40px;
+  padding: 40px;
   box-sizing: border-box;
   background-color: var(--uic-imgcnt-bg);
 }
@@ -41,11 +41,10 @@ export const CSS = `
 {
   height: auto;
   width: auto;
-  max-width: 100%;
-  max-height: 100%;
+  max-width: calc(100% - 80px);
+  max-height: calc(100% - 80px);
   border: 1px solid;
   border-color: #f3f3f3;
-  background-color: #d6d6d6;
   box-sizing: border-box;
 }
 `;
