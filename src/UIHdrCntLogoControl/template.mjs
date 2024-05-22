@@ -2,7 +2,12 @@ import { HEADER_MOBILE_DEVICE_WIDTH } from '../lib/WickedTheme.mjs';
 import { optimize } from 'svgo';
 import { readFile } from 'node:fs/promises';
 
-const bytes = await readFile('./favicon1.svg', { encoding: 'utf8', flag: 'r' });
+import path from 'node:path';
+import { fileURLToPath } from 'url';
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const bytes = await readFile(path.resolve(__dirname, './favicon1.svg'), { encoding: 'utf8', flag: 'r' });
 const result = optimize(bytes, {
   plugins: [
     { removeStyleElement: true },
