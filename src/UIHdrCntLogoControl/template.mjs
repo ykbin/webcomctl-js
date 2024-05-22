@@ -1,7 +1,8 @@
 import { HEADER_MOBILE_DEVICE_WIDTH } from '../lib/WickedTheme.mjs';
 import { optimize } from 'svgo';
+const { readFile } = require('node:fs/promises');
 
-const bytes = await fs.readFile('./favicon1.svg', { encoding: 'utf8', flag: 'r' });
+const bytes = await readFile('./favicon1.svg', { encoding: 'utf8', flag: 'r' });
 const result = optimize(bytes, {
   plugins: [
     { removeStyleElement: true },
