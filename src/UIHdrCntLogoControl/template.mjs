@@ -20,8 +20,12 @@ const result = optimize(bytes, {
   ]
 });
 
-const favicon1 = 'data:image/svg+xml;base64,' +  Buffer.from(result.data).toString('base64');
-console.log('>>>', favicon1);
+const favicon1_a = 'data:image/svg+xml,' +  encodeURIComponent(result.data);
+const favicon1_b = 'data:image/svg+xml;base64,' +  Buffer.from(result.data).toString('base64');
+ 
+console.log('>>> favicon1_a', favicon1_a.length);
+console.log('>>> favicon1_b', favicon1_b.length);
+const favicon1 = favicon1_a;
 
 export const NAME = 'HdrCntLogo';
 
