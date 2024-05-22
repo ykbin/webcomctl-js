@@ -23,10 +23,8 @@ export default class UIDMBtnControl extends BaseControl {
 
   _toggleElm;
 
-  constructor(element) {
-    super(element);
-
-    this._toggleElm = NQDOM.getElementByClassName(element, CLASS.TOGGLE);
+  _init() {
+    this._toggleElm = NQDOM.getElementByClassName(this.element, CLASS.TOGGLE);
     this._toggleElm && this._toggleElm.addEventListener("click", (event) => {
       const setting = Setting.getInstance();
       setting.toggleTheme();
