@@ -17,10 +17,8 @@ export default class UICntButtBRedControl extends BaseControl {
   _rootElm;
   _heightElm;
 
-  constructor(element) {
-    super(element);
-
-    this._rootElm = element;
+  _init() {
+    this._rootElm = this.element;
     const lableElm = this._rootElm.querySelector('label');
     if (lableElm) {
       const inputId = Random.nextElementId();
