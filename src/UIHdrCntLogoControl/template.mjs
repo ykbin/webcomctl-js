@@ -20,7 +20,7 @@ const result = optimize(bytes, {
   ]
 });
 
-const favicon1 = 'data:image/svg+xml,' +  Buffer.from(result.data).toString('base64');
+const favicon1 = 'data:image/svg+xml;base64,' +  Buffer.from(result.data).toString('base64');
 console.log('>>>', favicon1);
 
 export const NAME = 'HdrCntLogo';
@@ -39,7 +39,7 @@ export const HTML = `
 export const CSS = `
 :root
 {
-  --uic-hdrcnt-fimg: url(${favicon1});
+  --uic-hdrcnt-fimg: url("${favicon1}");
   --uic-hdrcnt-himg: url(header1.svg);
 }
 
