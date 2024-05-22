@@ -1,31 +1,10 @@
+import { loadSvgAsCssUrlAsync } from '../lib/SVG.mjs';
 import { HEADER_MOBILE_DEVICE_WIDTH } from '../lib/WickedTheme.mjs';
-import { optimize } from 'svgo';
-import { readFile } from 'node:fs/promises';
 
-import path from 'node:path';
-import { fileURLToPath } from 'url';
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-const bytes = await readFile(path.resolve(__dirname, './favicon1.svg'), { encoding: 'utf8', flag: 'r' });
-const result = optimize(bytes, {
-  plugins: [
-    { name: 'removeDoctype', active: true },
-    { name: 'removeComments', active: true },
-    { name: 'cleanupNumericValues', params: { floatPrecision: 2 } },
-    { name: 'convertColors', params: { names2hex: true, rgb2hex: true } },
-    { name: 'removeMetadata', active: true },
-    { name: 'removeTitle', active: true },
-    { name: 'removeDesc', active: true },
-  ]
-});
-
-const favicon1_a = 'data:image/svg+xml,' +  encodeURIComponent(result.data);
-const favicon1_b = 'data:image/svg+xml;base64,' +  Buffer.from(result.data).toString('base64');
- 
-console.log('>>> favicon1_a', favicon1_a.length);
-console.log('>>> favicon1_b', favicon1_b.length);
-const favicon1 = favicon1_a;
+const favicon1 = loadSvgAsCssUrlAsync(import.meta.url, './favicon1.svg');
+const header1 = loadSvgAsCssUrlAsync(import.meta.url, './header1.svg');
+const favicon2 = loadSvgAsCssUrlAsync(import.meta.url, './favicon2.svg');
+const header2 = loadSvgAsCssUrlAsync(import.meta.url, './header2.svg');
 
 export const NAME = 'HdrCntLogo';
 
@@ -43,14 +22,14 @@ export const HTML = `
 export const CSS = `
 :root
 {
-  --uic-hdrcnt-fimg: url("${favicon1}");
-  --uic-hdrcnt-himg: url(header1.svg);
+  --uic-hdrcnt-fimg: ${favicon1};
+  --uic-hdrcnt-himg: ${header1};
 }
 
 [data-theme="dark"]
 {
-  --uic-hdrcnt-fimg: url(favicon2.svg);
-  --uic-hdrcnt-himg: url(header2.svg);
+  --uic-hdrcnt-fimg: ${favicon2};
+  --uic-hdrcnt-himg: ${header2};
 }
 
 .${CLASS.ROOT} h2,
