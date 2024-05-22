@@ -1,4 +1,6 @@
 import { HEADER_MOBILE_DEVICE_WIDTH } from '../lib/WickedTheme.mjs';
+import favicon1 from 'raw-loader!./favicon1.svg';
+console.log(favicon1);
 
 export const NAME = 'HdrCntLogo';
 
