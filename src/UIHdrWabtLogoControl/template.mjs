@@ -1,4 +1,10 @@
 import { HEADER_MOBILE_DEVICE_WIDTH } from '../lib/WickedTheme.mjs';
+import { loadSvgAsCssUrlAsync } from '../lib/SVG.mjs';
+
+const FAVICON1_IMG = await loadSvgAsCssUrlAsync(import.meta.url, './favicon1.svg');
+const FAVICON2_IMG = await loadSvgAsCssUrlAsync(import.meta.url, './favicon2.svg');
+const HEADER1_IMG = await loadSvgAsCssUrlAsync(import.meta.url, './header1.svg');
+const HEADER2_IMG = await loadSvgAsCssUrlAsync(import.meta.url, './header2.svg');
 
 export const NAME = 'HdrWabtLogo';
 
@@ -16,14 +22,14 @@ export const HTML = `
 export const CSS = `
 :root
 {
-  --uic-hdrwabt-fimg: url(favicon1.svg);
-  --uic-hdrwabt-himg: url(header1.svg);
+  --uic-hdrwabt-fimg: ${FAVICON1_IMG};
+  --uic-hdrwabt-himg: ${HEADER1_IMG};
 }
 
 [data-theme="dark"]
 {
-  --uic-hdrwabt-fimg: url(favicon2.svg);
-  --uic-hdrwabt-himg: url(header2.svg);
+  --uic-hdrwabt-fimg: ${FAVICON2_IMG};
+  --uic-hdrwabt-himg: ${HEADER2_IMG};
 }
 
 .${CLASS.ROOT} h2,

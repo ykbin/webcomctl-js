@@ -1,5 +1,9 @@
 import { HEADER_MOBILE_DEVICE_WIDTH } from '../lib/WickedTheme.mjs';
 import { HEADER_FONT_COLOR } from '../lib/WickedTheme.mjs';
+import { loadSvgAsCssUrlAsync } from '../lib/SVG.mjs';
+
+const MOON_IMG = await loadSvgAsCssUrlAsync(import.meta.url, './moon.svg');
+const SUN_IMG = await loadSvgAsCssUrlAsync(import.meta.url, './sun.svg');
 
 export const NAME = 'DMBtn';
 
@@ -17,13 +21,13 @@ export const HTML = `
 export const CSS = `
 :root
 {
-  --uic-dmbtn-img: url(moon.svg);
+  --uic-dmbtn-img: ${MOON_IMG};
   --uic-dmbtn-bg: #7b7b7b21;
 }
 
 [data-theme="dark"]
 {
-  --uic-dmbtn-img: url(sun.svg);
+  --uic-dmbtn-img: ${SUN_IMG};
   --uic-dmbtn-bg: #ffffff21;
 }
 

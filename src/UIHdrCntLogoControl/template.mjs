@@ -1,10 +1,10 @@
-import { loadSvgAsCssUrlAsync } from '../lib/SVG.mjs';
 import { HEADER_MOBILE_DEVICE_WIDTH } from '../lib/WickedTheme.mjs';
+import { loadSvgAsCssUrlAsync } from '../lib/SVG.mjs';
 
-const favicon1 = await loadSvgAsCssUrlAsync(import.meta.url, './favicon1.svg');
-const header1 = await loadSvgAsCssUrlAsync(import.meta.url, './header1.svg');
-const favicon2 = await loadSvgAsCssUrlAsync(import.meta.url, './favicon2.svg');
-const header2 = await loadSvgAsCssUrlAsync(import.meta.url, './header2.svg');
+const FAVICON1_IMG = await loadSvgAsCssUrlAsync(import.meta.url, './favicon1.svg');
+const FAVICON2_IMG = await loadSvgAsCssUrlAsync(import.meta.url, './favicon2.svg');
+const HEADER1_IMG = await loadSvgAsCssUrlAsync(import.meta.url, './header1.svg');
+const HEADER2_IMG = await loadSvgAsCssUrlAsync(import.meta.url, './header2.svg');
 
 export const NAME = 'HdrCntLogo';
 
@@ -22,14 +22,14 @@ export const HTML = `
 export const CSS = `
 :root
 {
-  --uic-hdrcnt-fimg: ${favicon1};
-  --uic-hdrcnt-himg: ${header1};
+  --uic-hdrcnt-fimg: ${FAVICON1_IMG};
+  --uic-hdrcnt-himg: ${HEADER1_IMG};
 }
 
 [data-theme="dark"]
 {
-  --uic-hdrcnt-fimg: ${favicon2};
-  --uic-hdrcnt-himg: ${header2};
+  --uic-hdrcnt-fimg: ${FAVICON2_IMG};
+  --uic-hdrcnt-himg: ${HEADER2_IMG};
 }
 
 .${CLASS.ROOT} h2,
