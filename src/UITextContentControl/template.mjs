@@ -27,14 +27,14 @@ export const HTML = `
 export const CSS = `
 :root
 {
-  --uic-txtcnt-bg: ${ UIC_CONTENT_BACKGROUND_COLOR };
+  --uic-txtcnt-bg: ${UIC_CONTENT_BACKGROUND_COLOR};
   --uic-txtcnt-col: black;
   --uic-txtcnt-bor: #e6e6e6;
 }
 
 [data-theme="dark"]
 {
-  --uic-txtcnt-bg: ${ UIC_CONTENT_BACKGROUND_COLOR_DARK };
+  --uic-txtcnt-bg: ${UIC_CONTENT_BACKGROUND_COLOR_DARK};
   --uic-txtcnt-col: #ffffff9e;
   --uic-txtcnt-bor: #5f5f5f4a;
 }

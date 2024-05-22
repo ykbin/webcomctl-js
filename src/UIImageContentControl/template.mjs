@@ -17,12 +17,12 @@ export const HTML = `
 export const CSS = `
 :root
 {
-  --uic-imgcnt-bg: ${ UIC_CONTENT_BACKGROUND_COLOR };
+  --uic-imgcnt-bg: ${UIC_CONTENT_BACKGROUND_COLOR};
 }
 
 [data-theme="dark"]
 {
-  --uic-imgcnt-bg: ${ UIC_CONTENT_BACKGROUND_COLOR_DARK };
+  --uic-imgcnt-bg: ${UIC_CONTENT_BACKGROUND_COLOR_DARK};
 }
 
 .${CLASS.ROOT}
