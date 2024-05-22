@@ -6,11 +6,10 @@ import { HEADER_BACKGROUND_COLOR } from '../lib/WickedTheme.mjs';
 import { HEADER_BACKGROUND_COLOR_DARK } from '../lib/WickedTheme.mjs';
 import { HEADER_BORDER_RADIUS_HOVER } from '../lib/WickedTheme.mjs';
 import { HEADER_COLOR_HOVER } from '../lib/WickedTheme.mjs';
+import { loadSvgAsCssUrlAsync } from '../lib/SVG.mjs';
 
-export const NAME = 'HdrHomeButton';
-
-const IMAGE_DEFAULT = 'url(home_default.svg)';
-const IMAGE_HOVER = 'url(home_hover.svg)';
+const MAIN_IMG = await loadSvgAsCssUrlAsync(import.meta.url, './home_default.svg');
+const HOVER_IMG = await loadSvgAsCssUrlAsync(import.meta.url, './home_hover.svg');
 
 export const CLASS = {
   ROOT: "uic-hdrhm-root",
@@ -61,7 +60,7 @@ export const CSS = `
 
 .${CLASS.ROOT}:hover > div
 {
-  background-image: ${IMAGE_HOVER};
+  background-image: ${HOVER_IMG};
 }
 
 .${CLASS.ROOT} > div
@@ -69,7 +68,7 @@ export const CSS = `
   width: 40px;
   height: 30px;
   border: 4px solid transparent;
-  background-image: ${IMAGE_DEFAULT};
+  background-image: ${MAIN_IMG};
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
