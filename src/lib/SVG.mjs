@@ -19,8 +19,8 @@ export async function loadSvgAsCssUrlAsync(metaUrl, filename) {
   const currentFilename = fileURLToPath(metaUrl);
   const currentDirname = path.dirname(currentFilename);
   
-  const filename = path.resolve(currentDirname, filename);
-  const bytes = await readFile(filename, { encoding: 'utf8', flag: 'r' });
+  const fname = path.resolve(currentDirname, filename);
+  const bytes = await readFile(fname, { encoding: 'utf8', flag: 'r' });
   const optimizeSvg = optimize(bytes, optimizeOptions);
   
   const svgUriData1 = 'data:image/svg+xml,' +  encodeURIComponent(optimizeSvg.data);
