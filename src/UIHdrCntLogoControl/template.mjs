@@ -20,7 +20,8 @@ const result = optimize(bytes, {
   ]
 });
 
-console.log('>>>', result.data);
+const favicon1 = 'data:image/svg+xml,' + result.data.toString('base64');
+console.log('>>>', favicon1);
 
 export const NAME = 'HdrCntLogo';
 
