@@ -1,6 +1,18 @@
 import { HEADER_MOBILE_DEVICE_WIDTH } from '../lib/WickedTheme.mjs';
-import favicon1 from 'raw-loader!./favicon1.svg';
-console.log(favicon1);
+import { optimize } from 'svgo';
+
+const bytes = await fs.readFile('./favicon1.svg', { encoding: 'utf8', flag: 'r' });
+const result = optimize(bytes, {
+  plugins: [
+    { removeStyleElement: true },
+    { removeXMLNS: true },
+    { cleanupAttrs: true },
+    { removeDoctype: true },
+    { removeXMLProcInst: true },
+  ]
+});
+
+console.log(result.data);
 
 export const NAME = 'HdrCntLogo';
 
