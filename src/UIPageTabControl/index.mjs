@@ -1,5 +1,5 @@
 import { BaseControl, Random, NQDOM } from 'webnetq-js';
-import { NAME, HTML, ITEM_HTML, CLASS, CSS } from './template.mjs';
+import { NAME, HTML, ITEM_HTML, CLASS, CSS } from 'module-loader!./template.mjs';
 
 export const template = {
   NAME, HTML, CLASS, CSS,

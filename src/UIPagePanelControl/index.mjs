@@ -1,5 +1,5 @@
 import { BaseControl, NQDOM } from 'webnetq-js';
-import { NAME, HTML, MENU_ITEM_HTML, PSNT_ITEM_HTML, CLASS, CSS } from './template.mjs';
+import { NAME, HTML, MENU_ITEM_HTML, PSNT_ITEM_HTML, CLASS, CSS } from 'module-loader!./template.mjs';
 
 export const template = {
   NAME, HTML, CLASS, CSS,
