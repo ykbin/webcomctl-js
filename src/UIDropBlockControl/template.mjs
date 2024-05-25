@@ -1,8 +1,9 @@
+import { UIC_BLUE_SQUARE_BACKGROUND } from '../lib/WickedTheme.mjs';
+import { UIC_BLUE_SQUARE_BORDER } from '../lib/WickedTheme.mjs';
+
 export const NAME = 'DropBlock';
 
 const VAR = {
-  RC_BORDER: '#0985b7',
-  RC_BACKGROUND: 'rgb(5 79 171 / 60%)',
   SCTHUMB_BACKGROUND: '#b5b5b5c7',
 };
 
@@ -48,9 +49,9 @@ export const CSS = `
 .${CLASS.ROOT} > span > div
 {
   position: absolute;
-  border: 1px solid ${VAR.RC_BORDER};
+  border: 1px solid ${UIC_BLUE_SQUARE_BORDER};
   border-radius: 3px;
-  background-color: ${VAR.RC_BACKGROUND};
+  background-color:  ${UIC_BLUE_SQUARE_BACKGROUND};
   box-sizing: border-box;
 }
 
