@@ -6,9 +6,9 @@ export const CLASS = {
 };
 
 export const HTML = `
-<s class="${CLASS.ROOT}">
+<div class="${CLASS.ROOT}">
   <div></div>
-</s>
+</div>
 `;
 
 export const CSS = `

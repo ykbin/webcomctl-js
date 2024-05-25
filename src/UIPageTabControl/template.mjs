@@ -1,5 +1,7 @@
 import { COMMON_MOBILE_DEVICE_WIDTH } from '../lib/WickedTheme.mjs';
 import { TOOLBAR_FONT_FAMALY } from '../lib/WickedTheme.mjs';
+import { UIC_BLUE_SQUARE_BACKGROUND } from '../lib/WickedTheme.mjs';
+import { UIC_BLUE_SQUARE_BORDER } from '../lib/WickedTheme.mjs';
 
 export const NAME = 'PageTab';
 
@@ -8,6 +10,7 @@ export const CLASS = {
   TEXT: "uic-pagtab-name",
   CLOSE: "uic-pagtab-close",
   FOCUS: "uic-pagtab-active",
+  BLOCK: "uic-pagtab-block",
 };
 
 const VAR = {
@@ -25,6 +28,7 @@ export const ITEM_HTML = `
 <div class="${CLASS.FOCUS}" draggable="true">
   <span class="${CLASS.TEXT}"></span>
   <div class="${CLASS.CLOSE}" title="Close"><div></div></div>
+  <s></s>
 </div>
 `;
 
@@ -69,6 +73,7 @@ export const CSS = `
 
 .${CLASS.ROOT} > div
 {
+  position: relative;
   display: grid;
   grid-template-columns: 1fr 25px;
   align-items: center;
@@ -132,6 +137,23 @@ div.${CLASS.FOCUS}
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+.${CLASS.ROOT} > div > s
+{
+  position: absolute;
+  right: 0px;
+  top: -1px;
+}
+
+.${CLASS.BLOCK}
+{
+  display: block;
+  height: inherit;
+  width: inherit;
+  border: 1px solid ${UIC_BLUE_SQUARE_BORDER};
+  background-color: ${UIC_BLUE_SQUARE_BACKGROUND};
+  box-sizing: border-box;
 }
 
 .${CLASS.ROOT} > div > div:hover
