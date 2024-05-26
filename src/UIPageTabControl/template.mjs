@@ -10,7 +10,7 @@ export const CLASS = {
   TEXT: "uic-pagtab-name",
   CLOSE: "uic-pagtab-close",
   FOCUS: "uic-pagtab-active",
-  DISABLE: "uic-pagtab-disable",
+  LOADING: "uic-pagtab-loading",
 };
 
 const VAR = {
@@ -40,7 +40,7 @@ export const CSS = `
   --uic-pagtab-col: #a7a7a7;
   --uic-pagtab-bg: #ebebeb;
   --uic-pagtab-act-col: black;
-  --uic-pagtab-disable: #949eb0;
+  --uic-pagtab-loading: #949eb0;
 }
 
 [data-theme="dark"]
@@ -50,7 +50,7 @@ export const CSS = `
   --uic-pagtab-col: #ffffff9e;
   --uic-pagtab-bg: #242424e6;
   --uic-pagtab-act-col: #c8c8c8;
-  --uic-pagtab-disable: #172031;
+  --uic-pagtab-loading: #172031;
 }
 
 .${CLASS.ROOT}
@@ -141,9 +141,9 @@ div.${CLASS.FOCUS}
   background-repeat: no-repeat;
 }
 
-.${CLASS.ROOT} > div.${CLASS.DISABLE}
+.${CLASS.ROOT} > div.${CLASS.LOADING}
 {
-  background-color: var(--uic-pagtab-disable);
+  background-color: var(--uic-pagtab-loading);
 }
 
 .${CLASS.DISABLE}
