@@ -1,6 +1,6 @@
 import { representClassNames } from '../lib/CSSHelper.mjs';
 
-import { Mobile } from '../lib/Settings.mjs';
+import { COMMON_MOBILE_DEVICE_WIDTH } from '../lib/WickedTheme.mjs';
 
 export const NAME = 'MainFooter';
 
@@ -138,7 +138,7 @@ export const CSS = `
   text-decoration: none;
 }
 
-@media (device-width < ${Mobile.deviceWidth})
+@media (device-width < ${COMMON_MOBILE_DEVICE_WIDTH})
 {
   .${CLASS.ROOT}
   {
