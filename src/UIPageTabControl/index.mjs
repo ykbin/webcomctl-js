@@ -226,7 +226,7 @@ export default class UIPageTabControl extends BaseControl {
     }
   }
 
-  loadingByName(name, value) {
+  setLoadingByName(name, value) {
     const item = this._items.find((item) => item.name && item.name === name);
     if (item) {
       item.loading = value;
