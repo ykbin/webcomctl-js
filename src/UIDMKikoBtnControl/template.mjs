@@ -1,3 +1,8 @@
+import { loadSvgAsCssUrlAsync } from '../lib/SVG.mjs';
+
+const MOON_IMG = await loadSvgAsCssUrlAsync(import.meta.url, './moon.svg');
+const SUN_IMG = await loadSvgAsCssUrlAsync(import.meta.url, './sun.svg');
+
 export const NAME = 'DMKikoBtn';
 
 const BORDER_COLOR = '#6a6a6a';
@@ -17,12 +22,12 @@ export const HTML = `
 export const CSS = `
 :root 
 {
-  --uic-dmkkbtn-img: url(moon.svg);
+  --uic-dmkkbtn-img: ${MOON_IMG};
 }
 
 [data-theme="dark"]
 {
-  --uic-dmkkbtn-img: url(sun.svg);
+  --uic-dmkkbtn-img: ${SUN_IMG};
 }
 
 .${CLASS.ROOT}
