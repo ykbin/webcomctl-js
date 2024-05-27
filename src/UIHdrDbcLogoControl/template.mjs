@@ -1,7 +1,7 @@
 import { representClassNames } from '../lib/CSSHelper.mjs';
 import { loadSvgAsCssUrlAsync } from '../lib/SVG.mjs';
+
 import { HEADER_MOBILE_DEVICE_WIDTH } from '../lib/WickedTheme.mjs';
-import { representClassNames } from '../lib/CSSHelper.mjs';
 
 export const CLASS = representClassNames({
   ROOT: "uic-hdrdbc-root",
