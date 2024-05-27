@@ -29,6 +29,7 @@ export { default as UIPagePanelControl } from './UIPagePanelControl/index.mjs';
 export { default as UILoadingBlockControl } from './UILoadingBlockControl/index.mjs';
 export { default as UISplitterBlockControl } from './UISplitterBlockControl/index.mjs';
 export { default as UITextContentControl } from './UITextContentControl/index.mjs';
+export { default as UIHexContentControl } from './UIHexContentControl/index.mjs';
 export { default as UIImageContentControl } from './UIImageContentControl/index.mjs';
 export { default as UIDMKikoBtnControl } from './UIDMKikoBtnControl/index.mjs';
 export { default as UIDebugPanelControl } from './UIDebugPanelControl/index.mjs';
