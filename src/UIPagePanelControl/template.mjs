@@ -1,3 +1,6 @@
+import { representClassNames } from '../lib/CSSHelper.mjs';
+import { loadSvgAsCssUrlAsync } from '../lib/SVG.mjs';
+
 import { COMMON_MOBILE_DEVICE_WIDTH } from '../lib/WickedTheme.mjs';
 import { TOOLBAR_FONT_FAMALY } from '../lib/WickedTheme.mjs';
 
@@ -13,7 +16,7 @@ const VAR = {
   PLIST_SEL: '#fd8c73',
 };
 
-export const CLASS = {
+export const CLASS = representClassNames({
   ROOT: "uic-pagpnl-root",
   DOWNLOAD: "uic-pagpnl-download",
   CODETYPE: "uic-pagpnl-codetype",
@@ -23,7 +26,7 @@ export const CLASS = {
   PSNTLIST: "uic-pagpnl-prsnlist",
   PSNTTEXT: "uic-pagpnl-prsntext",
   PSNTACTV: "uic-pagpnl-prsnactv",
-};
+});
 
 export const HTML = `
 <span class="${CLASS.ROOT}" draggable="false">

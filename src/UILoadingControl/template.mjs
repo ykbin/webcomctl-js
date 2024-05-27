@@ -1,3 +1,6 @@
+import { representClassNames } from '../lib/CSSHelper.mjs';
+import { loadSvgAsCssUrlAsync } from '../lib/SVG.mjs';
+
 export const NAME = 'Loading';
 
 const VAR = {
@@ -5,10 +8,10 @@ const VAR = {
   IMAGE_FILE: 'file-upload.svg',
 };
 
-export const CLASS = {
+export const CLASS = representClassNames({
   ROOT: 'uic-loading-root',
   SHOW: 'uic-loading-show',
-};
+});
 
 export const HTML = `
 <div class="${CLASS.ROOT}">

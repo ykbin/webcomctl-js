@@ -1,9 +1,11 @@
+import { representClassNames } from '../lib/CSSHelper.mjs';
+
 export const NAME = 'DropFile';
 
-export const CLASS = {
+export const CLASS = representClassNames({
   ROOT: "uic-dropfile-root",
   SHOW: "uic-dropfile-show",
-};
+});
 
 export const HTML = `
 <div class="${CLASS.ROOT}">

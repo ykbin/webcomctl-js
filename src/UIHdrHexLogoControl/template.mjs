@@ -1,10 +1,12 @@
+import { representClassNames } from '../lib/CSSHelper.mjs';
+import { loadSvgAsCssUrlAsync } from '../lib/SVG.mjs';
 import { HEADER_MOBILE_DEVICE_WIDTH } from '../lib/WickedTheme.mjs';
 
 export const NAME = 'HdrHexLogo';
 
-export const CLASS = {
+export const CLASS = representClassNames({
   ROOT: "uic-hdrhex-root",
-};
+});
 
 export const HTML = `
 <div class="${CLASS.ROOT}">

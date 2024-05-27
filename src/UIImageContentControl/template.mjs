@@ -1,12 +1,14 @@
+import { representClassNames } from '../lib/CSSHelper.mjs';
+
 import { UIC_CONTENT_BACKGROUND_COLOR } from '../lib/WickedTheme.mjs';
 import { UIC_CONTENT_BACKGROUND_COLOR_DARK } from '../lib/WickedTheme.mjs';
 
 export const NAME = 'ImageContent';
 
-export const CLASS = {
+export const CLASS = representClassNames({
   ROOT: "uic-imgcnt-root",
   CONTENT: "uic-imgcnt-content",
-};
+});
 
 export const HTML = `
 <div class="${CLASS.ROOT}" draggable="false">

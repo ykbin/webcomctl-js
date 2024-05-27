@@ -1,6 +1,7 @@
-import { Mobile } from '../lib/Settings.mjs';
 import { representClassNames } from '../lib/CSSHelper.mjs';
 import { loadSvgAsCssUrlAsync } from '../lib/SVG.mjs';
+
+import { COMMON_MOBILE_DEVICE_WIDTH } from '../lib/WickedTheme.mjs';
 
 const LOAD_IMG = await loadSvgAsCssUrlAsync(import.meta.url, './load.svg');
 
@@ -107,7 +108,7 @@ export const CSS = `
   right: 33px;
 }
 
-@media (device-width < ${Mobile.deviceWidth})
+@media (device-width < ${COMMON_MOBILE_DEVICE_WIDTH})
 {
   .${CLASS.ROOT}
   {

@@ -1,3 +1,6 @@
+import { representClassNames } from '../lib/CSSHelper.mjs';
+import { loadSvgAsCssUrlAsync } from '../lib/SVG.mjs';
+
 import { HEADER_MOBILE_DEVICE_WIDTH } from '../lib/WickedTheme.mjs';
 import { HEADER_FONT_SIZE } from '../lib/WickedTheme.mjs';
 import { HEADER_FONT_COLOR } from '../lib/WickedTheme.mjs';
@@ -6,16 +9,15 @@ import { HEADER_BACKGROUND_COLOR } from '../lib/WickedTheme.mjs';
 import { HEADER_BACKGROUND_COLOR_DARK } from '../lib/WickedTheme.mjs';
 import { HEADER_BORDER_RADIUS_HOVER } from '../lib/WickedTheme.mjs';
 import { HEADER_COLOR_HOVER } from '../lib/WickedTheme.mjs';
-import { loadSvgAsCssUrlAsync } from '../lib/SVG.mjs';
 
 const MAIN_IMG = await loadSvgAsCssUrlAsync(import.meta.url, './home_default.svg');
 const HOVER_IMG = await loadSvgAsCssUrlAsync(import.meta.url, './home_hover.svg');
 
 export const NAME = 'HdrHomeButton';
 
-export const CLASS = {
+export const CLASS = representClassNames({
   ROOT: "uic-hdrhm-root",
-};
+});
 
 export const HTML = `
 <a class="${CLASS.ROOT} notranslate" translate="no" href="\${ENV:HOST_URL}" draggable="false">

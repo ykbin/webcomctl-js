@@ -1,9 +1,11 @@
+import { representClassNames } from '../lib/CSSHelper.mjs';
+
 export const NAME = 'RightBlock';
 
-export const CLASS = {
+export const CLASS = representClassNames({
   ROOT: "uic-rhtblk-root",
   PORT: "uic-rhtblk-port",
-};
+});
 
 export const HTML = `
 <div class="${CLASS.ROOT} ${CLASS.PORT}"></div>

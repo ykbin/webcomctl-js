@@ -1,3 +1,5 @@
+import { representClassNames } from '../lib/CSSHelper.mjs';
+
 import { COMMON_MOBILE_DEVICE_WIDTH } from '../lib/WickedTheme.mjs';
 import { UIC_CONTENT_BACKGROUND_COLOR } from '../lib/WickedTheme.mjs';
 import { UIC_CONTENT_BACKGROUND_COLOR_DARK } from '../lib/WickedTheme.mjs';
@@ -9,13 +11,13 @@ const OFFSET_COLOR = 'rgb(197, 6, 11)';
 const SCROLLBAR_THUMB_COLOR = '#b5b5b5c7';
 const SCROLLBAR_TRACK_COLOR = 'transparent';
 
-export const CLASS = {
+export const CLASS = representClassNames({
   ROOT: "uic-hexcnt-root",
   NUMBERS: "uic-hexcnt-numbers",
   CONTENT: "uic-hexcnt-content",
   OFFSET: "uic-hexcnt-offset",
   BLUE: "uic-hexcnt-blue",
-};
+});
 
 export const HTML = `
 <div class="${CLASS.ROOT}">

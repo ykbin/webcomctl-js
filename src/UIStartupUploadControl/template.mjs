@@ -1,11 +1,14 @@
+import { representClassNames } from '../lib/CSSHelper.mjs';
+import { loadSvgAsCssUrlAsync } from '../lib/SVG.mjs';
+
 export const NAME = 'StartupUpload';
 
-export const CLASS = {
+export const CLASS = representClassNames({
   ROOT: 'uic-strupl-root',
   FDROP: 'uic-strupl-fdrop',
   DSHOW: 'uic-strupl-dshow',
   DHIDE: 'uic-strupl-dhide',
-};
+});
 
 export const HTML = `
 <div class="${CLASS.ROOT}" align="center">

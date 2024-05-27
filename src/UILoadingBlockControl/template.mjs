@@ -1,3 +1,6 @@
+import { representClassNames } from '../lib/CSSHelper.mjs';
+import { loadSvgAsCssUrlAsync } from '../lib/SVG.mjs';
+
 export const NAME = 'LoadingBlock';
 
 const VAR = {
@@ -5,11 +8,11 @@ const VAR = {
   BGIMG: 'url(unloading.svg)',
 };
 
-export const CLASS = {
+export const CLASS = representClassNames({
   ROOT: 'uic-ldnblk-root',
   PORT: 'uic-ldnblk-port',
   UNLOAD: 'uic-ldnblk-unload',
-};
+});
 
 export const HTML = `
 <div class="${CLASS.ROOT}">

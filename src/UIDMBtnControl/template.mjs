@@ -1,16 +1,17 @@
+import { representClassNames } from '../lib/CSSHelper.mjs';
+import { loadSvgAsCssUrlAsync } from '../lib/SVG.mjs';
 import { HEADER_MOBILE_DEVICE_WIDTH } from '../lib/WickedTheme.mjs';
 import { HEADER_FONT_COLOR } from '../lib/WickedTheme.mjs';
-import { loadSvgAsCssUrlAsync } from '../lib/SVG.mjs';
 
 const MOON_IMG = await loadSvgAsCssUrlAsync(import.meta.url, './moon.svg');
 const SUN_IMG = await loadSvgAsCssUrlAsync(import.meta.url, './sun.svg');
 
 export const NAME = 'DMBtn';
 
-export const CLASS = {
+export const CLASS = representClassNames({
   ROOT: "uic-dmbtn-root",
   TOGGLE: "uic-dmbtn-toggle",
-};
+});
 
 export const HTML = `
 <div class="${CLASS.ROOT}">

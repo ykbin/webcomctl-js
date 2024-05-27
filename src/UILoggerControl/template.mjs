@@ -1,6 +1,9 @@
+import { representClassNames } from '../lib/CSSHelper.mjs';
+import { loadSvgAsCssUrlAsync } from '../lib/SVG.mjs';
+
 export const NAME = 'Logger';
 
-export const CLASS = {
+export const CLASS = representClassNames({
   ROOT: 'uic-logger-root',
   CLOSE: 'uic-logger-close',
   TITLE: 'uic-logger-title',
@@ -9,7 +12,7 @@ export const CLASS = {
   SUCCESS: 'uic-logger-lvlsuccess',
   WARNING: 'uic-logger-lvlwarn',
   ERROR: 'uic-logger-lvlerror',
-};
+});
 
 export const HTML = `
 <div class="${CLASS.ROOT}"></div>

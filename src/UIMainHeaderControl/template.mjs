@@ -1,9 +1,11 @@
+import { representClassNames } from '../lib/CSSHelper.mjs';
+
 export const NAME = 'MainHeader';
 
-export const CLASS = {
+export const CLASS = representClassNames({
   ROOT: "uic-mhdr-root",
   PORT: "uic-mhdr-port",
-};
+});
 
 export const HTML = `
 <header class="${CLASS.ROOT} ${CLASS.PORT}" draggable="false"></header>

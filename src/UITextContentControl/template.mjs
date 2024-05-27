@@ -1,8 +1,8 @@
+import { representClassNames } from '../lib/CSSHelper.mjs';
+
 import { COMMON_MOBILE_DEVICE_WIDTH } from '../lib/WickedTheme.mjs';
 import { UIC_CONTENT_BACKGROUND_COLOR } from '../lib/WickedTheme.mjs';
 import { UIC_CONTENT_BACKGROUND_COLOR_DARK } from '../lib/WickedTheme.mjs';
-
-import { representClassNames } from '../lib/CSSHelper.mjs';
 
 export const NAME = 'TextContent';
 
@@ -17,7 +17,7 @@ export const CLASS = representClassNames({
   CONTENT: "uic-txtcnt-content",
   OFFSET: "uic-txtcnt-offset",
   BLUE: "uic-txtcnt-blue",
-};
+});
 
 export const HTML = `
 <div class="${CLASS.ROOT}">

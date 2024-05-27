@@ -1,3 +1,4 @@
+import { representClassNames } from '../lib/CSSHelper.mjs';
 import { loadSvgAsCssUrlAsync } from '../lib/SVG.mjs';
 
 const MOON_IMG = await loadSvgAsCssUrlAsync(import.meta.url, './moon.svg');
@@ -8,10 +9,10 @@ export const NAME = 'DMKikoBtn';
 const BORDER_COLOR = '#6a6a6a';
 const IMAGE_BORDER_COLOR = 'transparent';
 
-export const CLASS = {
+export const CLASS = representClassNames({
   ROOT: "uic-dmkkbtn-root",
   TOGGLE: "uic-dmkkbtn-toggle",
-};
+});
 
 export const HTML = `
 <div class="${CLASS.ROOT}">

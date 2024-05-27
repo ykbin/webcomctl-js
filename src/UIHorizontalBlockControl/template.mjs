@@ -1,9 +1,11 @@
+import { representClassNames } from '../lib/CSSHelper.mjs';
+
 export const NAME = 'HorizontalBlock';
 
-export const CLASS = {
+export const CLASS = representClassNames({
   ROOT: "uic-hrzblk-root",
   PORT: "uic-hrzblk-port",
-};
+});
 
 export const HTML = `
 <div class="${CLASS.ROOT} ${CLASS.PORT}">

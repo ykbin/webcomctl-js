@@ -1,9 +1,11 @@
+import { representClassNames } from '../lib/CSSHelper.mjs';
+
 export const NAME = 'ViewBlock';
 
-export const CLASS = {
+export const CLASS = representClassNames({
   ROOT: "uic-viewblk-root",
   PORT: "uic-viewblk-port",
-};
+});
 
 export const HTML = `
 <div class="${CLASS.ROOT} ${CLASS.PORT}"></div>

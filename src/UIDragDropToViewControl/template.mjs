@@ -1,9 +1,11 @@
+import { representClassNames } from '../lib/CSSHelper.mjs';
+
 export const NAME = 'DragDropToView';
 
-export const CLASS = {
+export const CLASS = representClassNames({
   ROOT: 'uic-ddrop2v-root',
   PORT: 'uic-ddrop2v-port',
-};
+});
 
 export const HTML = `
 <div class="${CLASS.ROOT} ${CLASS.PORT}"></div>

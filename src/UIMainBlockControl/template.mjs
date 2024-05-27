@@ -1,3 +1,5 @@
+import { representClassNames } from '../lib/CSSHelper.mjs';
+
 export const NAME = 'MainBlock';
 
 const VAR = {
@@ -5,10 +7,10 @@ const VAR = {
   SCTRBG: 'transparent',
 };
 
-export const CLASS = {
+export const CLASS = representClassNames({
   ROOT: "uic-mainblk-root",
   PORT: "uic-mainblk-port",
-};
+});
 
 export const HTML = `
 <div class="${CLASS.ROOT}">

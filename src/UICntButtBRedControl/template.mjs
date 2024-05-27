@@ -1,6 +1,7 @@
-import { COMMON_MOBILE_DEVICE_WIDTH } from '../lib/WickedTheme.mjs';
 import { representClassNames } from '../lib/CSSHelper.mjs';
 import { loadSvgAsCssUrlAsync } from '../lib/SVG.mjs';
+
+import { COMMON_MOBILE_DEVICE_WIDTH } from '../lib/WickedTheme.mjs';
 
 const WATER_IMG = await loadSvgAsCssUrlAsync(import.meta.url, './water.svg');
 

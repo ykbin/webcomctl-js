@@ -1,3 +1,5 @@
+import { representClassNames } from '../lib/CSSHelper.mjs';
+
 import { Mobile } from '../lib/Settings.mjs';
 
 export const NAME = 'MainFooter';
@@ -7,13 +9,13 @@ const VAR = {
   VERSION_COLOR: '#878787',
 };
 
-export const CLASS = {
+export const CLASS = representClassNames({
   ROOT: 'uic-mfooter-root',
   LIST: 'uic-mfooter-list',
   VERSION: 'uic-mfooter-version',
   LINK_ON: 'uic-mfooter-lnon',
   LINK_OFF: 'uic-mfooter-lnoff',
-};
+});
 
 export const HTML = `
 <footer class="${CLASS.ROOT} notranslate" translate="no">

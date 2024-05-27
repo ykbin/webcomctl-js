@@ -1,8 +1,10 @@
+import { representClassNames } from '../lib/CSSHelper.mjs';
+
 export const NAME = 'DebugPanel';
 
-export const CLASS = {
+export const CLASS = representClassNames({
   ROOT: "uic-dbgbtns-root",
-};
+});
 
 export const HTML = `
 <div class="${CLASS.ROOT}"></div>

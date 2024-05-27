@@ -1,13 +1,10 @@
+import { representClassNames } from '../lib/CSSHelper.mjs';
 import { UIC_BLUE_SQUARE_BACKGROUND } from '../lib/WickedTheme.mjs';
 import { UIC_BLUE_SQUARE_BORDER } from '../lib/WickedTheme.mjs';
 
 export const NAME = 'DropBlock';
 
-const VAR = {
-  SCTHUMB_BACKGROUND: '#b5b5b5c7',
-};
-
-export const CLASS = {
+export const CLASS = representClassNames({
   ROOT: "uic-drpblk-root",
   PORT: "uic-drpblk-port",
   NONE: "uic-drpblk-none",
@@ -16,7 +13,7 @@ export const CLASS = {
   RIGHT: "uic-drpblk-right",
   TOP: "uic-drpblk-top",
   BOTTOM: "uic-drpblk-bottom",
-};
+});
 
 export const HTML = `
 <div class="${CLASS.ROOT}">

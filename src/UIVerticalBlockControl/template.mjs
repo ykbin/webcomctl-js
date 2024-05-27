@@ -1,9 +1,11 @@
+import { representClassNames } from '../lib/CSSHelper.mjs';
+
 export const NAME = 'VerticalBlock';
 
-export const CLASS = {
+export const CLASS = representClassNames({
   ROOT: "uic-vrtblk-root",
   PORT: "uic-vrtblk-port",
-};
+)};
 
 export const HTML = `
 <div class="${CLASS.ROOT} ${CLASS.PORT}"></div>

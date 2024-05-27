@@ -1,3 +1,6 @@
+import { representClassNames } from '../lib/CSSHelper.mjs';
+import { loadSvgAsCssUrlAsync } from '../lib/SVG.mjs';
+
 import { COMMON_MOBILE_DEVICE_WIDTH } from '../lib/WickedTheme.mjs';
 import { TOOLBAR_FONT_FAMALY } from '../lib/WickedTheme.mjs';
 import { UIC_BLUE_SQUARE_BACKGROUND } from '../lib/WickedTheme.mjs';
@@ -5,13 +8,13 @@ import { UIC_BLUE_SQUARE_BORDER } from '../lib/WickedTheme.mjs';
 
 export const NAME = 'PageTab';
 
-export const CLASS = {
+export const CLASS = representClassNames({
   ROOT: "uic-pagtab-root",
   TEXT: "uic-pagtab-name",
   CLOSE: "uic-pagtab-close",
   FOCUS: "uic-pagtab-active",
   LOADING: "uic-pagtab-loading",
-};
+});
 
 const VAR = {
   DEFXIMG: 'url(X.svg)',

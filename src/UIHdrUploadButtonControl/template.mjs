@@ -1,3 +1,6 @@
+import { representClassNames } from '../lib/CSSHelper.mjs';
+import { loadSvgAsCssUrlAsync } from '../lib/SVG.mjs';
+
 import { HEADER_MOBILE_DEVICE_WIDTH } from '../lib/WickedTheme.mjs';
 import { HEADER_FONT_SIZE } from '../lib/WickedTheme.mjs';
 import { HEADER_FONT_COLOR } from '../lib/WickedTheme.mjs';
@@ -6,17 +9,16 @@ import { HEADER_BACKGROUND_COLOR } from '../lib/WickedTheme.mjs';
 import { HEADER_BACKGROUND_COLOR_DARK } from '../lib/WickedTheme.mjs';
 import { HEADER_BORDER_RADIUS_HOVER } from '../lib/WickedTheme.mjs';
 import { HEADER_COLOR_HOVER } from '../lib/WickedTheme.mjs';
-import { loadSvgAsCssUrlAsync } from '../lib/SVG.mjs';
 
 const MAIN_IMG = await loadSvgAsCssUrlAsync(import.meta.url, 'search_default.svg');
 const HOVER_IMG = await loadSvgAsCssUrlAsync(import.meta.url, 'search_hover.svg');
 
 export const NAME = 'HdrUploadButton';
 
-export const CLASS = {
+export const CLASS = representClassNames({
   ROOT: "uic-hdrupl-root",
   HIDDEN: "uic-hdrupl-hidden",
-};
+});
 
 export const HTML = `
 <label class="${CLASS.ROOT} ${CLASS.HIDDEN} notranslate" translate="no" draggable="false">

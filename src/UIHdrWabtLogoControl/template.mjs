@@ -1,5 +1,7 @@
-import { HEADER_MOBILE_DEVICE_WIDTH } from '../lib/WickedTheme.mjs';
+import { representClassNames } from '../lib/CSSHelper.mjs';
 import { loadSvgAsCssUrlAsync } from '../lib/SVG.mjs';
+
+import { HEADER_MOBILE_DEVICE_WIDTH } from '../lib/WickedTheme.mjs';
 
 const FAVICON1_IMG = await loadSvgAsCssUrlAsync(import.meta.url, './favicon1.svg');
 const FAVICON2_IMG = await loadSvgAsCssUrlAsync(import.meta.url, './favicon2.svg');
@@ -8,9 +10,9 @@ const HEADER2_IMG = await loadSvgAsCssUrlAsync(import.meta.url, './header2.svg')
 
 export const NAME = 'HdrWabtLogo';
 
-export const CLASS = {
+export const CLASS = representClassNames({
   ROOT: "uic-hdrwabt-root",
-};
+});
 
 export const HTML = `
 <div class="${CLASS.ROOT}">

@@ -1,6 +1,8 @@
+import { representClassNames } from '../lib/CSSHelper.mjs';
+
 export const NAME = 'SplitterBlock';
 
-export const CLASS = {
+export const CLASS = representClassNames({
   ROOT:   'uic-spltblk-root',
   PORT:   'uic-spltblk-port',
   NONE:   'uic-spltblk-none',
@@ -8,7 +10,7 @@ export const CLASS = {
   LEFT:   'uic-spltblk-left',
   TOP:    'uic-spltblk-top',
   BOTTOM: 'uic-spltblk-bottom',
-};
+});
 
 export const HTML = `
 <div class="${CLASS.ROOT}">
