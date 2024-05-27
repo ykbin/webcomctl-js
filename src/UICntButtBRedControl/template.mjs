@@ -1,15 +1,18 @@
 import { COMMON_MOBILE_DEVICE_WIDTH } from '../lib/WickedTheme.mjs';
+import { representClassNames } from '../lib/CSSHelper.mjs';
+import { loadSvgAsCssUrlAsync } from '../lib/SVG.mjs';
+
+const WATER_IMG = await loadSvgAsCssUrlAsync(import.meta.url, './water.svg');
 
 export const NAME = 'CntButtBRed';
 
-export const CLASS = {
+export const CLASS = representClassNames({
   ROOT: "uic-brbut-root",
   LOAD: "uic-brbut-load",
   LABEL: "uic-brbut-label",
   HEIGHT: "uic-brbut-height",
-};
+});
 
-const IMAGE = 'url(water.svg)';
 const DEF_COLOR = '#c50000';
 const DEF_BORDER_COLOR = DEF_COLOR;
 const ACT_COLOR = '#a72f2f';
@@ -86,7 +89,7 @@ export const CSS = `
 .${CLASS.LOAD} > div > div
 {
   width: 100%;
-  background-image: ${IMAGE};
+  background-image: ${WATER_IMG};
   background-repeat: no-repeat;
   background-size: 120%;
 }

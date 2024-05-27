@@ -1,11 +1,15 @@
 import { Mobile } from '../lib/Settings.mjs';
+import { representClassNames } from '../lib/CSSHelper.mjs';
+import { loadSvgAsCssUrlAsync } from '../lib/SVG.mjs';
+
+const LOAD_IMG = await loadSvgAsCssUrlAsync(import.meta.url, './load.svg');
 
 export const NAME = 'CntSmUploadButton';
 
-export const CLASS = {
+export const CLASS = representClassNames({
   ROOT: "uic-csupl-root",
   LOAD: "uic-csupl-load",
-};
+});
 
 export const HTML = `
 <div class="${CLASS.ROOT}">
@@ -17,7 +21,6 @@ export const HTML = `
 export const CSS = `
 :root
 {
-  --uic-csupl-limg: url(load.svg);
   --uic-csupl-clr: #c50000;
   --uic-csupl-brd: #c50000;
   --uic-csupl-ldclr: #c5000078;
@@ -90,7 +93,7 @@ export const CSS = `
   display: block;
   width: 33px;
   height: 100%;
-  background-image: var(--uic-csupl-limg);
+  background-image: ${LOAD_IMG};
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
