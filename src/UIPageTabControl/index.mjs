@@ -10,6 +10,7 @@ class TabItemControl {
   _element;
 
   _focus = true;
+  _loading = false;
   _text = '';
   _onfocuscanceled = false;
 
@@ -66,6 +67,18 @@ class TabItemControl {
         value ? clist.add(cname) : clist.remove(cname);
       }
       this._focus = value;
+    }
+  }
+  
+  get loading() { return this._loading; }
+  set loading(value) {
+    if (this._loading != value) {
+      if (this._focusElm) {
+        const cname = CLASS.LOADING;
+        const clist = this._focusElm.classList;
+        value ? clist.add(cname) : clist.remove(cname);
+      }
+      this._loading = value;
     }
   }
 
@@ -210,6 +223,13 @@ export default class UIPageTabControl extends BaseControl {
 
     if (!params.focus && this._items.length == 1) {
       item._onfocus(item.getInfo());
+    }
+  }
+
+  loadingByName(name, value) {
+    const item = this._items.find((item) => item.name && item.name === name);
+    if (item) {
+      item.loading = value;
     }
   }
 
