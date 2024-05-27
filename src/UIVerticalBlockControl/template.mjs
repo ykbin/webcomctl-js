@@ -5,7 +5,7 @@ export const NAME = 'VerticalBlock';
 export const CLASS = representClassNames({
   ROOT: "uic-vrtblk-root",
   PORT: "uic-vrtblk-port",
-)};
+});
 
 export const HTML = `
 <div class="${CLASS.ROOT} ${CLASS.PORT}"></div>
