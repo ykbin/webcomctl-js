@@ -3,6 +3,8 @@ import { loadSvgAsCssUrlAsync } from '../lib/SVG.mjs';
 
 import { HEADER_MOBILE_DEVICE_WIDTH } from '../lib/WickedTheme.mjs';
 
+export const NAME = 'HdrDbcLogo';
+
 export const CLASS = representClassNames({
   ROOT: "uic-hdrdbc-root",
 });

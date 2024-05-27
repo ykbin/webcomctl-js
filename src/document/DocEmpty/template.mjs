@@ -1,4 +1,4 @@
-export const NAME = 'DocVer1';
+export const NAME = 'DocEmpty';
 
 export const CLASS = {
   ROOT: "uic-docemt-root",
