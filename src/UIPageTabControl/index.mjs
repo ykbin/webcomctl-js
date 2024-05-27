@@ -135,6 +135,8 @@ export default class UIPageTabControl extends BaseControl {
   _focusIndex = 0;
   _focusHistory = [];
 
+  _idCounter = 1;
+
   constructor(element) {
     super(element);
     this.registerEvent('empty');
@@ -163,9 +165,12 @@ export default class UIPageTabControl extends BaseControl {
   }
 
   appendItem(params) {
+    this._idCounter = Math.max(this._idCounter + 1, 1);
+    const name = "N" + this._idCounter.toString().padStart(3, '0');
+
     const focus = params.focus || this._items.length == 0;
     const item = new TabItemControl({
-      name: params.name,
+      name,
       text: params.text,
       onclose: params.onclose || (() => {}),
       onfocus: params.onfocus || (() => {}),
@@ -224,6 +229,8 @@ export default class UIPageTabControl extends BaseControl {
     if (!params.focus && this._items.length == 1) {
       item._onfocus(item.getInfo());
     }
+
+    return name;
   }
 
   setLoadingByName(name, value) {
