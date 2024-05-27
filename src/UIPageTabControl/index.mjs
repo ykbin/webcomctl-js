@@ -227,14 +227,14 @@ export default class UIPageTabControl extends BaseControl {
   }
 
   setLoadingByName(name, value) {
-    const item = this._items.find((item) => item.name && item.name === name);
+    const item = this._items.find((item) => item._name && item._name === name);
     if (item) {
       item.loading = value;
     }
   }
 
   removeItemByName(name) {
-    const item = this._items.find((item) => item.name && item.name === name);
+    const item = this._items.find((item) => item._name && item._name === name);
     if (!item)
       return false;
     this._removeItem(item);
