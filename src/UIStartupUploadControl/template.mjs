@@ -1,6 +1,10 @@
 import { representClassNames } from '../lib/CSSHelper.mjs';
 import { loadSvgAsCssUrlAsync } from '../lib/SVG.mjs';
 
+const UPLOAD1_IMG = await loadSvgAsCssUrlAsync(import.meta.url, './up-file.svg');
+const UPLOAD2_IMG = await loadSvgAsCssUrlAsync(import.meta.url, './up-file-hover.svg');
+const SEARCH_IMG = await loadSvgAsCssUrlAsync(import.meta.url, './search.svg');
+
 export const NAME = 'StartupUpload';
 
 export const CLASS = representClassNames({
@@ -18,7 +22,7 @@ export const HTML = `
     <div>
       <div class="uic-strupl-fdimg"></div>
       <div class="uic-strupl-fdbtn">
-        <label for="uic-strupl-input" class="notranslate" translate="no">
+        <label class="notranslate" translate="no">
           <span></span>Upload
         </label>
       </div>
@@ -34,33 +38,32 @@ export const CSS = `
   --uic-strupl-dhide-bg: #fafafa;
   --uic-strupl-fdrop-borImg: #ebebeb00;
   --uic-strupl-fdrop-borImg2: #dfdfdf;
-  --uic-strupl-img: url(up-file.svg);
+  --uic-strupl-img: ${UPLOAD1_IMG};
   --uic-strupl-bor: transparent;
   --uic-strupl-fdbtn-col: #a6a6a6;
   --uic-strupl-fdbtn-bor: #c1c1c1;
   --uic-strupl-fdbtn-hov: #4545450f;
-  --uic-strupl-fdbtn-img: url(search.svg);
 }
 
 [data-theme="dark"]
 {
-  --uic-strupl-img: url(up-file-hover.svg);
+  --uic-strupl-img: ${UPLOAD2_IMG};
   --uic-strupl-fdbtn-hov: #45454540;
   --uic-strupl-dhide-bg: transparent;
 }
 
 .uic-strupl-fdbtn label > input,
-.uic-strupl-root > h2 + h2
+.${CLASS.ROOT} > h2 + h2
 {
   display: none;
 }
 
-.uic-strupl-root *
+.${CLASS.ROOT} *
 {
   box-sizing: border-box;
 }
 
-.uic-strupl-fdrop
+.${CLASS.FDROP}
 {
   align-self: center;
   width: 100%;
@@ -70,7 +73,7 @@ export const CSS = `
   user-select: none;
 }
 
-.uic-strupl-root
+.${CLASS.ROOT}
 {
   display: flex;
   justify-content: center;
@@ -83,7 +86,7 @@ export const CSS = `
   box-sizing: border-box;
 }
 
-.uic-strupl-root > h2 
+.${CLASS.ROOT} > h2 
 {
   margin: 0px 0px 20px 0px;
   font-size: 2.81em;
@@ -93,12 +96,12 @@ export const CSS = `
   font-family: math;
 }
 
-.uic-strupl-dhide
+.${CLASS.DHIDE}
 {
   background-color: var(--uic-strupl-dhide-bg);
 }
 
-.uic-strupl-dshow .uic-strupl-fdimg
+.${CLASS.DSHOW} .uic-strupl-fdimg
 {
   width: 100%;
   transform: scale(1.1);
@@ -107,7 +110,7 @@ export const CSS = `
   transition-delay: 0.2s;
 }
 
-.uic-strupl-fdrop > div
+.${CLASS.FDROP} > div
 {
   height: 100%;
   border-image-source: repeating-linear-gradient(45deg, var(--uic-strupl-fdrop-borImg) 0% 2%, var(--uic-strupl-fdrop-borImg2) 2% 4%,var(--uic-strupl-fdrop-borImg) 4% 6%,var(--uic-strupl-fdrop-borImg2) 6% 8%);
@@ -127,7 +130,7 @@ export const CSS = `
   border: 15px solid var(--uic-strupl-bor);
 }
 
-.uic-strupl-dshow > div > div + div
+.${CLASS.DSHOW} > div > div + div
 {
   opacity: 0.3;
 }
@@ -170,7 +173,7 @@ export const CSS = `
   width: 40px;
   height: 40px;
   margin-right: 10px;
-  background-image: var(--uic-strupl-fdbtn-img);
+  background-image: ${SEARCH_IMG};
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -178,18 +181,18 @@ export const CSS = `
 
 @media (device-width <= 550px)
 {
-  .uic-strupl-root
+  .${CLASS.ROOT}
   {
     display: flex;
     justify-content: center;
     min-height: 680px;
   }
-  .uic-strupl-fdrop
+  .${CLASS.FDROP}
   {
     height: 100%;
     max-height: 1100px;
   }
-  .uic-strupl-fdrop > div
+  .${CLASS.FDROP} > div
   {
     display: flex;
     flex-direction: column;
@@ -207,12 +210,12 @@ export const CSS = `
 
 @media (device-width <= 300px)
 {
-  .uic-strupl-fdrop
+  .${CLASS.FDROP}
   {
     width: auto;
     height: auto;
   }
-  .uic-strupl-fdrop > div
+  .${CLASS.FDROP} > div
   {
     width: auto;
   }
@@ -234,11 +237,11 @@ export const CSS = `
     width: 80px;
     height: 80px;
   }
-  .uic-strupl-root > h2
+  .${CLASS.ROOT} > h2
   {
     display: none;
   }
-  .uic-strupl-root > h2 + h2
+  .${CLASS.ROOT} > h2 + h2
   {
     display: block;
     font-size: 4.81em;
