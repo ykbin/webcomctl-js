@@ -78,6 +78,32 @@ export const CSS = `
   color: var(--uic-mfooter-col);
   background-color: var(--uic-mfooter-root-bg);
   font-family: Helvetica, Arial, sans-serif;
+  container-name: footer;
+  container-type: inline-size;
+}
+
+@container footer (width < 650px)
+{
+  .${CLASS.LIST}
+  {
+    grid-template-columns: minmax(auto, auto) minmax(auto, auto);
+  }
+  .${CLASS.LIST} > div:nth-child(1)
+  {
+    display: none;
+  }
+}
+
+@container footer (width < 450px)
+{
+  .${CLASS.LIST}
+  {
+    grid-template-columns: minmax(auto, auto);
+  }
+  .${CLASS.LIST} > div:nth-child(2)
+  {
+    display: none;
+  }
 }
 
 .${CLASS.LIST}
