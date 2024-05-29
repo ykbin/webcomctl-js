@@ -1,9 +1,11 @@
+import { representClassNames } from '../../lib/CSSHelper.mjs';
+
 export const NAME = 'DocEmpty';
 
-export const CLASS = {
+export const CLASS = representClassNames({
   ROOT: "uic-docemt-root",
   PORT: "uic-docemt-root",
-};
+});
 
 export const HTML = `
 <!DOCTYPE html>
