@@ -1,20 +1,12 @@
 import { NQDOM, BaseControl } from "webnetq-js";
-import { NAME, HTML, CLASS, CSS } from 'module-loader!./template.mjs';
+import { NAME, HTML, ITEM_HTML, CLASS, CSS } from 'module-loader!./template.mjs';
 
 export const template = {
   NAME, HTML, CLASS, CSS,
 };
 
-const _itemHTML =`
-<div>
-  <div></div>
-  <span><h3 class="${CLASS.TITLE}"></h3><span class="${CLASS.TEXT}"></span></span>
-  <s><span class="${CLASS.CLOSE}"></span></s>
-</div>
-`;
-
 const createMessage = (level, title, text) => {
-  const element = NQDOM.createElement(_itemHTML);
+  const element = NQDOM.createElement(ITEM_HTML);
   element.classList.add(level);
 
   NQDOM.getElementByClassName(element, CLASS.TITLE).textContent = title;

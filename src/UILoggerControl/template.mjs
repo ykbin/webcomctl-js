@@ -1,81 +1,94 @@
 import { representClassNames } from '../lib/CSSHelper.mjs';
 import { loadSvgAsCssUrlAsync } from '../lib/SVG.mjs';
 
+import { COMMON_MOBILE_DEVICE_WIDTH } from '../lib/WickedTheme.mjs';
+
 export const NAME = 'Logger';
+
+const ERROR_IMG = await loadSvgAsCssUrlAsync(import.meta.url, './level-error.svg');
+const WARNING_IMG = await loadSvgAsCssUrlAsync(import.meta.url, './level-warning.svg');
+const SUCCESS_IMG = await loadSvgAsCssUrlAsync(import.meta.url, './level-success.svg');
+const INFO_IMG = await loadSvgAsCssUrlAsync(import.meta.url, './level-info.svg');
+const CLOSE_IMG = await loadSvgAsCssUrlAsync(import.meta.url, './close.svg');
+
+const ERROR_HOVER_COLOR = '#df8181d4';
+const WARNING_HOVER_COLOR = '#dfb881d4';
+const SUCCESS_HOVER_COLOR = '#81df86d4';
+const INFO_HOVER_COLOR = '#81c3dfd4';
+
+const BORDER_MAIN_COLOR = '#00000045';
+const BORDER_ANIME_COLOR = BORDER_MAIN_COLOR;
+
+const ERROR_FILL_COLOR = '#efbdbde6';
+const ERROR_MAIN_COLOR = '#620000';
+const WARNING_FILL_COLOR = '#efe7a2e8';
+const WARN_MAIN_COLOR = '#623f00';
+const SUCCESS_FILL_COLOR = '#a7ffa7e6';
+const SUCCESS_MAIN_COLOR = '#005200';
+const INFO_FILL_COLOR = '#c8fffae6';
+const INFO_MAIN_COLOR = '#001e62';
 
 export const CLASS = representClassNames({
   ROOT: 'uic-logger-root',
   CLOSE: 'uic-logger-close',
   TITLE: 'uic-logger-title',
   TEXT: 'uic-logger-text',
-  INFO: 'uic-logger-lvlinfo',
-  SUCCESS: 'uic-logger-lvlsuccess',
-  WARNING: 'uic-logger-lvlwarn',
   ERROR: 'uic-logger-lvlerror',
+  WARNING: 'uic-logger-lvlwarn',
+  SUCCESS: 'uic-logger-lvlsuccess',
+  INFO: 'uic-logger-lvlinfo',
 });
+
+const ANIME1 = representClassNames("uic-logger-anime1");
+const ANIME2 = representClassNames("uic-logger-anime2");
 
 export const HTML = `
 <div class="${CLASS.ROOT}"></div>
 `;
 
-export const CSS = `
-:root
-{
-  --uic-logger-root-bor: #00000045;
-  --uic-logger-lvlerror-bg: #efbdbde6;
-  --uic-logger-lvlerror-col: #620000;
-  --uic-logger-lvlerror-img: url(level-error.svg);
-  --uic-logger-lvlwarn-bg: #efe7a2e8;
-  --uic-logger-lvlwarn-col: #623f00;
-  --uic-logger-lvlwarn-img: url(level-warning.svg);
-  --uic-logger-lvlinfo-bg: #c8fffae6;
-  --uic-logger-lvlinfo-col: #001e62;
-  --uic-logger-lvlinfo-img: url(level-info.svg);
-  --uic-logger-lvlsuccess-bg: #a7ffa7e6;
-  --uic-logger-lvlsuccess-col: #005200;
-  --uic-logger-lvlsuccess-img: url(level-success.svg);
-  --uic-logger-root-x: url(close.svg);
-  --uic-logger-root-x-error: #df8181d4;
-  --uic-logger-root-x-success: #81df86d4;
-  --uic-logger-root-x-warn: #dfb881d4;
-  --uic-logger-root-x-info: #81c3dfd4;
-  --uic-logger-anime-bor: #00000045;
-}
+export const ITEM_HTML =`
+<div>
+  <div></div>
+  <span><h3 class="${CLASS.TITLE}"></h3><span class="${CLASS.TEXT}"></span></span>
+  <s><span class="${CLASS.CLOSE}"></span></s>
+</div>
+`;
 
-@media (device-width < 550px)
+export const CSS = `
+@media (device-width < ${COMMON_MOBILE_DEVICE_WIDTH})
 {
-  div.uic-logger-root div[class*="uic-logger-lvl"] > div
+  div.${CLASS.ROOT} > div > div
   {
     min-width: 100px;
     height: 140px;
     background-size: 50px;
   }
-  div.uic-logger-root > div[class*="uic-logger-lvl"]
+  div.${CLASS.ROOT} > div
   {
-    animation-name: uic-logger-anime-mob;
+    animation-name: ${ANIME2};
     border-radius: 20px;
   }
-  div.uic-logger-root h3
+  div.${CLASS.ROOT} h3
   {
     font-size: 40px;
   }
-  div.uic-logger-root div[class*="uic-logger-lvl"] > span 
+  div.${CLASS.ROOT} > div > span 
   {
     min-width: 380px;
     font-size: 40px;
     line-height: 34px;
   }
-  div.uic-logger-root div[class*="uic-logger-lvl"] > span > span
+  div.${CLASS.ROOT} div > span > span
   {
     font-size: 30px;
   }
-  div.uic-logger-root div[class*="uic-logger-lvl"] > s
+  div.${CLASS.ROOT} div > s
   {
     width: 60px;
     height: 100%;
     padding-top: 10px;
   }
-  div.uic-logger-root div[class*="uic-logger-lvl"] > s > span
+  div.${CLASS.ROOT} div > s > span
   {
     width: 100%;
     height: 35%;
@@ -83,83 +96,83 @@ export const CSS = `
   }
 }
 
-@keyframes uic-logger-anime
+@keyframes ${ANIME1}
 {
   0%
   {
-    border: 1px solid var(--uic-logger-anime-bor);
+    border: 1px solid ${BORDER_ANIME_COLOR};
     height: 0px;
     width: 0px;
     margin-bottom: 5px;
   }
   3%
   {
-    border: 1px solid var(--uic-logger-anime-bor);
+    border: 1px solid ${BORDER_ANIME_COLOR};
     height: 70px;
     width: 0px;
     margin-bottom: 5px;
   }
   5%
   {
-    border: 1px solid var(--uic-logger-anime-bor);
+    border: 1px solid ${BORDER_ANIME_COLOR};
     height: 70px;
     width: 280px;
   }
   95%
   {
-    border: 1px solid var(--uic-logger-anime-bor);
+    border: 1px solid ${BORDER_ANIME_COLOR};
     height: 70px;
     width: 280px;
     margin-bottom: 5px;
   }
   100% 
   {
-    border: 0px solid var(--uic-logger-anime-bor);
+    border: 0px solid ${BORDER_ANIME_COLOR};
     height: 70px;
     width: 0px;
     margin-bottom: 5px;
   }
 }
 
-@keyframes uic-logger-anime-mob
+@keyframes ${ANIME2}
 {
   0%
   {
-    border: 2px solid var(--uic-logger-anime-bor);
+    border: 2px solid ${BORDER_ANIME_COLOR};
     height: 0px;
     width: 0px;
     margin-bottom: 5px;
   }
   3%
   {
-    border: 2px solid var(--uic-logger-anime-bor);
+    border: 2px solid ${BORDER_ANIME_COLOR};
     height: 140px;
     width: 0px;
     margin-bottom: 5px;
   }
   5%
   {
-    border: 2px solid var(--uic-logger-anime-bor);
+    border: 2px solid ${BORDER_ANIME_COLOR};
     height: 140px;
     width: 560px;
   }
   95%
   {
-    border: 2px solid var(--uic-logger-anime-bor);
+    border: 2px solid ${BORDER_ANIME_COLOR};
     height: 140px;
     width: 560px;
     margin-bottom: 5px;
   }
   100% 
   {
-    border: 0px solid var(--uic-logger-anime-bor);
+    border: 0px solid ${BORDER_ANIME_COLOR};
     height: 140px;
     width: 0px;
     margin-bottom: 5px;
   }
 }
 
-.uic-logger-root
+.${CLASS.ROOT}
 {
   position: fixed;
   bottom: 15px;
@@ -173,9 +186,9 @@ export const CSS = `
   z-index: 2;
 }
 
-.uic-logger-root > div
+.${CLASS.ROOT} > div
 {
-  animation-name: uic-logger-anime;
+  animation-name: ${ANIME1};
   animation-duration: 10s;
   animation-iteration-count: 1;
   display: flex;
@@ -184,19 +197,14 @@ export const CSS = `
   margin-bottom: 5px;
   font-size: 15px;
   border-radius: 10px;
-  border: 0px solid var(--uic-logger-root-bor);
+  border: 0px solid ${BORDER_MAIN_COLOR};
   text-align: center;
   cursor: default;
   overflow: hidden;
   box-sizing: content-box;
 }
 
-.uic-logger-root h1,
-.uic-logger-root h2,
-.uic-logger-root h3,
-.uic-logger-root h4,
-.uic-logger-root h5,
-.uic-logger-root h6
+.${CLASS.ROOT} h3
 {
   margin: 0px;
   padding: 0px;
@@ -204,31 +212,31 @@ export const CSS = `
   font-weight: 400;
 }
 
-.uic-logger-root .uic-logger-lvlerror
+.${CLASS.ROOT} .${CLASS.ERROR}
 {
-  background-color: var(--uic-logger-lvlerror-bg);
-  color: var(--uic-logger-lvlerror-col);
+  background-color: ${ERROR_FILL_COLOR};
+  color: ${ERROR_MAIN_COLOR};
 }
 	  
-.uic-logger-root .uic-logger-lvlwarn
+.${CLASS.ROOT} .${CLASS.WARNING}
 {
-  background-color: var(--uic-logger-lvlwarn-bg);
-  color: var(--uic-logger-lvlwarn-col);
+  background-color: ${WARNING_FILL_COLOR};
+  color: ${WARN_MAIN_COLOR};
 }
 	  
-.uic-logger-root .uic-logger-lvlinfo
+.${CLASS.ROOT} .${CLASS.INFO}
 {
-  background-color:var(--uic-logger-lvlinfo-bg);
-  color: var(--uic-logger-lvlinfo-col);
+  background-color:${INFO_FILL_COLOR};
+  color: ${INFO_MAIN_COLOR};
 }
 
-.uic-logger-root .uic-logger-lvlsuccess
+.${CLASS.ROOT} .${CLASS.SUCCESS}
 {
-  background-color: var(--uic-logger-lvlsuccess-bg);
-  color: var(--uic-logger-lvlsuccess-col);
+  background-color: ${SUCCESS_FILL_COLOR};
+  color: ${SUCCESS_MAIN_COLOR};
 }
 
-.uic-logger-root > div > div
+.${CLASS.ROOT} > div > div
 {
   width: 50px;
   height: 70px;
@@ -238,27 +246,27 @@ export const CSS = `
   flex-shrink: 0;
 }
 
-.uic-logger-lvlerror > div
+.${CLASS.ERROR} > div
 {
-  background-image: var(--uic-logger-lvlerror-img);
+  background-image: ${ERROR_IMG};
 }
 
-.uic-logger-lvlinfo > div
+.${CLASS.INFO} > div
 {
-  background-image: var(--uic-logger-lvlinfo-img);
+  background-image: ${INFO_IMG};
 }
 
-.uic-logger-lvlwarn > div
+.${CLASS.WARNING} > div
 {
-  background-image: var(--uic-logger-lvlwarn-img);
+  background-image: ${WARNING_IMG};
 }
 
-.uic-logger-lvlsuccess > div
+.${CLASS.SUCCESS} > div
 {
-  background-image: var(--uic-logger-lvlsuccess-img);
+  background-image: ${SUCCESS_IMG};
 }
 
-.uic-logger-root > div > span
+.${CLASS.ROOT} > div > span
 {
   margin-top: 3px;
   width: 200px;
@@ -267,13 +275,13 @@ export const CSS = `
   flex-shrink: 0;
 }
 
-.uic-logger-root > div >  span > span
+.${CLASS.ROOT} > div >  span > span
 {
   display: block;
   font-size: 14px;
 }
 
-.uic-logger-root > div > s
+.${CLASS.ROOT} > div > s
 {
   display: flex;
   justify-content: center;
@@ -285,34 +293,34 @@ export const CSS = `
   flex-shrink: 0;
 }
 
-.uic-logger-root > div > s > span
+.${CLASS.ROOT} > div > s > span
 {
   height: 15px;
   width: 15px;
   border-radius: 50%;
   background-size: 15px;
-  background-image: var(--uic-logger-root-x);
+  background-image: ${CLOSE_IMG};
   background-repeat: no-repeat;
   background-position: center;
 }
 
-.uic-logger-root .uic-logger-lvlerror > s > span:hover
+.${CLASS.ROOT} .${CLASS.ERROR} > s > span:hover
 {
-  background-color: var(--uic-logger-root-x-error);
+  background-color: ${ERROR_HOVER_COLOR};
 }
 
-.uic-logger-root .uic-logger-lvlsuccess > s > span:hover
+.${CLASS.ROOT} .${CLASS.SUCCESS} > s > span:hover
 {
-  background-color: var(--uic-logger-root-x-success);
+  background-color: ${SUCCESS_HOVER_COLOR};
 }
 
-.uic-logger-root .uic-logger-lvlwarn > s > span:hover
+.${CLASS.ROOT} .${CLASS.WARNING} > s > span:hover
 {
-  background-color: var(--uic-logger-root-x-warn);
+  background-color: ${WARNING_HOVER_COLOR};
 }
 
-.uic-logger-root .uic-logger-lvlinfo > s > span:hover
+.${CLASS.ROOT} .${CLASS.INFO} > s > span:hover
 {
-  background-color: var(--uic-logger-root-x-info);
+  background-color: ${INFO_HOVER_COLOR};
 }
 `;
