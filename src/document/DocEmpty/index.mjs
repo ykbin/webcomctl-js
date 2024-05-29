@@ -1,4 +1,4 @@
-import { NAME, HTML, CLASS, CSS } from './template.mjs';
+import { NAME, HTML, CLASS, CSS } from 'module-loader!./template.mjs';
 
 export const template = {
   NAME, HTML, CLASS, CSS,
