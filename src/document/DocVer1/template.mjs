@@ -1,13 +1,16 @@
+import { Setting } from 'webnetq-js';
+import { representClassNames } from '../../lib/CSSHelper.mjs';
+
 export const NAME = 'DocVer1';
 
-export const CLASS = {
+export const CLASS = representClassNames({
   ROOT: "uic-docv1-root",
   PORT: "uic-docv1-root",
-};
+});
 
 export const HTML = `
 <!DOCTYPE html>
-<html data-theme="light">
+<html data-${Setting.DATA_KEY}="${Setting.LIGHT_VAL}">
   <head></head>
   <body class="${CLASS.ROOT}"></body>
 </html>

@@ -12,7 +12,7 @@ Starting Characters:
 */
 // 52 + 10 + 2 = 64
 const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_';
-console.assert(characters == 64, characters);
+console.assert(characters.length == 64, characters);
 
 export function representClassNames(params) {
   if (typeof params === 'string') {
