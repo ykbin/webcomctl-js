@@ -5,6 +5,7 @@ import { HEADER_FONT_FAMILY } from '../lib/WickedTheme.mjs';
 import { HEADER_BACKGROUND_COLOR } from '../lib/WickedTheme.mjs';
 import { HEADER_BACKGROUND_COLOR_DARK } from '../lib/WickedTheme.mjs';
 import { HEADER_BORDER_RADIUS_HOVER } from '../lib/WickedTheme.mjs';
+import { HEADER_COLOR_HOVER_DARK } from '../lib/WickedTheme.mjs';
 import { HEADER_COLOR_HOVER } from '../lib/WickedTheme.mjs';
 import { loadSvgAsCssUrlAsync } from '../lib/SVG.mjs';
 
@@ -30,11 +31,13 @@ export const CSS = `
 :root
 {
   --uic-hdrupl-btnbg: ${HEADER_BACKGROUND_COLOR};
+  --uic-hdrupl-btncol: ${HEADER_COLOR_HOVER};
 }
 
 [data-theme="dark"]
 {
   --uic-hdrupl-btnbg: ${HEADER_BACKGROUND_COLOR_DARK};
+  --uic-hdrupl-btncol: ${HEADER_COLOR_HOVER_DARK};
 }
 
 .${CLASS.ROOT} > input
@@ -78,7 +81,7 @@ export const CSS = `
 
 .${CLASS.ROOT}:hover 
 {
-  color: ${HEADER_COLOR_HOVER};
+  color: var(--uic-hdrupl-btncol);
   background-color: var(--uic-hdrupl-btnbg);
   border-radius: ${HEADER_BORDER_RADIUS_HOVER};
   transition: background-color 0.2s;
