@@ -33,14 +33,14 @@ export const CSS = `
 {
   --uic-hdrupl-btnbg: ${HEADER_BACKGROUND_COLOR};
   --uic-hdrupl-btncol: ${HEADER_COLOR_HOVER};
-  --uic-hdrupl-img:: ${HOVER_IMG};
+  --uic-hdrupl-img: ${HOVER_IMG};
 }
 
 [data-theme="dark"]
 {
   --uic-hdrupl-btnbg: ${HEADER_BACKGROUND_COLOR_DARK};
   --uic-hdrupl-btncol: ${HEADER_COLOR_HOVER_DARK};
-  --uic-hdrupl-img:: ${HOVER_IMG_DARK};
+  --uic-hdrupl-img: ${HOVER_IMG_DARK};
 }
 
 .${CLASS.ROOT} > input
