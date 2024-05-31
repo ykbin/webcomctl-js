@@ -10,7 +10,8 @@ import { HEADER_COLOR_HOVER } from '../lib/WickedTheme.mjs';
 import { loadSvgAsCssUrlAsync } from '../lib/SVG.mjs';
 
 const MAIN_IMG = await loadSvgAsCssUrlAsync(import.meta.url, 'search_default.svg');
-const HOVER_IMG = await loadSvgAsCssUrlAsync(import.meta.url, 'search_hover.svg');
+const HOVER_IMG = await loadSvgAsCssUrlAsync(import.meta.url, 'search_light_hover.svg');
+const HOVER_IMG_DARK = await loadSvgAsCssUrlAsync(import.meta.url, 'search_dark_hover.svg');
 
 export const NAME = 'HdrUploadButton';
 
@@ -32,12 +33,14 @@ export const CSS = `
 {
   --uic-hdrupl-btnbg: ${HEADER_BACKGROUND_COLOR};
   --uic-hdrupl-btncol: ${HEADER_COLOR_HOVER};
+  --uic-hdrupl-img:: ${HOVER_IMG};
 }
 
 [data-theme="dark"]
 {
   --uic-hdrupl-btnbg: ${HEADER_BACKGROUND_COLOR_DARK};
   --uic-hdrupl-btncol: ${HEADER_COLOR_HOVER_DARK};
+  --uic-hdrupl-img:: ${HOVER_IMG_DARK};
 }
 
 .${CLASS.ROOT} > input
@@ -89,7 +92,7 @@ export const CSS = `
 
 .${CLASS.ROOT}:hover div
 {
-  background-image: ${HOVER_IMG};
+  background-image: var(--uic-hdrupl-img);
 }
 
 @media (device-width < ${HEADER_MOBILE_DEVICE_WIDTH})
