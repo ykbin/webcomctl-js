@@ -8,10 +8,12 @@ import { HEADER_FONT_FAMILY } from '../lib/WickedTheme.mjs';
 import { HEADER_BACKGROUND_COLOR } from '../lib/WickedTheme.mjs';
 import { HEADER_BACKGROUND_COLOR_DARK } from '../lib/WickedTheme.mjs';
 import { HEADER_BORDER_RADIUS_HOVER } from '../lib/WickedTheme.mjs';
+import { HEADER_COLOR_HOVER_DARK } from '../lib/WickedTheme.mjs';
 import { HEADER_COLOR_HOVER } from '../lib/WickedTheme.mjs';
 
 const MAIN_IMG = await loadSvgAsCssUrlAsync(import.meta.url, 'search_default.svg');
-const HOVER_IMG = await loadSvgAsCssUrlAsync(import.meta.url, 'search_hover.svg');
+const HOVER_IMG = await loadSvgAsCssUrlAsync(import.meta.url, 'search_light_hover.svg');
+const HOVER_IMG_DARK = await loadSvgAsCssUrlAsync(import.meta.url, 'search_dark_hover.svg');
 
 export const NAME = 'HdrUploadButton';
 
@@ -32,11 +34,15 @@ export const CSS = `
 :root
 {
   --uic-hdrupl-btnbg: ${HEADER_BACKGROUND_COLOR};
+  --uic-hdrupl-btncol: ${HEADER_COLOR_HOVER};
+  --uic-hdrupl-img: ${HOVER_IMG};
 }
 
 [data-theme="dark"]
 {
   --uic-hdrupl-btnbg: ${HEADER_BACKGROUND_COLOR_DARK};
+  --uic-hdrupl-btncol: ${HEADER_COLOR_HOVER_DARK};
+  --uic-hdrupl-img: ${HOVER_IMG_DARK};
 }
 
 .${CLASS.ROOT} > input
@@ -80,7 +86,7 @@ export const CSS = `
 
 .${CLASS.ROOT}:hover 
 {
-  color: ${HEADER_COLOR_HOVER};
+  color: var(--uic-hdrupl-btncol);
   background-color: var(--uic-hdrupl-btnbg);
   border-radius: ${HEADER_BORDER_RADIUS_HOVER};
   transition: background-color 0.2s;
@@ -88,7 +94,7 @@ export const CSS = `
 
 .${CLASS.ROOT}:hover div
 {
-  background-image: ${HOVER_IMG};
+  background-image: var(--uic-hdrupl-img);
 }
 
 @media (device-width < ${HEADER_MOBILE_DEVICE_WIDTH})
