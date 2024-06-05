@@ -16,10 +16,7 @@ export const HTML = `
 export const CSS = `
 .${CLASS.ROOT}
 {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  width: inherit;
+  flex-grow: 1;
 }
 
 .${CLASS.NTH1} > *:nth-child(2),
