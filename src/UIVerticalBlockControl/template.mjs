@@ -16,8 +16,8 @@ export const CSS = `
 {
   display: flex;
   flex-direction: column;
-  height: inherit;
-  width: inherit;
+  height: 100%;
+  width: 100%;
   min-height: 670px;
   overflow: hidden;
 }
