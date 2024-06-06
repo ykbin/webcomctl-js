@@ -17,6 +17,8 @@ export const CSS = `
 .${CLASS.ROOT}
 {
   flex-grow: 1;
+  height: 100%;
+  width: inherit;
 }
 
 .${CLASS.NTH1} > *:nth-child(2),
