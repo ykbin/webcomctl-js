@@ -96,7 +96,8 @@ export const CSS = `
   border-right: none;
 }
 
-div.${CLASS.FOCUS}
+div.${CLASS.FOCUS},
+.${CLASS.ROOT} > div.${CLASS.FOCUS}:hover
 {
   color: var(--uic-pagtab-act-col);
   border-color: ${VAR.FOCBRDCLR};
