@@ -32,6 +32,7 @@ export const CSS = `
   --uic-txtcnt-bg: ${UIC_CONTENT_BACKGROUND_COLOR};
   --uic-txtcnt-col: black;
   --uic-txtcnt-bor: #e6e6e6;
+  --uic-txtcnt-num-col: #034bc8;
 }
 
 [data-theme="dark"]
@@ -39,6 +40,7 @@ export const CSS = `
   --uic-txtcnt-bg: ${UIC_CONTENT_BACKGROUND_COLOR_DARK};
   --uic-txtcnt-col: #ffffff9e;
   --uic-txtcnt-bor: #5f5f5f4a;
+  --uic-txtcnt-num-col: #44c6ff;
 }
 
 .${CLASS.ROOT} ul
@@ -107,14 +109,15 @@ export const CSS = `
 
 .${CLASS.ROOT} > ul
 {
-  flex-shrink: 0;
   height: auto;
   min-width: 55px;
   padding: 10px 5px 10px 5px;
-  text-align: center;
   border-right: 1px solid var(--uic-txtcnt-bor);
+  color: var(--uic-txtcnt-num-col);
+  text-align: center;
   overflow-y: auto;
   overflow-x: scroll;
+  flex-shrink: 0;
 }
 
 .${CLASS.ROOT} > ul:empty
