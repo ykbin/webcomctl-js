@@ -32,7 +32,7 @@ export const CSS = `
   --uic-txtcnt-bg: ${UIC_CONTENT_BACKGROUND_COLOR};
   --uic-txtcnt-col: black;
   --uic-txtcnt-bor: #e6e6e6;
-  --uic-txtcnt-num-col: #034bc8;
+  --uic-txtcnt-num-col: #f1f2f6;
 }
 
 [data-theme="dark"]
@@ -40,7 +40,7 @@ export const CSS = `
   --uic-txtcnt-bg: ${UIC_CONTENT_BACKGROUND_COLOR_DARK};
   --uic-txtcnt-col: #ffffff9e;
   --uic-txtcnt-bor: #5f5f5f4a;
-  --uic-txtcnt-num-col: #44c6ff;
+  --uic-txtcnt-num-col: #13192d;
 }
 
 .${CLASS.ROOT} ul
@@ -113,7 +113,7 @@ export const CSS = `
   min-width: 55px;
   padding: 10px 5px 10px 5px;
   border-right: 1px solid var(--uic-txtcnt-bor);
-  color: var(--uic-txtcnt-num-col);
+  background-color: var(--uic-txtcnt-num-col);
   text-align: center;
   overflow-y: auto;
   overflow-x: scroll;
