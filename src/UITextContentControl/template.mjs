@@ -117,6 +117,7 @@ export const CSS = `
   text-align: center;
   overflow-y: auto;
   overflow-x: scroll;
+  scrollbar-width: none;
   flex-shrink: 0;
 }
 
