@@ -1,12 +1,12 @@
 import { representClassNames } from '../lib/CSSHelper.mjs';
 import { loadSvgAsCssUrlAsync } from '../lib/SVG.mjs';
 
-export const NAME = 'Loading';
+import { COMMON_MOBILE_DEVICE_WIDTH } from '../lib/WickedTheme.mjs';
 
-const VAR = {
-  BGROUND_COLOR: '#1e1e1e91',
-  IMAGE_FILE: 'file-upload.svg',
-};
+const MAIN_IMG = await loadSvgAsCssUrlAsync(import.meta.url, './file-upload.svg');
+const BGROUND_COLOR = '#1e1e1e91';
+
+export const NAME = 'Loading';
 
 export const CLASS = representClassNames({
   ROOT: 'uic-loading-root',
@@ -37,7 +37,7 @@ export const CSS = `
   bottom: 0;
   min-height: 555px;
   z-index: 3;
-  background-color: ${VAR.BGROUND_COLOR};
+  background-color: ${BGROUND_COLOR};
 }
 
 .${CLASS.SHOW} > div
@@ -45,13 +45,13 @@ export const CSS = `
   width: 100%;
   height: 100%;
   max-width: 160px;
-  background-image: url(${VAR.IMAGE_FILE});
+  background-image: ${MAIN_IMG};
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
 }
 
-@media (device-width < 550px)
+@media (device-width < ${COMMON_MOBILE_DEVICE_WIDTH})
 {
   .${CLASS.SHOW} > div
   {

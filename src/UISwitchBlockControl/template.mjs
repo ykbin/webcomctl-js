@@ -16,8 +16,7 @@ export const HTML = `
 export const CSS = `
 .${CLASS.ROOT}
 {
-  display: flex;
-  flex-direction: column;
+  flex-grow: 1;
   height: 100%;
   width: inherit;
 }
