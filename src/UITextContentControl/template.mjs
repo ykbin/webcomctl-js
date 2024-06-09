@@ -10,6 +10,12 @@ const BLUE_COLOR = '#0000ff';
 const OFFSET_COLOR = 'rgb(197, 6, 11)';
 const SCROLLBAR_THUMB_COLOR = '#b5b5b5c7';
 const SCROLLBAR_TRACK_COLOR = 'transparent';
+const TEXT_CONTENT_COLOR1 = 'black';
+const TEXT_CONTENT_COLOR2 = '#b8b4b4';
+const NUMBER_BORDER_COLOR1 = '#e6e6e6';
+const NUMBER_BORDER_COLOR2 = '#252525';
+const NUMBER_BACKGROUND_COLOR1 = '#fafafa';
+const NUMBER_BACKGROUND_COLOR2 = '#19191d';
 
 export const CLASS = representClassNames({
   ROOT: "uic-txtcnt-root",
@@ -30,17 +36,17 @@ export const CSS = `
 :root
 {
   --uic-txtcnt-bg: ${UIC_CONTENT_BACKGROUND_COLOR};
-  --uic-txtcnt-col: black;
-  --uic-txtcnt-bor: #e6e6e6;
-  --uic-txtcnt-num-col: #034bc8;
+  --uic-txtcnt-col: ${TEXT_CONTENT_COLOR1};
+  --uic-txtcnt-bor: ${NUMBER_BORDER_COLOR1};
+  --uic-txtcnt-num-col: ${NUMBER_BACKGROUND_COLOR1};
 }
 
 [data-theme="dark"]
 {
   --uic-txtcnt-bg: ${UIC_CONTENT_BACKGROUND_COLOR_DARK};
-  --uic-txtcnt-col: #ffffff9e;
-  --uic-txtcnt-bor: #5f5f5f4a;
-  --uic-txtcnt-num-col: #44c6ff;
+  --uic-txtcnt-col: ${TEXT_CONTENT_COLOR2};
+  --uic-txtcnt-bor: ${NUMBER_BORDER_COLOR2};
+  --uic-txtcnt-num-col: ${NUMBER_BACKGROUND_COLOR2};
 }
 
 .${CLASS.ROOT} ul
