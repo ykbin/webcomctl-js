@@ -31,7 +31,7 @@ export const HTML = `
       <div class="${CLASS.OFFSET}">
         <h3>Offset</h3>
         <ul>
-          <div class="${CLASS.OFSLIS}"></div>
+          <div class="${CLASS.OFSLIST}"></div>
         </ul>
       </div>
       <div class="${CLASS.BINARY}">
