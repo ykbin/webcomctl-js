@@ -8,9 +8,6 @@ import { UIC_BLUE_SQUARE_BORDER } from '../lib/WickedTheme.mjs';
 
 export const NAME = 'PageTab';
 
-const CLOSE_IMG = await loadSvgAsCssUrlAsync(import.meta.url, './X.svg');
-const TAB_WIDTH = '150px';
-
 export const CLASS = representClassNames({
   ROOT: "uic-pagtab-root",
   TEXT: "uic-pagtab-name",
@@ -20,6 +17,7 @@ export const CLASS = representClassNames({
 });
 
 const VAR = {
+  DEFXIMG: 'url(X.svg)',
   HOVXCLR: '#80808042',
   DEFBRDCLR: 'transparent',
   FOCBRDCLR: '#03a8e2f0',
@@ -86,8 +84,8 @@ export const CSS = `
   align-items: center;
   padding-left: 10px;
   height: inherit;
-  width: ${TAB_WIDTH};
-  max-width: ${TAB_WIDTH};
+  width: 130px;
+  max-width: 130px;
   background-color: var(--uic-pagtab-bg);
   color: var(--uic-pagtab-col);
   border-top-width: 1px;
@@ -141,7 +139,7 @@ div.${CLASS.FOCUS},
 {
   width: 10px;
   height: 10px;
-  background-image: ${CLOSE_IMG};
+  background-image: ${VAR.DEFXIMG};
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
