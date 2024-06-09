@@ -41,8 +41,8 @@ export const CSS = `
 :root
 {
   --uic-pagtab-act-bg: #f3f3f3;
-  --uic-pagtab-hov: #e0e3e7;
-  --uic-pagtab-col: #a7a7a7;
+  --uic-pagtab-hov: #dfdfdf;
+  --uic-pagtab-col: #838282;
   --uic-pagtab-bg: #ebebeb;
   --uic-pagtab-act-col: black;
   --uic-pagtab-loading: #949eb0;
@@ -52,9 +52,9 @@ export const CSS = `
 {
   --uic-pagtab-act-bg: #252525;
   --uic-pagtab-hov: #313131;
-  --uic-pagtab-col: #ffffff9e;
+  --uic-pagtab-col: #8b8b8b;
   --uic-pagtab-bg: #242424e6;
-  --uic-pagtab-act-col: #c8c8c8;
+  --uic-pagtab-act-col: #bfbfbf;
   --uic-pagtab-loading: #172031;
 }
 
