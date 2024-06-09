@@ -6,11 +6,6 @@ import { UIC_CONTENT_BACKGROUND_COLOR_DARK } from '../lib/WickedTheme.mjs';
 
 export const NAME = 'HexContent';
 
-const BLUE_COLOR = '#0000ff';
-const OFFSET_COLOR = 'rgb(197, 6, 11)';
-const SCROLLBAR_THUMB_COLOR = '#b5b5b5c7';
-const SCROLLBAR_TRACK_COLOR = 'transparent';
-
 export const CLASS = representClassNames({
   ROOT: "uic-hexcnt-root",
   CONTENT: "uic-hexcnt-content",
@@ -138,18 +133,18 @@ export const CSS = `
 }
 
 .${CLASS.OFFSET},
-.${CLASS.OFFSET},
-.${CLASS.OFFSET},
+.${CLASS.TEXT},
+.${CLASS.BINARY},
 .${CLASS.OFFSET} > ul > div,
-.${CLASS.OFFSET} > ul > div,
-.${CLASS.OFFSET} > div > div
+.${CLASS.TEXT} > ul > div,
+.${CLASS.BINARY} > div > div
 {
   height: 100%;
 }
 
 .${CLASS.OFFSET} > ul,
-.${CLASS.OFFSET} > ul,
-.${CLASS.OFFSET} > div
+.${CLASS.TEXT} > ul,
+.${CLASS.BINARY} > div
 {
   height: calc(100% - 40px);
 }
@@ -159,12 +154,12 @@ export const CSS = `
   width: auto;
 }
 
-.${CLASS.OFFSET}
+.${CLASS.TEXT}
 {
   width: 100%;
 }
 
-.${CLASS.OFFSET} > h3
+.${CLASS.TEXT} > h3
 {
   width: max-content;
   text-align: left;
@@ -176,20 +171,20 @@ export const CSS = `
 }
 
 .${CLASS.OFFSET} > ul,
-.${CLASS.OFFSET} > ul
+.${CLASS.TEXT} > ul
 {
   list-style-type: none;
   padding: 20px 15px 10px 15px;
   margin: 0px;
 }
 
-.${CLASS.OFFSET} > ul li
+.${CLASS.TEXT} > ul li
 {
   white-space: pre;
   word-spacing: normal;
 }
 
-.${CLASS.OFFSET}
+.${CLASS.BINARY}
 {
   border-right: 1px solid #e8e8e8;
   border-left: 1px solid #e8e8e8;
@@ -199,13 +194,13 @@ export const CSS = `
   z-index: 1;
 }
 
-.${CLASS.OFFSET} > div
+.${CLASS.BINARY} > div
 {
   padding: 20px 15px 10px 15px;
 }
 
-.${CLASS.OFFSET} > h3,
-.${CLASS.OFFSET} > div > div
+.${CLASS.BINARY} > h3,
+.${CLASS.BINARY} > div > div
 {
   display: grid;
   grid-template-columns: auto;
@@ -223,21 +218,21 @@ export const CSS = `
   }
 }
 
-.${CLASS.OFFSET}
+.${CLASS.SROOT}
 {
   height: 100%;
   width: 10px;
   overflow: visible;
 }
 
-.${CLASS.OFFSET} > h3
+.${CLASS.SROOT} > h3
 {
   display: block;
   height: 25px;
   padding: 0px;
 }
 
-.${CLASS.OFFSET} > div
+.${CLASS.SROOT} > div
 {
   position: absolute;
   right: 0px;
@@ -246,7 +241,7 @@ export const CSS = `
   background: var(--whex-scroll-scrlbg);
 }
 
-.${CLASS.OFFSET} > div > div
+.${CLASS.SROOT} > div > div
 {
   display: block;
   position: relative;
@@ -255,14 +250,14 @@ export const CSS = `
   background-color: var(--whex-scroll-sthmbg1);
 }
 
-.${CLASS.OFFSET} > div > div:hover
+.${CLASS.SROOT} > div > div:hover
 {
   background-color: var(--whex-scroll-sthmbg2);
 }
 
 @media (width < 830px)
 { 
-  div.${CLASS.SBAR}
+  div.${CLASS.SROOT}
   {
     position: sticky;
     right: 0px;
