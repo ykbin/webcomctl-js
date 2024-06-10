@@ -42,7 +42,7 @@ export const HTML = `
         </ul>
       </div>
     </div>
-    <div class="${CLASS.SROOT}">
+    <div class="${CLASS.SCROLL}">
       <div class="${CLASS.SBAR}">
         <div class="${CLASS.STHUMB}"></div>
       </div>
@@ -236,21 +236,21 @@ export const CSS = `
   }
 }
 
-.${CLASS.SROOT}
+.${CLASS.SCROLL}
 {
   height: 100%;
   width: 10px;
   overflow: visible;
 }
 
-.${CLASS.SROOT} > h3
+.${CLASS.SCROLL} > h3
 {
   display: block;
   height: 25px;
   padding: 0px;
 }
 
-.${CLASS.SROOT} > div
+.${CLASS.SCROLL} > div
 {
   position: absolute;
   right: 0px;
@@ -259,7 +259,7 @@ export const CSS = `
   background: var(--whex-scroll-scrlbg);
 }
 
-.${CLASS.SROOT} > div > div
+.${CLASS.SCROLL} > div > div
 {
   display: block;
   position: relative;
@@ -268,14 +268,14 @@ export const CSS = `
   background-color: var(--whex-scroll-sthmbg1);
 }
 
-.${CLASS.SROOT} > div > div:hover
+.${CLASS.SCROLL} > div > div:hover
 {
   background-color: var(--whex-scroll-sthmbg2);
 }
 
 @media (width < 830px)
 { 
-  div.${CLASS.SROOT}
+  div.${CLASS.SCROLL}
   {
     position: sticky;
     right: 0px;
