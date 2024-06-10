@@ -55,7 +55,6 @@ export const CSS = `
 {
   --whex-hex-color:  black;
   --whex-hex-ttlcl2: blue;
-  --whex-hex-ofsbg: #fdfdfd;
   --whex-hex-scrlbg: #dfdfdf29;
   --hex-sc-sthmbg1: darkgray;
   --hex-sc-sthmbg2: #959595;
@@ -76,7 +75,6 @@ export const CSS = `
   color: white;
   --whex-hex-color: gainsboro;
   --whex-hex-ttlcl2: #6d6e7b;
-  --whex-hex-ofsbg: #1d1d1d;
   --whex-hex-scrlbg: #1d1d1d;
   --hex-sc-sthmbg1: #454545;
   --hex-sc-sthmbg2: #565656;
@@ -204,7 +202,6 @@ export const CSS = `
 {
   border-right: 1px solid var(--whex-cont-bor);
   border-left: 1px solid var(--whex-cont-bor);
-  background-color: var(--whex-hex-ofsbg);
   text-align: left;
   flex-shrink: 0;
   z-index: 1;
