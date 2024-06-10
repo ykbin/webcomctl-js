@@ -1,4 +1,4 @@
-import { BaseControl } from 'webnetq-js';
+import { BaseControl, NQDOM, FileChunkLoader } from 'webnetq-js';
 import { NAME, HTML, CLASS, CSS } from 'module-loader!./template.mjs';
 
 export const template = {
