@@ -6,149 +6,279 @@ import { UIC_CONTENT_BACKGROUND_COLOR_DARK } from '../lib/WickedTheme.mjs';
 
 export const NAME = 'HexContent';
 
-const BLUE_COLOR = '#0000ff';
-const OFFSET_COLOR = 'rgb(197, 6, 11)';
-const SCROLLBAR_THUMB_COLOR = '#b5b5b5c7';
-const SCROLLBAR_TRACK_COLOR = 'transparent';
-
 export const CLASS = representClassNames({
   ROOT: "uic-hexcnt-root",
-  NUMBERS: "uic-hexcnt-numbers",
   CONTENT: "uic-hexcnt-content",
   OFFSET: "uic-hexcnt-offset",
-  BLUE: "uic-hexcnt-blue",
+  OFSLIST: "uic-hexcnt-ofslist",
+  BINARY: "uic-hexcnt-binary",
+  BINLIST: "uic-hexcnt-binlist",
+  TEXT: "uic-hexcnt-text",
+  TXTLIST: "uic-hexcnt-txtlist",
+  SROOT: "uic-scroll-root",
+  SBAR: "uic-scroll-bar",
+  STHUMB: "uic-scroll-thumb",
 });
 
 export const HTML = `
-<div class="${CLASS.ROOT}">
-  <ul class="${CLASS.NUMBERS}"></ul>
-  <div class="${CLASS.CONTENT}"></div>
-</div>
+ <div class="${CLASS.ROOT}">
+    <div class="${CLASS.CONTENT}">
+      <div class="${CLASS.OFFSET}">
+        <h3>Offset</h3>
+        <ul>
+          <div class="${CLASS.OFSLIST}"></div>
+        </ul>
+      </div>
+      <div class="${CLASS.BINARY}">
+        <h3><span>00 01 02 03 04 05 06 07  08 09 0A 0B 0C 0D 0E 0F</span></h3>
+        <div>
+          <div class="${CLASS.BINLIST}"></div>
+        </div>
+      </div>
+      <div class="${CLASS.TEXT}">
+        <h3>Text</h3>
+        <ul>
+          <div class="${CLASS.TXTLIST}"></div>
+        </ul>
+      </div>
+    </div>
+    <div class="${CLASS.SROOT}">
+      <div class="${CLASS.SBAR}">
+        <div class="${CLASS.STHUMB}"></div>
+      </div>
+    </div>
+  </div>
 `;
 
 export const CSS = `
 :root
 {
-  --uic-hexcnt-bg: ${UIC_CONTENT_BACKGROUND_COLOR};
-  --uic-hexcnt-col: black;
-  --uic-hexcnt-bor: #e6e6e6;
+  --whex-hex-color:  black;
+  --whex-hex-ttlcl2: blue;
+  --whex-hex-scrlbg: #dfdfdf29;
+  --hex-sc-sthmbg1: darkgray;
+  --hex-sc-sthmbg2: #959595;
+  --whex-scroll-scrlbg: linear-gradient(white 0%, #efefef 3% 97%, white 100%);
+  --whex-scroll-sthmbg1: darkgray;
+  --whex-scroll-sthmbg2: #959595;
+  --whex-root-col: #224e76;
+  --whex-cont-bor: #e8e8e8;
+  --text-title-bg: linear-gradient(to left, white 5%, #eef5ff 40% 100%);
+  --offset-title-bg: linear-gradient(to right, white 5%, #eef5ff 40% 100%);
+  --binary-title-bg: #eef5ff;
+  
 }
 
 [data-theme="dark"]
 {
-  --uic-hexcnt-bg: ${UIC_CONTENT_BACKGROUND_COLOR_DARK};
-  --uic-hexcnt-col: #ffffff9e;
-  --uic-hexcnt-bor: #5f5f5f4a;
-}
-
-.${CLASS.ROOT} ul
-{
-  margin: 0px;
-  padding: 0px;
-  list-style-type: none;
-}
-
-.${CLASS.ROOT} > div::-webkit-scrollbar
-{
-  width: 10px;
-  height: 10px;
-}
-
-.${CLASS.ROOT} > div::-webkit-scrollbar-thumb
-{
-  background-color: ${SCROLLBAR_THUMB_COLOR};
-  border-radius: 10px;
-}
-
-.${CLASS.ROOT} > div::-webkit-scrollbar-track,
-.${CLASS.ROOT} > div::-webkit-scrollbar-corner
-{
-  background-color: ${SCROLLBAR_TRACK_COLOR};
-}
-
-.${CLASS.ROOT} > ul::-webkit-scrollbar
-{
-  width: 0;
-  height: 10px;
+  background-color: rgb(23, 23, 26);
+  color: white;
+  --whex-hex-color: gainsboro;
+  --whex-hex-ttlcl2: #6d6e7b;
+  --whex-hex-scrlbg: #1d1d1d;
+  --hex-sc-sthmbg1: #454545;
+  --hex-sc-sthmbg2: #565656;
+  --whex-scroll-scrlbg: linear-gradient(rgb(23, 23, 26) 0%, #212121 3% 97%, rgb(23, 23, 26) 100%);
+  --whex-scroll-sthmbg1: #454545;
+  --whex-cont-bor: #252525;
+  --text-title-bg: linear-gradient(to left, rgb(23, 23, 26) 5%, #1d2027ff 40% 100%);
+  --offset-title-bg: linear-gradient(to right, rgb(23, 23, 26) 5%, #1d2027ff 40% 100%);
+  --binary-title-bg: #1d2027ff;
 }
 
 .${CLASS.ROOT}
 {
+  position: relative;
   display: flex;
   height: 100%;
   width: 100%;
-  font-size: 14px;
-  letter-spacing: 2px;
-  line-height: 1.4em;
-  color: var(--uic-hexcnt-col);
-  font-family: monospace;
-  background-color: var(--uic-hexcnt-bg);
+  user-select: auto;
   box-sizing: border-box;
 }
 
-.${CLASS.ROOT} > *
+.${CLASS.ROOT} *
 {
   box-sizing: border-box;
 }
 
-.${CLASS.ROOT} > div
+.${CLASS.ROOT} s
 {
-  height: auto;
-  width: 100%;
-  padding: 10px 10px 0px 10px;
-  overflow-y: scroll;
-  overflow-x: scroll;
+  text-decoration: none;
 }
 
-.${CLASS.ROOT} > div > span
+.${CLASS.ROOT} h3
 {
-  white-space: pre;
+  color: var(--whex-root-col);
+  margin: 0px;
+  font-size: 1em;
+  font-weight: 400;
 }
 
-.${CLASS.ROOT} > ul
+.${CLASS.CONTENT}
 {
-  flex-shrink: 0;
-  height: auto;
-  min-width: 55px;
-  padding: 10px 5px 10px 5px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: 100%;
+  width: calc(100% - 10px);
+  padding: 10px 10px 15px 10px;
+  line-height: 20px;
+  word-spacing: normal;
+  font-size: 16px;
   text-align: center;
-  border-right: 1px solid var(--uic-hexcnt-bor);
-  overflow-y: auto;
-  overflow-x: scroll;
+  font-family: monospace;
+  flex-shrink: 0;
+  overflow: hidden;
 }
 
-.${CLASS.ROOT} > ul:empty
+.${CLASS.CONTENT} h3
 {
-  display: none;
+  height: 30px;
+  padding: 5px 15px 5px 15px;
+  border-bottom: 1px solid var(--whex-cont-bor);
+  font-size: 1em;
+  box-sizing: border-box;
 }
 
-.${CLASS.ROOT} > ul > li,
-.${CLASS.ROOT} > div > span
+.${CLASS.OFFSET},
+.${CLASS.TEXT},
+.${CLASS.BINARY},
+.${CLASS.OFFSET} > ul > div,
+.${CLASS.TEXT} > ul > div,
+.${CLASS.BINARY} > div > div
 {
-  display: block;
-  height: 20px;
+  height: 100%;
 }
 
-.${CLASS.BLUE}
+.${CLASS.OFFSET} > ul,
+.${CLASS.TEXT} > ul,
+.${CLASS.BINARY} > div
 {
-  color: ${BLUE_COLOR};
+  height: calc(100% - 40px);
 }
 
 .${CLASS.OFFSET}
 {
-  color: ${OFFSET_COLOR};
+  width: auto;
 }
 
-@media (device-width < ${COMMON_MOBILE_DEVICE_WIDTH})
+.${CLASS.OFFSET} > h3
 {
-  .${CLASS.ROOT}
+  background: var(--offset-title-bg);
+}
+
+.${CLASS.TEXT}
+{
+  width: 100%;
+}
+
+.${CLASS.TEXT} > h3
+{
+  width: max-content;
+  background: var(--text-title-bg);
+  text-align: left;
+}
+
+.${CLASS.OFFSET} > ul
+{
+  color: var(--whex-hex-ttlcl2);
+}
+
+.${CLASS.OFFSET} > ul,
+.${CLASS.TEXT} > ul
+{
+  list-style-type: none;
+  padding: 20px 15px 10px 15px;
+  margin: 0px;
+}
+
+.${CLASS.TEXT} > ul li
+{
+  white-space: pre;
+  word-spacing: normal;
+}
+
+.${CLASS.BINARY}
+{
+  border-right: 1px solid var(--whex-cont-bor);
+  border-left: 1px solid var(--whex-cont-bor);
+  text-align: left;
+  flex-shrink: 0;
+  z-index: 1;
+}
+
+.${CLASS.BINARY} > div
+{
+  padding: 20px 15px 10px 15px;
+}
+
+.${CLASS.BINARY} > h3
+{
+  background-color: var(--binary-title-bg);
+}
+
+.${CLASS.BINARY} > h3,
+.${CLASS.BINARY} > div > div
+{
+  display: grid;
+  grid-template-columns: auto;
+  grid-auto-rows: min-content;
+  white-space: pre;
+  font-size: 1em;
+}
+
+@media (device-width < 550px)
+{
+  .${CLASS.CONTENT}
   {
-    font-size: 25px;
+    font-size: 20px;
+    line-height: inherit;
   }
-  .${CLASS.ROOT} > ul > li, 
-  .${CLASS.ROOT} > div > span
+}
+
+.${CLASS.SROOT}
+{
+  height: 100%;
+  width: 10px;
+  overflow: visible;
+}
+
+.${CLASS.SROOT} > h3
+{
+  display: block;
+  height: 25px;
+  padding: 0px;
+}
+
+.${CLASS.SROOT} > div
+{
+  position: absolute;
+  right: 0px;
+  width: 10px;
+  height: 100%;
+  background: var(--whex-scroll-scrlbg);
+}
+
+.${CLASS.SROOT} > div > div
+{
+  display: block;
+  position: relative;
+  width: inherit;
+  border-radius: 10px;
+  background-color: var(--whex-scroll-sthmbg1);
+}
+
+.${CLASS.SROOT} > div > div:hover
+{
+  background-color: var(--whex-scroll-sthmbg2);
+}
+
+@media (width < 830px)
+{ 
+  div.${CLASS.SROOT}
   {
-    height: 30px;
+    position: sticky;
+    right: 0px;
   }
 }
 `;
