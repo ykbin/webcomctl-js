@@ -189,7 +189,7 @@ export default class UIHexContentControl extends BaseControl {
   _readyState = 'idle';
 
   _init() {
-    const scrollElm = NQDOM.getElementByClassName(element, CLASS.SCROLL);
+    const scrollElm = NQDOM.getElementByClassName(this.element, CLASS.SCROLL);
     if (scrollElm) {
       this._scroll = new UIScrollControl(scrollElm);
       this._scroll.addEventListener("changeposition", event => {
@@ -197,11 +197,11 @@ export default class UIHexContentControl extends BaseControl {
       });
     }
 
-    this._offsetParent = NQDOM.getElementByClassName(element, CLASS.OFSLIST);
-    this._binaryParent = NQDOM.getElementByClassName(element, CLASS.BINLIST);
-    this._asciiParent = NQDOM.getElementByClassName(element, CLASS.TXTLIST);
+    this._offsetParent = NQDOM.getElementByClassName(this.element, CLASS.OFSLIST);
+    this._binaryParent = NQDOM.getElementByClassName(this.element, CLASS.BINLIST);
+    this._asciiParent = NQDOM.getElementByClassName(this.element, CLASS.TXTLIST);
   
-    const containerElm = NQDOM.getElementByClassName(element, CLASS.CONTENT);
+    const containerElm = NQDOM.getElementByClassName(this.element, CLASS.CONTENT);
     containerElm && containerElm.addEventListener("wheel",  e => {
       this._scroll.position = this._scroll.position + e.deltaY;
       this.updateContent(false, this._scroll.position);
