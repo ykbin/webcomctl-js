@@ -33,7 +33,6 @@ export const ITEM_HTML = `
 <div class="${CLASS.FOCUS}" draggable="true">
   <span class="${CLASS.TEXT}"></span>
   <div class="${CLASS.CLOSE}" title="Close"><div></div></div>
-  <s></s>
 </div>
 `;
 
