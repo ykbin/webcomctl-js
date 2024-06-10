@@ -84,6 +84,7 @@ export const CSS = `
   position: relative;
   display: flex;
   height: 100%;
+  width: 100%;
   user-select: auto;
   box-sizing: border-box;
 }
@@ -154,6 +155,11 @@ export const CSS = `
   width: auto;
 }
 
+.${CLASS.OFFSET} > h3
+{
+  background: linear-gradient(to right, white 5%, whitesmoke 40% 100%);
+}
+
 .${CLASS.TEXT}
 {
   width: 100%;
@@ -162,6 +168,7 @@ export const CSS = `
 .${CLASS.TEXT} > h3
 {
   width: max-content;
+  background: linear-gradient(to left, white 5%, whitesmoke 40% 100%);
   text-align: left;
 }
 
@@ -197,6 +204,11 @@ export const CSS = `
 .${CLASS.BINARY} > div
 {
   padding: 20px 15px 10px 15px;
+}
+
+.${CLASS.BINARY} > h3
+{
+  background-color: whitesmoke;
 }
 
 .${CLASS.BINARY} > h3,
