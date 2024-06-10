@@ -15,9 +15,9 @@ export const CLASS = representClassNames({
   BINLIST: "uic-hexcnt-binlist",
   TEXT: "uic-hexcnt-text",
   TXTLIST: "uic-hexcnt-txtlist",
-  SROOT: "uic-scroll-root",
-  SBAR: "uic-scroll-bar",
-  STHUMB: "uic-scroll-thumb",
+  SCROLL: "uic-hexcnt-scroll",
+  SBAR: "uic-hexcnt-scroll-bar",
+  STHUMB: "uic-hexcnt-scroll-thumb",
 });
 
 export const HTML = `
