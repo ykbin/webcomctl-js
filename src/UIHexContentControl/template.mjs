@@ -64,8 +64,8 @@ export const CSS = `
   --whex-scroll-sthmbg2: #959595;
   --whex-root-col: #224e76;
   --whex-cont-bor: #e8e8e8;
-  --offset-title-bg: background: linear-gradient(to right, white 5%, #eef5ff 40% 100%);
-  --text-title-bg: background: linear-gradient(to left, white 5%, #eef5ff 40% 100%);
+  --offset-title-bg: linear-gradient(to right, white 5%, #eef5ff 40% 100%);
+  --text-title-bg: linear-gradient(to left, white 5%, #eef5ff 40% 100%);
   --binary-title-bg: #eef5ff;
   
 }
@@ -83,8 +83,8 @@ export const CSS = `
   --whex-scroll-scrlbg: linear-gradient(rgb(23, 23, 26) 0%, #212121 3% 97%, rgb(23, 23, 26) 100%);
   --whex-scroll-sthmbg1: #454545;
   --whex-cont-bor: #252525;
-  --offset-title-bg: background: linear-gradient(to right, rgb(23, 23, 26) 5%, #1d2027ff 40% 100%);
-  --offset-title-bg: background: linear-gradient(to left, rgb(23, 23, 26) 5%, #1d2027ff 40% 100%);
+  --offset-title-bg: linear-gradient(to right, rgb(23, 23, 26) 5%, #1d2027ff 40% 100%);
+  --offset-title-bg: linear-gradient(to left, rgb(23, 23, 26) 5%, #1d2027ff 40% 100%);
   --binary-title-bg: #1d2027ff;
 }
 
