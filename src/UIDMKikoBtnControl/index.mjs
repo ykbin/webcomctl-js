@@ -21,13 +21,8 @@ export default class UIDMKikoBtnControl extends BaseControl {
     rootClass:  CLASS.ROOT,
   } }
 
-  _toggleElm;
-
-  constructor(element) {
-    super(element);
-
-    this._toggleElm = element; // NQDOM.getElementByClassName(element, CLASS.TOGGLE);
-    this._toggleElm && this._toggleElm.addEventListener("click", (event) => {
+  _init() {
+    this.element.addEventListener("click", (event) => {
       const setting = Setting.getInstance();
       setting.toggleTheme();
       this._setTheme(setting.getTheme());
@@ -43,6 +38,6 @@ export default class UIDMKikoBtnControl extends BaseControl {
     if (hasDocument && document.documentElement) {
       document.documentElement.dataset.theme = theme;
     }
-    this._toggleElm && this._toggleElm.setAttribute("title", isDarkMode ? kDarkModeTip : kLightModeTip);
+    this.element.setAttribute("title", isDarkMode ? kDarkModeTip : kLightModeTip);
   }
 };

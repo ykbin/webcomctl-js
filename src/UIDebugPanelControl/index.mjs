@@ -13,10 +13,6 @@ export default class UIDebugPanelControl extends BaseControl {
     portClass:  CLASS.PORT,
   } }
 
-  constructor(element) {
-    super(element);
-  }
-
   setButton(name, params) {
     const btnElm = document.createElement('div');
     btnElm.textContent = name;

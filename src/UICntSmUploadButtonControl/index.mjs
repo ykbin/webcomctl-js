@@ -14,14 +14,10 @@ export default class UICntSmUploadButtonControl  extends BaseControl {
     rootClass:  CLASS.ROOT,
   } }
 
-  _rootElm;
   _loadEnable = false;
 
-  constructor(element) {
-    super(element);
-    this._rootElm = element;
-
-    const lableElm = element.querySelector('label');
+  _init() {
+    const lableElm = this.element.querySelector('label');
     if (lableElm) {
       const inputId = Random.nextElementId();
     
@@ -46,7 +42,7 @@ export default class UICntSmUploadButtonControl  extends BaseControl {
   set loadEnable(value) {
     if (value != this._loadEnable) {
       const method = value ? 'add' : 'remove';
-      this._rootElm.classList[method](CLASS.LOAD);
+      this.element.classList[method](CLASS.LOAD);
       this._loadEnable = value;
     }
   }
