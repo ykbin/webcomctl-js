@@ -53,8 +53,7 @@ export default class UISplitterBlockControl extends BaseControl {
 
   _splitterType = SplitterType.NONE;
 
-  constructor(element) {
-    super(element);
-    this._splitterElm = NQDOM.getElementByClassName(element, CLASS.NONE);
+  _init() {
+    this._splitterElm = NQDOM.getElementByClassName(this.element, CLASS.NONE);
   }
 };

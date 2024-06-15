@@ -12,13 +12,10 @@ export default class UIDropFileControl extends BaseControl {
     rootClass:  CLASS.ROOT,
   } }
 
-  _rootElm;
   _visible;
 
-  constructor(element) {
-    super(element);
-    this._rootElm = element;
-    this._visible = this._rootElm.classList.contains(CLASS.SHOW);
+  _init() {
+    this._visible = this.element.classList.contains(CLASS.SHOW);
   }
 
   get visible() {
@@ -27,7 +24,7 @@ export default class UIDropFileControl extends BaseControl {
 
   set visible(value) {
     if (value != this._visible) {
-      this._rootElm.classList.toggle(CLASS.SHOW, value);
+      this.element.classList.toggle(CLASS.SHOW, value);
       this._visible = value;
     }
   }

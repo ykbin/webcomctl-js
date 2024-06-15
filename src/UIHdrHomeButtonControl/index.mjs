@@ -11,8 +11,4 @@ export default class UIHdrHomeButtonControl extends BaseControl {
     rootHTML: HTML,
     rootClass:  CLASS.ROOT,
   } }
-
-  constructor(element) {
-    super(element);
-  }
 };

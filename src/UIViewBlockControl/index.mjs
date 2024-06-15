@@ -12,8 +12,4 @@ export default class UIViewBlockControl extends BaseControl {
     rootClass:  CLASS.ROOT,
     portClass:  CLASS.PORT,
   } }
-
-  constructor(element) {
-    super(element);
-  }
 };

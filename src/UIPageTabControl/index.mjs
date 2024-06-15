@@ -124,6 +124,8 @@ class TabItemControl {
   }
 };
 
+const EMPTY_EVENT = 'empty';
+
 export default class UIPageTabControl extends BaseControl {
   static get template() { return {
     name: NAME,
@@ -137,9 +139,8 @@ export default class UIPageTabControl extends BaseControl {
 
   _idCounter = 1;
 
-  constructor(element) {
-    super(element);
-    this.registerEvent('empty');
+  _init() {
+    this.registerEvent(EMPTY_EVENT);
   }
 
   _unfocusAll() {
@@ -219,7 +220,7 @@ export default class UIPageTabControl extends BaseControl {
         newFocusItem._onfocus(newFocusItem.getInfo());
       }
       else if (isLast) {
-        this.dispatchEvent('empty', {});
+        this.dispatchEvent(EMPTY_EVENT, {});
       }
     });
 

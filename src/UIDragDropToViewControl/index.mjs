@@ -13,24 +13,22 @@ export default class UIDragDropToViewControl extends BaseControl {
     portClass: CLASS.PORT,
   } }
 
-  constructor(element) {
-    super(element);
-
+  _init() {
     this.registerEvent("dragenter", "dragleave", "drop");
 
     let count = 0;
-    element.addEventListener("dragenter", (event) => {
+    this.element.addEventListener("dragenter", (event) => {
       if (count++ == 0)
         this.dispatchEvent("dragenter", {});
     });
-    element.addEventListener("dragover", (event) => {
+    this.element.addEventListener("dragover", (event) => {
       event.preventDefault();
     });
-    element.addEventListener("dragleave", (event) => {
+    this.element.addEventListener("dragleave", (event) => {
       if (--count == 0)
         this.dispatchEvent("dragleave", {});
     });
-    element.addEventListener("drop", (event) => {
+    this.element.addEventListener("drop", (event) => {
       event.preventDefault();
       count = 0;
 

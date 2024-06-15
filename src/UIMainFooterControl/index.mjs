@@ -25,9 +25,8 @@ export default class UIMainFooterControl extends BaseControl {
     rootClass:  CLASS.ROOT,
   } }
 
-  constructor(element) {
-    super(element);
-    const linkElm = element.querySelector(`a.${CLASS.LINK_ON}`);
+  _init() {
+    const linkElm = this.element.querySelector(`a.${CLASS.LINK_ON}`);
     if (linkElm && isLocationEqual(linkElm.href)) {
       linkElm.classList.remove(CLASS.LINK_ON);
       linkElm.classList.add(CLASS.LINK_OFF);

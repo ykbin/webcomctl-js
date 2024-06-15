@@ -15,17 +15,15 @@ export default class UITextContentControl extends BaseControl {
     portClass:  CLASS.PORT,
   } }
 
-  constructor(element) {
-    super(element);
-
+  _init() {
     this._numbersElm = null;
     this._contentElm = null;
     this._content = null;
     this._scrollTop = null;
 
-    this._numbersElm = element.querySelector("." + CLASS.NUMBERS);
+    this._numbersElm = this.element.querySelector("." + CLASS.NUMBERS);
     this._numbersElm && (this._numbersElm.addEventListener("scroll", (e) => this._onScroll(e)));
-    this._contentElm = element.querySelector("." + CLASS.CONTENT);
+    this._contentElm = this.element.querySelector("." + CLASS.CONTENT);
     this._contentElm && (this._contentElm.addEventListener("scroll", (e) => this._onScroll(e)));
   }
 

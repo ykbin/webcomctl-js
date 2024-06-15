@@ -14,9 +14,8 @@ export default class UILoadingControl extends BaseControl {
 
   _visible;
 
-  constructor(element) {
-    super(element);
-    this._visible = element.classList.contains(CLASS.SHOW);
+  _init() {
+    this._visible = this.element.classList.contains(CLASS.SHOW);
   }
 
   get visible() {

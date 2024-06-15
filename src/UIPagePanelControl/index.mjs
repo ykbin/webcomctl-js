@@ -19,22 +19,20 @@ export default class UIPagePanelControl extends BaseControl {
   _menulistElm;
   _psntlistElm;
 
-  constructor(element) {
-    super(element);
-
+  _init() {
     this._blob = null;
     this._filename = "";
     this._snap = { url: null, blob: null };
 
     this._codetypeIsShow = false;
-    this._codetypeElm = NQDOM.getElementByClassName(element, CLASS.CODETYPE);
+    this._codetypeElm = NQDOM.getElementByClassName(this.element, CLASS.CODETYPE);
     if (this._codetypeElm) {
       this._codetypeElm.addEventListener('click', e => this._onCodetypeClick(e));
     }
 
-    this._downloadElm = NQDOM.getElementByClassName(element, CLASS.DOWNLOAD);
-    this._menulistElm = NQDOM.getElementByClassName(element, CLASS.MENULIST);
-    this._psntlistElm = NQDOM.getElementByClassName(element, CLASS.PSNTLIST);
+    this._downloadElm = NQDOM.getElementByClassName(this.element, CLASS.DOWNLOAD);
+    this._menulistElm = NQDOM.getElementByClassName(this.element, CLASS.MENULIST);
+    this._psntlistElm = NQDOM.getElementByClassName(this.element, CLASS.PSNTLIST);
 
     this._codetypeVisibleChanged = false;
     window.addEventListener('click', e => this._onWindowClick(e));
