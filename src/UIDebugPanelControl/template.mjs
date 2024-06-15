@@ -57,7 +57,7 @@ export const CSS = `
   width: 100%;
   height: 25px;
   min-width: 90px;
-  padding: 0 2px
+  padding: 0 2px;
   margin-bottom: 5px;
   color: white;
   background-color: var(--uic-dbgbtns-but);
