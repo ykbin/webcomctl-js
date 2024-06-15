@@ -79,8 +79,6 @@ export const CSS = `
   --whex-scroll-scrlbg: linear-gradient(rgb(23, 23, 26) 0%, #212121 3% 97%, rgb(23, 23, 26) 100%);
   --whex-scroll-sthmbg1: #454545;
   --whex-cont-bor: #252525;
-  --text-title-bg: linear-gradient(to left, rgb(23, 23, 26) 5%, #1d2027ff 40% 100%);
-  --offset-title-bg: linear-gradient(to right, rgb(23, 23, 26) 5%, #1d2027ff 40% 100%);
   --whex-title-bg: #1d2027ff;
 }
 
