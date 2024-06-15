@@ -63,7 +63,7 @@ export const CSS = `
   --whex-scroll-sthmbg2: #959595;
   --whex-root-col: #224e76;
   --whex-cont-bor: #e8e8e8;
-  --binary-title-bg: #eef5ff;
+  --whex-title-bg: #eef5ff;
   
 }
 
