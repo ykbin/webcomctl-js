@@ -1,4 +1,4 @@
-import { representClassNames } from '../lib/CSSHelper.mjs';
+import { representClassNames } from '../../lib/CSSHelper.mjs';
 
 export const NAME = 'DebugPanel';
 

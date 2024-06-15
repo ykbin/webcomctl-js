@@ -1,8 +1,8 @@
-import { representClassNames } from '../lib/CSSHelper.mjs';
+import { representClassNames } from '../../lib/CSSHelper.mjs';
 
-import { COMMON_MOBILE_DEVICE_WIDTH } from '../lib/WickedTheme.mjs';
-import { UIC_CONTENT_BACKGROUND_COLOR } from '../lib/WickedTheme.mjs';
-import { UIC_CONTENT_BACKGROUND_COLOR_DARK } from '../lib/WickedTheme.mjs';
+import { COMMON_MOBILE_DEVICE_WIDTH } from '../../lib/WickedTheme.mjs';
+import { UIC_CONTENT_BACKGROUND_COLOR } from '../../lib/WickedTheme.mjs';
+import { UIC_CONTENT_BACKGROUND_COLOR_DARK } from '../../lib/WickedTheme.mjs';
 
 export const NAME = 'TextContent';
 

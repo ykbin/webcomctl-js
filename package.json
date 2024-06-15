@@ -6,9 +6,8 @@
   "main": "src/index.mjs",
   "exports": {
     ".": "./src/index.mjs",
-    "./provider": "./src/provider.mjs",
-    "./document/*": "./document/*/index.js",
-    "./control/*": "./control/*/index.js"
+    "./document/*": "./src/document/*/index.mjs",
+    "./control/*": "./src/control/*/index.mjs"
   },
   "repository": {
     "type": "git",
