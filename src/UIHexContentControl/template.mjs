@@ -198,7 +198,7 @@ export const CSS = `
   padding: 20px 15px 10px 15px;
 }
 
-.${CLASS.CONTENT} > h3
+.${CLASS.CONTENT} h3
 {
   background-color: var(--whex-title-bg);
 }
