@@ -88,20 +88,18 @@ export default class UIDropBlockControl  extends BaseControl {
     drop: [],
   };
 
-  constructor(element) {
-    super(element);
-
-    this._rectElm = element.querySelector('.' + CLASS.NONE);
+  _init() {
+    this._rectElm = this.element.querySelector('.' + CLASS.NONE);
     
     let count = 0;
-    element.addEventListener("dragenter", (event) => {
+    this.element.addEventListener("dragenter", (event) => {
       if (count++ == 0) {
         this._onDragEnter(event);
         this.dispatchEvent("dragenter", {});
       }
     });
 
-    element.addEventListener("dragover", (event) => {
+    this.element.addEventListener("dragover", (event) => {
       if (count) {
         this._onDragOver(event);
         this.dispatchEvent("dragover", {});
@@ -109,14 +107,14 @@ export default class UIDropBlockControl  extends BaseControl {
       event.preventDefault();
     });
 
-    element.addEventListener("dragleave", (event) => {
+    this.element.addEventListener("dragleave", (event) => {
       if (--count == 0) {
         this._onDragLeave(event);
         this.dispatchEvent("dragleave", {});
       }
     });
 
-    element.addEventListener("drop", (event) => {
+    this.element.addEventListener("drop", (event) => {
       event.preventDefault();
       count = 0;
 

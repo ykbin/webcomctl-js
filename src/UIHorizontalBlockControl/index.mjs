@@ -12,8 +12,4 @@ export default class UIHorizontalBlockControl extends BaseControl {
     rootClass:  CLASS.ROOT,
     portClass:  CLASS.PORT,
   } }
-
-  constructor(element) {
-    super(element);
-  }
 };

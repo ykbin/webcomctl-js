@@ -17,10 +17,8 @@ export default class UIStartupUploadControl extends BaseControl {
   _fdropElm;
   _inputElm;
 
-  constructor(element) {
-    super(element);
-
-    this._fdropElm = NQDOM.getElementByClassName(element, CLASS.FDROP);
+  _init() {
+    this._fdropElm = NQDOM.getElementByClassName(this.element, CLASS.FDROP);
     if (this._fdropElm) {
       const showDropArea = () => {
         this._fdropElm.classList.remove(CLASS.DHIDE);
@@ -60,7 +58,7 @@ export default class UIStartupUploadControl extends BaseControl {
       });
     }
 
-    const lableElm = element.querySelector('label');
+    const lableElm = this.element.querySelector('label');
     if (lableElm) {
       const inputId = Random.nextElementId();
     

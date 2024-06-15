@@ -16,9 +16,8 @@ export default class UILoadingBlockControl extends BaseControl {
   _isLoad = false;
   _loadElm;
 
-  constructor(element) {
-    super(element);
-    this._loadElm = NQDOM.getElementByClassName(element, CLASS.UNLOAD);
+  _init() {
+    this._loadElm = NQDOM.getElementByClassName(this.element, CLASS.UNLOAD);
   }
 
   show() {

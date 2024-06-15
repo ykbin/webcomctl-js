@@ -15,10 +15,6 @@ export default class UISwitchBlockControl  extends BaseControl {
 
   _isSecond = false;
 
-  constructor(element) {
-    super(element);
-  }
-
   showFirst() {
     if (this._isSecond) {
       this.element.classList.add(CLASS.NTH1);

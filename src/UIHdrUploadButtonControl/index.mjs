@@ -5,6 +5,8 @@ export const template = {
   NAME, HTML, CLASS, CSS,
 };
 
+const UPLOAD_EVENT = 'upload';
+
 export default class UIHdrUploadButtonControl extends BaseControl {
   static get template() { return {
     name: NAME,
@@ -12,45 +14,31 @@ export default class UIHdrUploadButtonControl extends BaseControl {
     rootClass:  CLASS.ROOT,
   } }
 
-  _rootElm;
   _inputElm;
   _uploadVisible = false;
 
-  _listeners = {
-    upload: [],
-  };
-
-  constructor(element) {
-    super(element);
-
-    this._rootElm = element;
+  _init() {
     const inputId = Random.nextElementId();
   
     this._inputElm = document.createElement('input');
     this._inputElm.id = inputId;
-    this._inputElm.type="file";
+    this._inputElm.type = "file";
     this._inputElm.addEventListener("input", (event) => {
       const files = event.target.files;
-      this.dispatchEvent('upload', {files});
+      this.dispatchEvent(UPLOAD_EVENT, {files});
       event.target.value = null;
     });
 
-    this._rootElm.appendChild(this._inputElm);
-    this._rootElm.setAttribute('for', inputId);
+    this.element.appendChild(this._inputElm);
+    this.element.setAttribute('for', inputId);
+
+    this.registerEvent(UPLOAD_EVENT);
   }
 
   setUploadVisible(value) {
     if (this._uploadVisible != value) {
-      this._rootElm.classList.toggle(CLASS.HIDDEN);
+      this.element.classList.toggle(CLASS.HIDDEN);
       this._uploadVisible = value;
     }
-  }
-
-  dispatchEvent(type, event) {
-    this._listeners[type].forEach(listener => listener(event));
-  }
-
-  addEventListener(type, listener) {
-    this._listeners[type].push(listener);
   }
 };

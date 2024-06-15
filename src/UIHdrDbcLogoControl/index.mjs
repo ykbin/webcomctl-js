@@ -11,8 +11,4 @@ export default class UIHdrDbcLogoControl extends BaseControl {
     rootHTML: HTML,
     rootClass: CLASS.ROOT,
   } }
-
-  constructor(element) {
-    super(element);
-  }
 };

@@ -14,12 +14,10 @@ export default class UICntButtBRedControl extends BaseControl {
     rootClass:  CLASS.ROOT,
   } }
 
-  _rootElm;
   _heightElm;
 
   _init() {
-    this._rootElm = this.element;
-    const lableElm = this._rootElm.querySelector('label');
+    const lableElm = this.element.querySelector('label');
     if (lableElm) {
       const inputId = Random.nextElementId();
     
@@ -37,7 +35,7 @@ export default class UICntButtBRedControl extends BaseControl {
       lableElm.setAttribute('for', inputId);
     }
 
-    this._heightElm = this._rootElm.querySelector('.' + CLASS.HEIGHT);
+    this._heightElm = this.element.querySelector('.' + CLASS.HEIGHT);
     if (this._heightElm) {
       this._heightElm.style.height = "0";
       this._heightElm.innerText = "";
@@ -48,12 +46,12 @@ export default class UICntButtBRedControl extends BaseControl {
 
   loadProcess(value) {
     if (value === null) {
-      this._rootElm.classList.remove(CLASS.LOAD);
-      this._rootElm.classList.add(CLASS.ROOT);
+      this.element.classList.remove(CLASS.LOAD);
+      this.element.classList.add(CLASS.ROOT);
     }
     else if (Number.isNaN(value)) {
-      this._rootElm.classList.remove(CLASS.ROOT);
-      this._rootElm.classList.add(CLASS.LOAD);
+      this.element.classList.remove(CLASS.ROOT);
+      this.element.classList.add(CLASS.LOAD);
     }
     else if (this._heightElm) {
       this._heightElm.style.height = value + "%";

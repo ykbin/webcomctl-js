@@ -16,10 +16,8 @@ export default class UIImageContentControl extends BaseControl {
   _urlRef = null;
   _imageElm;
 
-  constructor(element) {
-    super(element);
-    
-    this._imageElm = element.querySelector("." + CLASS.CONTENT);
+  _init() {
+    this._imageElm = this.element.querySelector("." + CLASS.CONTENT);
   }
 
   setContent(params) {

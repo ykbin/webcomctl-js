@@ -23,16 +23,14 @@ export default class UILoggerControl extends BaseControl {
     rootClass:  CLASS.ROOT,
   } }
 
-  constructor(element) {
-    super(element);
-
+  _init() {
     const log = (title, level, logFunc, ...args) => {
       logFunc.apply(null, [ title, "-", ...args ]);
       const messageElm = createMessage(level, title, args.join(' '));
-      while (element.children.length > 3) {
-        element.removeChild(element.children[1]);
+      while (this.element.children.length > 3) {
+        this.element.removeChild(this.element.children[1]);
       }
-      element.appendChild(messageElm);
+      this.element.appendChild(messageElm);
     };
 
     this.info = log.bind(this, "Info", CLASS.INFO, console.info);
