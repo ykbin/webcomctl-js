@@ -58,7 +58,7 @@ export const CSS = `
   --whex-hex-scrlbg: #dfdfdf29;
   --hex-sc-sthmbg1: darkgray;
   --hex-sc-sthmbg2: #959595;
-  --whex-scroll-scrlbg: linear-gradient(white 0%, #efefef 3% 97%, white 100%);
+  --whex-scroll-scrlbg: #efefef;
   --whex-scroll-sthmbg1: darkgray;
   --whex-scroll-sthmbg2: #959595;
   --whex-root-col: #224e76;
@@ -76,7 +76,7 @@ export const CSS = `
   --whex-hex-scrlbg: #1d1d1d;
   --hex-sc-sthmbg1: #454545;
   --hex-sc-sthmbg2: #565656;
-  --whex-scroll-scrlbg: linear-gradient(rgb(23, 23, 26) 0%, #212121 3% 97%, rgb(23, 23, 26) 100%);
+  --whex-scroll-scrlbg: #212121;
   --whex-scroll-sthmbg1: #454545;
   --whex-cont-bor: #252525;
   --whex-title-bg: #1d2027ff;
@@ -240,7 +240,7 @@ export const CSS = `
   right: 0px;
   width: 10px;
   height: 100%;
-  background: var(--whex-scroll-scrlbg);
+  background-color: var(--whex-scroll-scrlbg);
 }
 
 .${CLASS.SCROLL} > div > div
