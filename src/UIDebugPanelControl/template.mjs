@@ -11,6 +11,22 @@ export const HTML = `
 `;
 
 export const CSS = `
+:root
+{
+  --uic-dbgbtns-bor: #d0dbe9;
+  --uic-dbgbtns-bg: #fdfdfd;
+  --uic-dbgbtns-but: #488ee9;
+  --uic-dbgbtns-buthov: #417cc8;
+}
+
+[data-theme="dark"]
+{
+  --uic-dbgbtns-bor: #35383c;
+  --uic-dbgbtns-bg: rgb(43 43 45);
+  --uic-dbgbtns-but: #2d5b96;
+  --uic-dbgbtns-buthov: #3a6ba9;
+}
+
 .${CLASS.ROOT}
 {
   position: fixed;
@@ -19,9 +35,9 @@ export const CSS = `
   width: auto;
   height: auto;
   padding: 5px 5px 0px 5px;
-  border: 1px solid #d0dbe9;
+  border: 1px solid var(--uic-dbgbtns-bor);
   border-radius: 2px;
-  background-color: #fdfdfd;
+  background-color: var(--uic-dbgbtns-bg);
   font-family: "Nunito Sans", -apple-system, BlinkMacSystemFont,
                 "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
                 "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -41,9 +57,10 @@ export const CSS = `
   width: 100%;
   height: 25px;
   min-width: 90px;
+  padding: 0 2px;
   margin-bottom: 5px;
   color: white;
-  background-color: #488ee9;
+  background-color: var(--uic-dbgbtns-but);
   cursor: pointer;
 }
 

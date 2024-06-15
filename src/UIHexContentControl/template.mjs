@@ -58,14 +58,12 @@ export const CSS = `
   --whex-hex-scrlbg: #dfdfdf29;
   --hex-sc-sthmbg1: darkgray;
   --hex-sc-sthmbg2: #959595;
-  --whex-scroll-scrlbg: linear-gradient(white 0%, #efefef 3% 97%, white 100%);
+  --whex-scroll-scrlbg: #efefef;
   --whex-scroll-sthmbg1: darkgray;
   --whex-scroll-sthmbg2: #959595;
   --whex-root-col: #224e76;
   --whex-cont-bor: #e8e8e8;
-  --text-title-bg: linear-gradient(to left, white 5%, #eef5ff 40% 100%);
-  --offset-title-bg: linear-gradient(to right, white 5%, #eef5ff 40% 100%);
-  --binary-title-bg: #eef5ff;
+  --whex-title-bg: #eef5ff;
   
 }
 
@@ -78,12 +76,10 @@ export const CSS = `
   --whex-hex-scrlbg: #1d1d1d;
   --hex-sc-sthmbg1: #454545;
   --hex-sc-sthmbg2: #565656;
-  --whex-scroll-scrlbg: linear-gradient(rgb(23, 23, 26) 0%, #212121 3% 97%, rgb(23, 23, 26) 100%);
+  --whex-scroll-scrlbg: #212121;
   --whex-scroll-sthmbg1: #454545;
   --whex-cont-bor: #252525;
-  --text-title-bg: linear-gradient(to left, rgb(23, 23, 26) 5%, #1d2027ff 40% 100%);
-  --offset-title-bg: linear-gradient(to right, rgb(23, 23, 26) 5%, #1d2027ff 40% 100%);
-  --binary-title-bg: #1d2027ff;
+  --whex-title-bg: #1d2027ff;
 }
 
 .${CLASS.ROOT}
@@ -162,20 +158,8 @@ export const CSS = `
   width: auto;
 }
 
-.${CLASS.OFFSET} > h3
-{
-  background: var(--offset-title-bg);
-}
-
-.${CLASS.TEXT}
-{
-  width: 100%;
-}
-
 .${CLASS.TEXT} > h3
 {
-  width: max-content;
-  background: var(--text-title-bg);
   text-align: left;
 }
 
@@ -212,9 +196,9 @@ export const CSS = `
   padding: 20px 15px 10px 15px;
 }
 
-.${CLASS.BINARY} > h3
+.${CLASS.CONTENT} h3
 {
-  background-color: var(--binary-title-bg);
+  background-color: var(--whex-title-bg);
 }
 
 .${CLASS.BINARY} > h3,
@@ -256,7 +240,7 @@ export const CSS = `
   right: 0px;
   width: 10px;
   height: 100%;
-  background: var(--whex-scroll-scrlbg);
+  background-color: var(--whex-scroll-scrlbg);
 }
 
 .${CLASS.SCROLL} > div > div
