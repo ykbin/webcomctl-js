@@ -16,6 +16,7 @@ export const CSS = `
   --uic-dbgbtns-bor: #d0dbe9;
   --uic-dbgbtns-bg: #fdfdfd;
   --uic-dbgbtns-but: #488ee9;
+  --uic-dbgbtns-buthov: #417cc8;
 }
 
 [data-theme="dark"]
@@ -23,6 +24,7 @@ export const CSS = `
   --uic-dbgbtns-bor: #35383c;
   --uic-dbgbtns-bg: rgb(43 43 45);
   --uic-dbgbtns-but: #2d5b96;
+  --uic-dbgbtns-buthov: #3a6ba9;
 }
 
 .${CLASS.ROOT}
