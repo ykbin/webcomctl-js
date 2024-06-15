@@ -1,13 +1,11 @@
 export { default as UILoggerControl } from './UILoggerControl/index.mjs';
 export { default as UILoadingControl } from './UILoadingControl/index.mjs';
-export { default as UIDropFileControl } from './UIDropFileControl/index.mjs';
 export { default as UIStartupUploadControl } from './UIStartupUploadControl/index.mjs';
 export { default as UIMainHeaderControl } from './UIMainHeaderControl/index.mjs';
 export { default as UIMainFooterControl } from './UIMainFooterControl/index.mjs';
 export { default as UIVerticalBlockControl } from './UIVerticalBlockControl/index.mjs';
 export { default as UIViewBlockControl } from './UIViewBlockControl/index.mjs';
 export { default as UISwitchBlockControl } from './UISwitchBlockControl/index.mjs';
-export { default as UIDMBtnControl } from './UIDMBtnControl/index.mjs';
 export { default as UIHdrHomeButtonControl } from './UIHdrHomeButtonControl/index.mjs';
 export { default as UIHdrUploadButtonControl } from './UIHdrUploadButtonControl/index.mjs';
 export { default as UIHdrWabtLogoControl } from './UIHdrWabtLogoControl/index.mjs';
@@ -19,8 +17,6 @@ export { default as UIHdrDbcLogoControl } from './UIHdrDbcLogoControl/index.mjs'
 export { default as UILeftBlockControl } from './UILeftBlockControl/index.mjs';
 export { default as UIRightBlockControl } from './UIRightBlockControl/index.mjs';
 export { default as UIHorizontalBlockControl } from './UIHorizontalBlockControl/index.mjs';
-export { default as UIDropBlockControl } from './UIDropBlockControl/index.mjs';
-export { default as UIDragDropToViewControl } from './UIDragDropToViewControl/index.mjs';
 export { default as UIMainBlockControl } from './UIMainBlockControl/index.mjs';
 export { default as UIPageTabControl } from './UIPageTabControl/index.mjs';
 export { default as UIPagePanelControl } from './UIPagePanelControl/index.mjs';
@@ -28,4 +24,3 @@ export { default as UILoadingBlockControl } from './UILoadingBlockControl/index.
 export { default as UISplitterBlockControl } from './UISplitterBlockControl/index.mjs';
 export { default as UIHexContentControl } from './UIHexContentControl/index.mjs';
 export { default as UIImageContentControl } from './UIImageContentControl/index.mjs';
-export { default as UIDMKikoBtnControl } from './UIDMKikoBtnControl/index.mjs';
