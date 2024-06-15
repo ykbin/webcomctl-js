@@ -11,6 +11,18 @@ export const HTML = `
 `;
 
 export const CSS = `
+:root
+{
+  --uic-dbgbtns-bor: #d0dbe9;
+  --uic-dbgbtns-bg: #fdfdfd;
+}
+
+[data-theme="dark"]
+{
+  --uic-dbgbtns-bor: #35383c;
+  --uic-dbgbtns-bg: rgb(32 32 33);
+}
+
 .${CLASS.ROOT}
 {
   position: fixed;
@@ -19,9 +31,9 @@ export const CSS = `
   width: auto;
   height: auto;
   padding: 5px 5px 0px 5px;
-  border: 1px solid #d0dbe9;
+  border: 1px solid var(--uic-dbgbtns-bor);
   border-radius: 2px;
-  background-color: #fdfdfd;
+  background-color: var(--uic-dbgbtns-bg);
   font-family: "Nunito Sans", -apple-system, BlinkMacSystemFont,
                 "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
                 "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
