@@ -15,12 +15,14 @@ export const CSS = `
 {
   --uic-dbgbtns-bor: #d0dbe9;
   --uic-dbgbtns-bg: #fdfdfd;
+  --uic-dbgbtns-but: #488ee9;
 }
 
 [data-theme="dark"]
 {
   --uic-dbgbtns-bor: #35383c;
-  --uic-dbgbtns-bg: rgb(32 32 33);
+  --uic-dbgbtns-bg: rgb(43 43 45);
+  --uic-dbgbtns-but: #2d5b96;
 }
 
 .${CLASS.ROOT}
@@ -55,7 +57,7 @@ export const CSS = `
   min-width: 90px;
   margin-bottom: 5px;
   color: white;
-  background-color: #488ee9;
+  background-color: var(--uic-dbgbtns-but);
   cursor: pointer;
 }
 
