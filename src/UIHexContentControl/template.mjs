@@ -71,8 +71,6 @@ export const CSS = `
 [data-theme="dark"]
 {
   --uic-hex-bg: ${UIC_CONTENT_BACKGROUND_COLOR_DARK};
-  background-color: rgb(23, 23, 26);
-  color: white;
   --whex-hex-color: gainsboro;
   --whex-hex-ttlcl2: #344861;
   --whex-hex-scrlbg: #1d1d1d;
