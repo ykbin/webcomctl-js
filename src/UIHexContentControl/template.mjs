@@ -72,7 +72,7 @@ export const CSS = `
   background-color: rgb(23, 23, 26);
   color: white;
   --whex-hex-color: gainsboro;
-  --whex-hex-ttlcl2: #6d6e7b;
+  --whex-hex-ttlcl2: #344861;
   --whex-hex-scrlbg: #1d1d1d;
   --hex-sc-sthmbg1: #454545;
   --hex-sc-sthmbg2: #565656;
