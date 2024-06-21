@@ -4,10 +4,16 @@ export const NAME = 'DebugPanel';
 
 export const CLASS = representClassNames({
   ROOT: "uic-dbgbtns-root",
+  LIST: "uic-dbgbtns-list",
+  TEXT: "uic-dbgbtns-text",
 });
 
 export const HTML = `
-<div class="${CLASS.ROOT}"></div>
+<div class="${CLASS.ROOT} ${CLASS.LIST}"></div>
+`;
+
+export const ITEM_HTML = `
+<div class="${CLASS.TEXT}"></div>
 `;
 
 export const CSS = `

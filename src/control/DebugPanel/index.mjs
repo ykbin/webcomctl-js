@@ -1,5 +1,5 @@
-import { BaseControl } from 'webnetq-js';
-import { NAME, HTML, CLASS, CSS } from 'module-loader!./template.mjs';
+import { BaseControl, NQDOM } from 'webnetq-js';
+import { NAME, HTML, CLASS, CSS, ITEM_HTML } from 'module-loader!./template.mjs';
 
 export const template = {
   NAME, HTML, CLASS, CSS,
@@ -14,11 +14,14 @@ export default class UIDebugPanelControl extends BaseControl {
   } }
 
   setButton(name, params) {
-    const btnElm = document.createElement('div');
-    btnElm.textContent = name;
-    if (params.onclick) {
-      btnElm.addEventListener("click", (event) => params.onclick(event));
+    const itemElm = NQDOM.createElement(ITEM_HTML);
+    const textElm = NQDOM.getElementByClassName(itemElm, CLASS.TEXT);
+    const listElm = NQDOM.getElementByClassName(itemElm, CLASS.LIST);
+    if (itemElm && textElm && listElm) {
+      const onclick = params.onclick;
+      onclick && itemElm.addEventListener("click", (event) => onclick(event));
+      textElm.textContent = name;
+      listElm.appendChild(itemElm);
     }
-    this.element.appendChild(btnElm);
   }
 };
