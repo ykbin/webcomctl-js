@@ -53,6 +53,7 @@ export const HTML = `
 export const CSS = `
 :root
 {
+  --uic-hex-bg: ${UIC_CONTENT_BACKGROUND_COLOR};
   --whex-hex-color:  black;
   --whex-hex-ttlcl2: blue;
   --whex-hex-scrlbg: #dfdfdf29;
@@ -69,10 +70,9 @@ export const CSS = `
 
 [data-theme="dark"]
 {
-  background-color: rgb(23, 23, 26);
-  color: white;
+  --uic-hex-bg: ${UIC_CONTENT_BACKGROUND_COLOR_DARK};
   --whex-hex-color: gainsboro;
-  --whex-hex-ttlcl2: #6d6e7b;
+  --whex-hex-ttlcl2: #344861;
   --whex-hex-scrlbg: #1d1d1d;
   --hex-sc-sthmbg1: #454545;
   --hex-sc-sthmbg2: #565656;
@@ -122,6 +122,7 @@ export const CSS = `
   word-spacing: normal;
   font-size: 16px;
   text-align: center;
+  background-color: var(--uic-hex-bg);
   font-family: monospace;
   flex-shrink: 0;
   overflow: hidden;
