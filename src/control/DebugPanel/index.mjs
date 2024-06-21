@@ -16,7 +16,7 @@ export default class UIDebugPanelControl extends BaseControl {
   setButton(name, params) {
     const itemElm = NQDOM.createElement(ITEM_HTML);
     const textElm = NQDOM.getElementByClassName(itemElm, CLASS.TEXT);
-    const listElm = NQDOM.getElementByClassName(itemElm, CLASS.LIST);
+    const listElm = NQDOM.getElementByClassName(this.element, CLASS.LIST);
     if (itemElm && textElm && listElm) {
       const onclick = params.onclick;
       onclick && itemElm.addEventListener("click", (event) => onclick(event));
