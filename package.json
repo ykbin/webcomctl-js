@@ -1,14 +1,13 @@
 {
   "name": "webcomctl-js",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Common controls library for the Web",
   "type": "module",
   "main": "src/index.mjs",
   "exports": {
     ".": "./src/index.mjs",
-    "./provider": "./src/provider.mjs",
-    "./document/*": "./document/*/index.js",
-    "./control/*": "./control/*/index.js"
+    "./document/*": "./src/document/*/index.mjs",
+    "./control/*": "./src/control/*/index.mjs"
   },
   "repository": {
     "type": "git",
