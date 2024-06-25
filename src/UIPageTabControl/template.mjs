@@ -39,6 +39,7 @@ export const ITEM_HTML = `
 export const CSS = `
 :root
 {
+  --background-color: white;
   --uic-pagtab-act-bg: #f3f3f3;
   --uic-pagtab-hov: #dfdfdf;
   --uic-pagtab-col: #838282;
@@ -49,6 +50,7 @@ export const CSS = `
 
 [data-theme="dark"]
 {
+  --background-color: rgb(23, 23, 26);
   --uic-pagtab-act-bg: #252525;
   --uic-pagtab-hov: #313131;
   --uic-pagtab-col: #8b8b8b;
@@ -70,6 +72,7 @@ export const CSS = `
   font-family: ${TOOLBAR_FONT_FAMALY};
   text-decoration: none;
   box-sizing: border-box;
+  background-color: white;
 }
 
 .${CLASS.ROOT} > *
