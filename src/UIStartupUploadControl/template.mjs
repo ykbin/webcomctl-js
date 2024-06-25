@@ -34,6 +34,7 @@ export const HTML = `
 export const CSS = `
 :root
 {
+  --uic-strupl-bg: white;
   --uic-strupl-des: #afafaf;
   --uic-strupl-dhide-bg: #fafafa;
   --uic-strupl-fdrop-borImg: #ebebeb00;
@@ -47,6 +48,7 @@ export const CSS = `
 
 [data-theme="dark"]
 {
+   --uic-strupl-bg: rgb(23, 23, 26);
   --uic-strupl-img: ${UPLOAD2_IMG};
   --uic-strupl-fdbtn-hov: #45454540;
   --uic-strupl-dhide-bg: transparent;
@@ -82,6 +84,7 @@ export const CSS = `
   height: 100%;
   min-height: 570px;
   padding: 20px 20px;
+  background-color: var(--uic-strupl-bg);
   user-select: none;
   box-sizing: border-box;
 }
