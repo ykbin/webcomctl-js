@@ -171,7 +171,7 @@ export const CSS = `
 .${CLASS.TEXT} > ul
 {
   list-style-type: none;
-  padding: 20px 15px 10px 15px;
+  padding: 20px 10px 10px 10px;
   margin: 0px;
 }
 
@@ -192,7 +192,7 @@ export const CSS = `
 
 .${CLASS.BINARY} > div
 {
-  padding: 20px 15px 10px 15px;
+  padding: 20px 10px 10px 10px;
 }
 
 .${CLASS.CONTENT} h3
