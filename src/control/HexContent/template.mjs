@@ -53,6 +53,7 @@ export const HTML = `
 export const CSS = `
 :root
 {
+  --uic-hex-rootcol: black;
   --uic-hex-bg: ${UIC_CONTENT_BACKGROUND_COLOR};
   --whex-hex-color:  black;
   --whex-hex-ttlcl2: blue;
@@ -70,6 +71,7 @@ export const CSS = `
 
 [data-theme="dark"]
 {
+  --uic-hex-rootcol: #b8b4b4;
   --uic-hex-bg: ${UIC_CONTENT_BACKGROUND_COLOR_DARK};
   --whex-hex-color: gainsboro;
   --whex-hex-ttlcl2: #344861;
@@ -88,6 +90,7 @@ export const CSS = `
   display: flex;
   height: 100%;
   width: 100%;
+  color: var(--uic-hex-rootcol);
   user-select: auto;
   box-sizing: border-box;
 }
@@ -189,7 +192,7 @@ export const CSS = `
   border-left: 1px solid var(--whex-cont-bor);
   text-align: left;
   flex-shrink: 0;
-  z-index: 1;
+  /*z-index: 1;*/
 }
 
 .${CLASS.BINARY} > div

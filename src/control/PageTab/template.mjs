@@ -5,6 +5,8 @@ import { COMMON_MOBILE_DEVICE_WIDTH } from '../../lib/WickedTheme.mjs';
 import { TOOLBAR_FONT_FAMALY } from '../../lib/WickedTheme.mjs';
 import { UIC_BLUE_SQUARE_BACKGROUND } from '../../lib/WickedTheme.mjs';
 import { UIC_BLUE_SQUARE_BORDER } from '../../lib/WickedTheme.mjs';
+import { UIC_START_BACKGROUND_COLOR } from '../../lib/WickedTheme.mjs';
+import { UIC_START_BACKGROUND_COLOR_DARK } from '../../lib/WickedTheme.mjs';
 
 export const NAME = 'PageTab';
 
@@ -39,6 +41,7 @@ export const ITEM_HTML = `
 export const CSS = `
 :root
 {
+  --uic-pagtab-rootbg: ${UIC_START_BACKGROUND_COLOR};
   --uic-pagtab-act-bg: #f3f3f3;
   --uic-pagtab-hov: #dfdfdf;
   --uic-pagtab-col: #838282;
@@ -49,6 +52,7 @@ export const CSS = `
 
 [data-theme="dark"]
 {
+  --uic-pagtab-rootbg: ${UIC_START_BACKGROUND_COLOR_DARK};
   --uic-pagtab-act-bg: #252525;
   --uic-pagtab-hov: #313131;
   --uic-pagtab-col: #8b8b8b;
@@ -65,6 +69,7 @@ export const CSS = `
   padding: 0px 10px;
   font-size: 13px;
   letter-spacing: 2px;
+  background-color: var(--uic-pagtab-rootbg);
   flex-shrink: 0;
   user-select: none;
   font-family: ${TOOLBAR_FONT_FAMALY};

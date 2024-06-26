@@ -13,3 +13,5 @@ export const UIC_CONTENT_BACKGROUND_COLOR = 'white';
 export const UIC_CONTENT_BACKGROUND_COLOR_DARK = 'rgb(23, 23, 26)';
 export const UIC_BLUE_SQUARE_BACKGROUND = 'rgb(5 79 171 / 60%)';
 export const UIC_BLUE_SQUARE_BORDER = '#0985b7';
+export const UIC_START_BACKGROUND_COLOR = 'white';
+export const UIC_START_BACKGROUND_COLOR_DARK = 'rgb(23, 23, 26)';
