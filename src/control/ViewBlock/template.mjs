@@ -1,4 +1,6 @@
 import { representClassNames } from '../../lib/CSSHelper.mjs';
+import { UIC_START_BACKGROUND_COLOR } from '../../lib/WickedTheme.mjs';
+import { UIC_START_BACKGROUND_COLOR_DARK } from '../../lib/WickedTheme.mjs';
 
 export const NAME = 'ViewBlock';
 
@@ -12,11 +14,22 @@ export const HTML = `
 `;
 
 export const CSS = `
+root:
+{
+  --uic-viewblk-rootbg: ${UIC_START_BACKGROUND_COLOR};
+}
+
+[data-theme="dark"]
+{
+  --uic-viewblk-rootbg: ${UIC_START_BACKGROUND_COLOR_DARK};
+}
+
 .${CLASS.ROOT}
 {
   display: flex;
   height: 100%;
   padding-top: 3px;
+  background-color: var(--uic-viewblk-rootbg);
   overflow: hidden;
   box-sizing: border-box;
 }
