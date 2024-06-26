@@ -162,11 +162,6 @@ export const CSS = `
   width: auto;
 }
 
-.${CLASS.TEXT} > h3
-{
-  text-align: left;
-}
-
 .${CLASS.OFFSET} > ul
 {
   color: var(--whex-hex-ttlcl2);
