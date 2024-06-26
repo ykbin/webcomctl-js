@@ -1,5 +1,7 @@
 import { representClassNames } from '../../lib/CSSHelper.mjs';
 import { loadSvgAsCssUrlAsync } from '../../lib/SVG.mjs';
+import { UIC_START_BACKGROUND_COLOR } from '../../lib/WickedTheme.mjs';
+import { UIC_START_BACKGROUND_COLOR_DARK } from '../../lib/WickedTheme.mjs';
 
 const UPLOAD1_IMG = await loadSvgAsCssUrlAsync(import.meta.url, './up-file.svg');
 const UPLOAD2_IMG = await loadSvgAsCssUrlAsync(import.meta.url, './up-file-hover.svg');
@@ -34,6 +36,7 @@ export const HTML = `
 export const CSS = `
 :root
 {
+  --uic-strupl-rootbg: ${UIC_START_BACKGROUND_COLOR};
   --uic-strupl-des: #afafaf;
   --uic-strupl-dhide-bg: #fafafa;
   --uic-strupl-fdrop-borImg: #ebebeb00;
@@ -47,6 +50,7 @@ export const CSS = `
 
 [data-theme="dark"]
 {
+  --uic-strupl-rootbg: ${UIC_START_BACKGROUND_COLOR_DARK};
   --uic-strupl-img: ${UPLOAD2_IMG};
   --uic-strupl-fdbtn-hov: #45454540;
   --uic-strupl-dhide-bg: transparent;
@@ -82,6 +86,7 @@ export const CSS = `
   height: 100%;
   min-height: 570px;
   padding: 20px 20px;
+  background-color: var(--uic-strupl-rootbg);
   user-select: none;
   box-sizing: border-box;
 }

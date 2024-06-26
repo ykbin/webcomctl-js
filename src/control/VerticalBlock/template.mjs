@@ -1,4 +1,6 @@
 import { representClassNames } from '../../lib/CSSHelper.mjs';
+import { UIC_START_BACKGROUND_COLOR } from '../../lib/WickedTheme.mjs';
+import { UIC_START_BACKGROUND_COLOR_DARK } from '../../lib/WickedTheme.mjs';
 
 export const NAME = 'VerticalBlock';
 
@@ -12,6 +14,16 @@ export const HTML = `
 `;
 
 export const CSS = `
+root:
+{
+  --uic-vrtblk-rootbg: ${UIC_START_BACKGROUND_COLOR};
+}
+
+[data-theme="dark"]
+{
+  --uic-vrtblk-rootbg: ${UIC_START_BACKGROUND_COLOR_DARK};
+}
+
 .${CLASS.ROOT}
 {
   display: flex;
@@ -19,6 +31,7 @@ export const CSS = `
   height: 100%;
   width: 100%;
   min-height: 670px;
+  background-color: var(--uic-vrtblk-rootbg);
   overflow: hidden;
 }
 `;
