@@ -137,11 +137,11 @@ ${DARKMODE_SELECTOR_VALUE}
 {
   display: flex;
   align-items: center;
+  height: 25px;
 }
 
 .${CLASS.CONTENT} h3
 {
-  height: 25px;
   padding: 0px 15px;
   border-bottom: 1px solid var(--whex-cont-bor);
   font-size: 1em;
