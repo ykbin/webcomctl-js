@@ -8,7 +8,7 @@ export const NAME = maker.name;
 export const ROOT_CLASS = maker.makeClassName("Root");
 export const PORT_CLASS = ROOT_CLASS;
 
-export const HTML = `
+export const ROOT_HTML = `
 <!DOCTYPE html>
 <html data-${Setting.DATA_KEY}="${Setting.LIGHT_VAL}">
   <head></head>

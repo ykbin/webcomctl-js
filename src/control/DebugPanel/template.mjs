@@ -8,7 +8,7 @@ export const ROOT_CLASS = maker.makeClassName("Root");
 export const LIST_CLASS = maker.makeClassName("List");
 export const TEXT_CLASS = maker.makeClassName("Text");
 
-export const HTML = `
+export const ROOT_HTML = `
 <div class="${ROOT_CLASS} ${LIST_CLASS}"></div>
 `;
 

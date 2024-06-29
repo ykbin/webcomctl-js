@@ -10,7 +10,7 @@ export const NAME = maker.name;
 export const ROOT_CLASS = maker.makeClassName("Root");
 export const LOAD_CLASS = maker.makeClassName("Load");
 
-export const HTML = `
+export const ROOT_HTML = `
 <div class="${ROOT_CLASS}">
   <span></span>
   <label class="notranslate" translate="no">Upload</label>
