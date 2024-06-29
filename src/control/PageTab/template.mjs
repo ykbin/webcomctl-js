@@ -1,3 +1,4 @@
+import { Setting } from 'webnetq-js';
 import { representClassNames } from '../../lib/CSSHelper.mjs';
 import { loadSvgAsCssUrlAsync } from '../../lib/SVG.mjs';
 
@@ -50,7 +51,7 @@ export const CSS = `
   --uic-pagtab-loading: #949eb0;
 }
 
-[data-theme="dark"]
+[data-${Setting.DATA_KEY}="${Setting.DARK_VAL}"]
 {
   --uic-pagtab-rootbg: ${UIC_START_BACKGROUND_COLOR_DARK};
   --uic-pagtab-act-bg: #252525;

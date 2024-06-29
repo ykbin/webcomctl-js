@@ -1,3 +1,4 @@
+import { Setting } from 'webnetq-js';
 import { representClassNames } from '../../lib/CSSHelper.mjs';
 
 import { COMMON_MOBILE_DEVICE_WIDTH } from '../../lib/WickedTheme.mjs';
@@ -41,7 +42,7 @@ export const CSS = `
   --uic-txtcnt-num-col: ${NUMBER_BACKGROUND_COLOR1};
 }
 
-[data-theme="dark"]
+[data-${Setting.DATA_KEY}="${Setting.DARK_VAL}"]
 {
   --uic-txtcnt-bg: ${UIC_CONTENT_BACKGROUND_COLOR_DARK};
   --uic-txtcnt-col: ${TEXT_CONTENT_COLOR2};

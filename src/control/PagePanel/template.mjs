@@ -1,3 +1,4 @@
+import { Setting } from 'webnetq-js';
 import { representClassNames } from '../../lib/CSSHelper.mjs';
 import { loadSvgAsCssUrlAsync } from '../../lib/SVG.mjs';
 
@@ -65,7 +66,7 @@ export const CSS = `
   --uic-pagpnl-plist-hov: rgb(206 206 206);
 }
 
-[data-theme="dark"]
+[data-${Setting.DATA_KEY}="${Setting.DARK_VAL}"]
 {
   --uic-pagpnl-col: #252525;
   --uic-pagpnl-hov: #444444;

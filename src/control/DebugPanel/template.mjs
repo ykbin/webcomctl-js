@@ -1,3 +1,4 @@
+import { Setting } from 'webnetq-js';
 import ControlMaker from '../../lib/ControlMaker.mjs';
 
 const maker = new ControlMaker('DebugPanel', import.meta.url);
@@ -28,7 +29,7 @@ export const CSS = `
   ${DEFBUT_VAR}: #488ee9;
 }
 
-[data-theme="dark"]
+[data-${Setting.DATA_KEY}="${Setting.DARK_VAL}"]
 {
   ${BOR_VAR}: #35383c;
   ${BG_VAR}: rgb(43 43 45);

@@ -1,3 +1,4 @@
+import { Setting } from 'webnetq-js';
 import { representClassNames } from '../../lib/CSSHelper.mjs';
 import { loadSvgAsCssUrlAsync } from '../../lib/SVG.mjs';
 
@@ -26,7 +27,7 @@ export const CSS = `
   --uic-dmkkbtn-img: ${MOON_IMG};
 }
 
-[data-theme="dark"]
+[data-${Setting.DATA_KEY}="${Setting.DARK_VAL}"]
 {
   --uic-dmkkbtn-img: ${SUN_IMG};
 }

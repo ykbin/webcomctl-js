@@ -1,3 +1,4 @@
+import { Setting } from 'webnetq-js';
 import { representClassNames } from '../../lib/CSSHelper.mjs';
 import { loadSvgAsCssUrlAsync } from '../../lib/SVG.mjs';
 import { HEADER_MOBILE_DEVICE_WIDTH } from '../../lib/WickedTheme.mjs';
@@ -26,7 +27,7 @@ export const CSS = `
   --uic-dmbtn-bg: #7b7b7b21;
 }
 
-[data-theme="dark"]
+[data-${Setting.DATA_KEY}="${Setting.DARK_VAL}"]
 {
   --uic-dmbtn-img: ${SUN_IMG};
   --uic-dmbtn-bg: #ffffff21;

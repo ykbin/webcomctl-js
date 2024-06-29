@@ -1,3 +1,4 @@
+import { Setting } from 'webnetq-js';
 import { representClassNames } from '../../lib/CSSHelper.mjs';
 
 export const NAME = 'SplitterBlock';
@@ -25,7 +26,7 @@ export const CSS = `
   --uic-spltblk-bor: #e6e6e6;
 }
 
-[data-theme="dark"]
+[data-${Setting.DATA_KEY}="${Setting.DARK_VAL}"]
 {
   --uic-spltblk-bor: #3c3c3c;
 }

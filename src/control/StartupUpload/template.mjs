@@ -1,3 +1,4 @@
+import { Setting } from 'webnetq-js';
 import { representClassNames } from '../../lib/CSSHelper.mjs';
 import { loadSvgAsCssUrlAsync } from '../../lib/SVG.mjs';
 import { UIC_START_BACKGROUND_COLOR } from '../../lib/WickedTheme.mjs';
@@ -48,7 +49,7 @@ export const CSS = `
   --uic-strupl-fdbtn-hov: #4545450f;
 }
 
-[data-theme="dark"]
+[data-${Setting.DATA_KEY}="${Setting.DARK_VAL}"]
 {
   --uic-strupl-rootbg: ${UIC_START_BACKGROUND_COLOR_DARK};
   --uic-strupl-img: ${UPLOAD2_IMG};

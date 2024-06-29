@@ -1,3 +1,4 @@
+import { Setting } from 'webnetq-js';
 import { representClassNames } from '../../lib/CSSHelper.mjs';
 
 export const NAME = 'MainHeader';
@@ -21,7 +22,7 @@ export const CSS = `
   --uic-mhdr-bs2: rgba(0,0,0,0.11);
 }
 
-[data-theme="dark"]
+[data-${Setting.DATA_KEY}="${Setting.DARK_VAL}"]
 {
   --uic-mhdr-bg: #101010;
   --uic-mhdr-bor: #5f5f5f8f;

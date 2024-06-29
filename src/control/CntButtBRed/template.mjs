@@ -1,3 +1,4 @@
+import { Setting } from 'webnetq-js';
 import ControlMaker from '../../lib/ControlMaker.mjs';
 import { COMMON_MOBILE_DEVICE_WIDTH } from '../../lib/WickedTheme.mjs';
 
@@ -32,7 +33,7 @@ export const CSS = `
   ${HOVBG_VAR}: #f5eaea;
 }
 
-[data-theme="dark"]
+[data-${Setting.DATA_KEY}="${Setting.DARK_VAL}"]
 {
   ${HOVBG_VAR}: #5841414f;
 }

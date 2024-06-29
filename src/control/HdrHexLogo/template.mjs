@@ -1,3 +1,4 @@
+import { Setting } from 'webnetq-js';
 import { representClassNames } from '../../lib/CSSHelper.mjs';
 import { loadSvgAsCssUrlAsync } from '../../lib/SVG.mjs';
 import { HEADER_MOBILE_DEVICE_WIDTH } from '../../lib/WickedTheme.mjs';
@@ -22,7 +23,7 @@ export const CSS = `
   --uic-hdrhex-himg: url(header1.svg);
 }
 
-[data-theme="dark"]
+[data-${Setting.DATA_KEY}="${Setting.DARK_VAL}"]
 {
   --uic-hdrhex-fimg: url(favicon2.svg);
   --uic-hdrhex-himg: url(header2.svg);

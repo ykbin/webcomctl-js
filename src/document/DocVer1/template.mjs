@@ -1,5 +1,5 @@
-import ControlMaker from '../../lib/ControlMaker.mjs';
 import { Setting } from 'webnetq-js';
+import ControlMaker from '../../lib/ControlMaker.mjs';
 
 const maker = new ControlMaker('DocVer1', import.meta.url);
 

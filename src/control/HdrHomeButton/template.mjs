@@ -1,3 +1,4 @@
+import { Setting } from 'webnetq-js';
 import { representClassNames } from '../../lib/CSSHelper.mjs';
 import { loadSvgAsCssUrlAsync } from '../../lib/SVG.mjs';
 
@@ -36,7 +37,7 @@ export const CSS = `
   --uic-hdrhm-img: ${HOVER_IMG};
 }
 
-[data-theme="dark"]
+[data-${Setting.DATA_KEY}="${Setting.DARK_VAL}"]
 {
   --uic-hdrhm-btnbg: ${HEADER_BACKGROUND_COLOR_DARK};
   --uic-hdrhm-btncol: ${HEADER_COLOR_HOVER_DARK};

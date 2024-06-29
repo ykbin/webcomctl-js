@@ -1,3 +1,4 @@
+import { Setting } from 'webnetq-js';
 import { representClassNames } from '../../lib/CSSHelper.mjs';
 import { loadSvgAsCssUrlAsync } from '../../lib/SVG.mjs';
 import { HEADER_MOBILE_DEVICE_WIDTH } from '../../lib/WickedTheme.mjs';
@@ -27,7 +28,7 @@ export const CSS = `
   --uic-hdrcnt-himg: ${HEADER1_IMG};
 }
 
-[data-theme="dark"]
+[data-${Setting.DATA_KEY}="${Setting.DARK_VAL}"]
 {
   --uic-hdrcnt-fimg: ${FAVICON2_IMG};
   --uic-hdrcnt-himg: ${HEADER2_IMG};

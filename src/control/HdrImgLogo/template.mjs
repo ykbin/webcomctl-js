@@ -1,3 +1,4 @@
+import { Setting } from 'webnetq-js';
 import { representClassNames } from '../../lib/CSSHelper.mjs';
 import { loadSvgAsCssUrlAsync } from '../../lib/SVG.mjs';
 
@@ -23,7 +24,7 @@ export const CSS = `
   --uic-hdrimg-himg: url(header1.svg);
 }
 
-[data-theme="dark"]
+[data-${Setting.DATA_KEY}="${Setting.DARK_VAL}"]
 {
   --uic-hdrimg-fimg: url(favicon2.svg);
   --uic-hdrimg-himg: url(header2.svg);
