@@ -18,7 +18,7 @@ if (hasDocument && document.documentElement) {
 export default class UIDMBtnControl extends BaseControl {
   static get template() { return {
     name: NAME,
-    rootHTML: HTML_ROOT,
+    rootHTML: ROOT_HTML,
     rootClass: ROOT_CLASS,
   } }
 
