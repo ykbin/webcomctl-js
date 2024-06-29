@@ -1,8 +1,9 @@
 import { BaseControl, Random } from 'webnetq-js';
-import { NAME, HTML, CLASS, CSS } from 'module-loader!./template.mjs';
+import { NAME, HTML, CSS, LOAD_CLASS, HEIGHT_CLASS } from 'module-loader!./template.mjs';
+export { ROOT_CLASS } from 'module-loader!./template.mjs';
 
 export const template = {
-  NAME, HTML, CLASS, CSS,
+  NAME, HTML, CSS,
 };
 
 const UPLOAD_EVENT = 'upload';
@@ -11,7 +12,7 @@ export default class UICntButtBRedControl extends BaseControl {
   static get template() { return {
     name: NAME,
     rootHTML: HTML,
-    rootClass:  CLASS.ROOT,
+    rootClass:  ROOT_CLASS,
   } }
 
   _heightElm;
@@ -35,7 +36,7 @@ export default class UICntButtBRedControl extends BaseControl {
       lableElm.setAttribute('for', inputId);
     }
 
-    this._heightElm = this.element.querySelector('.' + CLASS.HEIGHT);
+    this._heightElm = this.element.querySelector('.' + HEIGHT_CLASS);
     if (this._heightElm) {
       this._heightElm.style.height = "0";
       this._heightElm.innerText = "";
@@ -46,12 +47,12 @@ export default class UICntButtBRedControl extends BaseControl {
 
   loadProcess(value) {
     if (value === null) {
-      this.element.classList.remove(CLASS.LOAD);
-      this.element.classList.add(CLASS.ROOT);
+      this.element.classList.remove(LOAD_CLASS);
+      this.element.classList.add(ROOT_CLASS);
     }
     else if (Number.isNaN(value)) {
-      this.element.classList.remove(CLASS.ROOT);
-      this.element.classList.add(CLASS.LOAD);
+      this.element.classList.remove(ROOT_CLASS);
+      this.element.classList.add(LOAD_CLASS);
     }
     else if (this._heightElm) {
       this._heightElm.style.height = value + "%";

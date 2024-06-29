@@ -1,18 +1,17 @@
-import { representClassNames } from '../../lib/CSSHelper.mjs';
-import { loadSvgAsCssUrlAsync } from '../../lib/SVG.mjs';
-
 import { COMMON_MOBILE_DEVICE_WIDTH } from '../../lib/WickedTheme.mjs';
 
-const WATER_IMG = await loadSvgAsCssUrlAsync(import.meta.url, './water.svg');
+import ControlMaker from '../../lib/ControlMaker.mjs';
 
 export const NAME = 'CntButtBRed';
 
-export const CLASS = representClassNames({
-  ROOT: "uic-brbut-root",
-  LOAD: "uic-brbut-load",
-  LABEL: "uic-brbut-label",
-  HEIGHT: "uic-brbut-height",
-});
+const maker = new ControlMaker(NAME, import.meta.url);
+
+const WATER_IMG = await maker.loadSvgAsCssUrl('./water.svg');
+
+export const ROOT_CLASS = maker.makeClassName("Root");
+export const LOAD_CLASS = maker.makeClassName("Load");
+export const LABEL_CLASS = maker.makeClassName("Label");
+export const HEIGHT_CLASS = maker.makeClassName("Height");
 
 const DEF_COLOR = '#c50000';
 const DEF_BORDER_COLOR = DEF_COLOR;
@@ -20,9 +19,9 @@ const ACT_COLOR = '#a72f2f';
 const ACT_BORDER_COLOR = ACT_COLOR;
 
 export const HTML = `
-<div class="${CLASS.ROOT}">
-  <div><div class="${CLASS.HEIGHT}"></div></div>
-  <label class="${CLASS.LABEL}">Upload</label>
+<div class="${ROOT_CLASS}">
+  <div><div class="${LHEIGHT_CLASS}"></div></div>
+  <label class="${LABEL_CLASS}">Upload</label>
 </div>
 `;
 
@@ -37,14 +36,14 @@ export const CSS = `
   --uic-brbut-hovbg: #5841414f;
 }
 
-.${CLASS.ROOT} > div > div,
-.${CLASS.LABEL} > input
+.${ROOT_CLASS} > div > div,
+.${LABEL_CLASS} > input
 {
   display:none;
 }
 
-.${CLASS.ROOT},
-.${CLASS.LOAD}
+.${ROOT_CLASS},
+.${LOAD_CLASS}
 {
   display: flex;
   align-items: center;
@@ -56,18 +55,18 @@ export const CSS = `
   overflow: hidden;
 }
 
-.${CLASS.ROOT}
+.${ROOT_CLASS}
 {
   color: ${DEF_COLOR};
   border: 3px solid ${DEF_BORDER_COLOR};
 }
 
-.${CLASS.ROOT}:hover
+.${ROOT_CLASS}:hover
 {
   background-color: var(--uic-brbut-hovbg);
 }
 
-.${CLASS.LOAD}
+.${LOAD_CLASS}
 {
   justify-items: center;
   flex-direction: column-reverse;
@@ -78,7 +77,7 @@ export const CSS = `
   cursor: no-drop;
 }
 
-.${CLASS.LOAD} > div
+.${LOAD_CLASS} > div
 {
   display: flex;
   justify-content: flex-start;
@@ -87,7 +86,7 @@ export const CSS = `
   min-width: 100%;
 }
 
-.${CLASS.LOAD} > div > div
+.${LOAD_CLASS} > div > div
 {
   width: 100%;
   background-image: ${WATER_IMG};
@@ -95,7 +94,7 @@ export const CSS = `
   background-size: 120%;
 }
 
-.${CLASS.LABEL}
+.${LABEL_CLASS}
 {
   display: flex;
   justify-content: center;
@@ -108,7 +107,7 @@ export const CSS = `
   font-family: Open Sans,Arial,sans-serif;
 }
 
-.${CLASS.LOAD} .${CLASS.LABEL}
+.${LOAD_CLASS} .${LABEL_CLASS}
 {
   position: relative;
   z-index: 1;
@@ -118,8 +117,8 @@ export const CSS = `
 
 @media (device-width < ${COMMON_MOBILE_DEVICE_WIDTH})
 {
-  .${CLASS.ROOT},
-  .${CLASS.LOAD}
+  .${ROOT_CLASS},
+  .${LOAD_CLASS}
   {
     width: 542px;
     height: 120px;
