@@ -1,8 +1,9 @@
 import { BaseControl } from "webnetq-js";
-import { NAME, HTML, CLASS, CSS } from 'module-loader!./template.mjs';
+import { NAME, ROOT_HTML, ROOT_CLASS, PORT_CLASS, NONE_CLASS, TOP_CLASS, RIGHT_CLASS, BOTTOM_CLASS, LEFT_CLASS, INSET_CLASS, CSS } from 'module-loader!./template.mjs';
 
+export { NAME, ROOT_CLASS, PORT_CLASS, ROOT_HTML };
 export const template = {
-  NAME, HTML, CLASS, CSS,
+  NAME, HTML: ROOT_HTML, CSS,
 };
 
 const MIN_CHUNK_WIDTH = 50;
@@ -55,26 +56,26 @@ SideType.toString = (sideType) => {
 SideType.toClassName = (sideType) => {
   switch (sideType) {
   case SideType.NONE:
-    return CLASS.NONE;
+    return NONE_CLASS;
   case SideType.TOP:
-    return CLASS.TOP;
+    return TOP_CLASS;
   case SideType.RIGHT:
-    return CLASS.RIGHT;
+    return RIGHT_CLASS;
   case SideType.BOTTOM:
-    return CLASS.BOTTOM;
+    return BOTTOM_CLASS;
   case SideType.LEFT:
-    return CLASS.LEFT;
+    return LEFT_CLASS;
   case SideType.INSET:
-    return CLASS.INSET;
+    return INSET_CLASS;
   }
 };
 
 export default class UIDropBlockControl  extends BaseControl {
   static get template() { return {
     name: NAME,
-    rootHTML: HTML,
-    rootClass:  CLASS.ROOT,
-    portClass:  CLASS.PORT,
+    rootHTML: ROOT_HTML,
+    rootClass: ROOT_CLASS,
+    portClass: PORT_CLASS,
   } }
 
   _sideSet = new Set();
@@ -89,7 +90,7 @@ export default class UIDropBlockControl  extends BaseControl {
   };
 
   _init() {
-    this._rectElm = this.element.querySelector('.' + CLASS.NONE);
+    this._rectElm = this.element.querySelector('.' + NONE_CLASS);
     
     let count = 0;
     this.element.addEventListener("dragenter", (event) => {

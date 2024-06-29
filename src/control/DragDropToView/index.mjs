@@ -1,8 +1,9 @@
 import { BaseControl } from 'webnetq-js';
 import { NAME, ROOT_HTML, ROOT_CLASS, PORT_CLASS, CSS } from 'module-loader!./template.mjs';
 
+export { NAME, ROOT_CLASS, ROOT_HTML };
 export const template = {
-  NAME, ROOT_HTML, ROOT_CLASS, CSS,
+  NAME, HTML: ROOT_HTML, ROOT_CLASS, CSS,
 };
 
 export default class UIDragDropToViewControl extends BaseControl {

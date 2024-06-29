@@ -1,25 +1,24 @@
-import { representClassNames } from '../../lib/CSSHelper.mjs';
+import ControlMaker from '../../lib/ControlMaker.mjs';
 
 import { UIC_BLUE_SQUARE_BACKGROUND } from '../../lib/WickedTheme.mjs';
 import { UIC_BLUE_SQUARE_BORDER } from '../../lib/WickedTheme.mjs';
 
-export const NAME = 'DropBlock';
+const mk = new ControlMaker('DropBlock', import.meta.url);
+export const NAME = mk.name;
 
-export const CLASS = representClassNames({
-  ROOT: "uic-drpblk-root",
-  PORT: "uic-drpblk-port",
-  NONE: "uic-drpblk-none",
-  INSET: "uic-drpblk-inset",
-  LEFT: "uic-drpblk-left",
-  RIGHT: "uic-drpblk-right",
-  TOP: "uic-drpblk-top",
-  BOTTOM: "uic-drpblk-bottom",
-});
+export const ROOT_CLASS = mk.newClassName("Root");
+export const PORT_CLASS = mk.newClassName("Port");
+export const NONE_CLASS = mk.newClassName("None");
+export const INSET_CLASS = mk.newClassName("Inset");
+export const LEFT_CLASS = mk.newClassName("Left");
+export const RIGHT_CLASS = mk.newClassName("Right");
+export const TOP_CLASS = mk.newClassName("Top");
+export const BOTTOM_CLASS = mk.newClassName("Bottom");
 
-export const HTML = `
-<div class="${CLASS.ROOT}">
-  <div class="${CLASS.PORT}"></div>
-  <span class="${CLASS.NONE}">
+export const ROOT_HTML = `
+<div class="${ROOT_CLASS}">
+  <div class="${PORT_CLASS}"></div>
+  <span class="${NONE_CLASS}">
     <div></div>
   </span>
 </div>
@@ -27,7 +26,7 @@ export const HTML = `
 
 export const CSS = `
 
-.${CLASS.ROOT}
+.${ROOT_CLASS}
 {
   position: relative;
   height: 100%;
@@ -35,7 +34,7 @@ export const CSS = `
   overflow: auto;
 }
 
-.${CLASS.ROOT} > span
+.${ROOT_CLASS} > span
 {
   position: absolute;
   top: 0;
@@ -44,7 +43,7 @@ export const CSS = `
   width: 100%;
 }
 
-.${CLASS.ROOT} > span > div
+.${ROOT_CLASS} > span > div
 {
   position: absolute;
   border: 1px solid ${UIC_BLUE_SQUARE_BORDER};
@@ -53,18 +52,18 @@ export const CSS = `
   box-sizing: border-box;
 }
 
-span.${CLASS.NONE}
+span.${NONE_CLASS}
 {
   display: none;
 }
 
-.${CLASS.INSET} > div
+.${INSET_CLASS} > div
 {
   height: 100%;
   width: 100%;
 }
 
-.${CLASS.LEFT} > div
+.${LEFT_CLASS} > div
 {
   top: 0;
   left: 0;
@@ -72,7 +71,7 @@ span.${CLASS.NONE}
   width: 50%;
 }
 
-.${CLASS.RIGHT} > div
+.${RIGHT_CLASS} > div
 {
   top: 0;
   right: 0;
@@ -80,21 +79,21 @@ span.${CLASS.NONE}
   width: 50%;
 }
 
-.${CLASS.TOP} > div
+.${TOP_CLASS} > div
 {
   top: 0;
   height: 50%;
   width: 100%;
 }
 
-.${CLASS.BOTTOM} > div
+.${BOTTOM_CLASS} > div
 {
   bottom: 0;
   height: 50%;
   width: 100%;
 }
 
-.${CLASS.PORT}
+.${PORT_CLASS}
 {
   width: 100%;
   height: 100%;
