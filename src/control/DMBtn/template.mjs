@@ -8,14 +8,14 @@ const mk = new ControlMaker('DMBtn', import.meta.url);
 
 export const NAME = mk.name;
 
-export const ROOT_CLASS = maker.makeClassName("Root");
-export const TOGGLE_CLASS = maker.makeClassName("Toggle");
+export const ROOT_CLASS = mk.makeClassName("Root");
+export const TOGGLE_CLASS = mk.makeClassName("Toggle");
 
-const MOON_IMG = await maker.loadSvgAsCssUrl('./moon.svg');
-const SUN_IMG = await maker.loadSvgAsCssUrl('./sun.svg');
+const MOON_IMG = await mk.loadSvgAsCssUrl('./moon.svg');
+const SUN_IMG = await mk.loadSvgAsCssUrl('./sun.svg');
 
-const IMG_VAR = maker.makeVarName("Img");
-const BG_VAR = maker.makeVarName("Bg");
+const IMG_VAR = mk.makeVarName("Img");
+const BG_VAR = mk.makeVarName("Bg");
 
 export const ROOT_HTML = `
 <div class="${ROOT_CLASS}">
