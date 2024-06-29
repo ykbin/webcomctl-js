@@ -1,5 +1,5 @@
-import { representClassNames } from '../../lib/CSSHelper.mjs';
-import { loadSvgAsCssUrlAsync } from '../../lib/SVG.mjs';
+import { representClassNames } from '../CSSHelper.mjs';
+import { loadSvgAsCssUrlAsync } from '../SVG.mjs';
 
 export default class ControlMaker {
   _name;
