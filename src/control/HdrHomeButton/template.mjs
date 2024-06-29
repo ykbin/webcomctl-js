@@ -25,7 +25,7 @@ export const CLASS = representClassNames({
 export const HTML = `
 <a class="${CLASS.ROOT} notranslate" translate="no" href="\${ENV:HOST_URL}" draggable="false">
   <div></div>
-  <span>Home</span>
+  <span>Huem</span>
 </a>
 `;
 

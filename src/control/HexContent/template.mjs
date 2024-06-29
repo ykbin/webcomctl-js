@@ -121,7 +121,7 @@ ${DARKMODE_SELECTOR_VALUE}
   align-items: flex-start;
   height: 100%;
   width: calc(100% - 10px);
-  padding: 10px 10px 15px 10px;
+  padding-top: 1px;
   line-height: 20px;
   word-spacing: normal;
   font-size: 16px;
@@ -132,10 +132,17 @@ ${DARKMODE_SELECTOR_VALUE}
   overflow: hidden;
 }
 
+.${CLASS.BINARY} > h3 > span
 .${CLASS.CONTENT} h3
 {
-  height: 30px;
-  padding: 5px 15px 5px 15px;
+  display: flex;
+  align-items: center;
+}
+
+.${CLASS.CONTENT} h3
+{
+  height: 25px;
+  padding: 0px 15px;
   border-bottom: 1px solid var(--whex-cont-bor);
   font-size: 1em;
   box-sizing: border-box;
@@ -172,8 +179,24 @@ ${DARKMODE_SELECTOR_VALUE}
 .${CLASS.TEXT} > ul
 {
   list-style-type: none;
-  padding: 20px 10px 10px 10px;
+  padding: 10px 10px 10px 10px;
   margin: 0px;
+}
+
+.${CLASS.TEXT}
+{
+    width: 100%;
+}
+
+.${CLASS.TEXT} > h3
+{
+  text-indent: 50px;
+  text-align: left;
+}
+
+.${CLASS.TEXT} > ul
+{
+  width: max-content;
 }
 
 .${CLASS.TEXT} > ul li
@@ -184,8 +207,8 @@ ${DARKMODE_SELECTOR_VALUE}
 
 .${CLASS.BINARY}
 {
-  border-right: 1px solid var(--whex-cont-bor);
-  border-left: 1px solid var(--whex-cont-bor);
+  /*border-right: 1px solid var(--whex-cont-bor);*/
+  /*border-left: 1px solid var(--whex-cont-bor);*/
   text-align: left;
   flex-shrink: 0;
   /*z-index: 1;*/
@@ -193,7 +216,7 @@ ${DARKMODE_SELECTOR_VALUE}
 
 .${CLASS.BINARY} > div
 {
-  padding: 20px 10px 10px 10px;
+  padding: 10px 10px 10px 10px;
 }
 
 .${CLASS.CONTENT} h3
