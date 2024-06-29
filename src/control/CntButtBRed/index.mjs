@@ -1,7 +1,7 @@
 import { BaseControl, Random } from 'webnetq-js';
 import { NAME, HTML, CSS, ROOT_CLASS, LOAD_CLASS, HEIGHT_CLASS } from 'module-loader!./template.mjs';
 
-export { ROOT_CLASS };
+export { NAME, ROOT_CLASS, ROOT_HTML as HTML };
 export const template = {
   NAME, HTML, CSS,
 };
@@ -12,7 +12,7 @@ export default class UICntButtBRedControl extends BaseControl {
   static get template() { return {
     name: NAME,
     rootHTML: HTML,
-    rootClass:  ROOT_CLASS,
+    rootClass: ROOT_CLASS,
   } }
 
   _heightElm;
