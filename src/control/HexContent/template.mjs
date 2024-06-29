@@ -132,7 +132,7 @@ ${DARKMODE_SELECTOR_VALUE}
   overflow: hidden;
 }
 
-.${CLASS.BINARY} > h3 > span
+.${CLASS.BINARY} > h3 > span,
 .${CLASS.CONTENT} h3
 {
   display: flex;
