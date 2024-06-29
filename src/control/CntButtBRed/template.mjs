@@ -1,19 +1,20 @@
-import { Setting } from 'webnetq-js';
 import ControlMaker from '../../lib/ControlMaker.mjs';
+
+import { DARKMODE_SELECTOR_VALUE } from '../../lib/DarkMode.mjs';
 import { COMMON_MOBILE_DEVICE_WIDTH } from '../../lib/WickedTheme.mjs';
 
-const maker = new ControlMaker('CntButtBRed', import.meta.url);
+const mk = new ControlMaker('CntButtBRed', import.meta.url);
 
-export const NAME = maker.name;
+export const NAME = mk.name;
 
-const WATER_IMG = await maker.loadSvgAsCssUrl('./water.svg');
+const WATER_IMG = await mk.loadSvgAsCssUrl('./water.svg');
 
-export const ROOT_CLASS = maker.makeClassName("Root");
-export const LOAD_CLASS = maker.makeClassName("Load");
-export const LABEL_CLASS = maker.makeClassName("Label");
-export const HEIGHT_CLASS = maker.makeClassName("Height");
+export const ROOT_CLASS = mk.makeClassName("Root");
+export const LOAD_CLASS = mk.makeClassName("Load");
+export const LABEL_CLASS = mk.makeClassName("Label");
+export const HEIGHT_CLASS = mk.makeClassName("Height");
 
-const HOVBG_VAR = maker.makeVarName("Hovbg");
+const HOVBG_VAR = mk.makeVarName("Hovbg");
 
 const DEF_COLOR = '#c50000';
 const DEF_BORDER_COLOR = DEF_COLOR;
@@ -33,7 +34,7 @@ export const CSS = `
   ${HOVBG_VAR}: #f5eaea;
 }
 
-[data-${Setting.DATA_KEY}="${Setting.DARK_VAL}"]
+${DARKMODE_SELECTOR_VALUE}
 {
   ${HOVBG_VAR}: #5841414f;
 }

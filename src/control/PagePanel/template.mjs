@@ -1,7 +1,7 @@
-import { Setting } from 'webnetq-js';
 import { representClassNames } from '../../lib/CSSHelper.mjs';
 import { loadSvgAsCssUrlAsync } from '../../lib/SVG.mjs';
 
+import { DARKMODE_SELECTOR_VALUE } from '../../lib/DarkMode.mjs';
 import { COMMON_MOBILE_DEVICE_WIDTH } from '../../lib/WickedTheme.mjs';
 import { TOOLBAR_FONT_FAMALY } from '../../lib/WickedTheme.mjs';
 
@@ -66,7 +66,7 @@ export const CSS = `
   --uic-pagpnl-plist-hov: rgb(206 206 206);
 }
 
-[data-${Setting.DATA_KEY}="${Setting.DARK_VAL}"]
+${DARKMODE_SELECTOR_VALUE}
 {
   --uic-pagpnl-col: #252525;
   --uic-pagpnl-hov: #444444;

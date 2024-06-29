@@ -1,6 +1,7 @@
-import { Setting } from 'webnetq-js';
 import { representClassNames } from '../../lib/CSSHelper.mjs';
 import { loadSvgAsCssUrlAsync } from '../../lib/SVG.mjs';
+
+import { DARKMODE_SELECTOR_VALUE } from '../../lib/DarkMode.mjs';
 import { UIC_START_BACKGROUND_COLOR } from '../../lib/WickedTheme.mjs';
 import { UIC_START_BACKGROUND_COLOR_DARK } from '../../lib/WickedTheme.mjs';
 
@@ -49,7 +50,7 @@ export const CSS = `
   --uic-strupl-fdbtn-hov: #4545450f;
 }
 
-[data-${Setting.DATA_KEY}="${Setting.DARK_VAL}"]
+${DARKMODE_SELECTOR_VALUE}
 {
   --uic-strupl-rootbg: ${UIC_START_BACKGROUND_COLOR_DARK};
   --uic-strupl-img: ${UPLOAD2_IMG};

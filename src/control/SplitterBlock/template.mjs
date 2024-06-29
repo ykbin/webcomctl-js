@@ -1,5 +1,6 @@
-import { Setting } from 'webnetq-js';
 import { representClassNames } from '../../lib/CSSHelper.mjs';
+
+import { DARKMODE_SELECTOR_VALUE } from '../../lib/DarkMode.mjs';
 
 export const NAME = 'SplitterBlock';
 
@@ -26,7 +27,7 @@ export const CSS = `
   --uic-spltblk-bor: #e6e6e6;
 }
 
-[data-${Setting.DATA_KEY}="${Setting.DARK_VAL}"]
+${DARKMODE_SELECTOR_VALUE}
 {
   --uic-spltblk-bor: #3c3c3c;
 }

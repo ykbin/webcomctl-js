@@ -1,16 +1,16 @@
-import { Setting } from 'webnetq-js';
 import ControlMaker from '../../lib/ControlMaker.mjs';
+import { DARKMODE_ATTR_NAME, DARKMODE_DEFAULT_VALUE } from '../../lib/DarkMode.mjs';
 
-const maker = new ControlMaker('DocVer1', import.meta.url);
+const mk = new ControlMaker('DocVer1', import.meta.url);
 
-export const NAME = maker.name;
+export const NAME = mk.name;
 
-export const ROOT_CLASS = maker.makeClassName("Root");
+export const ROOT_CLASS = mk.makeClassName("Root");
 export const PORT_CLASS = ROOT_CLASS;
 
 export const ROOT_HTML = `
 <!DOCTYPE html>
-<html data-${Setting.DATA_KEY}="${Setting.LIGHT_VAL}">
+<html data-${DARKMODE_ATTR_NAME}="${DARKMODE_DEFAULT_VALUE}">
   <head></head>
   <body class="${ROOT_CLASS}"></body>
 </html>

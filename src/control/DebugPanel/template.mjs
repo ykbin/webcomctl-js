@@ -1,17 +1,18 @@
-import { Setting } from 'webnetq-js';
 import ControlMaker from '../../lib/ControlMaker.mjs';
 
-const maker = new ControlMaker('DebugPanel', import.meta.url);
+import { DARKMODE_SELECTOR_VALUE } from '../../lib/DarkMode.mjs';
 
-export const NAME = maker.name;
+const mk = new ControlMaker('DebugPanel', import.meta.url);
 
-export const ROOT_CLASS = maker.makeClassName("Root");
-export const LIST_CLASS = maker.makeClassName("List");
-export const TEXT_CLASS = maker.makeClassName("Text");
+export const NAME = mk.name;
 
-const BOR_VAR = maker.makeVarName("Bor");
-const BG_VAR = maker.makeVarName("Bg");
-const DEFBUT_VAR = maker.makeVarName("DefBut");
+export const ROOT_CLASS = mk.makeClassName("Root");
+export const LIST_CLASS = mk.makeClassName("List");
+export const TEXT_CLASS = mk.makeClassName("Text");
+
+const BOR_VAR = mk.makeVarName("Bor");
+const BG_VAR = mk.makeVarName("Bg");
+const DEFBUT_VAR = mk.makeVarName("DefBut");
 
 export const ROOT_HTML = `
 <div class="${ROOT_CLASS} ${LIST_CLASS}"></div>
@@ -29,7 +30,7 @@ export const CSS = `
   ${DEFBUT_VAR}: #488ee9;
 }
 
-[data-${Setting.DATA_KEY}="${Setting.DARK_VAL}"]
+${DARKMODE_SELECTOR_VALUE}
 {
   ${BOR_VAR}: #35383c;
   ${BG_VAR}: rgb(43 43 45);

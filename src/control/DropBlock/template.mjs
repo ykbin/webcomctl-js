@@ -1,4 +1,5 @@
 import { representClassNames } from '../../lib/CSSHelper.mjs';
+
 import { UIC_BLUE_SQUARE_BACKGROUND } from '../../lib/WickedTheme.mjs';
 import { UIC_BLUE_SQUARE_BORDER } from '../../lib/WickedTheme.mjs';
 

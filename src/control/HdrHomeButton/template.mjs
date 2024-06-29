@@ -1,7 +1,7 @@
-import { Setting } from 'webnetq-js';
 import { representClassNames } from '../../lib/CSSHelper.mjs';
 import { loadSvgAsCssUrlAsync } from '../../lib/SVG.mjs';
 
+import { DARKMODE_SELECTOR_VALUE } from '../../lib/DarkMode.mjs';
 import { HEADER_MOBILE_DEVICE_WIDTH } from '../../lib/WickedTheme.mjs';
 import { HEADER_FONT_SIZE } from '../../lib/WickedTheme.mjs';
 import { HEADER_FONT_COLOR } from '../../lib/WickedTheme.mjs';
@@ -37,7 +37,7 @@ export const CSS = `
   --uic-hdrhm-img: ${HOVER_IMG};
 }
 
-[data-${Setting.DATA_KEY}="${Setting.DARK_VAL}"]
+${DARKMODE_SELECTOR_VALUE}
 {
   --uic-hdrhm-btnbg: ${HEADER_BACKGROUND_COLOR_DARK};
   --uic-hdrhm-btncol: ${HEADER_COLOR_HOVER_DARK};

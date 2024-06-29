@@ -1,5 +1,6 @@
-import { Setting } from 'webnetq-js';
 import { representClassNames } from '../../lib/CSSHelper.mjs';
+
+import { DARKMODE_SELECTOR_VALUE } from '../../lib/DarkMode.mjs';
 
 export const NAME = 'MainHeader';
 
@@ -22,7 +23,7 @@ export const CSS = `
   --uic-mhdr-bs2: rgba(0,0,0,0.11);
 }
 
-[data-${Setting.DATA_KEY}="${Setting.DARK_VAL}"]
+${DARKMODE_SELECTOR_VALUE}
 {
   --uic-mhdr-bg: #101010;
   --uic-mhdr-bor: #5f5f5f8f;

@@ -1,6 +1,6 @@
-import { Setting } from 'webnetq-js';
 import { representClassNames } from '../../lib/CSSHelper.mjs';
 
+import { DARKMODE_SELECTOR_VALUE } from '../../lib/DarkMode.mjs';
 import { COMMON_MOBILE_DEVICE_WIDTH } from '../../lib/WickedTheme.mjs';
 import { UIC_CONTENT_BACKGROUND_COLOR } from '../../lib/WickedTheme.mjs';
 import { UIC_CONTENT_BACKGROUND_COLOR_DARK } from '../../lib/WickedTheme.mjs';
@@ -70,7 +70,7 @@ export const CSS = `
   
 }
 
-[data-${Setting.DATA_KEY}="${Setting.DARK_VAL}"]
+${DARKMODE_SELECTOR_VALUE}
 {
   --uic-hex-rootcol: #b8b4b4;
   --uic-hex-bg: ${UIC_CONTENT_BACKGROUND_COLOR_DARK};

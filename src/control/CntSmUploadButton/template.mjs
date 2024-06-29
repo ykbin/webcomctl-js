@@ -1,18 +1,19 @@
-import { Setting } from 'webnetq-js';
 import ControlMaker from '../../lib/ControlMaker.mjs';
+
+import { DARKMODE_SELECTOR_VALUE } from '../../lib/DarkMode.mjs';
 import { COMMON_MOBILE_DEVICE_WIDTH } from '../../lib/WickedTheme.mjs';
 
-const maker = new ControlMaker('CntSmUploadButton', import.meta.url);
+const mk = new ControlMaker('CntSmUploadButton', import.meta.url);
 
-export const NAME = maker.name;
+export const NAME = mk.name;
 
-export const ROOT_CLASS = maker.makeClassName("Root");
-export const LOAD_CLASS = maker.makeClassName("Load");
+export const ROOT_CLASS = mk.makeClassName("Root");
+export const LOAD_CLASS = mk.makeClassName("Load");
 
-const DBG_VAR = maker.makeVarName("Dbg");
-const HBG_VAR = maker.makeVarName("Hbg");
+const DBG_VAR = mk.makeVarName("Dbg");
+const HBG_VAR = mk.makeVarName("Hbg");
 
-const LOAD_IMG = await maker.loadSvgAsCssUrl('./load.svg');
+const LOAD_IMG = await mk.loadSvgAsCssUrl('./load.svg');
 
 const COLOR = '#c50000';
 const BORDER_COLOR = COLOR;
@@ -33,7 +34,7 @@ export const CSS = `
   ${HBG_VAR}: #f5eaea;
 }
 
-[data-${Setting.DATA_KEY}="${Setting.DARK_VAL}"]
+${DARKMODE_SELECTOR_VALUE}
 {
   ${DBG_VAR}: #472f2f42;
   ${HBG_VAR}: #ba8f8f29;

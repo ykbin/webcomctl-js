@@ -1,7 +1,7 @@
-import { Setting } from 'webnetq-js';
 import { representClassNames } from '../../lib/CSSHelper.mjs';
 import { loadSvgAsCssUrlAsync } from '../../lib/SVG.mjs';
 
+import { DARKMODE_SELECTOR_VALUE } from '../../lib/DarkMode.mjs';
 import { HEADER_MOBILE_DEVICE_WIDTH } from '../../lib/WickedTheme.mjs';
 
 const FAVICON1_IMG = await loadSvgAsCssUrlAsync(import.meta.url, './favicon1.svg');
@@ -29,7 +29,7 @@ export const CSS = `
   --uic-hdrwabt-himg: ${HEADER1_IMG};
 }
 
-[data-${Setting.DATA_KEY}="${Setting.DARK_VAL}"]
+${DARKMODE_SELECTOR_VALUE}
 {
   --uic-hdrwabt-fimg: ${FAVICON2_IMG};
   --uic-hdrwabt-himg: ${HEADER2_IMG};

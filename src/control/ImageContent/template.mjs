@@ -1,6 +1,6 @@
-import { Setting } from 'webnetq-js';
 import { representClassNames } from '../../lib/CSSHelper.mjs';
 
+import { DARKMODE_SELECTOR_VALUE } from '../../lib/DarkMode.mjs';
 import { UIC_CONTENT_BACKGROUND_COLOR } from '../../lib/WickedTheme.mjs';
 import { UIC_CONTENT_BACKGROUND_COLOR_DARK } from '../../lib/WickedTheme.mjs';
 
@@ -23,7 +23,7 @@ export const CSS = `
   --uic-imgcnt-bg: ${UIC_CONTENT_BACKGROUND_COLOR};
 }
 
-[data-${Setting.DATA_KEY}="${Setting.DARK_VAL}"]
+${DARKMODE_SELECTOR_VALUE}
 {
   --uic-imgcnt-bg: ${UIC_CONTENT_BACKGROUND_COLOR_DARK};
 }

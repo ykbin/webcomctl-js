@@ -1,6 +1,7 @@
-import { Setting } from 'webnetq-js';
 import { representClassNames } from '../../lib/CSSHelper.mjs';
 import { loadSvgAsCssUrlAsync } from '../../lib/SVG.mjs';
+
+import { DARKMODE_SELECTOR_VALUE } from '../../lib/DarkMode.mjs';
 
 const MOON_IMG = await loadSvgAsCssUrlAsync(import.meta.url, './moon.svg');
 const SUN_IMG = await loadSvgAsCssUrlAsync(import.meta.url, './sun.svg');
@@ -27,7 +28,7 @@ export const CSS = `
   --uic-dmkkbtn-img: ${MOON_IMG};
 }
 
-[data-${Setting.DATA_KEY}="${Setting.DARK_VAL}"]
+${DARKMODE_SELECTOR_VALUE}
 {
   --uic-dmkkbtn-img: ${SUN_IMG};
 }

@@ -1,6 +1,7 @@
-import { Setting } from 'webnetq-js';
 import { representClassNames } from '../../lib/CSSHelper.mjs';
 import { loadSvgAsCssUrlAsync } from '../../lib/SVG.mjs';
+
+import { DARKMODE_SELECTOR_VALUE } from '../../lib/DarkMode.mjs';
 import { HEADER_MOBILE_DEVICE_WIDTH } from '../../lib/WickedTheme.mjs';
 
 export const NAME = 'HdrHexLogo';
@@ -23,7 +24,7 @@ export const CSS = `
   --uic-hdrhex-himg: url(header1.svg);
 }
 
-[data-${Setting.DATA_KEY}="${Setting.DARK_VAL}"]
+${DARKMODE_SELECTOR_VALUE}
 {
   --uic-hdrhex-fimg: url(favicon2.svg);
   --uic-hdrhex-himg: url(header2.svg);

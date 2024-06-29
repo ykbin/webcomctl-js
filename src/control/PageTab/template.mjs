@@ -1,7 +1,7 @@
-import { Setting } from 'webnetq-js';
 import { representClassNames } from '../../lib/CSSHelper.mjs';
 import { loadSvgAsCssUrlAsync } from '../../lib/SVG.mjs';
 
+import { DARKMODE_SELECTOR_VALUE } from '../../lib/DarkMode.mjs';
 import { COMMON_MOBILE_DEVICE_WIDTH } from '../../lib/WickedTheme.mjs';
 import { TOOLBAR_FONT_FAMALY } from '../../lib/WickedTheme.mjs';
 import { UIC_BLUE_SQUARE_BACKGROUND } from '../../lib/WickedTheme.mjs';
@@ -51,7 +51,7 @@ export const CSS = `
   --uic-pagtab-loading: #949eb0;
 }
 
-[data-${Setting.DATA_KEY}="${Setting.DARK_VAL}"]
+${DARKMODE_SELECTOR_VALUE}
 {
   --uic-pagtab-rootbg: ${UIC_START_BACKGROUND_COLOR_DARK};
   --uic-pagtab-act-bg: #252525;
