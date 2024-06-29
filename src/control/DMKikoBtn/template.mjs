@@ -1,23 +1,23 @@
-import { representClassNames } from '../../lib/CSSHelper.mjs';
-import { loadSvgAsCssUrlAsync } from '../../lib/SVG.mjs';
+import ControlMaker from '../../lib/ControlMaker.mjs';
 
 import { DARKMODE_SELECTOR_VALUE } from '../../lib/DarkMode.mjs';
 
-const MOON_IMG = await loadSvgAsCssUrlAsync(import.meta.url, './moon.svg');
-const SUN_IMG = await loadSvgAsCssUrlAsync(import.meta.url, './sun.svg');
+const mk = new ControlMaker('DMKikoBtn', import.meta.url);
 
-export const NAME = 'DMKikoBtn';
+export const NAME = mk.name;
+
+const MOON_IMG = await mk.loadSvgAsCssUrl('./moon.svg');
+const SUN_IMG = await mk.loadSvgAsCssUrl('./sun.svg');
+
+export const ROOT_CLASS = mk.makeClassName("Root");
+
+const IMG_VAR = mk.makeVarName("Img");
 
 const BORDER_COLOR = '#6a6a6a';
 const IMAGE_BORDER_COLOR = 'transparent';
 
-export const CLASS = representClassNames({
-  ROOT: "uic-dmkkbtn-root",
-  TOGGLE: "uic-dmkkbtn-toggle",
-});
-
-export const HTML = `
-<div class="${CLASS.ROOT}">
+export const ROOT_HTML = `
+<div class="${ROOT_CLASS}">
   <div></div>
 </div>
 `;
@@ -25,15 +25,15 @@ export const HTML = `
 export const CSS = `
 :root 
 {
-  --uic-dmkkbtn-img: ${MOON_IMG};
+  ${IMG_VAR}: ${MOON_IMG};
 }
 
 ${DARKMODE_SELECTOR_VALUE}
 {
-  --uic-dmkkbtn-img: ${SUN_IMG};
+  ${IMG_VAR}: ${SUN_IMG};
 }
 
-.${CLASS.ROOT}
+.${ROOT_CLASS}
 {
   width: 50px;
   height: 50px;
@@ -43,7 +43,7 @@ ${DARKMODE_SELECTOR_VALUE}
   overflow: hidden;
 }
 
-.${CLASS.ROOT} > div
+.${ROOT_CLASS} > div
 {
   width: 100%;
   height: 100%;
@@ -51,6 +51,6 @@ ${DARKMODE_SELECTOR_VALUE}
   background-size: contain;
   background-repeat: no-repeat;
   border: 4px solid ${IMAGE_BORDER_COLOR};
-  background-image: var(--uic-dmkkbtn-img);
+  background-image: var(${IMG_VAR});
 }
 `;

@@ -1,8 +1,8 @@
 import { BaseControl, Setting } from 'webnetq-js';
-import { NAME, HTML, CLASS, CSS } from 'module-loader!./template.mjs';
+import { NAME, ROOT_HTML, ROOT_CLASS, CSS } from 'module-loader!./template.mjs';
 
 export const template = {
-  NAME, HTML, CLASS, CSS,
+  NAME, HTML: ROOT_HTML, CSS,
 };
 
 const kDarkModeTip = "Toggle dark mode";
@@ -17,8 +17,8 @@ if (hasDocument && document.documentElement) {
 export default class UIDMKikoBtnControl extends BaseControl {
   static get template() { return {
     name: NAME,
-    rootHTML: HTML,
-    rootClass:  CLASS.ROOT,
+    rootHTML: ROOT_HTML,
+    rootClass: ROOT_CLASS,
   } }
 
   _init() {
