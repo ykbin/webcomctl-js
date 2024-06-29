@@ -1,19 +1,17 @@
-import { representClassNames } from '../../lib/CSSHelper.mjs';
-import { loadSvgAsCssUrlAsync } from '../../lib/SVG.mjs';
-
+import ControlMaker from '../../lib/ControlMaker.mjs';
 import { COMMON_MOBILE_DEVICE_WIDTH } from '../../lib/WickedTheme.mjs';
 
-const LOAD_IMG = await loadSvgAsCssUrlAsync(import.meta.url, './load.svg');
+const maker = new ControlMaker('CntSmUploadButton', import.meta.url);
 
-export const NAME = 'CntSmUploadButton';
+const LOAD_IMG = await maker.loadSvgAsCssUrl('./load.svg');
 
-export const CLASS = representClassNames({
-  ROOT: "uic-csupl-root",
-  LOAD: "uic-csupl-load",
-});
+export const NAME = maker.name;
+
+export const ROOT_CLASS = maker.makeClassName("Root");
+export const LOAD_CLASS = maker.makeClassName("Load");
 
 export const HTML = `
-<div class="${CLASS.ROOT}">
+<div class="${ROOT_CLASS}">
   <span></span>
   <label class="notranslate" translate="no">Upload</label>
 </div>
@@ -37,12 +35,12 @@ export const CSS = `
   --uic-csupl-hbg: #ba8f8f29;
 }
 
-.${CLASS.ROOT} input
+.${ROOT_CLASS} input
 {
    display: none;
 }
 
-.${CLASS.ROOT}
+.${ROOT_CLASS}
 {
   display: flex;
   align-items: center;
@@ -54,7 +52,7 @@ export const CSS = `
   float: right;
 }
 
-.${CLASS.ROOT}
+.${ROOT_CLASS}
 {
   background-color: var(--uic-csupl-dbg);
   color: var(--uic-csupl-clr);
@@ -62,12 +60,12 @@ export const CSS = `
   cursor: pointer;
 }
 
-.${CLASS.ROOT}:hover 
+.${ROOT_CLASS}:hover 
 {
   background-color: var(--uic-csupl-hbg);
 }
 
-.${CLASS.ROOT} > label
+.${ROOT_CLASS} > label
 {
   display: grid;
   justify-content: center;
@@ -78,7 +76,7 @@ export const CSS = `
   flex-shrink: 0;
 }
 
-.${CLASS.LOAD}
+.${LOAD_CLASS}
 {
   background-color: var(--uic-csupl-hbg);
   color: var(--uic-csupl-ldclr);
@@ -87,7 +85,7 @@ export const CSS = `
   pointer-events: none;
 }
 
-.${CLASS.LOAD} > span
+.${LOAD_CLASS} > span
 {
   position: relative;
   left: 39%;
@@ -102,7 +100,7 @@ export const CSS = `
   flex-shrink: 0;
 }
 
-.${CLASS.LOAD} label
+.${LOAD_CLASS} label
 {
   position: relative;
   right: 33px;
@@ -110,7 +108,7 @@ export const CSS = `
 
 @media (device-width < ${COMMON_MOBILE_DEVICE_WIDTH})
 {
-  .${CLASS.ROOT}
+  .${ROOT_CLASS}
   {
     width: 280px;
     height: 64px;
@@ -118,11 +116,11 @@ export const CSS = `
     font-size: 48px;
     margin-top: 10px;
   }
-  .${CLASS.LOAD} span
+  .${LOAD_CLASS} span
   {
     width: 66px;
   }
-  .${CLASS.LOAD} label
+  .${LOAD_CLASS} label
   {
     right: 66px;
   }

@@ -1,8 +1,9 @@
 import { BaseControl, Random } from 'webnetq-js';
-import { NAME, HTML, CLASS, CSS } from 'module-loader!./template.mjs';
+import { NAME, ROOT_HTML, ROOT_CLASS, LOAD_CLASS, CSS } from 'module-loader!./template.mjs';
 
+export { NAME, ROOT_CLASS, ROOT_HTML };
 export const template = {
-  NAME, HTML, CLASS, CSS,
+  NAME, HTML: ROOT_HTML, CSS,
 };
 
 const UPLOAD_EVENT = 'upload';
@@ -11,7 +12,7 @@ export default class UICntSmUploadButtonControl  extends BaseControl {
   static get template() { return {
     name: NAME,
     rootHTML: HTML,
-    rootClass:  CLASS.ROOT,
+    rootClass: ROOT_CLASS,
   } }
 
   _loadEnable = false;
@@ -42,7 +43,7 @@ export default class UICntSmUploadButtonControl  extends BaseControl {
   set loadEnable(value) {
     if (value != this._loadEnable) {
       const method = value ? 'add' : 'remove';
-      this.element.classList[method](CLASS.LOAD);
+      this.element.classList[method](LOAD_CLASS);
       this._loadEnable = value;
     }
   }

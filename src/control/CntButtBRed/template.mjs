@@ -1,9 +1,9 @@
 import ControlMaker from '../../lib/ControlMaker.mjs';
 import { COMMON_MOBILE_DEVICE_WIDTH } from '../../lib/WickedTheme.mjs';
 
-export const NAME = 'CntButtBRed';
+const maker = new ControlMaker('CntButtBRed', import.meta.url);
 
-const maker = new ControlMaker(NAME, import.meta.url);
+export const NAME = maker.name;
 
 const WATER_IMG = await maker.loadSvgAsCssUrl('./water.svg');
 
@@ -19,7 +19,7 @@ const DEF_BORDER_COLOR = DEF_COLOR;
 const ACT_COLOR = '#a72f2f';
 const ACT_BORDER_COLOR = ACT_COLOR;
 
-export const HTML = `
+export const ROOT_HTML = `
 <div class="${ROOT_CLASS}">
   <div><div class="${HEIGHT_CLASS}"></div></div>
   <label class="${LABEL_CLASS}">Upload</label>

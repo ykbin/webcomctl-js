@@ -1,23 +1,23 @@
+import ControlMaker from '../../lib/ControlMaker.mjs';
 import { Setting } from 'webnetq-js';
-import { representClassNames } from '../../lib/CSSHelper.mjs';
 
-export const NAME = 'DocVer1';
+const maker = new ControlMaker('DocVer1', import.meta.url);
 
-export const CLASS = representClassNames({
-  ROOT: "uic-docv1-root",
-  PORT: "uic-docv1-root",
-});
+export const NAME = maker.name;
+
+export const ROOT_CLASS = maker.makeClassName("Root");
+export const PORT_CLASS = ROOT_CLASS;
 
 export const HTML = `
 <!DOCTYPE html>
 <html data-${Setting.DATA_KEY}="${Setting.LIGHT_VAL}">
   <head></head>
-  <body class="${CLASS.ROOT}"></body>
+  <body class="${ROOT_CLASS}"></body>
 </html>
 `;
 
 export const CSS = `
-.${CLASS.ROOT}
+.${ROOT_CLASS}
 {
   position: fixed;
   cursor: default;

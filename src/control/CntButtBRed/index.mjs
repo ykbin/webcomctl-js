@@ -1,9 +1,9 @@
 import { BaseControl, Random } from 'webnetq-js';
-import { NAME, HTML, CSS, ROOT_CLASS, LOAD_CLASS, HEIGHT_CLASS } from 'module-loader!./template.mjs';
+import { NAME, ROOT_HTML, CSS, ROOT_CLASS, LOAD_CLASS, HEIGHT_CLASS } from 'module-loader!./template.mjs';
 
-export { NAME, ROOT_CLASS, ROOT_HTML as HTML };
+export { NAME, ROOT_CLASS, ROOT_HTML };
 export const template = {
-  NAME, HTML, CSS,
+  NAME, HTML: ROOT_HTML, CSS,
 };
 
 const UPLOAD_EVENT = 'upload';

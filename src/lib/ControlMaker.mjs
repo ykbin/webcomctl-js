@@ -10,6 +10,10 @@ export default class ControlMaker {
     this._currentUrl = currentUrl;
   }
 
+  get name() {
+    return _name;
+  }
+
   async loadSvgAsCssUrl(filepath) {
     return await loadSvgAsCssUrlAsync(this._currentUrl, filepath);
   }

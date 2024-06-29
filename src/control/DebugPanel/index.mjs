@@ -1,22 +1,23 @@
 import { BaseControl, NQDOM } from 'webnetq-js';
-import { NAME, HTML, CLASS, CSS, ITEM_HTML } from 'module-loader!./template.mjs';
+import { NAME, ROOT_HTML, ITEM_HTML, ROOT_CLASS, PORT_CLASS, TEXT_CLASS, LIST_CLASS, CSS } from 'module-loader!./template.mjs';
 
+export { NAME, ROOT_CLASS, ROOT_HTML };
 export const template = {
-  NAME, HTML, CLASS, CSS,
+  NAME, HTML: ROOT_HTML, CSS,
 };
 
 export default class UIDebugPanelControl extends BaseControl {
   static get template() { return {
     name: NAME,
     rootHTML: HTML,
-    rootClass:  CLASS.ROOT,
-    portClass:  CLASS.PORT,
+    rootClass: ROOT_CLASS,
+    portClass: PORT_CLASS,
   } }
 
   setButton(name, params) {
     const itemElm = NQDOM.createElement(ITEM_HTML);
-    const textElm = NQDOM.getElementByClassName(itemElm, CLASS.TEXT);
-    const listElm = NQDOM.getElementByClassName(this.element, CLASS.LIST);
+    const textElm = NQDOM.getElementByClassName(itemElm, TEXT_CLASS);
+    const listElm = NQDOM.getElementByClassName(this.element, LIST_CLASS);
     if (itemElm && textElm && listElm) {
       const onclick = params.onclick;
       onclick && itemElm.addEventListener("click", (event) => onclick(event));

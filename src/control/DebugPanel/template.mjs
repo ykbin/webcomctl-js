@@ -1,19 +1,19 @@
-import { representClassNames } from '../../lib/CSSHelper.mjs';
+import ControlMaker from '../../lib/ControlMaker.mjs';
 
-export const NAME = 'DebugPanel';
+const maker = new ControlMaker('DebugPanel', import.meta.url);
 
-export const CLASS = representClassNames({
-  ROOT: "uic-dbgbtns-root",
-  LIST: "uic-dbgbtns-list",
-  TEXT: "uic-dbgbtns-text",
-});
+export const NAME = maker.name;
+
+export const ROOT_CLASS = maker.makeClassName("Root");
+export const LIST_CLASS = maker.makeClassName("List");
+export const TEXT_CLASS = maker.makeClassName("Text");
 
 export const HTML = `
-<div class="${CLASS.ROOT} ${CLASS.LIST}"></div>
+<div class="${ROOT_CLASS} ${LIST_CLASS}"></div>
 `;
 
 export const ITEM_HTML = `
-<div class="${CLASS.TEXT}"></div>
+<div class="${TEXT_CLASS}"></div>
 `;
 
 export const CSS = `
@@ -33,7 +33,7 @@ export const CSS = `
   --uic-dbgbtns-buthov: #3a6ba9;
 }
 
-.${CLASS.ROOT}
+.${ROOT_CLASS}
 {
   position: fixed;
   bottom: 2px;
@@ -50,12 +50,12 @@ export const CSS = `
   cursor: default;
 }
 
-.${CLASS.ROOT} *
+.${ROOT_CLASS} *
 {
   box-sizing: border-box;
 }
 
-.${CLASS.ROOT} > div
+.${ROOT_CLASS} > div
 {
   display: flex;
   justify-content: center;
@@ -70,7 +70,7 @@ export const CSS = `
   cursor: pointer;
 }
 
-.${CLASS.ROOT} > div:hover
+.${ROOT_CLASS} > div:hover
 {
   background-color: #417cc8;
 }

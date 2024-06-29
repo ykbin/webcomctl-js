@@ -1,17 +1,17 @@
-import { representClassNames } from '../../lib/CSSHelper.mjs';
+import ControlMaker from '../../lib/ControlMaker.mjs';
 
-export const NAME = 'DocEmpty';
+const maker = new ControlMaker('DocEmpty', import.meta.url);
 
-export const CLASS = representClassNames({
-  ROOT: "uic-docemt-root",
-  PORT: "uic-docemt-root",
-});
+export const NAME = maker.name;
 
-export const HTML = `
+export const ROOT_CLASS = maker.makeClassName("Root");
+export const PORT_CLASS = ROOT_CLASS;
+
+export const ROOT_HTML = `
 <!DOCTYPE html>
 <html>
   <head></head>
-  <body class="${CLASS.ROOT}"></body>
+  <body class="${ROOT_CLASS}"></body>
 </html>
 `;
 
