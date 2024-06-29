@@ -20,7 +20,7 @@ const ACT_BORDER_COLOR = ACT_COLOR;
 
 export const HTML = `
 <div class="${ROOT_CLASS}">
-  <div><div class="${LHEIGHT_CLASS}"></div></div>
+  <div><div class="${HEIGHT_CLASS}"></div></div>
   <label class="${LABEL_CLASS}">Upload</label>
 </div>
 `;
