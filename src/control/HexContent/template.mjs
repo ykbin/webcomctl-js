@@ -57,14 +57,13 @@ export const CSS = `
   --uic-hex-rootcol: black;
   --uic-hex-bg: ${UIC_CONTENT_BACKGROUND_COLOR};
   --whex-hex-color:  black;
-  --whex-hex-ttlcl2: blue;
+  --whex-hex-ttlcl2: #0058ff;
   --whex-hex-scrlbg: #dfdfdf29;
   --hex-sc-sthmbg1: darkgray;
   --hex-sc-sthmbg2: #959595;
   --whex-scroll-scrlbg: #efefef;
   --whex-scroll-sthmbg1: darkgray;
   --whex-scroll-sthmbg2: #959595;
-  --whex-root-col: #224e76;
   --whex-cont-bor: #e8e8e8;
   --whex-title-bg: #eef5ff;
   
@@ -108,7 +107,6 @@ ${DARKMODE_SELECTOR_VALUE}
 
 .${CLASS.ROOT} h3
 {
-  color: var(--whex-root-col);
   margin: 0px;
   font-size: 1em;
   font-weight: 400;
@@ -170,7 +168,7 @@ ${DARKMODE_SELECTOR_VALUE}
   width: auto;
 }
 
-.${CLASS.OFFSET} > ul
+.${CLASS.OFFSET}
 {
   color: var(--whex-hex-ttlcl2);
 }
@@ -221,7 +219,7 @@ ${DARKMODE_SELECTOR_VALUE}
 
 .${CLASS.CONTENT} h3
 {
-  background-color: var(--whex-title-bg);
+  /*background-color: var(--whex-title-bg);*/
 }
 
 .${CLASS.BINARY} > h3,
