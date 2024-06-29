@@ -1,7 +1,7 @@
 import { BaseControl, Random } from 'webnetq-js';
-import { NAME, HTML, CSS, LOAD_CLASS, HEIGHT_CLASS } from 'module-loader!./template.mjs';
-export { ROOT_CLASS } from 'module-loader!./template.mjs';
+import { NAME, HTML, CSS, ROOT_CLASS, LOAD_CLASS, HEIGHT_CLASS } from 'module-loader!./template.mjs';
 
+export { ROOT_CLASS };
 export const template = {
   NAME, HTML, CSS,
 };
