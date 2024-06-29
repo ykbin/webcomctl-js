@@ -1,6 +1,5 @@
-import { COMMON_MOBILE_DEVICE_WIDTH } from '../../lib/WickedTheme.mjs';
-
 import ControlMaker from '../../lib/ControlMaker.mjs';
+import { COMMON_MOBILE_DEVICE_WIDTH } from '../../lib/WickedTheme.mjs';
 
 export const NAME = 'CntButtBRed';
 
@@ -12,6 +11,8 @@ export const ROOT_CLASS = maker.makeClassName("Root");
 export const LOAD_CLASS = maker.makeClassName("Load");
 export const LABEL_CLASS = maker.makeClassName("Label");
 export const HEIGHT_CLASS = maker.makeClassName("Height");
+
+export const HOVBG_VAR = maker.makeVarName("Hovbg");
 
 const DEF_COLOR = '#c50000';
 const DEF_BORDER_COLOR = DEF_COLOR;
@@ -28,12 +29,12 @@ export const HTML = `
 export const CSS = `
 :root
 {
-  --uic-brbut-hovbg: #f5eaea;
+  ${HOVBG_VAR}: #f5eaea;
 }
 
 [data-theme="dark"]
 {
-  --uic-brbut-hovbg: #5841414f;
+  ${HOVBG_VAR}: #5841414f;
 }
 
 .${ROOT_CLASS} > div > div,
@@ -63,7 +64,7 @@ export const CSS = `
 
 .${ROOT_CLASS}:hover
 {
-  background-color: var(--uic-brbut-hovbg);
+  background-color: var(${HOVBG_VAR});
 }
 
 .${LOAD_CLASS}

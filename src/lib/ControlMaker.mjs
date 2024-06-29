@@ -17,4 +17,8 @@ export default class ControlMaker {
   makeClassName(classname) {
     return representClassNames(`${this._name}-${classname}`);
   }
+
+  makeVarName(varname) {
+    return representClassNames(`--${this._name}-${varname}`);
+  }
 };
