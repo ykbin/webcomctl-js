@@ -10,6 +10,14 @@ export const NAME = maker.name;
 export const ROOT_CLASS = maker.makeClassName("Root");
 export const LOAD_CLASS = maker.makeClassName("Load");
 
+const DBG_VAR = maker.makeVarName("Dbg");
+const HBG_VAR = maker.makeVarName("Hbg");
+
+const COLOR = '#c50000';
+const BORDER_COLOR = COLOR;
+const LD_COLOR = '#c5000078';
+const LD_BORDER_COLOR = LD_COLOR;
+
 export const ROOT_HTML = `
 <div class="${ROOT_CLASS}">
   <span></span>
@@ -20,19 +28,14 @@ export const ROOT_HTML = `
 export const CSS = `
 :root
 {
-  --uic-csupl-clr: #c50000;
-  --uic-csupl-brd: #c50000;
-  --uic-csupl-ldclr: #c5000078;
-  --uic-csupl-ldbrd: #c5000078;
-  /* light */
-  --uic-csupl-dbg: #ffffff;
-  --uic-csupl-hbg: #f5eaea;
+  ${DBG_VAR}: #ffffff;
+  ${HBG_VAR}: #f5eaea;
 }
 
 [data-theme="dark"]
 {
-  --uic-csupl-dbg: #472f2f42;
-  --uic-csupl-hbg: #ba8f8f29;
+  ${DBG_VAR}: #472f2f42;
+  ${HBG_VAR}: #ba8f8f29;
 }
 
 .${ROOT_CLASS} input
@@ -54,15 +57,15 @@ export const CSS = `
 
 .${ROOT_CLASS}
 {
-  background-color: var(--uic-csupl-dbg);
-  color: var(--uic-csupl-clr);
-  border: 2px solid var(--uic-csupl-brd);
+  background-color: var(${DBG_VAR});
+  color: ${COLOR};
+  border: 2px solid ${BORDER_COLOR};
   cursor: pointer;
 }
 
 .${ROOT_CLASS}:hover 
 {
-  background-color: var(--uic-csupl-hbg);
+  background-color: ${HBG_VAR};
 }
 
 .${ROOT_CLASS} > label
@@ -78,9 +81,9 @@ export const CSS = `
 
 .${LOAD_CLASS}
 {
-  background-color: var(--uic-csupl-hbg);
-  color: var(--uic-csupl-ldclr);
-  border: 2px solid var(--uic-csupl-ldbrd);
+  background-color: ${HBG_VAR};
+  color: ${LD_COLOR};
+  border: 2px solid ${LD_BORDER_COLOR};
   cursor: no-drop;
   pointer-events: none;
 }

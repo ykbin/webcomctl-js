@@ -12,7 +12,7 @@ export const LOAD_CLASS = maker.makeClassName("Load");
 export const LABEL_CLASS = maker.makeClassName("Label");
 export const HEIGHT_CLASS = maker.makeClassName("Height");
 
-export const HOVBG_VAR = maker.makeVarName("Hovbg");
+const HOVBG_VAR = maker.makeVarName("Hovbg");
 
 const DEF_COLOR = '#c50000';
 const DEF_BORDER_COLOR = DEF_COLOR;

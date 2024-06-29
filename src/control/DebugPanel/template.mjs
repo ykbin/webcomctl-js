@@ -8,6 +8,10 @@ export const ROOT_CLASS = maker.makeClassName("Root");
 export const LIST_CLASS = maker.makeClassName("List");
 export const TEXT_CLASS = maker.makeClassName("Text");
 
+const BOR_VAR = maker.makeVarName("Bor");
+const BG_VAR = maker.makeVarName("Bg");
+const DEFBUT_VAR = maker.makeVarName("DefBut");
+
 export const ROOT_HTML = `
 <div class="${ROOT_CLASS} ${LIST_CLASS}"></div>
 `;
@@ -19,18 +23,16 @@ export const ITEM_HTML = `
 export const CSS = `
 :root
 {
-  --uic-dbgbtns-bor: #d0dbe9;
-  --uic-dbgbtns-bg: #fdfdfd;
-  --uic-dbgbtns-but: #488ee9;
-  --uic-dbgbtns-buthov: #417cc8;
+  ${BOR_VAR}: #d0dbe9;
+  ${BG_VAR}: #fdfdfd;
+  ${DEFBUT_VAR}: #488ee9;
 }
 
 [data-theme="dark"]
 {
-  --uic-dbgbtns-bor: #35383c;
-  --uic-dbgbtns-bg: rgb(43 43 45);
-  --uic-dbgbtns-but: #2d5b96;
-  --uic-dbgbtns-buthov: #3a6ba9;
+  ${BOR_VAR}: #35383c;
+  ${BG_VAR}: rgb(43 43 45);
+  ${DEFBUT_VAR}: #2d5b96;
 }
 
 .${ROOT_CLASS}
@@ -41,9 +43,9 @@ export const CSS = `
   width: auto;
   height: auto;
   padding: 5px 5px 0px 5px;
-  border: 1px solid var(--uic-dbgbtns-bor);
+  border: 1px solid var(${BOR_VAR});
   border-radius: 2px;
-  background-color: var(--uic-dbgbtns-bg);
+  background-color: var(${BG_VAR});
   font-family: "Nunito Sans", -apple-system, BlinkMacSystemFont,
                 "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
                 "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -66,7 +68,7 @@ export const CSS = `
   padding: 0 2px;
   margin-bottom: 5px;
   color: white;
-  background-color: var(--uic-dbgbtns-but);
+  background-color: var(${DEFBUT_VAR});
   cursor: pointer;
 }
 
