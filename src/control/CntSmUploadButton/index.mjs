@@ -11,7 +11,7 @@ const UPLOAD_EVENT = 'upload';
 export default class UICntSmUploadButtonControl  extends BaseControl {
   static get template() { return {
     name: NAME,
-    rootHTML: HTML,
+    rootHTML: ROOT_HTML,
     rootClass: ROOT_CLASS,
   } }
 

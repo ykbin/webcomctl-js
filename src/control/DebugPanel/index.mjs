@@ -9,7 +9,7 @@ export const template = {
 export default class UIDebugPanelControl extends BaseControl {
   static get template() { return {
     name: NAME,
-    rootHTML: HTML,
+    rootHTML: ROOT_HTML,
     rootClass: ROOT_CLASS,
   } }
 
