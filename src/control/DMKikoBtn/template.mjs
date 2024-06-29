@@ -9,9 +9,9 @@ export const NAME = mk.name;
 const MOON_IMG = await mk.loadSvgAsCssUrl('./moon.svg');
 const SUN_IMG = await mk.loadSvgAsCssUrl('./sun.svg');
 
-export const ROOT_CLASS = mk.makeClassName("Root");
+export const ROOT_CLASS = mk.newClassName("Root");
 
-const IMG_VAR = mk.makeVarName("Img");
+const IMG_VAR = mk.newVarName("Img");
 
 const BORDER_COLOR = '#6a6a6a';
 const IMAGE_BORDER_COLOR = 'transparent';

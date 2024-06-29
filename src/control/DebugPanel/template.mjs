@@ -6,13 +6,13 @@ const mk = new ControlMaker('DebugPanel', import.meta.url);
 
 export const NAME = mk.name;
 
-export const ROOT_CLASS = mk.makeClassName("Root");
-export const LIST_CLASS = mk.makeClassName("List");
-export const TEXT_CLASS = mk.makeClassName("Text");
+export const ROOT_CLASS = mk.newClassName("Root");
+export const LIST_CLASS = mk.newClassName("List");
+export const TEXT_CLASS = mk.newClassName("Text");
 
-const BOR_VAR = mk.makeVarName("Bor");
-const BG_VAR = mk.makeVarName("Bg");
-const DEFBUT_VAR = mk.makeVarName("DefBut");
+const BOR_VAR = mk.newVarName("Bor");
+const BG_VAR = mk.newVarName("Bg");
+const DEFBUT_VAR = mk.newVarName("DefBut");
 
 export const ROOT_HTML = `
 <div class="${ROOT_CLASS} ${LIST_CLASS}"></div>

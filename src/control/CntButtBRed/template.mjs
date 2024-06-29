@@ -9,12 +9,12 @@ export const NAME = mk.name;
 
 const WATER_IMG = await mk.loadSvgAsCssUrl('./water.svg');
 
-export const ROOT_CLASS = mk.makeClassName("Root");
-export const LOAD_CLASS = mk.makeClassName("Load");
-export const LABEL_CLASS = mk.makeClassName("Label");
-export const HEIGHT_CLASS = mk.makeClassName("Height");
+export const ROOT_CLASS = mk.newClassName("Root");
+export const LOAD_CLASS = mk.newClassName("Load");
+export const LABEL_CLASS = mk.newClassName("Label");
+export const HEIGHT_CLASS = mk.newClassName("Height");
 
-const HOVBG_VAR = mk.makeVarName("Hovbg");
+const HOVBG_VAR = mk.newVarName("Hovbg");
 
 const DEF_COLOR = '#c50000';
 const DEF_BORDER_COLOR = DEF_COLOR;

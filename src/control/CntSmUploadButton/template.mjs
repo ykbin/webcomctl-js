@@ -7,11 +7,11 @@ const mk = new ControlMaker('CntSmUploadButton', import.meta.url);
 
 export const NAME = mk.name;
 
-export const ROOT_CLASS = mk.makeClassName("Root");
-export const LOAD_CLASS = mk.makeClassName("Load");
+export const ROOT_CLASS = mk.newClassName("Root");
+export const LOAD_CLASS = mk.newClassName("Load");
 
-const DBG_VAR = mk.makeVarName("Dbg");
-const HBG_VAR = mk.makeVarName("Hbg");
+const DBG_VAR = mk.newVarName("Dbg");
+const HBG_VAR = mk.newVarName("Hbg");
 
 const LOAD_IMG = await mk.loadSvgAsCssUrl('./load.svg');
 

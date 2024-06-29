@@ -18,11 +18,11 @@ export default class ControlMaker {
     return await loadSvgAsCssUrlAsync(this._currentUrl, filepath);
   }
 
-  makeClassName(classname) {
+  newClassName(classname) {
     return representClassNames(`${this._name}-${classname}`);
   }
 
-  makeVarName(varname) {
+  newVarName(varname) {
     return representClassNames(`--${this._name}-${varname}`);
   }
 };

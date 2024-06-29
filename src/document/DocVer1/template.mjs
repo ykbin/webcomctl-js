@@ -5,7 +5,7 @@ const mk = new ControlMaker('DocVer1', import.meta.url);
 
 export const NAME = mk.name;
 
-export const ROOT_CLASS = mk.makeClassName("Root");
+export const ROOT_CLASS = mk.newClassName("Root");
 export const PORT_CLASS = ROOT_CLASS;
 
 export const ROOT_HTML = `
