@@ -10,7 +10,7 @@ export const PORT_CLASS = ROOT_CLASS;
 
 export const ROOT_HTML = `
 <!DOCTYPE html>
-<html data-${DARKMODE_ATTR_NAME}="${DARKMODE_DEFAULT_VALUE}">
+<html ${DARKMODE_ATTR_NAME}="${DARKMODE_DEFAULT_VALUE}">
   <head></head>
   <body class="${ROOT_CLASS}"></body>
 </html>
