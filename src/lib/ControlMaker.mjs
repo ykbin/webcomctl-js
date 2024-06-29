@@ -11,7 +11,7 @@ export default class ControlMaker {
   }
 
   get name() {
-    return _name;
+    return this._name;
   }
 
   async loadSvgAsCssUrl(filepath) {
