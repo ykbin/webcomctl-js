@@ -1,18 +1,17 @@
-import { representClassNames } from '../../lib/CSSHelper.mjs';
+import ControlMaker from '../../lib/ControlMaker.mjs';
 
-export const NAME = 'DragDropToView';
+const mk = new ControlMaker('DragDropToView', import.meta.url);
+export const NAME = mk.name;
 
-export const CLASS = representClassNames({
-  ROOT: 'uic-ddrop2v-root',
-  PORT: 'uic-ddrop2v-port',
-});
+export const ROOT_CLASS = mk.makeClassName("Root");
+export const PORT_CLASS = ROOT_CLASS;
 
-export const HTML = `
-<div class="${CLASS.ROOT} ${CLASS.PORT}"></div>
+export const ROOT_HTML = `
+<div class="${ROOT_CLASS}"></div>
 `;
 
 export const CSS = `
-.${CLASS.ROOT}
+.${ROOT_CLASS}
 {
   display: flex;
   flex-direction: column;
