@@ -1,39 +1,42 @@
 import { Setting } from 'webnetq-js';
-import { representClassNames } from '../../lib/CSSHelper.mjs';
-import { loadSvgAsCssUrlAsync } from '../../lib/SVG.mjs';
+import ControlMaker from '../../lib/ControlMaker.mjs';
+
 import { HEADER_MOBILE_DEVICE_WIDTH } from '../../lib/WickedTheme.mjs';
 import { HEADER_FONT_COLOR } from '../../lib/WickedTheme.mjs';
 
-const MOON_IMG = await loadSvgAsCssUrlAsync(import.meta.url, './moon.svg');
-const SUN_IMG = await loadSvgAsCssUrlAsync(import.meta.url, './sun.svg');
+const mk = new ControlMaker('DMBtn', import.meta.url);
 
-export const NAME = 'DMBtn';
+export const NAME = mk.name;
 
-export const CLASS = representClassNames({
-  ROOT: "uic-dmbtn-root",
-  TOGGLE: "uic-dmbtn-toggle",
-});
+export const ROOT_CLASS = maker.makeClassName("Root");
+export const TOGGLE_CLASS = maker.makeClassName("Toggle");
 
-export const HTML = `
-<div class="${CLASS.ROOT}">
-  <span class="${CLASS.TOGGLE}"></span>
+const MOON_IMG = await maker.loadSvgAsCssUrl('./moon.svg');
+const SUN_IMG = await maker.loadSvgAsCssUrl('./sun.svg');
+
+const IMG_VAR = maker.makeVarName("Img");
+const BG_VAR = maker.makeVarName("Bg");
+
+export const ROOT_HTML = `
+<div class="${ROOT_CLASS}">
+  <span class="${TOGGLE_CLASS}"></span>
 </div>
 `;
 
 export const CSS = `
 :root
 {
-  --uic-dmbtn-img: ${MOON_IMG};
-  --uic-dmbtn-bg: #7b7b7b21;
+  ${IMG_VAR}: ${MOON_IMG};
+  ${BG_VAR}: #7b7b7b21;
 }
 
 [data-${Setting.DATA_KEY}="${Setting.DARK_VAL}"]
 {
-  --uic-dmbtn-img: ${SUN_IMG};
-  --uic-dmbtn-bg: #ffffff21;
+  ${IMG_VAR}: ${SUN_IMG};
+  ${BG_VAR}: #ffffff21;
 }
 
-.${CLASS.ROOT}
+.${ROOT_CLASS}
 {
   display: block;
   height: 28px;
@@ -43,14 +46,14 @@ export const CSS = `
   box-sizing: border-box;
 }
 
-.${CLASS.ROOT}:hover
+.${ROOT_CLASS}:hover
 {
-  background-color: var(--uic-dmbtn-bg);
+  background-color: var(${BG_VAR});
 }
 
-.${CLASS.TOGGLE}
+.${TOGGLE_CLASS}
 {
-  background-image: var(--uic-dmbtn-img);
+  background-image: var(${IMG_VAR});
   display: block;
   height: 100%;
   width: 100%;
@@ -63,7 +66,7 @@ export const CSS = `
 
 @media (device-width < ${HEADER_MOBILE_DEVICE_WIDTH})
 {
-  .${CLASS.ROOT}
+  .${ROOT_CLASS}
   {
     width: 60px;
     height: 60px;

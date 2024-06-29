@@ -4,8 +4,6 @@ import { COMMON_MOBILE_DEVICE_WIDTH } from '../../lib/WickedTheme.mjs';
 
 const maker = new ControlMaker('CntSmUploadButton', import.meta.url);
 
-const LOAD_IMG = await maker.loadSvgAsCssUrl('./load.svg');
-
 export const NAME = maker.name;
 
 export const ROOT_CLASS = maker.makeClassName("Root");
@@ -13,6 +11,8 @@ export const LOAD_CLASS = maker.makeClassName("Load");
 
 const DBG_VAR = maker.makeVarName("Dbg");
 const HBG_VAR = maker.makeVarName("Hbg");
+
+const LOAD_IMG = await maker.loadSvgAsCssUrl('./load.svg');
 
 const COLOR = '#c50000';
 const BORDER_COLOR = COLOR;
