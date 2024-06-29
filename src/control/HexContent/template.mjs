@@ -141,7 +141,7 @@ ${DARKMODE_SELECTOR_VALUE}
 .${CLASS.CONTENT} h3
 {
   padding: 0px 15px;
-  border-bottom: 1px solid var(--whex-cont-bor);
+  /*border-bottom: 1px solid var(--whex-cont-bor);*/
   font-size: 1em;
   box-sizing: border-box;
 }
@@ -177,7 +177,7 @@ ${DARKMODE_SELECTOR_VALUE}
 .${CLASS.TEXT} > ul
 {
   list-style-type: none;
-  padding: 10px 10px 10px 10px;
+  padding: 5px 10px 10px 10px;
   margin: 0px;
 }
 
@@ -214,7 +214,7 @@ ${DARKMODE_SELECTOR_VALUE}
 
 .${CLASS.BINARY} > div
 {
-  padding: 10px 10px 10px 10px;
+  padding: 5px 10px 10px 10px;
 }
 
 .${CLASS.CONTENT} h3
