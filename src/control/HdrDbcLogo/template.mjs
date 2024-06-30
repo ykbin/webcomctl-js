@@ -9,9 +9,9 @@ export const NAME = mk.name;
 export const ROOT_CLASS = mk.newClassName("Root");
 
 const FAVICON1_IMG = await mk.loadSvgAsCssUrl('./favicon1.svg');
-const FAVICON2_IMG = await mk.loadSvgAsCssUrl('./favicon2.svg');
+const FAVICON2_IMG = FAVICON1_IMG;
 const HEADER1_IMG = await mk.loadSvgAsCssUrl('./header1.svg');
-const HEADER2_IMG = await mk.loadSvgAsCssUrl('./header2.svg');
+const HEADER2_IMG = HEADER1_IMG;
 
 const FAVICON_VAR = mk.newVarName("FaviconImg");
 const HEADER_VAR = mk.newVarName("HeaderImg");
