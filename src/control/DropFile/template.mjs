@@ -44,6 +44,7 @@ export const CSS = `
   height: 100%;
   width: 100%;
   max-width: 500px;
+  min-width: auto;
   background-image: var(--uic-dropfile-img);
   background-size: contain;
   background-repeat: no-repeat;
