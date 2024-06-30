@@ -7,20 +7,20 @@
     height="111.672pt"
     viewBox="0 0 112.968 111.672">
 <defs/>
-
 <rect id="shape0"
-  transform="translate(5.184, 5.184)"
-  fill="#ffffff"
+  transform="matrix(0.999999979469089 0 0 0.999999979469089 5.18399989356776 5.18400250477539)"
+  fill="#1a1a1a"
   fill-rule="evenodd"
-  stroke="none"
-  stroke-width="0.07272"
+  stroke-opacity="0"
+  stroke="#000000"
+  stroke-width="0"
   stroke-linecap="square"
   stroke-linejoin="bevel"
   width="103.896"
   height="102.168"/>
 
 <path id="shape01"
-  transform="matrix(0.999999979469089 0 0 0.999999979469089 8.49956755260554 27.6911291422891)"
+  transform="matrix(0.999999958938179 0 0 0.999999958938179 8.49956737810168 27.6911311849726)"
   fill="#0046aa"
   fill-rule="evenodd"
   stroke="#000000"
@@ -30,7 +30,7 @@
   d="M31.8867 0L87.0703 72.5625L87.6797 71.7422L87.7266 70.9922L63.0586 27.4453L70.9101 15.7734L96.8107 46.9624L96.7969 77.0625L0 76.9922L0.0234338 38.6836L31.8867 0"/>
 
 <path id="shape02"
-  transform="matrix(0.999999979469089 0 0 0.999999979469089 25.7607913884244 27.7524461202775)"
+  transform="matrix(0.999999958938179 0 0 0.999999958938179 25.7607908595319 27.7524481617021)"
   fill="#ffffff"
   fill-rule="evenodd"
   stroke-opacity="0"
@@ -39,9 +39,9 @@
   stroke-linecap="square"
   stroke-linejoin="bevel"
   d="M0 17.6666L11.4684 9.01562L15.0481 20.8818L17.9649 8.48529L28.2401 17.9649L14.7167 0L0 17.6666"/>
-
+  
 <path id="shape1"
-  transform="matrix(0.999999979469089 0 0 0.999999979469089 71.5933190222213 43.4997197271425)"
+transform="matrix(0.999999958938179 0 0 0.999999958938179 71.5933175523453 43.4997214452613)"
   fill="#ffffff"
   fill-rule="evenodd"
   stroke-opacity="0"
@@ -50,15 +50,25 @@
   stroke-linecap="square"
   stroke-linejoin="bevel"
   d="M0 11.7539L5.90625 7.06641L8.17969 12.4102L10.4531 7.08985L17.2031 11.6602L7.78124 0L0 11.7539"/>
-
+  
 <rect id="shape03"
-  transform="matrix(0.927271050841652 0 0 0.925775427522841 5.24839417843679 4.76467628192594)"
+  transform="matrix(0.927271031803933 0 0 0.925775408515829 5.24839407068248 4.76467879531043)"
   fill="none"
-  stroke="rgb(91 91 91)"
+  stroke="#000000"
   stroke-width="8.24999999999934"
   stroke-linecap="square"
   stroke-linejoin="miter"
   stroke-miterlimit="2.25"
   width="110.999999999991"
   height="110.999999999991"/>
+  
+<rect id="shape0"
+  transform="translate(0.981000004398837, 0.432749347643963)"
+  fill="none"
+  stroke="#ffffff"
+  stroke-width="0.936"
+  stroke-linecap="square"
+  stroke-linejoin="bevel"
+  width="111.483003564199"
+  height="111.338251153832"/>
 </svg>
