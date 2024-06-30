@@ -1,31 +1,27 @@
-import { representClassNames } from '../../lib/CSSHelper.mjs';
+import ControlMaker from '../../lib/ControlMaker.mjs';
 
-export const NAME = 'DropFile';
+const mk = new ControlMaker('DropFile', import.meta.url);
+export const NAME = mk.name;
 
-export const CLASS = representClassNames({
-  ROOT: "uic-dropfile-root",
-  SHOW: "uic-dropfile-show",
-});
+export const ROOT_CLASS = mk.newClassName("Root");
+export const SHOW_CLASS = mk.newClassName("Show");
 
-export const HTML = `
-<div class="${CLASS.ROOT}">
+const UPFILE_IMG = await mk.loadSvgAsCssUrl('./up-file.svg');
+const BG_COLOR = '#1e1e1ecf';
+
+export const ROOT_HTML = `
+<div class="${ROOT_CLASS}">
   <div></div>
 </div>
 `;
 
 export const CSS = `
-:root
-{
-  --uic-dropfile-bg: #1e1e1ecf;
-  --uic-dropfile-img: url(up-file.svg) ;
-}
-
-.${CLASS.ROOT}:not(.${CLASS.SHOW})
+.${ROOT_CLASS}:not(.${SHOW_CLASS})
 {
   display: none;
 }
 
-.${CLASS.ROOT}
+.${ROOT_CLASS}
 {
   display: flex;
   justify-content: center;
@@ -35,16 +31,16 @@ export const CSS = `
   left: 0;
   right: 0;
   min-height: 555px;
-  background-color: var(--uic-dropfile-bg);
+  background-color: ${BG_COLOR};
   z-index: 3;
 }
 
-.${CLASS.ROOT} > div
+.${ROOT_CLASS} > div
 {
   height: 100%;
   width: 100%;
   max-width: 500px;
-  background-image: var(--uic-dropfile-img);
+  background-image: ${UPFILE_IMG};
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
