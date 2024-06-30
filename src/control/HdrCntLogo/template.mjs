@@ -1,22 +1,23 @@
-import { representClassNames } from '../../lib/CSSHelper.mjs';
-import { loadSvgAsCssUrlAsync } from '../../lib/SVG.mjs';
+import ControlMaker from '../../lib/ControlMaker.mjs';
 
 import { DARKMODE_SELECTOR_VALUE } from '../../lib/DarkMode.mjs';
 import { HEADER_MOBILE_DEVICE_WIDTH } from '../../lib/WickedTheme.mjs';
 
-const FAVICON1_IMG = await loadSvgAsCssUrlAsync(import.meta.url, './favicon1.svg');
-const FAVICON2_IMG = await loadSvgAsCssUrlAsync(import.meta.url, './favicon2.svg');
-const HEADER1_IMG = await loadSvgAsCssUrlAsync(import.meta.url, './header1.svg');
-const HEADER2_IMG = await loadSvgAsCssUrlAsync(import.meta.url, './header2.svg');
+const mk = new ControlMaker('HdrCntLogo', import.meta.url);
+export const NAME = mk.name;
 
-export const NAME = 'HdrCntLogo';
+export const ROOT_CLASS = mk.newClassName("Root");
 
-export const CLASS = representClassNames({
-  ROOT: "uic-hdrcnt-root",
-});
+const FAVICON1_IMG = await mk.loadSvgAsCssUrl('./favicon1.svg');
+const FAVICON2_IMG = await mk.loadSvgAsCssUrl('./favicon2.svg');
+const HEADER1_IMG = await mk.loadSvgAsCssUrl('./header1.svg');
+const HEADER2_IMG = await mk.loadSvgAsCssUrl('./header2.svg');
 
-export const HTML = `
-<div class="${CLASS.ROOT}">
+const FAVICON_VAR = mk.newVarName("FaviconImg");
+const HEADER_VAR = mk.newVarName("HeaderImg");
+
+export const ROOT_HTML = `
+<div class="${ROOT_CLASS}">
   <h3></h3>
   <h2></h2>
 </div>
@@ -25,18 +26,18 @@ export const HTML = `
 export const CSS = `
 :root
 {
-  --uic-hdrcnt-fimg: ${FAVICON1_IMG};
-  --uic-hdrcnt-himg: ${HEADER1_IMG};
+  ${FAVICON_VAR}: ${FAVICON1_IMG};
+  ${HEADER_VAR}: ${HEADER1_IMG};
 }
 
 ${DARKMODE_SELECTOR_VALUE}
 {
-  --uic-hdrcnt-fimg: ${FAVICON2_IMG};
-  --uic-hdrcnt-himg: ${HEADER2_IMG};
+  ${FAVICON_VAR}: ${FAVICON2_IMG};
+  ${HEADER_VAR}: ${HEADER2_IMG};
 }
 
-.${CLASS.ROOT} h2,
-.${CLASS.ROOT} h3
+.${ROOT_CLASS} h2,
+.${ROOT_CLASS} h3
 {
   margin: 0px;
   padding: 0px;
@@ -44,13 +45,13 @@ ${DARKMODE_SELECTOR_VALUE}
   font-weight: 400;
 }
 
-.${CLASS.ROOT}
+.${ROOT_CLASS}
 {
   display: flex;
   height: 33px;
 }
 
-.${CLASS.ROOT} > h3
+.${ROOT_CLASS} > h3
 {
   width: 36px;
   height: 100%;
@@ -58,11 +59,11 @@ ${DARKMODE_SELECTOR_VALUE}
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-  background-image: var(--uic-hdrcnt-fimg);
+  background-image: var(${FAVICON_VAR});
   flex-shrink: 0;
 }
 
-.${CLASS.ROOT} > h2
+.${ROOT_CLASS} > h2
 {
   width: 130px;
   height: 100%;
@@ -71,21 +72,21 @@ ${DARKMODE_SELECTOR_VALUE}
   background-position-y: center;
   background-position-x: left;
   background-repeat: no-repeat;
-  background-image: var(--uic-hdrcnt-himg);
+  background-image: var(${HEADER_VAR});
   flex-shrink: 0;
 }
 
 @media (device-width < ${HEADER_MOBILE_DEVICE_WIDTH})
 {
-  .${CLASS.ROOT}
+  .${ROOT_CLASS}
   {
     height: 130px;
   }
-  .${CLASS.ROOT} > h3
+  .${ROOT_CLASS} > h3
   {
     display: none;
   }
-  .${CLASS.ROOT} > h2
+  .${ROOT_CLASS} > h2
   {
     width: 255px;
     background-size: 360px;

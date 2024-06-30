@@ -1,14 +1,15 @@
 import { BaseControl } from 'webnetq-js';
 import { NAME, HTML, CLASS, CSS } from 'module-loader!./template.mjs';
 
+export { NAME, ROOT_CLASS, ROOT_HTML };
 export const template = {
-  NAME, HTML, CLASS, CSS,
+  NAME, HTML: ROOT_HTML, CSS,
 };
 
 export default class UIHdrImgLogoControl extends BaseControl {
   static get template() { return {
     name: NAME,
-    rootHTML: HTML,
-    rootClass: CLASS.ROOT,
+    rootHTML: ROOT_HTML,
+    rootClass: ROOT_CLASS,
   } }
 };

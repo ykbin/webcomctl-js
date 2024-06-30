@@ -1,17 +1,23 @@
-import { representClassNames } from '../../lib/CSSHelper.mjs';
-import { loadSvgAsCssUrlAsync } from '../../lib/SVG.mjs';
+import ControlMaker from '../../lib/ControlMaker.mjs';
 
 import { DARKMODE_SELECTOR_VALUE } from '../../lib/DarkMode.mjs';
 import { HEADER_MOBILE_DEVICE_WIDTH } from '../../lib/WickedTheme.mjs';
 
-export const NAME = 'HdrImgLogo';
+const mk = new ControlMaker('HdrImgLogo', import.meta.url);
+export const NAME = mk.name;
 
-export const CLASS = representClassNames({
-  ROOT: "uic-hdrimg-root",
-});
+export const ROOT_CLASS = mk.newClassName("Root");
 
-export const HTML = `
-<div class="${CLASS.ROOT}">
+const FAVICON1_IMG = await mk.loadSvgAsCssUrl('./favicon1.svg');
+const FAVICON2_IMG = await mk.loadSvgAsCssUrl('./favicon2.svg');
+const HEADER1_IMG = await mk.loadSvgAsCssUrl('./header1.svg');
+const HEADER2_IMG = await mk.loadSvgAsCssUrl('./header2.svg');
+
+const FAVICON_VAR = mk.newVarName("FaviconImg");
+const HEADER_VAR = mk.newVarName("HeaderImg");
+
+export const ROOT_HTML = `
+<div class="${ROOT_CLASS}">
   <h3></h3>
   <h2></h2>
 </div>
@@ -20,18 +26,18 @@ export const HTML = `
 export const CSS = `
 :root
 {
-  --uic-hdrimg-fimg: url(favicon1.svg);
-  --uic-hdrimg-himg: url(header1.svg);
+  ${FAVICON_VAR}: ${FAVICON1_IMG};
+  ${HEADER_VAR}: ${HEADER1_IMG};
 }
 
 ${DARKMODE_SELECTOR_VALUE}
 {
-  --uic-hdrimg-fimg: url(favicon2.svg);
-  --uic-hdrimg-himg: url(header2.svg);
+  ${FAVICON_VAR}: ${FAVICON2_IMG};
+  ${HEADER_VAR}: ${HEADER2_IMG};
 }
 
-.${CLASS.ROOT} h2,
-.${CLASS.ROOT} h3
+.${ROOT_CLASS} h2,
+.${ROOT_CLASS} h3
 {
   margin: 0px;
   padding: 0px;
@@ -39,47 +45,47 @@ ${DARKMODE_SELECTOR_VALUE}
   font-weight: 400;
 }
 
-.${CLASS.ROOT}
+.${ROOT_CLASS}
 {
   display: flex;
   height: 33px;
 }
 
-.${CLASS.ROOT} > h3
+.${ROOT_CLASS} > h3
 {
   height: 100%;
   width: 40px;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-  background-image: var(--uic-hdrimg-fimg);
+  background-image: var(${FAVICON_VAR});
   margin-right: 7px;
   flex-shrink: 0;
 }
 
-.${CLASS.ROOT} > h2
+.${ROOT_CLASS} > h2
 {
   height: 100%;
   width: 180px;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-  background-image: var(--uic-hdrimg-himg);
+  background-image: var(${HEADER_VAR});
   margin-right: 15px;
   flex-shrink: 0;
 }
 
 @media (device-width < ${HEADER_MOBILE_DEVICE_WIDTH})
 {
-  .${CLASS.ROOT}
+  .${ROOT_CLASS}
   {
     height: 130px;
   }
-  .${CLASS.ROOT} > h3
+  .${ROOT_CLASS} > h3
   {
     display: none;
   }
-  .${CLASS.ROOT} > h2
+  .${ROOT_CLASS} > h2
   {
     width: 270px;
   }
