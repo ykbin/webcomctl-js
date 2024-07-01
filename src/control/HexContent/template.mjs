@@ -65,6 +65,8 @@ export const CSS = `
   --whex-scroll-sthmbg1: darkgray;
   --whex-scroll-sthmbg2: #959595;
   --whex-cont-bor: #e8e8e8;
+  --whex-hex-ttlclm: #646464;
+  --whex-hex-offcolttl: #677d99;
 }
 
 ${DARKMODE_SELECTOR_VALUE}
@@ -79,6 +81,8 @@ ${DARKMODE_SELECTOR_VALUE}
   --whex-scroll-scrlbg: #212121;
   --whex-scroll-sthmbg1: #454545;
   --whex-cont-bor: #252525;
+  --whex-hex-ttlclm: #676767;
+  --whex-hex-offcolttl: #1c3e6a;
 }
 
 .${CLASS.ROOT}
@@ -140,6 +144,7 @@ ${DARKMODE_SELECTOR_VALUE}
 {
   padding: 0px 10px;
   font-size: 1em;
+  color: var(--whex-hex-ttlclm);
   box-sizing: border-box;
 }
 
@@ -168,6 +173,11 @@ ${DARKMODE_SELECTOR_VALUE}
 .${CLASS.OFFSET}
 {
   color: var(--whex-hex-ttlcl2);
+}
+
+.${CLASS.OFFSET} > h3
+{
+  color: var(--whex-hex-offcolttl);
 }
 
 .${CLASS.OFFSET} > ul,
