@@ -57,17 +57,14 @@ export const CSS = `
   --uic-hex-rootcol: black;
   --uic-hex-bg: ${UIC_CONTENT_BACKGROUND_COLOR};
   --whex-hex-color:  black;
-  --whex-hex-ttlcl2: blue;
+  --whex-hex-ttlcl2: #0058ff;
   --whex-hex-scrlbg: #dfdfdf29;
   --hex-sc-sthmbg1: darkgray;
   --hex-sc-sthmbg2: #959595;
   --whex-scroll-scrlbg: #efefef;
   --whex-scroll-sthmbg1: darkgray;
   --whex-scroll-sthmbg2: #959595;
-  --whex-root-col: #224e76;
   --whex-cont-bor: #e8e8e8;
-  --whex-title-bg: #eef5ff;
-  
 }
 
 ${DARKMODE_SELECTOR_VALUE}
@@ -75,14 +72,13 @@ ${DARKMODE_SELECTOR_VALUE}
   --uic-hex-rootcol: #b8b4b4;
   --uic-hex-bg: ${UIC_CONTENT_BACKGROUND_COLOR_DARK};
   --whex-hex-color: gainsboro;
-  --whex-hex-ttlcl2: #344861;
+  --whex-hex-ttlcl2: #2160b0;
   --whex-hex-scrlbg: #1d1d1d;
   --hex-sc-sthmbg1: #454545;
   --hex-sc-sthmbg2: #565656;
   --whex-scroll-scrlbg: #212121;
   --whex-scroll-sthmbg1: #454545;
   --whex-cont-bor: #252525;
-  --whex-title-bg: #1d2027ff;
 }
 
 .${CLASS.ROOT}
@@ -108,7 +104,6 @@ ${DARKMODE_SELECTOR_VALUE}
 
 .${CLASS.ROOT} h3
 {
-  color: var(--whex-root-col);
   margin: 0px;
   font-size: 1em;
   font-weight: 400;
@@ -121,7 +116,7 @@ ${DARKMODE_SELECTOR_VALUE}
   align-items: flex-start;
   height: 100%;
   width: calc(100% - 10px);
-  padding: 10px 10px 15px 10px;
+  padding-top: 1px;
   line-height: 20px;
   word-spacing: normal;
   font-size: 16px;
@@ -132,11 +127,17 @@ ${DARKMODE_SELECTOR_VALUE}
   overflow: hidden;
 }
 
+.${CLASS.BINARY} > h3 > span,
 .${CLASS.CONTENT} h3
 {
-  height: 30px;
-  padding: 5px 15px 5px 15px;
-  border-bottom: 1px solid var(--whex-cont-bor);
+  display: flex;
+  align-items: center;
+  height: 25px;
+}
+
+.${CLASS.CONTENT} h3
+{
+  padding: 0px 15px;
   font-size: 1em;
   box-sizing: border-box;
 }
@@ -163,7 +164,7 @@ ${DARKMODE_SELECTOR_VALUE}
   width: auto;
 }
 
-.${CLASS.OFFSET} > ul
+.${CLASS.OFFSET}
 {
   color: var(--whex-hex-ttlcl2);
 }
@@ -172,8 +173,24 @@ ${DARKMODE_SELECTOR_VALUE}
 .${CLASS.TEXT} > ul
 {
   list-style-type: none;
-  padding: 20px 10px 10px 10px;
+  padding: 5px 10px 10px 10px;
   margin: 0px;
+}
+
+.${CLASS.TEXT}
+{
+    width: 100%;
+}
+
+.${CLASS.TEXT} > h3
+{
+  text-indent: 50px;
+  text-align: left;
+}
+
+.${CLASS.TEXT} > ul
+{
+  width: max-content;
 }
 
 .${CLASS.TEXT} > ul li
@@ -184,8 +201,6 @@ ${DARKMODE_SELECTOR_VALUE}
 
 .${CLASS.BINARY}
 {
-  border-right: 1px solid var(--whex-cont-bor);
-  border-left: 1px solid var(--whex-cont-bor);
   text-align: left;
   flex-shrink: 0;
   /*z-index: 1;*/
@@ -193,12 +208,7 @@ ${DARKMODE_SELECTOR_VALUE}
 
 .${CLASS.BINARY} > div
 {
-  padding: 20px 10px 10px 10px;
-}
-
-.${CLASS.CONTENT} h3
-{
-  background-color: var(--whex-title-bg);
+  padding: 5px 10px 10px 10px;
 }
 
 .${CLASS.BINARY} > h3,
