@@ -66,7 +66,7 @@ export const CSS = `
   --whex-scroll-sthmbg2: #959595;
   --whex-cont-bor: #e8e8e8;
   --whex-hex-ttlclm: #646464;
-  --whex-hex-offcolttl: #677d99;
+  --whex-hex-offcolttl: #4b7ec0;
 }
 
 ${DARKMODE_SELECTOR_VALUE}
