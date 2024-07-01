@@ -1,5 +1,4 @@
-import { representClassNames } from '../../lib/CSSHelper.mjs';
-import { loadSvgAsCssUrlAsync } from '../../lib/SVG.mjs';
+import ControlMaker from '../../lib/ControlMaker.mjs';
 
 import { DARKMODE_SELECTOR_VALUE } from '../../lib/DarkMode.mjs';
 import { HEADER_MOBILE_DEVICE_WIDTH } from '../../lib/WickedTheme.mjs';
@@ -12,18 +11,21 @@ import { HEADER_BORDER_RADIUS_HOVER } from '../../lib/WickedTheme.mjs';
 import { HEADER_COLOR_HOVER_DARK } from '../../lib/WickedTheme.mjs';
 import { HEADER_COLOR_HOVER } from '../../lib/WickedTheme.mjs';
 
-const MAIN_IMG = await loadSvgAsCssUrlAsync(import.meta.url, './home_default.svg');
-const HOVER_IMG = await loadSvgAsCssUrlAsync(import.meta.url, './home_light_hover.svg');
-const HOVER_IMG_DARK = await loadSvgAsCssUrlAsync(import.meta.url, './home_dark_hover.svg');
+const mk = new ControlMaker('HdrHomeButton', import.meta.url);
+export const NAME = mk.name;
 
-export const NAME = 'HdrHomeButton';
+export const ROOT_CLASS = mk.newClassName("Root");
 
-export const CLASS = representClassNames({
-  ROOT: "uic-hdrhm-root",
-});
+const MAIN_IMG = await mk.loadSvgAsCssUrl('./home_default.svg');
+const HOVER_IMG = await mk.loadSvgAsCssUrl('./home_light_hover.svg');
+const HOVER_IMG_DARK = await mk.loadSvgAsCssUrl('./home_dark_hover.svg');
 
-export const HTML = `
-<a class="${CLASS.ROOT} notranslate" translate="no" href="\${ENV:HOST_URL}" draggable="false">
+const BTNBG_VAR = mk.newVarName("BtnBg");
+const BTNCOL_VAR = mk.newVarName("BtnCol");
+const IMG_VAR = mk.newVarName("Img");
+
+export const ROOT_HTML = `
+<a class="${ROOT_CLASS} notranslate" translate="no" href="\${ENV:HOST_URL}" draggable="false">
   <div></div>
   <span>Home</span>
 </a>
@@ -32,19 +34,19 @@ export const HTML = `
 export const CSS = `
 :root
 {
-  --uic-hdrhm-btnbg: ${HEADER_BACKGROUND_COLOR};
-  --uic-hdrhm-btncol: ${HEADER_COLOR_HOVER};
-  --uic-hdrhm-img: ${HOVER_IMG};
+  ${BTNBG_VAR}: ${HEADER_BACKGROUND_COLOR};
+  ${BTNCOL_VAR}: ${HEADER_COLOR_HOVER};
+  ${IMG_VAR}: ${HOVER_IMG};
 }
 
 ${DARKMODE_SELECTOR_VALUE}
 {
-  --uic-hdrhm-btnbg: ${HEADER_BACKGROUND_COLOR_DARK};
-  --uic-hdrhm-btncol: ${HEADER_COLOR_HOVER_DARK};
-  --uic-hdrhm-img: ${HOVER_IMG_DARK};
+  ${BTNBG_VAR}: ${HEADER_BACKGROUND_COLOR_DARK};
+  ${BTNCOL_VAR}: ${HEADER_COLOR_HOVER_DARK};
+  ${IMG_VAR}: ${HOVER_IMG_DARK};
 }
 
-.${CLASS.ROOT}
+.${ROOT_CLASS}
 {
   display: flex;
   width: min-content;
@@ -61,20 +63,20 @@ ${DARKMODE_SELECTOR_VALUE}
   flex-shrink: 0;
 }
 
-.${CLASS.ROOT}:hover
+.${ROOT_CLASS}:hover
 {
-  color: var(--uic-hdrhm-btncol);
-  background-color: var(--uic-hdrhm-btnbg);
+  color: var(${BTNCOL_VAR});
+  background-color: var(${BTNBG_VAR});
   border-radius: ${HEADER_BORDER_RADIUS_HOVER};
   transition: background-color 0.2s;
 }
 
-.${CLASS.ROOT}:hover > div
+.${ROOT_CLASS}:hover > div
 {
-  background-image: var(--uic-hdrhm-img);
+  background-image: var(${IMG_VAR});
 }
 
-.${CLASS.ROOT} > div
+.${ROOT_CLASS} > div
 {
   width: 40px;
   height: 30px;
@@ -89,12 +91,12 @@ ${DARKMODE_SELECTOR_VALUE}
 
 @media (device-width < ${HEADER_MOBILE_DEVICE_WIDTH})
 {
-  .${CLASS.ROOT} > div
+  .${ROOT_CLASS} > div
   {
     width: 60px;
     height: 55px;
   }
-  .${CLASS.ROOT} > span
+  .${ROOT_CLASS} > span
   {
     font-size: 60px;
   }
