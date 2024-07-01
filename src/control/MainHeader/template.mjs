@@ -45,16 +45,6 @@ ${DARKMODE_SELECTOR_VALUE}
   user-select: none;
   box-sizing: border-box;
   flex-shrink: 0;
-  container-name: header;
-  container-type: inline-size;
-}
-
-@container header (width < 550px)
-{
-  .${CLASS.ROOT} > *:nth-child(1)
-  {
-    display: none;
-  }
 }
 
 @media (device-width < 550px)
