@@ -1,5 +1,4 @@
-import { representClassNames } from '../../lib/CSSHelper.mjs';
-import { loadSvgAsCssUrlAsync } from '../../lib/SVG.mjs';
+import ControlMaker from '../../lib/ControlMaker.mjs';
 
 import { DARKMODE_SELECTOR_VALUE } from '../../lib/DarkMode.mjs';
 import { HEADER_MOBILE_DEVICE_WIDTH } from '../../lib/WickedTheme.mjs';
@@ -12,19 +11,18 @@ import { HEADER_BORDER_RADIUS_HOVER } from '../../lib/WickedTheme.mjs';
 import { HEADER_COLOR_HOVER_DARK } from '../../lib/WickedTheme.mjs';
 import { HEADER_COLOR_HOVER } from '../../lib/WickedTheme.mjs';
 
-const MAIN_IMG = await loadSvgAsCssUrlAsync(import.meta.url, './search_default.svg');
-const HOVER_IMG = await loadSvgAsCssUrlAsync(import.meta.url, './search_light_hover.svg');
-const HOVER_IMG_DARK = await loadSvgAsCssUrlAsync(import.meta.url, './search_dark_hover.svg');
+const mk = new ControlMaker('HdrUploadButton', import.meta.url);
+export const NAME = mk.name;
 
-export const NAME = 'HdrUploadButton';
+export const ROOT_CLASS = mk.newClassName("Root");
+export const HIDDEN_CLASS = mk.newClassName("Hidden");
 
-export const CLASS = representClassNames({
-  ROOT: "uic-hdrupl-root",
-  HIDDEN: "uic-hdrupl-hidden",
-});
+const MAIN_IMG = await mk.loadSvgAsCssUrl('./search_default.svg');
+const HOVER_IMG = await mk.loadSvgAsCssUrl('./search_light_hover.svg');
+const HOVER_IMG_DARK = await mk.loadSvgAsCssUrl('./search_dark_hover.svg');
 
-export const HTML = `
-<label class="${CLASS.ROOT} ${CLASS.HIDDEN} notranslate" translate="no" draggable="false">
+export const ROOT_HTML = `
+<label class="${ROOT_CLASS} ${HIDDEN_CLASS} notranslate" translate="no" draggable="false">
   <div></div>
   <span>Upload</span>
   <!--<input type="file">-->
@@ -46,17 +44,17 @@ ${DARKMODE_SELECTOR_VALUE}
   --uic-hdrupl-img: ${HOVER_IMG_DARK};
 }
 
-.${CLASS.ROOT} > input
+.${ROOT_CLASS} > input
 {
   display: none;
 }
 
-.${CLASS.HIDDEN}
+.${HIDDEN_CLASS}
 {
   visibility: hidden;
 }
 
-.${CLASS.ROOT}
+.${ROOT_CLASS}
 {
   display: flex;
   width: min-content;
@@ -71,7 +69,7 @@ ${DARKMODE_SELECTOR_VALUE}
   box-sizing: border-box;
 }
 
-.${CLASS.ROOT} > div
+.${ROOT_CLASS} > div
 {
   display: block;
   width: 40px;
@@ -85,7 +83,7 @@ ${DARKMODE_SELECTOR_VALUE}
   box-sizing: border-box;
 }
 
-.${CLASS.ROOT}:hover 
+.${ROOT_CLASS}:hover 
 {
   color: var(--uic-hdrupl-btncol);
   background-color: var(--uic-hdrupl-btnbg);
@@ -93,19 +91,19 @@ ${DARKMODE_SELECTOR_VALUE}
   transition: background-color 0.2s;
 }
 
-.${CLASS.ROOT}:hover div
+.${ROOT_CLASS}:hover div
 {
   background-image: var(--uic-hdrupl-img);
 }
 
 @media (device-width < ${HEADER_MOBILE_DEVICE_WIDTH})
 {
-  .${CLASS.ROOT} > div
+  .${ROOT_CLASS} > div
   {
     width: 60px;
     height: 55px;
   }
-  .${CLASS.ROOT}
+  .${ROOT_CLASS}
   {
     font-size: 60px;
   }
