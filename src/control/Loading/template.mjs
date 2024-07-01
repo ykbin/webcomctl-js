@@ -45,6 +45,7 @@ export const CSS = `
   width: 100%;
   height: 100%;
   max-width: 160px;
+  min-width: auto;
   background-image: ${MAIN_IMG};
   background-repeat: no-repeat;
   background-size: contain;
