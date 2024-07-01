@@ -81,8 +81,8 @@ ${DARKMODE_SELECTOR_VALUE}
   --whex-scroll-scrlbg: #212121;
   --whex-scroll-sthmbg1: #454545;
   --whex-cont-bor: #252525;
-  --whex-hex-ttlclm: #676767;
-  --whex-hex-offcolttl: #1c3e6a;
+  --whex-hex-ttlclm: #7c7c7c;
+  --whex-hex-offcolttl: #20477a;
 }
 
 .${CLASS.ROOT}
