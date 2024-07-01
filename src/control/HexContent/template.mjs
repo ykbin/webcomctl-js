@@ -132,12 +132,13 @@ ${DARKMODE_SELECTOR_VALUE}
 {
   display: flex;
   align-items: center;
+  justify-content: center;
   height: 25px;
 }
 
 .${CLASS.CONTENT} h3
 {
-  padding: 0px 15px;
+  padding: 0px 10px;
   font-size: 1em;
   box-sizing: border-box;
 }
