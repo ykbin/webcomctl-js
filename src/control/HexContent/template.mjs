@@ -177,22 +177,6 @@ ${DARKMODE_SELECTOR_VALUE}
   margin: 0px;
 }
 
-.${CLASS.TEXT}
-{
-    width: 100%;
-}
-
-.${CLASS.TEXT} > h3
-{
-  text-indent: 50px;
-  text-align: left;
-}
-
-.${CLASS.TEXT} > ul
-{
-  width: max-content;
-}
-
 .${CLASS.TEXT} > ul li
 {
   white-space: pre;
@@ -203,7 +187,6 @@ ${DARKMODE_SELECTOR_VALUE}
 {
   text-align: left;
   flex-shrink: 0;
-  /*z-index: 1;*/
 }
 
 .${CLASS.BINARY} > div
