@@ -1,8 +1,9 @@
 import { BaseControl, NQDOM, FileChunkLoader } from 'webnetq-js';
-import { NAME, HTML, CLASS, CSS } from 'module-loader!./template.mjs';
+import { NAME, ROOT_HTML, ROOT_CLASS, CONTENT_CLASS, OFSLIST_CLASS, BINLIST_CLASS, TXTLIST_CLASS, SCROLL_MAIN_CLASS, SCROLL_BAR_CLASS, SCROLL_THUMB_CLASS, CSS } from 'module-loader!./template.mjs';
 
+export { NAME, ROOT_CLASS, ROOT_HTML };
 export const template = {
-  NAME, HTML, CLASS, CSS,
+  NAME, HTML: ROOT_HTML, CSS,
 };
 
 const kThumbSizeMin = 40;
@@ -24,7 +25,7 @@ class UIScrollControl {
   };
 
   constructor(element) {
-    this._thmbElement = NQDOM.getElementByClassName(element, CLASS.STHUMB);
+    this._thmbElement = NQDOM.getElementByClassName(element, SCROLL_THUMB_CLASS);
     this._thmbElement && this._thmbElement.addEventListener("mousedown", event => {
       if (event.buttons === 1) {
         this._thmbClickState = { dy: event.offsetY };
@@ -35,7 +36,7 @@ class UIScrollControl {
       }
     });
 
-    this._scrollBarElement = NQDOM.getElementByClassName(element, CLASS.SBAR);
+    this._scrollBarElement = NQDOM.getElementByClassName(element, SCROLL_BAR_CLASS);
     this._scrollBarElement && this._scrollBarElement.addEventListener("mousedown", event => {
       const rect = this._thmbElement.getBoundingClientRect();
       const diff = (event.y < rect.top) ? -this._viewSize : ((event.y > rect.bottom) ? this._viewSize : 0);
@@ -166,7 +167,7 @@ export default class UIHexContentControl extends BaseControl {
   static get template() { return {
     name: NAME,
     rootHTML: HTML,
-    rootClass:  CLASS.ROOT,
+    rootClass: ROOT_CLASS,
   } }
 
   _scroll;
@@ -189,7 +190,7 @@ export default class UIHexContentControl extends BaseControl {
   _readyState = 'idle';
 
   _init() {
-    const scrollElm = NQDOM.getElementByClassName(this.element, CLASS.SCROLL);
+    const scrollElm = NQDOM.getElementByClassName(this.element, SCROLL_MAIN_CLASS);
     if (scrollElm) {
       this._scroll = new UIScrollControl(scrollElm);
       this._scroll.addEventListener("changeposition", event => {
@@ -197,11 +198,11 @@ export default class UIHexContentControl extends BaseControl {
       });
     }
 
-    this._offsetParent = NQDOM.getElementByClassName(this.element, CLASS.OFSLIST);
-    this._binaryParent = NQDOM.getElementByClassName(this.element, CLASS.BINLIST);
-    this._asciiParent = NQDOM.getElementByClassName(this.element, CLASS.TXTLIST);
+    this._offsetParent = NQDOM.getElementByClassName(this.element, OFSLIST_CLASS);
+    this._binaryParent = NQDOM.getElementByClassName(this.element, BINLIST_CLASS);
+    this._asciiParent = NQDOM.getElementByClassName(this.element, TXTLIST_CLASS);
   
-    const containerElm = NQDOM.getElementByClassName(this.element, CLASS.CONTENT);
+    const containerElm = NQDOM.getElementByClassName(this.element, CONTENT_CLASS);
     containerElm && containerElm.addEventListener("wheel",  e => {
       this._scroll.position = this._scroll.position + e.deltaY;
       this.updateContent(false, this._scroll.position);
