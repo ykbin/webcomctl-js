@@ -166,7 +166,7 @@ const ERROR_EVENT = 'error';
 export default class UIHexContentControl extends BaseControl {
   static get template() { return {
     name: NAME,
-    rootHTML: HTML,
+    rootHTML: ROOT_HTML,
     rootClass: ROOT_CLASS,
   } }
 
