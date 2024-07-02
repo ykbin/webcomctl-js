@@ -1,51 +1,55 @@
-import { representClassNames } from '../../lib/CSSHelper.mjs';
+import ControlMaker from '../../lib/ControlMaker.mjs';
 
 import { DARKMODE_SELECTOR_VALUE } from '../../lib/DarkMode.mjs';
-import { COMMON_MOBILE_DEVICE_WIDTH } from '../../lib/WickedTheme.mjs';
 import { UIC_CONTENT_BACKGROUND_COLOR } from '../../lib/WickedTheme.mjs';
 import { UIC_CONTENT_BACKGROUND_COLOR_DARK } from '../../lib/WickedTheme.mjs';
 
-export const NAME = 'HexContent';
+const mk = new ControlMaker('HexContent', import.meta.url);
+export const NAME = mk.name;
 
-export const CLASS = representClassNames({
-  ROOT: "uic-hexcnt-root",
-  CONTENT: "uic-hexcnt-content",
-  OFFSET: "uic-hexcnt-offset",
-  OFSLIST: "uic-hexcnt-ofslist",
-  BINARY: "uic-hexcnt-binary",
-  BINLIST: "uic-hexcnt-binlist",
-  TEXT: "uic-hexcnt-text",
-  TXTLIST: "uic-hexcnt-txtlist",
-  SCROLL: "uic-hexcnt-scroll",
-  SBAR: "uic-hexcnt-scroll-bar",
-  STHUMB: "uic-hexcnt-scroll-thumb",
-});
+export const ROOT_CLASS = mk.newClassName("Root");
+export const CONTENT_CLASS = mk.newClassName("Content");
+export const OFSLIST_CLASS = mk.newClassName("Ofslist");
+export const BINLIST_CLASS = mk.newClassName("Binlist");
+export const TXTLIST_CLASS = mk.newClassName("Txtlist");
 
-export const HTML = `
- <div class="${CLASS.ROOT}">
-    <div class="${CLASS.CONTENT}">
-      <div class="${CLASS.OFFSET}">
-        <h3>Offset</h3>
+export const SCROLL_MAIN_CLASS = mk.newClassName("ScrollMain");
+export const SCROLL_BAR_CLASS = mk.newClassName("ScrollBar");
+export const SCROLL_THUMB_CLASS = mk.newClassName("ScrollThumb");
+
+ // TODO: Remove extra classes
+const OFFSET_CLASS = mk.newClassName("Offset");
+const BINARY_CLASS = mk.newClassName("Binary");
+const TEXT_CLASS = mk.newClassName("Text");
+
+const OFFSET_STR = "Offset";
+const TEXT_STR = "Text";
+
+export const ROOT_HTML = `
+ <div class="${ROOT_CLASS}">
+    <div class="${CONTENT_CLASS}">
+      <div class="${OFFSET_CLASS}">
+        <h3>${OFFSET_STR}</h3>
         <ul>
-          <div class="${CLASS.OFSLIST}"></div>
+          <div class="${OFSLIST_CLASS}"></div>
         </ul>
       </div>
-      <div class="${CLASS.BINARY}">
+      <div class="${BINARY_CLASS}">
         <h3><span>00 01 02 03 04 05 06 07  08 09 0A 0B 0C 0D 0E 0F</span></h3>
         <div>
-          <div class="${CLASS.BINLIST}"></div>
+          <div class="${BINLIST_CLASS}"></div>
         </div>
       </div>
-      <div class="${CLASS.TEXT}">
-        <h3>Text</h3>
+      <div class="${TEXT_CLASS}">
+        <h3>${TEXT_STR}</h3>
         <ul>
-          <div class="${CLASS.TXTLIST}"></div>
+          <div class="${TXTLIST_CLASS}"></div>
         </ul>
       </div>
     </div>
-    <div class="${CLASS.SCROLL}">
-      <div class="${CLASS.SBAR}">
-        <div class="${CLASS.STHUMB}"></div>
+    <div class="${SCROLL_MAIN_CLASS}">
+      <div class="${SCROLL_BAR_CLASS}">
+        <div class="${SCROLL_THUMB_CLASS}"></div>
       </div>
     </div>
   </div>
@@ -85,7 +89,7 @@ ${DARKMODE_SELECTOR_VALUE}
   --whex-hex-offcolttl: #20477a;
 }
 
-.${CLASS.ROOT}
+.${ROOT_CLASS}
 {
   position: relative;
   display: flex;
@@ -96,24 +100,24 @@ ${DARKMODE_SELECTOR_VALUE}
   box-sizing: border-box;
 }
 
-.${CLASS.ROOT} *
+.${ROOT_CLASS} *
 {
   box-sizing: border-box;
 }
 
-.${CLASS.ROOT} s
+.${ROOT_CLASS} s
 {
   text-decoration: none;
 }
 
-.${CLASS.ROOT} h3
+.${ROOT_CLASS} h3
 {
   margin: 0px;
   font-size: 1em;
   font-weight: 400;
 }
 
-.${CLASS.CONTENT}
+.${CONTENT_CLASS}
 {
   display: flex;
   justify-content: flex-start;
@@ -131,8 +135,8 @@ ${DARKMODE_SELECTOR_VALUE}
   overflow: hidden;
 }
 
-.${CLASS.BINARY} > h3 > span,
-.${CLASS.CONTENT} h3
+.${BINARY_CLASS} > h3 > span,
+.${CONTENT_CLASS} h3
 {
   display: flex;
   align-items: center;
@@ -140,7 +144,7 @@ ${DARKMODE_SELECTOR_VALUE}
   height: 25px;
 }
 
-.${CLASS.CONTENT} h3
+.${CONTENT_CLASS} h3
 {
   padding: 0px 10px;
   font-size: 1em;
@@ -148,65 +152,65 @@ ${DARKMODE_SELECTOR_VALUE}
   box-sizing: border-box;
 }
 
-.${CLASS.OFFSET},
-.${CLASS.TEXT},
-.${CLASS.BINARY},
-.${CLASS.OFFSET} > ul > div,
-.${CLASS.TEXT} > ul > div,
-.${CLASS.BINARY} > div > div
+.${OFFSET_CLASS},
+.${TEXT_CLASS},
+.${BINARY_CLASS},
+.${OFFSET_CLASS} > ul > div,
+.${TEXT_CLASS} > ul > div,
+.${BINARY_CLASS} > div > div
 {
   height: 100%;
 }
 
-.${CLASS.OFFSET} > ul,
-.${CLASS.TEXT} > ul,
-.${CLASS.BINARY} > div
+.${OFFSET_CLASS} > ul,
+.${TEXT_CLASS} > ul,
+.${BINARY_CLASS} > div
 {
   height: calc(100% - 40px);
 }
 
-.${CLASS.OFFSET}
+.${OFFSET_CLASS}
 {
   width: auto;
 }
 
-.${CLASS.OFFSET}
+.${OFFSET_CLASS}
 {
   color: var(--whex-hex-ttlcl2);
 }
 
-.${CLASS.OFFSET} > h3
+.${OFFSET_CLASS} > h3
 {
   color: var(--whex-hex-offcolttl);
 }
 
-.${CLASS.OFFSET} > ul,
-.${CLASS.TEXT} > ul
+.${OFFSET_CLASS} > ul,
+.${TEXT_CLASS} > ul
 {
   list-style-type: none;
   padding: 5px 10px 10px 10px;
   margin: 0px;
 }
 
-.${CLASS.TEXT} > ul li
+.${TEXT_CLASS} > ul li
 {
   white-space: pre;
   word-spacing: normal;
 }
 
-.${CLASS.BINARY}
+.${BINARY_CLASS}
 {
   text-align: left;
   flex-shrink: 0;
 }
 
-.${CLASS.BINARY} > div
+.${BINARY_CLASS} > div
 {
   padding: 5px 10px 10px 10px;
 }
 
-.${CLASS.BINARY} > h3,
-.${CLASS.BINARY} > div > div
+.${BINARY_CLASS} > h3,
+.${BINARY_CLASS} > div > div
 {
   display: grid;
   grid-template-columns: auto;
@@ -217,28 +221,28 @@ ${DARKMODE_SELECTOR_VALUE}
 
 @media (device-width < 550px)
 {
-  .${CLASS.CONTENT}
+  .${CONTENT_CLASS}
   {
     font-size: 20px;
     line-height: inherit;
   }
 }
 
-.${CLASS.SCROLL}
+.${SCROLL_MAIN_CLASS}
 {
   height: 100%;
   width: 10px;
   overflow: visible;
 }
 
-.${CLASS.SCROLL} > h3
+.${SCROLL_MAIN_CLASS} > h3
 {
   display: block;
   height: 25px;
   padding: 0px;
 }
 
-.${CLASS.SCROLL} > div
+.${SCROLL_MAIN_CLASS} > div
 {
   position: absolute;
   right: 0px;
@@ -247,7 +251,7 @@ ${DARKMODE_SELECTOR_VALUE}
   background-color: var(--whex-scroll-scrlbg);
 }
 
-.${CLASS.SCROLL} > div > div
+.${SCROLL_MAIN_CLASS} > div > div
 {
   display: block;
   position: relative;
@@ -256,14 +260,14 @@ ${DARKMODE_SELECTOR_VALUE}
   background-color: var(--whex-scroll-sthmbg1);
 }
 
-.${CLASS.SCROLL} > div > div:hover
+.${SCROLL_MAIN_CLASS} > div > div:hover
 {
   background-color: var(--whex-scroll-sthmbg2);
 }
 
 @media (width < 830px)
 { 
-  div.${CLASS.SCROLL}
+  div.${SCROLL_MAIN_CLASS}
   {
     position: sticky;
     right: 0px;
