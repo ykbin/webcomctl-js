@@ -37,13 +37,13 @@ ${DARKMODE_SELECTOR_VALUE}
   display: flex;
   height: 43px;
   padding: 5px 10px;
+  z-index: 1;
   border-bottom: 1px solid var(--uic-mhdr-bor);
   box-shadow: 0px 1.6px 3.6px var(--uic-mhdr-bs1), 0px 0px 2.9px var(--uic-mhdr-bs2);
-  box-sizing: border-box;
-  z-index: 1;
   background-color: var(--uic-mhdr-bg);
   overflow: hidden;
   user-select: none;
+  box-sizing: border-box;
   flex-shrink: 0;
 }
 
