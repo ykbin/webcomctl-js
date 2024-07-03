@@ -1,15 +1,15 @@
 import { BaseControl, Util } from 'webnetq-js';
-import { NAME, HTML_ROOT, ROOT_CLASS, CONTENT_CLASS, CSS } from 'module-loader!./template.mjs';
+import { NAME, ROOT_HTML, ROOT_CLASS, CONTENT_CLASS, CSS } from 'module-loader!./template.mjs';
 
 export { NAME, ROOT_CLASS, ROOT_HTML };
 export const template = {
-  NAME, HTML: HTML_ROOT, CSS,
+  NAME, HTML: ROOT_HTML, CSS,
 };
 
 export default class UIImageContentControl extends BaseControl {
   static get template() { return {
     name: NAME,
-    rootHTML: HTML_ROOT,
+    rootHTML: ROOT_HTML,
     rootClass: ROOT_CLASS,
   } }
 
