@@ -1,19 +1,17 @@
-import { representClassNames } from '../../lib/CSSHelper.mjs';
+import ControlMaker from '../../lib/ControlMaker.mjs';
 
-export const NAME = 'HorizontalBlock';
+const mk = new ControlMaker('HorizontalBlock', import.meta.url);
+export const NAME = mk.name;
 
-export const CLASS = representClassNames({
-  ROOT: "uic-hrzblk-root",
-  PORT: "uic-hrzblk-port",
-});
+export const ROOT_CLASS = mk.newClassName("Root");
+export const PORT_CLASS = mk.newClassName("Port");
 
-export const HTML = `
-<div class="${CLASS.ROOT} ${CLASS.PORT}">
-</div>
+export const ROOT_HTML = `
+<div class="${ROOT_CLASS} ${PORT_CLASS}"></div>
 `;
 
 export const CSS = `
-.${CLASS.ROOT}
+.${ROOT_CLASS}
 {
   display: flex;
   flex-direction: column;
