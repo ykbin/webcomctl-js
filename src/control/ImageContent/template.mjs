@@ -1,19 +1,18 @@
-import { representClassNames } from '../../lib/CSSHelper.mjs';
+import ControlMaker from '../../lib/ControlMaker.mjs';
 
 import { DARKMODE_SELECTOR_VALUE } from '../../lib/DarkMode.mjs';
 import { UIC_CONTENT_BACKGROUND_COLOR } from '../../lib/WickedTheme.mjs';
 import { UIC_CONTENT_BACKGROUND_COLOR_DARK } from '../../lib/WickedTheme.mjs';
 
-export const NAME = 'ImageContent';
+const mk = new ControlMaker('ImageContent', import.meta.url);
+export const NAME = mk.name;
 
-export const CLASS = representClassNames({
-  ROOT: "uic-imgcnt-root",
-  CONTENT: "uic-imgcnt-content",
-});
+export const ROOT_CLASS = mk.newClassName("Root");
+export const CONTENT_CLASS = mk.newClassName("Content");
 
-export const HTML = `
-<div class="${CLASS.ROOT}" draggable="false">
-  <img class="${CLASS.CONTENT}"/>
+export const ROOT_HTML = `
+<div class="${ROOT_CLASS}" draggable="false">
+  <img class="${CONTENT_CLASS}"/>
 </div>
 `;
 
@@ -28,7 +27,7 @@ ${DARKMODE_SELECTOR_VALUE}
   --uic-imgcnt-bg: ${UIC_CONTENT_BACKGROUND_COLOR_DARK};
 }
 
-.${CLASS.ROOT}
+.${ROOT_CLASS}
 {
   display: flex;
   justify-content: center;
@@ -41,7 +40,7 @@ ${DARKMODE_SELECTOR_VALUE}
   background-color: var(--uic-imgcnt-bg);
 }
 
-.${CLASS.ROOT} img
+.${ROOT_CLASS} img
 {
   height: auto;
   width: auto;
