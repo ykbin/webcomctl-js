@@ -1,29 +1,25 @@
-import { representClassNames } from '../../lib/CSSHelper.mjs';
-import { loadSvgAsCssUrlAsync } from '../../lib/SVG.mjs';
+import ControlMaker from '../../lib/ControlMaker.mjs';
 
-export const NAME = 'LoadingBlock';
+const mk = new ControlMaker('LoadingBlock', import.meta.url);
+export const NAME = mk.name;
 
-const VAR = {
-  BGCLR: '#061b4366',
-  BGIMG: 'url(unloading.svg)',
-};
+export const ROOT_CLASS = mk.newClassName("Root");
+export const PORT_CLASS = mk.newClassName("Port");
+export const UNLOAD_CLASS = mk.newClassName("Upload");
 
-export const CLASS = representClassNames({
-  ROOT: 'uic-ldnblk-root',
-  PORT: 'uic-ldnblk-port',
-  UNLOAD: 'uic-ldnblk-unload',
-});
+const BG_IMG = await mk.loadSvgAsCssUrl('./unloading.svg');
+const BG_CLR = '#061b4366';
 
-export const HTML = `
-<div class="${CLASS.ROOT}">
-  <div class="${CLASS.PORT}"></div>
-  <s class="${CLASS.UNLOAD}"><span></span></s>
+export const ROOT_HTML = `
+<div class="${ROOT_CLASS}">
+  <div class="${PORT_CLASS}"></div>
+  <s class="${UNLOAD_CLASS}"><span></span></s>
 </div>
 `;
 
 export const CSS = `
-.${CLASS.ROOT},
-.${CLASS.PORT}
+.${ROOT_CLASS},
+.${PORT_CLASS}
 {
   display: flex;
   flex-direction: column;
@@ -31,12 +27,12 @@ export const CSS = `
   height: inherit;
 }
 
-.${CLASS.UNLOAD} > s
+.${UNLOAD_CLASS} > s
 {
   text-decoration: none;
 }
 
-.${CLASS.ROOT} > s:not(.${CLASS.UNLOAD})
+.${ROOT_CLASS} > s:not(.${UNLOAD_CLASS})
 {
   position: absolute;
   top: 0;
@@ -46,15 +42,15 @@ export const CSS = `
   height: 100%;
   width: 100%;
   z-index: 3;
-  background-color: ${VAR.BGCLR};
+  background-color: ${BG_CLR};
 }
 
-.${CLASS.UNLOAD}
+.${UNLOAD_CLASS}
 {
   display: none;
 }
 
-.${CLASS.ROOT} > s > span
+.${ROOT_CLASS} > s > span
 {
   display: block;
   height: 100px;
@@ -62,6 +58,6 @@ export const CSS = `
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-  background-image: ${VAR.BGIMG};
+  background-image: ${BG_IMG};
 }
 `;
