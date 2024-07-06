@@ -1,31 +1,29 @@
-import { representClassNames } from '../../lib/CSSHelper.mjs';
-import { loadSvgAsCssUrlAsync } from '../../lib/SVG.mjs';
+import ControlMaker from '../../lib/ControlMaker.mjs';
 
 import { COMMON_MOBILE_DEVICE_WIDTH } from '../../lib/WickedTheme.mjs';
 
-const MAIN_IMG = await loadSvgAsCssUrlAsync(import.meta.url, './file-upload.svg');
+const mk = new ControlMaker('Loading', import.meta.url);
+export const NAME = mk.name;
+
+export const ROOT_CLASS = mk.newClassName("Root");
+export const SHOW_CLASS = mk.newClassName("Show");
+
+const MAIN_IMG = await mk.loadSvgAsCssUrl('./file-upload.svg');
 const BGROUND_COLOR = '#1e1e1e91';
 
-export const NAME = 'Loading';
-
-export const CLASS = representClassNames({
-  ROOT: 'uic-loading-root',
-  SHOW: 'uic-loading-show',
-});
-
-export const HTML = `
-<div class="${CLASS.ROOT}">
+export const ROOT_HTML = `
+<div class="${ROOT_CLASS}">
   <div></div>
 </div>
 `;
 
 export const CSS = `
-.${CLASS.ROOT}
+.${ROOT_CLASS}
 {
   display: none;
 }
 
-.${CLASS.SHOW}
+.${SHOW_CLASS}
 {
   display: flex;
   align-items: center;
@@ -40,7 +38,7 @@ export const CSS = `
   background-color: ${BGROUND_COLOR};
 }
 
-.${CLASS.SHOW} > div
+.${SHOW_CLASS} > div
 {
   width: 100%;
   height: 100%;
@@ -54,7 +52,7 @@ export const CSS = `
 
 @media (device-width < ${COMMON_MOBILE_DEVICE_WIDTH})
 {
-  .${CLASS.SHOW} > div
+  .${SHOW_CLASS} > div
   {
     width: 320px;
     height: 320px;
