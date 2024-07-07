@@ -1,50 +1,47 @@
-import { representClassNames } from '../../lib/CSSHelper.mjs';
+import ControlMaker from '../../lib/ControlMaker.mjs';
 
-export const NAME = 'MainBlock';
+const mk = new ControlMaker('MainBlock', import.meta.url);
+export const NAME = mk.name;
 
-const VAR = {
-  SCTHBG: '#b5b5b5c7',
-  SCTRBG: 'transparent',
-};
+export const ROOT_CLASS = mk.newClassName("Root");
+export const PORT_CLASS = mk.newClassName("Port");
 
-export const CLASS = representClassNames({
-  ROOT: "uic-mainblk-root",
-  PORT: "uic-mainblk-port",
-});
+const SCTHBG_CLR = '#b5b5b5c7';
+const SCTRBG_CLR = 'transparent';
 
-export const HTML = `
-<div class="${CLASS.ROOT}">
-  <div class="${CLASS.PORT}"></div>
+export const ROOT_HTML = `
+<div class="${ROOT_CLASS}">
+  <div class="${PORT_CLASS}"></div>
 </div>
 `;
 
 export const CSS = `
-.${CLASS.ROOT}::-webkit-scrollbar
+.${ROOT_CLASS}::-webkit-scrollbar
 {
   width: 10px;
   height: 10px;
 }
 
-.${CLASS.ROOT}::-webkit-scrollbar-thumb
+.${ROOT_CLASS}::-webkit-scrollbar-thumb
 {
-  background-color: ${VAR.SCTHBG};
+  background-color: ${SCTHBG_CLR};
   border-radius: 10px;
 }
 
-.${CLASS.ROOT}::-webkit-scrollbar-track,
-.${CLASS.ROOT}::-webkit-scrollbar-corner
+.${ROOT_CLASS}::-webkit-scrollbar-track,
+.${ROOT_CLASS}::-webkit-scrollbar-corner
 {
-  background-color: ${VAR.SCTRBG};
+  background-color: ${SCTRBG_CLR};
 }
 
-.${CLASS.ROOT}
+.${ROOT_CLASS}
 {
   height: 100%;
   width: 100%;
   overflow: auto;
 }
 
-.${CLASS.ROOT} > div
+.${ROOT_CLASS} > div
 {
   display: flex;
   flex-direction: column;
