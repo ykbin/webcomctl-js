@@ -163,6 +163,16 @@ const READYSTATECHANGE_EVENT = 'readystatechange';
 const LOAD_EVENT = 'load';
 const ERROR_EVENT = 'error';
 
+function isElementVisible(element) {
+  const rect = element.getBoundingClientRect();
+  return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+  );
+}
+
 export default class UIHexContentControl extends BaseControl {
   static get template() { return {
     name: NAME,
@@ -188,6 +198,7 @@ export default class UIHexContentControl extends BaseControl {
   _tailGoal = null;
 
   _readyState = 'idle';
+  _visible;
 
   _init() {
     const scrollElm = NQDOM.getElementByClassName(this.element, SCROLL_MAIN_CLASS);
@@ -203,17 +214,34 @@ export default class UIHexContentControl extends BaseControl {
     this._asciiParent = NQDOM.getElementByClassName(this.element, TXTLIST_CLASS);
   
     const containerElm = NQDOM.getElementByClassName(this.element, CONTENT_CLASS);
+    containerElm && (containerElm.style.overflow = 'auto');
     containerElm && containerElm.addEventListener("wheel",  e => {
+      e.preventDefault();
       this._scroll.position = this._scroll.position + e.deltaY;
       this.updateContent(false, this._scroll.position);
-    });
+    }, { passive: false });
 
-    window.addEventListener("resize", event => {
-      if (this._itemHeight !== null)
-        this.updateContent(true, this._offset);
-    });
+    document.body.addEventListener("scroll", event => {
+      console.log( "Event: scroll");
+    }, true);
+
+    window.addEventListener("resize", event => this._onResize());
+
+    this._visible = isElementVisible(this.element);
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        this._visible = entry.isIntersecting;
+        this._visible && this._onResize();
+      });
+    }, { threshold: [0] });
+    observer.observe(this.element);
 
     this.registerEvent(READYSTATECHANGE_EVENT, LOAD_EVENT, ERROR_EVENT);
+  }
+
+  _onResize() {
+    if (this._visible && this._itemHeight !== null)
+      this.updateContent(true, this._offset);
   }
 
   get scroll() {
@@ -317,8 +345,8 @@ export default class UIHexContentControl extends BaseControl {
       this._tailPosition++;
       
       this._offsetParent.style.width = `${item.offset.clientWidth}px`;
-      // binaryParent.style.width = `${item.binary.clientWidth}px`;
-      //this._asciiParent.style.width = `${item.ascii.clientWidth}px`;
+      this._binaryParent.style.width = `${item.binary.clientWidth}px`;
+      this._asciiParent.style.width = `${item.ascii.clientWidth}px`;
 
       this._itemHeight = item.offset.offsetHeight;
       updateHeight = true;
