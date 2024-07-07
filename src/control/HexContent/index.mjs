@@ -221,6 +221,10 @@ export default class UIHexContentControl extends BaseControl {
       this.updateContent(false, this._scroll.position);
     }, { passive: false });
 
+    window.addEventListener("scroll", event => {
+      console.log( "Event: scroll");
+    }, true);
+
     window.addEventListener("resize", event => this._onResize());
 
     this._visible = isElementVisible(this.element);
