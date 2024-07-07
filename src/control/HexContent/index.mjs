@@ -214,16 +214,12 @@ export default class UIHexContentControl extends BaseControl {
     this._asciiParent = NQDOM.getElementByClassName(this.element, TXTLIST_CLASS);
   
     const containerElm = NQDOM.getElementByClassName(this.element, CONTENT_CLASS);
-    containerElm && (containerElm.style.overflow = 'auto');
+    // containerElm && (containerElm.style.overflow = 'auto');
     containerElm && containerElm.addEventListener("wheel",  e => {
       e.preventDefault();
       this._scroll.position = this._scroll.position + e.deltaY;
       this.updateContent(false, this._scroll.position);
-    }, { passive: false });
-
-    document.body.addEventListener("scroll", event => {
-      console.log( "Event: scroll");
-    }, true);
+    }); // }, { passive: false });
 
     window.addEventListener("resize", event => this._onResize());
 
@@ -345,8 +341,8 @@ export default class UIHexContentControl extends BaseControl {
       this._tailPosition++;
       
       this._offsetParent.style.width = `${item.offset.clientWidth}px`;
-      this._binaryParent.style.width = `${item.binary.clientWidth}px`;
-      this._asciiParent.style.width = `${item.ascii.clientWidth}px`;
+      // this._binaryParent.style.width = `${item.binary.clientWidth}px`;
+      // this._asciiParent.style.width = `${item.ascii.clientWidth}px`;
 
       this._itemHeight = item.offset.offsetHeight;
       updateHeight = true;
