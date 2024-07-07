@@ -214,7 +214,9 @@ export default class UIHexContentControl extends BaseControl {
     this._asciiParent = NQDOM.getElementByClassName(this.element, TXTLIST_CLASS);
   
     const containerElm = NQDOM.getElementByClassName(this.element, CONTENT_CLASS);
+    containerElm && (containerElm.style.overflow = 'auto');
     containerElm && containerElm.addEventListener("wheel",  e => {
+      e.preventDefault();
       this._scroll.position = this._scroll.position + e.deltaY;
       this.updateContent(false, this._scroll.position);
     }, { passive: false });
