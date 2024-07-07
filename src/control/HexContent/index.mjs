@@ -345,8 +345,8 @@ export default class UIHexContentControl extends BaseControl {
       this._tailPosition++;
       
       this._offsetParent.style.width = `${item.offset.clientWidth}px`;
-      // binaryParent.style.width = `${item.binary.clientWidth}px`;
-      //this._asciiParent.style.width = `${item.ascii.clientWidth}px`;
+      this._binaryParent.style.width = `${item.binary.clientWidth}px`;
+      this._asciiParent.style.width = `${item.ascii.clientWidth}px`;
 
       this._itemHeight = item.offset.offsetHeight;
       updateHeight = true;
