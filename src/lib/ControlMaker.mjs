@@ -23,6 +23,6 @@ export default class ControlMaker {
   }
 
   newVarName(varname) {
-    return representClassNames(`--${this._name}-${varname}`);
+    return "--" + representClassNames(`${this._name}-${varname}`);
   }
 };
