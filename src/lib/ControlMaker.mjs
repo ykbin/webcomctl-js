@@ -25,4 +25,8 @@ export default class ControlMaker {
   newVarName(varname) {
     return "--" + representClassNames(`${this._name}-${varname}`);
   }
+
+  newAnimationName(animename) {
+    return representClassNames(`${this._name}-${animename}`);
+  }
 };

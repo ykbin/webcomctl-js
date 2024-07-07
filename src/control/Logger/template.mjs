@@ -1,15 +1,27 @@
-import { representClassNames } from '../../lib/CSSHelper.mjs';
-import { loadSvgAsCssUrlAsync } from '../../lib/SVG.mjs';
+import ControlMaker from '../../lib/ControlMaker.mjs';
 
 import { COMMON_MOBILE_DEVICE_WIDTH } from '../../lib/WickedTheme.mjs';
 
-export const NAME = 'Logger';
+const mk = new ControlMaker('Logger', import.meta.url);
+export const NAME = mk.name;
 
-const ERROR_IMG = await loadSvgAsCssUrlAsync(import.meta.url, './level-error.svg');
-const WARNING_IMG = await loadSvgAsCssUrlAsync(import.meta.url, './level-warning.svg');
-const SUCCESS_IMG = await loadSvgAsCssUrlAsync(import.meta.url, './level-success.svg');
-const INFO_IMG = await loadSvgAsCssUrlAsync(import.meta.url, './level-info.svg');
-const CLOSE_IMG = await loadSvgAsCssUrlAsync(import.meta.url, './close.svg');
+export const ROOT_CLASS = mk.newClassName("Root");
+export const CLOSE_CLASS = mk.newClassName("Close");
+export const TITLE_CLASS = mk.newClassName("Title");
+export const TEXT_CLASS = mk.newClassName("Text");
+export const ERROR_CLASS = mk.newClassName("Error");
+export const WARNING_CLASS = mk.newClassName("Warning");
+export const SUCCESS_CLASS = mk.newClassName("Success");
+export const INFO_CLASS = mk.newClassName("Info");
+
+const ANIME1 = mk.newAnimationName("Anime1");
+const ANIME2 = mk.newAnimationName("Anime2");
+
+const ERROR_IMG = await mk.loadSvgAsCssUrl('./level-error.svg');
+const WARNING_IMG = await mk.loadSvgAsCssUrl('./level-warning.svg');
+const SUCCESS_IMG = await mk.loadSvgAsCssUrl('./level-success.svg');
+const INFO_IMG = await mk.loadSvgAsCssUrl('./level-info.svg');
+const CLOSE_IMG = await mk.loadSvgAsCssUrl('./close.svg');
 
 const ERROR_HOVER_COLOR = '#df8181d4';
 const WARNING_HOVER_COLOR = '#dfb881d4';
@@ -28,67 +40,53 @@ const SUCCESS_MAIN_COLOR = '#005200';
 const INFO_FILL_COLOR = '#c8fffae6';
 const INFO_MAIN_COLOR = '#001e62';
 
-export const CLASS = representClassNames({
-  ROOT: 'uic-logger-root',
-  CLOSE: 'uic-logger-close',
-  TITLE: 'uic-logger-title',
-  TEXT: 'uic-logger-text',
-  ERROR: 'uic-logger-lvlerror',
-  WARNING: 'uic-logger-lvlwarn',
-  SUCCESS: 'uic-logger-lvlsuccess',
-  INFO: 'uic-logger-lvlinfo',
-});
-
-const ANIME1 = representClassNames("uic-logger-anime1");
-const ANIME2 = representClassNames("uic-logger-anime2");
-
-export const HTML = `
-<div class="${CLASS.ROOT}"></div>
+export const ROOT_HTML = `
+<div class="${ROOT_CLASS}"></div>
 `;
 
 export const ITEM_HTML =`
 <div>
   <div></div>
-  <span><h3 class="${CLASS.TITLE}"></h3><span class="${CLASS.TEXT}"></span></span>
-  <s><span class="${CLASS.CLOSE}"></span></s>
+  <span><h3 class="${TITLE_CLASS}"></h3><span class="${TEXT_CLASS}"></span></span>
+  <s><span class="${CLOSE_CLASS}"></span></s>
 </div>
 `;
 
 export const CSS = `
 @media (device-width < ${COMMON_MOBILE_DEVICE_WIDTH})
 {
-  div.${CLASS.ROOT} > div > div
+  div.${ROOT_CLASS} > div > div
   {
     min-width: 100px;
     height: 140px;
     background-size: 50px;
   }
-  div.${CLASS.ROOT} > div
+  div.${ROOT_CLASS} > div
   {
     animation-name: ${ANIME2};
     border-radius: 20px;
   }
-  div.${CLASS.ROOT} h3
+  div.${ROOT_CLASS} h3
   {
     font-size: 40px;
   }
-  div.${CLASS.ROOT} > div > span 
+  div.${ROOT_CLASS} > div > span 
   {
     min-width: 380px;
     font-size: 40px;
     line-height: 34px;
   }
-  div.${CLASS.ROOT} div > span > span
+  div.${ROOT_CLASS} div > span > span
   {
     font-size: 30px;
   }
-  div.${CLASS.ROOT} div > s
+  div.${ROOT_CLASS} div > s
   {
     width: 60px;
     height: 100%;
     padding-top: 10px;
   }
-  div.${CLASS.ROOT} div > s > span
+  div.${ROOT_CLASS} div > s > span
   {
     width: 100%;
     height: 35%;
@@ -172,7 +170,7 @@ export const CSS = `
   }
 }
 
-.${CLASS.ROOT}
+.${ROOT_CLASS}
 {
   position: fixed;
   bottom: 15px;
@@ -186,7 +184,7 @@ export const CSS = `
   z-index: 2;
 }
 
-.${CLASS.ROOT} > div
+.${ROOT_CLASS} > div
 {
   animation-name: ${ANIME1};
   animation-duration: 10s;
@@ -204,7 +202,7 @@ export const CSS = `
   box-sizing: content-box;
 }
 
-.${CLASS.ROOT} h3
+.${ROOT_CLASS} h3
 {
   margin: 0px;
   padding: 0px;
@@ -212,31 +210,31 @@ export const CSS = `
   font-weight: 400;
 }
 
-.${CLASS.ROOT} .${CLASS.ERROR}
+.${ROOT_CLASS} .${ERROR_CLASS}
 {
   background-color: ${ERROR_FILL_COLOR};
   color: ${ERROR_MAIN_COLOR};
 }
 	  
-.${CLASS.ROOT} .${CLASS.WARNING}
+.${ROOT_CLASS} .${WARNING_CLASS}
 {
   background-color: ${WARNING_FILL_COLOR};
   color: ${WARN_MAIN_COLOR};
 }
 	  
-.${CLASS.ROOT} .${CLASS.INFO}
+.${ROOT_CLASS} .${INFO_CLASS}
 {
   background-color:${INFO_FILL_COLOR};
   color: ${INFO_MAIN_COLOR};
 }
 
-.${CLASS.ROOT} .${CLASS.SUCCESS}
+.${ROOT_CLASS} .${SUCCESS_CLASS}
 {
   background-color: ${SUCCESS_FILL_COLOR};
   color: ${SUCCESS_MAIN_COLOR};
 }
 
-.${CLASS.ROOT} > div > div
+.${ROOT_CLASS} > div > div
 {
   width: 50px;
   height: 70px;
@@ -246,27 +244,27 @@ export const CSS = `
   flex-shrink: 0;
 }
 
-.${CLASS.ERROR} > div
+.${ERROR_CLASS} > div
 {
   background-image: ${ERROR_IMG};
 }
 
-.${CLASS.INFO} > div
+.${INFO_CLASS} > div
 {
   background-image: ${INFO_IMG};
 }
 
-.${CLASS.WARNING} > div
+.${WARNING_CLASS} > div
 {
   background-image: ${WARNING_IMG};
 }
 
-.${CLASS.SUCCESS} > div
+.${SUCCESS_CLASS} > div
 {
   background-image: ${SUCCESS_IMG};
 }
 
-.${CLASS.ROOT} > div > span
+.${ROOT_CLASS} > div > span
 {
   margin-top: 3px;
   width: 200px;
@@ -275,13 +273,13 @@ export const CSS = `
   flex-shrink: 0;
 }
 
-.${CLASS.ROOT} > div >  span > span
+.${ROOT_CLASS} > div >  span > span
 {
   display: block;
   font-size: 14px;
 }
 
-.${CLASS.ROOT} > div > s
+.${ROOT_CLASS} > div > s
 {
   display: flex;
   justify-content: center;
@@ -293,7 +291,7 @@ export const CSS = `
   flex-shrink: 0;
 }
 
-.${CLASS.ROOT} > div > s > span
+.${ROOT_CLASS} > div > s > span
 {
   height: 15px;
   width: 15px;
@@ -304,22 +302,22 @@ export const CSS = `
   background-position: center;
 }
 
-.${CLASS.ROOT} .${CLASS.ERROR} > s > span:hover
+.${ROOT_CLASS} .${ERROR_CLASS} > s > span:hover
 {
   background-color: ${ERROR_HOVER_COLOR};
 }
 
-.${CLASS.ROOT} .${CLASS.SUCCESS} > s > span:hover
+.${ROOT_CLASS} .${SUCCESS_CLASS} > s > span:hover
 {
   background-color: ${SUCCESS_HOVER_COLOR};
 }
 
-.${CLASS.ROOT} .${CLASS.WARNING} > s > span:hover
+.${ROOT_CLASS} .${WARNING_CLASS} > s > span:hover
 {
   background-color: ${WARNING_HOVER_COLOR};
 }
 
-.${CLASS.ROOT} .${CLASS.INFO} > s > span:hover
+.${ROOT_CLASS} .${INFO_CLASS} > s > span:hover
 {
   background-color: ${INFO_HOVER_COLOR};
 }
