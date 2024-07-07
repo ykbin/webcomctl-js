@@ -97,6 +97,7 @@ ${DARKMODE_SELECTOR_VALUE}
   width: 100%;
   color: var(--uic-hex-rootcol);
   user-select: auto;
+  overflow: hidden;
   box-sizing: border-box;
 }
 
