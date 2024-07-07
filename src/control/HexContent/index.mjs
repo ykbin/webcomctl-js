@@ -163,6 +163,16 @@ const READYSTATECHANGE_EVENT = 'readystatechange';
 const LOAD_EVENT = 'load';
 const ERROR_EVENT = 'error';
 
+function isElementVisible(element) {
+  const rect = element.getBoundingClientRect();
+  return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+  );
+}
+
 export default class UIHexContentControl extends BaseControl {
   static get template() { return {
     name: NAME,
@@ -188,6 +198,7 @@ export default class UIHexContentControl extends BaseControl {
   _tailGoal = null;
 
   _readyState = 'idle';
+  _visible;
 
   _init() {
     const scrollElm = NQDOM.getElementByClassName(this.element, SCROLL_MAIN_CLASS);
@@ -208,12 +219,23 @@ export default class UIHexContentControl extends BaseControl {
       this.updateContent(false, this._scroll.position);
     });
 
-    window.addEventListener("resize", event => {
-      if (this._itemHeight !== null)
-        this.updateContent(true, this._offset);
-    });
+    window.addEventListener("resize", event => this._onResize());
+
+    this._visible = isElementVisible(this.element);
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        this._visible = entry.isIntersecting;
+        this._visible && this._onResize();
+      });
+    }, { threshold: [0] });
+    observer.observe(this.element);
 
     this.registerEvent(READYSTATECHANGE_EVENT, LOAD_EVENT, ERROR_EVENT);
+  }
+
+  _onResize() {
+    if (this._visible && this._itemHeight !== null)
+      this.updateContent(true, this._offset);
   }
 
   get scroll() {
