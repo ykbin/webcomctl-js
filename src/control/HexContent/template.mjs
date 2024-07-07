@@ -132,7 +132,7 @@ ${DARKMODE_SELECTOR_VALUE}
   background-color: var(--uic-hex-bg);
   font-family: monospace;
   flex-shrink: 0;
-  overflow: hidden;
+  overflow: auto;
 }
 
 .${BINARY_CLASS} > h3 > span,
