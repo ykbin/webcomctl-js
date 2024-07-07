@@ -217,7 +217,7 @@ export default class UIHexContentControl extends BaseControl {
     containerElm && containerElm.addEventListener("wheel",  e => {
       this._scroll.position = this._scroll.position + e.deltaY;
       this.updateContent(false, this._scroll.position);
-    });
+    }, { passive: false });
 
     window.addEventListener("resize", event => this._onResize());
 
