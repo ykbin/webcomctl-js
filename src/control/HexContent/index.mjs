@@ -221,7 +221,7 @@ export default class UIHexContentControl extends BaseControl {
       this.updateContent(false, this._scroll.position);
     }, { passive: false });
 
-    window.addEventListener("scroll", event => {
+    document.body.addEventListener("scroll", event => {
       console.log( "Event: scroll");
     }, true);
 
