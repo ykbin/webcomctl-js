@@ -65,7 +65,6 @@ export const CSS = `
   --whex-hex-scrlbg: #dfdfdf29;
   --hex-sc-sthmbg1: darkgray;
   --hex-sc-sthmbg2: #959595;
-  --whex-scroll-scrlbg: #efefef;
   --whex-scroll-sthmbg1: darkgray;
   --whex-scroll-sthmbg2: #959595;
   --whex-cont-bor: #e8e8e8;
@@ -82,7 +81,6 @@ ${DARKMODE_SELECTOR_VALUE}
   --whex-hex-scrlbg: #1d1d1d;
   --hex-sc-sthmbg1: #454545;
   --hex-sc-sthmbg2: #565656;
-  --whex-scroll-scrlbg: #212121;
   --whex-scroll-sthmbg1: #454545;
   --whex-cont-bor: #252525;
   --whex-hex-ttlclm: #7c7c7c;
@@ -249,7 +247,6 @@ ${DARKMODE_SELECTOR_VALUE}
   right: 0px;
   width: 10px;
   height: 100%;
-  background-color: var(--whex-scroll-scrlbg);
 }
 
 .${SCROLL_MAIN_CLASS} > div > div
