@@ -9,8 +9,8 @@ export const template = {
 export default class UIHdrHomeButtonControl extends BaseControl {
   static get template() { return {
     name: NAME,
-    rootHTML: HTML,
-    rootClass: ROOT_HTML,
-    portClass: ROOT_CLASS,
+    rootHTML: ROOT_HTML,
+    rootClass: ROOT_CLASS,
+    portClass: PORT_CLASS,
   } }
 };
