@@ -9,7 +9,7 @@ export const NAME = mk.name;
 export const ROOT_CLASS = mk.newClassName("Root");
 export const PORT_CLASS = mk.newClassName("Port");
 
-export const HTML = `
+export const ROOT_HTML = `
 <header class="${ROOT_CLASS} ${PORT_CLASS}" draggable="false"></header>
 `;
 
