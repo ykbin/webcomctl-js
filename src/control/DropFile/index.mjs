@@ -1,5 +1,5 @@
 import { BaseControl } from "webnetq-js";
-import { NAME, ROOT_HTML, ROOT_CLASS, CSS } from 'module-loader!./template.mjs';
+import { NAME, ROOT_HTML, ROOT_CLASS, SHOW_CLASS, CSS } from 'module-loader!./template.mjs';
 
 export { NAME, ROOT_CLASS, ROOT_HTML };
 export const template = {
@@ -16,7 +16,7 @@ export default class UIDropFileControl extends BaseControl {
   _visible;
 
   _init() {
-    this._visible = this.element.classList.contains(CLASS.SHOW);
+    this._visible = this.element.classList.contains(SHOW_CLASS);
   }
 
   get visible() {
@@ -25,7 +25,7 @@ export default class UIDropFileControl extends BaseControl {
 
   set visible(value) {
     if (value != this._visible) {
-      this.element.classList.toggle(CLASS.SHOW, value);
+      this.element.classList.toggle(SHOW_CLASS, value);
       this._visible = value;
     }
   }
