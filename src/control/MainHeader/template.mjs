@@ -1,22 +1,21 @@
-import { representClassNames } from '../../lib/CSSHelper.mjs';
+import ControlMaker from '../../lib/ControlMaker.mjs';
 
 import { DARKMODE_SELECTOR_VALUE } from '../../lib/DarkMode.mjs';
+import { COMMON_MOBILE_DEVICE_WIDTH } from '../../lib/WickedTheme.mjs';
 
-export const NAME = 'MainHeader';
+const mk = new ControlMaker('MainHeader', import.meta.url);
+export const NAME = mk.name;
 
-export const CLASS = representClassNames({
-  ROOT: "uic-mhdr-root",
-  PORT: "uic-mhdr-port",
-});
+export const ROOT_CLASS = mk.newClassName("Root");
+export const PORT_CLASS = mk.newClassName("Port");
 
 export const HTML = `
-<header class="${CLASS.ROOT} ${CLASS.PORT}" draggable="false"></header>
+<header class="${ROOT_CLASS} ${PORT_CLASS}" draggable="false"></header>
 `;
 
 export const CSS = `
 :root
 {
-  /*light*/
   --uic-mhdr-bg: #f9f9f9;
   --uic-mhdr-bor: #c2c2c2;
   --uic-mhdr-bs1: rgba(0,0,0,0.13);
@@ -31,7 +30,7 @@ ${DARKMODE_SELECTOR_VALUE}
   --uic-mhdr-bs2: rgb(23 23 26 / 60%);
 }
 
-.${CLASS.ROOT}
+.${ROOT_CLASS}
 {
   position: relative;
   display: flex;
@@ -47,9 +46,9 @@ ${DARKMODE_SELECTOR_VALUE}
   flex-shrink: 0;
 }
 
-@media (device-width < 550px)
+@media (device-width < ${COMMON_MOBILE_DEVICE_WIDTH})
 {
-  .${CLASS.ROOT}
+  .${ROOT_CLASS}
   {
     height: 130px;
   }
