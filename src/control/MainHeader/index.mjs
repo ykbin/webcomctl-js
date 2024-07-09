@@ -3,7 +3,7 @@ import { NAME, ROOT_CLASS, PORT_CLASS, ROOT_HTML, CSS } from 'module-loader!./te
 
 export { NAME, ROOT_CLASS, PORT_CLASS, ROOT_HTML };
 export const template = {
-  NAME, HTML: ROOT_CLASS, CSS,
+  NAME, HTML: ROOT_HTML, CSS,
 };
 
 export default class UIHdrHomeButtonControl extends BaseControl {
