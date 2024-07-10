@@ -28,5 +28,4 @@ export const CSS = `
     display: none;
   }
 }
-}
 `;
