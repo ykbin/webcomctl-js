@@ -15,6 +15,17 @@ export const CSS = `
 {
   display: flex;
   align-items: center;
+  width: 100%;
   height: 100%;
+  container-name: function;
+  container-type: inline-size;
+}
+
+@container function (width < 240px)
+{
+  .${ROOT_CLASS} > div
+  {
+    display: none;
+  }
 }
 `;
