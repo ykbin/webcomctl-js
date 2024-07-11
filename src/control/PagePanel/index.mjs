@@ -1,15 +1,16 @@
 import { BaseControl, NQDOM } from 'webnetq-js';
-import { NAME, HTML, MENU_ITEM_HTML, PSNT_ITEM_HTML, CLASS, CSS } from 'module-loader!./template.mjs';
+import { NAME, ROOT_HTML, MENU_ITEM_HTML, PSNT_ITEM_HTML, ROOT_CLASS, CODETYPE_CLASS, DOWNLOAD_CLASS, MENULIST_CLASS, PSNTLIST_CLASS, CTSHOW_CLASS, PSNTACTV_CLASS, MENUTEXT_CLASS, PSNTTEXT_CLASS, CSS } from 'module-loader!./template.mjs';
 
+export { NAME, ROOT_CLASS, ROOT_HTML };
 export const template = {
-  NAME, HTML, CLASS, CSS,
+  NAME, HTML: ROOT_HTML, CSS,
 };
 
 export default class UIPagePanelControl extends BaseControl {
   static get template() { return {
     name: NAME,
-    rootHTML: HTML,
-    rootClass:  CLASS.ROOT,
+    rootHTML: ROOT_HTML,
+    rootClass: ROOT_CLASS,
   } }
 
   _codetypeVisibleChanged;
@@ -25,14 +26,14 @@ export default class UIPagePanelControl extends BaseControl {
     this._snap = { url: null, blob: null };
 
     this._codetypeIsShow = false;
-    this._codetypeElm = NQDOM.getElementByClassName(this.element, CLASS.CODETYPE);
+    this._codetypeElm = NQDOM.getElementByClassName(this.element, CODETYPE_CLASS);
     if (this._codetypeElm) {
       this._codetypeElm.addEventListener('click', e => this._onCodetypeClick(e));
     }
 
-    this._downloadElm = NQDOM.getElementByClassName(this.element, CLASS.DOWNLOAD);
-    this._menulistElm = NQDOM.getElementByClassName(this.element, CLASS.MENULIST);
-    this._psntlistElm = NQDOM.getElementByClassName(this.element, CLASS.PSNTLIST);
+    this._downloadElm = NQDOM.getElementByClassName(this.element, DOWNLOAD_CLASS);
+    this._menulistElm = NQDOM.getElementByClassName(this.element, MENULIST_CLASS);
+    this._psntlistElm = NQDOM.getElementByClassName(this.element, PSNTLIST_CLASS);
 
     this._codetypeVisibleChanged = false;
     window.addEventListener('click', e => this._onWindowClick(e));
@@ -60,13 +61,13 @@ export default class UIPagePanelControl extends BaseControl {
 
   showCodeTypes() {
     if (this._codetypeElm)
-      this._codetypeElm.classList.add(CLASS.CTSHOW);
+      this._codetypeElm.classList.add(CTSHOW_CLASS);
     this._codetypeIsShow = true;
   }
 
   hideCodeTypes() {
     if (this._codetypeElm)
-      this._codetypeElm.classList.remove(CLASS.CTSHOW);
+      this._codetypeElm.classList.remove(CTSHOW_CLASS);
     this._codetypeIsShow = false;
   }
 
@@ -97,7 +98,7 @@ export default class UIPagePanelControl extends BaseControl {
   addMenuItem(params) {
     if (this._menulistElm) {
       const rootElm = NQDOM.createElement(MENU_ITEM_HTML);
-      const textElm = NQDOM.getElementByClassName(rootElm, CLASS.MENUTEXT);
+      const textElm = NQDOM.getElementByClassName(rootElm, MENUTEXT_CLASS);
       if (params.text) {
         textElm && (textElm.textContent = params.text);
       }
@@ -111,13 +112,13 @@ export default class UIPagePanelControl extends BaseControl {
   addPresentationItem(params) {
     if (this._psntlistElm) {
       const rootElm = NQDOM.createElement(PSNT_ITEM_HTML);
-      const textElm = NQDOM.getElementByClassName(rootElm, CLASS.PSNTTEXT);
+      const textElm = NQDOM.getElementByClassName(rootElm, PSNTTEXT_CLASS);
       params.text && textElm && (textElm.textContent = params.text);
 
       const doActiveItem = () => {
         for (let i = 0; i < this._psntlistElm.children.length; i++)
-          this._psntlistElm.children[i].classList.remove(CLASS.PSNTACTV);
-        rootElm.classList.add(CLASS.PSNTACTV);
+          this._psntlistElm.children[i].classList.remove(PSNTACTV_CLASS);
+        rootElm.classList.add(PSNTACTV_CLASS);
       };
 
       params.active && doActiveItem();
