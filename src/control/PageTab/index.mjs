@@ -1,8 +1,9 @@
 import { BaseControl, Random, NQDOM } from 'webnetq-js';
-import { NAME, HTML, ITEM_HTML, CLASS, CSS } from 'module-loader!./template.mjs';
+import { NAME, ROOT_HTML, ITEM_HTML, ROOT_CLASS, FOCUS_CLASS, CLOSE_CLASS, TEXT_CLASS, LOADING_CLASS, CSS } from 'module-loader!./template.mjs';
 
+export { NAME, ROOT_CLASS, ROOT_HTML };
 export const template = {
-  NAME, HTML, CLASS, CSS,
+  NAME, HTML: ROOT_HTML, CSS,
 };
 
 class TabItemControl {
@@ -31,13 +32,13 @@ class TabItemControl {
 
     this._name = name;
     
-    this._focusElm = NQDOM.getElementByClassName(this._element, CLASS.FOCUS);
+    this._focusElm = NQDOM.getElementByClassName(this._element, FOCUS_CLASS);
     this._focusElm && this._focusElm.addEventListener('click', event => this.onOnFocusClick(event), false);
 
-    this._closeElm = NQDOM.getElementByClassName(this._element, CLASS.CLOSE);
+    this._closeElm = NQDOM.getElementByClassName(this._element, CLOSE_CLASS);
     this._closeElm && this._closeElm.addEventListener('click', event => this.onOnCloseClick(event));
 
-    this._textElm = NQDOM.getElementByClassName(this._element, CLASS.TEXT);
+    this._textElm = NQDOM.getElementByClassName(this._element, TEXT_CLASS);
 
     this._onclose = onclose;
     this._onfocus = onfocus;
@@ -62,7 +63,7 @@ class TabItemControl {
   set focus(value) {
     if (this._focus != value) {
       if (this._focusElm) {
-        const cname = CLASS.FOCUS;
+        const cname = FOCUS_CLASS;
         const clist = this._focusElm.classList;
         value ? clist.add(cname) : clist.remove(cname);
       }
@@ -74,7 +75,7 @@ class TabItemControl {
   set loading(value) {
     if (this._loading != value) {
       if (this._focusElm) {
-        const cname = CLASS.LOADING;
+        const cname = LOADING_CLASS;
         const clist = this._focusElm.classList;
         value ? clist.add(cname) : clist.remove(cname);
       }
@@ -129,8 +130,8 @@ const EMPTY_EVENT = 'empty';
 export default class UIPageTabControl extends BaseControl {
   static get template() { return {
     name: NAME,
-    rootHTML: HTML,
-    rootClass:  CLASS.ROOT,
+    rootHTML: ROOT_HTML,
+    rootClass: ROOT_CLASS,
   } }
 
   _items = [];

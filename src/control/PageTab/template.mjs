@@ -1,5 +1,4 @@
-import { representClassNames } from '../../lib/CSSHelper.mjs';
-import { loadSvgAsCssUrlAsync } from '../../lib/SVG.mjs';
+import ControlMaker from '../../lib/ControlMaker.mjs';
 
 import { DARKMODE_SELECTOR_VALUE } from '../../lib/DarkMode.mjs';
 import { COMMON_MOBILE_DEVICE_WIDTH } from '../../lib/WickedTheme.mjs';
@@ -9,33 +8,31 @@ import { UIC_BLUE_SQUARE_BORDER } from '../../lib/WickedTheme.mjs';
 import { UIC_START_BACKGROUND_COLOR } from '../../lib/WickedTheme.mjs';
 import { UIC_START_BACKGROUND_COLOR_DARK } from '../../lib/WickedTheme.mjs';
 
-export const NAME = 'PageTab';
+const mk = new ControlMaker('PageTab', import.meta.url);
+export const NAME = mk.name;
 
-const CLOSE_IMG = await loadSvgAsCssUrlAsync(import.meta.url, './X.svg');
+export const ROOT_CLASS = mk.newClassName("Root");
+export const TEXT_CLASS = mk.newClassName("Text");
+export const CLOSE_CLASS = mk.newClassName("Close");
+export const FOCUS_CLASS = mk.newClassName("Focus");
+export const LOADING_CLASS = mk.newClassName("Loading");
+export const DISABLE_CLASS = mk.newClassName("Disable");
+
+const CLOSE_IMG = await mk.loadSvgAsCssUrl('./X.svg');
+
 const TAB_WIDTH = '150px';
+const HOVX_CLR = '#80808042';
+const DEFBRD_CLR = 'transparent';
+const FOCBRD_CLR = '#03a8e2f0';
 
-export const CLASS = representClassNames({
-  ROOT: "uic-pagtab-root",
-  TEXT: "uic-pagtab-name",
-  CLOSE: "uic-pagtab-close",
-  FOCUS: "uic-pagtab-active",
-  LOADING: "uic-pagtab-loading",
-});
-
-const VAR = {
-  HOVXCLR: '#80808042',
-  DEFBRDCLR: 'transparent',
-  FOCBRDCLR: '#03a8e2f0',
-}
-
-export const HTML = `
-<s class="${CLASS.ROOT}"></s>
+export const ROOT_HTML = `
+<s class="${ROOT_CLASS}"></s>
 `;
 
 export const ITEM_HTML = `
-<div class="${CLASS.FOCUS}" draggable="true">
-  <span class="${CLASS.TEXT}"></span>
-  <div class="${CLASS.CLOSE}" title="Close"><div></div></div>
+<div class="${FOCUS_CLASS}" draggable="true">
+  <span class="${TEXT_CLASS}"></span>
+  <div class="${CLOSE_CLASS}" title="Close"><div></div></div>
 </div>
 `;
 
@@ -62,7 +59,7 @@ ${DARKMODE_SELECTOR_VALUE}
   --uic-pagtab-loading: #172031;
 }
 
-.${CLASS.ROOT}
+.${ROOT_CLASS}
 {
   display: flex;
   width: 100%;
@@ -78,12 +75,12 @@ ${DARKMODE_SELECTOR_VALUE}
   box-sizing: border-box;
 }
 
-.${CLASS.ROOT} > *
+.${ROOT_CLASS} > *
 {
   box-sizing: border-box;
 }
 
-.${CLASS.ROOT} > div
+.${ROOT_CLASS} > div
 {
   position: relative;
   display: grid;
@@ -97,33 +94,33 @@ ${DARKMODE_SELECTOR_VALUE}
   color: var(--uic-pagtab-col);
   border-top-width: 1px;
   border-style: solid;
-  border-color: ${VAR.DEFBRDCLR};
+  border-color: ${DEFBRD_CLR};
   border-bottom: none;
   border-left: none;
   border-right: none;
 }
 
-div.${CLASS.FOCUS},
-.${CLASS.ROOT} > div.${CLASS.FOCUS}:hover
+div.${FOCUS_CLASS},
+.${ROOT_CLASS} > div.${FOCUS_CLASS}:hover
 {
   color: var(--uic-pagtab-act-col);
-  border-color: ${VAR.FOCBRDCLR};
+  border-color: ${FOCBRD_CLR};
   background-color: var(--uic-pagtab-act-bg);
   transition: border-color 0.350s;
   z-index: 2;
 }
 
-.${CLASS.ROOT} > div:hover
+.${ROOT_CLASS} > div:hover
 {
   background-color: var(--uic-pagtab-hov);
 }
 
-.${CLASS.ROOT} > div + div
+.${ROOT_CLASS} > div + div
 {
   margin-left: 1px;
 }
 
-.${CLASS.ROOT} > div > span
+.${ROOT_CLASS} > div > span
 {
   height: initial;
   overflow: hidden;
@@ -131,7 +128,7 @@ div.${CLASS.FOCUS},
   white-space: nowrap;
 }
 
-.${CLASS.ROOT} > div > div
+.${ROOT_CLASS} > div > div
 {
   display: flex;
   justify-content: center;
@@ -142,7 +139,7 @@ div.${CLASS.FOCUS},
   margin: 0 4px;
 }
 
-.${CLASS.ROOT} > div > div > div
+.${ROOT_CLASS} > div > div > div
 {
   width: 10px;
   height: 10px;
@@ -152,12 +149,12 @@ div.${CLASS.FOCUS},
   background-repeat: no-repeat;
 }
 
-.${CLASS.ROOT} > div.${CLASS.LOADING}
+.${ROOT_CLASS} > div.${LOADING_CLASS}
 {
   background-color: var(--uic-pagtab-loading);
 }
 
-.${CLASS.DISABLE}
+.${DISABLE_CLASS}
 {
   display: block;
   height: inherit;
@@ -167,26 +164,26 @@ div.${CLASS.FOCUS},
   box-sizing: border-box;
 }
 
-.${CLASS.ROOT} > div > div:hover
+.${ROOT_CLASS} > div > div:hover
 {
-  background-color: ${VAR.HOVXCLR};
+  background-color: ${HOVX_CLR};
 }
 
 @media (device-width < ${COMMON_MOBILE_DEVICE_WIDTH})
 {
-  .${CLASS.ROOT}
+  .${ROOT_CLASS}
   {
     height: 50px;
     font-size: 28px;
   }
 
-  .${CLASS.ROOT} > div
+  .${ROOT_CLASS} > div
   {
     grid-template-columns: 1fr 40px;
     min-width: 230px;
   }
 
-  .${CLASS.ROOT} > div > div > div
+  .${ROOT_CLASS} > div > div > div
   {
     width: 20px;
     height: 20px;
