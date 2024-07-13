@@ -1,8 +1,9 @@
 import { NQDOM, BaseControl, Random } from 'webnetq-js';
-import { NAME, HTML, CLASS, CSS } from 'module-loader!./template.mjs';
+import { NAME, ROOT_HTML, ROOT_CLASS, DHIDE_CLASS, DSHOW_CLASS, FDROP_CLASS, CSS } from 'module-loader!./template.mjs';
 
+export { NAME, ROOT_CLASS, ROOT_HTML };
 export const template = {
-  NAME, HTML, CLASS, CSS,
+  NAME, HTML: ROOT_HTML, CSS,
 };
 
 const UPLOAD_EVENT = 'upload';
@@ -10,23 +11,23 @@ const UPLOAD_EVENT = 'upload';
 export default class UIStartupUploadControl extends BaseControl {
   static get template() { return {
     name: NAME,
-    rootHTML: HTML,
-    rootClass:  CLASS.ROOT,
+    rootHTML: ROOT_HTML,
+    rootClass: ROOT_CLASS,
   } }
 
   _fdropElm;
   _inputElm;
 
   _init() {
-    this._fdropElm = NQDOM.getElementByClassName(this.element, CLASS.FDROP);
+    this._fdropElm = NQDOM.getElementByClassName(this.element, FDROP_CLASS);
     if (this._fdropElm) {
       const showDropArea = () => {
-        this._fdropElm.classList.remove(CLASS.DHIDE);
-        this._fdropElm.classList.add(CLASS.DSHOW);
+        this._fdropElm.classList.remove(DHIDE_CLASS);
+        this._fdropElm.classList.add(DSHOW_CLASS);
       };
       const hideDropArea = () => {
-        this._fdropElm.classList.remove(CLASS.DSHOW);
-        this._fdropElm.classList.add(CLASS.DHIDE);
+        this._fdropElm.classList.remove(DSHOW_CLASS);
+        this._fdropElm.classList.add(DHIDE_CLASS);
       };
       let count = 0;
       this._fdropElm.addEventListener("dragenter", (event) => {

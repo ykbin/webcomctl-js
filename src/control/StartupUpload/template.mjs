@@ -1,28 +1,26 @@
-import { representClassNames } from '../../lib/CSSHelper.mjs';
-import { loadSvgAsCssUrlAsync } from '../../lib/SVG.mjs';
+import ControlMaker from '../../lib/ControlMaker.mjs';
 
 import { DARKMODE_SELECTOR_VALUE } from '../../lib/DarkMode.mjs';
 import { UIC_START_BACKGROUND_COLOR } from '../../lib/WickedTheme.mjs';
 import { UIC_START_BACKGROUND_COLOR_DARK } from '../../lib/WickedTheme.mjs';
 
-const UPLOAD1_IMG = await loadSvgAsCssUrlAsync(import.meta.url, './up-file.svg');
-const UPLOAD2_IMG = await loadSvgAsCssUrlAsync(import.meta.url, './up-file-hover.svg');
-const SEARCH_IMG = await loadSvgAsCssUrlAsync(import.meta.url, './search.svg');
+const mk = new ControlMaker('StartupUpload', import.meta.url);
+export const NAME = mk.name;
 
-export const NAME = 'StartupUpload';
+export const ROOT_CLASS = mk.newClassName("Root");
+export const FDROP_CLASS = mk.newClassName("FDrop");
+export const DSHOW_CLASS = mk.newClassName("DShow");
+export const DHIDE_CLASS = mk.newClassName("DHide");
 
-export const CLASS = representClassNames({
-  ROOT: 'uic-strupl-root',
-  FDROP: 'uic-strupl-fdrop',
-  DSHOW: 'uic-strupl-dshow',
-  DHIDE: 'uic-strupl-dhide',
-});
+const UPLOAD1_IMG = await mk.loadSvgAsCssUrl('./up-file.svg');
+const UPLOAD2_IMG = await mk.loadSvgAsCssUrl('./up-file-hover.svg');
+const SEARCH_IMG = await mk.loadSvgAsCssUrl('./search.svg');
 
-export const HTML = `
-<div class="${CLASS.ROOT}" align="center">
+export const ROOT_HTML = `
+<div class="${ROOT_CLASS}" align="center">
   <h2>Drop your file</h2>
   <h2>Upload your file</h2>
-  <div class="${CLASS.FDROP} ${CLASS.DHIDE}">
+  <div class="${FDROP_CLASS} ${DHIDE_CLASS}">
     <div>
       <div class="uic-strupl-fdimg"></div>
       <div class="uic-strupl-fdbtn">
@@ -59,17 +57,17 @@ ${DARKMODE_SELECTOR_VALUE}
 }
 
 .uic-strupl-fdbtn label > input,
-.${CLASS.ROOT} > h2 + h2
+.${ROOT_CLASS} > h2 + h2
 {
   display: none;
 }
 
-.${CLASS.ROOT} *
+.${ROOT_CLASS} *
 {
   box-sizing: border-box;
 }
 
-.${CLASS.FDROP}
+.${FDROP_CLASS}
 {
   align-self: center;
   width: 100%;
@@ -79,7 +77,7 @@ ${DARKMODE_SELECTOR_VALUE}
   user-select: none;
 }
 
-.${CLASS.ROOT}
+.${ROOT_CLASS}
 {
   display: flex;
   justify-content: center;
@@ -93,7 +91,7 @@ ${DARKMODE_SELECTOR_VALUE}
   box-sizing: border-box;
 }
 
-.${CLASS.ROOT} > h2 
+.${ROOT_CLASS} > h2 
 {
   margin: 0px 0px 20px 0px;
   font-size: 2.81em;
@@ -103,12 +101,12 @@ ${DARKMODE_SELECTOR_VALUE}
   font-family: math;
 }
 
-.${CLASS.DHIDE}
+.${DHIDE_CLASS}
 {
   background-color: var(--uic-strupl-dhide-bg);
 }
 
-.${CLASS.DSHOW} .uic-strupl-fdimg
+.${DSHOW_CLASS} .uic-strupl-fdimg
 {
   width: 100%;
   transform: scale(1.1);
@@ -117,7 +115,7 @@ ${DARKMODE_SELECTOR_VALUE}
   transition-delay: 0.2s;
 }
 
-.${CLASS.FDROP} > div
+.${FDROP_CLASS} > div
 {
   height: 100%;
   border-image-source: repeating-linear-gradient(45deg, var(--uic-strupl-fdrop-borImg) 0% 2%, var(--uic-strupl-fdrop-borImg2) 2% 4%,var(--uic-strupl-fdrop-borImg) 4% 6%,var(--uic-strupl-fdrop-borImg2) 6% 8%);
@@ -137,7 +135,7 @@ ${DARKMODE_SELECTOR_VALUE}
   border: 15px solid var(--uic-strupl-bor);
 }
 
-.${CLASS.DSHOW} > div > div + div
+.${DSHOW_CLASS} > div > div + div
 {
   opacity: 0.3;
 }
@@ -188,18 +186,18 @@ ${DARKMODE_SELECTOR_VALUE}
 
 @media (device-width <= 550px)
 {
-  .${CLASS.ROOT}
+  .${ROOT_CLASS}
   {
     display: flex;
     justify-content: center;
     min-height: 680px;
   }
-  .${CLASS.FDROP}
+  .${FDROP_CLASS}
   {
     height: 100%;
     max-height: 1100px;
   }
-  .${CLASS.FDROP} > div
+  .${FDROP_CLASS} > div
   {
     display: flex;
     flex-direction: column;
@@ -217,12 +215,12 @@ ${DARKMODE_SELECTOR_VALUE}
 
 @media (device-width <= 300px)
 {
-  .${CLASS.FDROP}
+  .${FDROP_CLASS}
   {
     width: auto;
     height: auto;
   }
-  .${CLASS.FDROP} > div
+  .${FDROP_CLASS} > div
   {
     width: auto;
   }
@@ -244,11 +242,11 @@ ${DARKMODE_SELECTOR_VALUE}
     width: 80px;
     height: 80px;
   }
-  .${CLASS.ROOT} > h2
+  .${ROOT_CLASS} > h2
   {
     display: none;
   }
-  .${CLASS.ROOT} > h2 + h2
+  .${ROOT_CLASS} > h2 + h2
   {
     display: block;
     font-size: 4.81em;
