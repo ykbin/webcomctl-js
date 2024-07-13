@@ -1,23 +1,22 @@
-import { representClassNames } from '../../lib/CSSHelper.mjs';
+import ControlMaker from '../../lib/ControlMaker.mjs';
 
 import { DARKMODE_SELECTOR_VALUE } from '../../lib/DarkMode.mjs';
 
-export const NAME = 'SplitterBlock';
+const mk = new ControlMaker('SplitterBlock', import.meta.url);
+export const NAME = mk.name;
 
-export const CLASS = representClassNames({
-  ROOT:   'uic-spltblk-root',
-  PORT:   'uic-spltblk-port',
-  NONE:   'uic-spltblk-none',
-  RIGHT:  'uic-spltblk-right',
-  LEFT:   'uic-spltblk-left',
-  TOP:    'uic-spltblk-top',
-  BOTTOM: 'uic-spltblk-bottom',
-});
+export const ROOT_CLASS = mk.newClassName("Root");
+export const PORT_CLASS = mk.newClassName("Port");
+export const NONE_CLASS = mk.newClassName("None");
+export const RIGHT_CLASS = mk.newClassName("Right");
+export const LEFT_CLASS = mk.newClassName("Left");
+export const TOP_CLASS = mk.newClassName("Top");
+export const BOTTOM_CLASS = mk.newClassName("Bottom");
 
-export const HTML = `
-<div class="${CLASS.ROOT}">
-  <div class="${CLASS.PORT}"></div>
-  <span class="${CLASS.NONE}"><div></div></span>
+export const ROOT_HTML = `
+<div class="${ROOT_CLASS}">
+  <div class="${PORT_CLASS}"></div>
+  <span class="${NONE_CLASS}"><div></div></span>
 </div>
 `;
 
@@ -32,7 +31,7 @@ ${DARKMODE_SELECTOR_VALUE}
   --uic-spltblk-bor: #3c3c3c;
 }
 
-.${CLASS.ROOT}
+.${ROOT_CLASS}
 {
   position: relative;
   width: 100%;
@@ -41,7 +40,7 @@ ${DARKMODE_SELECTOR_VALUE}
   border-right: 1px solid var(--uic-spltblk-borde);
 }
 
-.${CLASS.PORT}
+.${PORT_CLASS}
 {
   display: flex;
   flex-direction: column;
@@ -49,7 +48,7 @@ ${DARKMODE_SELECTOR_VALUE}
   width: 100%;
 }
 
-.${CLASS.ROOT} > span
+.${ROOT_CLASS} > span
 {
   position: absolute;
   display: flex;
@@ -58,34 +57,34 @@ ${DARKMODE_SELECTOR_VALUE}
   z-index: 11;
 }
 
-.${CLASS.ROOT} > span > div
+.${ROOT_CLASS} > span > div
 {
   flex-shrink: 0;
   background-color: blue;
 }
 
-.${CLASS.BOTTOM} > div,
-.${CLASS.TOP} > div
+.${BOTTOM_CLASS} > div,
+.${TOP_CLASS} > div
 {
   width: 100%;
   height: 5px;
 }
 
-.${CLASS.TOP}
+.${TOP_CLASS}
 {
   top: 0;
   width: 100%;
   height: 0;
 }
 
-.${CLASS.BOTTOM}
+.${BOTTOM_CLASS}
 {
   bottom: 0;
   width: 100%;
   height: 0;
 }
 
-.${CLASS.RIGHT}
+.${RIGHT_CLASS}
 {
   top: 0;
   right: 0;
@@ -93,14 +92,14 @@ ${DARKMODE_SELECTOR_VALUE}
   height: 100%;
 }
 
-.${CLASS.LEFT} > div,
-.${CLASS.RIGHT} > div
+.${LEFT_CLASS} > div,
+.${RIGHT_CLASS} > div
 {
   width: 5px;
   height: 100%;
 }
 
-.${CLASS.LEFT}
+.${LEFT_CLASS}
 {
   top: 0;
   left: 0;

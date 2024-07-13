@@ -1,8 +1,9 @@
 import { BaseControl, NQDOM } from 'webnetq-js';
-import { NAME, HTML, CLASS, CSS } from 'module-loader!./template.mjs';
+import { NAME, ROOT_HTML, ROOT_CLASS, PORT_CLASS, NONE_CLASS, TOP_CLASS, RIGHT_CLASS, BOTTOM_CLASS, LEFT_CLASS, CSS } from 'module-loader!./template.mjs';
 
+export { NAME, ROOT_CLASS, PORT_CLASS, ROOT_HTML };
 export const template = {
-  NAME, HTML, CLASS, CSS,
+  NAME, HTML: ROOT_HTML, CSS,
 };
 
 const SplitterType = {
@@ -31,29 +32,29 @@ SplitterType.toString = (sideType) => {
 SplitterType.toClassName = (sideType) => {
   switch (sideType) {
   case SplitterType.NONE:
-    return CLASS.NONE;
+    return NONE_CLASS;
   case SplitterType.TOP:
-    return CLASS.TOP;
+    return TOP_CLASS;
   case SplitterType.RIGHT:
-    return CLASS.RIGHT;
+    return RIGHT_CLASS;
   case SplitterType.BOTTOM:
-    return CLASS.BOTTOM;
+    return BOTTOM_CLASS;
   case SplitterType.LEFT:
-    return CLASS.LEFT;
+    return LEFT_CLASS;
   }
 };
 
 export default class UISplitterBlockControl extends BaseControl {
   static get template() { return {
     name: NAME,
-    rootHTML: HTML,
-    rootClass:  CLASS.ROOT,
-    portClass:  CLASS.PORT,
+    rootHTML: ROOT_HTML,
+    rootClass: ROOT_CLASS,
+    portClass: PORT_CLASS,
   } }
 
   _splitterType = SplitterType.NONE;
 
   _init() {
-    this._splitterElm = NQDOM.getElementByClassName(this.element, CLASS.NONE);
+    this._splitterElm = NQDOM.getElementByClassName(this.element, NONE_CLASS);
   }
 };
