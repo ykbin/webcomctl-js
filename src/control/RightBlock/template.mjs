@@ -11,7 +11,7 @@ export const ROOT_HTML = `
 `;
 
 export const CSS = `
-.${CLASS.ROOT}
+.${ROOT_CLASS}
 {
   display: flex;
   justify-content: flex-end;
