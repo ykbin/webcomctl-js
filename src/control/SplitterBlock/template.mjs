@@ -3,7 +3,6 @@ import ControlMaker from '../../lib/ControlMaker.mjs';
 import { DARKMODE_SELECTOR_VALUE } from '../../lib/DarkMode.mjs';
 
 const mk = new ControlMaker('SplitterBlock', import.meta.url);
-export const NAME = mk.name;
 
 export const ROOT_CLASS = mk.newClassName("Root");
 export const PORT_CLASS = mk.newClassName("Port");

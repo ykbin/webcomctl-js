@@ -4,7 +4,6 @@ import { UIC_BLUE_SQUARE_BACKGROUND } from '../../lib/WickedTheme.mjs';
 import { UIC_BLUE_SQUARE_BORDER } from '../../lib/WickedTheme.mjs';
 
 const mk = new ControlMaker('DropBlock', import.meta.url);
-export const NAME = mk.name;
 
 export const ROOT_CLASS = mk.newClassName("Root");
 export const PORT_CLASS = mk.newClassName("Port");

@@ -1,20 +1,9 @@
 import { BaseControl } from 'webnetq-js';
-import { NAME, ROOT_HTML, ROOT_CLASS, NUMBERS_CLASS, CONTENT_CLASS, OFFSET_CLASS, CSS } from 'module-loader!./template.mjs';
-
-export { NAME, ROOT_CLASS, ROOT_HTML, CSS };
-export const template = {
-  NAME, HTML: ROOT_HTML, CSS,
-};
+import { NUMBERS_CLASS, CONTENT_CLASS, OFFSET_CLASS } from 'module-loader!./template.mjs';
 
 const toHexString = (value, numPad) => value.toString(16).toUpperCase().padStart(numPad, '0');
 
 export default class UITextContentControl extends BaseControl {
-  static get template() { return {
-    name: NAME,
-    rootHTML: ROOT_HTML,
-    rootClass: ROOT_CLASS,
-  } }
-
   _init() {
     this._numbersElm = null;
     this._contentElm = null;

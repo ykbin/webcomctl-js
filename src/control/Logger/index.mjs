@@ -1,10 +1,5 @@
 import { NQDOM, BaseControl } from "webnetq-js";
-import { NAME, ROOT_HTML, ITEM_HTML, ROOT_CLASS, TITLE_CLASS, TEXT_CLASS, CLOSE_CLASS, INFO_CLASS, WARNING_CLASS, SUCCESS_CLASS, ERROR_CLASS, CSS } from 'module-loader!./template.mjs';
-
-export { NAME, ROOT_CLASS, ROOT_HTML, CSS };
-export const template = {
-  NAME, HTML: ROOT_HTML, CSS,
-};
+import { ITEM_HTML, TITLE_CLASS, TEXT_CLASS, CLOSE_CLASS, INFO_CLASS, WARNING_CLASS, SUCCESS_CLASS, ERROR_CLASS } from 'module-loader!./template.mjs';
 
 const createMessage = (level, title, text) => {
   const element = NQDOM.createElement(ITEM_HTML);
@@ -18,12 +13,6 @@ const createMessage = (level, title, text) => {
 };
 
 export default class UILoggerControl extends BaseControl {
-  static get template() { return {
-    name: NAME,
-    rootHTML: ROOT_HTML,
-    rootClass: ROOT_CLASS,
-  } }
-
   _init() {
     const log = (title, level, logFunc, ...args) => {
       logFunc.apply(null, [ title, "-", ...args ]);

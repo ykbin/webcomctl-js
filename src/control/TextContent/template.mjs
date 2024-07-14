@@ -6,7 +6,6 @@ import { UIC_CONTENT_BACKGROUND_COLOR } from '../../lib/WickedTheme.mjs';
 import { UIC_CONTENT_BACKGROUND_COLOR_DARK } from '../../lib/WickedTheme.mjs';
 
 const mk = new ControlMaker('TextContent', import.meta.url);
-export const NAME = mk.name;
 
 export const ROOT_CLASS = mk.newClassName("Root");
 export const NUMBERS_CLASS = mk.newClassName("Numbers");

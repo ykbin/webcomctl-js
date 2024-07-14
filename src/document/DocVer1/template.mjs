@@ -3,8 +3,6 @@ import { DARKMODE_ATTR_NAME, DARKMODE_DEFAULT_VALUE } from '../../lib/DarkMode.m
 
 const mk = new ControlMaker('DocVer1', import.meta.url);
 
-export const NAME = mk.name;
-
 export const ROOT_CLASS = mk.newClassName("Root");
 export const PORT_CLASS = ROOT_CLASS;
 

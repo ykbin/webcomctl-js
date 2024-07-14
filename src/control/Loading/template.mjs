@@ -3,7 +3,6 @@ import ControlMaker from '../../lib/ControlMaker.mjs';
 import { COMMON_MOBILE_DEVICE_WIDTH } from '../../lib/WickedTheme.mjs';
 
 const mk = new ControlMaker('Loading', import.meta.url);
-export const NAME = mk.name;
 
 export const ROOT_CLASS = mk.newClassName("Root");
 export const SHOW_CLASS = mk.newClassName("Show");

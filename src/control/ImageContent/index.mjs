@@ -1,18 +1,7 @@
 import { BaseControl, Util } from 'webnetq-js';
-import { NAME, ROOT_HTML, ROOT_CLASS, CONTENT_CLASS, CSS } from 'module-loader!./template.mjs';
-
-export { NAME, ROOT_CLASS, ROOT_HTML, CSS };
-export const template = {
-  NAME, HTML: ROOT_HTML, CSS,
-};
+import { CONTENT_CLASS } from 'module-loader!./template.mjs';
 
 export default class UIImageContentControl extends BaseControl {
-  static get template() { return {
-    name: NAME,
-    rootHTML: ROOT_HTML,
-    rootClass: ROOT_CLASS,
-  } }
-
   _urlRef = null;
   _imageElm;
 

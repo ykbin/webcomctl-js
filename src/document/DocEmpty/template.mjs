@@ -2,8 +2,6 @@ import ControlMaker from '../../lib/ControlMaker.mjs';
 
 const maker = new ControlMaker('DocEmpty', import.meta.url);
 
-export const NAME = maker.name;
-
 export const ROOT_CLASS = maker.newClassName("Root");
 export const PORT_CLASS = ROOT_CLASS;
 
