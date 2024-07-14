@@ -1,18 +1,17 @@
-import { representClassNames } from '../../lib/CSSHelper.mjs';
+import ControlMaker from '../../lib/ControlMaker.mjs';
 
 import { DARKMODE_SELECTOR_VALUE } from '../../lib/DarkMode.mjs';
 import { UIC_START_BACKGROUND_COLOR } from '../../lib/WickedTheme.mjs';
 import { UIC_START_BACKGROUND_COLOR_DARK } from '../../lib/WickedTheme.mjs';
 
-export const NAME = 'ViewBlock';
+const mk = new ControlMaker('ViewBlock', import.meta.url);
+export const NAME = mk.name;
 
-export const CLASS = representClassNames({
-  ROOT: "uic-viewblk-root",
-  PORT: "uic-viewblk-port",
-});
+export const ROOT_CLASS = mk.newClassName("Root");
+export const PORT_CLASS = mk.newClassName("Port");
 
-export const HTML = `
-<div class="${CLASS.ROOT} ${CLASS.PORT}"></div>
+export const ROOT_HTML = `
+<div class="${ROOT_CLASS} ${PORT_CLASS}"></div>
 `;
 
 export const CSS = `
@@ -26,7 +25,7 @@ ${DARKMODE_SELECTOR_VALUE}
   --uic-viewblk-rootbg: ${UIC_START_BACKGROUND_COLOR_DARK};
 }
 
-.${CLASS.ROOT}
+.${ROOT_CLASS}
 {
   display: flex;
   height: 100%;
@@ -36,20 +35,20 @@ ${DARKMODE_SELECTOR_VALUE}
   box-sizing: border-box;
 }
 
-.${CLASS.ROOT} > div 
+.${ROOT_CLASS} > div 
 {
   min-width: 285px;
   flex-shrink: 0;
   contain: paint;
 }
 
-.${CLASS.ROOT} > div:last-child
+.${ROOT_CLASS} > div:last-child
 {
   flex-grow: 1;
   flex-shrink: initial;
 }
 
-.${CLASS.ROOT} > div:last-child > div
+.${ROOT_CLASS} > div:last-child > div
 {
   border: none;
   border-right: none;
