@@ -1,11 +1,18 @@
-import { representClassNames } from '../../lib/CSSHelper.mjs';
+import ControlMaker from '../../lib/ControlMaker.mjs';
 
 import { DARKMODE_SELECTOR_VALUE } from '../../lib/DarkMode.mjs';
 import { COMMON_MOBILE_DEVICE_WIDTH } from '../../lib/WickedTheme.mjs';
 import { UIC_CONTENT_BACKGROUND_COLOR } from '../../lib/WickedTheme.mjs';
 import { UIC_CONTENT_BACKGROUND_COLOR_DARK } from '../../lib/WickedTheme.mjs';
 
-export const NAME = 'TextContent';
+const mk = new ControlMaker('TextContent', import.meta.url);
+export const NAME = mk.name;
+
+export const ROOT_CLASS = mk.newClassName("Root");
+export const NUMBERS_CLASS = mk.newClassName("Numbers");
+export const CONTENT_CLASS = mk.newClassName("Content");
+export const OFFSET_CLASS = mk.newClassName("Offset");
+export const BLUE_CLASS = mk.newClassName("Blue");
 
 const BLUE_COLOR = '#0000ff';
 const OFFSET_COLOR = 'rgb(197, 6, 11)';
@@ -18,18 +25,10 @@ const NUMBER_BORDER_COLOR2 = '#252525';
 const NUMBER_BACKGROUND_COLOR1 = '#fafafa';
 const NUMBER_BACKGROUND_COLOR2 = '#19191d';
 
-export const CLASS = representClassNames({
-  ROOT: "uic-txtcnt-root",
-  NUMBERS: "uic-txtcnt-numbers",
-  CONTENT: "uic-txtcnt-content",
-  OFFSET: "uic-txtcnt-offset",
-  BLUE: "uic-txtcnt-blue",
-});
-
-export const HTML = `
-<div class="${CLASS.ROOT}">
-  <ul class="${CLASS.NUMBERS}"></ul>
-  <div class="${CLASS.CONTENT}"></div>
+export const ROOT_HTML = `
+<div class="${ROOT_CLASS}">
+  <ul class="${NUMBERS_CLASS}"></ul>
+  <div class="${CONTENT_CLASS}"></div>
 </div>
 `;
 
@@ -50,38 +49,38 @@ ${DARKMODE_SELECTOR_VALUE}
   --uic-txtcnt-num-col: ${NUMBER_BACKGROUND_COLOR2};
 }
 
-.${CLASS.ROOT} ul
+.${ROOT_CLASS} ul
 {
   margin: 0px;
   padding: 0px;
   list-style-type: none;
 }
 
-.${CLASS.ROOT} > div::-webkit-scrollbar
+.${ROOT_CLASS} > div::-webkit-scrollbar
 {
   width: 10px;
   height: 10px;
 }
 
-.${CLASS.ROOT} > div::-webkit-scrollbar-thumb
+.${ROOT_CLASS} > div::-webkit-scrollbar-thumb
 {
   background-color: ${SCROLLBAR_THUMB_COLOR};
   border-radius: 10px;
 }
 
-.${CLASS.ROOT} > div::-webkit-scrollbar-track,
-.${CLASS.ROOT} > div::-webkit-scrollbar-corner
+.${ROOT_CLASS} > div::-webkit-scrollbar-track,
+.${ROOT_CLASS} > div::-webkit-scrollbar-corner
 {
   background-color: ${SCROLLBAR_TRACK_COLOR};
 }
 
-.${CLASS.ROOT} > ul::-webkit-scrollbar
+.${ROOT_CLASS} > ul::-webkit-scrollbar
 {
   width: 0;
   height: 10px;
 }
 
-.${CLASS.ROOT}
+.${ROOT_CLASS}
 {
   display: flex;
   height: 100%;
@@ -95,12 +94,12 @@ ${DARKMODE_SELECTOR_VALUE}
   box-sizing: border-box;
 }
 
-.${CLASS.ROOT} > *
+.${ROOT_CLASS} > *
 {
   box-sizing: border-box;
 }
 
-.${CLASS.ROOT} > div
+.${ROOT_CLASS} > div
 {
   height: auto;
   width: 100%;
@@ -109,12 +108,12 @@ ${DARKMODE_SELECTOR_VALUE}
   overflow-x: scroll;
 }
 
-.${CLASS.ROOT} > div > span
+.${ROOT_CLASS} > div > span
 {
   white-space: pre;
 }
 
-.${CLASS.ROOT} > ul
+.${ROOT_CLASS} > ul
 {
   height: auto;
   min-width: 55px;
@@ -128,36 +127,36 @@ ${DARKMODE_SELECTOR_VALUE}
   flex-shrink: 0;
 }
 
-.${CLASS.ROOT} > ul:empty
+.${ROOT_CLASS} > ul:empty
 {
   display: none;
 }
 
-.${CLASS.ROOT} > ul > li,
-.${CLASS.ROOT} > div > span
+.${ROOT_CLASS} > ul > li,
+.${ROOT_CLASS} > div > span
 {
   display: block;
   height: 20px;
 }
 
-.${CLASS.BLUE}
+.${BLUE_CLASS}
 {
   color: ${BLUE_COLOR};
 }
 
-.${CLASS.OFFSET}
+.${OFFSET_CLASS}
 {
   color: ${OFFSET_COLOR};
 }
 
 @media (device-width < ${COMMON_MOBILE_DEVICE_WIDTH})
 {
-  .${CLASS.ROOT}
+  .${ROOT_CLASS}
   {
     font-size: 25px;
   }
-  .${CLASS.ROOT} > ul > li, 
-  .${CLASS.ROOT} > div > span
+  .${ROOT_CLASS} > ul > li, 
+  .${ROOT_CLASS} > div > span
   {
     height: 30px;
   }

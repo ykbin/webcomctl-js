@@ -1,8 +1,9 @@
 import { BaseControl } from 'webnetq-js';
-import { NAME, HTML, CLASS, CSS } from 'module-loader!./template.mjs';
+import { NAME, ROOT_HTML, ROOT_CLASS, NUMBERS_CLASS, CONTENT_CLASS, OFFSET_CLASS, CSS } from 'module-loader!./template.mjs';
 
+export { NAME, ROOT_CLASS, ROOT_HTML };
 export const template = {
-  NAME, HTML, CLASS, CSS,
+  NAME, HTML: ROOT_HTML, CSS,
 };
 
 const toHexString = (value, numPad) => value.toString(16).toUpperCase().padStart(numPad, '0');
@@ -10,9 +11,8 @@ const toHexString = (value, numPad) => value.toString(16).toUpperCase().padStart
 export default class UITextContentControl extends BaseControl {
   static get template() { return {
     name: NAME,
-    rootHTML: HTML,
-    rootClass:  CLASS.ROOT,
-    portClass:  CLASS.PORT,
+    rootHTML: ROOT_HTML,
+    rootClass: ROOT_CLASS,
   } }
 
   _init() {
@@ -21,9 +21,9 @@ export default class UITextContentControl extends BaseControl {
     this._content = null;
     this._scrollTop = null;
 
-    this._numbersElm = this.element.querySelector("." + CLASS.NUMBERS);
+    this._numbersElm = this.element.querySelector("." + NUMBERS_CLASS);
     this._numbersElm && (this._numbersElm.addEventListener("scroll", (e) => this._onScroll(e)));
-    this._contentElm = this.element.querySelector("." + CLASS.CONTENT);
+    this._contentElm = this.element.querySelector("." + CONTENT_CLASS);
     this._contentElm && (this._contentElm.addEventListener("scroll", (e) => this._onScroll(e)));
   }
 
@@ -85,7 +85,7 @@ export default class UITextContentControl extends BaseControl {
         for (let i = 0; i < bytes.length;) {
           const sz = Math.min(bytes.length - i, 16);
           let list = [{
-            type: CLASS.OFFSET,
+            type: OFFSET_CLASS,
             text: toHexString(i, 8),
           }];
           for (let k = 0; k < sz; k++) {
