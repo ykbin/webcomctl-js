@@ -7,8 +7,9 @@
   "exports": {
     ".": "./src/index.mjs",
     "./document/*": "./src/document/*/index.mjs",
+    "./document/*/template": "./src/document/*/template.mjs",
     "./control/*": "./src/control/*/index.mjs",
-    "./template/*": "./src/control/*/template.mjs"
+    "./control/*/template": "./src/control/*/template.mjs"
   },
   "repository": {
     "type": "git",
