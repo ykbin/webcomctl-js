@@ -1,7 +1,6 @@
 import ControlMaker from '../../lib/ControlMaker.mjs';
 
 const mk = new ControlMaker('SwitchBlock', import.meta.url);
-export const NAME = mk.name;
 
 export const ROOT_CLASS = mk.newClassName("Root");
 export const PORT_CLASS = mk.newClassName("Port");
