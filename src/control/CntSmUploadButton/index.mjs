@@ -1,4 +1,5 @@
 import { BaseControl, Random } from 'webnetq-js';
+export * as TEMPLATE from './template.mjs';
 import { NAME, ROOT_HTML, ROOT_CLASS, LOAD_CLASS, CSS } from 'module-loader!./template.mjs';
 
 export { NAME, ROOT_CLASS, ROOT_HTML, CSS };
