@@ -1,33 +1,32 @@
-import { representClassNames } from '../../lib/CSSHelper.mjs';
+import ControlMaker from '../../lib/ControlMaker.mjs';
 
-export const NAME = 'SwitchBlock';
+const mk = new ControlMaker('SwitchBlock', import.meta.url);
+export const NAME = mk.name;
 
-export const CLASS = representClassNames({
-  ROOT: "uic-swtch-root",
-  PORT: "uic-swtch-port",
-  NTH1: 'uic-swtch-nth1',
-  NTH2: 'uic-swtch-nth2',
-});
+export const ROOT_CLASS = mk.newClassName("Root");
+export const PORT_CLASS = mk.newClassName("Port");
+export const NTH1_CLASS = mk.newClassName("Nth1");
+export const NTH2_CLASS = mk.newClassName("Nth2");
 
-export const HTML = `
-<div class="${CLASS.ROOT} ${CLASS.PORT} ${CLASS.NTH1}"></div>
+export const ROOT_HTML = `
+<div class="${ROOT_CLASS} ${PORT_CLASS} ${NTH1_CLASS}"></div>
 `;
 
 export const CSS = `
-.${CLASS.ROOT}
+.${ROOT_CLASS}
 {
   flex-grow: 1;
   height: 100%;
   width: inherit;
 }
 
-.${CLASS.NTH1} > *:nth-child(2),
-.${CLASS.NTH2} > *:first-child
+.${NTH1_CLASS} > *:nth-child(2),
+.${NTH2_CLASS} > *:first-child
 {
   display: none;
 }
 
-.${CLASS.NTH2}
+.${NTH2_CLASS}
 {
   overflow-x: hidden;
 }

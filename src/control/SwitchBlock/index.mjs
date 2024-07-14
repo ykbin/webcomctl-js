@@ -1,16 +1,17 @@
 import { BaseControl } from 'webnetq-js';
-import { NAME, HTML, CLASS, CSS } from 'module-loader!./template.mjs';
+import { NAME, ROOT_HTML, ROOT_CLASS, PORT_CLASS, CSS } from 'module-loader!./template.mjs';
 
+export { NAME, ROOT_CLASS, PORT_CLASS, ROOT_HTML };
 export const template = {
-  NAME, HTML, CLASS, CSS,
+  NAME, HTML: ROOT_HTML, CSS,
 };
 
 export default class UISwitchBlockControl  extends BaseControl {
   static get template() { return {
     name: NAME,
-    rootHTML: HTML,
-    rootClass:  CLASS.ROOT,
-    portClass:  CLASS.PORT,
+    rootHTML: ROOT_HTML,
+    rootClass: ROOT_CLASS,
+    portClass: PORT_CLASS,
   } }
 
   _isSecond = false;
