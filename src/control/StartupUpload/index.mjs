@@ -1,5 +1,4 @@
 import { NQDOM, BaseControl, Random } from 'webnetq-js';
-export * as TEMPLATE from './template.mjs';
 import { NAME, ROOT_HTML, ROOT_CLASS, DHIDE_CLASS, DSHOW_CLASS, FDROP_CLASS, CSS } from 'module-loader!./template.mjs';
 
 export { NAME, ROOT_CLASS, ROOT_HTML, CSS };

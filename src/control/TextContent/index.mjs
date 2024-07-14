@@ -1,5 +1,4 @@
 import { BaseControl } from 'webnetq-js';
-export * as TEMPLATE from './template.mjs';
 import { NAME, ROOT_HTML, ROOT_CLASS, NUMBERS_CLASS, CONTENT_CLASS, OFFSET_CLASS, CSS } from 'module-loader!./template.mjs';
 
 export { NAME, ROOT_CLASS, ROOT_HTML, CSS };

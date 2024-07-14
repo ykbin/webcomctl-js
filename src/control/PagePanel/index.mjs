@@ -1,5 +1,4 @@
 import { BaseControl, NQDOM } from 'webnetq-js';
-export * as TEMPLATE from './template.mjs';
 import { NAME, ROOT_HTML, MENU_ITEM_HTML, PSNT_ITEM_HTML, ROOT_CLASS, CODETYPE_CLASS, DOWNLOAD_CLASS, MENULIST_CLASS, PSNTLIST_CLASS, CTSHOW_CLASS, PSNTACTV_CLASS, MENUTEXT_CLASS, PSNTTEXT_CLASS, CSS } from 'module-loader!./template.mjs';
 
 export { NAME, ROOT_CLASS, ROOT_HTML, CSS };
