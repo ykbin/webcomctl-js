@@ -1,5 +1,5 @@
 import { BaseControl } from 'webnetq-js';
-import { NAME, ROOT_HTML, ROOT_CLASS, PORT_CLASS, CSS } from 'module-loader!./template.mjs';
+import { NAME, ROOT_HTML, ROOT_CLASS, PORT_CLASS, NTH2_CLASS, CSS } from 'module-loader!./template.mjs';
 
 export { NAME, ROOT_CLASS, PORT_CLASS, ROOT_HTML };
 export const template = {
@@ -18,16 +18,16 @@ export default class UISwitchBlockControl  extends BaseControl {
 
   showFirst() {
     if (this._isSecond) {
-      this.element.classList.add(CLASS.NTH1);
-      this.element.classList.remove(CLASS.NTH2);
+      this.element.classList.add(NTH1_CLASS);
+      this.element.classList.remove(NTH2_CLASS);
       this._isSecond = false;
     }
   }
 
   showSecond() {
     if (!this._isSecond) {
-      this.element.classList.add(CLASS.NTH2);
-      this.element.classList.remove(CLASS.NTH1);
+      this.element.classList.add(NTH2_CLASS);
+      this.element.classList.remove(NTH1_CLASS);
       this._isSecond = true;
     }
   }
