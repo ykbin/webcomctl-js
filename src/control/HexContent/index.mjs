@@ -1,7 +1,7 @@
 import { BaseControl, NQDOM, FileChunkLoader } from 'webnetq-js';
 import { NAME, ROOT_HTML, ROOT_CLASS, CONTENT_CLASS, OFSLIST_CLASS, BINLIST_CLASS, TXTLIST_CLASS, SCROLL_MAIN_CLASS, SCROLL_BAR_CLASS, SCROLL_THUMB_CLASS, CSS } from 'module-loader!./template.mjs';
 
-export { NAME, ROOT_CLASS, ROOT_HTML };
+export { NAME, ROOT_CLASS, ROOT_HTML, CSS };
 export const template = {
   NAME, HTML: ROOT_HTML, CSS,
 };

@@ -1,7 +1,7 @@
 import { BaseControl, NQDOM } from 'webnetq-js';
 import { NAME, ROOT_HTML, ITEM_HTML, ROOT_CLASS, TEXT_CLASS, LIST_CLASS, CSS } from 'module-loader!./template.mjs';
 
-export { NAME, ROOT_CLASS, ROOT_HTML };
+export { NAME, ROOT_CLASS, ROOT_HTML, CSS };
 export const template = {
   NAME, HTML: ROOT_HTML, CSS,
 };
