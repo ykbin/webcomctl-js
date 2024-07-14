@@ -17,9 +17,10 @@ export const PSNTLIST_CLASS = mk.newClassName("PrsnList");
 export const PSNTTEXT_CLASS = mk.newClassName("PrsnText");
 export const PSNTACTV_CLASS = mk.newClassName("PrsnActv");
 
+const DOWNLOAD_IMG = await mk.loadSvgAsCssUrl('./download.svg');
+
 const BS1_VAR = 'rgba(0,0,0,0.13)';
 const BS2_VAR = 'rgba(0,0,0,0.11)';
-const IMG_VAR = 'url(download.svg)';
 const CTSHOWBS_VAR = 'rgb(0 0 0 / 31%)';
 const PLIST_BTN_BOR_VAR = 'transparent';
 const PLIST_NOSEL_VAR = 'transparent';
@@ -219,7 +220,7 @@ ${DARKMODE_SELECTOR_VALUE}
   background-repeat: no-repeat;
   background-position: center;
   background-size: 23px;
-  background-image: ${IMG_VAR};
+  background-image: ${DOWNLOAD_IMG};
   background-color: var(--uic-pagpnl-col);
   flex-shrink: 0;
 }
