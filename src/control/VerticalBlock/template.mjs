@@ -1,18 +1,17 @@
-import { representClassNames } from '../../lib/CSSHelper.mjs';
+import ControlMaker from '../../lib/ControlMaker.mjs';
 
 import { DARKMODE_SELECTOR_VALUE } from '../../lib/DarkMode.mjs';
 import { UIC_START_BACKGROUND_COLOR } from '../../lib/WickedTheme.mjs';
 import { UIC_START_BACKGROUND_COLOR_DARK } from '../../lib/WickedTheme.mjs';
 
-export const NAME = 'VerticalBlock';
+const mk = new ControlMaker('VerticalBlock', import.meta.url);
+export const NAME = mk.name;
 
-export const CLASS = representClassNames({
-  ROOT: "uic-vrtblk-root",
-  PORT: "uic-vrtblk-port",
-});
+export const ROOT_CLASS = mk.newClassName("Root");
+export const PORT_CLASS = mk.newClassName("Port");
 
-export const HTML = `
-<div class="${CLASS.ROOT} ${CLASS.PORT}"></div>
+export const ROOT_HTML = `
+<div class="${ROOT_CLASS} ${PORT_CLASS}"></div>
 `;
 
 export const CSS = `
@@ -26,7 +25,7 @@ ${DARKMODE_SELECTOR_VALUE}
   --uic-vrtblk-rootbg: ${UIC_START_BACKGROUND_COLOR_DARK};
 }
 
-.${CLASS.ROOT}
+.${ROOT_CLASS}
 {
   display: flex;
   flex-direction: column;
