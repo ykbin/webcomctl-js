@@ -5,7 +5,6 @@ import { COMMON_MOBILE_DEVICE_WIDTH } from '../../lib/WickedTheme.mjs';
 import { TOOLBAR_FONT_FAMALY } from '../../lib/WickedTheme.mjs';
 
 const mk = new ControlMaker('PagePanel', import.meta.url);
-export const NAME = mk.name;
 
 export const ROOT_CLASS = mk.newClassName("Root");
 export const DOWNLOAD_CLASS = mk.newClassName("Download");

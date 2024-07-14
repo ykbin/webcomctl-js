@@ -1,10 +1,5 @@
 import { BaseControl, Random, NQDOM } from 'webnetq-js';
-import { NAME, ROOT_HTML, ITEM_HTML, ROOT_CLASS, FOCUS_CLASS, CLOSE_CLASS, TEXT_CLASS, LOADING_CLASS, CSS } from 'module-loader!./template.mjs';
-
-export { NAME, ROOT_CLASS, ROOT_HTML, CSS };
-export const template = {
-  NAME, HTML: ROOT_HTML, CSS,
-};
+import { ITEM_HTML, FOCUS_CLASS, CLOSE_CLASS, TEXT_CLASS, LOADING_CLASS } from 'module-loader!./template.mjs';
 
 class TabItemControl {
   _name;
@@ -128,12 +123,6 @@ class TabItemControl {
 const EMPTY_EVENT = 'empty';
 
 export default class UIPageTabControl extends BaseControl {
-  static get template() { return {
-    name: NAME,
-    rootHTML: ROOT_HTML,
-    rootClass: ROOT_CLASS,
-  } }
-
   _items = [];
   _focusIndex = 0;
   _focusHistory = [];

@@ -4,8 +4,6 @@ import { DARKMODE_SELECTOR_VALUE } from '../../lib/DarkMode.mjs';
 
 const mk = new ControlMaker('DebugPanel', import.meta.url);
 
-export const NAME = mk.name;
-
 export const ROOT_CLASS = mk.newClassName("Root");
 export const LIST_CLASS = mk.newClassName("List");
 export const TEXT_CLASS = mk.newClassName("Text");

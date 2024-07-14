@@ -1,10 +1,4 @@
 import { BaseControl, Setting } from 'webnetq-js';
-import { NAME, ROOT_HTML, ROOT_CLASS, CSS } from 'module-loader!./template.mjs';
-
-export { NAME, ROOT_CLASS, ROOT_HTML, CSS };
-export const template = {
-  NAME, HTML: ROOT_HTML, CSS,
-};
 
 const kDarkModeTip = "Toggle dark mode";
 const kLightModeTip = "Toggle light mode";
@@ -16,12 +10,6 @@ if (hasDocument && document.documentElement) {
 }
 
 export default class UIDMKikoBtnControl extends BaseControl {
-  static get template() { return {
-    name: NAME,
-    rootHTML: ROOT_HTML,
-    rootClass: ROOT_CLASS,
-  } }
-
   _init() {
     this.element.addEventListener("click", (event) => {
       const setting = Setting.getInstance();

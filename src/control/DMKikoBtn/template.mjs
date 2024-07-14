@@ -4,8 +4,6 @@ import { DARKMODE_SELECTOR_VALUE } from '../../lib/DarkMode.mjs';
 
 const mk = new ControlMaker('DMKikoBtn', import.meta.url);
 
-export const NAME = mk.name;
-
 const MOON_IMG = await mk.loadSvgAsCssUrl('./moon.svg');
 const SUN_IMG = await mk.loadSvgAsCssUrl('./sun.svg');
 

@@ -1,10 +1,5 @@
 import { BaseControl, NQDOM, FileChunkLoader } from 'webnetq-js';
-import { NAME, ROOT_HTML, ROOT_CLASS, CONTENT_CLASS, OFSLIST_CLASS, BINLIST_CLASS, TXTLIST_CLASS, SCROLL_MAIN_CLASS, SCROLL_BAR_CLASS, SCROLL_THUMB_CLASS, CSS } from 'module-loader!./template.mjs';
-
-export { NAME, ROOT_CLASS, ROOT_HTML, CSS };
-export const template = {
-  NAME, HTML: ROOT_HTML, CSS,
-};
+import { CONTENT_CLASS, OFSLIST_CLASS, BINLIST_CLASS, TXTLIST_CLASS, SCROLL_MAIN_CLASS, SCROLL_BAR_CLASS, SCROLL_THUMB_CLASS } from 'module-loader!./template.mjs';
 
 const kThumbSizeMin = 40;
 
@@ -174,12 +169,6 @@ function isElementVisible(element) {
 }
 
 export default class UIHexContentControl extends BaseControl {
-  static get template() { return {
-    name: NAME,
-    rootHTML: ROOT_HTML,
-    rootClass: ROOT_CLASS,
-  } }
-
   _scroll;
   _chunkLoader = null;
 

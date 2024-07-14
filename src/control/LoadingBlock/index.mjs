@@ -1,19 +1,7 @@
 import { BaseControl, NQDOM } from 'webnetq-js';
-import { NAME, ROOT_HTML, ROOT_CLASS, PORT_CLASS, UNLOAD_CLASS, CSS } from 'module-loader!./template.mjs';
-
-export { NAME, ROOT_CLASS, PORT_CLASS, ROOT_HTML, CSS };
-export const template = {
-  NAME, HTML: ROOT_HTML, CSS,
-};
+import { UNLOAD_CLASS } from 'module-loader!./template.mjs';
 
 export default class UILoadingBlockControl extends BaseControl {
-  static get template() { return {
-    name: NAME,
-    rootHTML: ROOT_HTML,
-    rootClass: ROOT_CLASS,
-    portClass: PORT_CLASS,
-  } }
-
   _isLoad = false;
   _loadElm;
 

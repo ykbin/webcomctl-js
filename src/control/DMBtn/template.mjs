@@ -6,8 +6,6 @@ import { HEADER_FONT_COLOR } from '../../lib/WickedTheme.mjs';
 
 const mk = new ControlMaker('DMBtn', import.meta.url);
 
-export const NAME = mk.name;
-
 export const ROOT_CLASS = mk.newClassName("Root");
 export const TOGGLE_CLASS = mk.newClassName("Toggle");
 

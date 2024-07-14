@@ -5,8 +5,6 @@ import { COMMON_MOBILE_DEVICE_WIDTH } from '../../lib/WickedTheme.mjs';
 
 const mk = new ControlMaker('CntButtBRed', import.meta.url);
 
-export const NAME = mk.name;
-
 const WATER_IMG = await mk.loadSvgAsCssUrl('./water.svg');
 
 export const ROOT_CLASS = mk.newClassName("Root");
