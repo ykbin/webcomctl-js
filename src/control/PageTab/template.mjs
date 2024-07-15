@@ -148,6 +148,7 @@ div.${FOCUS_CLASS},
   background-repeat: no-repeat;
 }
 
+div.${ROOT_CLASS} > div.${LOADING_CLASS}:hover,
 .${ROOT_CLASS} > div.${LOADING_CLASS}
 {
   background-color: var(--uic-pagtab-loading);
