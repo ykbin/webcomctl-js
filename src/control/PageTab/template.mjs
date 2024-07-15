@@ -15,7 +15,6 @@ export const TEXT_CLASS = mk.newClassName("Text");
 export const CLOSE_CLASS = mk.newClassName("Close");
 export const FOCUS_CLASS = mk.newClassName("Focus");
 export const LOADING_CLASS = mk.newClassName("Loading");
-export const DISABLE_CLASS = mk.newClassName("Disable");
 
 const CLOSE_IMG = await mk.loadSvgAsCssUrl('./X.svg');
 
@@ -148,20 +147,10 @@ div.${FOCUS_CLASS},
   background-repeat: no-repeat;
 }
 
-div.${ROOT_CLASS} > div.${LOADING_CLASS}:hover,
-.${ROOT_CLASS} > div.${LOADING_CLASS}
+.${ROOT_CLASS} > div.${LOADING_CLASS},
+.${ROOT_CLASS} > div.${LOADING_CLASS}:hover
 {
   background-color: var(--uic-pagtab-loading);
-}
-
-.${DISABLE_CLASS}
-{
-  display: block;
-  height: inherit;
-  width: inherit;
-  border: 1px solid ${UIC_BLUE_SQUARE_BORDER};
-  background-color: ${UIC_BLUE_SQUARE_BACKGROUND};
-  box-sizing: border-box;
 }
 
 .${ROOT_CLASS} > div > div:hover
