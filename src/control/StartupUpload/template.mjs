@@ -21,12 +21,12 @@ export const ROOT_HTML = `
   <h2>Upload your file</h2>
   <div class="${FDROP_CLASS} ${DHIDE_CLASS}">
     <div>
-      <div class="uic-strupl-fdimg"></div>
-      <div class="uic-strupl-fdbtn">
+      <div></div>
+      <span>
         <label class="notranslate" translate="no">
           <span></span>Upload
         </label>
-      </div>
+      </span>
     </div>
   </div>
 </div>
@@ -55,7 +55,7 @@ ${DARKMODE_SELECTOR_VALUE}
   --uic-strupl-dhide-bg: transparent;
 }
 
-.uic-strupl-fdbtn label > input,
+.${FDROP_CLASS} > div > span > label > input,
 .${ROOT_CLASS} > h2 + h2
 {
   display: none;
@@ -105,7 +105,7 @@ ${DARKMODE_SELECTOR_VALUE}
   background-color: var(--uic-strupl-dhide-bg);
 }
 
-.${DSHOW_CLASS} .uic-strupl-fdimg
+.${DSHOW_CLASS} > div > div
 {
   width: 100%;
   transform: scale(1.1);
@@ -124,7 +124,7 @@ ${DARKMODE_SELECTOR_VALUE}
   padding: 30px;
 }
 
-.uic-strupl-fdimg
+.${FDROP_CLASS} > div > div
 {
   height: 300px;
   background-repeat: no-repeat;
@@ -139,7 +139,7 @@ ${DARKMODE_SELECTOR_VALUE}
   opacity: 0.3;
 }
 
-.uic-strupl-fdbtn
+.${FDROP_CLASS} > div > span
 {
   display: flex;
   align-items: center;
@@ -150,7 +150,7 @@ ${DARKMODE_SELECTOR_VALUE}
   pointer-events: auto;
 }
 
-.uic-strupl-fdbtn > label
+.${FDROP_CLASS} > div > span > label
 {
   display: flex;
   align-items: center;
@@ -166,12 +166,12 @@ ${DARKMODE_SELECTOR_VALUE}
   flex-shrink: 0;
 }
 
-.uic-strupl-fdbtn > label:hover
+.${FDROP_CLASS} > div > span > label:hover
 {
   background-color: var(--uic-strupl-fdbtn-hov);
 }
 
-.uic-strupl-fdbtn > label > span
+.${FDROP_CLASS} > div > span > label > span
 {
   display: block;
   width: 40px;
@@ -202,11 +202,11 @@ ${DARKMODE_SELECTOR_VALUE}
     flex-direction: column;
     height: 100%;
   }
-  .uic-strupl-fdimg
+  .${FDROP_CLASS} > div > div
   {
     height: calc(100% - 75px);
   }
-  .uic-strupl-fdbtn
+  .${FDROP_CLASS} > div > span
   {
     height: auto;
   }
@@ -223,11 +223,11 @@ ${DARKMODE_SELECTOR_VALUE}
   {
     width: auto;
   }
-  .uic-strupl-fdimg
+  .${FDROP_CLASS} > div > div
   {
     display: none;
   }
-  .uic-strupl-fdimg + div
+  .${FDROP_CLASS} > div > div + div
   {
     display: block;
   }
