@@ -147,7 +147,7 @@ ${DARKMODE_SELECTOR_VALUE}
   flex-shrink: 0;
 }
 
-.${CODETYPE_CLASS} .${CODETYPE_CLASS},
+.${CODETYPE_CLASS} > span > ul,
 .${CODETYPE_CLASS}:has(.${MENULIST_CLASS}:empty),
 .${CODETYPE_CLASS}:has(.${MENULIST_CLASS}:empty) + s,
 .${ROOT_CLASS} > div > s:has(+ .${PSNTLIST_CLASS}:empty)
@@ -194,20 +194,20 @@ ${DARKMODE_SELECTOR_VALUE}
   width: 180px;
 }
 
-.${CTSHOW_CLASS} .${MENUSTYLE2_CLASS}
+.${MENUSTYLE2_CLASS}
 {
   display: block;
   width: auto;
 }
 
-.${CTSHOW_CLASS} .${MENUSTYLE3_CLASS}
+.${MENUSTYLE3_CLASS}
 {
   display: grid;
   grid-template-columns: auto auto;
   width: auto;
 }
 
-.${CTSHOW_CLASS} .${CODETYPE_CLASS}
+.${CTSHOW_CLASS} > span > ul
 {
   padding: 5px 0px;
   border-end-end-radius: 3px;
@@ -217,14 +217,14 @@ ${DARKMODE_SELECTOR_VALUE}
   z-index: 1;
 }
 
-.${CTSHOW_CLASS} .${CODETYPE_CLASS} > li
+.${CTSHOW_CLASS} > span > ul > li
 {
   width: initial;
   padding: 5px;
   white-space: nowrap;
 }
 
-.${CTSHOW_CLASS} .${CODETYPE_CLASS} > li > span
+.${CTSHOW_CLASS} > span > ul > li > span
 {
   display: block;
   height: inherit;
@@ -236,7 +236,7 @@ ${DARKMODE_SELECTOR_VALUE}
 
 .${CTSHOW_CLASS} > div,
 .${CODETYPE_CLASS} > div:hover,
-.${CTSHOW_CLASS} .${CODETYPE_CLASS} > li:hover > span,
+.${CTSHOW_CLASS} > span > ul > li:hover > span,
 .${PSNTLIST_CLASS} > div:hover
 {
   background-color: var(--uic-pagpnl-hov);
