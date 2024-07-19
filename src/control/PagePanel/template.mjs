@@ -188,19 +188,19 @@ ${DARKMODE_SELECTOR_VALUE}
   height: 0px;
 }
 
-.${MENUSTYLE1_CLASS}
+.${CTSHOW_CLASS} > span > .${MENUSTYLE1_CLASS}
 {
   display: block;
   width: 180px;
 }
 
-.${MENUSTYLE2_CLASS}
+.${CTSHOW_CLASS} > span > .${MENUSTYLE2_CLASS}
 {
   display: block;
   width: auto;
 }
 
-.${MENUSTYLE3_CLASS}
+.${CTSHOW_CLASS} > span > .${MENUSTYLE3_CLASS}
 {
   display: grid;
   grid-template-columns: auto auto;
