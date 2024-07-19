@@ -218,7 +218,7 @@ ${DARKMODE_SELECTOR_VALUE}
   border-left: 1px solid #8585857d;
 }
 
-.${MENUSTYLE3_CLASS} > li
+.${MENUSTYLE3_CLASS} > li > span
 {
   border-bottom: 1px solid #8585857d;
 }
