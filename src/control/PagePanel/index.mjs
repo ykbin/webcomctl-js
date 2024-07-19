@@ -3,7 +3,7 @@ import { MENU_ITEM_HTML, PSNT_ITEM_HTML, CODETYPE_CLASS, DOWNLOAD_CLASS, MENULIS
 
 function typeToStyleClass(type)
 {
-  switch (style) {
+  switch (type) {
     case 'ST1':
       return MENUSTYLE1_CLASS;
     case 'ST2':
