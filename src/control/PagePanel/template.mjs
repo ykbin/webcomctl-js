@@ -207,6 +207,12 @@ ${DARKMODE_SELECTOR_VALUE}
   width: auto;
 }
 
+.${CTSHOW_CLASS} .${MENUSTYLE2_CLASS} > li > span,
+.${CTSHOW_CLASS} .${MENUSTYLE3_CLASS} > li > span
+{
+  width: 55px;
+}
+
 .${MENUSTYLE3_CLASS} > li:nth-child(2n)
 {
   border-left: 1px solid #8585857d;
