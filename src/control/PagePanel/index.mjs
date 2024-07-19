@@ -103,6 +103,8 @@ export default class UIPagePanelControl extends BaseControl {
         menuListElm.appendChild(itemElm);
       }
     }
+
+    this._parentMenuElm.appendChild(menuRootElm);
   }
 
   addPresentationItem(params) {
