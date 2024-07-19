@@ -1,5 +1,4 @@
 import ControlMaker from '../../lib/ControlMaker.mjs';
-//temp comment
 
 import { DARKMODE_SELECTOR_VALUE } from '../../lib/DarkMode.mjs';
 import { COMMON_MOBILE_DEVICE_WIDTH } from '../../lib/WickedTheme.mjs';
