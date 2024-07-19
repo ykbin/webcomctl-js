@@ -81,6 +81,12 @@ ${DARKMODE_SELECTOR_VALUE}
   --uic-pagpnl-plist-hov: rgb(116 115 115);
 }
 
+.${PERENTMENU_CLASS}
+{
+  display: flex;
+  height: 100%;
+}
+
 .${ROOT_CLASS}
 {
   display: flex;
@@ -137,7 +143,7 @@ ${DARKMODE_SELECTOR_VALUE}
 {
   height: 100%;
   min-width: 55px;
-  margin-right: 3px;
+  /*margin-right: 3px;*/
   flex-shrink: 0;
 }
 
@@ -182,10 +188,24 @@ ${DARKMODE_SELECTOR_VALUE}
   height: 0px;
 }
 
+.${MENUSTYLE1_CLASS}
+{
+  width: 180px;
+}
+
+.${MENUSTYLE2_CLASS}
+{
+  width: auto;
+}
+
+.${MENUSTYLE3_CLASS}
+{
+  width: auto;
+}
+
 .${CTSHOW_CLASS} > span > ul
 {
   display: block;
-  width: 180px;
   padding: 5px 0px;
   border-end-end-radius: 3px;
   border-end-start-radius: 3px;
