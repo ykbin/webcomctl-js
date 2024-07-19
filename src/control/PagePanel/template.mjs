@@ -11,7 +11,10 @@ export const DOWNLOAD_CLASS = mk.newClassName("Download");
 export const CODETYPE_CLASS = mk.newClassName("CodeType");
 export const CTSHOW_CLASS = mk.newClassName("CtShow");
 export const PERENTMENU_CLASS = mk.newClassName("PerentMenu");
-export const CTYPELIST_CLASS = mk.newClassName("CTypeList");
+export const MENUNAME_CLASS = mk.newClassName("MenuName");
+export const MENUSTYLE1_CLASS = mk.newClassName("MenuStyle1");
+export const MENUSTYLE2_CLASS = mk.newClassName("MenuStyle2");
+export const MENUSTYLE3_CLASS = mk.newClassName("MenuStyle3");
 export const MENULIST_CLASS = mk.newClassName("MenuList");
 export const MENUTEXT_CLASS = mk.newClassName("MenuText");
 export const PSNTLIST_CLASS = mk.newClassName("PrsnList");
@@ -47,7 +50,7 @@ export const ROOT_HTML = `
           <div>PNG</div>
         </div>
         <span>
-          <ul class="${CTYPELIST_CLASS}"></ul>
+          <ul class="${MENULIST_CLASS} ${MENUSTYLE2_CLASS}"></ul>
         </span>
       </div>
   
@@ -58,6 +61,17 @@ export const ROOT_HTML = `
   </div>
   <a class="${DOWNLOAD_CLASS}"></a>
 </span>
+`;
+
+export const MENU_LIST_HTML = `
+<div class="${CODETYPE_CLASS}">
+  <div>
+    <div class="${MENUNAME_CLASS}"></div>
+  </div>
+  <span>
+    <ul class="${MENULIST_CLASS}"></ul>
+  </span>
+</div>
 `;
 
 export const MENU_ITEM_HTML = `
