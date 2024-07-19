@@ -212,6 +212,17 @@ ${DARKMODE_SELECTOR_VALUE}
   border-left: 1px solid #8585857d;
 }
 
+.${MENUSTYLE3_CLASS} > li
+{
+  border-bottom: 1px solid #8585857d;
+}
+
+.${MENUSTYLE3_CLASS} > li:nth-last-child(1) > span,
+.${MENUSTYLE3_CLASS} > li:nth-last-child(2) > span
+{
+  border-bottom: none;
+}
+
 .${CTSHOW_CLASS} .${MENULIST_CLASS}
 {
   padding: 5px 0px;
@@ -234,16 +245,9 @@ ${DARKMODE_SELECTOR_VALUE}
   display: block;
   height: inherit;
   padding: 5px 10px;
-  border-bottom: 1px solid #8585857d;
   border-radius: 2px;
   text-overflow: ellipsis;
   overflow: hidden;
-}
-
-.${MENULIST_CLASS} > li:nth-last-child(1) > span,
-.${MENULIST_CLASS} > li:nth-last-child(2) > span
-{
-  border-bottom: none;
 }
 
 .${CTSHOW_CLASS} > div,
