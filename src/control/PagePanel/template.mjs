@@ -11,6 +11,8 @@ export const ROOT_CLASS = mk.newClassName("Root");
 export const DOWNLOAD_CLASS = mk.newClassName("Download");
 export const CODETYPE_CLASS = mk.newClassName("CodeType");
 export const CTSHOW_CLASS = mk.newClassName("CtShow");
+export const PERENTMENU_CLASS = mk.newClassName("PerentMenu");
+export const CTYPELIST_CLASS = mk.newClassName("CTypeList");
 export const MENULIST_CLASS = mk.newClassName("MenuList");
 export const MENUTEXT_CLASS = mk.newClassName("MenuText");
 export const PSNTLIST_CLASS = mk.newClassName("PrsnList");
@@ -29,14 +31,29 @@ const PLIST_SEL_VAR = '#fd8c73';
 export const ROOT_HTML = `
 <span class="${ROOT_CLASS}" draggable="false">
   <div>
-    <div class="${CODETYPE_CLASS}">
-      <div>
-        <div>File</div>
+
+    <div class="${PERENTMENU_CLASS}">
+
+      <div class="${CODETYPE_CLASS}">
+        <div>
+          <div>File</div>
+        </div>
+        <span>
+          <ul class="${MENULIST_CLASS}"></ul>
+        </span>
       </div>
-      <span>
-        <ul class="${MENULIST_CLASS}"></ul>
-      </span>
+
+      <div class="${CODETYPE_CLASS}">
+        <div>
+          <div>PNG</div>
+        </div>
+        <span>
+          <ul class="${CTYPELIST_CLASS}"></ul>
+        </span>
+      </div>
+  
     </div>
+
     <s></s>
     <div class="${PSNTLIST_CLASS}"></div>
   </div>
