@@ -33,29 +33,7 @@ const PLIST_SEL_VAR = '#fd8c73';
 export const ROOT_HTML = `
 <span class="${ROOT_CLASS}" draggable="false">
   <div>
-
-    <div class="${PERENTMENU_CLASS}">
-
-      <div class="${CODETYPE_CLASS}">
-        <div>
-          <div>File</div>
-        </div>
-        <span>
-          <ul class="${MENULIST_CLASS}"></ul>
-        </span>
-      </div>
-
-      <div class="${CODETYPE_CLASS}">
-        <div>
-          <div>PNG</div>
-        </div>
-        <span>
-          <ul class="${MENULIST_CLASS} ${MENUSTYLE2_CLASS}"></ul>
-        </span>
-      </div>
-  
-    </div>
-
+    <div class="${PERENTMENU_CLASS}"></div>
     <s></s>
     <div class="${PSNTLIST_CLASS}"></div>
   </div>
