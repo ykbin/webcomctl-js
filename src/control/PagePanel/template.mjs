@@ -240,6 +240,17 @@ ${DARKMODE_SELECTOR_VALUE}
   overflow: hidden;
 }
 
+.${MENULIST_CLASS} > li > span:nth-last-child(2)
+{
+  border-bottom: none;
+}
+
+.${MENULIST_CLASS} > li > span:nth-last-child(1),
+.${MENULIST_CLASS} > li > span:nth-last-child(2)
+{
+  border-bottom: none;
+}
+
 .${CTSHOW_CLASS} > div,
 .${CODETYPE_CLASS} > div:hover,
 .${CTSHOW_CLASS} .${MENULIST_CLASS} > li:hover > span,
