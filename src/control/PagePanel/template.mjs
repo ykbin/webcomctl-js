@@ -207,6 +207,11 @@ ${DARKMODE_SELECTOR_VALUE}
   width: auto;
 }
 
+.${MENUSTYLE3_CLASS} > li:nth-child(2n)
+{
+  border-left: 1px solid #8585857d;
+}
+
 .${CTSHOW_CLASS} .${MENULIST_CLASS}
 {
   padding: 5px 0px;
@@ -229,6 +234,7 @@ ${DARKMODE_SELECTOR_VALUE}
   display: block;
   height: inherit;
   padding: 5px 10px;
+  border-bottom: 1px solid #8585857d;
   border-radius: 2px;
   text-overflow: ellipsis;
   overflow: hidden;
