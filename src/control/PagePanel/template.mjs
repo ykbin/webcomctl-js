@@ -145,6 +145,12 @@ ${DARKMODE_SELECTOR_VALUE}
   min-width: 55px;
   /*margin-right: 3px;*/
   flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+.${CODETYPE_CLASS} *
+{
+  box-sizing: border-box;
 }
 
 .${CODETYPE_CLASS} .${MENULIST_CLASS},
@@ -213,7 +219,7 @@ ${DARKMODE_SELECTOR_VALUE}
 .${CTSHOW_CLASS} .${MENUSTYLE3_CLASS}
 {
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: 60px 60px;
   width: auto;
 }
 
@@ -226,13 +232,13 @@ ${DARKMODE_SELECTOR_VALUE}
 .${CTSHOW_CLASS} .${MENUSTYLE2_CLASS} > li > span,
 .${CTSHOW_CLASS} .${MENUSTYLE3_CLASS} > li > span
 {
-  padding: 5px 10px 5px 10px;
+  padding: 5px 0px 5px 5px;
 }
 
 .${CTSHOW_CLASS} .${MENUSTYLE2_CLASS} > li > span,
 .${CTSHOW_CLASS} .${MENUSTYLE3_CLASS} > li > span
 {
-  width: 45px;
+  width: 50px;
 }
 
 .${MENUSTYLE3_CLASS} > li:nth-child(2n)
