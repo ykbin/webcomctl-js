@@ -232,7 +232,7 @@ ${DARKMODE_SELECTOR_VALUE}
 .${CTSHOW_CLASS} .${MENUSTYLE2_CLASS} > li > span,
 .${CTSHOW_CLASS} .${MENUSTYLE3_CLASS} > li > span
 {
-  width: 55px;
+  width: 45px;
 }
 
 .${MENUSTYLE3_CLASS} > li:nth-child(2n)
