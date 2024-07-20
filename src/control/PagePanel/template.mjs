@@ -194,6 +194,16 @@ ${DARKMODE_SELECTOR_VALUE}
   width: 180px;
 }
 
+.${CTSHOW_CLASS} .${MENUSTYLE1_CLASS} > li
+{
+  padding: 5px;
+}
+
+.${CTSHOW_CLASS} .${MENUSTYLE1_CLASS} > li > span
+{
+  padding: 5px 10px;
+}
+
 .${CTSHOW_CLASS} .${MENUSTYLE2_CLASS}
 {
   display: block;
@@ -205,6 +215,18 @@ ${DARKMODE_SELECTOR_VALUE}
   display: grid;
   grid-template-columns: auto auto;
   width: auto;
+}
+
+.${CTSHOW_CLASS} .${MENUSTYLE2_CLASS} > li,
+.${CTSHOW_CLASS} .${MENUSTYLE3_CLASS} > li
+{
+  padding: 5px 5px 0 5px;
+}
+
+.${CTSHOW_CLASS} .${MENUSTYLE2_CLASS} > li > span,
+.${CTSHOW_CLASS} .${MENUSTYLE3_CLASS} > li > span
+{
+  padding: 5px 10px 5px 10px;
 }
 
 .${CTSHOW_CLASS} .${MENUSTYLE2_CLASS} > li > span,
@@ -244,7 +266,6 @@ ${DARKMODE_SELECTOR_VALUE}
 .${CTSHOW_CLASS} .${MENULIST_CLASS} > li
 {
   width: initial;
-  padding: 5px;
   white-space: nowrap;
 }
 
@@ -252,7 +273,6 @@ ${DARKMODE_SELECTOR_VALUE}
 {
   display: block;
   height: inherit;
-  padding: 5px 10px;
   border-radius: 2px;
   text-overflow: ellipsis;
   overflow: hidden;
