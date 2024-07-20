@@ -224,7 +224,7 @@ ${DARKMODE_SELECTOR_VALUE}
   border-bottom: 1px solid #8585857d;
 }
 
-.${MENUSTYLE2_CLASS} > li:nth-last-child(1) > span
+.${MENUSTYLE2_CLASS} > li:nth-last-child(1) > span,
 .${MENUSTYLE3_CLASS} > li:nth-last-child(1) > span,
 .${MENUSTYLE3_CLASS} > li:nth-last-child(2) > span
 {
@@ -260,7 +260,7 @@ ${DARKMODE_SELECTOR_VALUE}
 
 .${CTSHOW_CLASS} > div,
 .${CODETYPE_CLASS} > div:hover,
-.${CTSHOW_CLASS} .${MENUSTYLE2_CLASS} > li:hover > span,
+.${CTSHOW_CLASS} .${MENUSTYLE1_CLASS} > li:hover > span,
 .${MENUSTYLE2_CLASS} > li:hover,
 .${MENUSTYLE3_CLASS} > li:hover,
 .${PSNTLIST_CLASS} > div:hover
