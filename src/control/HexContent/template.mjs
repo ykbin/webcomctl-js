@@ -126,7 +126,6 @@ ${DARKMODE_SELECTOR_VALUE}
   line-height: 20px;
   word-spacing: normal;
   font-size: 16px;
-  text-align: center;
   background-color: var(--uic-hex-bg);
   font-family: monospace;
   flex-shrink: 0;

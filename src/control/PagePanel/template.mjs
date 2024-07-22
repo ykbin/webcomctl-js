@@ -10,6 +10,11 @@ export const ROOT_CLASS = mk.newClassName("Root");
 export const DOWNLOAD_CLASS = mk.newClassName("Download");
 export const CODETYPE_CLASS = mk.newClassName("CodeType");
 export const CTSHOW_CLASS = mk.newClassName("CtShow");
+export const PERENTMENU_CLASS = mk.newClassName("PerentMenu");
+export const MENUNAME_CLASS = mk.newClassName("MenuName");
+export const MENUSTYLE1_CLASS = mk.newClassName("MenuStyle1");
+export const MENUSTYLE2_CLASS = mk.newClassName("MenuStyle2");
+export const MENUSTYLE3_CLASS = mk.newClassName("MenuStyle3");
 export const MENULIST_CLASS = mk.newClassName("MenuList");
 export const MENUTEXT_CLASS = mk.newClassName("MenuText");
 export const PSNTLIST_CLASS = mk.newClassName("PrsnList");
@@ -28,19 +33,23 @@ const PLIST_SEL_VAR = '#fd8c73';
 export const ROOT_HTML = `
 <span class="${ROOT_CLASS}" draggable="false">
   <div>
-    <div class="${CODETYPE_CLASS}">
-      <div>
-        <div>File</div>
-      </div>
-      <span>
-        <ul class="${MENULIST_CLASS}"></ul>
-      </span>
-    </div>
+    <div class="${PERENTMENU_CLASS}"></div>
     <s></s>
     <div class="${PSNTLIST_CLASS}"></div>
   </div>
   <a class="${DOWNLOAD_CLASS}"></a>
 </span>
+`;
+
+export const MENU_LIST_HTML = `
+<div class="${CODETYPE_CLASS}">
+  <div>
+    <div class="${MENUNAME_CLASS}"></div>
+  </div>
+  <span>
+    <ul class="${MENULIST_CLASS}"></ul>
+  </span>
+</div>
 `;
 
 export const MENU_ITEM_HTML = `
@@ -60,6 +69,7 @@ export const CSS = `
   --uic-pagpnl-ctype-col: #696969;
   --uic-pagpnl-plist-act: black;
   --uic-pagpnl-plist-hov: rgb(206 206 206);
+  --uic-pagpnl-mstyle23-bor: #a1a1a145;
 }
 
 ${DARKMODE_SELECTOR_VALUE}
@@ -70,6 +80,12 @@ ${DARKMODE_SELECTOR_VALUE}
   --uic-pagpnl-ctype-col: #a7a7a7;
   --uic-pagpnl-plist-act: #c8c8c8;
   --uic-pagpnl-plist-hov: rgb(116 115 115);
+}
+
+.${PERENTMENU_CLASS}
+{
+  display: flex;
+  height: 100%;
 }
 
 .${ROOT_CLASS}
@@ -128,11 +144,17 @@ ${DARKMODE_SELECTOR_VALUE}
 {
   height: 100%;
   min-width: 55px;
-  margin-right: 3px;
+  /*margin-right: 3px;*/
   flex-shrink: 0;
+  box-sizing: border-box;
 }
 
-.${CODETYPE_CLASS} > span > ul,
+.${CODETYPE_CLASS} *
+{
+  box-sizing: border-box;
+}
+
+.${CODETYPE_CLASS} .${MENULIST_CLASS},
 .${CODETYPE_CLASS}:has(.${MENULIST_CLASS}:empty),
 .${CODETYPE_CLASS}:has(.${MENULIST_CLASS}:empty) + s,
 .${ROOT_CLASS} > div > s:has(+ .${PSNTLIST_CLASS}:empty)
@@ -173,10 +195,74 @@ ${DARKMODE_SELECTOR_VALUE}
   height: 0px;
 }
 
-.${CTSHOW_CLASS} > span > ul
+.${CTSHOW_CLASS} .${MENUSTYLE1_CLASS}
 {
   display: block;
   width: 180px;
+}
+
+.${CTSHOW_CLASS} .${MENUSTYLE1_CLASS} > li
+{
+  padding: 5px;
+}
+
+.${CTSHOW_CLASS} .${MENUSTYLE1_CLASS} > li > span
+{
+  padding: 5px 10px;
+}
+
+.${CTSHOW_CLASS} .${MENUSTYLE2_CLASS}
+{
+  display: block;
+  width: auto;
+}
+
+.${CTSHOW_CLASS} .${MENUSTYLE3_CLASS}
+{
+  display: grid;
+  grid-template-columns: 60px 60px;
+  width: auto;
+}
+
+.${CTSHOW_CLASS} .${MENUSTYLE2_CLASS} > li,
+.${CTSHOW_CLASS} .${MENUSTYLE3_CLASS} > li
+{
+  padding: 5px 5px 0 5px;
+}
+
+.${CTSHOW_CLASS} .${MENUSTYLE2_CLASS} > li > span,
+.${CTSHOW_CLASS} .${MENUSTYLE3_CLASS} > li > span
+{
+  padding: 5px 0px 5px 8px;
+}
+
+.${CTSHOW_CLASS} .${MENUSTYLE2_CLASS} > li > span,
+.${CTSHOW_CLASS} .${MENUSTYLE3_CLASS} > li > span
+{
+  width: 50px;
+  font-size: 12px;
+}
+
+.${MENUSTYLE3_CLASS} > li:nth-child(2n)
+{
+  border-left: 1px solid var(--uic-pagpnl-mstyle23-bor);
+}
+
+.${MENUSTYLE2_CLASS} > li > span,
+.${MENUSTYLE3_CLASS} > li > span
+{
+  border-bottom: 1px solid var(--uic-pagpnl-mstyle23-bor);
+}
+
+.${MENUSTYLE2_CLASS} > li:nth-last-child(1) > span,
+.${MENUSTYLE3_CLASS} > li:nth-last-child(1) > span,
+.${MENUSTYLE3_CLASS} > li:nth-last-child(2) > span
+{
+  border-bottom: none;
+}
+
+.${CTSHOW_CLASS} .${MENULIST_CLASS}
+{
   padding: 5px 0px;
   border-end-end-radius: 3px;
   border-end-start-radius: 3px;
@@ -185,26 +271,25 @@ ${DARKMODE_SELECTOR_VALUE}
   z-index: 1;
 }
 
-.${CTSHOW_CLASS} > span > ul > li
+.${CTSHOW_CLASS} .${MENULIST_CLASS} > li
 {
   width: initial;
-  padding: 5px;
   white-space: nowrap;
 }
 
-.${CTSHOW_CLASS} > span > ul > li > span
+.${CTSHOW_CLASS} .${MENULIST_CLASS} > li > span
 {
   display: block;
   height: inherit;
-  padding: 5px 10px;
-  border-radius: 2px;
   text-overflow: ellipsis;
   overflow: hidden;
 }
 
 .${CTSHOW_CLASS} > div,
 .${CODETYPE_CLASS} > div:hover,
-.${CTSHOW_CLASS} > span > ul > li:hover > span,
+.${CTSHOW_CLASS} .${MENUSTYLE1_CLASS} > li:hover > span,
+.${MENUSTYLE2_CLASS} > li:hover,
+.${MENUSTYLE3_CLASS} > li:hover,
 .${PSNTLIST_CLASS} > div:hover
 {
   background-color: var(--uic-pagpnl-hov);
@@ -333,12 +418,12 @@ ${DARKMODE_SELECTOR_VALUE}
     border-end-start-radius: 5px;
   }
 
-  .${CTSHOW_CLASS} > span > ul > li
+  .${CTSHOW_CLASS} .${MENULIST_CLASS} > li
   {
     padding: 10px;
   }
 
-  .${CTSHOW_CLASS} > span > ul > li > span
+  .${CTSHOW_CLASS} .${MENULIST_CLASS} > li > span
   {
     padding: 10px 10px;
   }
