@@ -244,13 +244,13 @@ ${DARKMODE_SELECTOR_VALUE}
 
 .${MENUSTYLE3_CLASS} > li:nth-child(2n)
 {
-  border-left: 1px solid #8585857d;
+  border-left: 1px solid #a1a1a145;
 }
 
 .${MENUSTYLE2_CLASS} > li > span,
 .${MENUSTYLE3_CLASS} > li > span
 {
-  border-bottom: 1px solid #8585857d;
+  border-bottom: 1px solid #a1a1a145;
 }
 
 .${MENUSTYLE2_CLASS} > li:nth-last-child(1) > span,
@@ -280,7 +280,6 @@ ${DARKMODE_SELECTOR_VALUE}
 {
   display: block;
   height: inherit;
-  border-radius: 2px;
   text-overflow: ellipsis;
   overflow: hidden;
 }
