@@ -69,6 +69,7 @@ export const CSS = `
   --uic-pagpnl-ctype-col: #696969;
   --uic-pagpnl-plist-act: black;
   --uic-pagpnl-plist-hov: rgb(206 206 206);
+  --uic-pagpnl-mstyle23-bor: #a1a1a145;
 }
 
 ${DARKMODE_SELECTOR_VALUE}
@@ -232,7 +233,7 @@ ${DARKMODE_SELECTOR_VALUE}
 .${CTSHOW_CLASS} .${MENUSTYLE2_CLASS} > li > span,
 .${CTSHOW_CLASS} .${MENUSTYLE3_CLASS} > li > span
 {
-  padding: 5px 0px 5px 5px;
+  padding: 5px 0px 5px 8px;
 }
 
 .${CTSHOW_CLASS} .${MENUSTYLE2_CLASS} > li > span,
@@ -244,13 +245,13 @@ ${DARKMODE_SELECTOR_VALUE}
 
 .${MENUSTYLE3_CLASS} > li:nth-child(2n)
 {
-  border-left: 1px solid #a1a1a145;
+  border-left: 1px solid var(--uic-pagpnl-mstyle23-bor);
 }
 
 .${MENUSTYLE2_CLASS} > li > span,
 .${MENUSTYLE3_CLASS} > li > span
 {
-  border-bottom: 1px solid #a1a1a145;
+  border-bottom: 1px solid var(--uic-pagpnl-mstyle23-bor);
 }
 
 .${MENUSTYLE2_CLASS} > li:nth-last-child(1) > span,
