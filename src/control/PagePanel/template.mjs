@@ -37,7 +37,9 @@ export const ROOT_HTML = `
     <s></s>
     <div class="${PSNTLIST_CLASS}"></div>
   </div>
-  <a class="${DOWNLOAD_CLASS}"></a>
+  <span>
+    <a class="${DOWNLOAD_CLASS}"></a>
+  </span>
 </span>
 `;
 
@@ -134,7 +136,7 @@ ${DARKMODE_SELECTOR_VALUE}
 {
   display: flex;
   align-items: center;
-  width: calc(100% - 25px);
+  width: inherit;
   height: 100%;
   padding-left: 5px;
   color: var(--uic-pagpnl-ctype-col);
