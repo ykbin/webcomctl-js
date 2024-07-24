@@ -93,7 +93,6 @@ ${DARKMODE_SELECTOR_VALUE}
 .${ROOT_CLASS}
 {
   display: flex;
-  justify-content: space-between;
   width: 100%;
   height: 35px;
   padding-right: 5px;
@@ -140,6 +139,14 @@ ${DARKMODE_SELECTOR_VALUE}
   height: 100%;
   padding-left: 5px;
   color: var(--uic-pagpnl-ctype-col);
+}
+
+.${ROOT_CLASS} > span
+{
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  width: inherit;
 }
 
 .${CODETYPE_CLASS}
