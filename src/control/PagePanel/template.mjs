@@ -37,9 +37,9 @@ export const ROOT_HTML = `
     <s></s>
     <div class="${PSNTLIST_CLASS}"></div>
   </div>
-
+  <span>
     <a class="${DOWNLOAD_CLASS}"></a>
-  
+  </span>
 </span>
 `;
 
