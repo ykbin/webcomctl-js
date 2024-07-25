@@ -30,7 +30,8 @@ const CTSHOWBS_VAR = 'rgb(0 0 0 / 31%)';
 const PLIST_BTN_BOR_VAR = 'transparent';
 const PLIST_NOSEL_VAR = 'transparent';
 const PLIST_SEL_VAR = '#fd8c73';
-const PLIST_MARGIN = '3px';
+const MLIST_MARGIN = '3px';
+const PLIST_MARGIN = MLIST_MARGIN;
 
 export const ROOT_HTML = `
 <span class="${ROOT_CLASS}" draggable="false">
@@ -94,12 +95,12 @@ ${DARKMODE_SELECTOR_VALUE}
 
 .${PERENTMENU_CLASS} > div:first-child
 {
-  margin-left:  ${PLIST_MARGIN};
+  margin-left: ${MLIST_MARGIN};
 }
 
 .${PERENTMENU_CLASS} > div:last-child
 {
-  margin-right: ${PLIST_MARGIN};
+  margin-right: ${MLIST_MARGIN};
 }
 
 .${ROOT_CLASS}
@@ -373,7 +374,7 @@ ${DARKMODE_SELECTOR_VALUE}
   align-items: center;
   width: 55px;
   height: 100%;
-  margin: 0 3px;
+  margin: 0 ${PLIST_MARGIN};
   border: 1px solid ${PLIST_BTN_BOR_VAR};
   border-bottom: 3px solid ${PLIST_BTN_BOR_VAR};
   flex-shrink: 0;
