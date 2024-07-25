@@ -30,6 +30,7 @@ const CTSHOWBS_VAR = 'rgb(0 0 0 / 31%)';
 const PLIST_BTN_BOR_VAR = 'transparent';
 const PLIST_NOSEL_VAR = 'transparent';
 const PLIST_SEL_VAR = '#fd8c73';
+const PLIST_MARGIN = '3px';
 
 export const ROOT_HTML = `
 <span class="${ROOT_CLASS}" draggable="false">
@@ -91,6 +92,16 @@ ${DARKMODE_SELECTOR_VALUE}
   height: 100%;
 }
 
+.${PERENTMENU_CLASS} > div:first-child
+{
+  margin-left:  ${PLIST_MARGIN};
+}
+
+.${PERENTMENU_CLASS} > div:last-child
+{
+  margin-right: ${PLIST_MARGIN};
+}
+
 .${ROOT_CLASS}
 {
   display: flex;
@@ -138,7 +149,6 @@ ${DARKMODE_SELECTOR_VALUE}
   align-items: center;
   width: inherit;
   height: 100%;
-  padding-left: 5px;
   color: var(--uic-pagpnl-ctype-col);
 }
 
