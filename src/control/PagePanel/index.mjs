@@ -11,7 +11,7 @@ function typeToStyleClass(type)
   case 'ST3':
     return MENUSTYLE3_CLASS;
   case 'ST4':
-    return MENUSTYLE3_CLASS;
+    return MENUSTYLE4_CLASS;
   }
   return MENUSTYLE1_CLASS;
 }
