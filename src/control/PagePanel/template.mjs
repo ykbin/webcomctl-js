@@ -173,7 +173,7 @@ ${DARKMODE_SELECTOR_VALUE}
   display: none;
 }
 
-.${CODETYPE_CLASS}:has(.${MENUSTYLE4_CLASS})
+.${CODETYPE_CLASS}:has(span > ul.${MENUSTYLE4_CLASS})
 {
   display: block;
 }
