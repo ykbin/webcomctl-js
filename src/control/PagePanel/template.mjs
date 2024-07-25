@@ -163,9 +163,9 @@ ${DARKMODE_SELECTOR_VALUE}
   box-sizing: border-box;
 }
 
-/*.${CODETYPE_CLASS} .${MENULIST_CLASS},*/
-.${CODETYPE_CLASS}:has(.${MENULIST_CLASS}:empty),
-.${CODETYPE_CLASS}:has(.${MENULIST_CLASS}:empty) + s,
+.${CODETYPE_CLASS} .${MENULIST_CLASS},
+/*.${CODETYPE_CLASS}:has(.${MENULIST_CLASS}:empty),*/
+.${PERENTMENU_CLASS}:has(.${MENULIST_CLASS}:empty) + s,
 .${ROOT_CLASS} > div > s:has(+ .${PSNTLIST_CLASS}:empty)
 {
   display: none;
