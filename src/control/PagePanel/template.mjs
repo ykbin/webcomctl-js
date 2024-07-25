@@ -15,6 +15,7 @@ export const MENUNAME_CLASS = mk.newClassName("MenuName");
 export const MENUSTYLE1_CLASS = mk.newClassName("MenuStyle1");
 export const MENUSTYLE2_CLASS = mk.newClassName("MenuStyle2");
 export const MENUSTYLE3_CLASS = mk.newClassName("MenuStyle3");
+export const MENUSTYLE4_CLASS = mk.newClassName("MenuStyle4");
 export const MENULIST_CLASS = mk.newClassName("MenuList");
 export const MENUTEXT_CLASS = mk.newClassName("MenuText");
 export const PSNTLIST_CLASS = mk.newClassName("PrsnList");
@@ -29,6 +30,8 @@ const CTSHOWBS_VAR = 'rgb(0 0 0 / 31%)';
 const PLIST_BTN_BOR_VAR = 'transparent';
 const PLIST_NOSEL_VAR = 'transparent';
 const PLIST_SEL_VAR = '#fd8c73';
+const MLIST_MARGIN = '3px';
+const PLIST_MARGIN = MLIST_MARGIN;
 
 export const ROOT_HTML = `
 <span class="${ROOT_CLASS}" draggable="false">
@@ -90,6 +93,16 @@ ${DARKMODE_SELECTOR_VALUE}
   height: 100%;
 }
 
+.${PERENTMENU_CLASS} > div:first-child
+{
+  margin-left: ${MLIST_MARGIN};
+}
+
+.${PERENTMENU_CLASS} > div:last-child
+{
+  margin-right: ${MLIST_MARGIN};
+}
+
 .${ROOT_CLASS}
 {
   display: flex;
@@ -137,7 +150,6 @@ ${DARKMODE_SELECTOR_VALUE}
   align-items: center;
   width: inherit;
   height: 100%;
-  padding-left: 5px;
   color: var(--uic-pagpnl-ctype-col);
 }
 
@@ -163,12 +175,25 @@ ${DARKMODE_SELECTOR_VALUE}
   box-sizing: border-box;
 }
 
+.${PERENTMENU_CLASS}:empty + s,
 .${CODETYPE_CLASS} .${MENULIST_CLASS},
 .${CODETYPE_CLASS}:has(.${MENULIST_CLASS}:empty),
 .${CODETYPE_CLASS}:has(.${MENULIST_CLASS}:empty) + s,
 .${ROOT_CLASS} > div > s:has(+ .${PSNTLIST_CLASS}:empty)
 {
   display: none;
+}
+
+.${CODETYPE_CLASS}:has(ul.${MENUSTYLE4_CLASS}:empty)
+{
+  display: block;
+}
+
+.${CODETYPE_CLASS}:has(.${MENUSTYLE4_CLASS}:empty) > div > div
+{
+  width: auto;
+  min-width: 40px;
+  padding: 0 5px;
 }
 
 .${CODETYPE_CLASS} > div
@@ -349,7 +374,7 @@ ${DARKMODE_SELECTOR_VALUE}
   align-items: center;
   width: 55px;
   height: 100%;
-  margin: 0 3px;
+  margin: 0 ${PLIST_MARGIN};
   border: 1px solid ${PLIST_BTN_BOR_VAR};
   border-bottom: 3px solid ${PLIST_BTN_BOR_VAR};
   flex-shrink: 0;
