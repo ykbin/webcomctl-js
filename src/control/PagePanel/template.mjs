@@ -15,6 +15,7 @@ export const MENUNAME_CLASS = mk.newClassName("MenuName");
 export const MENUSTYLE1_CLASS = mk.newClassName("MenuStyle1");
 export const MENUSTYLE2_CLASS = mk.newClassName("MenuStyle2");
 export const MENUSTYLE3_CLASS = mk.newClassName("MenuStyle3");
+export const MENUSTYLE4_CLASS = mk.newClassName("MenuStyle4");
 export const MENULIST_CLASS = mk.newClassName("MenuList");
 export const MENUTEXT_CLASS = mk.newClassName("MenuText");
 export const PSNTLIST_CLASS = mk.newClassName("PrsnList");
