@@ -173,6 +173,11 @@ ${DARKMODE_SELECTOR_VALUE}
   display: none;
 }
 
+.${CODETYPE_CLASS}:has(.${MENUSTYLE4_CLASS})
+{
+  display: block;
+}
+
 .${CODETYPE_CLASS} > div
 {
   display: flex;
