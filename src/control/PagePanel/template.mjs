@@ -180,6 +180,7 @@ ${DARKMODE_SELECTOR_VALUE}
 
 .${CODETYPE_CLASS}:has(.${MENUSTYLE4_CLASS}:empty) > div > div
 {
+  width: auto;
   min-width: 40px;
   padding: 0 5px;
 }
