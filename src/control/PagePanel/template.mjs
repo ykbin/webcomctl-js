@@ -178,6 +178,12 @@ ${DARKMODE_SELECTOR_VALUE}
   display: block;
 }
 
+.${CODETYPE_CLASS}:has(.${MENUSTYLE4_CLASS}:empty) > div > div
+{
+  min-width: 40px;
+  padding: 0 5px;
+}
+
 .${CODETYPE_CLASS} > div
 {
   display: flex;
