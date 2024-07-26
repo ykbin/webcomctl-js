@@ -291,12 +291,13 @@ export default class UIHexContentControl extends BaseControl {
     this._asciiParent.firstElementChild.remove();
   }
 
-  addFileChunk(offset, size, buffer) {
+  makeElementList(offset, size, buffer) {
+    const result = [];
     let sz = size;
     let pos = offset;
     let index = 0;
     const bytes = new Uint8Array(buffer);
-  
+
     while (sz > 0) {
       const n = Math.min(sz, 16);
       const offset = pos.toString().padStart(this._padSize, '0');
@@ -315,15 +316,17 @@ export default class UIHexContentControl extends BaseControl {
         binary += hex;
       }
       
-      this._data[pos / 16] = {
+      result.push({
         offset: createOffsetElement(offset),
         binary: createBinaryElement(binary),
         ascii: createAsciiElement(ascii),
-      };
+      });
   
       pos += n;
       sz -= n;
     }
+
+    return result;
   }
 
   updateContent(updateHeight, newOffset) {
@@ -446,7 +449,10 @@ export default class UIHexContentControl extends BaseControl {
     this._chunkLoader = new FileChunkLoader(content);
     this._chunkLoader.addEventListener("chunk", e => {
       // console.log(`Load chunk - offset: ${e.offset} size: ${e.size}`);
-      this.addFileChunk(e.offset, e.size, e.buffer);
+      let pos = e.offset / 16;
+      for (const item of makeElementList(e.offset, e.size, e.buffer)) {
+        this._data[pos++] = item;
+      }
 
       const isStartup = (this._tailPosition === null);
       if (isStartup) {
