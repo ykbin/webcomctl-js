@@ -168,59 +168,6 @@ function isElementVisible(element) {
   );
 }
 
-function useDeprecatedMethod(element, callback) {
-  let listener;
-  return element.addEventListener(`DOMNodeInserted`, listener = (ev) => {
-      if (ev.path.length > 1 && ev.path[ev.length - 2] instanceof Document) {
-          element.removeEventListener(`DOMNodeInserted`, listener);
-          callback();
-      }
-  }, false);
-}
-
-function isAppended (element) {
-  while (element.parentNode)
-      element = element.parentNode;
-  return element instanceof Document;
-}
-
-export function onceAppendedSync (element, callback)
-{
-  let rootElement = element;
-  while (rootElement.parentNode)
-    rootElement = rootElement.parentNode;
-
-  if (rootElement instanceof Document) {
-    callback();
-    return;
-  }
-
-  const MutationObserver = window.MutationObserver || window.WebKitMutationObserver || window.MozMutationObserver;
-  if (!MutationObserver)
-    return useDeprecatedMethod(element, callback);
-
-  const observer = new MutationObserver((mutationList) => {
-    if (isAppended(element)) {
-      observer.disconnect();
-      callback();
-    }
-    for (const mutation of mutationList) {
-      if (mutation.type === 'childList') {
-        if (Array.prototype.indexOf.call(mutation.addedNodes, element) !== -1) {
-          //observer.disconnect();
-          //callback();
-          break;
-        }
-      }
-    }
-  });
-
-  observer.observe(document.body, {
-    childList: true,
-    subtree: true,
-  });
-}
-
 export default class UIHexContentControl extends BaseControl {
   _scroll;
   _chunkLoader = null;
@@ -256,14 +203,25 @@ export default class UIHexContentControl extends BaseControl {
     this._asciiParent = NQDOM.getElementByClassName(this.element, TXTLIST_CLASS);
   
     const containerElm = NQDOM.getElementByClassName(this.element, CONTENT_CLASS);
-    // containerElm && (containerElm.style.overflow = 'auto');
-    containerElm && onceAppendedSync(containerElm, () => {
-      containerElm.addEventListener("wheel",  e => {
-        e.preventDefault();
-        this._scroll.position = this._scroll.position + e.deltaY;
-        this.updateContent(false, this._scroll.position);
-      }); // }, { passive: false });
-    });
+    if (containerElm) {
+      const observer = new MutationObserver(() => {
+        let rootParent = containerElm;
+        while (rootParent.parentNode)
+          rootParent = rootParent.parentNode;
+        if (rootParent instanceof Document) {
+          observer.disconnect();
+          containerElm.addEventListener("wheel",  e => {
+            e.preventDefault();
+            this._scroll.position = this._scroll.position + e.deltaY;
+            this.updateContent(false, this._scroll.position);
+          });
+        }
+      });
+      observer.observe(document.body, {
+        childList: true,
+        subtree: true,
+      });
+    }
 
     window.addEventListener("resize", event => this._onResize());
 
