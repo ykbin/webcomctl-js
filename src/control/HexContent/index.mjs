@@ -200,12 +200,15 @@ export function onceAppendedSync (element, callback)
     return useDeprecatedMethod(element, callback);
 
   const observer = new MutationObserver((mutationList) => {
-    console.log('>>>', isAppended(element));
+    if (isAppended(element)) {
+      observer.disconnect();
+      callback();
+    }
     for (const mutation of mutationList) {
       if (mutation.type === 'childList') {
         if (Array.prototype.indexOf.call(mutation.addedNodes, element) !== -1) {
-          observer.disconnect();
-          callback();
+          //observer.disconnect();
+          //callback();
           break;
         }
       }
