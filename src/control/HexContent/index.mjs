@@ -178,6 +178,12 @@ function useDeprecatedMethod(element, callback) {
   }, false);
 }
 
+function isAppended (element) {
+  while (element.parentNode)
+      element = element.parentNode;
+  return element instanceof Document;
+}
+
 export function onceAppendedSync (element, callback)
 {
   let rootElement = element;
@@ -194,6 +200,7 @@ export function onceAppendedSync (element, callback)
     return useDeprecatedMethod(element, callback);
 
   const observer = new MutationObserver((mutationList) => {
+    console.log('>>>', isAppended(element));
     for (const mutation of mutationList) {
       if (mutation.type === 'childList') {
         if (Array.prototype.indexOf.call(mutation.addedNodes, element) !== -1) {
