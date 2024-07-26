@@ -338,17 +338,16 @@ export default class UIHexContentControl extends BaseControl {
       this._tailPosition = 0;
       this._offset = 0;
 
-      const item = this._data[this._offset + 0];
-      if (!item)
-        return;
+      const testArray = new Uint8Array([0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]);
+      const item = makeElementList(0, testArray.length, testArray.buffer);
 
       this.pushBack(item);
-      this._tailPosition++;
+      //this._tailPosition++;
       
       this._offsetParent.style.width = item.offset.clientWidth + 'px';
       this._binaryParent.style.width = item.binary.clientWidth + 'px';
-      const asciiWidth = item.ascii.clientWidth * (16 / item.ascii.textContent.length);
-      this._asciiParent.style.width = asciiWidth + 'px';
+      this._asciiParent.style.width = item.ascii.clientWidth + 'px';
+      this.popBack();
 
       this._itemHeight = item.offset.offsetHeight;
       updateHeight = true;
