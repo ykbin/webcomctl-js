@@ -450,7 +450,7 @@ export default class UIHexContentControl extends BaseControl {
     this._chunkLoader.addEventListener("chunk", e => {
       // console.log(`Load chunk - offset: ${e.offset} size: ${e.size}`);
       let pos = e.offset / 16;
-      for (const item of makeElementList(e.offset, e.size, e.buffer)) {
+      for (const item of this.makeElementList(e.offset, e.size, e.buffer)) {
         this._data[pos++] = item;
       }
 
