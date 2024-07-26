@@ -168,6 +168,63 @@ function isElementVisible(element) {
   );
 }
 
+function useDeprecatedMethod (element, callback) {
+  let listener;
+  return element.addEventListener(`DOMNodeInserted`, listener = (ev) => {
+      if (ev.path.length > 1 && ev.path[ev.length - 2] instanceof Document) {
+          element.removeEventListener(`DOMNodeInserted`, listener);
+          callback();
+      }
+  }, false);
+}
+
+function isAppended (element) {
+  while (element.parentNode)
+      element = element.parentNode;
+  return element instanceof Document;
+}
+
+/**
+* Method 2. Synchronous. Has a lower performance for pages with a lot of elements being inserted,
+* but triggers callback immediately after element insert.
+* This method is based on MutationObserver.
+* Fires callback once element is appended to the document.
+* @author ZitRo (https://github.com/ZitRos)
+* @see https://stackoverflow.com/questions/38588741/having-a-reference-to-an-element-how-to-detect-once-it-appended-to-the-document (StackOverflow original question)
+* @see https://github.com/ZitRos/dom-onceAppended (Home repository)
+* @see https://www.npmjs.com/package/dom-once-appended (npm package)
+* @param {HTMLElement} element - Element to be appended
+* @param {function} callback - Append event handler
+*/
+export function onceAppendedSync (element, callback) {
+
+  if (isAppended(element)) {
+      callback();
+      return;
+  }
+
+  const MutationObserver =
+      window.MutationObserver || window.WebKitMutationObserver || window.MozMutationObserver;
+
+  if (!MutationObserver)
+      return useDeprecatedMethod(element, callback);
+
+  const observer = new MutationObserver((mutations) => {
+      if (mutations[0].addedNodes.length === 0)
+          return;
+      if (Array.prototype.indexOf.call(mutations[0].addedNodes, element) === -1)
+          return;
+      observer.disconnect();
+      callback();
+  });
+
+  observer.observe(document.body, {
+      childList: true,
+      subtree: true
+  });
+
+}
+
 export default class UIHexContentControl extends BaseControl {
   _scroll;
   _chunkLoader = null;
@@ -204,11 +261,13 @@ export default class UIHexContentControl extends BaseControl {
   
     const containerElm = NQDOM.getElementByClassName(this.element, CONTENT_CLASS);
     // containerElm && (containerElm.style.overflow = 'auto');
-    containerElm && containerElm.addEventListener("wheel",  e => {
-      e.preventDefault();
-      this._scroll.position = this._scroll.position + e.deltaY;
-      this.updateContent(false, this._scroll.position);
-    }); // }, { passive: false });
+    containerElm && onceAppendedSync(containerElm, () => {
+      containerElm.addEventListener("wheel",  e => {
+        e.preventDefault();
+        this._scroll.position = this._scroll.position + e.deltaY;
+        this.updateContent(false, this._scroll.position);
+      }); // }, { passive: false });
+    });
 
     window.addEventListener("resize", event => this._onResize());
 
