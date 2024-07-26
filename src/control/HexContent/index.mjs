@@ -338,8 +338,8 @@ export default class UIHexContentControl extends BaseControl {
       this._tailPosition = 0;
       this._offset = 0;
 
-      const testArray = new Uint8Array([0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]);
-      const item = makeElementList(0, testArray.length, testArray.buffer);
+      const testArray = new Uint8Array(16);
+      const item = this.makeElementList(0, testArray.length, testArray.buffer);
 
       this.pushBack(item);
       //this._tailPosition++;
