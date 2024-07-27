@@ -196,7 +196,7 @@ ${DARKMODE_SELECTOR_VALUE}
   padding: 0 5px;
 }
 
-.${CODETYPE_CLASS}:has(.${MENUSTYLE4_CLASS}
+.${CODETYPE_CLASS}:has(.${MENUSTYLE4_CLASS})
 {
   position: relative;
   margin-right: 16px;
