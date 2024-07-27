@@ -200,15 +200,16 @@ ${DARKMODE_SELECTOR_VALUE}
 .${CODETYPE_CLASS}:has(.${MENUSTYLE3_CLASS})
 {
   position: relative;
+  padding-left: 10px;
 
 }
 
-.${CODETYPE_CLASS}:has(.${MENUSTYLE2_CLASS})::before,
-.${CODETYPE_CLASS}:has(.${MENUSTYLE3_CLASS})::before
+.${CODETYPE_CLASS}:has(.${MENUSTYLE2_CLASS}) > div::before,
+.${CODETYPE_CLASS}:has(.${MENUSTYLE3_CLASS}) > div::before
 {
   content: ' ';
   position: absolute;
-  right: -10px;
+  left: 3px;
   bottom: 15px;
   transform: rotate(315deg);
   display: block;
