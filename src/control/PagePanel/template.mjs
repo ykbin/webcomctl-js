@@ -213,7 +213,7 @@ ${DARKMODE_SELECTOR_VALUE}
 {
   content: ' ';
   position: absolute;
-  left: 3px;
+  left: 7px;
   bottom: 15px;
   transform: rotate(315deg);
   display: block;
@@ -223,8 +223,8 @@ ${DARKMODE_SELECTOR_VALUE}
   border-bottom: 1px solid var(--uic-pagpnl-ctype-col);
 }
 
-.${CTSHOW_CLASS}:has(ul.${MENUSTYLE2_CLASS})::before,
-.${CTSHOW_CLASS}:has(ul.${MENUSTYLE3_CLASS})::before
+.${CTSHOW_CLASS}:has(ul.${MENUSTYLE2_CLASS}) > div::before,
+.${CTSHOW_CLASS}:has(ul.${MENUSTYLE3_CLASS}) > div::before
 {
   transform: rotate(134deg);
 }
