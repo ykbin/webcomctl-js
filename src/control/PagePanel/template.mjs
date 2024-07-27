@@ -216,7 +216,7 @@ ${DARKMODE_SELECTOR_VALUE}
   border-bottom: 1px solid var(--uic-pagpnl-ctype-col);
 }
 
-.${CODETYPE_CLASS}:has(ul.${MENUSTYLE4_CLASS}) > span::after
+.${CTSHOW_CLASS}:has(ul.${MENUSTYLE4_CLASS}) > span::after
 {
   transform: rotate(134deg);
 }
