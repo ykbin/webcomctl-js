@@ -196,15 +196,29 @@ ${DARKMODE_SELECTOR_VALUE}
   padding: 0 5px;
 }
 
+.${CODETYPE_CLASS}:has(.${MENUSTYLE4_CLASS}
+{
+  position: relative;
+  margin-right: 16px;
+}
+
 .${CODETYPE_CLASS}:has(.${MENUSTYLE4_CLASS}) > span::after
 {
   content: ' ';
-  position: relative;
+  position: absolute;
+  right: -10px;
+  bottom: 15px;
+  transform: rotate(315deg);
   display: block;
   width: 10px;
   height: 10px;
   border-left: 1px solid var(--uic-pagpnl-ctype-col);
   border-bottom: 1px solid var(--uic-pagpnl-ctype-col);
+}
+
+.${CODETYPE_CLASS}:has(ul.${MENUSTYLE4_CLASS}) > span::after
+{
+  transform: rotate(134deg);
 }
 
 .${CODETYPE_CLASS} > div
