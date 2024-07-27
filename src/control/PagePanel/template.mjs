@@ -199,7 +199,6 @@ ${DARKMODE_SELECTOR_VALUE}
 .${CODETYPE_CLASS}:has(.${MENUSTYLE4_CLASS}
 {
   position: relative;
-  margin-right: 16px;
 }
 
 .${CODETYPE_CLASS}:has(.${MENUSTYLE4_CLASS}) > span::after
