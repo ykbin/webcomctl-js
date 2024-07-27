@@ -196,14 +196,15 @@ ${DARKMODE_SELECTOR_VALUE}
   padding: 0 5px;
 }
 
-.PagePanel-PerentMenu > div.${CODETYPE_CLASS}:has(.${MENUSTYLE4_CLASS}):last-child,
-.${CODETYPE_CLASS}:has(.${MENUSTYLE4_CLASS})
+.${CODETYPE_CLASS}:has(.${MENUSTYLE2_CLASS}),
+.${CODETYPE_CLASS}:has(.${MENUSTYLE3_CLASS})
 {
   position: relative;
-  margin-right: 13px;
+
 }
 
-.${CODETYPE_CLASS}:has(.${MENUSTYLE4_CLASS}) > span::after
+.${CODETYPE_CLASS}:has(.${MENUSTYLE2_CLASS}) > span::after,
+.${CODETYPE_CLASS}:has(.${MENUSTYLE3_CLASS}) > span::after
 {
   content: ' ';
   position: absolute;
@@ -217,7 +218,8 @@ ${DARKMODE_SELECTOR_VALUE}
   border-bottom: 1px solid var(--uic-pagpnl-ctype-col);
 }
 
-.${CTSHOW_CLASS}:has(ul.${MENUSTYLE4_CLASS}) > span::after
+.${CTSHOW_CLASS}:has(ul.${MENUSTYLE2_CLASS}) > span::after,
+.${CTSHOW_CLASS}:has(ul.${MENUSTYLE3_CLASS}) > span::after
 {
   transform: rotate(134deg);
 }
