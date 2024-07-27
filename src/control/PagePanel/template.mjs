@@ -196,7 +196,7 @@ ${DARKMODE_SELECTOR_VALUE}
   padding: 0 5px;
 }
 
-.${CTSHOW_CLASS}:has(.${MENUSTYLE4_CLASS}) > span::before
+.${CTSHOW_CLASS} > span::before
 {
   content: ' ';
   display: block;
