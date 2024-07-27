@@ -196,6 +196,16 @@ ${DARKMODE_SELECTOR_VALUE}
   padding: 0 5px;
 }
 
+.${CTSHOW_CLASS}:has(.${MENUSTYLE4_CLASS}) > span::before
+{
+  content: ' ';
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
 .${CODETYPE_CLASS} > div
 {
   display: flex;
