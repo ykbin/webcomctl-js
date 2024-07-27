@@ -196,6 +196,39 @@ ${DARKMODE_SELECTOR_VALUE}
   padding: 0 5px;
 }
 
+.${CODETYPE_CLASS}:has(.${MENUSTYLE2_CLASS}) > div > div,
+.${CODETYPE_CLASS}:has(.${MENUSTYLE3_CLASS}) > div > div
+{
+  padding-left: 15px;
+}
+
+.${CODETYPE_CLASS}:has(.${MENUSTYLE2_CLASS}),
+.${CODETYPE_CLASS}:has(.${MENUSTYLE3_CLASS})
+{
+  position: relative;
+}
+
+.${CODETYPE_CLASS}:has(.${MENUSTYLE2_CLASS}) > div::before,
+.${CODETYPE_CLASS}:has(.${MENUSTYLE3_CLASS}) > div::before
+{
+  content: ' ';
+  position: absolute;
+  left: 7px;
+  bottom: 15px;
+  transform: rotate(315deg);
+  display: block;
+  width: 5px;
+  height: 5px;
+  border-left: 1px solid var(--uic-pagpnl-ctype-col);
+  border-bottom: 1px solid var(--uic-pagpnl-ctype-col);
+}
+
+.${CTSHOW_CLASS}:has(ul.${MENUSTYLE2_CLASS}) > div::before,
+.${CTSHOW_CLASS}:has(ul.${MENUSTYLE3_CLASS}) > div::before
+{
+  transform: rotate(134deg);
+}
+
 .${CODETYPE_CLASS} > div
 {
   display: flex;
@@ -215,7 +248,7 @@ ${DARKMODE_SELECTOR_VALUE}
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
+  min-width: 40px;
   height: inherit;
   padding-left: 5px;
 }
