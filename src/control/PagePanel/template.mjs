@@ -196,14 +196,15 @@ ${DARKMODE_SELECTOR_VALUE}
   padding: 0 5px;
 }
 
-.${CODETYPE_CLASS}:has(.${MENUSTYLE4_CLASS}) > span::before
+.${CODETYPE_CLASS}:has(.${MENUSTYLE4_CLASS}) > span::after
 {
   content: ' ';
+  position: relative;
   display: block;
   width: 10px;
   height: 10px;
-  border-left: 1px solid black;
-  border-bottom: 1px solid black;
+  border-left: 1px solid var(--uic-pagpnl-ctype-col);
+  border-bottom: 1px solid var(--uic-pagpnl-ctype-col);
 }
 
 .${CODETYPE_CLASS} > div
