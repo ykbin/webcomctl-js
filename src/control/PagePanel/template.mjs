@@ -203,8 +203,8 @@ ${DARKMODE_SELECTOR_VALUE}
 
 }
 
-.${CODETYPE_CLASS}:has(.${MENUSTYLE2_CLASS}) > span::after,
-.${CODETYPE_CLASS}:has(.${MENUSTYLE3_CLASS}) > span::after
+.${CODETYPE_CLASS}:has(.${MENUSTYLE2_CLASS}) > span::before,
+.${CODETYPE_CLASS}:has(.${MENUSTYLE3_CLASS}) > span::before
 {
   content: ' ';
   position: absolute;
@@ -218,8 +218,8 @@ ${DARKMODE_SELECTOR_VALUE}
   border-bottom: 1px solid var(--uic-pagpnl-ctype-col);
 }
 
-.${CTSHOW_CLASS}:has(ul.${MENUSTYLE2_CLASS}) > span::after,
-.${CTSHOW_CLASS}:has(ul.${MENUSTYLE3_CLASS}) > span::after
+.${CTSHOW_CLASS}:has(ul.${MENUSTYLE2_CLASS}) > span::before,
+.${CTSHOW_CLASS}:has(ul.${MENUSTYLE3_CLASS}) > span::before
 {
   transform: rotate(134deg);
 }
