@@ -196,6 +196,7 @@ ${DARKMODE_SELECTOR_VALUE}
   padding: 0 5px;
 }
 
+.PagePanel-PerentMenu > div.${CODETYPE_CLASS}:has(.${MENUSTYLE4_CLASS}):last-child,
 .${CODETYPE_CLASS}:has(.${MENUSTYLE4_CLASS})
 {
   position: relative;
@@ -210,8 +211,8 @@ ${DARKMODE_SELECTOR_VALUE}
   bottom: 15px;
   transform: rotate(315deg);
   display: block;
-  width: 10px;
-  height: 10px;
+  width: 5px;
+  height: 5px;
   border-left: 1px solid var(--uic-pagpnl-ctype-col);
   border-bottom: 1px solid var(--uic-pagpnl-ctype-col);
 }
