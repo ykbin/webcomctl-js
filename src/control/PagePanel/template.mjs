@@ -187,6 +187,7 @@ ${DARKMODE_SELECTOR_VALUE}
 }
 
 .${CODETYPE_CLASS}:has(.${MENULIST_CLASS}) .arrow,
+.${CODETYPE_CLASS}:has(.${MENULIST_CLASS}) .arrow::before,
 .${CODETYPE_CLASS}:has(ul.${MENUSTYLE4_CLASS}:empty)
 {
   display: block;
@@ -203,7 +204,7 @@ ${DARKMODE_SELECTOR_VALUE}
 {
   content: ' ';
   transform: rotate(315deg);
-  display: block;
+  display: none;
   width: 5px;
   height: 5px;
   border-left: 1px solid var(--uic-pagpnl-ctype-col);
