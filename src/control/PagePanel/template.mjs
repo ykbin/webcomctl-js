@@ -193,6 +193,13 @@ ${DARKMODE_SELECTOR_VALUE}
   display: block;
 }
 
+.${CODETYPE_CLASS}:has(.${MENUSTYLE2_CLASS}) > div,
+.${CODETYPE_CLASS}:has(.${MENUSTYLE3_CLASS}) > div
+{
+  border-bottom-right-radius: 2px;
+  border-top-right-radius: 2px;
+}
+
 .arrow
 {
   display: none;
