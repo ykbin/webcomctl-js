@@ -49,8 +49,8 @@ export const ROOT_HTML = `
 export const MENU_LIST_HTML = `
 <div class="${CODETYPE_CLASS}">
   <div>
-    <span class="arrow"></span>
     <div class="${MENUNAME_CLASS}"></div>
+    <span class="arrow"></span>
   </div>
   <span>
     <ul class="${MENULIST_CLASS}"></ul>
@@ -191,14 +191,6 @@ ${DARKMODE_SELECTOR_VALUE}
 .${CODETYPE_CLASS}:has(ul.${MENUSTYLE4_CLASS}:empty)
 {
   display: block;
-}
-
-.${CTSHOW_CLASS}:has(.${MENUSTYLE2_CLASS}) > div,
-.${CTSHOW_CLASS}:has(.${MENUSTYLE3_CLASS}) > div,
-.${CODETYPE_CLASS}:has(.${MENUSTYLE2_CLASS}) > div:hover,
-.${CODETYPE_CLASS}:has(.${MENUSTYLE3_CLASS}) > div:hover
-{
-  background-color: transparent;
 }
 
 .arrow
@@ -357,8 +349,6 @@ ${DARKMODE_SELECTOR_VALUE}
   overflow: hidden;
 }
 
-.${CTSHOW_CLASS} .arrow,
-.arrow:hover,
 .${CTSHOW_CLASS} > div,
 .${CODETYPE_CLASS} > div:hover,
 .${CTSHOW_CLASS} .${MENUSTYLE1_CLASS} > li:hover > span,
