@@ -36,7 +36,6 @@ const PLIST_MARGIN = MLIST_MARGIN;
 export const ROOT_HTML = `
 <span class="${ROOT_CLASS}" draggable="false">
   <div>
-    <span class="arrow"></span>
     <div class="${PERENTMENU_CLASS}"></div>
     <s></s>
     <div class="${PSNTLIST_CLASS}"></div>
