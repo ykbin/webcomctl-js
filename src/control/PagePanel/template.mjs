@@ -36,6 +36,7 @@ const PLIST_MARGIN = MLIST_MARGIN;
 export const ROOT_HTML = `
 <span class="${ROOT_CLASS}" draggable="false">
   <div>
+    <span></span>
     <div class="${PERENTMENU_CLASS}"></div>
     <s></s>
     <div class="${PSNTLIST_CLASS}"></div>
@@ -49,6 +50,7 @@ export const ROOT_HTML = `
 export const MENU_LIST_HTML = `
 <div class="${CODETYPE_CLASS}">
   <div>
+    <span></span>
     <div class="${MENUNAME_CLASS}"></div>
   </div>
   <span>
