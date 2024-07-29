@@ -196,6 +196,25 @@ ${DARKMODE_SELECTOR_VALUE}
   padding: 0 5px;
 }
 
+.arrow::before
+{
+  content: ' ';
+  position: absolute;
+  left: 7px;
+  bottom: 15px;
+  transform: rotate(315deg);
+  display: block;
+  width: 5px;
+  height: 5px;
+  border-left: 1px solid var(--uic-pagpnl-ctype-col);
+  border-bottom: 1px solid var(--uic-pagpnl-ctype-col);
+}
+
+.${CTSHOW_CLASS} .arrow::before
+{
+  transform: rotate(134deg);
+}
+
 .${CODETYPE_CLASS} > div
 {
   display: flex;
