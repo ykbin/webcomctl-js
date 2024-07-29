@@ -176,7 +176,6 @@ ${DARKMODE_SELECTOR_VALUE}
   box-sizing: border-box;
 }
 
-.arrow,
 .${PERENTMENU_CLASS}:empty + s,
 .${CODETYPE_CLASS} .${MENULIST_CLASS},
 .${CODETYPE_CLASS}:has(.${MENULIST_CLASS}:empty),
@@ -194,6 +193,19 @@ ${DARKMODE_SELECTOR_VALUE}
   display: block;
 }
 
+.${CODETYPE_CLASS}:has(.${MENUSTYLE2_CLASS}) > div:hover,
+.${CODETYPE_CLASS}:has(.${MENUSTYLE3_CLASS}) > div:hover
+{
+  background-color: transparent;
+}
+
+.arrow
+{
+  display: none;
+  width: 20px;
+  height: 100%;
+}
+
 .${CODETYPE_CLASS}:has(.${MENUSTYLE4_CLASS}:empty) > div > div
 {
   width: auto;
@@ -204,6 +216,9 @@ ${DARKMODE_SELECTOR_VALUE}
 .arrow::before
 {
   content: ' ';
+  position: relative;
+  top: 14px;
+  left: 7px;
   transform: rotate(315deg);
   display: none;
   width: 5px;
@@ -340,6 +355,7 @@ ${DARKMODE_SELECTOR_VALUE}
   overflow: hidden;
 }
 
+.arrow:hover,
 .${CTSHOW_CLASS} > div,
 .${CODETYPE_CLASS} > div:hover,
 .${CTSHOW_CLASS} .${MENUSTYLE1_CLASS} > li:hover > span,
