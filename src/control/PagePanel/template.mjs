@@ -186,8 +186,8 @@ ${DARKMODE_SELECTOR_VALUE}
   display: none;
 }
 
-.${CODETYPE_CLASS}:has(.${PagePanel-MenuStyle2}) .arrow,
-.${CODETYPE_CLASS}:has(.${PagePanel-MenuStyle3}) .arrow,
+.${CODETYPE_CLASS}:has(.${MENUSTYLE2_CLASS}) .arrow,
+.${CODETYPE_CLASS}:has(.${MENUSTYLE3_CLASS}) .arrow,
 .${CODETYPE_CLASS}:has(.${MENULIST_CLASS}) .arrow::before,
 .${CODETYPE_CLASS}:has(ul.${MENUSTYLE4_CLASS}:empty)
 {
