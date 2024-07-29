@@ -177,6 +177,7 @@ ${DARKMODE_SELECTOR_VALUE}
   box-sizing: border-box;
 }
 
+.arrow,
 .${PERENTMENU_CLASS}:empty + s,
 .${CODETYPE_CLASS} .${MENULIST_CLASS},
 .${CODETYPE_CLASS}:has(.${MENULIST_CLASS}:empty),
@@ -186,6 +187,7 @@ ${DARKMODE_SELECTOR_VALUE}
   display: none;
 }
 
+.${CODETYPE_CLASS}:has(.${MENULIST_CLASS}) .arrow,
 .${CODETYPE_CLASS}:has(ul.${MENUSTYLE4_CLASS}:empty)
 {
   display: block;
@@ -201,9 +203,6 @@ ${DARKMODE_SELECTOR_VALUE}
 .arrow::before
 {
   content: ' ';
-  position: absolute;
-  left: 7px;
-  bottom: 15px;
   transform: rotate(315deg);
   display: block;
   width: 5px;
