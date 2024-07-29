@@ -198,6 +198,7 @@ ${DARKMODE_SELECTOR_VALUE}
   display: none;
   width: 20px;
   height: 100%;
+  border-left: 1px solid var(--uic-pagpnl-col);
 }
 
 .${CODETYPE_CLASS}:has(.${MENUSTYLE4_CLASS}:empty) > div > div
