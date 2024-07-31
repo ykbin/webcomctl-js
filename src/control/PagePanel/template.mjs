@@ -21,6 +21,7 @@ export const MENUTEXT_CLASS = mk.newClassName("MenuText");
 export const PSNTLIST_CLASS = mk.newClassName("PrsnList");
 export const PSNTTEXT_CLASS = mk.newClassName("PrsnText");
 export const PSNTACTV_CLASS = mk.newClassName("PrsnActv");
+export const MENUARROW_CLASS = mk.newClassName("MenuArrow");
 
 const DOWNLOAD_IMG = await mk.loadSvgAsCssUrl('./download.svg');
 
@@ -50,7 +51,7 @@ export const MENU_LIST_HTML = `
 <div class="${CODETYPE_CLASS}">
   <div>
     <div class="${MENUNAME_CLASS}"></div>
-    <span class="arrow"></span>
+    <span class="${MENUARROW_CLASS}"></span>
   </div>
   <span>
     <ul class="${MENULIST_CLASS}"></ul>
@@ -185,9 +186,9 @@ ${DARKMODE_SELECTOR_VALUE}
   display: none;
 }
 
-.${CODETYPE_CLASS}:has(.${MENUSTYLE2_CLASS}) .arrow,
-.${CODETYPE_CLASS}:has(.${MENUSTYLE3_CLASS}) .arrow,
-.${CODETYPE_CLASS}:has(.${MENULIST_CLASS}) .arrow::before,
+.${CODETYPE_CLASS}:has(.${MENUSTYLE2_CLASS}) .${MENUARROW_CLASS},
+.${CODETYPE_CLASS}:has(.${MENUSTYLE3_CLASS}) .${MENUARROW_CLASS},
+.${CODETYPE_CLASS}:has(.${MENULIST_CLASS}) .${MENUARROW_CLASS}::before,
 .${CODETYPE_CLASS}:has(ul.${MENUSTYLE4_CLASS}:empty)
 {
   display: block;
@@ -200,7 +201,7 @@ ${DARKMODE_SELECTOR_VALUE}
   border-top-right-radius: 2px;
 }
 
-.arrow
+.${MENUARROW_CLASS}
 {
   display: none;
   width: 20px;
@@ -215,7 +216,7 @@ ${DARKMODE_SELECTOR_VALUE}
   padding: 0 5px;
 }
 
-.arrow::before
+.${MENUARROW_CLASS}::before
 {
   content: ' ';
   position: relative;
@@ -229,7 +230,7 @@ ${DARKMODE_SELECTOR_VALUE}
   border-bottom: 1px solid var(--uic-pagpnl-ctype-col);
 }
 
-.${CTSHOW_CLASS} .arrow::before
+.${CTSHOW_CLASS} .${MENUARROW_CLASS}::before
 {
   transform: rotate(134deg);
 }
