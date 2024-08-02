@@ -243,26 +243,6 @@ ${DARKMODE_SELECTOR_VALUE}
   border-bottom: 1px solid var(--uic-pagpnl-ctype-col);
 }
 
-.${CTSHOW_CLASS}:has(ul.${MENUSTYLE2_CLASS}) > div::before,
-.${CTSHOW_CLASS}:has(ul.${MENUSTYLE3_CLASS}) > div::before
-{
-  transform: rotate(134deg);
-}
-
-.${MENUARROW_CLASS}::before
-{
-  content: ' ';
-  position: relative;
-  top: 14px;
-  left: 7px;
-  transform: rotate(315deg);
-  display: none;
-  width: 5px;
-  height: 5px;
-  border-left: 1px solid var(--uic-pagpnl-ctype-col);
-  border-bottom: 1px solid var(--uic-pagpnl-ctype-col);
-}
-
 .${CTSHOW_CLASS} .${MENUARROW_CLASS}::before
 {
   transform: rotate(134deg);
