@@ -44,7 +44,6 @@ export const ROOT_HTML = `
     <div class="${PSNTLIST_CLASS}"></div>
   </div>
   <span>
-    <div class="${PROPERTIES_CLASS}"></div>
     <a class="${DOWNLOAD_CLASS}"></a>
     <div class="${PROPERTIES_CLASS}"></div>
   </span>
