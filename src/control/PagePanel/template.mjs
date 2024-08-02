@@ -228,15 +228,14 @@ ${DARKMODE_SELECTOR_VALUE}
   position: relative;
 }
 
-.${CODETYPE_CLASS}:has(.${MENUSTYLE2_CLASS}) > div::before,
-.${CODETYPE_CLASS}:has(.${MENUSTYLE3_CLASS}) > div::before
+.${MENUARROW_CLASS}::before
 {
   content: ' ';
-  position: absolute;
+  position: relative;
+  top: 14px;
   left: 7px;
-  bottom: 15px;
   transform: rotate(315deg);
-  display: block;
+  display: none;
   width: 5px;
   height: 5px;
   border-left: 1px solid var(--uic-pagpnl-ctype-col);
