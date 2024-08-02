@@ -46,6 +46,7 @@ export const ROOT_HTML = `
   <span>
     <div class="${PROPERTIES_CLASS}"></div>
     <a class="${DOWNLOAD_CLASS}"></a>
+    <div class="${PROPERTIES_CLASS}"></div>
   </span>
 </span>
 `;
@@ -391,7 +392,7 @@ ${DARKMODE_SELECTOR_VALUE}
   height: 100%;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 23px;
+  background-size: 20px;
   background-image: ${PROPERTIES_IMG};
   flex-shrink: 0;
 }
@@ -409,6 +410,7 @@ ${DARKMODE_SELECTOR_VALUE}
   flex-shrink: 0;
 }
 
+.${PROPERTIES_CLASS}:hover,
 .${DOWNLOAD_CLASS}:hover
 {
   background-color: var(--uic-pagpnl-hov);
