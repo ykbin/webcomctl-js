@@ -8,6 +8,7 @@ const mk = new ControlMaker('PagePanel', import.meta.url);
 
 export const ROOT_CLASS = mk.newClassName("Root");
 export const DOWNLOAD_CLASS = mk.newClassName("Download");
+export const PROPERTIES_CLASS = mk.newClassName("PROPERTIES");
 export const CODETYPE_CLASS = mk.newClassName("CodeType");
 export const CTSHOW_CLASS = mk.newClassName("CtShow");
 export const PERENTMENU_CLASS = mk.newClassName("PerentMenu");
@@ -24,6 +25,7 @@ export const PSNTACTV_CLASS = mk.newClassName("PrsnActv");
 export const MENUARROW_CLASS = mk.newClassName("MenuArrow");
 
 const DOWNLOAD_IMG = await mk.loadSvgAsCssUrl('./download.svg');
+const PROPERTIES_IMG = await mk.loadSvgAsCssUrl('./properties.svg');
 
 const BS1_VAR = 'rgba(0,0,0,0.13)';
 const BS2_VAR = 'rgba(0,0,0,0.11)';
@@ -42,6 +44,7 @@ export const ROOT_HTML = `
     <div class="${PSNTLIST_CLASS}"></div>
   </div>
   <span>
+    <div class="${PROPERTIES_CLASS}"></div>
     <a class="${DOWNLOAD_CLASS}"></a>
   </span>
 </span>
@@ -379,6 +382,18 @@ ${DARKMODE_SELECTOR_VALUE}
 {
   background-color: var(--uic-pagpnl-hov);
   transition: background-color 0.250s;
+}
+
+.${PROPERTIES_CLASS}
+{
+  display: block;
+  width: 35px;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 23px;
+  background-image: ${PROPERTIES_IMG};
+  flex-shrink: 0;
 }
 
 .${DOWNLOAD_CLASS}
