@@ -86,7 +86,7 @@ ${DARKMODE_SELECTOR_VALUE}
   display: none;
 }
 
-${IMG_CLASS},
+.${IMG_CLASS},
 .${ROOT_CLASS} > div.${PROPERTIES_CLASS}
 {
   display: block;
