@@ -38,7 +38,9 @@ export const ROOT_HTML = `
 
     </div>
   </div>
-  <img class="${CONTENT_CLASS}"/>
+  <div class="${CONTENT_CLASS}">
+    <img/>
+  </div>
 </div>
 `;
 
