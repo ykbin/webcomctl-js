@@ -7,6 +7,7 @@ import { UIC_CONTENT_BACKGROUND_COLOR_DARK } from '../../lib/WickedTheme.mjs';
 const mk = new ControlMaker('ImageContent', import.meta.url);
 
 export const ROOT_CLASS = mk.newClassName("Root");
+export const IMG_CLASS = mk.newClassName("Img");
 export const CONTENT_CLASS = mk.newClassName("Content");
 export const PROPERTIES_CLASS = mk.newClassName("Properties");
 
@@ -38,7 +39,7 @@ export const ROOT_HTML = `
 
     </div>
   </div>
-  <div>
+  <div class="${IMG_CLASS}">
     <img class="${CONTENT_CLASS}"/>
   </div>
 </div>
@@ -80,11 +81,12 @@ ${DARKMODE_SELECTOR_VALUE}
 }
 
 .${ROOT_CLASS} > div,
-.${PROPERTIES_CLASS} + .${CONTENT_CLASS}
+.${PROPERTIES_CLASS} + .${IMG_CLASS}
 {
   display: none;
 }
 
+${IMG_CLASS},
 .${ROOT_CLASS} > div.${PROPERTIES_CLASS}
 {
   display: block;
