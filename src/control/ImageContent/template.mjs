@@ -90,7 +90,7 @@ ${DARKMODE_SELECTOR_VALUE}
   height: 26px;
 }
 
-.${ImgSwich_CLASS}
+.${ImgSwich_CLASS} > div
 {
   display: flex;
   width: inherit;
@@ -116,6 +116,7 @@ ${DARKMODE_SELECTOR_VALUE}
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   width: inherit;
   height: inherit;
 }
