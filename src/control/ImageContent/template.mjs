@@ -9,8 +9,8 @@ const mk = new ControlMaker('ImageContent', import.meta.url);
 export const ROOT_CLASS = mk.newClassName("Root");
 export const IMG_CLASS = mk.newClassName("Img");
 export const CONTENT_CLASS = mk.newClassName("Content");
+export const ImgSwich_CLASS = mk.newClassName("ImgSwich");
 export const PROPERTIES_CLASS = mk.newClassName("Properties");
-
 export const DESCRIPTION_CLASS = mk.newClassName("Description");
 export const LIST_CLASS = mk.newClassName("List");
 export const SIZE_CLASS = mk.newClassName("Size");
@@ -41,6 +41,9 @@ export const ROOT_HTML = `
   </div>
   <span class="${IMG_CLASS}">
     <img class="${CONTENT_CLASS}"/>
+    <div class="${ImgSwich_CLASS}">
+      <div></div><div></div><div></div>
+    </div>
   </span>
 </div>
 `;
@@ -78,6 +81,20 @@ ${DARKMODE_SELECTOR_VALUE}
   border: 1px solid;
   border-color: #f3f3f3;
   box-sizing: border-box;
+}
+
+.${ImgSwich_CLASS}
+{
+  display: flex;
+  width: inherit;
+  height: 26px;
+}
+
+.${ImgSwich_CLASS}
+{
+  display: flex;
+  width: inherit;
+  height: inherit;
 }
 
 .${ROOT_CLASS} > div,
