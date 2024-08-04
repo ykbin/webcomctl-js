@@ -16,7 +16,7 @@ export const SIZE_CLASS = mk.newClassName("Size");
 
 export const ROOT_HTML = `
 <div class="${ROOT_CLASS}" draggable="false">
-  <img class="${CONTENT_CLASS}"/>
+
   <div class="${PROPERTIES_CLASS}">
     <div class="${DESCRIPTION_CLASS}">
       <h2><span class="notranslate" translate="no">JPEG</span>:</h2>
@@ -38,6 +38,7 @@ export const ROOT_HTML = `
 
     </div>
   </div>
+  <img class="${CONTENT_CLASS}"/>
 </div>
 `;
 
@@ -76,7 +77,8 @@ ${DARKMODE_SELECTOR_VALUE}
   box-sizing: border-box;
 }
 
-.${ROOT_CLASS} > div
+.${ROOT_CLASS} > div,
+.${PROPERTIES_CLASS} + .${CONTENT_CLASS}
 {
   display: none;
 }
