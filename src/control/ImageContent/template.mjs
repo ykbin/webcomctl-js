@@ -86,6 +86,9 @@ ${DARKMODE_SELECTOR_VALUE}
 .${ROOT_CLASS} > div.${PROPERTIES_CLASS}
 {
   display: block;
+  display: block;
+  width: inherit;
+  height: inherit;
 }
 
 .${DESCRIPTION_CLASS} > h2
