@@ -86,15 +86,32 @@ ${DARKMODE_SELECTOR_VALUE}
 .${ImgSwich_CLASS}
 {
   display: flex;
+  justify-content: center;
   width: inherit;
-  height: 26px;
+  height: 36px;
+  padding: 5px 0;
 }
 
 .${ImgSwich_CLASS} > div
 {
   display: flex;
-  width: inherit;
+  width: 70px;
   height: inherit;
+  border: 1px solid #dedede;
+  margin-left: 2px;
+}
+
+.${ImgSwich_CLASS} > div:first-child
+{
+  border-bottom-left-radius: 15px;
+  border-top-left-radius: 15px;
+  margin-left: 0;
+}
+
+.${ImgSwich_CLASS} > div:last-child
+{
+  border-bottom-right-radius: 15px;
+  border-top-right-radius: 15px;
 }
 
 .${ROOT_CLASS} > div,
