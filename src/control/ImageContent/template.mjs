@@ -90,7 +90,15 @@ ${DARKMODE_SELECTOR_VALUE}
 .${ROOT_CLASS} > div.${PROPERTIES_CLASS}
 {
   display: block;
-  display: block;
+  width: inherit;
+  height: inherit;
+}
+
+.${IMG_CLASS}
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: inherit;
   height: inherit;
 }
