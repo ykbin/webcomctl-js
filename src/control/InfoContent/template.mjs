@@ -62,7 +62,7 @@ ${DARKMODE_SELECTOR_VALUE}
 {
   display: block;
   width: 35px;
-  height: 100%;
+  height: 35px;
   background-repeat: no-repeat;
   background-position: center;
   background-size: 20px;
@@ -91,7 +91,7 @@ ${DARKMODE_SELECTOR_VALUE}
 
 .${PROPERTIES_CLASS}
 {
-  display: block;
+  display: flex;
   width: inherit;
   height: inherit;
 }
