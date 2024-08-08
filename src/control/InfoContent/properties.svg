@@ -1,0 +1,43 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+
+<svg xmlns="http://www.w3.org/2000/svg" 
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    width="5.76002pt"
+    height="5.52002pt"
+    viewBox="0 0 5.76002 5.52002">
+<defs/>
+<ellipse id="shape0"
+  transform="matrix(0.99999999853494 0 0 0.99999999853494 0.474856465019264 0.451823321301497)"
+  rx="2.37000894622463"
+  ry="2.28750863480542"
+  cx="2.37000894622463"
+  cy="2.28750863480542"
+  fill="none"
+  stroke="#747474"
+  stroke-width="0.242400904479008"
+  stroke-linecap="square"
+  stroke-linejoin="bevel"/>
+  
+<path id="shape0"
+  transform="translate(-4.37580614109206, -10.9304700066492)"
+  fill="#000000"
+  d="M0 0L0.000892503 0.000116914L14.7006 25.4608L14.6999 25.461"/>
+  
+<path id="shape1"
+  transform="translate(2.76376042864736, 1.44135671033631)"
+  fill="none"
+  stroke="#747474"
+  stroke-width="0.242400904479008"
+  stroke-linecap="square"
+  stroke-linejoin="bevel"
+  d="M0 0.00375021L0 0.243751L0.232501 0.247501L0.225001 0C0.225001 0 0.15 0.00125007 0 0.00375021Z"/>
+  
+<path id="shape2"
+  transform="translate(2.76469787834726, 2.48725742355905)"
+  fill="none" stroke="#747474"
+  stroke-width="0.242400904479008"
+  stroke-linecap="square"
+  stroke-linejoin="bevel"
+  d="M0.00562513 0L0.230626 0.00510382L0.230626 1.62812L0.00562513 1.62302C-0.00187504 1.62302 -0.00187504 1.08201 0.00562513 0Z"/>
+</svg>

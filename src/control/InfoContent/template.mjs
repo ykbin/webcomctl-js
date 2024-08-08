@@ -7,6 +7,8 @@ const mk = new ControlMaker('InfoContent', import.meta.url);
 
 export const ROOT_CLASS = mk.newClassName("Root");
 
+export const PROPBUTT_CLASS = mk.newClassName("PropButt");
+
 export const PROPERTIES_CLASS = mk.newClassName("Properties");
 export const DESCRIPTION_CLASS = mk.newClassName("Description");
 export const LIST_CLASS = mk.newClassName("List");
@@ -16,6 +18,7 @@ export const SIZE_CLASS = mk.newClassName("Size");
 export const ROOT_HTML = `
 <div class="${ROOT_CLASS}">
   <div class="${PROPERTIES_CLASS}">
+  <div class="${PROPBUTT_CLASS}"></div>
     <div class="${DESCRIPTION_CLASS}">
       <h2><span class="notranslate" translate="no">JPEG</span>:</h2>
       <span>
@@ -33,7 +36,7 @@ export const ROOT_HTML = `
           <li><h3>JFIF Ver</h3><label>1.1</label></li>
           <li><h3>ColorSpace</h3><label>YCbCr</label></li>
         </ul>
-
+    </div>
   </div>
 </div>
 `;
@@ -43,11 +46,33 @@ export const CSS = `
 :root
 {
   --uic-imgcnt-bg: ${UIC_CONTENT_BACKGROUND_COLOR};
+   --uic-pagpnl-hov: #e0e3e7;
+    --uic-pagpnl-col: #f3f3f3;
 }
 
 ${DARKMODE_SELECTOR_VALUE}
 {
   --uic-imgcnt-bg: ${UIC_CONTENT_BACKGROUND_COLOR_DARK};
+  --uic-pagpnl-hov: #444444;
+  --uic-pagpnl-col: #252525;
+}
+
+.${PROPBUTT_CLASS}
+{
+  display: none;
+  width: 35px;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20px;
+  background-image: ${PROPERTIES_IMG};
+  flex-shrink: 0;
+}
+
+.${PROPERTIES_CLASS}:hover
+{
+  background-color: var(--uic-pagpnl-hov);
+  border-color: var(--uic-pagpnl-col);
 }
 
 .${ROOT_CLASS}
