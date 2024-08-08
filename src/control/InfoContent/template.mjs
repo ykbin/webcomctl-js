@@ -1,4 +1,6 @@
 import ControlMaker from '../../lib/ControlMaker.mjs';
+import { UIC_CONTENT_BACKGROUND_COLOR } from '../../lib/WickedTheme.mjs';
+import { UIC_CONTENT_BACKGROUND_COLOR_DARK } from '../../lib/WickedTheme.mjs';
 
 const mk = new ControlMaker('InfoContent', import.meta.url);
 
