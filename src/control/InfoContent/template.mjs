@@ -60,7 +60,7 @@ ${DARKMODE_SELECTOR_VALUE}
 
 .${PROPBUTT_CLASS}
 {
-  display: none;
+  display: block;
   width: 35px;
   height: 100%;
   background-repeat: no-repeat;
