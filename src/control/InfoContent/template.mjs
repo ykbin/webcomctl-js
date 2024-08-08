@@ -14,6 +14,7 @@ export const DESCRIPTION_CLASS = mk.newClassName("Description");
 export const LIST_CLASS = mk.newClassName("List");
 export const SIZE_CLASS = mk.newClassName("Size");
 
+const PROPERTIES_IMG = await mk.loadSvgAsCssUrl('./properties.svg');
 
 export const ROOT_HTML = `
 <div class="${ROOT_CLASS}">
