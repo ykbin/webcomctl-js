@@ -9,7 +9,6 @@ export const ROOT_CLASS = mk.newClassName("Root");
 
 export const PROPBUTT_CLASS = mk.newClassName("PropButt");
 
-export const PROPERTIES_CLASS = mk.newClassName("Properties");
 export const DESCRIPTION_CLASS = mk.newClassName("Description");
 export const LIST_CLASS = mk.newClassName("List");
 export const SIZE_CLASS = mk.newClassName("Size");
@@ -17,8 +16,7 @@ export const SIZE_CLASS = mk.newClassName("Size");
 const PROPERTIES_IMG = await mk.loadSvgAsCssUrl('./properties.svg');
 
 export const ROOT_HTML = `
-<div class="${ROOT_CLASS}">
-  <div class="${PROPERTIES_CLASS}">
+  <div class="${ROOT_CLASS}">
   <div class="${PROPBUTT_CLASS}"></div>
     <div class="${DESCRIPTION_CLASS}">
       <h2><span class="notranslate" translate="no">JPEG</span>:</h2>
@@ -39,7 +37,6 @@ export const ROOT_HTML = `
         </ul>
     </div>
   </div>
-</div>
 `;
 
 export const CSS = `
@@ -70,24 +67,14 @@ ${DARKMODE_SELECTOR_VALUE}
   flex-shrink: 0;
 }
 
-.${PROPERTIES_CLASS}:hover
+.${PROPBUTT_CLASS}:hover
 {
   background-color: var(--uic-pagpnl-hov);
   border-color: var(--uic-pagpnl-col);
 }
 
-.${ROOT_CLASS}
-{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  box-sizing: border-box;
-  background-color: var(--uic-imgcnt-bg);
-}
 
-.${PROPERTIES_CLASS}
+.${ROOT_CLASS}
 {
   display: flex;
   width: 300px;
