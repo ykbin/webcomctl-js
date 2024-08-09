@@ -78,7 +78,7 @@ ${DARKMODE_SELECTOR_VALUE}
 {
   display: flex;
   width: 300px;
-  height: inherit;
+  height: 100%;
 }
 
 
