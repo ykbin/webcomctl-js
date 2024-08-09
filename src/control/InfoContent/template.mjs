@@ -77,8 +77,9 @@ ${DARKMODE_SELECTOR_VALUE}
 .${ROOT_CLASS}
 {
   display: flex;
-  width: 300px;
+  width: max-content;
   height: 100%;
+  overflow: hidden;
 }
 
 
@@ -101,7 +102,7 @@ h3
 
 .${DESCRIPTION_CLASS}
 {
-  width: 100%;
+  width: 300px;
   height: 100%;
   padding: 10px;
   color: #393939;
