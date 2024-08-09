@@ -148,6 +148,7 @@ h3
   display: table-cell;
   width: 100%;
   padding-left: 10px;
+  word-break: break-all;
 }
 
 .${SIZE_CLASS}
