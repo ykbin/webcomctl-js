@@ -90,7 +90,7 @@ ${DARKMODE_SELECTOR_VALUE}
 .${PROPERTIES_CLASS}
 {
   display: flex;
-  width: inherit;
+  width: 300px;
   height: inherit;
 }
 
@@ -141,6 +141,7 @@ h3
   display: table;
   width: 100%;
   border-spacing: 0 10px;
+  word-break: break-all;
 }
 
 .${LIST_CLASS} span 
@@ -168,6 +169,7 @@ h3
   border-spacing: 0 10px;
   margin: 0;
   padding: 0;
+  word-break: break-all;
 }
 
 .${SIZE_CLASS} > li
