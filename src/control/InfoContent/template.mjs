@@ -10,7 +10,7 @@ export const ROOT_CLASS = mk.newClassName("Root");
 export const PROPBUTT_CLASS = mk.newClassName("PropButt");
 
 export const DESCRIPTION_CLASS = mk.newClassName("Description");
-export const PULL_OUT = mk.newClassName("pull_out");
+export const PULL_OUT = mk.newClassName("Pull_out");
 export const LIST_CLASS = mk.newClassName("List");
 export const SIZE_CLASS = mk.newClassName("Size");
 
