@@ -45,24 +45,24 @@ export const CSS = `
 :root
 {
   --uic-imgcnt-bg: ${UIC_CONTENT_BACKGROUND_COLOR};
-   --uic-pagpnl-hov: #e0e3e7;
-    --uic-pagpnl-col: #f3f3f3;
+   --uic-pagpnl-hov: rgb(243 243 243);
 }
 
 ${DARKMODE_SELECTOR_VALUE}
 {
   --uic-imgcnt-bg: ${UIC_CONTENT_BACKGROUND_COLOR_DARK};
-  --uic-pagpnl-hov: #444444;
-  --uic-pagpnl-col: #252525;
+  --uic-pagpnl-hov: rgb(28 28 28);
 }
 
 .${PROPBUTT_CLASS}
 {
   position: absolute;
-  right: 0;
+  right: 3px;
+  margin-top: 5px;
   display: block;
   width: 35px;
   height: 35px;
+  border-radius: 17px;
   background-repeat: no-repeat;
   background-position: center;
   background-size: 20px;
@@ -73,7 +73,6 @@ ${DARKMODE_SELECTOR_VALUE}
 .${PROPBUTT_CLASS}:hover
 {
   background-color: var(--uic-pagpnl-hov);
-  border-color: var(--uic-pagpnl-col);
 }
 
 
