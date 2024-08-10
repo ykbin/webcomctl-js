@@ -119,8 +119,7 @@ h3
   font-family: Open Sans, Arial, sans-serif;
   box-sizing: border-box;
   transform: translateX(100%);
-  transition: transform  0.2s;
-  transition-timing-function: ease-in-out;
+  transition: transform 0.2s ease-in-out;
   background-color: var(--menu-bg);
   color: var(--menu-col);
   z-index: 1;
