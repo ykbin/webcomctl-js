@@ -48,6 +48,7 @@ export const CSS = `
   --uic-pagpnl-hov: rgb(243 243 243);
   --menu-bg: white;
   --menu-col: black;
+  --menu-title-col: #272626;
 }
 
 ${DARKMODE_SELECTOR_VALUE}
@@ -56,6 +57,7 @@ ${DARKMODE_SELECTOR_VALUE}
   --uic-pagpnl-hov: rgb(28 28 28);
   --menu-bg: rgb(23, 23, 26);
   --menu-col: #b8b4b4;
+  --menu-title-col: #9b9b9b;
 }
 
 .${PROPBUTT_CLASS}
@@ -97,7 +99,7 @@ ${DARKMODE_SELECTOR_VALUE}
   margin: 0px;
   font-weight: 500;
   font-size: 18px;
-  color: #272626;
+  color: var(--menu-title-col);
 }
 
 h3
