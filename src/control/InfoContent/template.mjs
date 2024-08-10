@@ -58,6 +58,8 @@ ${DARKMODE_SELECTOR_VALUE}
 
 .${PROPBUTT_CLASS}
 {
+  position: absolute;
+  right: 0;
   display: block;
   width: 35px;
   height: 35px;
@@ -103,6 +105,8 @@ h3
 
 .${DESCRIPTION_CLASS}
 {
+  position: absolute;
+  right: 0;
   max-width: 400px;
   min-width: 300px;
   width: 100%;
@@ -113,6 +117,7 @@ h3
   box-sizing: border-box;
   transform: translateX(100%);
   transition: 0.2s ease-in-out;
+  z-index: 1;
 }
 
 .${PULL_OUT}
