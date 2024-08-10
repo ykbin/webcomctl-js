@@ -19,7 +19,7 @@ const PROPERTIES_IMG = await mk.loadSvgAsCssUrl('./properties.svg');
 export const ROOT_HTML = `
   <div class="${ROOT_CLASS}">
   <div class="${PROPBUTT_CLASS}"></div>
-    <div class="${DESCRIPTION_CLASS}">
+    <div class="${DESCRIPTION_CLASS} ${PULL_OUT}">
       <h2><span class="notranslate" translate="no">JPEG</span>:</h2>
       <span>
         One of the popular raster graphics formats used to store photographs and similar images. The JPEG algorithm allows you to compress an image both lossy and lossless (lossless JPEG compression mode).
