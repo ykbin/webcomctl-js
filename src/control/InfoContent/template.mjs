@@ -121,7 +121,7 @@ h3
   transform: translateX(100%);
   transition: 0.2s ease-in-out;
   background-color: var(--menu-bg);
-  color: ;
+  color: var(--menu-col);
   z-index: 1;
 }
 
