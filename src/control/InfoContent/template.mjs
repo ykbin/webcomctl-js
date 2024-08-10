@@ -82,10 +82,11 @@ ${DARKMODE_SELECTOR_VALUE}
 
 .${ROOT_CLASS}
 {
+  position: relative;
   display: flex;
-  width: max-content;
+  justify-content: flex-end;
+  width: 0px;
   height: 100%;
-  overflow: hidden;
 }
 
 
@@ -108,13 +109,12 @@ h3
 
 .${DESCRIPTION_CLASS}
 {
-  position: absolute;
-  right: 0;
   max-width: 400px;
   min-width: 300px;
   width: 100%;
-  height: 100%;
-  padding: 10px;
+  height: calc(100% - 10px);
+  margin-top: 10px;
+  padding: 0px 10px 10px 10px;
   color: #393939;
   font-family: Open Sans, Arial, sans-serif;
   box-sizing: border-box;
