@@ -10,6 +10,7 @@ export const ROOT_CLASS = mk.newClassName("Root");
 export const PROPBUTT_CLASS = mk.newClassName("PropButt");
 
 export const DESCRIPTION_CLASS = mk.newClassName("Description");
+export const PULL_OUT = mk.newClassName("pull_out");
 export const LIST_CLASS = mk.newClassName("List");
 export const SIZE_CLASS = mk.newClassName("Size");
 
@@ -102,12 +103,21 @@ h3
 
 .${DESCRIPTION_CLASS}
 {
-  width: 300px;
+  max-width: 400px;
+  min-width: 300px;
+  width: 100%;
   height: 100%;
   padding: 10px;
   color: #393939;
   font-family: Open Sans, Arial, sans-serif;
   box-sizing: border-box;
+  transform: translateX(100%);
+  transition: 0.2s ease-in-out;
+}
+
+.${PULL_OUT}
+{
+  transform: translateX(0);
 }
 
 .${DESCRIPTION_CLASS} *
