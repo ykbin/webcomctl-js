@@ -45,13 +45,17 @@ export const CSS = `
 :root
 {
   --uic-imgcnt-bg: ${UIC_CONTENT_BACKGROUND_COLOR};
-   --uic-pagpnl-hov: rgb(243 243 243);
+  --uic-pagpnl-hov: rgb(243 243 243);
+  --menu-bg: white;
+  --menu-col: black;
 }
 
 ${DARKMODE_SELECTOR_VALUE}
 {
   --uic-imgcnt-bg: ${UIC_CONTENT_BACKGROUND_COLOR_DARK};
   --uic-pagpnl-hov: rgb(28 28 28);
+  --menu-bg: rgb(23, 23, 26);
+  --menu-col: #b8b4b4;
 }
 
 .${PROPBUTT_CLASS}
@@ -116,6 +120,8 @@ h3
   box-sizing: border-box;
   transform: translateX(100%);
   transition: 0.2s ease-in-out;
+  background-color: var(--menu-bg);
+  color: ;
   z-index: 1;
 }
 
