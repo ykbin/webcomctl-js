@@ -8,6 +8,7 @@ const mk = new ControlMaker('PagePanel', import.meta.url);
 
 export const ROOT_CLASS = mk.newClassName("Root");
 export const DOWNLOAD_CLASS = mk.newClassName("Download");
+export const PROPERTIES_CLASS = mk.newClassName("PROPERTIES");
 export const CODETYPE_CLASS = mk.newClassName("CodeType");
 export const CTSHOW_CLASS = mk.newClassName("CtShow");
 export const PERENTMENU_CLASS = mk.newClassName("PerentMenu");
@@ -21,8 +22,10 @@ export const MENUTEXT_CLASS = mk.newClassName("MenuText");
 export const PSNTLIST_CLASS = mk.newClassName("PrsnList");
 export const PSNTTEXT_CLASS = mk.newClassName("PrsnText");
 export const PSNTACTV_CLASS = mk.newClassName("PrsnActv");
+export const MENUARROW_CLASS = mk.newClassName("MenuArrow");
 
 const DOWNLOAD_IMG = await mk.loadSvgAsCssUrl('./download.svg');
+const PROPERTIES_IMG = await mk.loadSvgAsCssUrl('./properties.svg');
 
 const BS1_VAR = 'rgba(0,0,0,0.13)';
 const BS2_VAR = 'rgba(0,0,0,0.11)';
@@ -42,6 +45,7 @@ export const ROOT_HTML = `
   </div>
   <span>
     <a class="${DOWNLOAD_CLASS}"></a>
+    <div class="${PROPERTIES_CLASS}"></div>
   </span>
 </span>
 `;
@@ -50,6 +54,7 @@ export const MENU_LIST_HTML = `
 <div class="${CODETYPE_CLASS}">
   <div>
     <div class="${MENUNAME_CLASS}"></div>
+    <span class="${MENUARROW_CLASS}"></span>
   </div>
   <span>
     <ul class="${MENULIST_CLASS}"></ul>
@@ -184,9 +189,27 @@ ${DARKMODE_SELECTOR_VALUE}
   display: none;
 }
 
+.${CODETYPE_CLASS}:has(.${MENUSTYLE2_CLASS}) .${MENUARROW_CLASS},
+.${CODETYPE_CLASS}:has(.${MENUSTYLE3_CLASS}) .${MENUARROW_CLASS},
+.${CODETYPE_CLASS}:has(.${MENULIST_CLASS}) .${MENUARROW_CLASS}::before,
 .${CODETYPE_CLASS}:has(ul.${MENUSTYLE4_CLASS}:empty)
 {
   display: block;
+}
+
+.${CODETYPE_CLASS}:has(.${MENUSTYLE2_CLASS}) > div,
+.${CODETYPE_CLASS}:has(.${MENUSTYLE3_CLASS}) > div
+{
+  border-bottom-right-radius: 2px;
+  border-top-right-radius: 2px;
+}
+
+.${MENUARROW_CLASS}
+{
+  display: none;
+  width: 20px;
+  height: 100%;
+  border-left: 1px solid var(--uic-pagpnl-col);
 }
 
 .${CODETYPE_CLASS}:has(.${MENUSTYLE4_CLASS}:empty) > div > div
@@ -208,23 +231,21 @@ ${DARKMODE_SELECTOR_VALUE}
   position: relative;
 }
 
-.${CODETYPE_CLASS}:has(.${MENUSTYLE2_CLASS}) > div::before,
-.${CODETYPE_CLASS}:has(.${MENUSTYLE3_CLASS}) > div::before
+.${MENUARROW_CLASS}::before
 {
   content: ' ';
-  position: absolute;
+  position: relative;
+  top: 14px;
   left: 7px;
-  bottom: 15px;
   transform: rotate(315deg);
-  display: block;
+  display: none;
   width: 5px;
   height: 5px;
   border-left: 1px solid var(--uic-pagpnl-ctype-col);
   border-bottom: 1px solid var(--uic-pagpnl-ctype-col);
 }
 
-.${CTSHOW_CLASS}:has(ul.${MENUSTYLE2_CLASS}) > div::before,
-.${CTSHOW_CLASS}:has(ul.${MENUSTYLE3_CLASS}) > div::before
+.${CTSHOW_CLASS} .${MENUARROW_CLASS}::before
 {
   transform: rotate(134deg);
 }
@@ -363,6 +384,18 @@ ${DARKMODE_SELECTOR_VALUE}
   transition: background-color 0.250s;
 }
 
+.${PROPERTIES_CLASS}
+{
+  display: none;
+  width: 35px;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20px;
+  background-image: ${PROPERTIES_IMG};
+  flex-shrink: 0;
+}
+
 .${DOWNLOAD_CLASS}
 {
   display: block;
@@ -376,6 +409,7 @@ ${DARKMODE_SELECTOR_VALUE}
   flex-shrink: 0;
 }
 
+.${PROPERTIES_CLASS}:hover,
 .${DOWNLOAD_CLASS}:hover
 {
   background-color: var(--uic-pagpnl-hov);
