@@ -90,8 +90,8 @@ ${DARKMODE_SELECTOR_VALUE}
 .${CLOSE_CLASS}
 {
   position: absolute;
-  top: 7px;
-  right: 11px;
+  top: 4px;
+  right: 12px;
   width: 20px;
   height: 20px;
   background-image: ${CLOSE_IMG};
@@ -125,9 +125,8 @@ h3
 .${DESCRIPTION_CLASS}
 {
   width: 100%;
-  height: calc(100% - 35px);
-  padding: 0 10px 10px 10px;
-  margin-top: 35px;
+  height: 100%;
+  padding: 10px 25px 10px 10px;
   color: #393939;
   font-family: Open Sans, Arial, sans-serif;
   box-sizing: border-box;
