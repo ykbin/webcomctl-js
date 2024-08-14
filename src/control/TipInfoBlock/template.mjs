@@ -91,12 +91,12 @@ ${DARKMODE_SELECTOR_VALUE}
 .${CLOSE_CLASS}
 {
   position: absolute;
-  top: 10px;
-  right: 12px;
+  top: 7px;
+  right: 11px;
   width: 20px;
   height: 20px;
   background-image: ${CLOSE_IMG};
-  background-size: contain;
+  background-size: 75%;
   background-position: center;
   background-repeat: no-repeat;
 }
