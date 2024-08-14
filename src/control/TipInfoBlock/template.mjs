@@ -94,6 +94,7 @@ ${DARKMODE_SELECTOR_VALUE}
   right: 12px;
   width: 20px;
   height: 20px;
+  border-radius: 5px;
   background-image: ${CLOSE_IMG};
   background-size: 75%;
   background-position: center;
@@ -102,7 +103,7 @@ ${DARKMODE_SELECTOR_VALUE}
 
 .${CLOSE_CLASS}:hover
 {
-  background-color: #80808042;
+  background-color: #f95d5d;
 }
 
 .${DESCRIPTION_CLASS} h2
