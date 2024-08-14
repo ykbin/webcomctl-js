@@ -15,7 +15,6 @@ const CLOSE_IMG = await mk.loadSvgAsCssUrl('./X.svg');
 
 export const ROOT_HTML = `
   <div class="${ROOT_CLASS}">
-    <div class="${CLOSE_CLASS}"></div>
     <div class="${DESCRIPTION_CLASS}">
       <h2><span class="notranslate" translate="no">JPEG</span>:</h2>
       <span>
@@ -34,6 +33,7 @@ export const ROOT_HTML = `
         <li><h3>ColorSpace</h3><label>YCbCr</label></li>
       </ul>
     </div>
+    <div class="${CLOSE_CLASS}"></div>
   </div>
 `;
 
@@ -59,6 +59,7 @@ ${DARKMODE_SELECTOR_VALUE}
 
 .${ROOT_CLASS}
 {
+  position: relative;
   display: block;
   width: 100%;
   height: 100%;
@@ -66,6 +67,9 @@ ${DARKMODE_SELECTOR_VALUE}
 
 .${CLOSE_CLASS}
 {
+  position: absolute;
+  top: 10px;
+  right: 10px;
   width: 20px;
   height: 20px;
   background-image: ${CLOSE_IMG};
