@@ -102,7 +102,7 @@ h3
 {
   width: 100%;
   height: 100%;
-  padding: 10px 35px 10px 10px;
+  padding: 35px 10px 10px 10px;
   color: #393939;
   font-family: Open Sans, Arial, sans-serif;
   box-sizing: border-box;
