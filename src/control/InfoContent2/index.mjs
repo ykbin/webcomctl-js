@@ -1,7 +1,7 @@
 import { BaseControl } from 'webnetq-js';
 import { ROOT_CLASS } from 'module-loader!./template.mjs';
 
-export default class UIInfoContentControl2 extends BaseControl {
+export default class UIInfoContent2Control extends BaseControl {
   _init() {
   }
 };
