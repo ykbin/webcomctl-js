@@ -90,7 +90,7 @@ ${DARKMODE_SELECTOR_VALUE}
 .${CLOSE_CLASS}
 {
   position: absolute;
-  top: 4px;
+  top: 5px;
   right: 12px;
   width: 20px;
   height: 20px;
