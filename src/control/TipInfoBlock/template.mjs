@@ -92,7 +92,7 @@ ${DARKMODE_SELECTOR_VALUE}
 {
   position: absolute;
   top: 10px;
-  right: 10px;
+  right: 12px;
   width: 20px;
   height: 20px;
   background-image: ${CLOSE_IMG};
