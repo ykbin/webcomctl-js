@@ -6,14 +6,17 @@ import { UIC_CONTENT_BACKGROUND_COLOR_DARK } from '../../lib/WickedTheme.mjs';
 const mk = new ControlMaker('TipInfoBlock', import.meta.url);
 
 export const ROOT_CLASS = mk.newClassName("Root");
+export const CLOSE_CLASS = mk.newClassName("close");
 export const DESCRIPTION_CLASS = mk.newClassName("Description");
-export const PULL_OUT = mk.newClassName("Pull_Out");
 export const LIST_CLASS = mk.newClassName("List");
 export const SIZE_CLASS = mk.newClassName("Size");
 
+const CLOSE_IMG = await mk.loadSvgAsCssUrl('./X.svg');
+
 export const ROOT_HTML = `
   <div class="${ROOT_CLASS}">
-    <div class="${DESCRIPTION_CLASS} ${PULL_OUT}">
+    <div class="${CLOSE_CLASS}"></div>
+    <div class="${DESCRIPTION_CLASS}">
       <h2><span class="notranslate" translate="no">JPEG</span>:</h2>
       <span>
         One of the popular raster graphics formats used to store photographs and similar images. The JPEG algorithm allows you to compress an image both lossy and lossless (lossless JPEG compression mode).
@@ -24,12 +27,12 @@ export const ROOT_HTML = `
         <span><h3>MD5</h3><label>6C539ACE23ECEA28A66FB18514D86A8C</label></span>
       </div>
 
-        <ul class="${SIZE_CLASS} notranslate" translate="no">
-          <li><h3>Name:</h3><label>Name1234567890</label></li>
-          <li><h3>Height</h3><label>470 px</label></li>
-          <li><h3>JFIF Ver</h3><label>1.1</label></li>
-          <li><h3>ColorSpace</h3><label>YCbCr</label></li>
-        </ul>
+      <ul class="${SIZE_CLASS} notranslate" translate="no">
+        <li><h3>Name:</h3><label>Name1234567890</label></li>
+        <li><h3>Height</h3><label>470 px</label></li>
+        <li><h3>JFIF Ver</h3><label>1.1</label></li>
+        <li><h3>ColorSpace</h3><label>YCbCr</label></li>
+      </ul>
     </div>
   </div>
 `;
@@ -61,6 +64,16 @@ ${DARKMODE_SELECTOR_VALUE}
   height: 100%;
 }
 
+.${CLOSE_CLASS}
+{
+  width: 20px;
+  height: 20px;
+  background-image: ${CLOSE_IMG};
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 .${DESCRIPTION_CLASS} > h2
 {
   display: inline-block;
@@ -81,8 +94,7 @@ h3
 .${DESCRIPTION_CLASS}
 {
   width: 100%;
-  height: calc(100% - 10px);
-  margin-top: 10px;
+  height: 100%;
   padding: 10px;
   color: #393939;
   font-family: Open Sans, Arial, sans-serif;
