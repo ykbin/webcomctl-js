@@ -12,6 +12,8 @@ export const LIST_CLASS = mk.newClassName("List");
 export const SIZE_CLASS = mk.newClassName("Size");
 
 const CLOSE_IMG = await mk.loadSvgAsCssUrl('./X.svg');
+const SCROLLBAR_THUMB_COLOR = '#b5b5b5c7';
+const SCROLLBAR_TRACK_COLOR = 'transparent';
 
 export const ROOT_HTML = `
   <div class="${ROOT_CLASS}">
@@ -57,6 +59,24 @@ ${DARKMODE_SELECTOR_VALUE}
   --menu-bg: rgb(23, 23, 26);
   --menu-col: #b8b4b4;
   --menu-title-col: #9b9b9b;
+}
+
+.${DESCRIPTION_CLASS}::-webkit-scrollbar
+{
+  width: 10px;
+  height: 10px;
+}
+
+..${DESCRIPTION_CLASS}::-webkit-scrollbar-thumb
+{
+  background-color: ${SCROLLBAR_THUMB_COLOR};
+  border-radius: 10px;
+}
+
+.${DESCRIPTION_CLASS}::-webkit-scrollbar-track,
+.${DESCRIPTION_CLASS}::-webkit-scrollbar-corner
+{
+  background-color: ${SCROLLBAR_TRACK_COLOR};
 }
 
 .${ROOT_CLASS}
@@ -108,6 +128,7 @@ h3
   box-sizing: border-box;
   background-color: var(--menu-bg);
   color: var(--menu-col);
+  overflow: auto;
 }
 
 .${DESCRIPTION_CLASS} *
