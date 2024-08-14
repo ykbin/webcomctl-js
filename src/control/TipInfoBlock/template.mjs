@@ -101,6 +101,11 @@ ${DARKMODE_SELECTOR_VALUE}
   background-repeat: no-repeat;
 }
 
+.${CLOSE_CLASS}:hover
+{
+  background-color: #80808042;
+}
+
 .${DESCRIPTION_CLASS} h2
 {
   display: inline-block;
