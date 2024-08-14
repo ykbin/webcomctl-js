@@ -61,6 +61,12 @@ ${DARKMODE_SELECTOR_VALUE}
   --menu-title-col: #9b9b9b;
 }
 
+.${DESCRIPTION_CLASS}::-webkit-scrollbar
+{
+  width: 10px;
+  height: 10px;
+}
+
 .${DESCRIPTION_CLASS}::-webkit-scrollbar-thumb
 {
   background-color: ${SCROLLBAR_THUMB_COLOR};
