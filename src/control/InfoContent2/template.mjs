@@ -3,7 +3,7 @@ import { DARKMODE_SELECTOR_VALUE } from '../../lib/DarkMode.mjs';
 import { UIC_CONTENT_BACKGROUND_COLOR } from '../../lib/WickedTheme.mjs';
 import { UIC_CONTENT_BACKGROUND_COLOR_DARK } from '../../lib/WickedTheme.mjs';
 
-const mk = new ControlMaker('InfoContent', import.meta.url);
+const mk = new ControlMaker('InfoContent2', import.meta.url);
 
 export const ROOT_CLASS = mk.newClassName("Root");
 
