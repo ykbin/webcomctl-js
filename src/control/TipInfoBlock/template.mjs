@@ -6,19 +6,13 @@ import { UIC_CONTENT_BACKGROUND_COLOR_DARK } from '../../lib/WickedTheme.mjs';
 const mk = new ControlMaker('TipInfoBlock', import.meta.url);
 
 export const ROOT_CLASS = mk.newClassName("Root");
-
-export const PROPBUTT_CLASS = mk.newClassName("PropButt");
-
 export const DESCRIPTION_CLASS = mk.newClassName("Description");
 export const PULL_OUT = mk.newClassName("Pull_Out");
 export const LIST_CLASS = mk.newClassName("List");
 export const SIZE_CLASS = mk.newClassName("Size");
 
-const PROPERTIES_IMG = await mk.loadSvgAsCssUrl('./properties.svg');
-
 export const ROOT_HTML = `
   <div class="${ROOT_CLASS}">
-  <div class="${PROPBUTT_CLASS}"></div>
     <div class="${DESCRIPTION_CLASS} ${PULL_OUT}">
       <h2><span class="notranslate" translate="no">JPEG</span>:</h2>
       <span>
@@ -60,37 +54,12 @@ ${DARKMODE_SELECTOR_VALUE}
   --menu-title-col: #9b9b9b;
 }
 
-.${PROPBUTT_CLASS}
-{
-  position: absolute;
-  right: 3px;
-  margin-top: 5px;
-  display: block;
-  width: 35px;
-  height: 35px;
-  border-radius: 17px;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 20px;
-  background-image: ${PROPERTIES_IMG};
-  flex-shrink: 0;
-}
-
-.${PROPBUTT_CLASS}:hover
-{
-  background-color: var(--uic-pagpnl-hov);
-}
-
-
 .${ROOT_CLASS}
 {
-  position: relative;
-  display: flex;
-  justify-content: flex-end;
-  width: 0px;
+  display: block;
+  width: 100%;
   height: 100%;
 }
-
 
 .${DESCRIPTION_CLASS} > h2
 {
@@ -111,25 +80,15 @@ h3
 
 .${DESCRIPTION_CLASS}
 {
-  max-width: 400px;
-  min-width: 300px;
   width: 100%;
   height: calc(100% - 10px);
   margin-top: 10px;
-  padding: 0px 10px 10px 10px;
+  padding: 10px;
   color: #393939;
   font-family: Open Sans, Arial, sans-serif;
   box-sizing: border-box;
-  transform: translateX(100%);
-  transition: transform 0.2s ease-in-out;
   background-color: var(--menu-bg);
   color: var(--menu-col);
-  z-index: 1;
-}
-
-.${PULL_OUT}
-{
-  transform: translateX(0);
 }
 
 .${DESCRIPTION_CLASS} *
