@@ -115,7 +115,7 @@ h3
   box-sizing: border-box;
 }
 
-.${DESCRIPTION_CLASS} span
+.${DESCRIPTION_CLASS} > div > span
 {
   display: block;
   max-width: 500px;
