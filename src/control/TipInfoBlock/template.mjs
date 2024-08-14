@@ -85,7 +85,6 @@ ${DARKMODE_SELECTOR_VALUE}
   display: block;
   width: 100%;
   height: 100%;
-  overflow: auto;
 }
 
 .${CLOSE_CLASS}
@@ -126,8 +125,9 @@ h3
 .${DESCRIPTION_CLASS}
 {
   width: 100%;
-  height: 100%;
-  padding: 35px 10px 10px 10px;
+  height: calc(100% - 35px);
+  padding: 0 10px 10px 10px;
+  margin-top: 35px;
   color: #393939;
   font-family: Open Sans, Arial, sans-serif;
   box-sizing: border-box;
