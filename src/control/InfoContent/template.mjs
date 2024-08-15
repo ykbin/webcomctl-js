@@ -19,24 +19,26 @@ const CLOSE_IMG = await mk.loadSvgAsCssUrl('./X.svg');
 export const ROOT_HTML = `
   <div class="${ROOT_CLASS}">
     <div class="${DESCRIPTION_CLASS} ${PULL_OUT}">
-      <h2><span class="notranslate" translate="no">JPEG</span>:</h2>
-      <span>
-        One of the popular raster graphics formats used to store photographs and similar images. The JPEG algorithm allows you to compress an image both lossy and lossless (lossless JPEG compression mode).
-      </span>
-      <div class="${LIST_CLASS} notranslate" translate="no">
-        <span><h3>Size</h3><label>88 KB</label></span>
-        <span><h3>Library</h3><label>libjpeg-turbo-2.1.91</label></span>
-        <span><h3>MD5</h3><label>6C539ACE23ECEA28A66FB18514D86A8C</label></span>
-      </div>
+      <div>
+        <h2><span class="notranslate" translate="no">JPEG</span>:</h2>
+        <span>
+          One of the popular raster graphics formats used to store photographs and similar images. The JPEG algorithm allows you to compress an image both lossy and lossless (lossless JPEG compression mode).
+        </span>
+        <div class="${LIST_CLASS} notranslate" translate="no">
+          <span><h3>Size</h3><label>88 KB</label></span>
+          <span><h3>Library</h3><label>libjpeg-turbo-2.1.91</label></span>
+          <span><h3>MD5</h3><label>6C539ACE23ECEA28A66FB18514D86A8C</label></span>
+        </div>
 
-        <ul class="${SIZE_CLASS} notranslate" translate="no">
-          <li><h3>Name:</h3><label>Name1234567890</label></li>
-          <li><h3>Height</h3><label>470 px</label></li>
-          <li><h3>JFIF Ver</h3><label>1.1</label></li>
-          <li><h3>ColorSpace</h3><label>YCbCr</label></li>
-        </ul>
+          <ul class="${SIZE_CLASS} notranslate" translate="no">
+            <li><h3>Name:</h3><label>Name1234567890</label></li>
+            <li><h3>Height</h3><label>470 px</label></li>
+            <li><h3>JFIF Ver</h3><label>1.1</label></li>
+            <li><h3>ColorSpace</h3><label>YCbCr</label></li>
+          </ul>
+        </div>
+        <div class="${CLOSE_CLASS}"></div>
     </div>
-    <div class="${CLOSE_CLASS}"></div>
   </div>
 `;
 
@@ -85,7 +87,7 @@ ${DARKMODE_SELECTOR_VALUE}
 }
 
 
-.${DESCRIPTION_CLASS} > h2
+.${DESCRIPTION_CLASS} > div > h2
 {
   display: inline-block;
   padding-left: 5px;
@@ -130,7 +132,7 @@ h3
   box-sizing: border-box;
 }
 
-.${DESCRIPTION_CLASS} > span
+.${DESCRIPTION_CLASS} > div > span
 {
   display: block;
   max-width: 500px;
