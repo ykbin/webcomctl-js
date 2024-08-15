@@ -10,15 +10,17 @@ export const ROOT_CLASS = mk.newClassName("Root");
 export const CLOSE_CLASS = mk.newClassName("Close");
 
 export const DESCRIPTION_CLASS = mk.newClassName("Description");
-export const PULL_OUT = mk.newClassName("Pull_Out");
+export const PULL_OUT_RIGHT = mk.newClassName("Pull_Out_Right");
+export const PULL_OUT_LEFT = mk.newClassName("Pull_Out_Left");
 export const LIST_CLASS = mk.newClassName("List");
 export const SIZE_CLASS = mk.newClassName("Size");
 
 const CLOSE_IMG = await mk.loadSvgAsCssUrl('./X.svg');
 
 export const ROOT_HTML = `
-  <div class="${ROOT_CLASS}">
-    <div class="${DESCRIPTION_CLASS} ${PULL_OUT}">
+<div class="${ROOT_CLASS}">
+  <div>
+    <div class="${DESCRIPTION_CLASS} ${PULL_OUT_RIGHT}">
       <div>
         <h2><span class="notranslate" translate="no">JPEG</span>:</h2>
         <span>
@@ -81,6 +83,12 @@ ${DARKMODE_SELECTOR_VALUE}
 .${ROOT_CLASS}
 {
   position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.${ROOT_CLASS} > div
+{
   display: flex;
   justify-content: flex-end;
   width: 0px;
@@ -107,6 +115,7 @@ h3
 
 .${DESCRIPTION_CLASS}
 {
+  position: absolute;
   display: flex;
   max-width: 450px;
   min-width: 300px;
@@ -117,16 +126,22 @@ h3
   color: #393939;
   font-family: Open Sans, Arial, sans-serif;
   box-sizing: border-box;
-  transform: translateX(100%);
+  transform: translateX(0);
   transition: transform 0.2s ease-in-out;
   background-color: var(--menu-bg);
   color: var(--menu-col);
-  z-index: 1;
 }
 
-.${PULL_OUT}
+.${PULL_OUT_RIGHT}
 {
-  transform: translateX(0);
+  right: 0;
+  transform: translateX(100%);
+}
+
+.${PULL_OUT_LEFT}
+{
+  left: 0;
+  transform: translateX(-100%);
 }
 
 .${DESCRIPTION_CLASS} *
