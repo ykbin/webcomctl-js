@@ -14,11 +14,10 @@ export const PULL_OUT = mk.newClassName("Pull_Out");
 export const LIST_CLASS = mk.newClassName("List");
 export const SIZE_CLASS = mk.newClassName("Size");
 
-const PROPERTIES_IMG = await mk.loadSvgAsCssUrl('./properties.svg');
+const CLOSE_IMG = await mk.loadSvgAsCssUrl('./X.svg');
 
 export const ROOT_HTML = `
   <div class="${ROOT_CLASS}">
-  <div class="${PROPBUTT_CLASS}"></div>
     <div class="${DESCRIPTION_CLASS} ${PULL_OUT}">
       <h2><span class="notranslate" translate="no">JPEG</span>:</h2>
       <span>
@@ -37,6 +36,7 @@ export const ROOT_HTML = `
           <li><h3>ColorSpace</h3><label>YCbCr</label></li>
         </ul>
     </div>
+    <div class="${CLOSE_CLASS}"></div>
   </div>
 `;
 
@@ -45,42 +45,35 @@ export const CSS = `
 :root
 {
   --uic-imgcnt-bg: ${UIC_CONTENT_BACKGROUND_COLOR};
-  --uic-pagpnl-hov: rgb(243 243 243);
   --menu-bg: white;
   --menu-col: black;
   --menu-title-col: #272626;
+  --close-hov: #f95d5d;
 }
 
 ${DARKMODE_SELECTOR_VALUE}
 {
   --uic-imgcnt-bg: ${UIC_CONTENT_BACKGROUND_COLOR_DARK};
-  --uic-pagpnl-hov: rgb(28 28 28);
   --menu-bg: rgb(23, 23, 26);
   --menu-col: #b8b4b4;
   --menu-title-col: #9b9b9b;
 }
 
-.${PROPBUTT_CLASS}
+.${CLOSE_CLASS}
 {
-  position: absolute;
-  right: 3px;
-  margin-top: 5px;
-  display: block;
-  width: 35px;
-  height: 35px;
-  border-radius: 17px;
-  background-repeat: no-repeat;
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+  background-image: ${CLOSE_IMG};
+  background-size: 75%;
   background-position: center;
-  background-size: 20px;
-  background-image: ${PROPERTIES_IMG};
-  flex-shrink: 0;
+  background-repeat: no-repeat;
 }
 
-.${PROPBUTT_CLASS}:hover
+.${CLOSE_CLASS}:hover
 {
-  background-color: var(--uic-pagpnl-hov);
+  background-color: var(--close-hov);
 }
-
 
 .${ROOT_CLASS}
 {

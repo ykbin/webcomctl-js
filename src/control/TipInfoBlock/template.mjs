@@ -46,16 +46,15 @@ export const CSS = `
 :root
 {
   --uic-imgcnt-bg: ${UIC_CONTENT_BACKGROUND_COLOR};
-  --uic-pagpnl-hov: rgb(243 243 243);
   --menu-bg: white;
   --menu-col: black;
   --menu-title-col: #272626;
+  --close-hov: #f95d5d;
 }
 
 ${DARKMODE_SELECTOR_VALUE}
 {
   --uic-imgcnt-bg: ${UIC_CONTENT_BACKGROUND_COLOR_DARK};
-  --uic-pagpnl-hov: rgb(28 28 28);
   --menu-bg: rgb(23, 23, 26);
   --menu-col: #b8b4b4;
   --menu-title-col: #9b9b9b;
@@ -103,7 +102,7 @@ ${DARKMODE_SELECTOR_VALUE}
 
 .${CLOSE_CLASS}:hover
 {
-  background-color: #f95d5d;
+  background-color: var(--close-hov);
 }
 
 .${DESCRIPTION_CLASS} h2
