@@ -10,7 +10,8 @@
 
 <path id="shape0"
   transform="translate(27.4999993452364, 245.249998824889)"
-  fill="none" stroke="#747474"
+  fill="none"
+  stroke="#747474"
   stroke-width="47"
   stroke-linecap="square"
   stroke-linejoin="miter"
