@@ -7,7 +7,7 @@ const mk = new ControlMaker('InfoContent', import.meta.url);
 
 export const ROOT_CLASS = mk.newClassName("Root");
 
-export const PROPBUTT_CLASS = mk.newClassName("PropButt");
+export const CLOSE_CLASS = mk.newClassName("Close");
 
 export const DESCRIPTION_CLASS = mk.newClassName("Description");
 export const PULL_OUT = mk.newClassName("Pull_Out");
