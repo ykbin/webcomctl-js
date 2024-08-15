@@ -70,6 +70,7 @@ ${DARKMODE_SELECTOR_VALUE}
   background-size: 75%;
   background-position: center;
   background-repeat: no-repeat;
+  flex-shrink: 0;
 }
 
 .${CLOSE_CLASS}:hover
@@ -106,7 +107,8 @@ h3
 
 .${DESCRIPTION_CLASS}
 {
-  max-width: 400px;
+  display: flex;
+  max-width: 450px;
   min-width: 300px;
   width: 100%;
   height: calc(100% - 10px);
