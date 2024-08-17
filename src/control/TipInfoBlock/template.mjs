@@ -54,7 +54,7 @@ export const CSS = `
   --menu-col: black;
   --pull-out-bor: #dedede;
   --menu-title-col: #272626;
-  --close-hov: #f95d5d;
+  --close-hov: #ff00005e;
 }
 
 ${DARKMODE_SELECTOR_VALUE}
