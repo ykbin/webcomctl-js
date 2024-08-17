@@ -52,6 +52,7 @@ export const CSS = `
   --uic-imgcnt-bg: ${UIC_CONTENT_BACKGROUND_COLOR};
   --menu-bg: #f3f3f3;
   --menu-col: black;
+  --pull-out-bor: #dedede;
   --menu-title-col: #272626;
   --close-hov: #f95d5d;
 }
@@ -62,6 +63,7 @@ ${DARKMODE_SELECTOR_VALUE}
   --menu-bg: #252525;
   --menu-bg: rgb(23, 23, 26);
   --menu-col: #b8b4b4;
+  --pull-out-bor: #323232;
   --menu-title-col: #9b9b9b;
 }
 
@@ -93,6 +95,8 @@ ${ROOT_CLASS} > *
 
 .${CLOSE_CLASS}
 {
+  position: relative;
+  bottom: 10px;
   width: 20px;
   height: 20px;
   border-radius: 5px;
@@ -131,7 +135,6 @@ h3
   min-width: 300px;
   width: 100%;
   height:100%;
-  padding: 10px;
   color: #393939;
   font-family: Open Sans, Arial, sans-serif;
   box-sizing: border-box;
@@ -145,12 +148,16 @@ h3
 {
   right: 0;
   transform: translateX(100%);
+  padding: 20px 10px 10px 20px;
+  border-left: 1px solid var(pull-out-bor);
 }
 
 .${PULL_OUT_LEFT}
 {
   left: 0;
   transform: translateX(-100%);
+  padding: 20px 20px 10px 10px;
+  border-right: 1px solid var(pull-out-bor);
 }
 
 .${DESCRIPTION_CLASS} *
