@@ -50,7 +50,7 @@ export const CSS = `
 :root
 {
   --uic-imgcnt-bg: ${UIC_CONTENT_BACKGROUND_COLOR};
-  --menu-bg: white;
+  --menu-bg: #f3f3f3;
   --menu-col: black;
   --menu-title-col: #272626;
   --close-hov: #f95d5d;
@@ -59,26 +59,15 @@ export const CSS = `
 ${DARKMODE_SELECTOR_VALUE}
 {
   --uic-imgcnt-bg: ${UIC_CONTENT_BACKGROUND_COLOR_DARK};
+  --menu-bg: #252525;
   --menu-bg: rgb(23, 23, 26);
   --menu-col: #b8b4b4;
   --menu-title-col: #9b9b9b;
 }
 
-.${CLOSE_CLASS}
+${ROOT_CLASS} > *
 {
-  width: 20px;
-  height: 20px;
-  border-radius: 5px;
-  background-image: ${CLOSE_IMG};
-  background-size: 75%;
-  background-position: center;
-  background-repeat: no-repeat;
-  flex-shrink: 0;
-}
-
-.${CLOSE_CLASS}:hover
-{
-  background-color: var(--close-hov);
+  box-sizing: border-box;
 }
 
 .${ROOT_CLASS}
@@ -100,6 +89,23 @@ ${DARKMODE_SELECTOR_VALUE}
   position: absolute;
   display: flex;
   justify-content: flex-end;
+}
+
+.${CLOSE_CLASS}
+{
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+  background-image: ${CLOSE_IMG};
+  background-size: 75%;
+  background-position: center;
+  background-repeat: no-repeat;
+  flex-shrink: 0;
+}
+
+.${CLOSE_CLASS}:hover
+{
+  background-color: var(--close-hov);
 }
 
 .${DESCRIPTION_CLASS} > div > h2
