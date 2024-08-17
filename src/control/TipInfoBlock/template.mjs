@@ -90,13 +90,13 @@ ${DARKMODE_SELECTOR_VALUE}
   height: 100%;
 }
 
-.${ROOT_CLASS} > div:nth-child(2)
+.${ROOT_CLASS} > *:nth-child(2)
 {
   width: 100%;
   height: 100%;
 }
 
-.${ROOT_CLASS} > div:nth-child(1)
+.${ROOT_CLASS} > *:nth-child(1)
 {
   position: absolute;
   display: flex;
