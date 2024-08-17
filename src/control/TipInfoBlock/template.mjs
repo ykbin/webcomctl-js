@@ -85,15 +85,17 @@ ${DARKMODE_SELECTOR_VALUE}
 .${ROOT_CLASS}
 {
   position: relative;
+  display: flex;
   width: 100%;
   height: 100%;
 }
 
 .${ROOT_CLASS} > div
 {
+  position: absolute;
   display: flex;
   justify-content: flex-end;
-  width: 0px;
+  width: auto;
   height: 100%;
 }
 
