@@ -129,8 +129,7 @@ h3
   min-width: 300px;
   width: 100%;
   height: calc(100% - 10px);
-  margin-top: 10px;
-  padding: 0px 10px 10px 10px;
+  padding: 10px 10px 10px 10px;
   color: #393939;
   font-family: Open Sans, Arial, sans-serif;
   box-sizing: border-box;
