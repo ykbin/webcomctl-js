@@ -100,8 +100,6 @@ ${DARKMODE_SELECTOR_VALUE}
   position: absolute;
   display: flex;
   justify-content: flex-end;
-  width: 100%;
-  height: 100%;
 }
 
 .${DESCRIPTION_CLASS} > div > h2
@@ -123,13 +121,11 @@ h3
 
 .${DESCRIPTION_CLASS}
 {
-  position: absolute;
-  display: flex;
   max-width: 450px;
   min-width: 300px;
   width: 100%;
-  height: calc(100% - 10px);
-  padding: 10px 10px 10px 10px;
+  height:100%;
+  padding: 10px;
   color: #393939;
   font-family: Open Sans, Arial, sans-serif;
   box-sizing: border-box;
