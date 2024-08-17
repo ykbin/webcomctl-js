@@ -20,7 +20,6 @@ const CLOSE_IMG = await mk.loadSvgAsCssUrl('./X.svg');
 
 export const ROOT_HTML = `
 <div class="${ROOT_CLASS}">
-  <div class="${PORT_CLASS}"></div>
   <div>
     <div class="${DESCRIPTION_CLASS} ${PULL_OUT_RIGHT}">
       <div>
@@ -43,6 +42,7 @@ export const ROOT_HTML = `
         </div>
         <div class="${CLOSE_CLASS}"></div>
     </div>
+    <div class="${PORT_CLASS}"></div>
   </div>
 `;
 
@@ -90,15 +90,20 @@ ${DARKMODE_SELECTOR_VALUE}
   height: 100%;
 }
 
-.${ROOT_CLASS} > div
+.${ROOT_CLASS} > div:nth-child(2)
+{
+  width: 100%;
+  height: 100%;
+}
+
+.${ROOT_CLASS} > div:nth-child(1)
 {
   position: absolute;
   display: flex;
   justify-content: flex-end;
-  width: auto;
+  width: 100%;
   height: 100%;
 }
-
 
 .${DESCRIPTION_CLASS} > div > h2
 {
