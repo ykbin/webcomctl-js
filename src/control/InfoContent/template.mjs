@@ -6,21 +6,18 @@ import { UIC_CONTENT_BACKGROUND_COLOR_DARK } from '../../lib/WickedTheme.mjs';
 const mk = new ControlMaker('InfoContent', import.meta.url);
 
 export const ROOT_CLASS = mk.newClassName("Root");
-
-export const CLOSE_CLASS = mk.newClassName("Close");
-
+export const CLOSE_CLASS = mk.newClassName("close");
 export const DESCRIPTION_CLASS = mk.newClassName("Description");
-export const PULL_OUT_RIGHT = mk.newClassName("Pull_Out_Right");
-export const PULL_OUT_LEFT = mk.newClassName("Pull_Out_Left");
 export const LIST_CLASS = mk.newClassName("List");
 export const SIZE_CLASS = mk.newClassName("Size");
 
 const CLOSE_IMG = await mk.loadSvgAsCssUrl('./X.svg');
+const SCROLLBAR_THUMB_COLOR = '#b5b5b5c7';
+const SCROLLBAR_TRACK_COLOR = 'transparent';
 
 export const ROOT_HTML = `
-<div class="${ROOT_CLASS}">
-  <div>
-    <div class="${DESCRIPTION_CLASS} ${PULL_OUT_RIGHT}">
+  <div class="${ROOT_CLASS}">
+    <div class="${DESCRIPTION_CLASS}">
       <div>
         <h2><span class="notranslate" translate="no">JPEG</span>:</h2>
         <span>
@@ -32,15 +29,15 @@ export const ROOT_HTML = `
           <span><h3>MD5</h3><label>6C539ACE23ECEA28A66FB18514D86A8C</label></span>
         </div>
 
-          <ul class="${SIZE_CLASS} notranslate" translate="no">
-            <li><h3>Name:</h3><label>Name1234567890</label></li>
-            <li><h3>Height</h3><label>470 px</label></li>
-            <li><h3>JFIF Ver</h3><label>1.1</label></li>
-            <li><h3>ColorSpace</h3><label>YCbCr</label></li>
-          </ul>
-        </div>
-        <div class="${CLOSE_CLASS}"></div>
+        <ul class="${SIZE_CLASS} notranslate" translate="no">
+          <li><h3>Name:</h3><label>Name1234567890</label></li>
+          <li><h3>Height</h3><label>470 px</label></li>
+          <li><h3>JFIF Ver</h3><label>1.1</label></li>
+          <li><h3>ColorSpace</h3><label>YCbCr</label></li>
+        </ul>
+      </div>
     </div>
+    <div class="${CLOSE_CLASS}"></div>
   </div>
 `;
 
@@ -63,8 +60,37 @@ ${DARKMODE_SELECTOR_VALUE}
   --menu-title-col: #9b9b9b;
 }
 
+.${DESCRIPTION_CLASS}::-webkit-scrollbar
+{
+  width: 10px;
+  height: 10px;
+}
+
+.${DESCRIPTION_CLASS}::-webkit-scrollbar-thumb
+{
+  background-color: ${SCROLLBAR_THUMB_COLOR};
+  border-radius: 10px;
+}
+
+.${DESCRIPTION_CLASS}::-webkit-scrollbar-track,
+.${DESCRIPTION_CLASS}::-webkit-scrollbar-corner
+{
+  background-color: ${SCROLLBAR_TRACK_COLOR};
+}
+
+.${ROOT_CLASS}
+{
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 .${CLOSE_CLASS}
 {
+  position: absolute;
+  top: 5px;
+  right: 12px;
   width: 20px;
   height: 20px;
   border-radius: 5px;
@@ -72,7 +98,6 @@ ${DARKMODE_SELECTOR_VALUE}
   background-size: 75%;
   background-position: center;
   background-repeat: no-repeat;
-  flex-shrink: 0;
 }
 
 .${CLOSE_CLASS}:hover
@@ -80,23 +105,7 @@ ${DARKMODE_SELECTOR_VALUE}
   background-color: var(--close-hov);
 }
 
-.${ROOT_CLASS}
-{
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-.${ROOT_CLASS} > div
-{
-  display: flex;
-  justify-content: flex-end;
-  width: 0px;
-  height: 100%;
-}
-
-
-.${DESCRIPTION_CLASS} > div > h2
+.${DESCRIPTION_CLASS} h2
 {
   display: inline-block;
   padding-left: 5px;
@@ -115,33 +124,15 @@ h3
 
 .${DESCRIPTION_CLASS}
 {
-  position: absolute;
-  display: flex;
-  max-width: 450px;
-  min-width: 300px;
   width: 100%;
-  height: calc(100% - 10px);
-  margin-top: 10px;
-  padding: 0px 10px 10px 10px;
+  height: 100%;
+  padding: 10px 25px 10px 10px;
   color: #393939;
   font-family: Open Sans, Arial, sans-serif;
   box-sizing: border-box;
-  transform: translateX(0);
-  transition: transform 0.2s ease-in-out;
   background-color: var(--menu-bg);
   color: var(--menu-col);
-}
-
-.${PULL_OUT_RIGHT}
-{
-  right: 0;
-  transform: translateX(100%);
-}
-
-.${PULL_OUT_LEFT}
-{
-  left: 0;
-  transform: translateX(-100%);
+  overflow: auto;
 }
 
 .${DESCRIPTION_CLASS} *
