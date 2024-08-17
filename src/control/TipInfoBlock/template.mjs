@@ -6,6 +6,7 @@ import { UIC_CONTENT_BACKGROUND_COLOR_DARK } from '../../lib/WickedTheme.mjs';
 const mk = new ControlMaker('TipInfoBlock', import.meta.url);
 
 export const ROOT_CLASS = mk.newClassName("Root");
+export const PORT_CLASS = mk.newClassName("Port");
 
 export const CLOSE_CLASS = mk.newClassName("Close");
 
@@ -19,6 +20,7 @@ const CLOSE_IMG = await mk.loadSvgAsCssUrl('./X.svg');
 
 export const ROOT_HTML = `
 <div class="${ROOT_CLASS}">
+  <div class="${PORT_CLASS}"></div>
   <div>
     <div class="${DESCRIPTION_CLASS} ${PULL_OUT_RIGHT}">
       <div>
