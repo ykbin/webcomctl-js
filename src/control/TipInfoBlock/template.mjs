@@ -163,7 +163,7 @@ h3
   border-right: 1px solid var(--pull-out-bor);
 }
 
-.${PULL_OUT_LEFT_ON}
+.${PULL_OUT_LEFT_ON} .TipInfoBlock-Description
 {
   left: 0;
   display: flex;
@@ -172,7 +172,7 @@ h3
   border-right: 1px solid var(--pull-out-bor);
 }
 
-.${PULL_OUT_RIGHT_ON}
+.${PULL_OUT_RIGHT_ON} .TipInfoBlock-Description
 {
   right: 0;
   display: flex;
