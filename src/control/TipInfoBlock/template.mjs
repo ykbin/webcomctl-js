@@ -149,7 +149,7 @@ h3
   right: 0;
   transform: translateX(100%);
   padding: 20px 10px 10px 20px;
-  border-left: 1px solid var(pull-out-bor);
+  border-left: 1px solid var(--pull-out-bor);
 }
 
 .${PULL_OUT_LEFT} .TipInfoBlock-Description
