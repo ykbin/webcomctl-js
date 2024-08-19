@@ -21,7 +21,7 @@ const CLOSE_IMG = await mk.loadSvgAsCssUrl('./X.svg');
 export const ROOT_HTML = `
 <div class="${ROOT_CLASS}">
     <div class="${PORT_CLASS}"></div>
-    <div class="${DESCRIPTION_CLASS} ${PULL_OUT_RIGHT}">
+    <div class="${DESCRIPTION_CLASS}">
       <div>
         <h2><span class="notranslate" translate="no">JPEG</span>:</h2>
         <span>
