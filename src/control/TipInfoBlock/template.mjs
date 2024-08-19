@@ -147,6 +147,7 @@ h3
 .${PULL_OUT_RIGHT} .TipInfoBlock-Description
 {
   right: 0;
+  display: flex;
   transform: translateX(100%);
   padding: 20px 10px 10px 20px;
   border-left: 1px solid var(--pull-out-bor);
@@ -155,6 +156,7 @@ h3
 .${PULL_OUT_LEFT} .TipInfoBlock-Description
 {
   left: 0;
+  display: flex;
   transform: translateX(-100%);
   padding: 20px 20px 10px 10px;
   border-right: 1px solid var(--pull-out-bor);
