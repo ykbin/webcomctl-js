@@ -91,6 +91,7 @@ ${ROOT_CLASS} > *
 .${ROOT_CLASS} > *:nth-child(2)
 {
   position: absolute;
+  display: none;
 }
 
 .${CLOSE_CLASS}
@@ -131,7 +132,7 @@ h3
 
 .${DESCRIPTION_CLASS}
 {
-  display: none;
+  display: flex;
   justify-content: flex-end;
   max-width: 450px;
   min-width: 300px;
@@ -157,7 +158,6 @@ h3
 .${PULL_OUT_LEFT} .TipInfoBlock-Description
 {
   left: 0;
-  display: flex;
   transform: translateX(-100%);
   padding: 20px 20px 10px 10px;
   border-right: 1px solid var(--pull-out-bor);
@@ -166,7 +166,6 @@ h3
 .${PULL_OUT_LEFT_ON} .TipInfoBlock-Description
 {
   left: 0;
-  display: flex;
   transform: translateX(0);
   padding: 20px 20px 10px 10px;
   border-right: 1px solid var(--pull-out-bor);
@@ -175,7 +174,6 @@ h3
 .${PULL_OUT_RIGHT_ON} .TipInfoBlock-Description
 {
   right: 0;
-  display: flex;
   transform: translateX(0);
   padding: 20px 10px 10px 20px;
   border-left: 1px solid var(--pull-out-bor);
