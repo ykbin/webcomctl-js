@@ -144,7 +144,7 @@ h3
   color: var(--menu-col);
 }
 
-.${PULL_OUT_RIGHT}
+.${PULL_OUT_RIGHT} .TipInfoBlock-Description
 {
   right: 0;
   transform: translateX(100%);
@@ -152,12 +152,12 @@ h3
   border-left: 1px solid var(pull-out-bor);
 }
 
-.${PULL_OUT_LEFT}
+.${PULL_OUT_LEFT} .TipInfoBlock-Description
 {
   left: 0;
   transform: translateX(-100%);
   padding: 20px 20px 10px 10px;
-  border-right: 1px solid var(pull-out-bor);
+  border-right: 1px solid var(--pull-out-bor);
 }
 
 .${DESCRIPTION_CLASS} *
