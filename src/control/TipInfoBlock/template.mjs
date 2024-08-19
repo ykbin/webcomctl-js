@@ -130,7 +130,7 @@ h3
   font-size: 16px;
 }
 
-.${DESCRIPTION_CLASS}
+.${ROOT_CLASS} .${DESCRIPTION_CLASS}
 {
   display: flex;
   justify-content: flex-end;
@@ -146,7 +146,7 @@ h3
   color: var(--menu-col);
 }
 
-.${PULL_OUT_RIGHT} .TipInfoBlock-Description
+.${PULL_OUT_RIGHT} div.${DESCRIPTION_CLASS}
 {
   right: 0;
   display: flex;
@@ -155,7 +155,7 @@ h3
   border-left: 1px solid var(--pull-out-bor);
 }
 
-.${PULL_OUT_LEFT} .TipInfoBlock-Description
+.${PULL_OUT_LEFT} div.${DESCRIPTION_CLASS}
 {
   left: 0;
   transform: translateX(-100%);
@@ -163,7 +163,7 @@ h3
   border-right: 1px solid var(--pull-out-bor);
 }
 
-.${PULL_OUT_LEFT_ON} .TipInfoBlock-Description
+.${PULL_OUT_LEFT_ON} div.${DESCRIPTION_CLASS}
 {
   left: 0;
   transform: translateX(0);
@@ -171,7 +171,7 @@ h3
   border-right: 1px solid var(--pull-out-bor);
 }
 
-.${PULL_OUT_RIGHT_ON} .TipInfoBlock-Description
+.${PULL_OUT_RIGHT_ON} div.${DESCRIPTION_CLASS}
 {
   right: 0;
   transform: translateX(0);
