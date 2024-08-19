@@ -89,8 +89,6 @@ ${ROOT_CLASS} > *
 .${ROOT_CLASS} > *:nth-child(2)
 {
   position: absolute;
-  display: flex;
-  justify-content: flex-end;
 }
 
 .${CLOSE_CLASS}
@@ -132,6 +130,7 @@ h3
 .${DESCRIPTION_CLASS}
 {
   display: none;
+  justify-content: flex-end;
   max-width: 450px;
   min-width: 300px;
   width: 100%;
