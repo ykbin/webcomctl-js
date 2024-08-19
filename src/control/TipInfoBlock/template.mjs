@@ -13,8 +13,8 @@ export const CLOSE_CLASS = mk.newClassName("Close");
 export const DESCRIPTION_CLASS = mk.newClassName("Description");
 export const PULL_OUT_RIGHT = mk.newClassName("Pull_Out_Right");
 export const PULL_OUT_LEFT = mk.newClassName("Pull_Out_Left");
-export const PULL_OUT_LEFT_ON = mk.newClassName("TipInfoBlock-Pull_Out_Left-On")
-export const PULL_OUT_RIGHT_ON = mk.newClassName("TipInfoBlock-Pull_Out_Right-On")
+export const PULL_OUT_LEFT_ON = mk.newClassName("Pull_Out_Left-On")
+export const PULL_OUT_RIGHT_ON = mk.newClassName("Pull_Out_Right-On")
 export const LIST_CLASS = mk.newClassName("List");
 export const SIZE_CLASS = mk.newClassName("Size");
 
