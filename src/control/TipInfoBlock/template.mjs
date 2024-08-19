@@ -131,6 +131,7 @@ h3
 
 .${DESCRIPTION_CLASS}
 {
+  display: none;
   max-width: 450px;
   min-width: 300px;
   width: 100%;
