@@ -94,25 +94,6 @@ ${ROOT_CLASS} > *
   display: none;
 }
 
-.${CLOSE_CLASS}
-{
-  position: relative;
-  bottom: 10px;
-  width: 20px;
-  height: 20px;
-  border-radius: 5px;
-  background-image: ${CLOSE_IMG};
-  background-size: 75%;
-  background-position: center;
-  background-repeat: no-repeat;
-  flex-shrink: 0;
-}
-
-.${CLOSE_CLASS}:hover
-{
-  background-color: var(--close-hov);
-}
-
 .${DESCRIPTION_CLASS} > div > h2
 {
   display: inline-block;
@@ -247,4 +228,25 @@ h3
   word-break: break-all;
   padding-left: 10px;
 }
+
+.${CLOSE_CLASS}
+{
+  position: relative;
+  bottom: 10px;
+  left: 10px;
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+  background-image: ${CLOSE_IMG};
+  background-size: 75%;
+  background-position: center;
+  background-repeat: no-repeat;
+  flex-shrink: 0;
+}
+
+.${CLOSE_CLASS}:hover
+{
+  background-color: var(--close-hov);
+}
+
 `;
