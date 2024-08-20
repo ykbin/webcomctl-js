@@ -129,6 +129,7 @@ h3
 {
   width: 100%;
   height: 100%;
+  max-width: 1200px;
   padding: 10px 25px 10px 10px;
   color: #393939;
   font-family: Open Sans, Arial, sans-serif;
@@ -146,7 +147,6 @@ h3
 .${DESCRIPTION_FORMAT_CLASS} > span
 {
   display: block;
-  max-width: 500px;
   padding: 0px 5px;
   margin-bottom: 16px;
   line-height: 1.7;
