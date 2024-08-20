@@ -144,8 +144,8 @@ h3
   border-right: 1px solid var(--pull-out-bor);
 }
 
-.${PULL_OUT_RIGHT}.${PULL_OUT_ON} .${DESCRIPTION_CLASS},
-.${PULL_OUT_LEFT}.${PULL_OUT_ON} .${DESCRIPTION_CLASS}
+.${PULL_OUT_ON} .${DESCRIPTION_CLASS},
+.${PULL_OUT_ON} .${DESCRIPTION_CLASS}
 {
   transform: translateX(0);
 }
