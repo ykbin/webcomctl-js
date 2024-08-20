@@ -62,7 +62,6 @@ ${DARKMODE_SELECTOR_VALUE}
 {
   --uic-imgcnt-bg: ${UIC_CONTENT_BACKGROUND_COLOR_DARK};
   --menu-bg: #252525;
-  --menu-bg: rgb(23, 23, 26);
   --menu-col: #b8b4b4;
   --pull-out-bor: #323232;
   --menu-title-col: #9b9b9b;
