@@ -8,6 +8,7 @@ const mk = new ControlMaker('InfoContent', import.meta.url);
 export const ROOT_CLASS = mk.newClassName("Root");
 export const CLOSE_CLASS = mk.newClassName("close");
 export const DESCRIPTION_CLASS = mk.newClassName("Description");
+export const DESCRIPTION_FORMAT_CLASS = mk.newClassName("Description_Format");
 export const LIST_CLASS = mk.newClassName("List");
 export const SIZE_CLASS = mk.newClassName("Size");
 
@@ -19,10 +20,12 @@ export const ROOT_HTML = `
   <div class="${ROOT_CLASS}">
     <div class="${DESCRIPTION_CLASS}">
       <div>
-        <h2><span class="notranslate" translate="no">JPEG</span>:</h2>
-        <span>
-          One of the popular raster graphics formats used to store photographs and similar images. The JPEG algorithm allows you to compress an image both lossy and lossless (lossless JPEG compression mode).
-        </span>
+        <div class="${DESCRIPTION_FORMAT_CLASS}">
+          <h2><span class="notranslate" translate="no">JPEG</span>:</h2>
+          <span>
+            One of the popular raster graphics formats used to store photographs and similar images. The JPEG algorithm allows you to compress an image both lossy and lossless (lossless JPEG compression mode).
+          </span>
+        </div>
         <div class="${LIST_CLASS} notranslate" translate="no">
           <span><h3>Size</h3><label>88 KB</label></span>
           <span><h3>Library</h3><label>libjpeg-turbo-2.1.91</label></span>
