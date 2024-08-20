@@ -13,8 +13,7 @@ export const CLOSE_CLASS = mk.newClassName("Close");
 export const DESCRIPTION_CLASS = mk.newClassName("Description");
 export const PULL_OUT_RIGHT = mk.newClassName("Pull_Out_Right");
 export const PULL_OUT_LEFT = mk.newClassName("Pull_Out_Left");
-export const PULL_OUT_LEFT_ON = mk.newClassName("Pull_Out_Left-On")
-export const PULL_OUT_RIGHT_ON = mk.newClassName("Pull_Out_Right-On")
+export const PULL_OUT_ON = mk.newClassName("Pull_Out_On")
 export const LIST_CLASS = mk.newClassName("List");
 export const SIZE_CLASS = mk.newClassName("Size");
 
@@ -145,22 +144,10 @@ h3
   border-right: 1px solid var(--pull-out-bor);
 }
 
-.${PULL_OUT_LEFT_ON} .${DESCRIPTION_CLASS}
+.${PULL_OUT_RIGHT}.${PULL_OUT_ON} .${DESCRIPTION_CLASS},
+.${PULL_OUT_LEFT}.${PULL_OUT_ON} .${DESCRIPTION_CLASS}
 {
-  left: 0;
-  display: flex;
   transform: translateX(0);
-  padding: 20px 20px 10px 10px;
-  border-right: 1px solid var(--pull-out-bor);
-}
-
-.${PULL_OUT_RIGHT_ON} .${DESCRIPTION_CLASS}
-{
-  right: 0;
-  display: flex;
-  transform: translateX(0);
-  padding: 20px 10px 10px 20px;
-  border-left: 1px solid var(--pull-out-bor);
 }
 
 .${DESCRIPTION_CLASS} *
