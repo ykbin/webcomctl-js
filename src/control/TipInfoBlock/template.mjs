@@ -81,16 +81,10 @@ ${ROOT_CLASS} > *
   height: 100%;
 }
 
-.${ROOT_CLASS} > *:nth-child(1)
+.${PORT_CLASS}
 {
   width: 100%;
   height: 100%;
-}
-
-.${ROOT_CLASS} > *:nth-child(2)
-{
-  position: absolute;
-  display: none;
 }
 
 .${DESCRIPTION_CLASS} > div > h2
@@ -112,12 +106,14 @@ h3
 
 .${DESCRIPTION_CLASS}
 {
+  position: absolute;
   display: none;
   justify-content: flex-end;
   max-width: 450px;
   min-width: 300px;
   width: 100%;
   height:100%;
+  padding: 20px 20px 10px 20px;
   color: #393939;
   font-family: Open Sans, Arial, sans-serif;
   box-sizing: border-box;
@@ -131,7 +127,6 @@ h3
   right: 0;
   display: flex;
   transform: translateX(100%);
-  padding: 20px 10px 10px 20px;
   border-left: 1px solid var(--pull-out-bor);
 }
 
@@ -140,7 +135,6 @@ h3
   left: 0;
   display: flex;
   transform: translateX(-100%);
-  padding: 20px 20px 10px 10px;
   border-right: 1px solid var(--pull-out-bor);
 }
 
