@@ -1,4 +1,4 @@
-import { BaseControl } from 'webnetq-js';
+import { BaseControl, NQDOM } from 'webnetq-js';
 import { CLOSE_CLASS, PULL_OUT_ON, PULL_OUT_RIGHT, PULL_OUT_LEFT } from 'module-loader!./template.mjs';
 
 const NONE_SIDE = 'node';
