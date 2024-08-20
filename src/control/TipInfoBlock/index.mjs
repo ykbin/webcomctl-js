@@ -1,26 +1,61 @@
 import { BaseControl } from 'webnetq-js';
-import { ROOT_CLASS, PULL_OUT_RIGHT } from 'module-loader!./template.mjs';
+import { CLOSE_CLASS, PULL_OUT_ON, PULL_OUT_RIGHT, PULL_OUT_LEFT } from 'module-loader!./template.mjs';
+
+const NONE_SIDE = 'node';
+const RIGHT_SIDE = 'right';
+const LEFT_SIDE = 'left';
+
+function sydeTypeToClassName(sideType) {
+  switch (sideType) {
+  case RIGHT_SIDE:
+    return PULL_OUT_RIGHT;
+  case LEFT_SIDE:
+    return PULL_OUT_LEFT;
+  }
+  return null;
+};
 
 export default class UITipInfoBlockControl extends BaseControl {
-  _isShow = false;
+  _closeElm;
+  _visible;
+  _sideType
 
   _init() {
+    this._visible = this.element.classList.contains(PULL_OUT_ON);
+    if (this.element.classList.contains(PULL_OUT_RIGHT))
+      this._sideType = RIGHT_SIDE;
+    else if (this.element.classList.contains(PULL_OUT_LEFT))
+      this._sideType = LEFT_SIDE;
+    else 
+      this._sideType = NONE_SIDE;
+    this._closeElm = NQDOM.getElementByClassName(this.element, CLOSE_CLASS);
+    this._closeElm && this._closeElm.addEventListener("click", () => this.visible = false);
   }
 
-  hide() {
-    if (this._isShow) {
-      //this.element.classList.add(NTH1_CLASS);
-      this.element.classList.remove(PULL_OUT_RIGHT);
-      this._isShow = false;
+  get visible() {
+    return this._visible;
+  }
+
+  set visible(value) {
+    if (this._visible != value) {
+      const method = value ? 'add' : 'remove';
+      this.element.classList[method](PULL_OUT_ON);
+      this._visible = value;
     }
   }
 
-  show() {
-    if (!this._isShow) {
-      this.element.classList.add(PULL_OUT_RIGHT);
-      //this.element.classList.remove(NTH1_CLASS);
-      this._isShow = true;
-    }
+  get sideType() {
+    return this.sideType;
   }
 
+  set sideType(value) {
+    if (this._sideType != value) {
+      this.visible = false;
+      const oldClass = sydeTypeToClassName(this._sideType);
+      oldClass && this.element.classList.remove(oldClass);
+      const newClass = sydeTypeToClassName(value);
+      newClass && this.element.classList.add(newClass);
+      this._sideType = newClass ? value : NONE_SIDE;
+    }
+  }
 };
