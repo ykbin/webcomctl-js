@@ -19,7 +19,7 @@ const SCROLLBAR_TRACK_COLOR = 'transparent';
 export const ROOT_HTML = `
   <div class="${ROOT_CLASS}">
     <div class="${DESCRIPTION_CLASS}">
-      <div>
+
         <div class="${DESCRIPTION_FORMAT_CLASS}">
           <h2><span class="notranslate" translate="no">JPEG</span>:</h2>
           <span>
@@ -38,7 +38,7 @@ export const ROOT_HTML = `
           <li><h3>JFIF Ver</h3><label>1.1</label></li>
           <li><h3>ColorSpace</h3><label>YCbCr</label></li>
         </ul>
-      </div>
+
     </div>
     <div class="${CLOSE_CLASS}"></div>
   </div>
@@ -108,7 +108,7 @@ ${DARKMODE_SELECTOR_VALUE}
   background-color: var(--close-hov);
 }
 
-.${DESCRIPTION_CLASS} h2
+.${DESCRIPTION_FORMAT_CLASS} h2
 {
   display: inline-block;
   padding-left: 5px;
@@ -143,7 +143,7 @@ h3
   box-sizing: border-box;
 }
 
-.${DESCRIPTION_CLASS} > div > span
+.${DESCRIPTION_FORMAT_CLASS} > span
 {
   display: block;
   max-width: 500px;
