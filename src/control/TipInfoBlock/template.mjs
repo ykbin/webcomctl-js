@@ -127,14 +127,38 @@ h3
   display: flex;
   transform: translateX(100%);
   border-left: 1px solid var(--pull-out-bor);
+  animation-name: pull_out;
+  animation-fill-mode: both;
+  animation-duration: 250ms;
+  animation-iteration-count: 1;
+}
 }
 
 .${PULL_OUT_LEFT} .${DESCRIPTION_CLASS}
 {
   left: 0;
-  display: flex;
   transform: translateX(-100%);
   border-right: 1px solid var(--pull-out-bor);
+  animation-name: pull_out;
+  animation-fill-mode: both;
+  animation-duration: 250ms;
+  animation-iteration-count: 1;
+}
+
+@keyframes pull_out
+{
+  0%
+  {
+    display: flex;
+  }
+  95%
+  {
+    display: flex;
+  }
+  100%
+  {
+    display: none;
+  }
 }
 
 .${PULL_OUT_ON} .${DESCRIPTION_CLASS},
