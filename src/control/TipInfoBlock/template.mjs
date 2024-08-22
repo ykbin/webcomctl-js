@@ -129,7 +129,7 @@ h3
   border-left: 1px solid var(--pull-out-bor);
   animation-name: pull_out_off;
   animation-fill-mode: both;
-  animation-duration: 250ms;
+  animation-duration: 50ms;
   animation-iteration-count: 1;
 }
 
@@ -140,7 +140,7 @@ h3
   border-right: 1px solid var(--pull-out-bor);
   animation-name: pull_out_off;
   animation-fill-mode: both;
-  animation-duration: 250ms;
+  animation-duration: 50ms;
   animation-iteration-count: 1;
 }
 
@@ -150,7 +150,7 @@ h3
   {
     display: flex;
   }
-  95%
+  99%
   {
     display: flex;
   }
@@ -166,7 +166,7 @@ h3
   transform: translateX(0);
   animation-name: pull_out;
   animation-fill-mode: both;
-  animation-duration: 250ms;
+  animation-duration: 50ms;
   animation-iteration-count: 1;
 }
 
@@ -176,7 +176,7 @@ h3
   {
     display: none;
   }
-  5%
+  1%
   {
     display: flex;
   }
