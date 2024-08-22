@@ -123,18 +123,18 @@ h3
 .${PULL_OUT_RIGHT} .${DESCRIPTION_CLASS}
 {
   right: 0;
-  display: none;
+  display: flex;
   transform: translateX(100%);
-  transition: display 5s ease-in-out, transform 1s ease-in-out;
+  transition: transform 0.2s ease-in-out;
   border-left: 1px solid var(--pull-out-bor);
 }
 
 .${PULL_OUT_LEFT} .${DESCRIPTION_CLASS}
 {
   left: 0;
-  display: none;
+  display: flex;
   transform: translateX(-100%);
-  transition: display 5s ease-in-out, transform 1s ease-in-out;
+  transition: transform 0.2s ease-in-out;
   border-right: 1px solid var(--pull-out-bor);
 }
 
@@ -143,7 +143,7 @@ h3
 {
   display: flex;
   transform: translateX(0);
-  transition: transform 1s ease-in-out;
+  transition: transform 0.2s ease-in-out;
 }
 
 .${DESCRIPTION_CLASS} *
