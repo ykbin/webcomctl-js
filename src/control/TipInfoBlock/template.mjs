@@ -127,7 +127,7 @@ h3
   display: flex;
   transform: translateX(100%);
   border-left: 1px solid var(--pull-out-bor);
-  animation-name: pull_out;
+  animation-name: pull_out_off;
   animation-fill-mode: both;
   animation-duration: 250ms;
   animation-iteration-count: 1;
@@ -138,6 +138,32 @@ h3
   left: 0;
   transform: translateX(-100%);
   border-right: 1px solid var(--pull-out-bor);
+  animation-name: pull_out_off;
+  animation-fill-mode: both;
+  animation-duration: 250ms;
+  animation-iteration-count: 1;
+}
+
+@keyframes pull_out_off
+{
+  0%
+  {
+    display: flex;
+  }
+  95%
+  {
+    display: flex;
+  }
+  100%
+  {
+    display: none;
+  }
+}
+
+.${PULL_OUT_ON} .${DESCRIPTION_CLASS},
+.${PULL_OUT_ON} .${DESCRIPTION_CLASS}
+{
+  transform: translateX(0);
   animation-name: pull_out;
   animation-fill-mode: both;
   animation-duration: 250ms;
@@ -146,11 +172,11 @@ h3
 
 @keyframes pull_out
 {
-  5%
+  0%
   {
     display: none;
   }
-  10%
+  5%
   {
     display: flex;
   }
@@ -158,12 +184,6 @@ h3
   {
     display: flex;
   }
-}
-
-.${PULL_OUT_ON} .${DESCRIPTION_CLASS},
-.${PULL_OUT_ON} .${DESCRIPTION_CLASS}
-{
-  transform: translateX(0);
 }
 
 .${DESCRIPTION_CLASS} *
