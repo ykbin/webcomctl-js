@@ -106,6 +106,7 @@ h3
 .${DESCRIPTION_CLASS}
 {
   position: absolute;
+  display: none;
   justify-content: flex-end;
   max-width: 450px;
   min-width: 300px;
@@ -115,7 +116,6 @@ h3
   color: #393939;
   font-family: Open Sans, Arial, sans-serif;
   box-sizing: border-box;
-  transition: transform 0.2s ease-in-out;
   background-color: var(--menu-bg);
   color: var(--menu-col);
 }
@@ -123,65 +123,30 @@ h3
 .${PULL_OUT_RIGHT} .${DESCRIPTION_CLASS}
 {
   right: 0;
+  display: none;
   transform: translateX(100%);
+  transition: transform 0.2s ease-in-out;
+  transition: display;
+  transition: display 2s ease-in-out;
   border-left: 1px solid var(--pull-out-bor);
-  animation-name: pull_out_off;
-  animation-fill-mode: both;
-  animation-duration: 2s;
-  animation-iteration-count: 1;
 }
 
 .${PULL_OUT_LEFT} .${DESCRIPTION_CLASS}
 {
   left: 0;
+  display: none;
   transform: translateX(-100%);
+  transition: transform 0.2s ease-in-out;
+  transition: display;
+  transition: display 2s ease-in-out;
   border-right: 1px solid var(--pull-out-bor);
-  animation-name: pull_out_off;
-  animation-fill-mode: both;
-  animation-duration: 2s;
-  animation-iteration-count: 1;
-}
-
-@keyframes pull_out_off
-{
-  0%
-  {
-    display: flex;
-  }
-  99%
-  {
-    display: flex;
-  }
-  100%
-  {
-    display: none;
-  }
 }
 
 .${PULL_OUT_ON} .${DESCRIPTION_CLASS},
 .${PULL_OUT_ON} .${DESCRIPTION_CLASS}
 {
+  display: flex;
   transform: translateX(0);
-  animation-name: pull_out;
-  animation-fill-mode: both;
-  animation-duration: 2s;
-  animation-iteration-count: 1;
-}
-
-@keyframes pull_out
-{
-  0%
-  {
-    display: none;
-  }
-  1%
-  {
-    display: flex;
-  }
-  100%
-  {
-    display: flex;
-  }
 }
 
 .${DESCRIPTION_CLASS} *
