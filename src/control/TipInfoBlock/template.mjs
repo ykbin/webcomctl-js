@@ -146,17 +146,17 @@ h3
 
 @keyframes pull_out
 {
-  0%
+  5%
   {
-    display: flex;
+    display: none;
   }
-  95%
+  10%
   {
     display: flex;
   }
   100%
   {
-    display: none;
+    display: flex;
   }
 }
 
