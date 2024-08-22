@@ -124,8 +124,8 @@ h3
   right: 0;
   display: flex;
   width: 0;
-  /*transform: translateX(100%);*/
-  transition: width 0.3s ease-in-out;
+  transform: translateX(100%);
+  transition: transform 0.2s ease-in-out;
   border-left: 1px solid var(--pull-out-bor);
 }
 
@@ -134,8 +134,8 @@ h3
   left: 0;
   display: flex;
   width: 0;
-  /*transform: translateX(-100%);*/
-  transition: width 0.3s ease-in-out;
+  transform: translateX(-100%);
+  transition: transform 0.2s ease-in-out, width 0.01s  0.2s;
   border-right: 1px solid var(--pull-out-bor);
 }
 
@@ -145,8 +145,8 @@ h3
   display: flex;
   width: 100%;
   min-width: 300px;
-  /*transform: translateX(0);*/
-  transition:  min-width 0.2s ease-in-out, width 0.3s ease-in-out;
+  transform: translateX(0);
+  transition: width 0.01s, transform 0.2s ease-in-out 0.01s;
 }
 
 .${DESCRIPTION_CLASS} *
