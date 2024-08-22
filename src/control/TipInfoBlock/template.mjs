@@ -106,7 +106,6 @@ h3
 .${DESCRIPTION_CLASS}
 {
   position: absolute;
-  display: none;
   justify-content: flex-end;
   max-width: 450px;
   min-width: 300px;
@@ -165,7 +164,7 @@ h3
   transform: translateX(0);
   animation-name: pull_out;
   animation-fill-mode: both;
-  animation-duration: 50ms;
+  animation-duration: 2s;
   animation-iteration-count: 1;
 }
 
