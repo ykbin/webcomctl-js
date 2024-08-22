@@ -124,7 +124,6 @@ h3
 .${PULL_OUT_RIGHT} .${DESCRIPTION_CLASS}
 {
   right: 0;
-  display: flex;
   transform: translateX(100%);
   border-left: 1px solid var(--pull-out-bor);
   animation-name: pull_out_off;
