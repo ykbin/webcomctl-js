@@ -132,7 +132,6 @@ h3
   animation-duration: 250ms;
   animation-iteration-count: 1;
 }
-}
 
 .${PULL_OUT_LEFT} .${DESCRIPTION_CLASS}
 {
