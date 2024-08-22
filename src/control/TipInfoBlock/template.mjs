@@ -134,8 +134,6 @@ h3
   left: 0;
   display: none;
   transform: translateX(-100%);
-  transition: transform 0.2s ease-in-out;
-  transition: display;
   transition: display 2s ease-in-out, transform 0.2s ease-in-out;
   border-right: 1px solid var(--pull-out-bor);
 }
@@ -145,6 +143,7 @@ h3
 {
   display: flex;
   transform: translateX(0);
+  transition: transform 0.2s ease-in-out;
 }
 
 .${DESCRIPTION_CLASS} *
