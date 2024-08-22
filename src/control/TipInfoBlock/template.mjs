@@ -129,7 +129,7 @@ h3
   border-left: 1px solid var(--pull-out-bor);
   animation-name: pull_out_off;
   animation-fill-mode: both;
-  animation-duration: 50ms;
+  animation-duration: 2s;
   animation-iteration-count: 1;
 }
 
@@ -140,7 +140,7 @@ h3
   border-right: 1px solid var(--pull-out-bor);
   animation-name: pull_out_off;
   animation-fill-mode: both;
-  animation-duration: 50ms;
+  animation-duration: 2s;
   animation-iteration-count: 1;
 }
 
