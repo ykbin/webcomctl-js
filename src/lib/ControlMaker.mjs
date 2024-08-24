@@ -44,6 +44,14 @@ export class CSSVariable {
     this._value = value;
   }
 
+  get name() {
+    return this._name;
+  }
+
+  get value() {
+    return this._value;
+  }
+
   asVar() {
     return `var(${this._name})`;
   }
@@ -96,7 +104,11 @@ export default class ControlMaker {
   }
 
   newCSSVariable(name, value) {
-    return new CSSVariable(`${this._name}-${name}`, value);
+    if (this._cssClassNames.hasOwnProperty(name))
+      throw `CSS class '${name}' exist in ${this._name}`;
+    const obj = new CSSVariable(`${this._name}-${name}`, value);
+    this._cssClassNames[name] = obj;
+    return obj;
   }
 
   newAnimationName(animename) {
