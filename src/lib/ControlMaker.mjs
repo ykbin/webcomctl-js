@@ -1,7 +1,7 @@
 import { representClassNames } from './CSSHelper.mjs';
 import { loadSvgAsCssUrlAsync } from './SVG.mjs';
 
-export class ClassName {
+export class CSSClassName {
   _name;
 
   constructor(name) {
@@ -17,7 +17,7 @@ export class ClassName {
   }
 };
 
-export class VarName {
+export class CSSVarName {
   _name;
 
   constructor(name) {
@@ -39,7 +39,7 @@ export class CSSVariable {
 
   constructor(name, value) {
     if (typeof name === 'string')
-      name = new VarName(name);
+      name = new CSSVarName(name);
     this._name = name;
     this._value = value;
   }
@@ -63,7 +63,8 @@ export class CSSBlock {
 export default class ControlMaker {
   _name;
   _currentUrl;
-  _classNames = {};
+  _cssClassNames = {};
+  _cssVarNames = {};
 
   constructor(name, currentUrl) {
     this._name = name;
@@ -79,15 +80,19 @@ export default class ControlMaker {
   }
 
   newClassName(classname) {
-    if (this._classNames.hasOwnProperty(classname))
-      throw `Class '${classname}' exist in ${this._name}`;
-    const obj = new ClassName(`${this._name}-${classname}`);
-    this._classNames[classname] = obj;
-    return obj;
+    if (this._cssClassNames.hasOwnProperty(classname))
+      throw `CSS class '${classname}' exist in ${this._name}`;
+    const obj = new CSSClassName(`${this._name}-${classname}`);
+    this._cssClassNames[classname] = obj;
+    return obj.toString();
   }
 
   newVarName(varname) {
-    return new VarName(`${this._name}-${varname}`);
+    if (this._cssVarNames.hasOwnProperty(classname))
+      throw `CSS var '${varname}' exist in ${this._name}`;
+    const obj = new CSSVarName(`${this._name}-${varname}`);
+    this._cssVarNames[classname] = obj;
+    return obj.toString();
   }
 
   newCSSVariable(name, value) {
@@ -106,7 +111,11 @@ export default class ControlMaker {
     return css;
   }
 
-  get classNames() {
-    return this._classNames;
+  get cssClassNames() {
+    return this._cssClassNames;
+  }
+
+  get cssVarNames() {
+    return this._cssVarNames;
   }
 };
