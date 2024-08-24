@@ -70,7 +70,7 @@ export default class ControlMaker {
   }
 
   newCSSVariable(name, value) {
-    return new CSSVariable(name, value);
+    return new CSSVariable(`${this._name}-${name}`, value);
   }
 
   newAnimationName(animename) {
