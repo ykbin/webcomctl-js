@@ -19,6 +19,12 @@ export const SIZE_CLASS = mk.newClassName("Size");
 
 const CLOSE_IMG = await mk.loadSvgAsCssUrl('./X.svg');
 
+const MENU_BG = mk.newCSSVariable("MenuBg", [ '#f3f3f3', '#252525' ]);
+const MENU_COL = mk.newCSSVariable("MenuCol", [ 'black', '#b8b4b4' ]);
+const PULL_OUT_BOR = mk.newCSSVariable("PullOutBor", [ '#dedede', '#323232' ]);
+const MENU_TITLE_COL = mk.newCSSVariable("MenuTitleCol", [ '#272626', '#9b9b9b' ]);
+const CLOSE_HOV_COL = mk.newCSSVariable("CloseHovCol", '#ff00005e');
+
 export const ROOT_HTML = `
 <div class="${ROOT_CLASS}">
     <div class="${PORT_CLASS}"></div>
@@ -50,21 +56,19 @@ export const CSS = `
 
 :root
 {
-  --uic-imgcnt-bg: ${UIC_CONTENT_BACKGROUND_COLOR};
-  --menu-bg: #f3f3f3;
-  --menu-col: black;
-  --pull-out-bor: #dedede;
-  --menu-title-col: #272626;
-  --close-hov: #ff00005e;
+  ${MENU_BG.toString(0)};
+  ${MENU_COL.toString(0)};
+  ${PULL_OUT_BOR.toString(0)};
+  ${MENU_TITLE_COL.toString(0)};
+  ${CLOSE_HOV_COL.toString(0)};
 }
 
 ${DARKMODE_SELECTOR_VALUE}
 {
-  --uic-imgcnt-bg: ${UIC_CONTENT_BACKGROUND_COLOR_DARK};
-  --menu-bg: #252525;
-  --menu-col: #b8b4b4;
-  --pull-out-bor: #323232;
-  --menu-title-col: #9b9b9b;
+  ${MENU_BG.toString(1)};
+  ${MENU_COL.toString(1)};
+  ${PULL_OUT_BOR.toString(1)};
+  ${MENU_TITLE_COL.toString(1)};
 }
 
 ${ROOT_CLASS} > *
@@ -93,7 +97,7 @@ ${ROOT_CLASS} > *
   margin: 0px;
   font-weight: 500;
   font-size: 18px;
-  color: var(--menu-title-col);
+  color: ${MENU_TITLE_COL.asVar()};
 }
 
 h3
@@ -113,8 +117,8 @@ h3
   color: #393939;
   font-family: Open Sans, Arial, sans-serif;
   box-sizing: border-box;
-  background-color: var(--menu-bg);
-  color: var(--menu-col);
+  background-color: ${MENU_BG.asVar()};
+  color: ${MENU_COL.asVar()};
   overflow: hidden;
 }
 
@@ -126,7 +130,7 @@ h3
   padding: 0;
   transform: translateX(100%);
   transition: transform 0.2s ease-in-out, width 0.01s 0.2s, padding 0.01s 0.2s;
-  border-left: 1px solid var(--pull-out-bor);
+  border-left: 1px solid ${PULL_OUT_BOR.asVar()};
 }
 
 .${PULL_OUT_LEFT} .${DESCRIPTION_CLASS}
@@ -137,7 +141,7 @@ h3
   padding: 0;
   transform: translateX(-100%);
   transition: transform 0.2s ease-in-out, width 0.01s 0.2s, padding 0.01s 0.2s;
-  border-right: 1px solid var(--pull-out-bor);
+  border-right: 1px solid ${PULL_OUT_BOR.asVar()};
 }
 
 .${PULL_OUT_ON} .${DESCRIPTION_CLASS},
@@ -237,7 +241,7 @@ h3
 
 .${CLOSE_CLASS}:hover
 {
-  background-color: var(--close-hov);
+  background-color: ${CLOSE_HOV_COL.asVar()};
 }
 
 `;
