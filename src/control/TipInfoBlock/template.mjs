@@ -1,31 +1,28 @@
 import ControlMaker from '../../lib/ControlMaker.mjs';
 import { DARKMODE_SELECTOR_VALUE } from '../../lib/DarkMode.mjs';
-import { UIC_CONTENT_BACKGROUND_COLOR } from '../../lib/WickedTheme.mjs';
-import { UIC_CONTENT_BACKGROUND_COLOR_DARK } from '../../lib/WickedTheme.mjs';
 
 const mk = new ControlMaker('TipInfoBlock', import.meta.url);
 
-export const ROOT_CLASS = mk.newClassName("Root");
-export const PORT_CLASS = mk.newClassName("Port");
+export const ROOT_CLASS = mk.newClassName("ROOT_CLASS");
+export const PORT_CLASS = mk.newClassName("PORT_CLASS");
 
-export const CLOSE_CLASS = mk.newClassName("Close");
-
-export const DESCRIPTION_CLASS = mk.newClassName("Description");
-export const PULL_OUT_RIGHT = mk.newClassName("Pull_Out_Right");
-export const PULL_OUT_LEFT = mk.newClassName("Pull_Out_Left");
-export const PULL_OUT_ON = mk.newClassName("Pull_Out_On")
-export const LIST_CLASS = mk.newClassName("List");
-export const SIZE_CLASS = mk.newClassName("Size");
+export const CLOSE_CLASS = mk.newClassName("CLOSE_CLASS");
+export const DESCRIPTION_CLASS = mk.newClassName("DESCRIPTION_CLASS");
+export const PULL_OUT_RIGHT = mk.newClassName("PULL_OUT_RIGHT");
+export const PULL_OUT_LEFT = mk.newClassName("PULL_OUT_LEFT");
+export const PULL_OUT_ON = mk.newClassName("PULL_OUT_ON")
+export const LIST_CLASS = mk.newClassName("LIST_CLASS");
+export const SIZE_CLASS = mk.newClassName("SIZE_CLASS");
 
 const CLOSE_IMG = await mk.loadSvgAsCssUrl('./X.svg');
 
-const MENU_BG = mk.newCSSVariable("MenuBg", [ '#f3f3f3', '#252525' ]);
-const MENU_COL = mk.newCSSVariable("MenuCol", [ 'black', '#b8b4b4' ]);
-const PULL_OUT_BOR = mk.newCSSVariable("PullOutBor", [ '#dedede', '#323232' ]);
-const MENU_TITLE_COL = mk.newCSSVariable("MenuTitleCol", [ '#272626', '#9b9b9b' ]);
-const CLOSE_HOV_COL = mk.newCSSVariable("CloseHovCol", '#ff00005e');
+const MENU_BG = mk.newCSSVariable("MENU_BG", [ '#f3f3f3', '#252525' ]);
+const MENU_COL = mk.newCSSVariable("MENU_COL", [ 'black', '#b8b4b4' ]);
+const PULL_OUT_BOR = mk.newCSSVariable("PULL_OUT_BOR", [ '#dedede', '#323232' ]);
+const MENU_TITLE_COL = mk.newCSSVariable("MENU_TITLE_COL", [ '#272626', '#9b9b9b' ]);
+const CLOSE_HOV_COL = mk.newCSSVariable("CLOSE_HOV_COL", '#ff00005e');
 
-export const ROOT_HTML = `
+export const ROOT_HTML = mk.newHTML('ROOT_HTML', `
 <div class="${ROOT_CLASS}">
     <div class="${PORT_CLASS}"></div>
     <div class="${DESCRIPTION_CLASS}">
@@ -50,9 +47,9 @@ export const ROOT_HTML = `
         <div class="${CLOSE_CLASS}"></div>
     </div>
   </div>
-`;
+`);
 
-export const CSS = `
+export const CSS = mk.newCSS('CSS', `
 
 :root
 {
@@ -244,4 +241,4 @@ h3
   background-color: ${CLOSE_HOV_COL.asVar()};
 }
 
-`;
+`);

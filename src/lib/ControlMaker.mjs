@@ -1,6 +1,22 @@
 import { representClassNames } from './CSSHelper.mjs';
 import { loadSvgAsCssUrlAsync } from './SVG.mjs';
 
+export class ClassName {
+  _name;
+
+  constructor(name) {
+    this._name = name;
+  }
+
+  get name() {
+    return this._name;
+  }
+
+  toString() {
+    return representClassNames(this._name);
+  }
+};
+
 export class VarName {
   _name;
 
@@ -47,6 +63,7 @@ export class CSSBlock {
 export default class ControlMaker {
   _name;
   _currentUrl;
+  _classNames = {};
 
   constructor(name, currentUrl) {
     this._name = name;
@@ -62,7 +79,11 @@ export default class ControlMaker {
   }
 
   newClassName(classname) {
-    return representClassNames(`${this._name}-${classname}`);
+    if (this._classNames.hasOwnProperty(classname))
+      throw `Class '${classname}' exist in ${this._name}`;
+    const obj = new ClassName(`${this._name}-${classname}`);
+    this._classNames[classname] = obj;
+    return obj;
   }
 
   newVarName(varname) {
@@ -75,5 +96,17 @@ export default class ControlMaker {
 
   newAnimationName(animename) {
     return representClassNames(`${this._name}-${animename}`);
+  }
+
+  newHTML(name, html) {
+    return html;
+  }
+
+  newCSS(name, css) {
+    return css;
+  }
+
+  get classNames() {
+    return this._classNames;
   }
 };
