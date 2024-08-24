@@ -88,10 +88,10 @@ export default class ControlMaker {
   }
 
   newVarName(varname) {
-    if (this._cssVarNames.hasOwnProperty(classname))
+    if (this._cssVarNames.hasOwnProperty(varname))
       throw `CSS var '${varname}' exist in ${this._name}`;
     const obj = new CSSVarName(`${this._name}-${varname}`);
-    this._cssVarNames[classname] = obj;
+    this._cssVarNames[varname] = obj;
     return obj.toString();
   }
 
