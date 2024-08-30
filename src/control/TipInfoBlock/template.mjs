@@ -4,6 +4,7 @@ import { DARKMODE_SELECTOR_VALUE } from '../../lib/DarkMode.mjs';
 const mk = new ControlMaker('TipInfoBlock', import.meta.url);
 
 export const ROOT_CLASS = mk.newClassName("ROOT_CLASS");
+export const PORT_CLASS = mk.newClassName("Port");
 
 export const CLOSE_CLASS = mk.newClassName("CLOSE_CLASS");
 
@@ -23,7 +24,7 @@ const CLOSE_HOV_COL = mk.newCSSVariable("CLOSE_HOV_COL", '#ff00005e');
 
 export const ROOT_HTML = mk.newHTML('ROOT_HTML', `
     <div class="${ROOT_CLASS}">
-      <div>
+      <div class="${PORT_CLASS}">
         <h2><span class="notranslate" translate="no">JPEG</span>:</h2>
         <span>
           One of the popular raster graphics formats used to store photographs and similar images. The JPEG algorithm allows you to compress an image both lossy and lossless (lossless JPEG compression mode).
@@ -80,6 +81,8 @@ ${ROOT_CLASS} h3
 {
   position: absolute;
   display: none;
+  flex-direction: column-reverse;
+  align-items: flex-end;
   justify-content: flex-end;
   max-width: 450px;
   height:100%;
@@ -128,7 +131,7 @@ ${ROOT_CLASS} h3
   display: flex;
   width: 100%;
   min-width: 300px;
-  padding: 20px 20px 10px 20px;
+  padding: 10px 20px 10px 20px;
   transform: translateX(0);
   transition: padding 0.01s, width 0.01s, transform 0.2s ease-in-out 0.01s;
 }
@@ -200,9 +203,6 @@ ${ROOT_CLASS} h3
 
 .${CLOSE_CLASS}
 {
-  position: relative;
-  bottom: 10px;
-  left: 10px;
   width: 20px;
   height: 20px;
   border-radius: 5px;
