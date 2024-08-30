@@ -80,6 +80,7 @@ ${ROOT_CLASS} h3
 .${ROOT_CLASS}
 {
   position: absolute;
+  top: 0;
   display: none;
   flex-direction: column-reverse;
   align-items: flex-end;
@@ -112,7 +113,7 @@ ${ROOT_CLASS} h3
   padding: 0;
   transform: translateX(100%);
   transition: transform 0.2s ease-in-out, width 0.01s 0.2s, padding 0.01s 0.2s;
-  border-left: 1px solid ${PULL_OUT_BOR.asVar()};
+  border-left: 0 solid;
 }
 
 .${PULL_OUT_LEFT}
@@ -123,7 +124,7 @@ ${ROOT_CLASS} h3
   padding: 0;
   transform: translateX(-100%);
   transition: transform 0.2s ease-in-out, width 0.01s 0.2s, padding 0.01s 0.2s;
-  border-right: 1px solid ${PULL_OUT_BOR.asVar()};
+  border-right: 0 solid;
 }
 
 .${PULL_OUT_ON}
@@ -132,6 +133,8 @@ ${ROOT_CLASS} h3
   width: 100%;
   min-width: 300px;
   padding: 10px 20px 10px 20px;
+  border-width: 1px;
+  border-color: ${PULL_OUT_BOR.asVar()};
   transform: translateX(0);
   transition: padding 0.01s, width 0.01s, transform 0.2s ease-in-out 0.01s;
 }
