@@ -84,10 +84,6 @@ ${ROOT_CLASS} h3
   position: absolute;
   top: 0;
   display: none;
-  flex-direction: column-reverse;
-  align-items: flex-end;
-  justify-content: flex-end;
-  max-width: 450px;
   height:100%;
   color: #393939;
   font-family: Open Sans, Arial, sans-serif;
@@ -95,6 +91,19 @@ ${ROOT_CLASS} h3
   background-color: ${MENU_BG.asVar()};
   color: ${MENU_COL.asVar()};
   overflow: hidden;
+}
+
+.${ROOT_CLASS} > div
+{
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-end;
+  justify-content: flex-end;
+  width: 100%;
+  height: 100%;
+  min-width: 300px;
+  max-width: 450px;
+  padding: 10px 20px 10px 20px;
 }
 
 .${ROOT_CLASS} > div > h2
@@ -110,35 +119,28 @@ ${ROOT_CLASS} h3
 .${PULL_OUT_RIGHT}
 {
   right: 0;
-  display: flex;
+  display: block;
   width: 0;
-  padding: 0;
-  transform: translateX(100%);
-  transition: transform 0.2s ease-in-out, width 0.01s 0.2s, padding 0.01s 0.2s;
+  transition: width 0.2s;
   border-left: 0 solid;
 }
 
 .${PULL_OUT_LEFT}
 {
   left: 0;
-  display: flex;
+  display: block;
   width: 0;
-  padding: 0;
-  transform: translateX(-100%);
-  transition: transform 0.2s ease-in-out, width 0.01s 0.2s, padding 0.01s 0.2s;
+  transition: width 0.2s;
   border-right: 0 solid;
 }
 
 .${PULL_OUT_ON}
 {
-  display: flex;
+  display: block;
   width: 100%;
-  min-width: 300px;
-  padding: 10px 20px 10px 20px;
   border-width: 1px;
   border-color: ${PULL_OUT_BOR.asVar()};
-  transform: translateX(0);
-  transition: padding 0.01s, width 0.01s, transform 0.2s ease-in-out 0.01s;
+  transition: width 0.2s;
 }
 
 
