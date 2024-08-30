@@ -73,30 +73,6 @@ ${ROOT_CLASS} > *
   box-sizing: border-box;
 }
 
-.${ROOT_CLASS}
-{
-  position: relative;
-  display: flex;
-  width: 100%;
-  height: 100%;
-}
-
-.${PORT_CLASS}
-{
-  width: 100%;
-  height: 100%;
-}
-
-.${DESCRIPTION_CLASS} > div > h2
-{
-  display: inline-block;
-  padding-left: 5px;
-  margin: 0px;
-  font-weight: 500;
-  font-size: 18px;
-  color: ${MENU_TITLE_COL.asVar()};
-}
-
 h3
 {
   margin: 0px;
@@ -119,7 +95,17 @@ h3
   overflow: hidden;
 }
 
-.${PULL_OUT_RIGHT} .${DESCRIPTION_CLASS}
+.${ROOT_CLASS} > div > h2
+{
+  display: inline-block;
+  padding-left: 5px;
+  margin: 0px;
+  font-weight: 500;
+  font-size: 18px;
+  color: ${MENU_TITLE_COL.asVar()};
+}
+
+.${PULL_OUT_RIGHT}
 {
   right: 0;
   display: flex;
@@ -130,7 +116,7 @@ h3
   border-left: 1px solid ${PULL_OUT_BOR.asVar()};
 }
 
-.${PULL_OUT_LEFT} .${DESCRIPTION_CLASS}
+.${PULL_OUT_LEFT}
 {
   left: 0;
   display: flex;
@@ -141,8 +127,7 @@ h3
   border-right: 1px solid ${PULL_OUT_BOR.asVar()};
 }
 
-.${PULL_OUT_ON} .${DESCRIPTION_CLASS},
-.${PULL_OUT_ON} .${DESCRIPTION_CLASS}
+.${PULL_OUT_ON}
 {
   display: flex;
   width: 100%;
@@ -152,12 +137,8 @@ h3
   transition: padding 0.01s, width 0.01s, transform 0.2s ease-in-out 0.01s;
 }
 
-.${DESCRIPTION_CLASS} *
-{
-  box-sizing: border-box;
-}
 
-.${DESCRIPTION_CLASS} > div > span
+.${ROOT_CLASS} > div > span
 {
   display: block;
   max-width: 500px;
