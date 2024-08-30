@@ -23,9 +23,7 @@ const MENU_TITLE_COL = mk.newCSSVariable("MENU_TITLE_COL", [ '#272626', '#9b9b9b
 const CLOSE_HOV_COL = mk.newCSSVariable("CLOSE_HOV_COL", '#ff00005e');
 
 export const ROOT_HTML = mk.newHTML('ROOT_HTML', `
-<div class="${ROOT_CLASS}">
-    <div class="${PORT_CLASS}"></div>
-    <div class="${DESCRIPTION_CLASS}">
+    <div class="${ROOT_CLASS}">
       <div>
         <h2><span class="notranslate" translate="no">JPEG</span>:</h2>
         <span>
@@ -46,7 +44,6 @@ export const ROOT_HTML = mk.newHTML('ROOT_HTML', `
         </div>
         <div class="${CLOSE_CLASS}"></div>
     </div>
-  </div>
 `);
 
 export const CSS = mk.newCSS('CSS', `
