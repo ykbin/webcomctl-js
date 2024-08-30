@@ -4,10 +4,9 @@ import { DARKMODE_SELECTOR_VALUE } from '../../lib/DarkMode.mjs';
 const mk = new ControlMaker('TipInfoBlock', import.meta.url);
 
 export const ROOT_CLASS = mk.newClassName("ROOT_CLASS");
-export const PORT_CLASS = mk.newClassName("PORT_CLASS");
 
 export const CLOSE_CLASS = mk.newClassName("CLOSE_CLASS");
-export const DESCRIPTION_CLASS = mk.newClassName("DESCRIPTION_CLASS");
+
 export const PULL_OUT_RIGHT = mk.newClassName("PULL_OUT_RIGHT");
 export const PULL_OUT_LEFT = mk.newClassName("PULL_OUT_LEFT");
 export const PULL_OUT_ON = mk.newClassName("PULL_OUT_ON")
