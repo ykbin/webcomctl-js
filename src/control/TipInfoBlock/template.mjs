@@ -69,14 +69,14 @@ ${ROOT_CLASS} > *
   box-sizing: border-box;
 }
 
-h3
+${ROOT_CLASS} h3
 {
   margin: 0px;
   font-weight: 400;
   font-size: 16px;
 }
 
-.${DESCRIPTION_CLASS}
+.${ROOT_CLASS}
 {
   position: absolute;
   display: none;
