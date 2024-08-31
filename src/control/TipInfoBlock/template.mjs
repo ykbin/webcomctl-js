@@ -99,7 +99,7 @@ ${ROOT_CLASS} h3
   flex-direction: column-reverse;
   align-items: flex-end;
   justify-content: flex-end;
-  width: 450px;
+  width: 100%;
   height: 100%;
   padding: 10px 20px 10px 20px;
 }
@@ -135,7 +135,7 @@ ${ROOT_CLASS} h3
 .${PULL_OUT_ON}
 {
   display: block;
-  width: 100%;
+  width: 450px;
   border-width: 1px;
   border-color: ${PULL_OUT_BOR.asVar()};
   transition: width 0.2s;
