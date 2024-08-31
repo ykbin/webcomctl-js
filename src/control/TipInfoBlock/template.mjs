@@ -84,7 +84,7 @@ ${ROOT_CLASS} h3
   position: absolute;
   top: 0;
   display: none;
-  height:100%;
+  height: 100%;
   color: #393939;
   font-family: Open Sans, Arial, sans-serif;
   box-sizing: border-box;
@@ -99,10 +99,8 @@ ${ROOT_CLASS} h3
   flex-direction: column-reverse;
   align-items: flex-end;
   justify-content: flex-end;
-  width: 100%;
+  width: 450px;
   height: 100%;
-  min-width: 300px;
-  max-width: 450px;
   padding: 10px 20px 10px 20px;
 }
 
