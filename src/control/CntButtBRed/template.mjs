@@ -7,34 +7,34 @@ const mk = new ControlMaker('CntButtBRed', import.meta.url);
 
 const WATER_IMG = await mk.loadSvgAsCssUrl('./water.svg');
 
-export const ROOT_CLASS = mk.newClassName("Root");
-export const LOAD_CLASS = mk.newClassName("Load");
-export const LABEL_CLASS = mk.newClassName("Label");
-export const HEIGHT_CLASS = mk.newClassName("Height");
+const ROOT_CLASS = mk.newClassName("ROOT_CLASS");
+const LOAD_CLASS = mk.newClassName("LOAD_CLASS");
+const LABEL_CLASS = mk.newClassName("LABEL_CLASS");
+const HEIGHT_CLASS = mk.newClassName("HEIGHT_CLASS");
 
-const HOVBG_VAR = mk.newVarName("Hovbg");
+const HOVBG_VAR = mk.newCSSVariable("HOVBG_VAR", [ '#f5eaea', '#5841414f' ]);
 
 const DEF_COLOR = '#c50000';
 const DEF_BORDER_COLOR = DEF_COLOR;
 const ACT_COLOR = '#a72f2f';
 const ACT_BORDER_COLOR = ACT_COLOR;
 
-export const ROOT_HTML = `
+mk.newHTML('ROOT_HTML', `
 <div class="${ROOT_CLASS}">
   <div><div class="${HEIGHT_CLASS}"></div></div>
   <label class="${LABEL_CLASS}">Upload</label>
 </div>
-`;
+`);
 
-export const CSS = `
+mk.newCSS('CSS', `
 :root
 {
-  ${HOVBG_VAR}: #f5eaea;
+  ${HOVBG_VAR.toString(0)};
 }
 
 ${DARKMODE_SELECTOR_VALUE}
 {
-  ${HOVBG_VAR}: #5841414f;
+  ${HOVBG_VAR.toString(1)};
 }
 
 .${ROOT_CLASS} > div > div,
@@ -64,7 +64,7 @@ ${DARKMODE_SELECTOR_VALUE}
 
 .${ROOT_CLASS}:hover
 {
-  background-color: var(${HOVBG_VAR});
+  background-color: ${HOVBG_VAR.asVar()};
 }
 
 .${LOAD_CLASS}
@@ -127,4 +127,9 @@ ${DARKMODE_SELECTOR_VALUE}
     border-radius: 20px;
   }
 }
-`;
+`);
+
+export async function buildComponent()
+{
+  return mk.buildComponent();
+}

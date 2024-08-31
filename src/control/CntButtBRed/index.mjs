@@ -1,5 +1,5 @@
 import { BaseControl, Random } from 'webnetq-js';
-import { ROOT_CLASS, LOAD_CLASS, HEIGHT_CLASS } from 'module-loader!./template.mjs';
+import { ROOT_CLASS, LOAD_CLASS, HEIGHT_CLASS } from 'uictmplt-loader!./template.mjs';
 
 const UPLOAD_EVENT = 'upload';
 
