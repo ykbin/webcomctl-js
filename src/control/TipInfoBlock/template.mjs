@@ -26,7 +26,9 @@ export const ROOT_HTML = mk.newHTML('ROOT_HTML', `
   <div class="${ROOT_CLASS}">
     <div>
       <div class="${PORT_CLASS}"></div>
-      <div class="${CLOSE_CLASS}"></div>
+      <span>
+        <div class="${CLOSE_CLASS}"></div>
+      </span>
     </div>
   </div>
 `);
@@ -50,11 +52,16 @@ ${DARKMODE_SELECTOR_VALUE}
   ${MENU_TITLE_COL.toString(1)};
 }
 
-.${ROOT_CLASS} > *
+.${ROOT_CLASS}
+{
+  width: 100%;
+  height: 100%;
+}
+
+.${ROOT_CLASS} *
 {
   box-sizing: border-box;
 }
-
 
 .${ROOT_CLASS}
 {
@@ -78,7 +85,7 @@ ${DARKMODE_SELECTOR_VALUE}
   justify-content: flex-end;
   width: 450px;
   height: 100%;
-  padding: 10px 20px 10px 20px;
+  padding: 0 20px 10px 20px;
 }
 
 .${PULL_OUT_RIGHT}
@@ -110,11 +117,10 @@ ${DARKMODE_SELECTOR_VALUE}
 
 .${ROOT_CLASS} > div > span
 {
-  display: block;
-  max-width: 500px;
-  padding: 0px 5px;
-  margin-bottom: 16px;
-  line-height: 1.7;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 30px;
 }
 
 .${CLOSE_CLASS}
