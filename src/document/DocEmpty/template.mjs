@@ -1,17 +1,21 @@
 import ControlMaker from '../../lib/ControlMaker.mjs';
 
-const maker = new ControlMaker('DocEmpty', import.meta.url);
+const mk = new ControlMaker('DocEmpty', import.meta.url);
 
-export const ROOT_CLASS = maker.newClassName("Root");
-export const PORT_CLASS = ROOT_CLASS;
+const PORT_CLASS = mk.newClassName("PORT_CLASS");
 
-export const ROOT_HTML = `
+mk.newHTML('ROOT_HTML', `
 <!DOCTYPE html>
 <html>
   <head></head>
-  <body class="${ROOT_CLASS}"></body>
+  <body class="${PORT_CLASS}"></body>
 </html>
-`;
+`);
 
-export const CSS = `
-`;
+mk.newCSS('CSS', `
+`);
+
+export function buildComponent()
+{
+  return mk.buildComponent();
+}

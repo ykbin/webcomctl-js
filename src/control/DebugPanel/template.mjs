@@ -4,35 +4,35 @@ import { DARKMODE_SELECTOR_VALUE } from '../../lib/DarkMode.mjs';
 
 const mk = new ControlMaker('DebugPanel', import.meta.url);
 
-export const ROOT_CLASS = mk.newClassName("Root");
-export const LIST_CLASS = mk.newClassName("List");
-export const TEXT_CLASS = mk.newClassName("Text");
+const ROOT_CLASS = mk.newClassName("ROOT_CLASS");
+const LIST_CLASS = mk.newClassName("LIST_CLASS");
+const TEXT_CLASS = mk.newClassName("TEXT_CLASS");
 
-const BOR_VAR = mk.newVarName("Bor");
-const BG_VAR = mk.newVarName("Bg");
-const DEFBUT_VAR = mk.newVarName("DefBut");
+const BOR_VAR = mk.newCSSVariable("BOR_VAR", [ '#d0dbe9', '#35383c' ]);
+const BG_VAR = mk.newCSSVariable("BG_VAR", [ '#fdfdfd', 'rgb(43 43 45)' ]);
+const DEFBUT_VAR = mk.newCSSVariable("DEFBUT_VAR", [ '#488ee9', '#2d5b96' ]);
 
-export const ROOT_HTML = `
+mk.newHTML('ROOT_HTML', `
 <div class="${ROOT_CLASS} ${LIST_CLASS}"></div>
-`;
+`);
 
-export const ITEM_HTML = `
+mk.newHTML('ITEM_HTML', `
 <div class="${TEXT_CLASS}"></div>
-`;
+`);
 
-export const CSS = `
+mk.newCSS('CSS', `
 :root
 {
-  ${BOR_VAR}: #d0dbe9;
-  ${BG_VAR}: #fdfdfd;
-  ${DEFBUT_VAR}: #488ee9;
+  ${BOR_VAR.toString(0)};
+  ${BG_VAR.toString(0)};
+  ${DEFBUT_VAR.toString(0)};
 }
 
 ${DARKMODE_SELECTOR_VALUE}
 {
-  ${BOR_VAR}: #35383c;
-  ${BG_VAR}: rgb(43 43 45);
-  ${DEFBUT_VAR}: #2d5b96;
+  ${BOR_VAR.toString(1)};
+  ${BG_VAR.toString(1)};
+  ${DEFBUT_VAR.toString(1)};
 }
 
 .${ROOT_CLASS}
@@ -43,9 +43,9 @@ ${DARKMODE_SELECTOR_VALUE}
   width: auto;
   height: auto;
   padding: 5px 5px 0px 5px;
-  border: 1px solid var(${BOR_VAR});
+  border: 1px solid ${BOR_VAR.asVar()};
   border-radius: 2px;
-  background-color: var(${BG_VAR});
+  background-color: ${BG_VAR.asVar()};
   font-family: "Nunito Sans", -apple-system, BlinkMacSystemFont,
                 "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
                 "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -68,7 +68,7 @@ ${DARKMODE_SELECTOR_VALUE}
   padding: 0 2px;
   margin-bottom: 5px;
   color: white;
-  background-color: var(${DEFBUT_VAR});
+  background-color: ${DEFBUT_VAR.asVar()};
   cursor: pointer;
 }
 
@@ -76,4 +76,9 @@ ${DARKMODE_SELECTOR_VALUE}
 {
   background-color: #417cc8;
 }
-`;
+`);
+
+export function buildComponent()
+{
+  return mk.buildComponent();
+}

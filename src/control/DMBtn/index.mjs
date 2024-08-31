@@ -1,5 +1,5 @@
 import { BaseControl, NQDOM, Setting } from 'webnetq-js';
-import { TOGGLE_CLASS } from 'module-loader!./template.mjs';
+import { TOGGLE_CLASS } from 'uictmplt-loader!./template.mjs';
 
 const kDarkModeTip = "Toggle dark mode";
 const kLightModeTip = "Toggle light mode";

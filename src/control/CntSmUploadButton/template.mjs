@@ -5,11 +5,11 @@ import { COMMON_MOBILE_DEVICE_WIDTH } from '../../lib/WickedTheme.mjs';
 
 const mk = new ControlMaker('CntSmUploadButton', import.meta.url);
 
-export const ROOT_CLASS = mk.newClassName("Root");
-export const LOAD_CLASS = mk.newClassName("Load");
+const ROOT_CLASS = mk.newClassName("ROOT_CLASS");
+const LOAD_CLASS = mk.newClassName("LOAD_CLASS");
 
-const DBG_VAR = mk.newVarName("Dbg");
-const HBG_VAR = mk.newVarName("Hbg");
+const DBG_VAR = mk.newCSSVariable("DBG_VAR", [ '#ffffff', '#472f2f42' ]);
+const HBG_VAR = mk.newCSSVariable("HBG_VAR", [ '#f5eaea', '#ba8f8f29' ]);
 
 const LOAD_IMG = await mk.loadSvgAsCssUrl('./load.svg');
 
@@ -18,29 +18,29 @@ const BORDER_COLOR = COLOR;
 const LD_COLOR = '#c5000078';
 const LD_BORDER_COLOR = LD_COLOR;
 
-export const ROOT_HTML = `
+mk.newHTML('ROOT_HTML', `
 <div class="${ROOT_CLASS}">
   <span></span>
   <label class="notranslate" translate="no">Upload</label>
 </div>
-`;
+`);
 
-export const CSS = `
+mk.newCSS('CSS', `
 :root
 {
-  ${DBG_VAR}: #ffffff;
-  ${HBG_VAR}: #f5eaea;
+  ${DBG_VAR.toString(0)};
+  ${HBG_VAR.toString(0)};
 }
 
 ${DARKMODE_SELECTOR_VALUE}
 {
-  ${DBG_VAR}: #472f2f42;
-  ${HBG_VAR}: #ba8f8f29;
+  ${DBG_VAR.toString(1)};
+  ${HBG_VAR.toString(1)};
 }
 
 .${ROOT_CLASS} input
 {
-   display: none;
+    display: none;
 }
 
 .${ROOT_CLASS}
@@ -57,7 +57,7 @@ ${DARKMODE_SELECTOR_VALUE}
 
 .${ROOT_CLASS}
 {
-  background-color: var(${DBG_VAR});
+  background-color: ${DBG_VAR.asVar()};
   color: ${COLOR};
   border: 2px solid ${BORDER_COLOR};
   cursor: pointer;
@@ -65,7 +65,7 @@ ${DARKMODE_SELECTOR_VALUE}
 
 .${ROOT_CLASS}:hover 
 {
-  background-color: ${HBG_VAR};
+  background-color: ${HBG_VAR.asVar()};
 }
 
 .${ROOT_CLASS} > label
@@ -81,7 +81,7 @@ ${DARKMODE_SELECTOR_VALUE}
 
 .${LOAD_CLASS}
 {
-  background-color: ${HBG_VAR};
+  background-color: ${HBG_VAR.asVar()};
   color: ${LD_COLOR};
   border: 2px solid ${LD_BORDER_COLOR};
   cursor: no-drop;
@@ -128,4 +128,9 @@ ${DARKMODE_SELECTOR_VALUE}
     right: 66px;
   }
 }
-`;
+`);
+
+export function buildComponent()
+{
+  return mk.buildComponent();
+}

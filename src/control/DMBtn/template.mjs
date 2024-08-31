@@ -6,32 +6,32 @@ import { HEADER_FONT_COLOR } from '../../lib/WickedTheme.mjs';
 
 const mk = new ControlMaker('DMBtn', import.meta.url);
 
-export const ROOT_CLASS = mk.newClassName("Root");
-export const TOGGLE_CLASS = mk.newClassName("Toggle");
+const ROOT_CLASS = mk.newClassName("ROOT_CLASS");
+const TOGGLE_CLASS = mk.newClassName("TOGGLE_CLASS");
 
 const MOON_IMG = await mk.loadSvgAsCssUrl('./moon.svg');
 const SUN_IMG = await mk.loadSvgAsCssUrl('./sun.svg');
 
-const IMG_VAR = mk.newVarName("Img");
-const BG_VAR = mk.newVarName("Bg");
+const IMG_VAR = mk.newCSSVariable("IMG_VAR", [ MOON_IMG, SUN_IMG ]);
+const BG_VAR = mk.newCSSVariable("BG_VAR", [ '#7b7b7b21', '#ffffff21' ]);
 
-export const ROOT_HTML = `
+mk.newHTML('ROOT_HTML', `
 <div class="${ROOT_CLASS}">
   <span class="${TOGGLE_CLASS}"></span>
 </div>
-`;
+`);
 
-export const CSS = `
+mk.newCSS('CSS', `
 :root
 {
-  ${IMG_VAR}: ${MOON_IMG};
-  ${BG_VAR}: #7b7b7b21;
+  ${IMG_VAR.toString(0)};
+  ${BG_VAR.toString(0)};
 }
 
 ${DARKMODE_SELECTOR_VALUE}
 {
-  ${IMG_VAR}: ${SUN_IMG};
-  ${BG_VAR}: #ffffff21;
+  ${IMG_VAR.toString(1)};
+  ${BG_VAR.toString(1)};
 }
 
 .${ROOT_CLASS}
@@ -46,12 +46,12 @@ ${DARKMODE_SELECTOR_VALUE}
 
 .${ROOT_CLASS}:hover
 {
-  background-color: var(${BG_VAR});
+  background-color: ${BG_VAR.asVar()};
 }
 
 .${TOGGLE_CLASS}
 {
-  background-image: var(${IMG_VAR});
+  background-image: ${IMG_VAR.asVar()};
   display: block;
   height: 100%;
   width: 100%;
@@ -70,4 +70,9 @@ ${DARKMODE_SELECTOR_VALUE}
     height: 60px;
   }
 }
-`;
+`);
+
+export function buildComponent()
+{
+  return mk.buildComponent();
+}
