@@ -67,12 +67,12 @@ ${DARKMODE_SELECTOR_VALUE}
   ${MENU_TITLE_COL.toString(1)};
 }
 
-${ROOT_CLASS} > *
+.${ROOT_CLASS} > *
 {
   box-sizing: border-box;
 }
 
-${ROOT_CLASS} h3
+.${ROOT_CLASS} h3
 {
   margin: 0px;
   font-weight: 400;
