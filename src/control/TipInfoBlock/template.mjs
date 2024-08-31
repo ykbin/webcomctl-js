@@ -135,7 +135,7 @@ ${DARKMODE_SELECTOR_VALUE}
 .${PULL_OUT_ON}
 {
   display: block;
-  width: auto;
+  width: 450px;
   border-width: 1px;
   border-color: ${PULL_OUT_BOR.asVar()};
   transition: width 0.2s;
