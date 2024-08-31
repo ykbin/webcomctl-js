@@ -20,7 +20,7 @@ const MENU_BG = mk.newCSSVariable("MENU_BG", [ '#f3f3f3', '#252525' ]);
 const MENU_COL = mk.newCSSVariable("MENU_COL", [ 'black', '#b8b4b4' ]);
 const PULL_OUT_BOR = mk.newCSSVariable("PULL_OUT_BOR", [ '#dedede', '#323232' ]);
 const MENU_TITLE_COL = mk.newCSSVariable("MENU_TITLE_COL", [ '#272626', '#9b9b9b' ]);
-const CLOSE_HOV_COL = mk.newCSSVariable("CLOSE_HOV_COL", '#ff00005e');
+const CLOSE_HOV_COL = mk.newCSSVariable("CLOSE_HOV_COL", '#80808042');
 
 export const ROOT_HTML = mk.newHTML('ROOT_HTML', `
   <div class="${ROOT_CLASS}">
@@ -52,7 +52,7 @@ ${DARKMODE_SELECTOR_VALUE}
   ${MENU_TITLE_COL.toString(1)};
 }
 
-.${ROOT_CLASS}
+.${PORT_CLASS}
 {
   width: 100%;
   height: 100%;
@@ -81,7 +81,6 @@ ${DARKMODE_SELECTOR_VALUE}
 {
   display: flex;
   flex-direction: column-reverse;
-  align-items: flex-end;
   justify-content: flex-end;
   width: 450px;
   height: 100%;
@@ -119,6 +118,7 @@ ${DARKMODE_SELECTOR_VALUE}
 {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   width: 100%;
   height: 30px;
 }
