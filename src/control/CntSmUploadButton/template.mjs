@@ -130,4 +130,7 @@ ${DARKMODE_SELECTOR_VALUE}
 }
 `);
 
-export const component = mk.buildComponent();
+export function buildComponent()
+{
+  return mk.buildComponent();
+}
