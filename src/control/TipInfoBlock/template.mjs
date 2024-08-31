@@ -99,7 +99,7 @@ ${DARKMODE_SELECTOR_VALUE}
   flex-direction: column-reverse;
   align-items: flex-end;
   justify-content: flex-end;
-  width: 100%;
+  width: 450px;
   height: 100%;
   padding: 10px 20px 10px 20px;
 }
@@ -135,7 +135,7 @@ ${DARKMODE_SELECTOR_VALUE}
 .${PULL_OUT_ON}
 {
   display: block;
-  width: 450px;
+  width: auto;
   border-width: 1px;
   border-color: ${PULL_OUT_BOR.asVar()};
   transition: width 0.2s;
