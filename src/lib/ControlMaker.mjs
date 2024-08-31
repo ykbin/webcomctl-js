@@ -4,8 +4,11 @@ import { loadSvgAsCssUrlAsync } from './SVG.mjs';
 export class CSSClassName {
   _name;
 
-  constructor(name) {
-    this._name = name;
+  constructor(params) {
+    if (params instanceof CSSClassName)
+      this._name = params.name;
+    else
+      this._name = params;
   }
 
   get name() {
