@@ -73,6 +73,8 @@ export default class ControlMaker {
   _currentUrl;
   _cssClassNames = {};
   _cssVarNames = {};
+  _cssList = {};
+  _htmlList = {};
 
   constructor(name, currentUrl) {
     this._name = name;
@@ -116,10 +118,16 @@ export default class ControlMaker {
   }
 
   newHTML(name, html) {
+    if (this._htmlList.hasOwnProperty(name))
+      throw `HTML '${name}' exist in ${this._name}`;
+    this._htmlList[name] = html;
     return html;
   }
 
   newCSS(name, css) {
+    if (this._cssList.hasOwnProperty(name))
+      throw `HTML '${name}' exist in ${this._name}`;
+    this._cssList[name] = css;
     return css;
   }
 
@@ -129,5 +137,27 @@ export default class ControlMaker {
 
   get cssVarNames() {
     return this._cssVarNames;
+  }
+
+  get htmlList() {
+    return this._htmlList;
+  }
+
+  get cssList() {
+    return this._cssList;
+  }
+
+  buildComponent() {
+    const component = {};
+    for (const [key, val] of Object.entries(this._cssClassNames)) {
+      component[key] = val.toString();
+    }
+    for (const [key, val] of Object.entries(this._htmlList)) {
+      component[key] = val.toString();
+    }
+    for (const [key, val] of Object.entries(this._cssList)) {
+      component[key] = val.toString();
+    }
+    return component;
   }
 };

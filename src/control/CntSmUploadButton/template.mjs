@@ -5,8 +5,8 @@ import { COMMON_MOBILE_DEVICE_WIDTH } from '../../lib/WickedTheme.mjs';
 
 const mk = new ControlMaker('CntSmUploadButton', import.meta.url);
 
-export const ROOT_CLASS = mk.newClassName("ROOT_CLASS");
-export const LOAD_CLASS = mk.newClassName("LOAD_CLASS");
+const ROOT_CLASS = mk.newClassName("ROOT_CLASS");
+const LOAD_CLASS = mk.newClassName("LOAD_CLASS");
 
 const DBG_VAR = mk.newCSSVariable("DBG_VAR", [ '#ffffff', '#472f2f42' ]);
 const HBG_VAR = mk.newCSSVariable("HBG_VAR", [ '#f5eaea', '#ba8f8f29' ]);
@@ -18,14 +18,14 @@ const BORDER_COLOR = COLOR;
 const LD_COLOR = '#c5000078';
 const LD_BORDER_COLOR = LD_COLOR;
 
-export const ROOT_HTML = `
+mk.newHTML('ROOT_HTML', `
 <div class="${ROOT_CLASS}">
   <span></span>
   <label class="notranslate" translate="no">Upload</label>
 </div>
-`;
+`);
 
-export const CSS = `
+mk.newCSS('CSS', `
 :root
 {
   ${DBG_VAR.toString(0)};
@@ -40,7 +40,7 @@ ${DARKMODE_SELECTOR_VALUE}
 
 .${ROOT_CLASS} input
 {
-   display: none;
+    display: none;
 }
 
 .${ROOT_CLASS}
@@ -128,4 +128,6 @@ ${DARKMODE_SELECTOR_VALUE}
     right: 66px;
   }
 }
-`;
+`);
+
+export const component = mk.buildComponent();
