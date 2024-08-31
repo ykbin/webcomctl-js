@@ -1,5 +1,5 @@
 import { BaseControl, NQDOM } from 'webnetq-js';
-import { ITEM_HTML, TEXT_CLASS, LIST_CLASS } from 'module-loader!./template.mjs';
+import { ITEM_HTML, TEXT_CLASS, LIST_CLASS } from 'uictmplt-loader!./template.mjs';
 
 export default class UIDebugPanelControl extends BaseControl {
   setButton(name, params) {
