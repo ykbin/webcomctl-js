@@ -7,7 +7,7 @@ export const ROOT_CLASS = mk.newClassName("ROOT_CLASS");
 export const PORT_CLASS = mk.newClassName("PORT_CLASS");
 
 export const CLOSE_CLASS = mk.newClassName("CLOSE_CLASS");
-export const DESCRIPTION_CLASS = mk.newClassName("DESCRIPTION_CLASS");
+
 export const PULL_OUT_RIGHT = mk.newClassName("PULL_OUT_RIGHT");
 export const PULL_OUT_LEFT = mk.newClassName("PULL_OUT_LEFT");
 export const PULL_OUT_ON = mk.newClassName("PULL_OUT_ON")
@@ -23,10 +23,9 @@ const MENU_TITLE_COL = mk.newCSSVariable("MENU_TITLE_COL", [ '#272626', '#9b9b9b
 const CLOSE_HOV_COL = mk.newCSSVariable("CLOSE_HOV_COL", '#ff00005e');
 
 export const ROOT_HTML = mk.newHTML('ROOT_HTML', `
-<div class="${ROOT_CLASS}">
-    <div class="${PORT_CLASS}"></div>
-    <div class="${DESCRIPTION_CLASS}">
-      <div>
+  <div class="${ROOT_CLASS}">
+    <div>
+      <div class="${PORT_CLASS}">
         <h2><span class="notranslate" translate="no">JPEG</span>:</h2>
         <span>
           One of the popular raster graphics formats used to store photographs and similar images. The JPEG algorithm allows you to compress an image both lossy and lossless (lossless JPEG compression mode).
@@ -45,7 +44,7 @@ export const ROOT_HTML = mk.newHTML('ROOT_HTML', `
           </ul>
         </div>
         <div class="${CLOSE_CLASS}"></div>
-    </div>
+      </div>
   </div>
 `);
 
@@ -68,26 +67,44 @@ ${DARKMODE_SELECTOR_VALUE}
   ${MENU_TITLE_COL.toString(1)};
 }
 
-${ROOT_CLASS} > *
+.${ROOT_CLASS} > *
 {
   box-sizing: border-box;
 }
 
+.${ROOT_CLASS} h3
+{
+  margin: 0px;
+  font-weight: 400;
+  font-size: 16px;
+}
+
 .${ROOT_CLASS}
 {
-  position: relative;
-  display: flex;
-  width: 100%;
+  position: absolute;
+  top: 0;
+  display: none;
   height: 100%;
+  color: #393939;
+  font-family: Open Sans, Arial, sans-serif;
+  box-sizing: border-box;
+  background-color: ${MENU_BG.asVar()};
+  color: ${MENU_COL.asVar()};
+  overflow: hidden;
 }
 
-.${PORT_CLASS}
+.${ROOT_CLASS} > div
 {
-  width: 100%;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-end;
+  justify-content: flex-end;
+  width: 450px;
   height: 100%;
+  padding: 10px 20px 10px 20px;
 }
 
-.${DESCRIPTION_CLASS} > div > h2
+.${ROOT_CLASS} > div > h2
 {
   display: inline-block;
   padding-left: 5px;
@@ -97,67 +114,35 @@ ${ROOT_CLASS} > *
   color: ${MENU_TITLE_COL.asVar()};
 }
 
-h3
-{
-  margin: 0px;
-  font-weight: 400;
-  font-size: 16px;
-}
-
-.${DESCRIPTION_CLASS}
-{
-  position: absolute;
-  display: none;
-  justify-content: flex-end;
-  max-width: 450px;
-  height:100%;
-  color: #393939;
-  font-family: Open Sans, Arial, sans-serif;
-  box-sizing: border-box;
-  background-color: ${MENU_BG.asVar()};
-  color: ${MENU_COL.asVar()};
-  overflow: hidden;
-}
-
-.${PULL_OUT_RIGHT} .${DESCRIPTION_CLASS}
+.${PULL_OUT_RIGHT}
 {
   right: 0;
-  display: flex;
+  display: block;
   width: 0;
-  padding: 0;
-  transform: translateX(100%);
-  transition: transform 0.2s ease-in-out, width 0.01s 0.2s, padding 0.01s 0.2s;
-  border-left: 1px solid ${PULL_OUT_BOR.asVar()};
+  transition: width 0.2s;
+  border-left: 0 solid;
 }
 
-.${PULL_OUT_LEFT} .${DESCRIPTION_CLASS}
+.${PULL_OUT_LEFT}
 {
   left: 0;
-  display: flex;
+  display: block;
   width: 0;
-  padding: 0;
-  transform: translateX(-100%);
-  transition: transform 0.2s ease-in-out, width 0.01s 0.2s, padding 0.01s 0.2s;
-  border-right: 1px solid ${PULL_OUT_BOR.asVar()};
+  transition: width 0.2s;
+  border-right: 0 solid;
 }
 
-.${PULL_OUT_ON} .${DESCRIPTION_CLASS},
-.${PULL_OUT_ON} .${DESCRIPTION_CLASS}
+.${PULL_OUT_ON}
 {
-  display: flex;
-  width: 100%;
-  min-width: 300px;
-  padding: 20px 20px 10px 20px;
-  transform: translateX(0);
-  transition: padding 0.01s, width 0.01s, transform 0.2s ease-in-out 0.01s;
+  display: block;
+  width: 450px;
+  border-width: 1px;
+  border-color: ${PULL_OUT_BOR.asVar()};
+  transition: width 0.2s;
 }
 
-.${DESCRIPTION_CLASS} *
-{
-  box-sizing: border-box;
-}
 
-.${DESCRIPTION_CLASS} > div > span
+.${ROOT_CLASS} > div > span
 {
   display: block;
   max-width: 500px;
@@ -223,9 +208,6 @@ h3
 
 .${CLOSE_CLASS}
 {
-  position: relative;
-  bottom: 10px;
-  left: 10px;
   width: 20px;
   height: 20px;
   border-radius: 5px;
