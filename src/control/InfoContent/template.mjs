@@ -52,7 +52,7 @@ export const CSS = `
   --menu-bg: white;
   --menu-col: black;
   --menu-title-col: #272626;
-  --close-hov: #f95d5d;
+  --close-hov: #80808042;
 }
 
 ${DARKMODE_SELECTOR_VALUE}
