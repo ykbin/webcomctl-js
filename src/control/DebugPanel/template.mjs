@@ -3,6 +3,7 @@ import ControlMaker from '../../lib/ControlMaker.mjs';
 import { DARKMODE_SELECTOR_VALUE } from '../../lib/DarkMode.mjs';
 
 const mk = new ControlMaker('DebugPanel', import.meta.url);
+const ARROW_IMG = await mk.loadSvgAsCssUrl('./arrow.svg');
 
 const ROOT_CLASS = mk.newClassName("ROOT_CLASS");
 const LIST_CLASS = mk.newClassName("LIST_CLASS");
@@ -17,8 +18,7 @@ mk.newHTML('ROOT_HTML', `
   <div class="${ROOT_CLASS}">
     <div class="${CONTROL_CLASS}">
       <div></div>
-      <div></div>
-      <div></div>
+      <span</span>
     </div>
     <div class="${LIST_CLASS}"></div>
   </div>
@@ -68,8 +68,27 @@ ${DARKMODE_SELECTOR_VALUE}
 .${CONTROL_CLASS}
 {
   display: flex;
+  justify-content: flex-end;
   width: 100%;
   height: 25px;
+  margin-bottom: 5px;
+}
+
+.${CONTROL_CLASS} > *
+{
+  height: 25px;
+  width: 25px;
+}
+
+.${CONTROL_CLASS} > div
+{
+  background-image: ${ARROW_IMG};
+}
+
+.${CONTROL_CLASS} > span
+{
+  display: block;
+  background-image: ${ARROW_IMG};
 }
 
 .${LIST_CLASS} > div
