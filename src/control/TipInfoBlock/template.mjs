@@ -20,31 +20,16 @@ const MENU_BG = mk.newCSSVariable("MENU_BG", [ '#f3f3f3', '#252525' ]);
 const MENU_COL = mk.newCSSVariable("MENU_COL", [ 'black', '#b8b4b4' ]);
 const PULL_OUT_BOR = mk.newCSSVariable("PULL_OUT_BOR", [ '#dedede', '#323232' ]);
 const MENU_TITLE_COL = mk.newCSSVariable("MENU_TITLE_COL", [ '#272626', '#9b9b9b' ]);
-const CLOSE_HOV_COL = mk.newCSSVariable("CLOSE_HOV_COL", '#ff00005e');
+const CLOSE_HOV_COL = mk.newCSSVariable("CLOSE_HOV_COL", '#80808042');
 
 export const ROOT_HTML = mk.newHTML('ROOT_HTML', `
   <div class="${ROOT_CLASS}">
     <div>
-      <div class="${PORT_CLASS}">
-        <h2><span class="notranslate" translate="no">JPEG</span>:</h2>
-        <span>
-          One of the popular raster graphics formats used to store photographs and similar images. The JPEG algorithm allows you to compress an image both lossy and lossless (lossless JPEG compression mode).
-        </span>
-        <div class="${LIST_CLASS} notranslate" translate="no">
-          <span><h3>Size</h3><label>88 KB</label></span>
-          <span><h3>Library</h3><label>libjpeg-turbo-2.1.91</label></span>
-          <span><h3>MD5</h3><label>6C539ACE23ECEA28A66FB18514D86A8C</label></span>
-        </div>
-
-          <ul class="${SIZE_CLASS} notranslate" translate="no">
-            <li><h3>Name:</h3><label>Name1234567890</label></li>
-            <li><h3>Height</h3><label>470 px</label></li>
-            <li><h3>JFIF Ver</h3><label>1.1</label></li>
-            <li><h3>ColorSpace</h3><label>YCbCr</label></li>
-          </ul>
-        </div>
+      <div class="${PORT_CLASS}"></div>
+      <span>
         <div class="${CLOSE_CLASS}"></div>
-      </div>
+      </span>
+    </div>
   </div>
 `);
 
@@ -67,16 +52,15 @@ ${DARKMODE_SELECTOR_VALUE}
   ${MENU_TITLE_COL.toString(1)};
 }
 
-.${ROOT_CLASS} > *
+.${PORT_CLASS}
 {
-  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
 }
 
-.${ROOT_CLASS} h3
+.${ROOT_CLASS} *
 {
-  margin: 0px;
-  font-weight: 400;
-  font-size: 16px;
+  box-sizing: border-box;
 }
 
 .${ROOT_CLASS}
@@ -97,21 +81,10 @@ ${DARKMODE_SELECTOR_VALUE}
 {
   display: flex;
   flex-direction: column-reverse;
-  align-items: flex-end;
   justify-content: flex-end;
   width: 450px;
   height: 100%;
-  padding: 10px 20px 10px 20px;
-}
-
-.${ROOT_CLASS} > div > h2
-{
-  display: inline-block;
-  padding-left: 5px;
-  margin: 0px;
-  font-weight: 500;
-  font-size: 18px;
-  color: ${MENU_TITLE_COL.asVar()};
+  padding: 0 20px 10px 20px;
 }
 
 .${PULL_OUT_RIGHT}
@@ -141,69 +114,13 @@ ${DARKMODE_SELECTOR_VALUE}
   transition: width 0.2s;
 }
 
-
 .${ROOT_CLASS} > div > span
 {
-  display: block;
-  max-width: 500px;
-  padding: 0px 5px;
-  margin-bottom: 16px;
-  line-height: 1.7;
-}
-
-.${LIST_CLASS}
-{
-  display: table;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
   width: 100%;
-  border-spacing: 0 10px;
-}
-
-.${LIST_CLASS} span 
-{
-  display: table-row-group;
-}
-
-.${LIST_CLASS} > span > h3
-{
-  display: table-cell;
-  padding-left: 10px;
-  min-width: 50px;
-}
-
-.${LIST_CLASS} > span > label
-{
-  display: table-cell;
-  width: 100%;
-  padding-left: 10px;
-  word-break: break-all;
-}
-
-.${SIZE_CLASS}
-{
-  display: table;
-  border-spacing: 0 10px;
-  margin: 0;
-  padding: 0;
-}
-
-.${SIZE_CLASS} > li
-{
-  display: table-row-group;
-}
-
-.${SIZE_CLASS} > li > h3
-{
-  display: table-cell;
-  padding-left: 10px;
-  min-width: 50px;
-}
-
-.${SIZE_CLASS} > li > label
-{
-  display: table-cell;
-  width: 100%;
-  word-break: break-all;
-  padding-left: 10px;
+  height: 30px;
 }
 
 .${CLOSE_CLASS}
