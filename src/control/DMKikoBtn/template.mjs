@@ -4,31 +4,33 @@ import { DARKMODE_SELECTOR_VALUE } from '../../lib/DarkMode.mjs';
 
 const mk = new ControlMaker('DMKikoBtn', import.meta.url);
 
+const ROOT_CLASS = mk.newClassName("ROOT_CLASS");
+
 const MOON_IMG = await mk.loadSvgAsCssUrl('./moon.svg');
 const SUN_IMG = await mk.loadSvgAsCssUrl('./sun.svg');
 
-export const ROOT_CLASS = mk.newClassName("Root");
-
-const IMG_VAR = mk.newVarName("Img");
+const vars = mk.newCSSVariableMap({
+  img: [ MOON_IMG,  SUN_IMG ],
+});
 
 const BORDER_COLOR = '#6a6a6a';
 const IMAGE_BORDER_COLOR = 'transparent';
 
-export const ROOT_HTML = `
+mk.newHTML('ROOT_HTML', `
 <div class="${ROOT_CLASS}">
   <div></div>
 </div>
-`;
+`);
 
-export const CSS = `
+mk.newCSS('CSS', `
 :root 
 {
-  ${IMG_VAR}: ${MOON_IMG};
+  ${vars.toString(0)};
 }
 
 ${DARKMODE_SELECTOR_VALUE}
 {
-  ${IMG_VAR}: ${SUN_IMG};
+  ${vars.toString(1)};
 }
 
 .${ROOT_CLASS}
@@ -49,6 +51,11 @@ ${DARKMODE_SELECTOR_VALUE}
   background-size: contain;
   background-repeat: no-repeat;
   border: 4px solid ${IMAGE_BORDER_COLOR};
-  background-image: var(${IMG_VAR});
+  background-image: ${vars.img.asVar()};
 }
-`;
+`);
+
+export function buildComponent()
+{
+  return mk.buildComponent();
+}
