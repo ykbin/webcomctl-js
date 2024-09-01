@@ -14,8 +14,12 @@ const BG_VAR = mk.newCSSVariable("BG_VAR", [ '#fdfdfd', 'rgb(43 43 45)' ]);
 const DEFBUT_VAR = mk.newCSSVariable("DEFBUT_VAR", [ '#488ee9', '#2d5b96' ]);
 
 mk.newHTML('ROOT_HTML', `
-  <div class="${ROOT_CLASS}>
-    <div class="${CONTROL_CLASS}></div>
+  <div class="${ROOT_CLASS}">
+    <div class="${CONTROL_CLASS}">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
     <div class="${LIST_CLASS}"></div>
   </div>
 `);
