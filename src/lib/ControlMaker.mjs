@@ -59,6 +59,10 @@ export class CSSVariable {
     return `var(${this._name})`;
   }
 
+  get valueCount() {
+    return Array.isArray(this._value) ? this._value.length : 1;
+  }
+
   toString(n) {
     let value = this._value;
     if (Array.isArray(this._value) && typeof n === 'number')
@@ -117,7 +121,22 @@ export default class ControlMaker {
   }
 
   newCSSVariableMap(params) {
-    const result = {};
+    const result = Object.create({}, {
+      toString: {
+        writable: false,
+        enumerable: false,
+        configurable: false,
+        value: function(n) {
+          n = n || 0;
+          let str = '';
+          for (const val of Object.values(this)) {
+            if (n < val.valueCount)
+              str += val.toString(n) + ';';
+          }
+          return str;
+        },
+      }
+    });
     for (const [key,val] of Object.entries(params)) {
       result[key] = this.newCSSVariable(key, val);
     }
