@@ -18,7 +18,7 @@ mk.newHTML('ROOT_HTML', `
   <div class="${ROOT_CLASS}">
     <div class="${CONTROL_CLASS}">
       <div></div>
-      <span</span>
+      <span></span>
     </div>
     <div class="${LIST_CLASS}"></div>
   </div>
@@ -76,8 +76,11 @@ ${DARKMODE_SELECTOR_VALUE}
 
 .${CONTROL_CLASS} > *
 {
-  height: 25px;
   width: 25px;
+  height: 25px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .${CONTROL_CLASS} > div
