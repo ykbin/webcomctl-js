@@ -116,6 +116,14 @@ export default class ControlMaker {
     return obj;
   }
 
+  newCSSVariableMap(params) {
+    const result = {};
+    for (const [key,val] of Object.entries(params)) {
+      result[key] = this.newCSSVariable(key, val);
+    }
+    return Object.freeze(Object.seal(result));
+  }
+
   newAnimationName(animename) {
     return representClassNames(`${this._name}-${animename}`);
   }
