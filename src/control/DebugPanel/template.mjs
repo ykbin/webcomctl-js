@@ -7,13 +7,17 @@ const mk = new ControlMaker('DebugPanel', import.meta.url);
 const ROOT_CLASS = mk.newClassName("ROOT_CLASS");
 const LIST_CLASS = mk.newClassName("LIST_CLASS");
 const TEXT_CLASS = mk.newClassName("TEXT_CLASS");
+const CONTROL_CLASS = mk.newClassName("CONTROL_CLASS");
 
 const BOR_VAR = mk.newCSSVariable("BOR_VAR", [ '#d0dbe9', '#35383c' ]);
 const BG_VAR = mk.newCSSVariable("BG_VAR", [ '#fdfdfd', 'rgb(43 43 45)' ]);
 const DEFBUT_VAR = mk.newCSSVariable("DEFBUT_VAR", [ '#488ee9', '#2d5b96' ]);
 
 mk.newHTML('ROOT_HTML', `
-<div class="${ROOT_CLASS} ${LIST_CLASS}"></div>
+  <div class="${ROOT_CLASS}>
+    <div class="${CONTROL_CLASS}></div>
+    <div class="${LIST_CLASS}"></div>
+  </div>
 `);
 
 mk.newHTML('ITEM_HTML', `
@@ -57,7 +61,14 @@ ${DARKMODE_SELECTOR_VALUE}
   box-sizing: border-box;
 }
 
-.${ROOT_CLASS} > div
+.${CONTROL_CLASS}
+{
+  display: flex;
+  width: 100%;
+  height: 25px;
+}
+
+.${LIST_CLASS} > div
 {
   display: flex;
   justify-content: center;
@@ -72,7 +83,7 @@ ${DARKMODE_SELECTOR_VALUE}
   cursor: pointer;
 }
 
-.${ROOT_CLASS} > div:hover
+.${LIST_CLASS} > div:hover
 {
   background-color: #417cc8;
 }
