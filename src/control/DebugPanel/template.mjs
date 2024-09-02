@@ -66,6 +66,7 @@ ${DARKMODE_SELECTOR_VALUE}
   font-family: "Nunito Sans", -apple-system, BlinkMacSystemFont,
                 "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
                 "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  user-select: none;
   cursor: default;
 }
 
@@ -139,7 +140,7 @@ ${DARKMODE_SELECTOR_VALUE}
 
 .${CONTROL_CLASS} > span > div
 {
-  transform: rotate(270deg);
+  transform: rotate(0deg);
 }
 
 .${DOWN_CLASS} .${CONTROL_CLASS} > span
