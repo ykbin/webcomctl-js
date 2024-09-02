@@ -14,18 +14,22 @@ const LEFT_CLASS = mk.newClassName("LEFT_CLASS");
 const RIGHT_CLASS = mk.newClassName("RIGHT_CLASS");
 const UP_CLASS = mk.newClassName("UP_CLASS");
 const DOWN_CLASS = mk.newClassName("DOWN_CLASS");
+const HIDE_CLICK_CLASS = mk.newClassName("HIDE_CLICK_CLASS");
+const SIDE_CLICK_CLASS = mk.newClassName("SIDE_CLICK_CLASS");
 
-const BOR_VAR = mk.newCSSVariable("BOR_VAR", [ '#d0dbe9', '#35383c' ]);
-const BG_VAR = mk.newCSSVariable("BG_VAR", [ '#fdfdfd', 'rgb(43 43 45)' ]);
-const CONTROL_VAR = mk.newCSSVariable("CONTROL_VAR", [ ' #efefef', '#2f2f2f' ]);
-const DEFBUT_VAR = mk.newCSSVariable("DEFBUT_VAR", [ '#488ee9', '#2d5b96' ]);
-const DEFBUT_VAR_HOV = mk.newCSSVariable("DEFBUT_VAR_HOV", ['#417cc8']);
+const vars = mk.newCSSVariableMap({
+  bor: [ '#d0dbe9', '#35383c' ],
+  bg:  [ '#fdfdfd', 'rgb(43 43 45)' ],
+  control: [ ' #efefef', '#2f2f2f' ],
+  defBut: [ '#488ee9', '#2d5b96' ],
+  hovBut: '#417cc8',
+});
 
 mk.newHTML('ROOT_HTML', `
   <div class="${ROOT_CLASS} ${LEFT_CLASS} ${UP_CLASS}">
     <div class="${CONTROL_CLASS}">
-      <div><div></div></div>
-      <span><div></div></span>
+      <div><div class="${SIDE_CLICK_CLASS}"></div></div>
+      <span><div class="${HIDE_CLICK_CLASS}"></div></span>
     </div>
     <div class="${LIST_CLASS}"></div>
   </div>
@@ -38,19 +42,12 @@ mk.newHTML('ITEM_HTML', `
 mk.newCSS('CSS', `
 :root
 {
-  ${BOR_VAR.toString(0)};
-  ${BG_VAR.toString(0)};
-  ${DEFBUT_VAR.toString(0)};
-  ${CONTROL_VAR.toString(0)};
-  ${DEFBUT_VAR_HOV.toString(0)};
+  ${vars.toString(0)};
 }
 
 ${DARKMODE_SELECTOR_VALUE}
 {
-  ${BOR_VAR.toString(1)};
-  ${BG_VAR.toString(1)};
-  ${DEFBUT_VAR.toString(1)};
-  ${CONTROL_VAR.toString(1)};
+  ${vars.toString(1)};
 }
 
 .${ROOT_CLASS}
@@ -95,12 +92,12 @@ ${DARKMODE_SELECTOR_VALUE}
   display: flex;
   width: max-content;
   padding: 5px;
-  border-top: 1px solid ${BOR_VAR.asVar()};
-  border-left: 1px solid ${BOR_VAR.asVar()};
-  border-right: 1px solid ${BOR_VAR.asVar()};
+  border-top: 1px solid ${vars.bor.asVar()};
+  border-left: 1px solid ${vars.bor.asVar()};
+  border-right: 1px solid ${vars.bor.asVar()};
   border-top-right-radius: 2px;
   border-top-left-radius: 2px;
-  background-color: ${CONTROL_VAR.asVar()};
+  background-color: ${vars.control.asVar()};
 }
 
 .${CONTROL_CLASS} > *
@@ -110,7 +107,7 @@ ${DARKMODE_SELECTOR_VALUE}
   height: 25px;
   margin-right: 5px;
   border-radius: 2px;
-  background-color: ${DEFBUT_VAR.asVar()};
+  background-color: ${vars.defBut.asVar()};
 }
 
 .${CONTROL_CLASS} > *:last-child
@@ -130,7 +127,7 @@ ${DARKMODE_SELECTOR_VALUE}
 
 .${CONTROL_CLASS} > *:hover
 {
-  background-color: ${DEFBUT_VAR_HOV.asVar()};
+  background-color: ${vars.hovBut.asVar()};
 }
 
 .${LEFT_CLASS} .${CONTROL_CLASS} > div > div
@@ -151,8 +148,8 @@ ${DARKMODE_SELECTOR_VALUE}
 .${LIST_CLASS}
 {
   padding: 5px 5px 0px 5px;
-  border: 1px solid ${BOR_VAR.asVar()};
-  background-color: ${BG_VAR.asVar()};
+  border: 1px solid ${vars.bor.asVar()};
+  background-color: ${vars.bg.asVar()};
 }
 
 .${LIST_CLASS} > div
@@ -167,13 +164,13 @@ ${DARKMODE_SELECTOR_VALUE}
   margin-bottom: 5px;
   border-radius: 2px;
   color: white;
-  background-color: ${DEFBUT_VAR.asVar()};
+  background-color: ${vars.defBut.asVar()};
   cursor: pointer;
 }
 
 .${LIST_CLASS} > div:hover
 {
-  background-color: ${DEFBUT_VAR_HOV.asVar()};
+  background-color: ${vars.hovBut.asVar()};
 }
 `);
 
