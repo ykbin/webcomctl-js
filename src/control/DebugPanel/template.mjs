@@ -103,6 +103,8 @@ ${DARKMODE_SELECTOR_VALUE}
   width: 25px;
   height: 25px;
   margin-right: 5px;
+  border-radius: 2px;
+  background-color: ${DEFBUT_VAR.asVar()};
 }
 
 .${CONTROL_CLASS} > *:last-child
@@ -122,7 +124,7 @@ ${DARKMODE_SELECTOR_VALUE}
 
 .${CONTROL_CLASS} > *:hover
 {
-  background-color: #e1e1e1;
+  background-color: #417cc8;
 }
 
 .${LEFT_CLASS} .${CONTROL_CLASS} > div > div
