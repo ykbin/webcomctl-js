@@ -114,6 +114,11 @@ ${DARKMODE_SELECTOR_VALUE}
   transform: rotate(270deg);
 }
 
+.${DOWN_CLASS} .${CONTROL_CLASS} > span
+{
+  transform: rotate(90deg);
+}
+
 .${LIST_CLASS} > div
 {
   display: flex;
