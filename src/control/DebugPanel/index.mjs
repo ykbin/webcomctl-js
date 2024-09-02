@@ -1,13 +1,13 @@
 import { BaseControl, NQDOM } from 'webnetq-js';
-import { ITEM_HTML, TEXT_CLASS, LIST_CLASS, UP_CLASS, DOWN_CLASS, HIDE_CLICK_CLASS } from 'uictmplt-loader!./template.mjs';
+import { ITEM_HTML, TEXT_CLASS, LIST_CLASS, UP_CLASS, DOWN_CLASS, hideClick } from 'uictmplt-loader!./template.mjs';
 
 export default class UIDebugPanelControl extends BaseControl {
   _init() {
-    const hideClickElm = NQDOM.getElementByClassName(this.element, HIDE_CLICK_CLASS);
+    const hideClickElm = NQDOM.getElementByClassName(this.element, hideClick);
     hideClickElm && hideClickElm.addEventListener("click", (event) => {
       const f = this.element.classList.contains(UP_CLASS);
-      this.element.classList.remove(f ? DOWN_CLASS : UP_CLASS);
-      this.element.classList.add(f ? UP_CLASS : DOWN_CLASS);
+      this.element.classList.remove(f ? UP_CLASS : DOWN_CLASS);
+      this.element.classList.add(f ? DOWN_CLASS : UP_CLASS);
     });
   }
 
