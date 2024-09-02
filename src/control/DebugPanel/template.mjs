@@ -15,7 +15,7 @@ const RIGHT_CLASS = mk.newClassName("RIGHT_CLASS");
 const UP_CLASS = mk.newClassName("UP_CLASS");
 const DOWN_CLASS = mk.newClassName("DOWN_CLASS");
 const hideClick = mk.newClassName("hideClick");
-const SIDE_CLICK_CLASS = mk.newClassName("SIDE_CLICK_CLASS");
+const sideClick = mk.newClassName("sideClick");
 
 const vars = mk.newCSSVariableMap({
   bor: [ '#d0dbe9', '#35383c' ],
@@ -28,7 +28,7 @@ const vars = mk.newCSSVariableMap({
 mk.newHTML('ROOT_HTML', `
   <div class="${ROOT_CLASS} ${LEFT_CLASS} ${UP_CLASS}">
     <div class="${CONTROL_CLASS}">
-      <div><div class="${SIDE_CLICK_CLASS}"></div></div>
+      <div><div class="${sideClick}"></div></div>
       <span><div class="${hideClick}"></div></span>
     </div>
     <div class="${LIST_CLASS}"></div>
