@@ -22,8 +22,8 @@ const DEFBUT_VAR = mk.newCSSVariable("DEFBUT_VAR", [ '#488ee9', '#2d5b96' ]);
 mk.newHTML('ROOT_HTML', `
   <div class="${ROOT_CLASS} ${LEFT_CLASS} ${UP_CLASS}">
     <div class="${CONTROL_CLASS}">
-      <div></div>
-      <span></span>
+      <div><div></div></div>
+      <span><div></div></span>
     </div>
     <div class="${LIST_CLASS}"></div>
   </div>
@@ -98,18 +98,20 @@ ${DARKMODE_SELECTOR_VALUE}
 
 .${CONTROL_CLASS} > *
 {
+  display: block;
   width: 25px;
   height: 25px;
   margin: 5px;
+}
+
+.${CONTROL_CLASS} > * > div
+{
+  width: 100%;
+  height: 100%;
   background-image: ${ARROW_IMG};
   background-size: 85%;
   background-position: center;
   background-repeat: no-repeat;
-}
-
-.${CONTROL_CLASS} > *:nth-child(2n)
-{
-  margin: 0;
 }
 
 .${CONTROL_CLASS} > *:hover
@@ -117,14 +119,13 @@ ${DARKMODE_SELECTOR_VALUE}
   background-color: #e1e1e1;
 }
 
-.${LEFT_CLASS} .${CONTROL_CLASS} > div
+.${LEFT_CLASS} .${CONTROL_CLASS} > div > div
 {
   transform: scaleX(-1);
 }
 
-.${CONTROL_CLASS} > span
+.${CONTROL_CLASS} > span > div
 {
-  display: block;
   transform: rotate(270deg);
 }
 
