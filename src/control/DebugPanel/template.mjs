@@ -51,12 +51,13 @@ ${DARKMODE_SELECTOR_VALUE}
 .${ROOT_CLASS}
 {
   position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
   bottom: 2px;
   width: auto;
   height: auto;
-  padding: 5px 5px 0px 5px;
-  border: 1px solid ${BOR_VAR.asVar()};
-  border-radius: 2px;
+  padding: 0px 5px 0px 5px;
   background-color: ${BG_VAR.asVar()};
   font-family: "Nunito Sans", -apple-system, BlinkMacSystemFont,
                 "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
@@ -87,10 +88,13 @@ ${DARKMODE_SELECTOR_VALUE}
 .${CONTROL_CLASS}
 {
   display: flex;
-  justify-content: flex-end;
-  width: 100%;
+  width: max-content;
   height: 25px;
   margin-bottom: 5px;
+  border-top: 1px solid ${BOR_VAR.asVar()};
+  border-left: 1px solid ${BOR_VAR.asVar()};
+  border-right: 1px solid ${BOR_VAR.asVar()};
+  border-radius: 2px;
 }
 
 .${CONTROL_CLASS} > *
@@ -129,6 +133,8 @@ ${DARKMODE_SELECTOR_VALUE}
   min-width: 90px;
   padding: 0 2px;
   margin-bottom: 5px;
+  border: 1px solid ${BOR_VAR.asVar()};
+  border-radius: 2px;
   color: white;
   background-color: ${DEFBUT_VAR.asVar()};
   cursor: pointer;
