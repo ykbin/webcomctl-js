@@ -18,6 +18,7 @@ const DOWN_CLASS = mk.newClassName("DOWN_CLASS");
 const BOR_VAR = mk.newCSSVariable("BOR_VAR", [ '#d0dbe9', '#35383c' ]);
 const BG_VAR = mk.newCSSVariable("BG_VAR", [ '#fdfdfd', 'rgb(43 43 45)' ]);
 const DEFBUT_VAR = mk.newCSSVariable("DEFBUT_VAR", [ '#488ee9', '#2d5b96' ]);
+const DEFBUT_VAR_HOV = mk.newCSSVariable("DEFBUT_VAR_HOV", ['#417cc8']);
 
 mk.newHTML('ROOT_HTML', `
   <div class="${ROOT_CLASS} ${LEFT_CLASS} ${UP_CLASS}">
