@@ -102,9 +102,14 @@ ${DARKMODE_SELECTOR_VALUE}
   height: 25px;
   margin: 5px;
   background-image: ${ARROW_IMG};
-  background-size: contain;
+  background-size: 85%;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+.${CONTROL_CLASS} > *:nth-child(2n)
+{
+  margin: 0;
 }
 
 .${CONTROL_CLASS} > *:hover
