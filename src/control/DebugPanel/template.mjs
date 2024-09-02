@@ -88,6 +88,7 @@ ${DARKMODE_SELECTOR_VALUE}
 {
   display: flex;
   width: max-content;
+  padding: 5px;
   border-top: 1px solid ${BOR_VAR.asVar()};
   border-left: 1px solid ${BOR_VAR.asVar()};
   border-right: 1px solid ${BOR_VAR.asVar()};
@@ -101,7 +102,12 @@ ${DARKMODE_SELECTOR_VALUE}
   display: block;
   width: 25px;
   height: 25px;
-  margin: 5px;
+  margin-right: 5px;
+}
+
+.${CONTROL_CLASS} > *:last-child
+{
+  margin-right: 0;
 }
 
 .${CONTROL_CLASS} > * > div
