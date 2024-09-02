@@ -10,12 +10,17 @@ const LIST_CLASS = mk.newClassName("LIST_CLASS");
 const TEXT_CLASS = mk.newClassName("TEXT_CLASS");
 const CONTROL_CLASS = mk.newClassName("CONTROL_CLASS");
 
+const LEFT_CLASS = mk.newClassName("LEFT_CLASS");
+const RIGHT_CLASS = mk.newClassName("RIGHT_CLASS");
+const UP_CLASS = mk.newClassName("UP_CLASS");
+const DOWN_CLASS = mk.newClassName("DOWN_CLASS");
+
 const BOR_VAR = mk.newCSSVariable("BOR_VAR", [ '#d0dbe9', '#35383c' ]);
 const BG_VAR = mk.newCSSVariable("BG_VAR", [ '#fdfdfd', 'rgb(43 43 45)' ]);
 const DEFBUT_VAR = mk.newCSSVariable("DEFBUT_VAR", [ '#488ee9', '#2d5b96' ]);
 
 mk.newHTML('ROOT_HTML', `
-  <div class="${ROOT_CLASS}">
+  <div class="${ROOT_CLASS} ${LEFT_CLASS} ${UP_CLASS}">
     <div class="${CONTROL_CLASS}">
       <div></div>
       <span></span>
@@ -47,7 +52,6 @@ ${DARKMODE_SELECTOR_VALUE}
 {
   position: fixed;
   bottom: 2px;
-  left: 2px;
   width: auto;
   height: auto;
   padding: 5px 5px 0px 5px;
@@ -65,6 +69,21 @@ ${DARKMODE_SELECTOR_VALUE}
   box-sizing: border-box;
 }
 
+.${LEFT_CLASS}
+{
+  left: 2px;
+}
+
+.${RIGHT_CLASS}
+{
+  right: 2px;
+}
+
+.${DOWN_CLASS} .${LIST_CLASS}
+{
+  display: none;
+}
+
 .${CONTROL_CLASS}
 {
   display: flex;
@@ -78,20 +97,21 @@ ${DARKMODE_SELECTOR_VALUE}
 {
   width: 25px;
   height: 25px;
+  background-image: ${ARROW_IMG};
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
 }
 
-.${CONTROL_CLASS} > div
+.${LEFT_CLASS} .${CONTROL_CLASS} > div
 {
-  background-image: ${ARROW_IMG};
+  transform: scaleX(-1)
 }
 
 .${CONTROL_CLASS} > span
 {
   display: block;
-  background-image: ${ARROW_IMG};
+  transform: rotate(270deg);
 }
 
 .${LIST_CLASS} > div
