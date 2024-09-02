@@ -109,7 +109,7 @@ ${DARKMODE_SELECTOR_VALUE}
 
 .${LEFT_CLASS} .${CONTROL_CLASS} > div
 {
-  transform: scaleX(-1)
+  transform: scaleX(-1);
 }
 
 .${CONTROL_CLASS} > span
