@@ -17,7 +17,7 @@ const DOWN_CLASS = mk.newClassName("DOWN_CLASS");
 
 const BOR_VAR = mk.newCSSVariable("BOR_VAR", [ '#d0dbe9', '#35383c' ]);
 const BG_VAR = mk.newCSSVariable("BG_VAR", [ '#fdfdfd', 'rgb(43 43 45)' ]);
-const CONTROL_VAR = mk.newCSSVariable("CONTROL_VAR", [ '#efefef, #333333']);
+const CONTROL_VAR = mk.newCSSVariable("CONTROL_VAR", [ ' #efefef', '#2f2f2f' ]);
 const DEFBUT_VAR = mk.newCSSVariable("DEFBUT_VAR", [ '#488ee9', '#2d5b96' ]);
 const DEFBUT_VAR_HOV = mk.newCSSVariable("DEFBUT_VAR_HOV", ['#417cc8']);
 
@@ -42,6 +42,7 @@ mk.newCSS('CSS', `
   ${BG_VAR.toString(0)};
   ${DEFBUT_VAR.toString(0)};
   ${CONTROL_VAR.toString(0)};
+  ${DEFBUT_VAR_HOV.toString(0)};
 }
 
 ${DARKMODE_SELECTOR_VALUE}
@@ -98,7 +99,7 @@ ${DARKMODE_SELECTOR_VALUE}
   border-right: 1px solid ${BOR_VAR.asVar()};
   border-top-right-radius: 2px;
   border-top-left-radius: 2px;
-  background-color: #efefef;
+  background-color: ${CONTROL_VAR.asVar()};
 }
 
 .${CONTROL_CLASS} > *
@@ -108,7 +109,7 @@ ${DARKMODE_SELECTOR_VALUE}
   height: 25px;
   margin-right: 5px;
   border-radius: 2px;
-  background-color: ${CONTROL_VAR.asVar()};
+  background-color: ${DEFBUT_VAR.asVar()};
 }
 
 .${CONTROL_CLASS} > *:last-child
