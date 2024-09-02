@@ -140,10 +140,10 @@ ${DARKMODE_SELECTOR_VALUE}
 
 .${CONTROL_CLASS} > span > div
 {
-  transform: rotate(0deg);
+  transform: rotate(270deg);
 }
 
-.${DOWN_CLASS} .${CONTROL_CLASS} > span
+.${DOWN_CLASS} .${CONTROL_CLASS} > span > div
 {
   transform: rotate(90deg);
 }
