@@ -91,7 +91,8 @@ ${DARKMODE_SELECTOR_VALUE}
   border-top: 1px solid ${BOR_VAR.asVar()};
   border-left: 1px solid ${BOR_VAR.asVar()};
   border-right: 1px solid ${BOR_VAR.asVar()};
-  border-radius: 2px;
+  border-top-right-radius: 2px;
+  border-top-left-radius: 2px;
   background-color: ${BG_VAR.asVar()};
 }
 
@@ -104,6 +105,11 @@ ${DARKMODE_SELECTOR_VALUE}
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+.${CONTROL_CLASS} > *:hover
+{
+  background-color: #e1e1e1;
 }
 
 .${LEFT_CLASS} .${CONTROL_CLASS} > div
@@ -124,6 +130,7 @@ ${DARKMODE_SELECTOR_VALUE}
 
 .${LIST_CLASS}
 {
+  padding: 5px 5px 0px 5px;
   border: 1px solid ${BOR_VAR.asVar()};
   background-color: ${BG_VAR.asVar()};
 }
