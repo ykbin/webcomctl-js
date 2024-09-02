@@ -17,6 +17,7 @@ const DOWN_CLASS = mk.newClassName("DOWN_CLASS");
 
 const BOR_VAR = mk.newCSSVariable("BOR_VAR", [ '#d0dbe9', '#35383c' ]);
 const BG_VAR = mk.newCSSVariable("BG_VAR", [ '#fdfdfd', 'rgb(43 43 45)' ]);
+const CONTROL_VAR = mk.newCSSVariable("CONTROL_VAR", [ '#efefef, #333333']);
 const DEFBUT_VAR = mk.newCSSVariable("DEFBUT_VAR", [ '#488ee9', '#2d5b96' ]);
 const DEFBUT_VAR_HOV = mk.newCSSVariable("DEFBUT_VAR_HOV", ['#417cc8']);
 
@@ -40,6 +41,7 @@ mk.newCSS('CSS', `
   ${BOR_VAR.toString(0)};
   ${BG_VAR.toString(0)};
   ${DEFBUT_VAR.toString(0)};
+  ${CONTROL_VAR.toString(0)};
 }
 
 ${DARKMODE_SELECTOR_VALUE}
@@ -47,6 +49,7 @@ ${DARKMODE_SELECTOR_VALUE}
   ${BOR_VAR.toString(1)};
   ${BG_VAR.toString(1)};
   ${DEFBUT_VAR.toString(1)};
+  ${CONTROL_VAR.toString(1)};
 }
 
 .${ROOT_CLASS}
@@ -95,7 +98,7 @@ ${DARKMODE_SELECTOR_VALUE}
   border-right: 1px solid ${BOR_VAR.asVar()};
   border-top-right-radius: 2px;
   border-top-left-radius: 2px;
-  background-color: ${BG_VAR.asVar()};
+  background-color: #efefef;
 }
 
 .${CONTROL_CLASS} > *
@@ -105,7 +108,7 @@ ${DARKMODE_SELECTOR_VALUE}
   height: 25px;
   margin-right: 5px;
   border-radius: 2px;
-  background-color: ${DEFBUT_VAR.asVar()};
+  background-color: ${CONTROL_VAR.asVar()};
 }
 
 .${CONTROL_CLASS} > *:last-child
@@ -125,7 +128,7 @@ ${DARKMODE_SELECTOR_VALUE}
 
 .${CONTROL_CLASS} > *:hover
 {
-  background-color: #417cc8;
+  background-color: ${DEFBUT_VAR_HOV.asVar()};
 }
 
 .${LEFT_CLASS} .${CONTROL_CLASS} > div > div
@@ -168,7 +171,7 @@ ${DARKMODE_SELECTOR_VALUE}
 
 .${LIST_CLASS} > div:hover
 {
-  background-color: #417cc8;
+  background-color: ${DEFBUT_VAR_HOV.asVar()};
 }
 `);
 
