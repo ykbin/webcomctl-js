@@ -58,7 +58,6 @@ ${DARKMODE_SELECTOR_VALUE}
   width: auto;
   height: auto;
   padding: 0px 5px 0px 5px;
-  background-color: ${BG_VAR.asVar()};
   font-family: "Nunito Sans", -apple-system, BlinkMacSystemFont,
                 "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
                 "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -89,18 +88,18 @@ ${DARKMODE_SELECTOR_VALUE}
 {
   display: flex;
   width: max-content;
-  height: 25px;
-  margin-bottom: 5px;
   border-top: 1px solid ${BOR_VAR.asVar()};
   border-left: 1px solid ${BOR_VAR.asVar()};
   border-right: 1px solid ${BOR_VAR.asVar()};
   border-radius: 2px;
+  background-color: ${BG_VAR.asVar()};
 }
 
 .${CONTROL_CLASS} > *
 {
   width: 25px;
   height: 25px;
+  margin: 5px;
   background-image: ${ARROW_IMG};
   background-size: contain;
   background-position: center;
@@ -123,6 +122,12 @@ ${DARKMODE_SELECTOR_VALUE}
   transform: rotate(90deg);
 }
 
+.${LIST_CLASS}
+{
+  border: 1px solid ${BOR_VAR.asVar()};
+  background-color: ${BG_VAR.asVar()};
+}
+
 .${LIST_CLASS} > div
 {
   display: flex;
@@ -133,7 +138,6 @@ ${DARKMODE_SELECTOR_VALUE}
   min-width: 90px;
   padding: 0 2px;
   margin-bottom: 5px;
-  border: 1px solid ${BOR_VAR.asVar()};
   border-radius: 2px;
   color: white;
   background-color: ${DEFBUT_VAR.asVar()};
