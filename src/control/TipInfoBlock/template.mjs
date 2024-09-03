@@ -84,7 +84,7 @@ ${DARKMODE_SELECTOR_VALUE}
   justify-content: flex-end;
   width: 450px;
   height: 100%;
-  padding: 0 20px 10px 20px;
+  padding: 0 25px 25px 25px;
 }
 
 .${PULL_OUT_RIGHT}
@@ -120,7 +120,7 @@ ${DARKMODE_SELECTOR_VALUE}
   align-items: center;
   justify-content: flex-end;
   width: 100%;
-  height: 30px;
+  height: 25px;
 }
 
 .${CLOSE_CLASS}
