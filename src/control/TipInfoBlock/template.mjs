@@ -117,7 +117,7 @@ ${DARKMODE_SELECTOR_VALUE}
 .${ROOT_CLASS} > div > span
 {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: flex-end;
   width: 100%;
   height: 25px;
