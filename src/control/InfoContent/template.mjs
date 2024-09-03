@@ -6,13 +6,11 @@ import { UIC_CONTENT_BACKGROUND_COLOR_DARK } from '../../lib/WickedTheme.mjs';
 const mk = new ControlMaker('InfoContent', import.meta.url);
 
 export const ROOT_CLASS = mk.newClassName("Root");
-export const CLOSE_CLASS = mk.newClassName("close");
 export const DESCRIPTION_CLASS = mk.newClassName("Description");
 export const DESCRIPTION_FORMAT_CLASS = mk.newClassName("Description_Format");
 export const LIST_CLASS = mk.newClassName("List");
 export const SIZE_CLASS = mk.newClassName("Size");
 
-const CLOSE_IMG = await mk.loadSvgAsCssUrl('./X.svg');
 const SCROLLBAR_THUMB_COLOR = '#b5b5b5c7';
 const SCROLLBAR_TRACK_COLOR = 'transparent';
 
@@ -40,7 +38,6 @@ export const ROOT_HTML = `
         </ul>
 
     </div>
-    <div class="${CLOSE_CLASS}"></div>
   </div>
 `;
 
@@ -87,25 +84,6 @@ ${DARKMODE_SELECTOR_VALUE}
   display: block;
   width: 100%;
   height: 100%;
-}
-
-.${CLOSE_CLASS}
-{
-  position: absolute;
-  top: 5px;
-  right: 12px;
-  width: 20px;
-  height: 20px;
-  border-radius: 5px;
-  background-image: ${CLOSE_IMG};
-  background-size: 75%;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.${CLOSE_CLASS}:hover
-{
-  background-color: var(--close-hov);
 }
 
 .${DESCRIPTION_FORMAT_CLASS} h2
