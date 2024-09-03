@@ -161,11 +161,12 @@ ${DARKMODE_SELECTOR_VALUE}
   padding: 0 5px;
   margin-bottom: 5px;
   border-radius: 2px;
+  text-align: center;
   text-overflow: ellipsis;
   white-space: nowrap;
-  overflow: hidden;
   color: white;
   background-color: ${vars.defBut.asVar()};
+  overflow: hidden;
   cursor: pointer;
 }
 
