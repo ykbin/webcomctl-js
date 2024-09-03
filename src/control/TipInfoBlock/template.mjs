@@ -153,9 +153,10 @@ ${DARKMODE_SELECTOR_VALUE}
 
 .${CLOSE_CLASS}:active > div
 {
-  width: 15px;
-  height: 15px;
+  width: 18px;
+  height: 18px;
   transition: width 0.1s, height 0.1s;
+  background-size: 100%;
 }
 
 `);
