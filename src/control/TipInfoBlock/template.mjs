@@ -27,7 +27,7 @@ export const ROOT_HTML = mk.newHTML('ROOT_HTML', `
     <div>
       <div class="${PORT_CLASS}"></div>
       <span>
-        <div class="${CLOSE_CLASS}"></div>
+        <div class="${CLOSE_CLASS}"><div></div></div>
       </span>
     </div>
   </div>
@@ -84,7 +84,7 @@ ${DARKMODE_SELECTOR_VALUE}
   justify-content: flex-end;
   width: 450px;
   height: 100%;
-  padding: 0 20px 10px 20px;
+  padding: 0 25px 25px 25px;
 }
 
 .${PULL_OUT_RIGHT}
@@ -120,10 +120,22 @@ ${DARKMODE_SELECTOR_VALUE}
   align-items: center;
   justify-content: flex-end;
   width: 100%;
-  height: 30px;
+  height: 25px;
+  padding-top: 5px;
+  flex-shrink: 0;
 }
 
 .${CLOSE_CLASS}
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.${CLOSE_CLASS} > div
 {
   width: 20px;
   height: 20px;
@@ -132,12 +144,20 @@ ${DARKMODE_SELECTOR_VALUE}
   background-size: 75%;
   background-position: center;
   background-repeat: no-repeat;
-  flex-shrink: 0;
 }
 
-.${CLOSE_CLASS}:hover
+.${CLOSE_CLASS}:hover > div
 {
   background-color: ${CLOSE_HOV_COL.asVar()};
+}
+
+.${CLOSE_CLASS}:active > div
+{
+  width: 18px;
+  height: 18px;
+  background-size: 80%;
+  transition: width 0.1s, height 0.1s, background-size 0.1s;
+  background-size: 100%;
 }
 
 `);
