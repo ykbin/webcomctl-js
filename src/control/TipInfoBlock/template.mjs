@@ -117,10 +117,11 @@ ${DARKMODE_SELECTOR_VALUE}
 .${ROOT_CLASS} > div > span
 {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: flex-end;
   width: 100%;
   height: 25px;
+  padding-top: 5px;
 }
 
 .${CLOSE_CLASS}
@@ -138,6 +139,13 @@ ${DARKMODE_SELECTOR_VALUE}
 .${CLOSE_CLASS}:hover
 {
   background-color: ${CLOSE_HOV_COL.asVar()};
+}
+
+.${CLOSE_CLASS}:active 
+{
+  width: 15px;
+  height: 15px;
+  transition: width 0.1s, height 0.1s;
 }
 
 `);
