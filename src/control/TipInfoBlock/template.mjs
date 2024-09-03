@@ -27,7 +27,7 @@ export const ROOT_HTML = mk.newHTML('ROOT_HTML', `
     <div>
       <div class="${PORT_CLASS}"></div>
       <span>
-        <div class="${CLOSE_CLASS}"></div>
+        <div class="${CLOSE_CLASS}"><div></div></div>
       </span>
     </div>
   </div>
@@ -122,9 +122,20 @@ ${DARKMODE_SELECTOR_VALUE}
   width: 100%;
   height: 25px;
   padding-top: 5px;
+  flex-shrink: 0;
 }
 
 .${CLOSE_CLASS}
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.${CLOSE_CLASS} > div
 {
   width: 20px;
   height: 20px;
@@ -133,7 +144,6 @@ ${DARKMODE_SELECTOR_VALUE}
   background-size: 75%;
   background-position: center;
   background-repeat: no-repeat;
-  flex-shrink: 0;
 }
 
 .${CLOSE_CLASS}:hover
@@ -141,7 +151,7 @@ ${DARKMODE_SELECTOR_VALUE}
   background-color: ${CLOSE_HOV_COL.asVar()};
 }
 
-.${CLOSE_CLASS}:active 
+.${CLOSE_CLASS}:active > div
 {
   width: 15px;
   height: 15px;
