@@ -155,8 +155,8 @@ ${DARKMODE_SELECTOR_VALUE}
 {
   width: 18px;
   height: 18px;
-  background-size: 100%;
-  transition: width 0.1s, height 0.1s, background-size 0,1;
+  background-size: 80%;
+  transition: width 0.1s, height 0.1s, background-size 0.1s;
   background-size: 100%;
 }
 
