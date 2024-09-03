@@ -154,15 +154,16 @@ ${DARKMODE_SELECTOR_VALUE}
 
 .${LIST_CLASS} > div
 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   width: 100%;
   height: 25px;
   min-width: 90px;
-  padding: 0 2px;
+  max-width: 150px;
+  padding: 0 5px;
   margin-bottom: 5px;
   border-radius: 2px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
   color: white;
   background-color: ${vars.defBut.asVar()};
   cursor: pointer;
