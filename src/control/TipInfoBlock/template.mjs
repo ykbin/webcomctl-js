@@ -146,7 +146,7 @@ ${DARKMODE_SELECTOR_VALUE}
   background-repeat: no-repeat;
 }
 
-.${CLOSE_CLASS}:hover
+.${CLOSE_CLASS}:hover > div
 {
   background-color: ${CLOSE_HOV_COL.asVar()};
 }
