@@ -58,7 +58,6 @@ ${DARKMODE_SELECTOR_VALUE}
   width: 100%;
   height: 100%;
   padding: 10px 25px 10px 10px;
-  color: #393939;
   font-family: Open Sans, Arial, sans-serif;
   box-sizing: border-box;
   background-color: var(--menu-bg);
