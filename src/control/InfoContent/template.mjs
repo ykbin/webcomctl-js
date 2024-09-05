@@ -57,7 +57,7 @@ ${DARKMODE_SELECTOR_VALUE}
   display: block;
   width: 100%;
   height: 100%;
-  padding: 10px 25px 10px 10px;
+  padding: 10px;
   font-family: Open Sans, Arial, sans-serif;
   box-sizing: border-box;
   background-color: var(--menu-bg);
