@@ -10,9 +10,7 @@ const LIST_CLASS = mk.newClassName("LIST_CLASS");
 const TEXT_CLASS = mk.newClassName("TEXT_CLASS");
 const CONTROL_CLASS = mk.newClassName("CONTROL_CLASS");
 
-const LEFT_CLASS = mk.newClassName("LEFT_CLASS");
 const RIGHT_CLASS = mk.newClassName("RIGHT_CLASS");
-const UP_CLASS = mk.newClassName("UP_CLASS");
 const DOWN_CLASS = mk.newClassName("DOWN_CLASS");
 const hideClick = mk.newClassName("hideClick");
 const sideClick = mk.newClassName("sideClick");
@@ -26,7 +24,7 @@ const vars = mk.newCSSVariableMap({
 });
 
 mk.newHTML('ROOT_HTML', `
-  <div class="${ROOT_CLASS} ${LEFT_CLASS} ${UP_CLASS}">
+  <div class="${ROOT_CLASS}">
     <div class="${CONTROL_CLASS}">
       <div><div class="${sideClick}"></div></div>
       <span><div class="${hideClick}"></div></span>
@@ -53,6 +51,7 @@ ${DARKMODE_SELECTOR_VALUE}
 .${ROOT_CLASS}
 {
   position: fixed;
+  left: 2px;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -70,11 +69,6 @@ ${DARKMODE_SELECTOR_VALUE}
 .${ROOT_CLASS} *
 {
   box-sizing: border-box;
-}
-
-.${LEFT_CLASS}
-{
-  left: 2px;
 }
 
 .${RIGHT_CLASS}
@@ -130,7 +124,7 @@ ${DARKMODE_SELECTOR_VALUE}
   background-color: ${vars.hovBut.asVar()};
 }
 
-.${LEFT_CLASS} .${CONTROL_CLASS} > div > div
+.${CONTROL_CLASS} > div > div
 {
   transform: scaleX(-1);
 }
