@@ -133,7 +133,7 @@ ${DARKMODE_SELECTOR_VALUE}
   transform: scaleX(-1);
 }
 
-.${RIGHT_CLAS} > div > div
+.${RIGHT_CLASS} > div > div
 {
   transform: scaleX(1);
 }
