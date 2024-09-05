@@ -5,15 +5,15 @@ export default class UIDebugPanelControl extends BaseControl {
   _init() {
     const hideClickElm = NQDOM.getElementByClassName(this.element, hideClick);
     hideClickElm && hideClickElm.addEventListener("click", (event) => {
-      const f = this.element.classList.contains(" ");
-      this.element.classList.remove(f ? " " : DOWN_CLASS);
-      this.element.classList.add(f ? DOWN_CLASS : " ");
+      const f = this.element.classList.contains("");
+      this.element.classList.remove(f ? "" : DOWN_CLASS);
+      this.element.classList.add(f ? DOWN_CLASS : "");
     });
     const sideClickElm = NQDOM.getElementByClassName(this.element, sideClick);
     sideClickElm && sideClickElm.addEventListener("click", (event) => {
-      const f = this.element.classList.contains(" ");
-      this.element.classList.remove(f ? " " : RIGHT_CLASS);
-      this.element.classList.add(f ? RIGHT_CLASS : " ");
+      const f = this.element.classList.contains("");
+      this.element.classList.remove(f ? "" : RIGHT_CLASS);
+      this.element.classList.add(f ? RIGHT_CLASS : "");
     });
   }
 
