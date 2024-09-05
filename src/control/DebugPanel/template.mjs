@@ -133,6 +133,11 @@ ${DARKMODE_SELECTOR_VALUE}
   transform: scaleX(-1);
 }
 
+.${RIGHT_CLAS} > div > div
+{
+  transform: scaleX(1);
+}
+
 .${CONTROL_CLASS} > span > div
 {
   transform: rotate(270deg);
