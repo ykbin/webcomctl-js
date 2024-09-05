@@ -57,7 +57,7 @@ ${DARKMODE_SELECTOR_VALUE}
   left: 2px;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: flex-start;
   bottom: 2px;
   width: auto;
   height: auto;
@@ -77,6 +77,7 @@ ${DARKMODE_SELECTOR_VALUE}
 .${RIGHT_CLASS}
 {
   right: 2px;
+  align-items: flex-end;
 }
 
 .${DOWN_CLASS} .${LIST_CLASS}
