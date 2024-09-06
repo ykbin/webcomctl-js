@@ -148,7 +148,7 @@ ${DARKMODE_SELECTOR_VALUE}
 
 .${DOWN_CLASS} .${CONTROL_CLASS} > span > div
 {
-  background-size: 85%;
+  transform: rotate(0deg);
 }
 
 .${LIST_CLASS}
