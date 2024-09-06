@@ -4,7 +4,7 @@ import { DARKMODE_SELECTOR_VALUE } from '../../lib/DarkMode.mjs';
 
 const mk = new ControlMaker('DebugPanel', import.meta.url);
 const ARROW_IMG = await mk.loadSvgAsCssUrl('./arrow.svg');
-const SH_IMG = await mk.loadSvgAsCssUrl('./ SH.svg');
+const SH_IMG = await mk.loadSvgAsCssUrl('./SH.svg');
 
 const ROOT_CLASS = mk.newClassName("ROOT_CLASS");
 const LIST_CLASS = mk.newClassName("LIST_CLASS");
