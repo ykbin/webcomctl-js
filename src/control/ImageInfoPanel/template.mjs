@@ -46,7 +46,6 @@ export const CSS = `
 :root
 {
   --uic-imgcnt-bg: ${UIC_CONTENT_BACKGROUND_COLOR};
-  --menu-bg: white;
   --menu-col: black;
   --menu-title-col: #272626;
   --close-hov: #80808042;
@@ -55,7 +54,6 @@ export const CSS = `
 ${DARKMODE_SELECTOR_VALUE}
 {
   --uic-imgcnt-bg: ${UIC_CONTENT_BACKGROUND_COLOR_DARK};
-  --menu-bg: rgb(23, 23, 26);
   --menu-col: #b8b4b4;
   --menu-title-col: #9b9b9b;
 }
@@ -112,7 +110,6 @@ h3
   color: #393939;
   font-family: Open Sans, Arial, sans-serif;
   box-sizing: border-box;
-  background-color: var(--menu-bg);
   color: var(--menu-col);
   overflow: auto;
 }
