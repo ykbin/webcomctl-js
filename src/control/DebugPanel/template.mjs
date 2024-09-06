@@ -4,6 +4,7 @@ import { DARKMODE_SELECTOR_VALUE } from '../../lib/DarkMode.mjs';
 
 const mk = new ControlMaker('DebugPanel', import.meta.url);
 const ARROW_IMG = await mk.loadSvgAsCssUrl('./arrow.svg');
+const SH_IMG = await mk.loadSvgAsCssUrl('./ SH.svg');
 
 const ROOT_CLASS = mk.newClassName("ROOT_CLASS");
 const LIST_CLASS = mk.newClassName("LIST_CLASS");
@@ -117,8 +118,6 @@ ${DARKMODE_SELECTOR_VALUE}
 {
   width: 100%;
   height: 100%;
-  background-image: ${ARROW_IMG};
-  background-size: 85%;
   background-position: center;
   background-repeat: no-repeat;
 }
@@ -131,6 +130,8 @@ ${DARKMODE_SELECTOR_VALUE}
 .${CONTROL_CLASS} > div > div
 {
   transform: scaleX(-1);
+  background-image: ${ARROW_IMG};
+  background-size: 85%;
 }
 
 .${RIGHT_CLASS} .${CONTROL_CLASS} > div > div
@@ -140,12 +141,14 @@ ${DARKMODE_SELECTOR_VALUE}
 
 .${CONTROL_CLASS} > span > div
 {
-  transform: rotate(270deg);
+  transform: rotate(180deg);
+  background-image: ${SH_IMG};
+  background-size: 85%;
 }
 
 .${DOWN_CLASS} .${CONTROL_CLASS} > span > div
 {
-  transform: rotate(90deg);
+  background-size: 85%;
 }
 
 .${LIST_CLASS}
