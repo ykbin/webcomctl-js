@@ -30,8 +30,8 @@ const vars = mk.newCSSVariableMap({
 mk.newHTML('ROOT_HTML', `
   <div class="${ROOT_CLASS}">
     <div class="${CONTROL_CLASS}">
-      <div><div class="${sideClick}"></div></div>
       <span><div class="${hideClick}"></div></span>
+      <div><div class="${sideClick}"></div></div>
     </div>
     <div class="${LIST_CLASS}"></div>
   </div>
@@ -78,6 +78,7 @@ ${DARKMODE_SELECTOR_VALUE}
 .${RIGHT_CLASS}
 {
   right: 2px;
+  left: auto;
   align-items: flex-end;
 }
 
@@ -99,6 +100,11 @@ ${DARKMODE_SELECTOR_VALUE}
   background-color: ${vars.control.asVar()};
 }
 
+.${RIGHT_CLASS} .${CONTROL_CLASS}
+{
+  flex-direction: row-reverse;
+}
+
 .${CONTROL_CLASS} > *
 {
   display: block;
@@ -109,9 +115,16 @@ ${DARKMODE_SELECTOR_VALUE}
   background-color: ${vars.defBut.asVar()};
 }
 
+.${RIGHT_CLASS} .${CONTROL_CLASS} > *
+{
+  margin-right: 0;
+  margin-left: 5px;
+}
+
 .${CONTROL_CLASS} > *:last-child
 {
   margin-right: 0;
+  margin-left: 0;
 }
 
 .${CONTROL_CLASS} > * > div
