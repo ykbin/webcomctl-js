@@ -11,9 +11,9 @@ export default class UIDebugPanelControl extends BaseControl {
     });
     const sideClickElm = NQDOM.getElementByClassName(this.element, sideClick);
     sideClickElm && sideClickElm.addEventListener("click", (event) => {
-      const f = this.element.classList.contains(RIGHT_CLASS);
-      this.element.classList.remove(RIGHT_CLASS);
-      this.element.classList.add(RIGHT_CLASS);
+      const f = this.element.classList.contains(LEFT_CLASS);
+      this.element.classList.remove(f ? LEFT_CLASS : RIGHT_CLASS);
+      this.element.classList.add(f ? RIGHT_CLASS : LEFT_CLASS);
     });
   }
 
