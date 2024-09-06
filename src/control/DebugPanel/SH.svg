@@ -5,9 +5,9 @@
     xmlns:xlink="http://www.w3.org/1999/xlink"
     xmlns:krita="http://krita.org/namespaces/svg/krita"
     xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-    width="273.6pt"
-    height="288pt"
-    viewBox="0 0 273.6 288">
+    width="360pt"
+    height="360pt"
+    viewBox="0 0 360 360">
 <defs/>
-<path id="shape0" transform="matrix(0.999999894613129 0 0 0.999999894613129 23.1650090307339 20.4239994162983)" fill="none" stroke="#ffffff" stroke-width="24" stroke-linecap="round" stroke-linejoin="round" d="M0 115.92L116.64 0L229.862 116.223L229.862 116.223" sodipodi:nodetypes="cccc"/><path id="shape1" transform="matrix(0.999999894613129 0 0 0.999999894613129 23.1650090307339 88.2959934404341)" fill="none" stroke="#ffffff" stroke-width="24" stroke-linecap="round" stroke-linejoin="round" d="M0 115.92L116.64 0L229.862 116.223L229.862 116.223" sodipodi:nodetypes="cccc"/><path id="shape2" transform="matrix(0.999999894613129 0 0 0.999999894613129 23.1650090307339 152.567987178339)" fill="none" stroke="#ffffff" stroke-width="24" stroke-linecap="round" stroke-linejoin="round" d="M0 115.92L116.64 0L229.862 116.223L229.862 116.223" sodipodi:nodetypes="cccc"/>
+<path id="shape0" transform="matrix(0.999999894613129 0 0 0.999999894613129 65.0690121122189 36.8400002466762)" fill="none" stroke="#ffffff" stroke-width="24" stroke-linecap="round" stroke-linejoin="round" d="M0 115.92L116.64 0L229.862 116.223L229.862 116.223" sodipodi:nodetypes="cccc"/><path id="shape1" transform="matrix(0.999999894613129 0 0 0.999999894613129 65.0690121122184 121.888506124189)" fill="none" stroke="#ffffff" stroke-width="24" stroke-linecap="round" stroke-linejoin="round" d="M0 115.92L116.64 0L229.862 116.223L229.862 116.223" sodipodi:nodetypes="cccc"/><path id="shape2" transform="matrix(0.999999894613129 0 0 0.999999894613129 65.0690121122184 209.303986299115)" fill="none" stroke="#ffffff" stroke-width="24" stroke-linecap="round" stroke-linejoin="round" d="M0 115.92L116.64 0L229.862 116.223L229.862 116.223" sodipodi:nodetypes="cccc"/>
 </svg>
