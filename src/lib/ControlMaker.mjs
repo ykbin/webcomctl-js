@@ -107,7 +107,7 @@ export default class ControlMaker {
   newClassNameMap(params) {
     const result = {};
     for (const iter of params) {
-      result[key] = this.newClassName(iter);
+      result[iter] = this.newClassName(iter);
     }
     return Object.freeze(Object.seal(result));
   }
