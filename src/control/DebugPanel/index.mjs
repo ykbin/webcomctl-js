@@ -1,19 +1,15 @@
 import { BaseControl, NQDOM } from 'webnetq-js';
-import { ITEM_HTML, TEXT_CLASS, LIST_CLASS, UP_CLASS, DOWN_CLASS, hideClick, LEFT_CLASS, RIGHT_CLASS, sideClick } from 'uictmplt-loader!./template.mjs';
+import { ITEM_HTML, TEXT_CLASS, LIST_CLASS, DOWN_CLASS, hideClick, RIGHT_CLASS, sideClick } from 'uictmplt-loader!./template.mjs';
 
 export default class UIDebugPanelControl extends BaseControl {
   _init() {
     const hideClickElm = NQDOM.getElementByClassName(this.element, hideClick);
     hideClickElm && hideClickElm.addEventListener("click", (event) => {
-      const f = this.element.classList.contains(UP_CLASS);
-      this.element.classList.remove(f ? UP_CLASS : DOWN_CLASS);
-      this.element.classList.add(f ? DOWN_CLASS : UP_CLASS);
+      this.element.classList.toggle(DOWN_CLASS);
     });
     const sideClickElm = NQDOM.getElementByClassName(this.element, sideClick);
     sideClickElm && sideClickElm.addEventListener("click", (event) => {
-      const f = this.element.classList.contains(LEFT_CLASS);
-      this.element.classList.remove(f ? LEFT_CLASS : RIGHT_CLASS);
-      this.element.classList.add(f ? RIGHT_CLASS : LEFT_CLASS);
+      this.element.classList.contains(RIGHT_CLASS);
     });
   }
 
