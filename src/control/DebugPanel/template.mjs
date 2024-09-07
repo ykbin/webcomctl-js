@@ -11,9 +11,6 @@ const LIST_CLASS = mk.newClassName("LIST_CLASS");
 const TEXT_CLASS = mk.newClassName("TEXT_CLASS");
 const CONTROL_CLASS = mk.newClassName("CONTROL_CLASS");
 
-const UP_CLASS = mk.newClassName("UP_CLASS");
-const LEFT_CLASS = mk.newClassName("LEFT_CLASS");
-
 const RIGHT_CLASS = mk.newClassName("RIGHT_CLASS");
 const DOWN_CLASS = mk.newClassName("DOWN_CLASS");
 const hideClick = mk.newClassName("hideClick");
