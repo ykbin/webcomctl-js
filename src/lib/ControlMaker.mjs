@@ -104,6 +104,14 @@ export default class ControlMaker {
     return obj.toString();
   }
 
+  newClassNameMap(params) {
+    const result = {};
+    for (const iter of params) {
+      result[iter] = this.newClassName(iter);
+    }
+    return Object.freeze(Object.seal(result));
+  }
+
   newVarName(varname) {
     if (this._cssVarNames.hasOwnProperty(varname))
       throw `CSS var '${varname}' exist in ${this._name}`;
