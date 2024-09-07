@@ -5,27 +5,29 @@ import { UIC_BLUE_SQUARE_BORDER } from '../../lib/WickedTheme.mjs';
 
 const mk = new ControlMaker('DropBlock', import.meta.url);
 
-export const ROOT_CLASS = mk.newClassName("Root");
-export const PORT_CLASS = mk.newClassName("Port");
-export const NONE_CLASS = mk.newClassName("None");
-export const INSET_CLASS = mk.newClassName("Inset");
-export const LEFT_CLASS = mk.newClassName("Left");
-export const RIGHT_CLASS = mk.newClassName("Right");
-export const TOP_CLASS = mk.newClassName("Top");
-export const BOTTOM_CLASS = mk.newClassName("Bottom");
+const clss = mk.newClassNameMap([
+  "ROOT_CLASS",
+  "PORT_CLASS",
+  "NONE_CLASS",
+  "INSET_CLASS",
+  "LEFT_CLASS",
+  "RIGHT_CLASS",
+  "TOP_CLASS",
+  "BOTTOM_CLASS",
+]);
 
-export const ROOT_HTML = `
-<div class="${ROOT_CLASS}">
-  <div class="${PORT_CLASS}"></div>
-  <span class="${NONE_CLASS}">
+mk.newHTML('ROOT_HTML', `
+<div class="${clss.ROOT_CLASS}">
+  <div class="${clss.PORT_CLASS}"></div>
+  <span class="${clss.NONE_CLASS}">
     <div></div>
   </span>
 </div>
-`;
+`);
 
-export const CSS = `
+mk.newCSS('CSS', `
 
-.${ROOT_CLASS}
+.${clss.ROOT_CLASS}
 {
   position: relative;
   height: 100%;
@@ -33,7 +35,7 @@ export const CSS = `
   overflow: auto;
 }
 
-.${ROOT_CLASS} > span
+.${clss.ROOT_CLASS} > span
 {
   position: absolute;
   top: 0;
@@ -42,7 +44,7 @@ export const CSS = `
   width: 100%;
 }
 
-.${ROOT_CLASS} > span > div
+.${clss.ROOT_CLASS} > span > div
 {
   position: absolute;
   border: 1px solid ${UIC_BLUE_SQUARE_BORDER};
@@ -51,18 +53,18 @@ export const CSS = `
   box-sizing: border-box;
 }
 
-span.${NONE_CLASS}
+span.${clss.NONE_CLASS}
 {
   display: none;
 }
 
-.${INSET_CLASS} > div
+.${clss.INSET_CLASS} > div
 {
   height: 100%;
   width: 100%;
 }
 
-.${LEFT_CLASS} > div
+.${clss.LEFT_CLASS} > div
 {
   top: 0;
   left: 0;
@@ -70,7 +72,7 @@ span.${NONE_CLASS}
   width: 50%;
 }
 
-.${RIGHT_CLASS} > div
+.${clss.RIGHT_CLASS} > div
 {
   top: 0;
   right: 0;
@@ -78,23 +80,28 @@ span.${NONE_CLASS}
   width: 50%;
 }
 
-.${TOP_CLASS} > div
+.${clss.TOP_CLASS} > div
 {
   top: 0;
   height: 50%;
   width: 100%;
 }
 
-.${BOTTOM_CLASS} > div
+.${clss.BOTTOM_CLASS} > div
 {
   bottom: 0;
   height: 50%;
   width: 100%;
 }
 
-.${PORT_CLASS}
+.${clss.PORT_CLASS}
 {
   width: 100%;
   height: 100%;
 }
-`;
+`);
+
+export function buildComponent()
+{
+  return mk.buildComponent();
+}

@@ -1,5 +1,5 @@
 import { BaseControl } from "webnetq-js";
-import { NONE_CLASS, TOP_CLASS, RIGHT_CLASS, BOTTOM_CLASS, LEFT_CLASS, INSET_CLASS } from 'module-loader!./template.mjs';
+import { NONE_CLASS, TOP_CLASS, RIGHT_CLASS, BOTTOM_CLASS, LEFT_CLASS, INSET_CLASS } from 'uictmplt-loader!./template.mjs';
 
 const MIN_CHUNK_WIDTH = 50;
 const MIN_CHUNK_HEIGHT = 50;
