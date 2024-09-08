@@ -2,25 +2,27 @@ import ControlMaker from '../../lib/ControlMaker.mjs';
 
 const mk = new ControlMaker('DropFile', import.meta.url);
 
-export const ROOT_CLASS = mk.newClassName("Root");
-export const SHOW_CLASS = mk.newClassName("Show");
+const clss = mk.newClassNameMap([
+  "ROOT_CLASS",
+  "SHOW_CLASS",
+]);
 
 const UPFILE_IMG = await mk.loadSvgAsCssUrl('./up-file.svg');
 const BG_COLOR = '#1e1e1ecf';
 
-export const ROOT_HTML = `
-<div class="${ROOT_CLASS}">
+mk.newHTML('ROOT_HTML', `
+<div class="${clss.ROOT_CLASS}">
   <div></div>
 </div>
-`;
+`);
 
-export const CSS = `
-.${ROOT_CLASS}:not(.${SHOW_CLASS})
+mk.newCSS('CSS', `
+.${clss.ROOT_CLASS}:not(.${clss.SHOW_CLASS})
 {
   display: none;
 }
 
-.${ROOT_CLASS}
+.${clss.ROOT_CLASS}
 {
   display: flex;
   justify-content: center;
@@ -34,7 +36,7 @@ export const CSS = `
   z-index: 3;
 }
 
-.${ROOT_CLASS} > div
+.${clss.ROOT_CLASS} > div
 {
   height: 100%;
   width: 100%;
@@ -45,4 +47,9 @@ export const CSS = `
   background-repeat: no-repeat;
   background-position: center;
 }
-`;
+`);
+
+export function buildComponent()
+{
+  return mk.buildComponent();
+}
