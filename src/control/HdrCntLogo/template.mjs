@@ -5,38 +5,41 @@ import { HEADER_MOBILE_DEVICE_WIDTH } from '../../lib/WickedTheme.mjs';
 
 const mk = new ControlMaker('HdrCntLogo', import.meta.url);
 
-export const ROOT_CLASS = mk.newClassName("Root");
+const clss = mk.newClassNameMap([
+  "ROOT_CLASS",
+]);
 
-const FAVICON1_IMG = await mk.loadSvgAsCssUrl('./favicon1.svg');
-const FAVICON2_IMG = await mk.loadSvgAsCssUrl('./favicon2.svg');
-const HEADER1_IMG = await mk.loadSvgAsCssUrl('./header1.svg');
-const HEADER2_IMG = await mk.loadSvgAsCssUrl('./header2.svg');
+const vars = mk.newCSSVariableMap({
+  favicon: [
+    await mk.loadSvgAsCssUrl('./favicon1.svg'),
+    await mk.loadSvgAsCssUrl('./favicon2.svg'),
+  ],
+  header: [
+    await mk.loadSvgAsCssUrl('./header1.svg'),
+    await mk.loadSvgAsCssUrl('./header2.svg'),
+  ],
+});
 
-const FAVICON_VAR = mk.newVarName("FaviconImg");
-const HEADER_VAR = mk.newVarName("HeaderImg");
-
-export const ROOT_HTML = `
-<div class="${ROOT_CLASS}">
+mk.newHTML('ROOT_HTML', `
+<div class="${clss.ROOT_CLASS}">
   <h3></h3>
   <h2></h2>
 </div>
-`;
+`);
 
-export const CSS = `
+mk.newCSS('CSS', `
 :root
 {
-  ${FAVICON_VAR}: ${FAVICON1_IMG};
-  ${HEADER_VAR}: ${HEADER1_IMG};
+  ${vars.toString(0)};
 }
 
 ${DARKMODE_SELECTOR_VALUE}
 {
-  ${FAVICON_VAR}: ${FAVICON2_IMG};
-  ${HEADER_VAR}: ${HEADER2_IMG};
+  ${vars.toString(1)};
 }
 
-.${ROOT_CLASS} h2,
-.${ROOT_CLASS} h3
+.${clss.ROOT_CLASS} h2,
+.${clss.ROOT_CLASS} h3
 {
   margin: 0px;
   padding: 0px;
@@ -44,13 +47,13 @@ ${DARKMODE_SELECTOR_VALUE}
   font-weight: 400;
 }
 
-.${ROOT_CLASS}
+.${clss.ROOT_CLASS}
 {
   display: flex;
   height: 33px;
 }
 
-.${ROOT_CLASS} > h3
+.${clss.ROOT_CLASS} > h3
 {
   width: 36px;
   height: 100%;
@@ -58,11 +61,11 @@ ${DARKMODE_SELECTOR_VALUE}
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-  background-image: var(${FAVICON_VAR});
+  background-image: ${vars.favicon.asVar()};
   flex-shrink: 0;
 }
 
-.${ROOT_CLASS} > h2
+.${clss.ROOT_CLASS} > h2
 {
   width: 130px;
   height: 100%;
@@ -71,24 +74,29 @@ ${DARKMODE_SELECTOR_VALUE}
   background-position-y: center;
   background-position-x: left;
   background-repeat: no-repeat;
-  background-image: var(${HEADER_VAR});
+  background-image: ${vars.header.asVar()};
   flex-shrink: 0;
 }
 
 @media (device-width < ${HEADER_MOBILE_DEVICE_WIDTH})
 {
-  .${ROOT_CLASS}
+  .${clss.ROOT_CLASS}
   {
     height: 130px;
   }
-  .${ROOT_CLASS} > h3
+  .${clss.ROOT_CLASS} > h3
   {
     display: none;
   }
-  .${ROOT_CLASS} > h2
+  .${clss.ROOT_CLASS} > h2
   {
     width: 255px;
     background-size: 360px;
   }
 }
-`;
+`);
+
+export function buildComponent()
+{
+  return mk.buildComponent();
+}
