@@ -1,58 +1,56 @@
 import ControlMaker from '../../lib/ControlMaker.mjs';
 import { DARKMODE_SELECTOR_VALUE } from '../../lib/DarkMode.mjs';
-import { UIC_CONTENT_BACKGROUND_COLOR } from '../../lib/WickedTheme.mjs';
-import { UIC_CONTENT_BACKGROUND_COLOR_DARK } from '../../lib/WickedTheme.mjs';
 
 const mk = new ControlMaker('InfoContent', import.meta.url);
 
-export const ROOT_CLASS = mk.newClassName("Root");
-export const PORT_CLASS = mk.newClassName("Port");
+const clss = mk.newClassNameMap([
+  "ROOT_CLASS",
+  "PORT_CLASS",
+]);
 
 const SCROLLBAR_THUMB_COLOR = '#b5b5b5c7';
 const SCROLLBAR_TRACK_COLOR = 'transparent';
 
-export const ROOT_HTML = `
-  <div class="${ROOT_CLASS} ${PORT_CLASS}"></div>
-`;
+const vars = mk.newCSSVariableMap({
+  menuBg: [ 'white', 'rgb(23, 23, 26)' ],
+  menuCol: [ 'black', '#b8b4b4' ],
+});
 
-export const CSS = `
+mk.newHTML('ROOT_HTML', `
+  <div class="${clss.ROOT_CLASS} ${clss.PORT_CLASS}"></div>
+`);
+
+mk.newCSS('CSS', `
 
 :root
 {
-  --uic-imgcnt-bg: ${UIC_CONTENT_BACKGROUND_COLOR};
-  --menu-bg: white;
-  --menu-col: black;
-  --menu-title-col: #272626;
-  --close-hov: #80808042;
+  ${vars.toString(0)};
 }
 
 ${DARKMODE_SELECTOR_VALUE}
 {
-  --uic-imgcnt-bg: ${UIC_CONTENT_BACKGROUND_COLOR_DARK};
-  --menu-bg: rgb(23, 23, 26);
-  --menu-col: #b8b4b4;
-  --menu-title-col: #9b9b9b;
+  ${vars.toString(1)};
 }
 
-.${PORT_CLASS}::-webkit-scrollbar
+.${clss.PORT_CLASS}::-webkit-scrollbar
 {
   width: 10px;
   height: 10px;
 }
 
-.${PORT_CLASS}::-webkit-scrollbar-thumb
+.${clss.PORT_CLASS}::-webkit-scrollbar-thumb
 {
   background-color: ${SCROLLBAR_THUMB_COLOR};
   border-radius: 10px;
 }
 
-.${PORT_CLASS}::-webkit-scrollbar-track,
-.${PORT_CLASS}::-webkit-scrollbar-corner
+.${clss.PORT_CLASS}::-webkit-scrollbar-track,
+.${clss.PORT_CLASS}::-webkit-scrollbar-corner
 {
   background-color: ${SCROLLBAR_TRACK_COLOR};
 }
 
-.${PORT_CLASS}
+.${clss.PORT_CLASS}
 {
   display: block;
   width: 100%;
@@ -60,8 +58,13 @@ ${DARKMODE_SELECTOR_VALUE}
   padding: 10px;
   font-family: Open Sans, Arial, sans-serif;
   box-sizing: border-box;
-  background-color: var(--menu-bg);
-  color: var(--menu-col);
+  background-color: ${vars.menuBg.asVar()};
+  color: ${vars.menuCol.asVar()};
   overflow: auto;
 }
-`;
+`);
+
+export function buildComponent()
+{
+  return mk.buildComponent();
+}
