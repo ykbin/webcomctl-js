@@ -8,8 +8,19 @@ const mk = new ControlMaker('InfoContent', import.meta.url);
 export const ROOT_CLASS = mk.newClassName("Root");
 export const DESCRIPTION_CLASS = mk.newClassName("Description");
 export const DESCRIPTION_FORMAT_CLASS = mk.newClassName("Description_Format");
+
+export const DESCRIPTION_TITLE = mk.newClassName("Description_Title");
+export const DESCRIPTION_HISTORY = mk.newClassName("Description_history");
+
 export const LIST_CLASS = mk.newClassName("List");
+export const LIST_PROPERTY = mk.newClassName("List_Property");
+export const LIST_NAME = mk.newClassName("List_Name");
+export const LIST_VALUE = mk.newClassName("List_Value");
+
 export const SIZE_CLASS = mk.newClassName("Size");
+export const SIZE_PROPERTY = mk.newClassName("Size_Property");
+export const SIZE_NAME = mk.newClassName("Size_Name");
+export const SIZE_VALUE = mk.newClassName("Size_Value");
 
 const SCROLLBAR_THUMB_COLOR = '#b5b5b5c7';
 const SCROLLBAR_TRACK_COLOR = 'transparent';
@@ -19,22 +30,43 @@ export const ROOT_HTML = `
     <div class="${DESCRIPTION_CLASS}">
 
         <div class="${DESCRIPTION_FORMAT_CLASS}">
-          <h2><span class="notranslate" translate="no">JPEG</span>:</h2>
-          <span>
+          <h2 class="${DESCRIPTION_TITLE} notranslate" translate="no"><span>JPEG</span>:</h2>
+          <span class="${DESCRIPTION_HISTORY}">
             One of the popular raster graphics formats used to store photographs and similar images. The JPEG algorithm allows you to compress an image both lossy and lossless (lossless JPEG compression mode).
           </span>
         </div>
         <div class="${LIST_CLASS} notranslate" translate="no">
-          <span><h3>Size</h3><label>88 KB</label></span>
-          <span><h3>Library</h3><label>libjpeg-turbo-2.1.91</label></span>
-          <span><h3>MD5</h3><label>6C539ACE23ECEA28A66FB18514D86A8C</label></span>
+          <span class="${LIST_PROPERTY}">
+            <h3 class="${LIST_NAME}">Size</h3>
+            <label class="${LIST_VALUE}">88 KB</label>
+          </span>
+          <span class="${LIST_PROPERTY}">
+            <h3 class="${LIST_NAME}">Library</h3>
+            <label class="${LIST_VALUE}">libjpeg-turbo-2.1.91</label>
+          </span>
+          <span class="${LIST_PROPERTY}">
+            <h3 class="${LIST_NAME}">MD5</h3>
+            <label class="${LIST_VALUE}">6C539ACE23ECEA28A66FB18514D86A8C</label>
+          </span>
         </div>
 
         <ul class="${SIZE_CLASS} notranslate" translate="no">
-          <li><h3>Name:</h3><label>Name1234567890</label></li>
-          <li><h3>Height</h3><label>470 px</label></li>
-          <li><h3>JFIF Ver</h3><label>1.1</label></li>
-          <li><h3>ColorSpace</h3><label>YCbCr</label></li>
+          <li class="${SIZE_PROPERTY}">
+            <h3 class="${SIZE_NAME}">Name:</h3>
+            <label class="${SIZE_VALUE}">Name1234567890</label>
+          </li>
+          <li class="${SIZE_PROPERTY}">
+            <h3 class="${SIZE_NAME}">Height</h3>
+            <label class="${SIZE_VALUE}">470 px</label>
+          </li>
+          <li class="${SIZE_PROPERTY}">
+            <h3 class="${SIZE_NAME}">JFIF Ver</h3>
+            <label class="${SIZE_VALUE}">1.1</label>
+          </li>
+          <li class="${SIZE_PROPERTY}">
+            <h3 class="${SIZE_NAME}">ColorSpace</h3>
+            <label class="${SIZE_VALUE}">YCbCr</label>
+          </li>
         </ul>
 
     </div>
@@ -94,7 +126,7 @@ ${DARKMODE_SELECTOR_VALUE}
   color: var(--menu-title-col);
 }
 
-h3
+.${DESCRIPTION_CLASS} h3
 {
   margin: 0px;
   font-weight: 400;

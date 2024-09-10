@@ -52,122 +52,6 @@ export const ITEM_HTML =`
 `;
 
 export const CSS = `
-@media (device-width < ${COMMON_MOBILE_DEVICE_WIDTH})
-{
-  div.${ROOT_CLASS} > div > div
-  {
-    min-width: 100px;
-    height: 140px;
-    background-size: 50px;
-  }
-  div.${ROOT_CLASS} > div
-  {
-    animation-name: ${ANIME2};
-    border-radius: 20px;
-  }
-  div.${ROOT_CLASS} h3
-  {
-    font-size: 40px;
-  }
-  div.${ROOT_CLASS} > div > span 
-  {
-    min-width: 380px;
-    font-size: 40px;
-    line-height: 34px;
-  }
-  div.${ROOT_CLASS} div > span > span
-  {
-    font-size: 30px;
-  }
-  div.${ROOT_CLASS} div > s
-  {
-    width: 60px;
-    height: 100%;
-    padding-top: 10px;
-  }
-  div.${ROOT_CLASS} div > s > span
-  {
-    width: 100%;
-    height: 35%;
-    background-size: contain;
-  }
-}
-
-@keyframes ${ANIME1}
-{
-  0%
-  {
-    border: 1px solid ${BORDER_ANIME_COLOR};
-    height: 0px;
-    width: 0px;
-    margin-bottom: 5px;
-  }
-  3%
-  {
-    border: 1px solid ${BORDER_ANIME_COLOR};
-    height: 70px;
-    width: 0px;
-    margin-bottom: 5px;
-  }
-  5%
-  {
-    border: 1px solid ${BORDER_ANIME_COLOR};
-    height: 70px;
-    width: 280px;
-  }
-  95%
-  {
-    border: 1px solid ${BORDER_ANIME_COLOR};
-    height: 70px;
-    width: 280px;
-    margin-bottom: 5px;
-  }
-  100% 
-  {
-    border: 0px solid ${BORDER_ANIME_COLOR};
-    height: 70px;
-    width: 0px;
-    margin-bottom: 5px;
-  }
-}
-
-@keyframes ${ANIME2}
-{
-  0%
-  {
-    border: 2px solid ${BORDER_ANIME_COLOR};
-    height: 0px;
-    width: 0px;
-    margin-bottom: 5px;
-  }
-  3%
-  {
-    border: 2px solid ${BORDER_ANIME_COLOR};
-    height: 140px;
-    width: 0px;
-    margin-bottom: 5px;
-  }
-  5%
-  {
-    border: 2px solid ${BORDER_ANIME_COLOR};
-    height: 140px;
-    width: 560px;
-  }
-  95%
-  {
-    border: 2px solid ${BORDER_ANIME_COLOR};
-    height: 140px;
-    width: 560px;
-    margin-bottom: 5px;
-  }
-  100% 
-  {
-    border: 0px solid ${BORDER_ANIME_COLOR};
-    height: 140px;
-    width: 0px;
-    margin-bottom: 5px;
-  }
-}
 
 .${ROOT_CLASS}
 {
@@ -319,5 +203,122 @@ export const CSS = `
 .${ROOT_CLASS} .${INFO_CLASS} > s > span:hover
 {
   background-color: ${INFO_HOVER_COLOR};
+}
+
+@media (device-width < ${COMMON_MOBILE_DEVICE_WIDTH})
+{
+  div.${ROOT_CLASS} > div > div
+  {
+    min-width: 100px;
+    height: 140px;
+    background-size: 50px;
+  }
+  div.${ROOT_CLASS} > div
+  {
+    animation-name: ${ANIME2};
+    border-radius: 20px;
+  }
+  div.${ROOT_CLASS} h3
+  {
+    font-size: 40px;
+  }
+  div.${ROOT_CLASS} > div > span 
+  {
+    min-width: 380px;
+    font-size: 40px;
+    line-height: 34px;
+  }
+  div.${ROOT_CLASS} div > span > span
+  {
+    font-size: 30px;
+  }
+  div.${ROOT_CLASS} div > s
+  {
+    width: 60px;
+    height: 100%;
+    padding-top: 10px;
+  }
+  div.${ROOT_CLASS} div > s > span
+  {
+    width: 100%;
+    height: 35%;
+    background-size: contain;
+  }
+}
+
+@keyframes ${ANIME1}
+{
+  0%
+  {
+    border: 1px solid ${BORDER_ANIME_COLOR};
+    height: 0px;
+    width: 0px;
+    margin-bottom: 5px;
+  }
+  3%
+  {
+    border: 1px solid ${BORDER_ANIME_COLOR};
+    height: 70px;
+    width: 0px;
+    margin-bottom: 5px;
+  }
+  5%
+  {
+    border: 1px solid ${BORDER_ANIME_COLOR};
+    height: 70px;
+    width: 280px;
+  }
+  95%
+  {
+    border: 1px solid ${BORDER_ANIME_COLOR};
+    height: 70px;
+    width: 280px;
+    margin-bottom: 5px;
+  }
+  100% 
+  {
+    border: 0px solid ${BORDER_ANIME_COLOR};
+    height: 70px;
+    width: 0px;
+    margin-bottom: 5px;
+  }
+}
+
+@keyframes ${ANIME2}
+{
+  0%
+  {
+    border: 2px solid ${BORDER_ANIME_COLOR};
+    height: 0px;
+    width: 0px;
+    margin-bottom: 5px;
+  }
+  3%
+  {
+    border: 2px solid ${BORDER_ANIME_COLOR};
+    height: 140px;
+    width: 0px;
+    margin-bottom: 5px;
+  }
+  5%
+  {
+    border: 2px solid ${BORDER_ANIME_COLOR};
+    height: 140px;
+    width: 560px;
+  }
+  95%
+  {
+    border: 2px solid ${BORDER_ANIME_COLOR};
+    height: 140px;
+    width: 560px;
+    margin-bottom: 5px;
+  }
+  100% 
+  {
+    border: 0px solid ${BORDER_ANIME_COLOR};
+    height: 140px;
+    width: 0px;
+    margin-bottom: 5px;
+  }
 }
 `;
