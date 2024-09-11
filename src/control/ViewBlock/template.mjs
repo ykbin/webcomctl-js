@@ -28,7 +28,6 @@ ${DARKMODE_SELECTOR_VALUE}
 {
   display: flex;
   height: 100%;
-  padding-top: 3px;
   background-color: var(--uic-viewblk-rootbg);
   overflow: hidden;
   box-sizing: border-box;
@@ -38,7 +37,7 @@ ${DARKMODE_SELECTOR_VALUE}
 {
   min-width: 285px;
   flex-shrink: 0;
-  contain: paint;
+  overflow: hidden;
 }
 
 .${ROOT_CLASS} > div:last-child
