@@ -65,6 +65,7 @@ ${DARKMODE_SELECTOR_VALUE}
                 "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   user-select: none;
   cursor: default;
+  z-index: 1000;
 }
 
 .${ROOT_CLASS} *
