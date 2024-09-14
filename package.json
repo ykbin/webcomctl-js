@@ -1,6 +1,6 @@
 {
   "name": "webcomctl-js",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Common controls library for the Web",
   "type": "module",
   "main": "src/index.mjs",
@@ -11,12 +11,18 @@
     "./control/*": "./src/control/*/index.mjs",
     "./control/*/template": "./src/control/*/template.mjs"
   },
+  "scripts": {
+    "build-node-debug": "webpack --config webpack.node.config.mjs --mode=development",
+    "build-node-release": "webpack --config webpack.node.config.mjs --mode=production",
+    "build-web-debug": "webpack --config webpack.config.mjs --mode=development",
+    "build-web-release": "webpack --config webpack.config.mjs --mode=production"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/yakubins/webcomctl-js.git"
   },
   "keywords": [
-    "web"
+    "web", "node"
   ],
   "author": "Yurii Yakubin",
   "bugs": {
@@ -25,5 +31,10 @@
   "homepage": "https://github.com/yakubins/webcomctl-js#readme",
   "dependencies": {
     "webnetq-js": "github:yakubins/webnetq-js"
+  },
+  "devDependencies": {
+    "webpack": "^5.94.0",
+    "webpack-cli": "^5.1.4",
+    "svgo": "^3.3.2"
   }
 }
