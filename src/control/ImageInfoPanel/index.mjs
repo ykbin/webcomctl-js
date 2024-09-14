@@ -29,9 +29,9 @@ export default class UIInfoContentControl extends BaseControl {
   addListItem(name, value) {
     const itemElm = NQDOM.createElement(ITEM_HTML);
     const nameElm = NQDOM.getElementByClassName(itemElm, LIST_NAME);
-    nameElm?.textContent = name;
+    nameElm && (nameElm.textContent = name);
     const valueElm = NQDOM.getElementByClassName(itemElm, LIST_VALUE);
-    valueElm?.textContent = value;
+    valueElm && (valueElm.textContent = value);
     this._listElm && this._listElm.appendChild(itemElm);
   }
 };
