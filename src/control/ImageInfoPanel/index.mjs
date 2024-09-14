@@ -2,6 +2,10 @@ import { BaseControl, NQDOM } from 'webnetq-js';
 import { DESCRIPTION_TITLE, DESCRIPTION_HISTORY, LIST_CLASS, ITEM_HTML, LIST_NAME, LIST_VALUE } from 'uictmplt-loader!./template.mjs';
 
 export default class UIInfoContentControl extends BaseControl {
+  _titleElm;
+  _descriptionElm;
+  _listElm;
+
   _init() {
     this._titleElm = NQDOM.getElementByClassName(this.element, DESCRIPTION_TITLE);
     this._descriptionElm = NQDOM.getElementByClassName(this.element, DESCRIPTION_HISTORY);
@@ -9,17 +13,17 @@ export default class UIInfoContentControl extends BaseControl {
   }
 
   get title() {
-    return this._titleElm?.textContent;
+    return this._titleElm && this._titleElm.textContent;
   }
   set title(value) {
-    this._titleElm?.textContent = value;
+    this._titleElm && (this._titleElm.textContent = value);
   }
 
   get description() {
-    return this._descriptionElm?.textContent;
+    return this._descriptionElm && this._descriptionElm.textContent;
   }
   set description(value) {
-    this._descriptionElm?.textContent = value;
+    this._descriptionElm && (this._descriptionElm.textContent = value);
   }
 
   addListItem(name, value) {
@@ -28,6 +32,6 @@ export default class UIInfoContentControl extends BaseControl {
     nameElm?.textContent = name;
     const valueElm = NQDOM.getElementByClassName(itemElm, LIST_VALUE);
     valueElm?.textContent = value;
-    this._listElm?.appendChild(itemElm);
+    this._listElm && this._listElm.appendChild(itemElm);
   }
 };
