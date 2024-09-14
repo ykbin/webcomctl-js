@@ -27,7 +27,7 @@ mk.newHTML('ROOT_HTML', `
     <div class="${clss.DESCRIPTION_CLASS} notranslate" translate="no">
 
         <div class="${clss.DESCRIPTION_FORMAT_CLASS}">
-          <h2"><span class="${clss.DESCRIPTION_TITLE}>JPEG</span>:</h2>
+          <h2><span class="${clss.DESCRIPTION_TITLE}">JPEG</span>:</h2>
           <span class="${clss.DESCRIPTION_HISTORY}"></span>
         </div>
 
