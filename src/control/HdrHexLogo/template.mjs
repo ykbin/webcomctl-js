@@ -60,7 +60,7 @@ ${DARKMODE_SELECTOR_VALUE}
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-  background-image: var(${FAVICON_VAR});
+  background-image: ${vars.favicon.asVar()};
   margin-right: 7px;
   flex-shrink: 0;
 }
@@ -73,7 +73,7 @@ ${DARKMODE_SELECTOR_VALUE}
   background-position-y: center;
   background-position-x: left;
   background-repeat: no-repeat;
-  background-image: var(${HEADER_VAR});
+  background-image: ${vars.header.asVar()};
   margin-right: 15px;
   flex-shrink: 0;
 }
