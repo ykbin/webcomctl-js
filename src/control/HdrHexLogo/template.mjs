@@ -21,7 +21,7 @@ const vars = mk.newCSSVariableMap({
 });
 
 mk.newHTML('ROOT_HTML', `
-<div class="${ROOT_CLASS}">
+<div class="${clss.ROOT_CLASS}">
   <h3></h3>
   <h2></h2>
 </div>
@@ -38,8 +38,8 @@ ${DARKMODE_SELECTOR_VALUE}
   ${vars.toString(1)};
 }
 
-.${ROOT_CLASS} h2,
-.${ROOT_CLASS} h3
+.${clss.ROOT_CLASS} h2,
+.${clss.ROOT_CLASS} h3
 {
   margin: 0px;
   padding: 0px;
@@ -47,13 +47,13 @@ ${DARKMODE_SELECTOR_VALUE}
   font-weight: 400;
 }
 
-.${ROOT_CLASS}
+.${clss.ROOT_CLASS}
 {
   display: flex;
   height: 33px;
 }
 
-.${ROOT_CLASS} > h3
+.${clss.ROOT_CLASS} > h3
 {
   height: 100%;
   width: 56px;
@@ -65,7 +65,7 @@ ${DARKMODE_SELECTOR_VALUE}
   flex-shrink: 0;
 }
 
-.${ROOT_CLASS} > h2
+.${clss.ROOT_CLASS} > h2
 {
   height: 100%;
   width: 106px;
@@ -80,15 +80,15 @@ ${DARKMODE_SELECTOR_VALUE}
 
 @media (device-width < ${HEADER_MOBILE_DEVICE_WIDTH})
 {
-  .${ROOT_CLASS}
+  .${clss.ROOT_CLASS}
   {
     height: 130px;
   }
-  .${ROOT_CLASS} > h3
+  .${clss.ROOT_CLASS} > h3
   {
     display: none;
   }
-  .${ROOT_CLASS} > h2
+  .${clss.ROOT_CLASS} > h2
   {
     width: 210px;
     background-size: 360px;
