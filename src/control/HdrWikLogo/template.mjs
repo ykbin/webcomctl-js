@@ -2,7 +2,7 @@ import ControlMaker from '../../lib/ControlMaker.mjs';
 
 import { DARKMODE_SELECTOR_VALUE } from '../../lib/DarkMode.mjs';
 
-const mk = new ControlMaker('HdrUITLogo', import.meta.url);
+const mk = new ControlMaker('HdrWikLogo', import.meta.url);
 
 const clss = mk.newClassNameMap([
   "ROOT_CLASS",
@@ -18,6 +18,7 @@ const vars = mk.newCSSVariableMap({
 });
 
 const favicon = await mk.loadSvgAsHtmlAsync('./favicon.svg');
+
 mk.newHTML('ROOT_HTML', `
 <div class="${clss.ROOT_CLASS}">
   <h1>${favicon}</h1>
@@ -54,7 +55,7 @@ ${DARKMODE_SELECTOR_VALUE}
   width: 35px;
   height: 100%;
   margin: 0 10px 0 0;
-  /*background-image: ${vars.favicon.asVar()};*/
+  /* background-image: ${vars.favicon.asVar()}; */
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
