@@ -1,5 +1,5 @@
 import { representClassNames } from './CSSHelper.mjs';
-import { loadSvgAsCssUrlAsync } from './SVG.mjs';
+import { loadSvgAsCssUrlAsync, loadSvgAsHtmlAsync } from './SVG.mjs';
 
 export class CSSClassName {
   _name;
