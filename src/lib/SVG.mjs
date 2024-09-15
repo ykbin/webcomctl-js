@@ -15,6 +15,8 @@ const optimizeOptions = {
     { name: 'removeDesc', active: true },
     { name: 'removeEditorsNSData', active: true },
     { name: 'removeUnusedNS', active: true },
+    { name: 'removeNonInheritableGroupAttrs', active: true },
+    { name: 'collapseGroups', active: true },
     { name: 'removeDimensions', active: true }, // Remove width and height
     { name: 'removeViewBox', active: false },
   ]
