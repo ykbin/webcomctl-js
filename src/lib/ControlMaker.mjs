@@ -96,6 +96,10 @@ export default class ControlMaker {
     return await loadSvgAsCssUrlAsync(this._currentUrl, filepath);
   }
 
+  async loadSvgAsHtmlAsync(filepath) {
+    return await loadSvgAsHtmlAsync(this._currentUrl, filepath);
+  }
+
   newClassName(classname) {
     if (this._cssClassNames.hasOwnProperty(classname))
       throw `CSS class '${classname}' exist in ${this._name}`;
