@@ -20,7 +20,7 @@ const vars = mk.newCSSVariableMap({
 const favicon = await mk.loadSvgAsHtmlAsync('./favicon.svg');
 mk.newHTML('ROOT_HTML', `
 <div class="${clss.ROOT_CLASS}">
-  <h3>${favicon}</h3>
+  <h1>${favicon}</h1>
   <h2></h2>
 </div>
 `);
@@ -54,7 +54,7 @@ ${DARKMODE_SELECTOR_VALUE}
   width: 35px;
   height: 100%;
   margin: 0 10px 0 0;
-  background-image: ${vars.favicon.asVar()};
+  /*background-image: ${vars.favicon.asVar()};*/
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
