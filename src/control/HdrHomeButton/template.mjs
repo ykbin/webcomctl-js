@@ -12,38 +12,40 @@ import { HEADER_COLOR_HOVER } from '../../lib/WickedTheme.mjs';
 
 const mk = new ControlMaker('HdrHomeButton', import.meta.url);
 
-export const ROOT_CLASS = mk.newClassName("Root");
+const clss = mk.newClassNameMap([
+  "ROOT_CLASS",
+]);
+
+const vars = mk.newCSSVariableMap({
+  btnBg: [ HEADER_BACKGROUND_COLOR ],
+  btnCol: [ HEADER_COLOR_HOVER, HEADER_COLOR_HOVER_DARK ],
+  image: [
+    await mk.loadSvgAsCssUrl('./home_light_hover.svg'),
+    await mk.loadSvgAsCssUrl('./home_dark_hover.svg'),
+  ],
+});
 
 const MAIN_IMG = await mk.loadSvgAsCssUrl('./home_default.svg');
-const HOVER_IMG = await mk.loadSvgAsCssUrl('./home_light_hover.svg');
-const HOVER_IMG_DARK = await mk.loadSvgAsCssUrl('./home_dark_hover.svg');
 
-const BTNBG_VAR = mk.newVarName("BtnBg");
-const BTNCOL_VAR = mk.newVarName("BtnCol");
-const IMG_VAR = mk.newVarName("Img");
-
-export const ROOT_HTML = `
-<a class="${ROOT_CLASS} notranslate" translate="no" href="\${ENV:HOST_URL}" draggable="false">
+mk.newHTML('ROOT_HTML', `
+<a class="${clss.ROOT_CLASS} notranslate" translate="no" href="\${ENV:HOST_URL}" draggable="false">
   <div></div>
   <span>Home</span>
 </a>
-`;
+`);
 
-export const CSS = `
+mk.newCSS('CSS', `
 :root
 {
-  ${BTNBG_VAR}: ${HEADER_BACKGROUND_COLOR};
-  ${BTNCOL_VAR}: ${HEADER_COLOR_HOVER};
-  ${IMG_VAR}: ${HOVER_IMG};
+  ${vars.toString(0)};
 }
 
 ${DARKMODE_SELECTOR_VALUE}
 {
-  ${BTNCOL_VAR}: ${HEADER_COLOR_HOVER_DARK};
-  ${IMG_VAR}: ${HOVER_IMG_DARK};
+  ${vars.toString(1)};
 }
 
-.${ROOT_CLASS}
+.${clss.ROOT_CLASS}
 {
   display: flex;
   width: min-content;
@@ -60,20 +62,20 @@ ${DARKMODE_SELECTOR_VALUE}
   flex-shrink: 0;
 }
 
-.${ROOT_CLASS}:hover
+.${clss.ROOT_CLASS}:hover
 {
-  color: var(${BTNCOL_VAR});
-  background-color: var(${BTNBG_VAR});
+  color: ${vars.btnCol.asVar()};
+  background-color: ${vars.btnBg.asVar()};
   border-radius: ${HEADER_BORDER_RADIUS_HOVER};
   transition: background-color 0.2s;
 }
 
-.${ROOT_CLASS}:hover > div
+.${clss.ROOT_CLASS}:hover > div
 {
-  background-image: var(${IMG_VAR});
+  background-image: ${vars.image.asVar()};
 }
 
-.${ROOT_CLASS} > div
+.${clss.ROOT_CLASS} > div
 {
   width: 40px;
   height: 30px;
@@ -88,14 +90,19 @@ ${DARKMODE_SELECTOR_VALUE}
 
 @media (device-width < ${HEADER_MOBILE_DEVICE_WIDTH})
 {
-  .${ROOT_CLASS} > div
+  .${clss.ROOT_CLASS} > div
   {
     width: 60px;
     height: 55px;
   }
-  .${ROOT_CLASS} > span
+  .${clss.ROOT_CLASS} > span
   {
     font-size: 60px;
   }
 }
-`;
+`);
+
+export function buildComponent()
+{
+  return mk.buildComponent();
+}
