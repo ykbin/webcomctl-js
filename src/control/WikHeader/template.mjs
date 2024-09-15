@@ -29,7 +29,7 @@ ${DARKMODE_SELECTOR_VALUE}
   ${vars.toString(1)};
 }
 
-.${ROOT_CLASS}
+.${clss.ROOT_CLASS}
 {
   display: flex;
   height: 60px;
