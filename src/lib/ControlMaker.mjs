@@ -1,5 +1,5 @@
 import { representClassNames } from './CSSHelper.mjs';
-import { loadSvgAsCssUrlAsync } from './SVG.mjs';
+import { loadSvgAsCssUrlAsync, loadSvgAsHtmlAsync } from './SVG.mjs';
 
 export class CSSClassName {
   _name;
@@ -94,6 +94,10 @@ export default class ControlMaker {
 
   async loadSvgAsCssUrl(filepath) {
     return await loadSvgAsCssUrlAsync(this._currentUrl, filepath);
+  }
+
+  async loadSvgAsHtmlAsync(filepath) {
+    return await loadSvgAsHtmlAsync(this._currentUrl, filepath);
   }
 
   newClassName(classname) {
