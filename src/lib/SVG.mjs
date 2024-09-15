@@ -8,6 +8,7 @@ const optimizeOptions = {
     { name: 'removeXMLProcInst', active: true },
     { name: 'removeDoctype', active: true },
     { name: 'removeComments', active: true },
+    { name: 'removeXMLNS', active: true },
     { name: 'cleanupNumericValues', params: { floatPrecision: 2 } },
     { name: 'convertColors', params: { names2hex: true, rgb2hex: true } },
     { name: 'removeMetadata', active: true },
