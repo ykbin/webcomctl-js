@@ -126,6 +126,11 @@ ${DARKMODE_SELECTOR_VALUE}
   line-height: 1.7;
 }
 
+.${clss.DESCRIPTION_FORMAT_CLASS} > span:nth-child(2n)
+{
+  background-color: #7a7a7a29;
+}
+
 .${clss.LIST_CLASS}
 {
   display: table;
