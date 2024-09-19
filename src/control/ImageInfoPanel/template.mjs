@@ -126,11 +126,6 @@ ${DARKMODE_SELECTOR_VALUE}
   line-height: 1.7;
 }
 
-.${clss.DESCRIPTION_FORMAT_CLASS} > span:nth-child(2n)
-{
-  background-color: #7a7a7a29;
-}
-
 .${clss.LIST_CLASS}
 {
   display: table;
@@ -156,6 +151,11 @@ ${DARKMODE_SELECTOR_VALUE}
   width: 100%;
   padding-left: 10px;
   word-break: break-all;
+}
+
+.${clss.LIST_CLASS} > div > span:nth-child(2n)
+{
+  background-color: #7a7a7a29;
 }
 `);
 
