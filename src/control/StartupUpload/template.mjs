@@ -3,6 +3,8 @@ import ControlMaker from '../../lib/ControlMaker.mjs';
 import { DARKMODE_SELECTOR_VALUE } from '../../lib/DarkMode.mjs';
 import { UIC_START_BACKGROUND_COLOR } from '../../lib/WickedTheme.mjs';
 import { UIC_START_BACKGROUND_COLOR_DARK } from '../../lib/WickedTheme.mjs';
+import { TOOLBAR_FONT_SYSTEM } from '../../lib/WickedTheme.mjs';
+import { TOOLBAR_FONT_MATH } from '../../lib/WickedTheme.mjs';
 
 const mk = new ControlMaker('StartupUpload', import.meta.url);
 
@@ -97,7 +99,7 @@ ${DARKMODE_SELECTOR_VALUE}
   text-align: center;
   font-weight: 800;
   color: var(--uic-strupl-des);
-  font-family: math;
+  font-family: ${TOOLBAR_FONT_MATH};
 }
 
 .${DHIDE_CLASS}
@@ -162,7 +164,7 @@ ${DARKMODE_SELECTOR_VALUE}
   border-radius: 5px;
   padding: 5px 10px 5px 30px;
   cursor: pointer;
-  font-family: system-ui;
+  font-family: ${TOOLBAR_FONT_SYSTEM};
   flex-shrink: 0;
 }
 
@@ -251,7 +253,6 @@ ${DARKMODE_SELECTOR_VALUE}
     font-size: 4.81em;
     font-weight: 800;
     color: #afafaf;
-    font-family: math;
     margin: 0px 0px 20px 0px;
   }
 }

@@ -1,4 +1,5 @@
 import ControlMaker from '../../lib/ControlMaker.mjs';
+import { TOOLBAR_FONT_SANS } from '../../lib/WickedTheme.mjs';
 
 import { COMMON_MOBILE_DEVICE_WIDTH } from '../../lib/WickedTheme.mjs';
 
@@ -63,6 +64,7 @@ export const CSS = `
   flex-wrap: nowrap;
   justify-content: flex-start;
   flex-direction: column;
+  font-family: ${TOOLBAR_FONT_SANS};
   overflow: hidden;
   z-index: 2;
 }

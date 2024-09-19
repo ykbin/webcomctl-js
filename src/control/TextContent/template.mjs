@@ -4,6 +4,7 @@ import { DARKMODE_SELECTOR_VALUE } from '../../lib/DarkMode.mjs';
 import { COMMON_MOBILE_DEVICE_WIDTH } from '../../lib/WickedTheme.mjs';
 import { UIC_CONTENT_BACKGROUND_COLOR } from '../../lib/WickedTheme.mjs';
 import { UIC_CONTENT_BACKGROUND_COLOR_DARK } from '../../lib/WickedTheme.mjs';
+import { TOOLBAR_FONT_MONOSPACE } from '../../lib/WickedTheme.mjs';
 
 const mk = new ControlMaker('TextContent', import.meta.url);
 
@@ -88,7 +89,7 @@ ${DARKMODE_SELECTOR_VALUE}
   letter-spacing: 2px;
   line-height: 1.4em;
   color: var(--uic-txtcnt-col);
-  font-family: monospace;
+  font-family: ${TOOLBAR_FONT_MONOSPACE};
   background-color: var(--uic-txtcnt-bg);
   box-sizing: border-box;
 }

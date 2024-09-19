@@ -1,6 +1,7 @@
 import ControlMaker from '../../lib/ControlMaker.mjs';
 
 import { DARKMODE_SELECTOR_VALUE } from '../../lib/DarkMode.mjs';
+import { TOOLBAR_FONT_SANS } from '../../lib/WickedTheme.mjs';
 
 const mk = new ControlMaker('DebugPanel', import.meta.url);
 const ARROW_IMG = await mk.loadSvgAsCssUrl('./arrow.svg');
@@ -60,9 +61,7 @@ ${DARKMODE_SELECTOR_VALUE}
   width: auto;
   height: auto;
   padding: 0px 5px 0px 5px;
-  font-family: "Nunito Sans", -apple-system, BlinkMacSystemFont,
-                "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
-                "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: ${TOOLBAR_FONT_SANS};
   user-select: none;
   cursor: default;
   z-index: 1000;
@@ -171,6 +170,9 @@ ${DARKMODE_SELECTOR_VALUE}
 
 .${LIST_CLASS} > div
 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   height: 25px;
   min-width: 90px;

@@ -2,6 +2,7 @@ import ControlMaker from '../../lib/ControlMaker.mjs';
 
 import { DARKMODE_SELECTOR_VALUE } from '../../lib/DarkMode.mjs';
 import { COMMON_MOBILE_DEVICE_WIDTH } from '../../lib/WickedTheme.mjs';
+import { TOOLBAR_FONT_SANS } from '../../lib/WickedTheme.mjs';
 
 const mk = new ControlMaker('MainFooter', import.meta.url);
 
@@ -75,7 +76,7 @@ ${DARKMODE_SELECTOR_VALUE}
   border-top: 1px solid var(--uic-mfooter-root-border);
   color: var(--uic-mfooter-col);
   background-color: var(--uic-mfooter-root-bg);
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: ${TOOLBAR_FONT_SANS};
   container-name: footer;
   container-type: inline-size;
 }
@@ -111,7 +112,6 @@ ${DARKMODE_SELECTOR_VALUE}
   justify-content: center;
   grid-gap: 7%;
   margin-bottom: 10px;
-  font-family: "Roboto","Oxygen","Ubuntu", "Cantarell","Fira Sans","Droid Sans", "Helvetica Neue",sans-serif;
 }
 
 .${LIST_CLASS} > div
@@ -140,7 +140,6 @@ ${DARKMODE_SELECTOR_VALUE}
   justify-content: flex-end;
   width: 100%;
   padding: 0px 5px 5px 0px;
-  font-family: Helvetica,Arial,sans-serif;
   font-size: 14px;
   color: ${VERSION_COLOR};
   box-sizing: border-box;

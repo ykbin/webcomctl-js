@@ -2,6 +2,7 @@ import ControlMaker from '../../lib/ControlMaker.mjs';
 
 import { DARKMODE_SELECTOR_VALUE } from '../../lib/DarkMode.mjs';
 import { COMMON_MOBILE_DEVICE_WIDTH } from '../../lib/WickedTheme.mjs';
+import { TOOLBAR_FONT_SANS } from '../../lib/WickedTheme.mjs';
 
 const mk = new ControlMaker('CntButtBRed', import.meta.url);
 
@@ -105,7 +106,7 @@ ${DARKMODE_SELECTOR_VALUE}
   height: 100%;
   user-select: none;
   cursor: pointer;
-  font-family: Open Sans,Arial,sans-serif;
+  font-family: ${TOOLBAR_FONT_SANS};
 }
 
 .${LOAD_CLASS} .${LABEL_CLASS}

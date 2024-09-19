@@ -1,5 +1,6 @@
 import ControlMaker from '../../lib/ControlMaker.mjs';
 import { DARKMODE_SELECTOR_VALUE } from '../../lib/DarkMode.mjs';
+import { TOOLBAR_FONT_SANS } from '../../lib/WickedTheme.mjs';
 
 const mk = new ControlMaker('ImageInfoPanel', import.meta.url);
 
@@ -106,7 +107,7 @@ ${DARKMODE_SELECTOR_VALUE}
   max-width: 1200px;
   padding: 10px 25px 10px 10px;
   color: #393939;
-  font-family: Open Sans, Arial, sans-serif;
+  font-family: ${TOOLBAR_FONT_SANS};
   box-sizing: border-box;
   color: ${vars.menuCol.asVar()};
   overflow: auto;
@@ -150,6 +151,11 @@ ${DARKMODE_SELECTOR_VALUE}
   width: 100%;
   padding-left: 10px;
   word-break: break-all;
+}
+
+.${clss.LIST_CLASS} > span:nth-child(2n)
+{
+  background-color: #7a7a7a29;
 }
 `);
 
