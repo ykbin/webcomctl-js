@@ -1,5 +1,6 @@
 import ControlMaker from '../../lib/ControlMaker.mjs';
 import { DARKMODE_SELECTOR_VALUE } from '../../lib/DarkMode.mjs';
+import { TOOLBAR_FONT_SANS } from '../../lib/DarkMode.mjs';
 
 const mk = new ControlMaker('TipInfoBlock', import.meta.url);
 
@@ -70,7 +71,7 @@ ${DARKMODE_SELECTOR_VALUE}
   display: none;
   height: 100%;
   color: #393939;
-  font-family: Open Sans, Arial, sans-serif;
+  font-family: ${TOOLBAR_FONT_SANS};
   box-sizing: border-box;
   background-color: ${MENU_BG.asVar()};
   color: ${MENU_COL.asVar()};

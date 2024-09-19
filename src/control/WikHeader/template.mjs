@@ -35,7 +35,6 @@ ${DARKMODE_SELECTOR_VALUE}
   height: 60px;
   padding: 0px 20px;
   border-bottom: 1px solid ${vars.bor.asVar()};
-  font-family: Noto Sans, sans-serif;
   color: ${vars.col.asVar()};
   box-sizing: border-box;
 }

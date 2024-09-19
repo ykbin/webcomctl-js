@@ -3,6 +3,7 @@ import ControlMaker from '../../lib/ControlMaker.mjs';
 import { DARKMODE_SELECTOR_VALUE } from '../../lib/DarkMode.mjs';
 import { UIC_CONTENT_BACKGROUND_COLOR } from '../../lib/WickedTheme.mjs';
 import { UIC_CONTENT_BACKGROUND_COLOR_DARK } from '../../lib/WickedTheme.mjs';
+import { TOOLBAR_FONT_MONOSPACE } from '../../lib/WickedTheme.mjs';
 
 const mk = new ControlMaker('HexContent', import.meta.url);
 
@@ -127,7 +128,7 @@ ${DARKMODE_SELECTOR_VALUE}
   word-spacing: normal;
   font-size: 16px;
   background-color: var(--uic-hex-bg);
-  font-family: monospace;
+  font-family: ${TOOLBAR_FONT_MONOSPACE};
   flex-shrink: 0;
   overflow: hidden;
 }
