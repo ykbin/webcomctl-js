@@ -1,8 +1,8 @@
 import ControlMaker from '../../lib/ControlMaker.mjs';
-import { TOOLBAR_FONT_SANS } from '../../lib/DarkMode.mjs';
 
 import { DARKMODE_SELECTOR_VALUE } from '../../lib/DarkMode.mjs';
 import { COMMON_MOBILE_DEVICE_WIDTH } from '../../lib/WickedTheme.mjs';
+import { TOOLBAR_FONT_SANS } from '../../lib/WickedTheme.mjs';
 
 const mk = new ControlMaker('CntButtBRed', import.meta.url);
 

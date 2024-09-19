@@ -1,5 +1,5 @@
 import ControlMaker from '../../lib/ControlMaker.mjs';
-import { TOOLBAR_FONT_SANS } from '../../lib/DarkMode.mjs';
+import { TOOLBAR_FONT_SANS } from '../../lib/WickedTheme.mjs';
 
 import { COMMON_MOBILE_DEVICE_WIDTH } from '../../lib/WickedTheme.mjs';
 

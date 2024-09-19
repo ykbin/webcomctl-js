@@ -1,7 +1,7 @@
 import ControlMaker from '../../lib/ControlMaker.mjs';
 
 import { DARKMODE_SELECTOR_VALUE } from '../../lib/DarkMode.mjs';
-import { TOOLBAR_FONT_SANS } from '../../lib/DarkMode.mjs';
+import { TOOLBAR_FONT_SANS } from '../../lib/WickedTheme.mjs';
 
 const mk = new ControlMaker('DebugPanel', import.meta.url);
 const ARROW_IMG = await mk.loadSvgAsCssUrl('./arrow.svg');
