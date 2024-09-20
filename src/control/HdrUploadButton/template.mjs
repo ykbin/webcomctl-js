@@ -111,3 +111,8 @@ ${DARKMODE_SELECTOR_VALUE}
   }
 }
 `);
+
+export function buildComponent()
+{
+  return mk.buildComponent();
+}
