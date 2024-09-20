@@ -1,5 +1,5 @@
 import { BaseControl, Random } from 'webnetq-js';
-import { HIDDEN_CLASS } from 'module-loader!./template.mjs';
+import { HIDDEN_CLASS } from 'uictmplt-loader!./template.mjs';
 
 const UPLOAD_EVENT = 'upload';
 
