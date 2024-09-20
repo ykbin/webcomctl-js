@@ -12,46 +12,51 @@ import { HEADER_COLOR_HOVER } from '../../lib/WickedTheme.mjs';
 
 const mk = new ControlMaker('HdrUploadButton', import.meta.url);
 
-export const ROOT_CLASS = mk.newClassName("Root");
-export const HIDDEN_CLASS = mk.newClassName("Hidden");
+const clss = mk.newClassNameMap([
+  "ROOT_CLASS",
+  "HIDDEN_CLASS",
+]);
 
 const MAIN_IMG = await mk.loadSvgAsCssUrl('./search_default.svg');
-const HOVER_IMG = await mk.loadSvgAsCssUrl('./search_light_hover.svg');
-const HOVER_IMG_DARK = await mk.loadSvgAsCssUrl('./search_dark_hover.svg');
 
-export const ROOT_HTML = `
-<label class="${ROOT_CLASS} ${HIDDEN_CLASS} notranslate" translate="no" draggable="false">
+const vars = mk.newCSSVariableMap({
+  btncol: [HEADER_COLOR_HOVER, HEADER_COLOR_HOVER_DARK ],
+  image: [
+    await mk.loadSvgAsCssUrl('./search_light_hover.svg'),
+    await mk.loadSvgAsCssUrl('./search_dark_hover.svg'),
+  ],
+});
+
+mk.newHTML('ROOT_HTML', `
+<label class="${clss.ROOT_CLASS} ${clss.HIDDEN_CLASS} notranslate" translate="no" draggable="false">
   <div></div>
   <span>Upload</span>
   <!--<input type="file">-->
 </label>
-`;
+`);
 
-export const CSS = `
+mk.newHTML('CSS', `
 :root
 {
-  --uic-hdrupl-btnbg: ${HEADER_BACKGROUND_COLOR};
-  --uic-hdrupl-btncol: ${HEADER_COLOR_HOVER};
-  --uic-hdrupl-img: ${HOVER_IMG};
+  ${vars.toString(0)};
 }
 
 ${DARKMODE_SELECTOR_VALUE}
 {
-  --uic-hdrupl-btncol: ${HEADER_COLOR_HOVER_DARK};
-  --uic-hdrupl-img: ${HOVER_IMG_DARK};
+  ${vars.toString(1)};
 }
 
-.${ROOT_CLASS} > input
+.${clss.ROOT_CLASS} > input
 {
   display: none;
 }
 
-.${HIDDEN_CLASS}
+.${clss.HIDDEN_CLASS}
 {
   visibility: hidden;
 }
 
-.${ROOT_CLASS}
+.${clss.ROOT_CLASS}
 {
   display: flex;
   width: min-content;
@@ -66,7 +71,7 @@ ${DARKMODE_SELECTOR_VALUE}
   box-sizing: border-box;
 }
 
-.${ROOT_CLASS} > div
+.${clss.ROOT_CLASS} > div
 {
   display: block;
   width: 40px;
@@ -80,29 +85,29 @@ ${DARKMODE_SELECTOR_VALUE}
   box-sizing: border-box;
 }
 
-.${ROOT_CLASS}:hover 
+.${clss.ROOT_CLASS}:hover 
 {
-  color: var(--uic-hdrupl-btncol);
-  background-color: var(--uic-hdrupl-btnbg);
+  color: ${vars.btncol.asVar()};
+  background-color: ${HEADER_BACKGROUND_COLOR};
   border-radius: ${HEADER_BORDER_RADIUS_HOVER};
   transition: background-color 0.2s;
 }
 
-.${ROOT_CLASS}:hover div
+.${clss.ROOT_CLASS}:hover div
 {
-  background-image: var(--uic-hdrupl-img);
+  background-image: ${vars.image.asVar()};
 }
 
 @media (device-width < ${HEADER_MOBILE_DEVICE_WIDTH})
 {
-  .${ROOT_CLASS} > div
+  .${clss.ROOT_CLASS} > div
   {
     width: 60px;
     height: 55px;
   }
-  .${ROOT_CLASS}
+  .${clss.ROOT_CLASS}
   {
     font-size: 60px;
   }
 }
-`;
+`);
