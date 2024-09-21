@@ -1,9 +1,5 @@
 import ControlMaker from '../../lib/ControlMaker.mjs';
 
-import { DARKMODE_SELECTOR_VALUE } from '../../lib/DarkMode.mjs';
-import { UIC_START_BACKGROUND_COLOR } from '../../lib/WickedTheme.mjs';
-import { UIC_START_BACKGROUND_COLOR_DARK } from '../../lib/WickedTheme.mjs';
-
 const mk = new ControlMaker('VerticalBlock', import.meta.url);
 
 export const ROOT_CLASS = mk.newClassName("Root");
@@ -14,15 +10,6 @@ export const ROOT_HTML = `
 `;
 
 export const CSS = `
-root:
-{
-  --uic-vrtblk-rootbg: ${UIC_START_BACKGROUND_COLOR};
-}
-
-${DARKMODE_SELECTOR_VALUE}
-{
-  --uic-vrtblk-rootbg: ${UIC_START_BACKGROUND_COLOR_DARK};
-}
 
 .${ROOT_CLASS}
 {
