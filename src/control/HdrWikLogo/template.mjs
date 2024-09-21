@@ -57,10 +57,10 @@ ${DARKMODE_SELECTOR_VALUE}
   width: 35px;
   height: 100%;
   margin: 0 10px 0 0;
-  /* background-image: ${vars.favicon.asVar()}; */
+  /* background-image: ${vars.favicon.asVar()};
   background-size: contain;
   background-position: center;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; */
 }
 
 .${clss.ROOT_CLASS} > h2
