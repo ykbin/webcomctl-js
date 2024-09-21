@@ -14,15 +14,6 @@ export const ROOT_HTML = `
 `;
 
 export const CSS = `
-root:
-{
-  --uic-viewblk-rootbg: ${UIC_START_BACKGROUND_COLOR};
-}
-
-${DARKMODE_SELECTOR_VALUE}
-{
-  --uic-viewblk-rootbg: ${UIC_START_BACKGROUND_COLOR_DARK};
-}
 
 .${ROOT_CLASS}
 {
