@@ -88,8 +88,8 @@ ${DARKMODE_SELECTOR_VALUE}
   display: inline-block;
   padding-left: 5px;
   margin: 0px;
-  font-weight: 500;
-  font-size: 18px;
+  font-weight: 600;
+  font-size: 19px;
   color: ${vars.titleCol.asVar()};
 }
 
@@ -97,7 +97,6 @@ ${DARKMODE_SELECTOR_VALUE}
 {
   margin: 0px;
   font-weight: 400;
-  font-size: 16px;
 }
 
 .${clss.DESCRIPTION_CLASS}
@@ -122,7 +121,7 @@ ${DARKMODE_SELECTOR_VALUE}
 {
   display: block;
   padding: 0px 5px;
-  margin-bottom: 16px;
+  margin-bottom: 5px;
   line-height: 1.7;
 }
 
@@ -130,7 +129,8 @@ ${DARKMODE_SELECTOR_VALUE}
 {
   display: table;
   width: 100%;
-  border-spacing: 0 10px;
+  font-size: 14px;
+  border-spacing: 0 5px;
 }
 
 .${clss.LIST_CLASS} span 
@@ -141,15 +141,17 @@ ${DARKMODE_SELECTOR_VALUE}
 .${clss.LIST_CLASS} > span > h3
 {
   display: table-cell;
-  padding-left: 10px;
+  vertical-align: middle;
+  padding: 3px 0 3px 10px;
   min-width: 50px;
 }
 
 .${clss.LIST_CLASS} > span > label
 {
   display: table-cell;
+  vertical-align: middle;
   width: 100%;
-  padding-left: 10px;
+  padding: 3px 0 3px 10px;
   word-break: break-all;
 }
 

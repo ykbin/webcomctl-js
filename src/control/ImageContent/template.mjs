@@ -35,6 +35,7 @@ ${DARKMODE_SELECTOR_VALUE}
   height: 100%;
   min-height: 600px;
   padding: 40px;
+  background-color: var(--uic-imgcnt-bg);
   box-sizing: border-box;
 }
 
