@@ -141,15 +141,17 @@ ${DARKMODE_SELECTOR_VALUE}
 .${clss.LIST_CLASS} > span > h3
 {
   display: table-cell;
-  padding-left: 10px;
+  vertical-align: middle;
+  padding: 5px 0 5px 10px;
   min-width: 50px;
 }
 
 .${clss.LIST_CLASS} > span > label
 {
   display: table-cell;
+  vertical-align: middle;
   width: 100%;
-  padding-left: 10px;
+  padding: 5px 0 5px 10px;
   word-break: break-all;
 }
 
