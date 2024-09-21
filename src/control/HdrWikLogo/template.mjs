@@ -52,6 +52,8 @@ ${DARKMODE_SELECTOR_VALUE}
 
 .${clss.ROOT_CLASS} > h1
 {
+  display: flex;
+  align-items: center;
   width: 35px;
   height: 100%;
   margin: 0 10px 0 0;
