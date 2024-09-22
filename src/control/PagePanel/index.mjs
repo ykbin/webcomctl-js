@@ -134,7 +134,7 @@ export default class UIPagePanelControl extends BaseControl {
     }
   }
 
-  setPropertyClick(func) {
+  setPropertiesClick(func) {
     this._propertiesElm && this._propertiesElm.addEventListener('click', func);
   }
 };
