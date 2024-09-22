@@ -40,7 +40,7 @@ ${DARKMODE_SELECTOR_VALUE}
   box-sizing: border-box;
 }
 
-.${clss.ROOT_CLASS}
+.${clss.ROOT_CLASS} > div
 {
   width: inherit;
   height: 1px;
