@@ -1,5 +1,5 @@
 import { BaseControl, NQDOM } from 'webnetq-js';
-import { MENU_ITEM_HTML, PSNT_ITEM_HTML, CODETYPE_CLASS, DOWNLOAD_CLASS, MENULIST_CLASS, PSNTLIST_CLASS, CTSHOW_CLASS, PSNTACTV_CLASS, MENUTEXT_CLASS, PSNTTEXT_CLASS, PERENTMENU_CLASS, MENUNAME_CLASS, MENU_LIST_HTML, MENUSTYLE1_CLASS, MENUSTYLE2_CLASS, MENUSTYLE3_CLASS, MENUSTYLE4_CLASS } from 'module-loader!./template.mjs';
+import { MENU_ITEM_HTML, PSNT_ITEM_HTML, CODETYPE_CLASS, DOWNLOAD_CLASS, MENULIST_CLASS, PSNTLIST_CLASS, CTSHOW_CLASS, PSNTACTV_CLASS, MENUTEXT_CLASS, PSNTTEXT_CLASS, PERENTMENU_CLASS, MENUNAME_CLASS, MENU_LIST_HTML, MENUSTYLE1_CLASS, MENUSTYLE2_CLASS, MENUSTYLE3_CLASS, MENUSTYLE4_CLASS, PROPERTIES_CLASS } from 'uictmplt-loader!./template.mjs';
 
 function typeToStyleClass(type)
 {
@@ -29,6 +29,7 @@ export default class UIPagePanelControl extends BaseControl {
     this._parentMenuElm = NQDOM.getElementByClassName(this.element, PERENTMENU_CLASS);
     this._downloadElm = NQDOM.getElementByClassName(this.element, DOWNLOAD_CLASS);
     this._psntlistElm = NQDOM.getElementByClassName(this.element, PSNTLIST_CLASS);
+    this._propertiesElm = NQDOM.getElementByClassName(this.element, PROPERTIES_CLASS);
 
     this._updateDownloadData();
   }
@@ -131,5 +132,9 @@ export default class UIPagePanelControl extends BaseControl {
   
       this._psntlistElm.appendChild(rootElm);
     }
+  }
+
+  setPropertiesClick(func) {
+    this._propertiesElm && this._propertiesElm.addEventListener('click', func);
   }
 };
