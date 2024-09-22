@@ -62,7 +62,6 @@ ${DARKMODE_SELECTOR_VALUE}
   height: 1px;
   background-color: #cfcfcf;
 }
-}
 `);
 
 export function buildComponent()
