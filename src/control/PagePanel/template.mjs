@@ -6,23 +6,25 @@ import { TOOLBAR_FONT_FAMALY } from '../../lib/WickedTheme.mjs';
 
 const mk = new ControlMaker('PagePanel', import.meta.url);
 
-export const ROOT_CLASS = mk.newClassName("Root");
-export const DOWNLOAD_CLASS = mk.newClassName("Download");
-export const PROPERTIES_CLASS = mk.newClassName("PROPERTIES");
-export const CODETYPE_CLASS = mk.newClassName("CodeType");
-export const CTSHOW_CLASS = mk.newClassName("CtShow");
-export const PERENTMENU_CLASS = mk.newClassName("PerentMenu");
-export const MENUNAME_CLASS = mk.newClassName("MenuName");
-export const MENUSTYLE1_CLASS = mk.newClassName("MenuStyle1");
-export const MENUSTYLE2_CLASS = mk.newClassName("MenuStyle2");
-export const MENUSTYLE3_CLASS = mk.newClassName("MenuStyle3");
-export const MENUSTYLE4_CLASS = mk.newClassName("MenuStyle4");
-export const MENULIST_CLASS = mk.newClassName("MenuList");
-export const MENUTEXT_CLASS = mk.newClassName("MenuText");
-export const PSNTLIST_CLASS = mk.newClassName("PrsnList");
-export const PSNTTEXT_CLASS = mk.newClassName("PrsnText");
-export const PSNTACTV_CLASS = mk.newClassName("PrsnActv");
-export const MENUARROW_CLASS = mk.newClassName("MenuArrow");
+const clss = mk.newClassNameMap([
+  "ROOT_CLASS",
+  "DOWNLOAD_CLASS",
+  "PROPERTIES_CLASS",
+  "CODETYPE_CLASS",
+  "CTSHOW_CLASS",
+  "PERENTMENU_CLASS",
+  "MENUNAME_CLASS",
+  "MENUSTYLE1_CLASS",
+  "MENUSTYLE2_CLASS",
+  "MENUSTYLE3_CLASS",
+  "MENUSTYLE4_CLASS",
+  "MENULIST_CLASS",
+  "MENUTEXT_CLASS",
+  "PSNTLIST_CLASS",
+  "PSNTTEXT_CLASS",
+  "PSNTACTV_CLASS",
+  "MENUARROW_CLASS",
+]);
 
 const DOWNLOAD_IMG = await mk.loadSvgAsCssUrl('./download.svg');
 const PROPERTIES_IMG = await mk.loadSvgAsCssUrl('./properties.svg');
@@ -35,80 +37,80 @@ const PLIST_NOSEL_VAR = 'transparent';
 const PLIST_SEL_VAR = '#fd8c73';
 const MLIST_MARGIN = '3px';
 const PLIST_MARGIN = MLIST_MARGIN;
+const MSTYLE23_BOR = '#a1a1a145';
 
-export const ROOT_HTML = `
-<span class="${ROOT_CLASS}" draggable="false">
+const vars = mk.newCSSVariableMap({
+  col: [ '#f3f3f3', '#252525' ],
+  hov: [ '#e0e3e7', '#444444' ],
+  borCol: [ 'rgb(197 195 195)', '#5f5f5f4a' ],
+  ctypeCol: [ '#696969', '#a7a7a7' ],
+  plistAct: [ 'black', '#c8c8c8' ],
+  ctypeCol: [ '#696969', '#a7a7a7' ],
+  plistHov: [ 'rgb(206 206 206)', 'rgb(116 115 115)' ],
+});
+
+mk.newHTML('ROOT_HTML', `
+<span class="${clss.ROOT_CLASS}" draggable="false">
   <div>
-    <div class="${PERENTMENU_CLASS}"></div>
+    <div class="${clss.PERENTMENU_CLASS}"></div>
     <s></s>
-    <div class="${PSNTLIST_CLASS}"></div>
+    <div class="${clss.PSNTLIST_CLASS}"></div>
   </div>
   <span>
-    <a class="${DOWNLOAD_CLASS}"></a>
-    <div class="${PROPERTIES_CLASS}"></div>
+    <a class="${clss.DOWNLOAD_CLASS}"></a>
+    <div class="${clss.PROPERTIES_CLASS}"></div>
   </span>
 </span>
-`;
+`);
 
-export const MENU_LIST_HTML = `
-<div class="${CODETYPE_CLASS}">
+mk.newHTML('MENU_LIST_HTML', `
+<div class="${clss.CODETYPE_CLASS}">
   <div>
-    <div class="${MENUNAME_CLASS}"></div>
-    <span class="${MENUARROW_CLASS}"></span>
+    <div class="${clss.MENUNAME_CLASS}"></div>
+    <span class="${clss.MENUARROW_CLASS}"></span>
   </div>
   <span>
-    <ul class="${MENULIST_CLASS}"></ul>
+    <ul class="${clss.MENULIST_CLASS}"></ul>
   </span>
 </div>
-`;
+`);
 
-export const MENU_ITEM_HTML = `
-<li><span class="${MENUTEXT_CLASS}"></span></li>
-`;
+mk.newHTML('MENU_ITEM_HTML', `
+<li><span class="${clss.MENUTEXT_CLASS}"></span></li>
+`);
 
-export const PSNT_ITEM_HTML = `
-<div><span class="${PSNTTEXT_CLASS}"></span></div>
-`;
+mk.newHTML('PSNT_ITEM_HTML', `
+<div><span class="${clss.PSNTTEXT_CLASS}"></span></div>
+`);
 
-export const CSS = `
+mk.newHTML('CSS', `
 :root
 {
-  --uic-pagpnl-col: #f3f3f3;
-  --uic-pagpnl-hov: #e0e3e7;
-  --uic-pagpnl-bor-col: rgb(197 195 195);
-  --uic-pagpnl-ctype-col: #696969;
-  --uic-pagpnl-plist-act: black;
-  --uic-pagpnl-plist-hov: rgb(206 206 206);
-  --uic-pagpnl-mstyle23-bor: #a1a1a145;
+  ${vars.toString(0)};
 }
 
 ${DARKMODE_SELECTOR_VALUE}
 {
-  --uic-pagpnl-col: #252525;
-  --uic-pagpnl-hov: #444444;
-  --uic-pagpnl-bor-col:#5f5f5f4a;
-  --uic-pagpnl-ctype-col: #a7a7a7;
-  --uic-pagpnl-plist-act: #c8c8c8;
-  --uic-pagpnl-plist-hov: rgb(116 115 115);
+  ${vars.toString(1)};
 }
 
-.${PERENTMENU_CLASS}
+.${clss.PERENTMENU_CLASS}
 {
   display: flex;
   height: 100%;
 }
 
-.${PERENTMENU_CLASS} > div:first-child
+.${clss.PERENTMENU_CLASS} > div:first-child
 {
   margin-left: ${MLIST_MARGIN};
 }
 
-.${PERENTMENU_CLASS} > div:last-child
+.${clss.PERENTMENU_CLASS} > div:last-child
 {
   margin-right: ${MLIST_MARGIN};
 }
 
-.${ROOT_CLASS}
+.${clss.ROOT_CLASS}
 {
   display: flex;
   width: 100%;
@@ -117,7 +119,7 @@ ${DARKMODE_SELECTOR_VALUE}
   font-size: 13px;
   letter-spacing: 2px;
   line-height: 16px;
-  background-color: var(--uic-pagpnl-col);
+  background-color: ${vars.col.asVar()};
   box-shadow: 0px 1.6px 3.6px ${BS1_VAR}, 0px 0px 2.9px ${BS2_VAR};
   flex-shrink: 0;
   user-select: none;
@@ -126,39 +128,39 @@ ${DARKMODE_SELECTOR_VALUE}
   box-sizing: border-box;
 }
 
-.${ROOT_CLASS} > *
+.${clss.ROOT_CLASS} > *
 {
   box-sizing: border-box;
 }
 
-.${DOWNLOAD_CLASS}
+.${clss.DOWNLOAD_CLASS}
 {
   text-decoration: none;
 }
 
-.${ROOT_CLASS} s
+.${clss.ROOT_CLASS} s
 {
   display: block;
   text-decoration: none;
 }
 
-.${ROOT_CLASS} ul
+.${clss.ROOT_CLASS} ul
 {
   margin: 0px;
   padding: 0px;
   list-style-type: none;
 }
 
-.${ROOT_CLASS} > div
+.${clss.ROOT_CLASS} > div
 {
   display: flex;
   align-items: center;
   width: inherit;
   height: 100%;
-  color: var(--uic-pagpnl-ctype-col);
+  color: ${vars.ctypeCol.asVar()};
 }
 
-.${ROOT_CLASS} > span
+.${clss.ROOT_CLASS} > span
 {
   display: flex;
   flex-direction: row-reverse;
@@ -166,7 +168,7 @@ ${DARKMODE_SELECTOR_VALUE}
   width: inherit;
 }
 
-.${CODETYPE_CLASS}
+.${clss.CODETYPE_CLASS}
 {
   height: 100%;
   min-width: 55px;
@@ -175,62 +177,62 @@ ${DARKMODE_SELECTOR_VALUE}
   box-sizing: border-box;
 }
 
-.${CODETYPE_CLASS} *
+.${clss.CODETYPE_CLASS} *
 {
   box-sizing: border-box;
 }
 
-.${PERENTMENU_CLASS}:empty + s,
-.${CODETYPE_CLASS} .${MENULIST_CLASS},
-.${CODETYPE_CLASS}:has(.${MENULIST_CLASS}:empty),
-.${CODETYPE_CLASS}:has(.${MENULIST_CLASS}:empty) + s,
-.${ROOT_CLASS} > div > s:has(+ .${PSNTLIST_CLASS}:empty)
+.${clss.PERENTMENU_CLASS}:empty + s,
+.${clss.CODETYPE_CLASS} .${clss.MENULIST_CLASS},
+.${clss.CODETYPE_CLASS}:has(.${clss.MENULIST_CLASS}:empty),
+.${clss.CODETYPE_CLASS}:has(.${clss.MENULIST_CLASS}:empty) + s,
+.${clss.ROOT_CLASS} > div > s:has(+ .${clss.PSNTLIST_CLASS}:empty)
 {
   display: none;
 }
 
-.${CODETYPE_CLASS}:has(.${MENUSTYLE2_CLASS}) .${MENUARROW_CLASS},
-.${CODETYPE_CLASS}:has(.${MENUSTYLE3_CLASS}) .${MENUARROW_CLASS},
-.${CODETYPE_CLASS}:has(.${MENULIST_CLASS}) .${MENUARROW_CLASS}::before,
-.${CODETYPE_CLASS}:has(ul.${MENUSTYLE4_CLASS}:empty)
+.${clss.CODETYPE_CLASS}:has(.${clss.MENUSTYLE2_CLASS}) .${clss.MENUARROW_CLASS},
+.${clss.CODETYPE_CLASS}:has(.${clss.MENUSTYLE3_CLASS}) .${clss.MENUARROW_CLASS},
+.${clss.CODETYPE_CLASS}:has(.${clss.MENULIST_CLASS}) .${clss.MENUARROW_CLASS}::before,
+.${clss.CODETYPE_CLASS}:has(ul.${clss.MENUSTYLE4_CLASS}:empty)
 {
   display: block;
 }
 
-.${CODETYPE_CLASS}:has(.${MENUSTYLE2_CLASS}) > div,
-.${CODETYPE_CLASS}:has(.${MENUSTYLE3_CLASS}) > div
+.${clss.CODETYPE_CLASS}:has(.${clss.MENUSTYLE2_CLASS}) > div,
+.${clss.CODETYPE_CLASS}:has(.${clss.MENUSTYLE3_CLASS}) > div
 {
   border-bottom-right-radius: 2px;
   border-top-right-radius: 2px;
 }
 
-.${MENUARROW_CLASS}
+.${clss.MENUARROW_CLASS}
 {
   display: none;
   width: 20px;
   height: 100%;
 }
 
-.${CODETYPE_CLASS}:has(.${MENUSTYLE4_CLASS}:empty) > div > div
+.${clss.CODETYPE_CLASS}:has(.${clss.MENUSTYLE4_CLASS}:empty) > div > div
 {
   width: auto;
   min-width: 40px;
   padding: 0 5px;
 }
 
-.${CODETYPE_CLASS}:has(.${MENUSTYLE2_CLASS}) > div > div,
-.${CODETYPE_CLASS}:has(.${MENUSTYLE3_CLASS}) > div > div
+.${clss.CODETYPE_CLASS}:has(.${clss.MENUSTYLE2_CLASS}) > div > div,
+.${clss.CODETYPE_CLASS}:has(.${clss.MENUSTYLE3_CLASS}) > div > div
 {
   padding-left: 15px;
 }
 
-.${CODETYPE_CLASS}:has(.${MENUSTYLE2_CLASS}),
-.${CODETYPE_CLASS}:has(.${MENUSTYLE3_CLASS})
+.${clss.CODETYPE_CLASS}:has(.${clss.MENUSTYLE2_CLASS}),
+.${clss.CODETYPE_CLASS}:has(.${clss.MENUSTYLE3_CLASS})
 {
   position: relative;
 }
 
-.${MENUARROW_CLASS}::before
+.${clss.MENUARROW_CLASS}::before
 {
   content: ' ';
   position: relative;
@@ -240,16 +242,16 @@ ${DARKMODE_SELECTOR_VALUE}
   display: none;
   width: 5px;
   height: 5px;
-  border-left: 1px solid var(--uic-pagpnl-ctype-col);
-  border-bottom: 1px solid var(--uic-pagpnl-ctype-col);
+  border-left: 1px solid ${vars.ctypeCol.asVar()};
+  border-bottom: 1px solid ${vars.ctypeCol.asVar()};
 }
 
-.${CTSHOW_CLASS} .${MENUARROW_CLASS}::before
+.${clss.CTSHOW_CLASS} .${clss.MENUARROW_CLASS}::before
 {
   transform: rotate(134deg);
 }
 
-.${CODETYPE_CLASS} > div
+.${clss.CODETYPE_CLASS} > div
 {
   display: flex;
   align-items: center;
@@ -257,13 +259,13 @@ ${DARKMODE_SELECTOR_VALUE}
   height: inherit;
 }
 
-.${ROOT_CLASS} > div > s
+.${clss.ROOT_CLASS} > div > s
 {
-  border-left: 1px solid var(--uic-pagpnl-bor-col);
+  border-left: 1px solid ${vars.borCol.asVar()};
   height: 50%;
 }
 
-.${CODETYPE_CLASS} > div > div
+.${clss.CODETYPE_CLASS} > div > div
 {
   display: flex;
   align-items: center;
@@ -273,7 +275,7 @@ ${DARKMODE_SELECTOR_VALUE}
   padding-left: 5px;
 }
 
-.${CTSHOW_CLASS} > span
+.${clss.CTSHOW_CLASS} > span
 {
   display: flex;
   flex-direction: column;
@@ -282,89 +284,89 @@ ${DARKMODE_SELECTOR_VALUE}
   height: 0px;
 }
 
-.${CTSHOW_CLASS} .${MENUSTYLE1_CLASS}
+.${clss.CTSHOW_CLASS} .${clss.MENUSTYLE1_CLASS}
 {
   display: block;
   width: 180px;
 }
 
-.${CTSHOW_CLASS} .${MENUSTYLE1_CLASS} > li
+.${clss.CTSHOW_CLASS} .${clss.MENUSTYLE1_CLASS} > li
 {
   padding: 5px;
 }
 
-.${CTSHOW_CLASS} .${MENUSTYLE1_CLASS} > li > span
+.${clss.CTSHOW_CLASS} .${clss.MENUSTYLE1_CLASS} > li > span
 {
   padding: 5px 10px;
 }
 
-.${CTSHOW_CLASS} .${MENUSTYLE2_CLASS}
+.${clss.CTSHOW_CLASS} .${clss.MENUSTYLE2_CLASS}
 {
   display: block;
   width: auto;
 }
 
-.${CTSHOW_CLASS} .${MENUSTYLE3_CLASS}
+.${clss.CTSHOW_CLASS} .${clss.MENUSTYLE3_CLASS}
 {
   display: grid;
   grid-template-columns: 60px 60px;
   width: auto;
 }
 
-.${CTSHOW_CLASS} .${MENUSTYLE2_CLASS} > li,
-.${CTSHOW_CLASS} .${MENUSTYLE3_CLASS} > li
+.${clss.CTSHOW_CLASS} .${clss.MENUSTYLE2_CLASS} > li,
+.${clss.CTSHOW_CLASS} .${clss.MENUSTYLE3_CLASS} > li
 {
   padding: 5px 5px 0 5px;
 }
 
-.${CTSHOW_CLASS} .${MENUSTYLE2_CLASS} > li > span,
-.${CTSHOW_CLASS} .${MENUSTYLE3_CLASS} > li > span
+.${clss.CTSHOW_CLASS} .${clss.MENUSTYLE2_CLASS} > li > span,
+.${clss.CTSHOW_CLASS} .${clss.MENUSTYLE3_CLASS} > li > span
 {
   padding: 5px 0px 5px 8px;
 }
 
-.${CTSHOW_CLASS} .${MENUSTYLE2_CLASS} > li > span,
-.${CTSHOW_CLASS} .${MENUSTYLE3_CLASS} > li > span
+.${clss.CTSHOW_CLASS} .${clss.MENUSTYLE2_CLASS} > li > span,
+.${clss.CTSHOW_CLASS} .${clss.MENUSTYLE3_CLASS} > li > span
 {
   width: 50px;
   font-size: 12px;
 }
 
-.${MENUSTYLE3_CLASS} > li:nth-child(2n)
+.${clss.MENUSTYLE3_CLASS} > li:nth-child(2n)
 {
-  border-left: 1px solid var(--uic-pagpnl-mstyle23-bor);
+  border-left: 1px solid ${MSTYLE23_BOR};
 }
 
-.${MENUSTYLE2_CLASS} > li > span,
-.${MENUSTYLE3_CLASS} > li > span
+.${clss.MENUSTYLE2_CLASS} > li > span,
+.${clss.MENUSTYLE3_CLASS} > li > span
 {
-  border-bottom: 1px solid var(--uic-pagpnl-mstyle23-bor);
+  border-bottom: 1px solid ${MSTYLE23_BOR};
 }
 
-.${MENUSTYLE2_CLASS} > li:nth-last-child(1) > span,
-.${MENUSTYLE3_CLASS} > li:nth-last-child(1) > span,
-.${MENUSTYLE3_CLASS} > li:nth-last-child(2) > span
+.${clss.MENUSTYLE2_CLASS} > li:nth-last-child(1) > span,
+.${clss.MENUSTYLE3_CLASS} > li:nth-last-child(1) > span,
+.${clss.MENUSTYLE3_CLASS} > li:nth-last-child(2) > span
 {
   border-bottom: none;
 }
 
-.${CTSHOW_CLASS} .${MENULIST_CLASS}
+.${clss.CTSHOW_CLASS} .${clss.MENULIST_CLASS}
 {
   padding: 5px 0px;
   border-end-end-radius: 3px;
   border-end-start-radius: 3px;
-  background-color: var(--uic-pagpnl-col);
+  background-color: ${vars.col.asVar()};
   box-shadow: inset 2px 4px 4px -5px ${CTSHOWBS_VAR};
   z-index: 1;
 }
 
-.${CTSHOW_CLASS} .${MENULIST_CLASS} > li
+.${clss.CTSHOW_CLASS} .${clss.MENULIST_CLASS} > li
 {
   width: initial;
   white-space: nowrap;
 }
 
-.${CTSHOW_CLASS} .${MENULIST_CLASS} > li > span
+.${clss.CTSHOW_CLASS} .${clss.MENULIST_CLASS} > li > span
 {
   display: block;
   height: inherit;
@@ -372,18 +374,18 @@ ${DARKMODE_SELECTOR_VALUE}
   overflow: hidden;
 }
 
-.${CTSHOW_CLASS} > div,
-.${CODETYPE_CLASS} > div:hover,
-.${CTSHOW_CLASS} .${MENUSTYLE1_CLASS} > li:hover > span,
-.${MENUSTYLE2_CLASS} > li:hover,
-.${MENUSTYLE3_CLASS} > li:hover,
-.${PSNTLIST_CLASS} > div:hover
+.${clss.CTSHOW_CLASS} > div,
+.${clss.CODETYPE_CLASS} > div:hover,
+.${clss.CTSHOW_CLASS} .${clss.MENUSTYLE1_CLASS} > li:hover > span,
+.${clss.MENUSTYLE2_CLASS} > li:hover,
+.${clss.MENUSTYLE3_CLASS} > li:hover,
+.${clss.PSNTLIST_CLASS} > div:hover
 {
-  background-color: var(--uic-pagpnl-hov);
+  background-color: ${vars.hov.asVar()};
   transition: background-color 0.250s;
 }
 
-.${PROPERTIES_CLASS}
+.${clss.PROPERTIES_CLASS}
 {
   width: 35px;
   height: 100%;
@@ -394,7 +396,7 @@ ${DARKMODE_SELECTOR_VALUE}
   flex-shrink: 0;
 }
 
-.${DOWNLOAD_CLASS}
+.${clss.DOWNLOAD_CLASS}
 {
   display: block;
   width: 35px;
@@ -403,18 +405,18 @@ ${DARKMODE_SELECTOR_VALUE}
   background-position: center;
   background-size: 23px;
   background-image: ${DOWNLOAD_IMG};
-  background-color: var(--uic-pagpnl-col);
+  background-color: ${vars.col.asVar()};
   flex-shrink: 0;
 }
 
-.${PROPERTIES_CLASS}:hover,
-.${DOWNLOAD_CLASS}:hover
+.${clss.PROPERTIES_CLASS}:hover,
+.${clss.DOWNLOAD_CLASS}:hover
 {
-  background-color: var(--uic-pagpnl-hov);
-  border-color: var(--uic-pagpnl-col);
+  background-color: ${vars.hov.asVar()};
+  border-color: ${vars.col.asVar()};
 }
 
-.${PSNTLIST_CLASS}
+.${clss.PSNTLIST_CLASS}
 {
   display: flex;
   align-items: center;
@@ -422,7 +424,7 @@ ${DARKMODE_SELECTOR_VALUE}
   margin-left: 3px;
 }
 
-.${PSNTLIST_CLASS} > div
+.${clss.PSNTLIST_CLASS} > div
 {
   display: flex;
   align-items: center;
@@ -431,7 +433,7 @@ ${DARKMODE_SELECTOR_VALUE}
   flex-shrink: 0;
 }
 
-.${PSNTLIST_CLASS} > div > span
+.${clss.PSNTLIST_CLASS} > div > span
 {
   position: relative;
   display: flex;
@@ -445,12 +447,12 @@ ${DARKMODE_SELECTOR_VALUE}
   flex-shrink: 0;
 }
 
-.${PSNTLIST_CLASS} > .${PSNTACTV_CLASS} > span
+.${clss.PSNTLIST_CLASS} > .${clss.PSNTACTV_CLASS} > span
 {
-  color: var(--uic-pagpnl-plist-act);
+  color: ${vars.plistAct.asVar()};
 }
 
-.${PSNTLIST_CLASS} > div > span::after
+.${clss.PSNTLIST_CLASS} > div > span::after
 {
   content: " ";
   position: absolute;
@@ -464,14 +466,14 @@ ${DARKMODE_SELECTOR_VALUE}
   transition-delay: 0.1s;
 }
 
-.${PSNTLIST_CLASS} > div:hover > span::after
+.${clss.PSNTLIST_CLASS} > div:hover > span::after
 {
   width: 15px;
-  border-bottom: 2px solid var(--uic-pagpnl-plist-hov);
+  border-bottom: 2px solid ${vars.plistHov.asVar()};
 }
 
-.${PSNTLIST_CLASS} > .${PSNTACTV_CLASS}:hover > span::after,
-.${PSNTLIST_CLASS} > .${PSNTACTV_CLASS} > span::after
+.${clss.PSNTLIST_CLASS} > .${clss.PSNTACTV_CLASS}:hover > span::after,
+.${clss.PSNTLIST_CLASS} > .${clss.PSNTACTV_CLASS} > span::after
 {
   width: 35px;
   border-bottom: 2px solid ${PLIST_SEL_VAR};
@@ -482,34 +484,34 @@ ${DARKMODE_SELECTOR_VALUE}
 
 @media (device-width < ${COMMON_MOBILE_DEVICE_WIDTH})
 {
-  .${ROOT_CLASS}
+  .${clss.ROOT_CLASS}
   {
     align-items: center;
     height: 50px;
     font-size: 28px;
   }
 
-  .${CODETYPE_CLASS}
+  .${clss.CODETYPE_CLASS}
   {
     margin-right: 15px;
   }
 
-  .${PSNTLIST_CLASS}
+  .${clss.PSNTLIST_CLASS}
   {
     margin-left: 15px;
   }
 
-  .${PSNTLIST_CLASS} > div
+  .${clss.PSNTLIST_CLASS} > div
   {
     margin: 0px 10px;
   }
 
-  .${CODETYPE_CLASS} > div > div
+  .${clss.CODETYPE_CLASS} > div > div
   {
     width: 80px;
   }
 
-  .${CTSHOW_CLASS} > span > ul
+  .${clss.CTSHOW_CLASS} > span > ul
   {
     width: 360px;
     padding: 10px 0px;
@@ -517,25 +519,30 @@ ${DARKMODE_SELECTOR_VALUE}
     border-end-start-radius: 5px;
   }
 
-  .${CTSHOW_CLASS} .${MENULIST_CLASS} > li
+  .${clss.CTSHOW_CLASS} .${clss.MENULIST_CLASS} > li
   {
     padding: 10px;
   }
 
-  .${CTSHOW_CLASS} .${MENULIST_CLASS} > li > span
+  .${clss.CTSHOW_CLASS} .${clss.MENULIST_CLASS} > li > span
   {
     padding: 10px 10px;
   }
 
-  .${PSNTLIST_CLASS} > div > span
+  .${clss.PSNTLIST_CLASS} > div > span
   {
     width: 75px;
   }
 
-  .${DOWNLOAD_CLASS}
+  .${clss.DOWNLOAD_CLASS}
   {
     width: 50px;
     background-size: 40px;
   }
 }
-`;
+`);
+
+export function buildComponent()
+{
+  return mk.buildComponent();
+}
