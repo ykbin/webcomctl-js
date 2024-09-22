@@ -13,7 +13,7 @@ const vars = mk.newCSSVariableMap({
 });
 
 mk.newHTML('ROOT_HTML', `
-<div class="${clss.ROOT_CLASS}">20.10.1979</div>
+<div class="${clss.ROOT_CLASS}"><span>20.10.1979</span></div>
 `);
 
 mk.newCSS('CSS', `
@@ -35,12 +35,15 @@ ${DARKMODE_SELECTOR_VALUE}
   font-size: 14px;
   font-weight: 600;
   text-align: center;
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  text-decoration-color: ${vars.col.asVar()};
   color: ${vars.col.asVar()};
   font-family: cursive;
   box-sizing: border-box;
+}
+
+.${clss.ROOT_CLASS}
+{
+  width: inherit;
+  height: 1px;
 }
 `);
 
