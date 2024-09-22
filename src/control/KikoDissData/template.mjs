@@ -13,7 +13,7 @@ const vars = mk.newCSSVariableMap({
 });
 
 mk.newHTML('ROOT_HTML', `
-<div class="${clss.ROOT_CLASS}"><span>20.10.1979</span></div>
+<div class="${clss.ROOT_CLASS}"><span>20.10.1979</span><div></div></div>
 `);
 
 mk.newCSS('CSS', `
