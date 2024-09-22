@@ -120,8 +120,7 @@ ${DARKMODE_SELECTOR_VALUE}
 .${clss.DESCRIPTION_FORMAT_CLASS} > span
 {
   display: block;
-  padding: 0px 5px;
-  margin-bottom: 5px;
+  padding: 5px;
   line-height: 1.7;
 }
 
