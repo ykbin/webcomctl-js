@@ -13,7 +13,10 @@ const vars = mk.newCSSVariableMap({
 });
 
 mk.newHTML('ROOT_HTML', `
-<div class="${clss.ROOT_CLASS}"><span>20.10.1979</span><div></div></div>
+<div class="${clss.ROOT_CLASS}">
+  <span>20.10.1979</span>
+  <div><div></div></div>
+</div>
 `);
 
 mk.newCSS('CSS', `
@@ -30,7 +33,8 @@ ${DARKMODE_SELECTOR_VALUE}
 .${clss.ROOT_CLASS}
 {
   width: inherit;
-  margin: 10px 0;
+  max-width: 1000px;
+  margin: 10px 10px;
   padding: 3px 0;
   font-size: 14px;
   font-weight: 600;
@@ -42,8 +46,22 @@ ${DARKMODE_SELECTOR_VALUE}
 
 .${clss.ROOT_CLASS} > div
 {
+  display: flex;
+  align-items: center;
+  width: inherit;
+  height: 2px;
+  padding: 0 1px;
+  margin: 2px 5% 0 5%;
+  border-radius: 2px;
+  box-shadow: inset 1px 0px 2px 0px #000000;
+}
+
+.${clss.ROOT_CLASS} > div > div
+{
   width: inherit;
   height: 1px;
+  background-color: #cfcfcf;
+}
 }
 `);
 
