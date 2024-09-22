@@ -79,6 +79,7 @@ ${DARKMODE_SELECTOR_VALUE}
   align-items: flex-end;
 }
 
+.${LIST_CLASS}:empty,
 .${DOWN_CLASS} .${LIST_CLASS}
 {
   display: none;

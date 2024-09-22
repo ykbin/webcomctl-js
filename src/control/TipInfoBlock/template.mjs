@@ -122,7 +122,7 @@ ${DARKMODE_SELECTOR_VALUE}
   justify-content: flex-end;
   width: 100%;
   height: 25px;
-  padding-top: 5px;
+  padding-top: 10px;
   flex-shrink: 0;
 }
 
