@@ -385,7 +385,6 @@ ${DARKMODE_SELECTOR_VALUE}
 
 .${PROPERTIES_CLASS}
 {
-  display: none;
   width: 35px;
   height: 100%;
   background-repeat: no-repeat;
