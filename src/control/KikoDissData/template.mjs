@@ -52,7 +52,6 @@ ${DARKMODE_SELECTOR_VALUE}
   height: 2px;
   padding: 0 1px;
   margin: 2px 5% 0 5%;
-  border-radius: 2px;
   background: linear-gradient(#e6e4e4 10%, #ffffff);
 }
 
