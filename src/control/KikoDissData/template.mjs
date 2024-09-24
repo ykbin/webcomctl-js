@@ -53,15 +53,9 @@ ${DARKMODE_SELECTOR_VALUE}
   padding: 0 1px;
   margin: 2px 5% 0 5%;
   border-radius: 2px;
-  box-shadow: inset 1px 0px 2px 0px #000000;
+  background: linear-gradient(#e6e4e4 10%, #ffffff);
 }
 
-.${clss.ROOT_CLASS} > div > div
-{
-  width: inherit;
-  height: 1px;
-  background-color: #cfcfcf;
-}
 `);
 
 export function buildComponent()
