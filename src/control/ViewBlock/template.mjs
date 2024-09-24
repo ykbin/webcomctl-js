@@ -1,45 +1,46 @@
 import ControlMaker from '../../lib/ControlMaker.mjs';
 
-import { DARKMODE_SELECTOR_VALUE } from '../../lib/DarkMode.mjs';
-import { UIC_START_BACKGROUND_COLOR } from '../../lib/WickedTheme.mjs';
-import { UIC_START_BACKGROUND_COLOR_DARK } from '../../lib/WickedTheme.mjs';
-
 const mk = new ControlMaker('ViewBlock', import.meta.url);
 
-export const ROOT_CLASS = mk.newClassName("Root");
-export const PORT_CLASS = mk.newClassName("Port");
+const clss = mk.newClassNameMap([
+  "ROOT_CLASS",
+  "PORT_CLASS",
+]);
 
-export const ROOT_HTML = `
-<div class="${ROOT_CLASS} ${PORT_CLASS}"></div>
-`;
+mk.newHTML('ROOT_HTML', `
+<div class="${clss.ROOT_CLASS} ${clss.PORT_CLASS}"></div>
+`);
 
-export const CSS = `
-
-.${ROOT_CLASS}
+mk.newCSS('CSS', `
+.${clss.ROOT_CLASS}
 {
   display: flex;
   height: 100%;
-  background-color: var(--uic-viewblk-rootbg);
   overflow: hidden;
   box-sizing: border-box;
 }
 
-.${ROOT_CLASS} > div 
+.${clss.ROOT_CLASS} > div 
 {
   min-width: 285px;
   flex-shrink: 0;
   overflow: hidden;
 }
 
-.${ROOT_CLASS} > div:last-child
+.${clss.ROOT_CLASS} > div:last-child
 {
   flex-grow: 1;
   flex-shrink: initial;
 }
 
-.${ROOT_CLASS} > div:last-child > div
+.${clss.ROOT_CLASS} > div:last-child > div
 {
   border: none;
   border-right: none;
 }
-`;
+`);
+
+export function buildComponent()
+{
+  return mk.buildComponent();
+}
