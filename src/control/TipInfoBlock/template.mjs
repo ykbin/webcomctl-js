@@ -145,6 +145,7 @@ ${DARKMODE_SELECTOR_VALUE}
   background-size: 75%;
   background-position: center;
   background-repeat: no-repeat;
+  flex-shrink: 0;
 }
 
 .${CLOSE_CLASS}:hover > div
