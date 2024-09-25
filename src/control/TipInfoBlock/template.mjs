@@ -118,11 +118,9 @@ ${DARKMODE_SELECTOR_VALUE}
 .${ROOT_CLASS} > div > span
 {
   display: flex;
-  align-items: center;
   justify-content: flex-end;
   width: 100%;
-  height: 25px;
-  padding-top: 10px;
+  padding-top: 13px;
   flex-shrink: 0;
 }
 
@@ -145,6 +143,7 @@ ${DARKMODE_SELECTOR_VALUE}
   background-size: 75%;
   background-position: center;
   background-repeat: no-repeat;
+  flex-shrink: 0;
 }
 
 .${CLOSE_CLASS}:hover > div

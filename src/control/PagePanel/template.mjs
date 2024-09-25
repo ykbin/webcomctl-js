@@ -182,6 +182,7 @@ ${DARKMODE_SELECTOR_VALUE}
   box-sizing: border-box;
 }
 
+.${clss.ROOT_CLASS} > span > div,
 .${clss.PERENTMENU_CLASS}:empty + s,
 .${clss.CODETYPE_CLASS} .${clss.MENULIST_CLASS},
 .${clss.CODETYPE_CLASS}:has(.${clss.MENULIST_CLASS}:empty),
@@ -191,6 +192,7 @@ ${DARKMODE_SELECTOR_VALUE}
   display: none;
 }
 
+.${clss.ROOT_CLASS} > span > div.${clss.PROPERTIES_CLASS},
 .${clss.CODETYPE_CLASS}:has(.${clss.MENUSTYLE2_CLASS}) .${clss.MENUARROW_CLASS},
 .${clss.CODETYPE_CLASS}:has(.${clss.MENUSTYLE3_CLASS}) .${clss.MENUARROW_CLASS},
 .${clss.CODETYPE_CLASS}:has(.${clss.MENULIST_CLASS}) .${clss.MENUARROW_CLASS}::before,
