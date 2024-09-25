@@ -38,7 +38,6 @@ ${DARKMODE_SELECTOR_VALUE}
   padding: 2px 5% 0 5%;
   font-size: 14px;
   font-weight: 600;
-  text-align: center;
   color: ${vars.col.asVar()};
   font-family: cursive;
   box-sizing: border-box;
