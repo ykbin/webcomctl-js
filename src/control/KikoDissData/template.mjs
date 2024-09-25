@@ -34,9 +34,8 @@ ${DARKMODE_SELECTOR_VALUE}
 .${clss.ROOT_CLASS}
 {
   width: inherit;
-  max-width: 1000px;
   margin: 10px 10px;
-  padding: 3px 0;
+  margin: 2px 5% 0 5%;
   font-size: 14px;
   font-weight: 600;
   text-align: center;
@@ -52,7 +51,6 @@ ${DARKMODE_SELECTOR_VALUE}
   width: inherit;
   height: 2px;
   padding: 0 1px;
-  margin: 2px 5% 0 5%;
   background: ${vars.bagcol.asVar()};
 }
 
