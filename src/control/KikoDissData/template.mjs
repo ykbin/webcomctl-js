@@ -35,7 +35,7 @@ ${DARKMODE_SELECTOR_VALUE}
 {
   width: inherit;
   margin: 10px 10px;
-  margin: 2px 5% 0 5%;
+  padding: 2px 5% 0 5%;
   font-size: 14px;
   font-weight: 600;
   text-align: center;
@@ -52,6 +52,12 @@ ${DARKMODE_SELECTOR_VALUE}
   height: 2px;
   padding: 0 1px;
   background: ${vars.bagcol.asVar()};
+}
+
+.${clss.ROOT_CLASS} > div
+{
+  display: block;
+  margin-bottom: 5px;
 }
 
 `);
