@@ -180,9 +180,14 @@ ${DARKMODE_SELECTOR_VALUE}
   transform: rotate(0deg);
 }
 
+.${CONTROL_CLASS} > s > div
+{
+  transform: rotate(90deg);
+}
+
 .${TOP_CLASS} .${CONTROL_CLASS} > s > div
 {
-  transform: rotate(0deg);
+  transform: rotate(270deg);
 }
 
 .${LIST_CLASS}
