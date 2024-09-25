@@ -175,10 +175,21 @@ ${DARKMODE_SELECTOR_VALUE}
   background-size: 85%;
 }
 
+.${TOP_CLASS}  .${CONTROL_CLASS} > span > div
+{
+  transform: rotate(0deg);
+}
+
 .${DOWN_CLASS} .${CONTROL_CLASS} > span > div
 {
   transform: rotate(0deg);
 }
+
+.${TOP_CLASS}.${DOWN_CLASS}  .${CONTROL_CLASS} > span > div
+{
+  transform: rotate(180deg);
+}
+
 
 .${CONTROL_CLASS} > s > div
 {
