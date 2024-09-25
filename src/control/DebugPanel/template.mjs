@@ -155,12 +155,12 @@ ${DARKMODE_SELECTOR_VALUE}
 .${CONTROL_CLASS} > s > div
 {
   background-image: ${ARROW_IMG};
+  background-size: 85%;
 }
 
 .${CONTROL_CLASS} > div > div
 {
   transform: scaleX(-1);
-  background-size: 85%;
 }
 
 .${RIGHT_CLASS} .${CONTROL_CLASS} > div > div
@@ -184,7 +184,6 @@ ${DARKMODE_SELECTOR_VALUE}
 {
   transform: rotate(0deg);
 }
-
 
 .${LIST_CLASS}
 {
