@@ -10,13 +10,13 @@ const clss = mk.newClassNameMap([
 
 const vars = mk.newCSSVariableMap({
   col: [ '#656565', '#4d4d4d' ],
-  bagcol: [ 'linear-gradient(#e6e4e4 10%, #ffffff)', 'linear-gradient(#e6e4e4 10%, #ffffff)' ],
+  bagcol: [ 'linear-gradient(#e6e4e4 10%, #ffffff)', 'linear-gradient(#3d3d3d 10%, rgb(23, 23, 26))' ],
 });
 
 mk.newHTML('ROOT_HTML', `
 <div class="${clss.ROOT_CLASS}">
   <span>20.10.1979</span>
-  <div><div></div></div>
+  <div></div>
 </div>
 `);
 
