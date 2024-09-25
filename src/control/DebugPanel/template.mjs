@@ -31,6 +31,7 @@ mk.newHTML('ROOT_HTML', `
     <div class="${CONTROL_CLASS}">
       <span><div class="${hideClick}"></div></span>
       <div><div class="${sideClick}"></div></div>
+      <s><div></div></s>
     </div>
     <div class="${LIST_CLASS}"></div>
   </div>
@@ -150,10 +151,15 @@ ${DARKMODE_SELECTOR_VALUE}
   background-color: ${vars.hovBut.asVar()};
 }
 
+.${CONTROL_CLASS} > div > div,
+.${CONTROL_CLASS} > s > div
+{
+  background-image: ${ARROW_IMG};
+}
+
 .${CONTROL_CLASS} > div > div
 {
   transform: scaleX(-1);
-  background-image: ${ARROW_IMG};
   background-size: 85%;
 }
 
@@ -173,6 +179,12 @@ ${DARKMODE_SELECTOR_VALUE}
 {
   transform: rotate(0deg);
 }
+
+.${TOP_CLASS} .${CONTROL_CLASS} > s > div
+{
+  transform: rotate(0deg);
+}
+
 
 .${LIST_CLASS}
 {
