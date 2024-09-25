@@ -53,7 +53,7 @@ ${DARKMODE_SELECTOR_VALUE}
   height: 2px;
   padding: 0 1px;
   margin: 2px 5% 0 5%;
-  background: ${vars.bagcol.asVar()};;
+  background: ${vars.bagcol.asVar()};
 }
 
 `);
