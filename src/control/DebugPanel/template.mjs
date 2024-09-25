@@ -12,6 +12,7 @@ const LIST_CLASS = mk.newClassName("LIST_CLASS");
 const TEXT_CLASS = mk.newClassName("TEXT_CLASS");
 const CONTROL_CLASS = mk.newClassName("CONTROL_CLASS");
 
+const TOP_CLASS = mk.newClassName("TOP_CLASS");
 const RIGHT_CLASS = mk.newClassName("RIGHT_CLASS");
 const DOWN_CLASS = mk.newClassName("DOWN_CLASS");
 const hideClick = mk.newClassName("hideClick");
@@ -59,7 +60,7 @@ ${DARKMODE_SELECTOR_VALUE}
   align-items: flex-start;
   bottom: 2px;
   width: auto;
-  height: auto;
+  height: max-content;
   padding: 0px 5px 0px 5px;
   font-family: ${TOOLBAR_FONT_SANS};
   user-select: none;
@@ -79,6 +80,11 @@ ${DARKMODE_SELECTOR_VALUE}
   align-items: flex-end;
 }
 
+.${TOP_CLASS}
+{
+  top: 0px;
+}
+
 .${LIST_CLASS}:empty,
 .${DOWN_CLASS} .${LIST_CLASS}
 {
@@ -96,6 +102,12 @@ ${DARKMODE_SELECTOR_VALUE}
   border-top-right-radius: 2px;
   border-top-left-radius: 2px;
   background-color: ${vars.control.asVar()};
+}
+
+.${TOP_CLASS}
+{
+  flex-direction: column-reverse;
+  justify-content: flex-end;
 }
 
 .${RIGHT_CLASS} .${CONTROL_CLASS}
