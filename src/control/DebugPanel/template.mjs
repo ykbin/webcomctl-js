@@ -177,7 +177,7 @@ ${DARKMODE_SELECTOR_VALUE}
   width: 100%;
   height: 25px;
   min-width: 90px;
-  max-width: 150px;
+  max-width: 200px;
   padding: 0 5px;
   margin-bottom: 5px;
   border-radius: 2px;
