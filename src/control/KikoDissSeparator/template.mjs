@@ -34,15 +34,19 @@ ${DARKMODE_SELECTOR_VALUE}
 .${clss.ROOT_CLASS}
 {
   width: inherit;
-  max-width: 1000px;
   margin: 10px 10px;
-  padding: 3px 0;
+  padding: 3px 5% 0 5%;
   font-size: 14px;
   font-weight: 600;
-  text-align: center;
   color: ${vars.col.asVar()};
   font-family: cursive;
   box-sizing: border-box;
+}
+
+.${clss.ROOT_CLASS} > div
+{
+  display: block;
+  margin: 0 0 3px 3px;
 }
 
 .${clss.ROOT_CLASS} > div
