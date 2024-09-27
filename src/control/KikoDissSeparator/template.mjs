@@ -2,7 +2,7 @@ import ControlMaker from '../../lib/ControlMaker.mjs';
 
 import { DARKMODE_SELECTOR_VALUE } from '../../lib/DarkMode.mjs';
 
-const mk = new ControlMaker('KikoDiss', import.meta.url);
+const mk = new ControlMaker('KikoDissSeparator', import.meta.url);
 
 const clss = mk.newClassNameMap([
   "ROOT_CLASS",
@@ -10,7 +10,7 @@ const clss = mk.newClassNameMap([
 
 const vars = mk.newCSSVariableMap({
   col: [ '#656565', '#4d4d4d' ],
-  bagcol: [ 'linear-gradient(#e6e4e4 10%, #ffffff)', 'linear-gradient(#3d3d3d 10%, rgb(23, 23, 26))' ],
+  bagcol: [ 'linear-gradient(#c8c8c8 10%, #ffffff)', 'linear-gradient(#434343 10%, rgb(23, 23, 26))' ],
 });
 
 mk.newHTML('ROOT_HTML', `
@@ -35,12 +35,18 @@ ${DARKMODE_SELECTOR_VALUE}
 {
   width: inherit;
   margin: 10px 10px;
-  padding: 2px 5% 0 5%;
+  padding: 3px 5% 0 5%;
   font-size: 14px;
   font-weight: 600;
   color: ${vars.col.asVar()};
   font-family: cursive;
   box-sizing: border-box;
+}
+
+.${clss.ROOT_CLASS} > span
+{
+  display: block;
+  margin: 0 0 3px 3px;
 }
 
 .${clss.ROOT_CLASS} > div
@@ -49,14 +55,7 @@ ${DARKMODE_SELECTOR_VALUE}
   align-items: center;
   width: inherit;
   height: 2px;
-  padding: 0 1px;
   background: ${vars.bagcol.asVar()};
-}
-
-.${clss.ROOT_CLASS} > div
-{
-  display: block;
-  margin-bottom: 5px;
 }
 
 `);
