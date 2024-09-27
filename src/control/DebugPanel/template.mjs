@@ -12,6 +12,7 @@ const LIST_CLASS = mk.newClassName("LIST_CLASS");
 const TEXT_CLASS = mk.newClassName("TEXT_CLASS");
 const CONTROL_CLASS = mk.newClassName("CONTROL_CLASS");
 
+const TOP_CLASS = mk.newClassName("TOP_CLASS");
 const RIGHT_CLASS = mk.newClassName("RIGHT_CLASS");
 const DOWN_CLASS = mk.newClassName("DOWN_CLASS");
 const hideClick = mk.newClassName("hideClick");
@@ -30,6 +31,7 @@ mk.newHTML('ROOT_HTML', `
     <div class="${CONTROL_CLASS}">
       <span><div class="${hideClick}"></div></span>
       <div><div class="${sideClick}"></div></div>
+      <s><div></div></s>
     </div>
     <div class="${LIST_CLASS}"></div>
   </div>
@@ -59,7 +61,7 @@ ${DARKMODE_SELECTOR_VALUE}
   align-items: flex-start;
   bottom: 2px;
   width: auto;
-  height: auto;
+  height: max-content;
   padding: 0px 5px 0px 5px;
   font-family: ${TOOLBAR_FONT_SANS};
   user-select: none;
@@ -79,6 +81,11 @@ ${DARKMODE_SELECTOR_VALUE}
   align-items: flex-end;
 }
 
+.${TOP_CLASS}
+{
+  top: 0px;
+}
+
 .${LIST_CLASS}:empty,
 .${DOWN_CLASS} .${LIST_CLASS}
 {
@@ -96,6 +103,12 @@ ${DARKMODE_SELECTOR_VALUE}
   border-top-right-radius: 2px;
   border-top-left-radius: 2px;
   background-color: ${vars.control.asVar()};
+}
+
+.${TOP_CLASS}
+{
+  flex-direction: column-reverse;
+  justify-content: flex-end;
 }
 
 .${RIGHT_CLASS} .${CONTROL_CLASS}
@@ -138,11 +151,16 @@ ${DARKMODE_SELECTOR_VALUE}
   background-color: ${vars.hovBut.asVar()};
 }
 
+.${CONTROL_CLASS} > div > div,
+.${CONTROL_CLASS} > s > div
+{
+  background-image: ${ARROW_IMG};
+  background-size: 85%;
+}
+
 .${CONTROL_CLASS} > div > div
 {
   transform: scaleX(-1);
-  background-image: ${ARROW_IMG};
-  background-size: 85%;
 }
 
 .${RIGHT_CLASS} .${CONTROL_CLASS} > div > div
@@ -157,9 +175,30 @@ ${DARKMODE_SELECTOR_VALUE}
   background-size: 85%;
 }
 
+.${TOP_CLASS}  .${CONTROL_CLASS} > span > div
+{
+  transform: rotate(0deg);
+}
+
 .${DOWN_CLASS} .${CONTROL_CLASS} > span > div
 {
   transform: rotate(0deg);
+}
+
+.${TOP_CLASS}.${DOWN_CLASS}  .${CONTROL_CLASS} > span > div
+{
+  transform: rotate(180deg);
+}
+
+
+.${CONTROL_CLASS} > s > div
+{
+  transform: rotate(90deg);
+}
+
+.${TOP_CLASS} .${CONTROL_CLASS} > s > div
+{
+  transform: rotate(270deg);
 }
 
 .${LIST_CLASS}
@@ -177,7 +216,7 @@ ${DARKMODE_SELECTOR_VALUE}
   width: 100%;
   height: 25px;
   min-width: 90px;
-  max-width: 150px;
+  max-width: 200px;
   padding: 0 5px;
   margin-bottom: 5px;
   border-radius: 2px;
