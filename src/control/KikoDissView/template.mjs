@@ -6,6 +6,8 @@ const mk = new ControlMaker('KikoDissView', import.meta.url);
 
 const clss = mk.newClassNameMap([
   "ROOT_CLASS",
+  "IMAGE_CLASS",
+  "SHOW_CLASS",
 ]);
 
 const vars = mk.newCSSVariableMap({
@@ -14,11 +16,10 @@ const vars = mk.newCSSVariableMap({
 });
 
 mk.newHTML('ROOT_HTML', `
-
-<div id="img-viewer" class="${clss.ROOT_CLASS}" style="display: none">
+<div class="${clss.ROOT_CLASS}" draggable="false">
   <span>
     <div><div></div></div>
-    <img draggable="false" src="">
+    <img class="${clss.IMAGE_CLASS}" src="">
     <div><div></div></div>
   </span>
 </div>
