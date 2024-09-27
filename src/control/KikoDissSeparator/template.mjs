@@ -10,7 +10,7 @@ const clss = mk.newClassNameMap([
 
 const vars = mk.newCSSVariableMap({
   col: [ '#656565', '#4d4d4d' ],
-  bagcol: [ 'linear-gradient(#e6e4e4 10%, #ffffff)', 'linear-gradient(#434343 10%, rgb(23, 23, 26))' ],
+  bagcol: [ 'linear-gradient(#c8c8c8 10%, #ffffff)', 'linear-gradient(#434343 10%, rgb(23, 23, 26))' ],
 });
 
 mk.newHTML('ROOT_HTML', `
