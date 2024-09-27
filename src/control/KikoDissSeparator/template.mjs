@@ -2,7 +2,7 @@ import ControlMaker from '../../lib/ControlMaker.mjs';
 
 import { DARKMODE_SELECTOR_VALUE } from '../../lib/DarkMode.mjs';
 
-const mk = new ControlMaker('KikoDiss', import.meta.url);
+const mk = new ControlMaker('KikoDissSeparator', import.meta.url);
 
 const clss = mk.newClassNameMap([
   "ROOT_CLASS",
