@@ -43,7 +43,7 @@ ${DARKMODE_SELECTOR_VALUE}
   box-sizing: border-box;
 }
 
-.${clss.ROOT_CLASS} > div
+.${clss.ROOT_CLASS} > span
 {
   display: block;
   margin: 0 0 3px 3px;
@@ -55,8 +55,6 @@ ${DARKMODE_SELECTOR_VALUE}
   align-items: center;
   width: inherit;
   height: 2px;
-  padding: 0 1px;
-  margin: 2px 5% 0 5%;
   background: ${vars.bagcol.asVar()};
 }
 
