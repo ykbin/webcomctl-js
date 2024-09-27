@@ -1,4 +1,4 @@
-import { BaseControl } from 'webnetq-js';
+import { BaseControl, NQDOM } from 'webnetq-js';
 import { SHOW_CLASS, IMAGE_CLASS } from 'uictmplt-loader!./template.mjs';
 
 export default class UIKikoDissViewControl extends BaseControl {
