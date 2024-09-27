@@ -10,6 +10,7 @@ const clss = mk.newClassNameMap([
   "ROOT_CLASS",
   "DOWNLOAD_CLASS",
   "PROPERTIES_CLASS",
+  "PROPERTIES_SHOW_CLASS",
   "CODETYPE_CLASS",
   "CTSHOW_CLASS",
   "PERENTMENU_CLASS",
@@ -58,7 +59,7 @@ mk.newHTML('ROOT_HTML', `
   </div>
   <span>
     <a class="${clss.DOWNLOAD_CLASS}"></a>
-    <div class="${clss.PROPERTIES_CLASS}"></div>
+    <div class="${clss.PROPERTIES_CLASS} ${clss.PROPERTIES_SHOW_CLASS}"></div>
   </span>
 </span>
 `);
@@ -182,7 +183,7 @@ ${DARKMODE_SELECTOR_VALUE}
   box-sizing: border-box;
 }
 
-.${clss.ROOT_CLASS} > span > div,
+.${clss.PROPERTIES_CLASS},
 .${clss.PERENTMENU_CLASS}:empty + s,
 .${clss.CODETYPE_CLASS} .${clss.MENULIST_CLASS},
 .${clss.CODETYPE_CLASS}:has(.${clss.MENULIST_CLASS}:empty),
@@ -192,7 +193,7 @@ ${DARKMODE_SELECTOR_VALUE}
   display: none;
 }
 
-.${clss.ROOT_CLASS} > span > div.${clss.PROPERTIES_CLASS},
+.${clss.PROPERTIES_CLASS}.${clss.PROPERTIES_SHOW_CLASS},
 .${clss.CODETYPE_CLASS}:has(.${clss.MENUSTYLE2_CLASS}) .${clss.MENUARROW_CLASS},
 .${clss.CODETYPE_CLASS}:has(.${clss.MENUSTYLE3_CLASS}) .${clss.MENUARROW_CLASS},
 .${clss.CODETYPE_CLASS}:has(.${clss.MENULIST_CLASS}) .${clss.MENUARROW_CLASS}::before,
@@ -393,7 +394,7 @@ ${DARKMODE_SELECTOR_VALUE}
   height: 100%;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 20px;
+  background-size: 25px;
   background-image: ${PROPERTIES_IMG};
   flex-shrink: 0;
 }

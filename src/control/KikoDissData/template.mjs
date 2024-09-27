@@ -10,12 +10,13 @@ const clss = mk.newClassNameMap([
 
 const vars = mk.newCSSVariableMap({
   col: [ '#656565', '#4d4d4d' ],
+  bagcol: [ 'linear-gradient(#e6e4e4 10%, #ffffff)', 'linear-gradient(#3d3d3d 10%, rgb(23, 23, 26))' ],
 });
 
 mk.newHTML('ROOT_HTML', `
 <div class="${clss.ROOT_CLASS}">
   <span>20.10.1979</span>
-  <div><div></div></div>
+  <div></div>
 </div>
 `);
 
@@ -33,12 +34,10 @@ ${DARKMODE_SELECTOR_VALUE}
 .${clss.ROOT_CLASS}
 {
   width: inherit;
-  max-width: 1000px;
   margin: 10px 10px;
-  padding: 3px 0;
+  padding: 2px 5% 0 5%;
   font-size: 14px;
   font-weight: 600;
-  text-align: center;
   color: ${vars.col.asVar()};
   font-family: cursive;
   box-sizing: border-box;
@@ -51,8 +50,13 @@ ${DARKMODE_SELECTOR_VALUE}
   width: inherit;
   height: 2px;
   padding: 0 1px;
-  margin: 2px 5% 0 5%;
-  background: linear-gradient(#e6e4e4 10%, #ffffff);
+  background: ${vars.bagcol.asVar()};
+}
+
+.${clss.ROOT_CLASS} > div
+{
+  display: block;
+  margin-bottom: 5px;
 }
 
 `);
