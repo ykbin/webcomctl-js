@@ -100,14 +100,6 @@ ${DARKMODE_SELECTOR_VALUE}
   background-size: cover;
 }
 
-.${clss.ROOT_CLASS} > span > div + img + div > div
-{
-  border-top: 2px solid;
-  border-right: 2px solid;
-  border-bottom: none;
-  border-left: none;
-}
-
 .${clss.ROOT_CLASS} > span > img
 {
   height: auto;
