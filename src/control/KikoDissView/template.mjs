@@ -12,7 +12,7 @@ const clss = mk.newClassNameMap([
 const vars = mk.newCSSVariableMap({
   viewbg: [ 'rgb(172 172 172 / 80%)' ],
   imgbg: [ '#f3f3f3' ],
-  Kiko_arrow: [
+  arrow: [
     await mk.loadSvgAsCssUrl('./Kiko-arrow.svg'),
   ],
 });
@@ -94,7 +94,7 @@ ${DARKMODE_SELECTOR_VALUE}
   width: 70px;
   height: 70px;
   transform: rotate(45deg);
-  background-image: ${vars.Kiko_arrow.asVar()};
+  background-image: ${vars.arrow.asVar()};
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
