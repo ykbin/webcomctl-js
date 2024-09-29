@@ -3,6 +3,7 @@ import ControlMaker from '../../lib/ControlMaker.mjs';
 import { DARKMODE_SELECTOR_VALUE } from '../../lib/DarkMode.mjs';
 
 const mk = new ControlMaker('KikoDiss_View', import.meta.url);
+const ARROW = await mk.loadSvgAsCssUrl('./Kikoarrow.svg');
 
 const clss = mk.newClassNameMap([
   "ROOT_CLASS",
@@ -12,9 +13,6 @@ const clss = mk.newClassNameMap([
 const vars = mk.newCSSVariableMap({
   viewbg: [ 'rgb(172 172 172 / 80%)' ],
   imgbg: [ '#f3f3f3' ],
-  arrow: [
-    await mk.loadSvgAsCssUrl('./Kiko-arrow.svg'),
-  ],
 });
 
 mk.newHTML('ROOT_HTML', `
@@ -94,7 +92,7 @@ ${DARKMODE_SELECTOR_VALUE}
   width: 70px;
   height: 70px;
   transform: rotate(45deg);
-  background-image: ${vars.arrow.asVar()};
+  background-image: ${ARROW};
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
