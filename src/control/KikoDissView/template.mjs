@@ -41,11 +41,6 @@ ${DARKMODE_SELECTOR_VALUE}
   min-width: 660px;
 }
 
-.${clss.SHOW_CLASS}
-{
-  display: block;
-}
-
 .${clss.ROOT_CLASS}
 {
   display: none;
@@ -56,6 +51,11 @@ ${DARKMODE_SELECTOR_VALUE}
   right: 0;
   background-color: ${vars.viewbg.asVar()};
   overflow: auto;
+}
+
+.${clss.SHOW_CLASS}
+{
+  display: block;
 }
 
 .${clss.ROOT_CLASS} > span
