@@ -12,6 +12,9 @@ const clss = mk.newClassNameMap([
 const vars = mk.newCSSVariableMap({
   viewbg: [ 'rgb(172 172 172 / 80%)' ],
   imgbg: [ '#f3f3f3' ],
+  Kiko_arrow: [
+    await mk.loadSvgAsCssUrl('./Kiko-arrow.svg'),
+  ],
 });
 
 mk.newHTML('ROOT_HTML', `
@@ -88,14 +91,13 @@ ${DARKMODE_SELECTOR_VALUE}
 
 .${clss.ROOT_CLASS} > span > div > div
 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   width: 70px;
   height: 70px;
   transform: rotate(45deg);
-  border-bottom: 2px solid;
-  border-left: 2px solid;
+  background-image: ${vars.Kiko_arrow.asVar()};
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .${clss.ROOT_CLASS} > span > div + img + div > div
