@@ -2,12 +2,10 @@ import ControlMaker from '../../lib/ControlMaker.mjs';
 
 import { DARKMODE_SELECTOR_VALUE } from '../../lib/DarkMode.mjs';
 
-const mk = new ControlMaker('KikoDissView', import.meta.url);
+const mk = new ControlMaker('KikoDiss_View', import.meta.url);
 
 const clss = mk.newClassNameMap([
   "ROOT_CLASS",
-  "IMAGE_CLASS",
-  "SHOW_CLASS",
 ]);
 
 const vars = mk.newCSSVariableMap({
@@ -16,10 +14,11 @@ const vars = mk.newCSSVariableMap({
 });
 
 mk.newHTML('ROOT_HTML', `
-<div class="${clss.ROOT_CLASS}" draggable="false">
+
+<div id="img-viewer" class="${clss.ROOT_CLASS}">
   <span>
     <div><div></div></div>
-    <img class="${clss.IMAGE_CLASS}" src="">
+    <img draggable="false" src="">
     <div><div></div></div>
   </span>
 </div>
@@ -43,6 +42,7 @@ ${DARKMODE_SELECTOR_VALUE}
 
 .${clss.ROOT_CLASS}
 {
+  display: none;
   position: fixed;
   top: 0;
   bottom: 0;
