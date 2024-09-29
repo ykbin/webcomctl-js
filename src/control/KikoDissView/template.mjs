@@ -6,6 +6,7 @@ const mk = new ControlMaker('KikoDiss_View', import.meta.url);
 
 const clss = mk.newClassNameMap([
   "ROOT_CLASS",
+  "SHOW_CLASS",
 ]);
 
 const vars = mk.newCSSVariableMap({
@@ -38,6 +39,11 @@ ${DARKMODE_SELECTOR_VALUE}
 .${clss.ROOT_CLASS} > span
 {
   min-width: 660px;
+}
+
+.${clss.SHOW_CLASS}
+{
+  display: block;
 }
 
 .${clss.ROOT_CLASS}
