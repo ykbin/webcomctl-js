@@ -92,14 +92,13 @@ ${DARKMODE_SELECTOR_VALUE}
 {
   width: 70px;
   height: 70px;
-  transform: rotate(45deg);
   background-image: ${ARROW};
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
 }
 
-.${clss.ROOT_CLASS} > span > div > div + img + div
+.${clss.ROOT_CLASS} > span > div + img + div > div
 {
   transform: scaleX(-1);
 }
