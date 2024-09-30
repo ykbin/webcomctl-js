@@ -68,7 +68,7 @@ ${DARKMODE_SELECTOR_VALUE}
   height: 100%;
   width: 100%;
   min-height: 510px;
-  padding: 30px;
+  padding: 30px 15px;
   cursor: pointer;
 }
 
@@ -86,6 +86,11 @@ ${DARKMODE_SELECTOR_VALUE}
   height: 110px;
   border-radius: 50%;
   flex-shrink: 0;
+}
+
+.KikoDiss_View-ROOT_CLASS > span > div:hover
+{
+  background-color: #7d7d7d5e;
 }
 
 .${clss.ROOT_CLASS} > span > div > div
