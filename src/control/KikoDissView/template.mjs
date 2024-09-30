@@ -3,6 +3,7 @@ import ControlMaker from '../../lib/ControlMaker.mjs';
 import { DARKMODE_SELECTOR_VALUE } from '../../lib/DarkMode.mjs';
 
 const mk = new ControlMaker('KikoDiss_View', import.meta.url);
+
 const ARROW = await mk.loadSvgAsCssUrl('./Kikoarrow.svg');
 
 const clss = mk.newClassNameMap([
