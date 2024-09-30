@@ -88,7 +88,7 @@ ${DARKMODE_SELECTOR_VALUE}
   flex-shrink: 0;
 }
 
-.KikoDiss_View-ROOT_CLASS > span > div:hover
+.${clss.ROOT_CLASS} > span > div:hover
 {
   background-color: #7d7d7d5e;
 }
