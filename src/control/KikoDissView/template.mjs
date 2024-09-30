@@ -84,7 +84,7 @@ ${DARKMODE_SELECTOR_VALUE}
   justify-content: center;
   width: 90px;
   height: 90px;
-  padding-right: 10px;
+  padding-right: 15px;
   border-radius: 50%;
   flex-shrink: 0;
 }
@@ -107,7 +107,8 @@ ${DARKMODE_SELECTOR_VALUE}
 .${clss.ROOT_CLASS} > span > div + img + div > div
 {
   transform: scaleX(-1);
-  padding-left: 10px;
+  padding-right: 0;
+  padding-left: 15px;
 }
 
 .${clss.ROOT_CLASS} > span > img
