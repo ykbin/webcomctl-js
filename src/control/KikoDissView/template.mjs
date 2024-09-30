@@ -104,11 +104,15 @@ ${DARKMODE_SELECTOR_VALUE}
   background-size: contain;
 }
 
+.${clss.ROOT_CLASS} > span > div + img + div
+{
+  padding-right: 0;
+  padding-left: 15px;
+}
+
 .${clss.ROOT_CLASS} > span > div + img + div > div
 {
   transform: scaleX(-1);
-  padding-right: 0;
-  padding-left: 15px;
 }
 
 .${clss.ROOT_CLASS} > span > img
