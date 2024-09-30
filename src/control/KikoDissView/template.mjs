@@ -95,7 +95,12 @@ ${DARKMODE_SELECTOR_VALUE}
   background-image: ${ARROW};
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
+}
+
+.${clss.ROOT_CLASS} > span > div > div + img + div
+{
+  transform: scaleX(-1);
 }
 
 .${clss.ROOT_CLASS} > span > img
