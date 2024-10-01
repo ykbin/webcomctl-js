@@ -4,6 +4,8 @@ import { DARKMODE_SELECTOR_VALUE } from '../../lib/DarkMode.mjs';
 
 const mk = new ControlMaker('KikoDissView', import.meta.url);
 
+const ARROW = await mk.loadSvgAsCssUrl('./Kikoarrow.svg');
+
 const clss = mk.newClassNameMap([
   "ROOT_CLASS",
   "IMAGE_CLASS",
@@ -43,6 +45,7 @@ ${DARKMODE_SELECTOR_VALUE}
 
 .${clss.ROOT_CLASS}
 {
+  display: none;
   position: fixed;
   top: 0;
   bottom: 0;
@@ -50,6 +53,11 @@ ${DARKMODE_SELECTOR_VALUE}
   right: 0;
   background-color: ${vars.viewbg.asVar()};
   overflow: auto;
+}
+
+.${clss.SHOW_CLASS}
+{
+  display: block;
 }
 
 .${clss.ROOT_CLASS} > span
@@ -74,10 +82,16 @@ ${DARKMODE_SELECTOR_VALUE}
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 110px;
-  height: 110px;
+  width: 90px;
+  height: 90px;
+  padding-right: 9px;
   border-radius: 50%;
   flex-shrink: 0;
+}
+
+.${clss.ROOT_CLASS} > span > div:hover
+{
+  background-color: #7d7d7d5e;
 }
 
 .${clss.ROOT_CLASS} > span > div > div
@@ -87,17 +101,27 @@ ${DARKMODE_SELECTOR_VALUE}
   align-items: center;
   width: 70px;
   height: 70px;
-  transform: rotate(45deg);
-  border-bottom: 2px solid;
-  border-left: 2px solid;
+}
+
+.${clss.ROOT_CLASS} > span > div > div
+{
+  width: 70px;
+  height: 70px;
+  background-image: ${ARROW};
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.${clss.ROOT_CLASS} > span > div + img + div
+{
+  padding-right: 0;
+  padding-left: 9px;
 }
 
 .${clss.ROOT_CLASS} > span > div + img + div > div
 {
-  border-top: 2px solid;
-  border-right: 2px solid;
-  border-bottom: none;
-  border-left: none;
+  transform: scaleX(-1);
 }
 
 .${clss.ROOT_CLASS} > span > img
