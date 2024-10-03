@@ -1,5 +1,5 @@
 import { BaseControl, NQDOM } from 'webnetq-js';
-import { MENU_ITEM_HTML, PSNT_ITEM_HTML, CODETYPE_CLASS, DOWNLOAD_CLASS, MENULIST_CLASS, PSNTLIST_CLASS, CTSHOW_CLASS, PSNTACTV_CLASS, MENUTEXT_CLASS, PSNTTEXT_CLASS, PERENTMENU_CLASS, MENUNAME_CLASS, MENU_LIST_HTML, MENUSTYLE1_CLASS, MENUSTYLE2_CLASS, MENUSTYLE3_CLASS, MENUSTYLE4_CLASS, PROPERTIES_CLASS } from 'uictmplt-loader!./template.mjs';
+import { MENU_ITEM_HTML, PSNT_ITEM_HTML, CODETYPE_CLASS, DOWNLOAD_CLASS, MENULIST_CLASS, PSNTLIST_CLASS, CTSHOW_CLASS, PSNTACTV_CLASS, MENUTEXT_CLASS, PSNTTEXT_CLASS, PERENTMENU_CLASS, MENUNAME_CLASS, MENU_LIST_HTML, MENUSTYLE1_CLASS, MENUSTYLE2_CLASS, MENUSTYLE3_CLASS, MENUSTYLE4_CLASS, PROPERTIES_CLASS, PROPERTIES_SHOW_CLASS } from 'uictmplt-loader!./template.mjs';
 
 function typeToStyleClass(type)
 {
@@ -135,6 +135,9 @@ export default class UIPagePanelControl extends BaseControl {
   }
 
   setPropertiesClick(func) {
-    this._propertiesElm && this._propertiesElm.addEventListener('click', func);
+    if (this._propertiesElm) {
+      this._propertiesElm.classList.add(PROPERTIES_SHOW_CLASS);
+      this._propertiesElm.addEventListener('click', func);
+    }
   }
 };
