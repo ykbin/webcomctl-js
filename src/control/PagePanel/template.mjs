@@ -59,7 +59,7 @@ mk.newHTML('ROOT_HTML', `
   </div>
   <span>
     <a class="${clss.DOWNLOAD_CLASS}"></a>
-    <div class="${clss.PROPERTIES_CLASS} ${clss.PROPERTIES_SHOW_CLASS}"></div>
+    <div class="${clss.PROPERTIES_CLASS}"></div>
   </span>
 </span>
 `);
