@@ -32,7 +32,7 @@ mk.newHTML('ROOT_HTML', `
       </div>
     </nav>
     <div>
-      <span id="wsock-rpanel-vlist"></span>
+      <span id="wsock-rpanel-vlist"><div class="${PORT_CLASS}"></div></span>
     </div>
 
   </div>
