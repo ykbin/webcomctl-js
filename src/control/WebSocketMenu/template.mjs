@@ -85,7 +85,7 @@ nav.${clss.BUTTON_CLASS}
 
 nav.${clss.BUTTON_CLASS} > div
 {
-  background-color: ${vars.nav_bu_bg.asVar()};
+  background-color: ${vars.nav_but_bg.asVar()};
   margin-top: 115px;
   padding: 20px 5px 20px 5px;
   box-shadow: ${vars.nav_but_bs.asVar()};
