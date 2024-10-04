@@ -318,7 +318,7 @@ nav.${clss.BUTTON_CLASS} > div:hover
   }
 }
 
-@media (device-width < ${COMMON_MOBILE_DEVICE_WIDTH})
+@media (device-width < 550px)
 {
   div.${clss.ROOT_CLASS}
   {
