@@ -3,6 +3,7 @@ import ControlMaker from '../../lib/ControlMaker.mjs';
 import { DARKMODE_SELECTOR_VALUE } from '../../lib/DarkMode.mjs';
 
 const mk = new ControlMaker('WEBSOCKET', import.meta.url);
+export const PORT_CLASS = mk.newClassName("PORT_CLASS");
 
 const clss = mk.newClassNameMap([
   "ROOT_CLASS",
