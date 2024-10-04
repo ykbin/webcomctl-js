@@ -334,7 +334,7 @@ nav.${clss.BUTTON_CLASS} > div:hover
     top: 140px;
     margin-top: 53px;
   }
-  .${clss.RPANEL-PARAMS_INIT} > div
+  .${clss.RPANEL_PARAMS_INIT} > div
   {
     background: var(--rpanel-init-col);
   }
