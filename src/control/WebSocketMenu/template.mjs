@@ -49,7 +49,7 @@ ${DARKMODE_SELECTOR_VALUE}
   ${vars.toString(1)};
 }
 
-div.${clss.RPANEL-PARAMS_INIT} > div  > span > div,
+div.${clss.RPANEL_PARAMS_INIT} > div  > span > div,
 .${clss.RPANEL_PARAMS_HIDE} > div > span > div h5
 {
   display: none;
