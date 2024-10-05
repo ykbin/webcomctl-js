@@ -1,5 +1,5 @@
 import { BaseControl, NQDOM } from 'webnetq-js';
-import { CLOSE_CLASS, PULL_OUT_ON, PULL_OUT_RIGHT, PULL_OUT_LEFT } from 'module-loader!./template.mjs';
+import { CLOSE_CLASS, PULL_OUT_ON, PULL_OUT_RIGHT, PULL_OUT_LEFT } from 'uictmplt-loader!./template.mjs';
 
 const NONE_SIDE = 'node';
 const RIGHT_SIDE = 'right';
