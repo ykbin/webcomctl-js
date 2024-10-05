@@ -4,67 +4,61 @@ import { TOOLBAR_FONT_SANS } from '../../lib/WickedTheme.mjs';
 
 const mk = new ControlMaker('TipInfoBlock', import.meta.url);
 
-export const ROOT_CLASS = mk.newClassName("ROOT_CLASS");
-export const PORT_CLASS = mk.newClassName("PORT_CLASS");
+const clss = mk.newClassNameMap([
+  "ROOT_CLASS",
+  "PORT_CLASS",
+  "CLOSE_CLASS",
+  "PULL_OUT_RIGHT",
+  "PULL_OUT_LEFT",
+  "PULL_OUT_ON",
+  "LIST_CLASS",
+  "SIZE_CLASS",
+]);
 
-export const CLOSE_CLASS = mk.newClassName("CLOSE_CLASS");
-
-export const PULL_OUT_RIGHT = mk.newClassName("PULL_OUT_RIGHT");
-export const PULL_OUT_LEFT = mk.newClassName("PULL_OUT_LEFT");
-export const PULL_OUT_ON = mk.newClassName("PULL_OUT_ON")
-export const LIST_CLASS = mk.newClassName("LIST_CLASS");
-export const SIZE_CLASS = mk.newClassName("SIZE_CLASS");
+const vars = mk.newCSSVariableMap({
+  menuBg: [ '#f3f3f3', '#252525' ],
+  menuCol: [ 'black', '#b8b4b4' ],
+  pullOutBor: [ '#dedede', '#323232' ],
+  menuTitleCol: [ '#272626', '#9b9b9b' ],
+});
 
 const CLOSE_IMG = await mk.loadSvgAsCssUrl('./X.svg');
+const CLOSE_HOV_COL = '#80808042';
 
-const MENU_BG = mk.newCSSVariable("MENU_BG", [ '#f3f3f3', '#252525' ]);
-const MENU_COL = mk.newCSSVariable("MENU_COL", [ 'black', '#b8b4b4' ]);
-const PULL_OUT_BOR = mk.newCSSVariable("PULL_OUT_BOR", [ '#dedede', '#323232' ]);
-const MENU_TITLE_COL = mk.newCSSVariable("MENU_TITLE_COL", [ '#272626', '#9b9b9b' ]);
-const CLOSE_HOV_COL = mk.newCSSVariable("CLOSE_HOV_COL", '#80808042');
-
-export const ROOT_HTML = mk.newHTML('ROOT_HTML', `
-  <div class="${ROOT_CLASS}">
+mk.newHTML('ROOT_HTML', `
+  <div class="${clss.ROOT_CLASS}">
     <div>
-      <div class="${PORT_CLASS}"></div>
+      <div class="${clss.PORT_CLASS}"></div>
       <span>
-        <div class="${CLOSE_CLASS}"><div></div></div>
+        <div class="${clss.CLOSE_CLASS}"><div></div></div>
       </span>
     </div>
   </div>
 `);
 
-export const CSS = mk.newCSS('CSS', `
-
+mk.newCSS('CSS', `
 :root
 {
-  ${MENU_BG.toString(0)};
-  ${MENU_COL.toString(0)};
-  ${PULL_OUT_BOR.toString(0)};
-  ${MENU_TITLE_COL.toString(0)};
-  ${CLOSE_HOV_COL.toString(0)};
+  ${vars.toString(0)};
 }
 
 ${DARKMODE_SELECTOR_VALUE}
 {
-  ${MENU_BG.toString(1)};
-  ${MENU_COL.toString(1)};
-  ${PULL_OUT_BOR.toString(1)};
-  ${MENU_TITLE_COL.toString(1)};
+  ${vars.toString(1)};
 }
 
-.${PORT_CLASS}
+.${clss.PORT_CLASS}
 {
   width: 100%;
   height: 100%;
 }
 
-.${ROOT_CLASS} *
+.${clss.ROOT_CLASS} *
 {
   box-sizing: border-box;
 }
 
-.${ROOT_CLASS}
+.${clss.ROOT_CLASS}
 {
   position: absolute;
   top: 0;
@@ -73,12 +67,12 @@ ${DARKMODE_SELECTOR_VALUE}
   color: #393939;
   font-family: ${TOOLBAR_FONT_SANS};
   box-sizing: border-box;
-  background-color: ${MENU_BG.asVar()};
-  color: ${MENU_COL.asVar()};
+  background-color: ${vars.menuBg.asVar()};
+  color: ${vars.menuCol.asVar()};
   overflow: hidden;
 }
 
-.${ROOT_CLASS} > div
+.${clss.ROOT_CLASS} > div
 {
   display: flex;
   flex-direction: column-reverse;
@@ -88,7 +82,7 @@ ${DARKMODE_SELECTOR_VALUE}
   padding: 0 25px 25px 25px;
 }
 
-.${PULL_OUT_RIGHT}
+.${clss.PULL_OUT_RIGHT}
 {
   right: 0;
   display: block;
@@ -97,7 +91,7 @@ ${DARKMODE_SELECTOR_VALUE}
   border-left: 0 solid;
 }
 
-.${PULL_OUT_LEFT}
+.${clss.PULL_OUT_LEFT}
 {
   left: 0;
   display: block;
@@ -106,16 +100,16 @@ ${DARKMODE_SELECTOR_VALUE}
   border-right: 0 solid;
 }
 
-.${PULL_OUT_ON}
+.${clss.PULL_OUT_ON}
 {
   display: block;
   width: 450px;
   border-width: 1px;
-  border-color: ${PULL_OUT_BOR.asVar()};
+  border-color: ${vars.pullOutBor.asVar()};
   transition: width 0.2s;
 }
 
-.${ROOT_CLASS} > div > span
+.${clss.ROOT_CLASS} > div > span
 {
   display: flex;
   justify-content: flex-end;
@@ -124,7 +118,7 @@ ${DARKMODE_SELECTOR_VALUE}
   flex-shrink: 0;
 }
 
-.${CLOSE_CLASS}
+.${clss.CLOSE_CLASS}
 {
   display: flex;
   align-items: center;
@@ -134,7 +128,7 @@ ${DARKMODE_SELECTOR_VALUE}
   flex-shrink: 0;
 }
 
-.${CLOSE_CLASS} > div
+.${clss.CLOSE_CLASS} > div
 {
   width: 20px;
   height: 20px;
@@ -146,12 +140,12 @@ ${DARKMODE_SELECTOR_VALUE}
   flex-shrink: 0;
 }
 
-.${CLOSE_CLASS}:hover > div
+.${clss.CLOSE_CLASS}:hover > div
 {
-  background-color: ${CLOSE_HOV_COL.asVar()};
+  background-color: ${CLOSE_HOV_COL};
 }
 
-.${CLOSE_CLASS}:active > div
+.${clss.CLOSE_CLASS}:active > div
 {
   width: 18px;
   height: 18px;
@@ -159,5 +153,9 @@ ${DARKMODE_SELECTOR_VALUE}
   transition: width 0.1s, height 0.1s, background-size 0.1s;
   background-size: 100%;
 }
-
 `);
+
+export function buildComponent()
+{
+  return mk.buildComponent();
+}

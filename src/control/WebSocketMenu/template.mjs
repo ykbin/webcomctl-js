@@ -3,10 +3,10 @@ import ControlMaker from '../../lib/ControlMaker.mjs';
 import { DARKMODE_SELECTOR_VALUE } from '../../lib/DarkMode.mjs';
 
 const mk = new ControlMaker('WEBSOCKET', import.meta.url);
-export const PORT_CLASS = mk.newClassName("PORT_CLASS");
 
 const clss = mk.newClassNameMap([
   "ROOT_CLASS",
+  "PORT_CLASS",
   "RPANEL_PARAMS_INIT",
   "RPANEL_PARAMS_SHOW",
   "RPANEL_PARAMS_HIDE",
@@ -20,7 +20,7 @@ const vars = mk.newCSSVariableMap({
 mk.newHTML('ROOT_HTML', `
   <div id="wsock-rpanel-params-state" class="${clss.ROOT_CLASS} ${clss.RPANEL_PARAMS_INIT}">
     <div>
-      <span id="wsock-rpanel-vlist"><div class="${PORT_CLASS}"></div></span>
+      <span id="wsock-rpanel-vlist"><div class="${clss.PORT_CLASS}"></div></span>
     </div>
 
   </div>
