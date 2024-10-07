@@ -112,7 +112,7 @@ div.${clss.SHOW}
 {
   animation-name: message-value;
   animation-fill-mode: forwards;
-  animation-duration: 5s;
+  animation-duration: 250ms;
   animation-iteration-count: 1;
 }
 
@@ -155,7 +155,7 @@ div.${clss.SHOW}
 {
   animation-name: message-value-back;
   animation-fill-mode: forwards;
-  animation-duration: 5s;
+  animation-duration: 250ms;
   animation-iteration-count: 1;
 }
 
