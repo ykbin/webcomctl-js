@@ -8,8 +8,9 @@ const clss = mk.newClassNameMap([
   "ROOT_CLASS",
   "PORT_CLASS",
   "RPANEL_PARAMS_INIT",
-  "RPANEL_PARAMS_SHOW",
-  "RPANEL_PARAMS_HIDE",
+  "ANIME",
+  "SHOW",
+  "HIDE",
 ]);
 
 const vars = mk.newCSSVariableMap({
@@ -37,13 +38,21 @@ ${DARKMODE_SELECTOR_VALUE}
   ${vars.toString(1)};
 }
 
-div.${clss.RPANEL_PARAMS_INIT} > div  > span > div,
+.${clss.ROOT_CLASS} > div  > span > div,
 .${clss.RPANEL_PARAMS_HIDE} > div > span > div h5
 {
   display: none;
 }
 
-div.${clss.RPANEL_PARAMS_SHOW}
+.${clss.ROOT_CLASS}.${clss.SHOW} > div  > span > div,
+.${clss.ROOT_CLASS}.${clss.HIDE} > div  > span > div,
+.${clss.ROOT_CLASS}.${clss.ANIME}.${clss.SHOW} > div  > span > div,
+.${clss.ROOT_CLASS}.${clss.ANIME}.${clss.HIDE} > div  > span > div
+{
+  display: flex;
+}
+
+div.${clss.SHOW}
 {
   display: flex;
   width: auto;
@@ -62,7 +71,7 @@ div.${clss.RPANEL_PARAMS_SHOW}
   flex-direction: row-reverse;
 }
 
-.${clss.RPANEL_PARAMS_SHOW}
+.${clss.SHOW}
 {
   border-left: 1px solid ${vars.wsock_rpanel_bor.asVar()};
 }
@@ -79,7 +88,6 @@ div.${clss.RPANEL_PARAMS_SHOW}
 
 .${clss.ROOT_CLASS} > div  > span > div
 {
-  display: flex;
   align-items: center;
   height: 30px;
   padding: 0px 10px 0px 20px;
@@ -100,7 +108,7 @@ div.${clss.RPANEL_PARAMS_SHOW}
   padding-left: 5px;
 }
 
-.${clss.RPANEL_PARAMS_HIDE} > div  > span > div
+.${clss.ANIME}.${clss.HIDE} > div  > span > div
 {
   animation-name: message-value;
   animation-fill-mode: forwards;
@@ -143,7 +151,7 @@ div.${clss.RPANEL_PARAMS_SHOW}
   }
 }
 
-.${clss.RPANEL_PARAMS_SHOW} > div  > span > div
+.${clss.ANIME}.${clss.SHOW} > div  > span > div
 {
   animation-name: message-value-back;
   animation-fill-mode: forwards;
