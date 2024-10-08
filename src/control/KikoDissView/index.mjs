@@ -8,6 +8,10 @@ export default class UIKikoDissViewControl extends BaseControl {
   _init() {
     this._visible = this.element.classList.contains(SHOW_CLASS);
     this._imageElm = NQDOM.getElementByClassName(this.element, IMAGE_CLASS);
+    this.element.addEventListener("click", event => {
+      if (this._visible && event.target.tagName !== "IMG")
+        this.visible = false;
+    });
   }
 
   get visible() {
