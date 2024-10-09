@@ -85,8 +85,8 @@ div.${clss.SHOW}
 .${clss.ROOT_CLASS} > div  > span > div
 {
   align-items: center;
-  height: 30px;
   padding: 0px 10px 0px 20px;
+  max-width: 200px;
 }
 
 .${clss.ROOT_CLASS} > span > div:last-child
@@ -116,33 +116,33 @@ div.${clss.SHOW}
 {
   0%
   {
-    width: 200px;
+    width: 100%;
     visibility: visible;
   }
   25%
   {
-    width: 150px;
+    width: 75%;
     visibility: hidden;
   }
   50%
   {
-    width: 100px;
+    width: 50%;
     visibility: hidden;
   }
   75%
   {
-    width: 50px;
+    width: 25%;
     visibility: hidden;
   }
   99%
   {
-    width: 0px;
+    width: 0;
     visibility: hidden;
   }
   100%
   {
     display: none;
-    width: 0px;
+    width: 0;
     visibility: hidden;
   }
 }
@@ -161,102 +161,32 @@ div.${clss.SHOW}
   {
     display: none;
     visibility: hidden;
-    width: 0px;
+    width: 0;
   }
   1%
   {
-    width: 0px;
+    width: 0;
     visibility: hidden;
   }
   25%
   {
-    width: 50px;
+    width: 25%;
     visibility: hidden;
   }
   50%
   {
-    width: 100px;
+    width: 50%;
     visibility: hidden;
   }
   75%
   {
-    width: 150px;
+    width: 75%;
     visibility: hidden;
   }
   100%
   {
-    width: 200px;
+    width: 100%;
     visibility: visible;
-  }
-}
-
-@keyframes message-value-back-mob
-{
-  0%
-  {
-    display: none;
-    visibility: hidden;
-    width: 0px;
-  }
-  1%
-  {
-    width: 0px;
-    visibility: hidden;
-  }
-  25%
-  {
-    width: 50px;
-    visibility: hidden;
-  }
-  50%
-  {
-    width: 100px;
-    visibility: hidden;
-  }
-  75%
-  {
-    width: 200px;
-    visibility: hidden;
-  }
-  100%
-  {
-    width: 400px;
-    visibility: visible;
-  }
-}
-
-@keyframes message-value-mob
-{
-  0%
-  {
-    width: 400px;
-    visibility: visible;
-  }
-  25%
-  {
-    width: 200px;
-    visibility: hidden;
-  }
-  50%
-  {
-    width: 100px;
-    visibility: hidden;
-  }
-  75%
-  {
-    width: 50px;
-    visibility: hidden;
-  }
-  99%
-  {
-    width: 0px;
-    visibility: hidden;
-  }
-  100%
-  {
-    display: none;
-    width: 0px;
-    visibility: hidden;
   }
 }
 
@@ -280,13 +210,9 @@ div.${clss.SHOW}
   {
     padding-top: 20px;
   }
-  div.${clss.SHOW} > div > span > div
+  div.${clss.ROOT_CLASS} > div  > span > div
   {
-    animation-name: message-value-back-mob;
-  }
-  div.${clss.ANIME} > div > span > div
-  {
-    animation-name: message-value-mob;
+    max-width: 400px;
   }
 }
 `);
