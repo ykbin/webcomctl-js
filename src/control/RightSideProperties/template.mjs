@@ -19,7 +19,7 @@ const vars = mk.newCSSVariableMap({
 mk.newHTML('ROOT_HTML', `
   <div class="${clss.ROOT_CLASS}">
     <div>
-      <span"><div class="${clss.PORT_CLASS}"></div></span>
+      <span><div class="${clss.PORT_CLASS}"></div></span>
     </div>
   </div>
 `);
@@ -35,7 +35,7 @@ ${DARKMODE_SELECTOR_VALUE}
   ${vars.toString(1)};
 }
 
-.${clss.ROOT_CLASS} > div  > span > div
+.${clss.PORT_CLASS}
 {
   display: none;
 }
