@@ -7,10 +7,8 @@ const mk = new ControlMaker('RightSideProperties', import.meta.url);
 const clss = mk.newClassNameMap([
   "ROOT_CLASS",
   "PORT_CLASS",
-  "RPANEL_PARAMS_INIT",
   "ANIME",
   "SHOW",
-  "HIDE",
 ]);
 
 const vars = mk.newCSSVariableMap({
@@ -19,7 +17,7 @@ const vars = mk.newCSSVariableMap({
 });
 
 mk.newHTML('ROOT_HTML', `
-  <div class="${clss.ROOT_CLASS} ${clss.RPANEL_PARAMS_INIT}">
+  <div class="${clss.ROOT_CLASS}">
     <div>
       <span"><div class="${clss.PORT_CLASS}"></div></span>
     </div>
@@ -37,8 +35,7 @@ ${DARKMODE_SELECTOR_VALUE}
   ${vars.toString(1)};
 }
 
-.${clss.ROOT_CLASS} > div  > span > div,
-.${clss.RPANEL_PARAMS_HIDE} > div > span > div h5
+.${clss.ROOT_CLASS} > div  > span > div
 {
   display: none;
 }
@@ -46,7 +43,7 @@ ${DARKMODE_SELECTOR_VALUE}
 .${clss.ROOT_CLASS}.${clss.SHOW} > div  > span > div,
 .${clss.ROOT_CLASS}.${clss.HIDE} > div  > span > div,
 .${clss.ROOT_CLASS}.${clss.ANIME}.${clss.SHOW} > div  > span > div,
-.${clss.ROOT_CLASS}.${clss.ANIME}.${clss.HIDE} > div  > span > div
+.${clss.ROOT_CLASS}.${clss.ANIME} > div  > span > div
 {
   display: flex;
 }
@@ -107,7 +104,7 @@ div.${clss.SHOW}
   padding-left: 5px;
 }
 
-.${clss.ANIME}.${clss.HIDE} > div  > span > div
+.${clss.ANIME} > div  > span > div
 {
   animation-name: message-value;
   animation-fill-mode: forwards;
@@ -279,19 +276,15 @@ div.${clss.SHOW}
     top: 140px;
     margin-top: 53px;
   }
-  .${clss.RPANEL_PARAMS_INIT} > div
-  {
-    background: var(--rpanel-init-col);
-  }
   .${clss.ROOT_CLASS} > div > span
   {
     padding-top: 20px;
   }
-  div.${clss.RPANEL_PARAMS_SHOW} > div > span > div
+  div.${clss.SHOW} > div > span > div
   {
     animation-name: message-value-back-mob;
   }
-  div.${clss.RPANEL_PARAMS_HIDE} > div > span > div
+  div.${clss.ANIME} > div > span > div
   {
     animation-name: message-value-mob;
   }
