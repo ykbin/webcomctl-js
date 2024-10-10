@@ -17,7 +17,7 @@ const vars = mk.newCSSVariableMap({
   inp_pla_col: [ '#b3b3b3', '#b3b3b3' ],
   inp_ms_inp_pla_col: [ '#b3b3b3', '#b3b3b3' ],
   wsock_nav_col_hov: [ '#aaa8a821', 'rgb(23, 23, 26)' ],
-  wsock_nav_bg: [ 'linear-gradient(to bottom, white 0% 76%, transparent)', ' linear-gradient(to bottom, rgb(23, 23, 26) 0% 76%, transparent' ],
+  wsock_nav_bg: [ 'linear-gradient(to bottom, white 0% 76%, transparent)', ' linear-gradient(to bottom, rgb(23, 23, 26) 0% 76%, transparent)' ],
   wsock_nav_bg2: [ 'white', 'rgb(23, 23, 26)' ],
   wsock_nav_bs: [ '-4px 0px 5px -5px rgba(0, 0, 0, 0), -4px 0px 5px -5px rgba(23, 23, 26, 0)', '-4px 0px 5px -5px rgb(0 0 0), -4px 0px 5px -5px rgb(23 23 26 / 60%)' ],
   wsock_nav_bs2: [ '#bababa8c', '#bababa21'],
