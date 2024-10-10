@@ -37,6 +37,7 @@ const vars = mk.newCSSVariableMap({
   inp_but_col2: [ '#820101', 'rgb(23, 23, 26)' ],
   con_col: [ '#353535', '#dcdcdc' ],
   wsock_nav_but_bg: ['white', 'rgb(23, 23, 26)'],
+  wsock_sig_off: ['radial-gradient(red 5% , #830000)', 'radial-gradient(red 5% , #830000)'],
   grad_gr5: [ 'radial-gradient(#00ba00 5% , #073d00)', 'radial-gradient(#00ba00 5% , #073d00)' ],
   grad_gr7: [ 'radial-gradient(#00ba00 7% , #073d00)', 'radial-gradient(#00ba00 7% , #073d00)' ],
   grad_gr9: [ 'radial-gradient(#00bd00 9% , #073d00)', 'radial-gradient(#00bd00 9% , #073d00)' ],
