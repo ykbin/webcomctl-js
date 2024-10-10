@@ -220,19 +220,19 @@ input[type="text"]::-ms-input-placeholder
   background-color: ${vars.wsock_nav_inp.asVar()};
 }
 
-.wsock-signal-state-off
+.${clss.SIGNAL_STATE_OFF}
 {
   background: ${vars.wsock_sig_off.asVar()};
   background-size: 100%;
 }
 
-input[type="button"].wsock-connect-btn-on
+input[type="button"].${clss.CONNECT_BTN_ON}
 {
   color: ${vars.inp_but_col.asVar()};
   border: 1px solid ${vars.inp_but_col.asVar()};
 }
 
-input[type="button"].wsock-connect-btn-off
+input[type="button"].${clss.CONNECT_BTN_OFF}
 {
   color: ${vars.inp_but_col2.asVar()};
   border: 1px solid ${vars.inp_but_col2.asVar()};
