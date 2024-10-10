@@ -6,11 +6,11 @@ const mk = new ControlMaker('WebsocketNav', import.meta.url);
 
 const clss = mk.newClassNameMap([
   "ROOT_CLASS",
-  "signal_state_off",
-  "signal_state_on",
-  "signal_state_text",
-  "connect_btn_on",
-  "connect_btn_off",
+  "SIGNAL_STATE_OFF",
+  "SIGNAL_STATE_ON",
+  "SIGNAL_STATE_TEXT",
+  "CONNECT_BTN_ON",
+  "CONNECT_BTN_OFF",
 ]);
 
 const vars = mk.newCSSVariableMap({
@@ -47,8 +47,8 @@ const vars = mk.newCSSVariableMap({
 mk.newHTML('ROOT_HTML', `
 <div class="${clss.ROOT_CLASS}">
   <div id="wsock-signal-state">
-    <div class="${clss.signal_state_off}"></div>
-    <span class="${clss.signal_state_text}">No connection</span>
+    <div class="${clss.SIGNAL_STATE_OFF}"></div>
+    <span class="${clss.SIGNAL_STATE_TEXT}">No connection</span>
   </div>
     
   <nav id="wsock-addresses-root">
@@ -57,7 +57,7 @@ mk.newHTML('ROOT_HTML', `
     </span>
     
     <div>
-      <input id="wsock-connect-btn-root" class="${clss.connect_btn_on}" type="button" value="Connect"/>
+      <input id="wsock-connect-btn-root" class="${clss.CONNECT_BTN_ON}" type="button" value="Connect"/>
     </div>
     
     <ul id="wsock-addresses-list"></ul>
@@ -279,7 +279,7 @@ input[type="button"].wsock-connect-btn-off
   margin-bottom: 10px;
 }
 
-.${clss.signal_state_on}
+.${clss.SIGNAL_STATE_ON}
 {
   animation-name: gradient-green;
   animation-duration: 3s, 2s, 2s;
