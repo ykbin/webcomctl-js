@@ -9,8 +9,8 @@ const clss = mk.newClassNameMap([
   "CONNECT_BTN_ON",
   "CONNECT_BTN_OFF",
   "FIELD_CLASS",
-  "ADDRESSES-SHOW",
-  "ADDRESSES-DISABLED",
+  "ADDRESSES_SHOW",
+  "ADDRESSES_DISABLED",
 ]);
 
 const vars = mk.newCSSVariableMap({
@@ -77,7 +77,7 @@ ${DARKMODE_SELECTOR_VALUE}
   z-index: 1;
 }
 
-.${clss.ROOT_CLASS}.${clss.ADDRESSES-SHOW}
+.${clss.ROOT_CLASS}.${clss.ADDRESSES_SHOW}
 {
   height: auto;
 }
@@ -93,17 +93,17 @@ ${DARKMODE_SELECTOR_VALUE}
   position: relative;
 }
 
-.${clss.ROOT_CLASS}.${clss.ADDRESSES-DISABLED} > span > input[type="text"]
+.${clss.ROOT_CLASS}.${clss.ADDRESSES_DISABLED} > span > input[type="text"]
 {
   background-color: ${vars.wsock_add_dis_bg.asVar()};
 }
 
-.${clss.ROOT_CLASS}.${clss.ADDRESSES-DISABLED} > span:before
+.${clss.ROOT_CLASS}.${clss.ADDRESSES_DISABLED} > span:before
 {
   background-color: ${vars.wsock_add_dis_bef_bg.asVar()};
 }
 
-.${clss.ROOT_CLASS}.${clss.ADDRESSES-DISABLED} > span > input[type="text"]
+.${clss.ROOT_CLASS}.${clss.ADDRESSES_DISABLED} > span > input[type="text"]
 {
   pointer-events: none;
 }
@@ -200,7 +200,7 @@ input[type="button"].${clss.CONNECT_BTN_OFF}
   color: ${vars.wsock_nav_col.asVar()};
 }
 
-..${clss.ROOT_CLASS}.${clss.ADDRESSES-SHOW} > ul
+..${clss.ROOT_CLASS}.${clss.ADDRESSES_SHOW} > ul
 {
   display: block;
 }
