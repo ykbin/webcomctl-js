@@ -1,5 +1,5 @@
 import { BaseControl } from 'webnetq-js';
-import { NUMBERS_CLASS, CONTENT_CLASS, OFFSET_CLASS } from 'module-loader!./template.mjs';
+import { NUMBERS, CONTENT, OFFSET } from 'uictmplt-loader!./template.mjs';
 
 const toHexString = (value, numPad) => value.toString(16).toUpperCase().padStart(numPad, '0');
 
@@ -10,9 +10,9 @@ export default class UITextContentControl extends BaseControl {
     this._content = null;
     this._scrollTop = null;
 
-    this._numbersElm = this.element.querySelector("." + NUMBERS_CLASS);
+    this._numbersElm = this.element.querySelector("." + NUMBERS);
     this._numbersElm && (this._numbersElm.addEventListener("scroll", (e) => this._onScroll(e)));
-    this._contentElm = this.element.querySelector("." + CONTENT_CLASS);
+    this._contentElm = this.element.querySelector("." + CONTENT);
     this._contentElm && (this._contentElm.addEventListener("scroll", (e) => this._onScroll(e)));
   }
 
@@ -74,7 +74,7 @@ export default class UITextContentControl extends BaseControl {
         for (let i = 0; i < bytes.length;) {
           const sz = Math.min(bytes.length - i, 16);
           let list = [{
-            type: OFFSET_CLASS,
+            type: OFFSET,
             text: toHexString(i, 8),
           }];
           for (let k = 0; k < sz; k++) {
