@@ -2,7 +2,7 @@ import ControlMaker from '../../lib/ControlMaker.mjs';
 
 import { DARKMODE_SELECTOR_VALUE } from '../../lib/DarkMode.mjs';
 
-const mk = new ControlMaker('Lamp', import.meta.url);
+const mk = new ControlMaker('ConnectionStatus', import.meta.url);
 
 const clss = mk.newClassNameMap([
   "ROOT_CLASS",
@@ -21,9 +21,9 @@ const vars = mk.newCSSVariableMap({
 });
 
 mk.newHTML('ROOT_HTML', `
-  <div id="wsock-signal-state" class="${clss.ROOT_CLASS}">
+  <div class="${clss.ROOT_CLASS}">
     <div class="${clss.SIGNAL_STATE_OFF}"></div>
-    <span class="${clss.SIGNAL_STATE_TEXT}">No connection</span>
+    <span class="${clss.SIGNAL_STATE_TEXT}"></span>
   </div> 
 `);
 
