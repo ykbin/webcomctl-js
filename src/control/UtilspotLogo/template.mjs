@@ -3,7 +3,7 @@ import ControlMaker from '../../lib/ControlMaker.mjs';
 import { DARKMODE_SELECTOR_VALUE } from '../../lib/DarkMode.mjs';
 
 const mk = new ControlMaker('UtilspotLogo', import.meta.url);
-const USHEADER_IMG = await mk.loadSvgAsCssUrl('./utilspot/utilspot.svg');
+const USHEADER_IMG = await mk.loadSvgAsCssUrl('./utilspot.svg');
 
 const clss = mk.newClassNameMap([
   "ROOT_CLASS",
