@@ -15,7 +15,7 @@ const vars = mk.newCSSVariableMap({
 });
 
 mk.newHTML('ROOT_HTML', `
-<div class="${clss.ROOT_CLASS} ${PORT_CLASS}"></div>
+<div class="${clss.ROOT_CLASS} ${clss.PORT_CLASS}"></div>
 `);
 
 mk.newCSS('CSS', `

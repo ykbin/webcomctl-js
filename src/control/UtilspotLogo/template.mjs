@@ -7,7 +7,6 @@ const USHEADER_IMG = await mk.loadSvgAsCssUrl('./utilspot.svg');
 
 const clss = mk.newClassNameMap([
   "ROOT_CLASS",
-  "PORT_CLASS",
 ]);
 
 const vars = mk.newCSSVariableMap({
@@ -16,7 +15,7 @@ const vars = mk.newCSSVariableMap({
 });
 
 mk.newHTML('ROOT_HTML', `
-<div class="${clss.ROOT_CLASS} ${PORT_CLASS}">
+<div class="${clss.ROOT_CLASS}">
   <h1></h1>
   <h2>
     <span>this is a place of web</span> 

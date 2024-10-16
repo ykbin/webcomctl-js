@@ -13,7 +13,7 @@ const vars = mk.newCSSVariableMap({
 });
 
 mk.newHTML('ROOT_HTML', `
-  <span class="${clss.ROOT_CLASS} ${PORT_CLASS}"></spah>
+  <span class="${clss.ROOT_CLASS} ${clss.PORT_CLASS}"></spah>
 `);
 
 mk.newCSS('CSS', `
