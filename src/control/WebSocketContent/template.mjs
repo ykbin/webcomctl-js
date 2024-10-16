@@ -7,7 +7,7 @@ const clss = mk.newClassNameMap([
 ]);
 
 const vars = mk.newCSSVariableMap({
-  wsock_con_bg: [ '#f8f8f8', '#0000002b' ],
+  con_col: [ '#353535', '#dcdcdc' ],
 });
 
 mk.newHTML('ROOT_HTML', `
@@ -52,7 +52,7 @@ ${DARKMODE_SELECTOR_VALUE}
   margin: 0px;
   line-height: 20px;
   font-size: 0.95em;
-  color: var(--con-col);
+  color: ${vars.con_col.asVar()};
 }
 
 .${clss.ROOT_CLASS} > span > ul > li
