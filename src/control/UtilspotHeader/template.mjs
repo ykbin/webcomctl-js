@@ -16,7 +16,7 @@ const vars = mk.newCSSVariableMap({
 });
 
 mk.newHTML('ROOT_HTML', `
-<header class="notranslate ${clss.ROOT_CLASS} ${PORT_CLASS}" translate="no" draggable="false"></header>
+<header class="notranslate ${clss.ROOT_CLASS} ${clss.PORT_CLASS}" translate="no" draggable="false"></header>
 `);
 
 mk.newCSS('CSS', `
