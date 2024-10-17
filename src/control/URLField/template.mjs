@@ -200,7 +200,7 @@ input[type="button"].${clss.CONNECT_BTN_OFF}
   color: ${vars.wsock_nav_col.asVar()};
 }
 
-..${clss.ROOT_CLASS}.${clss.ADDRESSES_SHOW} > ul
+.${clss.ROOT_CLASS}.${clss.ADDRESSES_SHOW} > ul
 {
   display: block;
 }
