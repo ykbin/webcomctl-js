@@ -128,7 +128,7 @@ ${DARKMODE_SELECTOR_VALUE}
   content: ' ';
   display: block;
   width: 11px;
-  height: 32px;
+  height: 30px;
   position: absolute;
   background-color: ${vars.wsock_nav_bef_bg.asVar()};
   right: -11px;
