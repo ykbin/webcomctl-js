@@ -24,7 +24,7 @@ const vars = mk.newCSSVariableMap({
   wsock_nav_inp_car: [ 'black', 'white' ],
   wsock_nav_inp: [ 'white', 'rgb(23, 23, 26)' ],
   inp_but_col: [ '#1877f2', '#1877f2' ],
-  inp_but_col2: [ '#820101', 'rgb(23, 23, 26)' ],
+  inp_but_col2: [ '#820101', '#820101' ],
   wsock_nav_but_bg: ['white', 'rgb(23, 23, 26)'],
   inp_pla_col: [ '#b3b3b3', '#b3b3b3' ],
   inp_ms_inp_pla_col: [ '#b3b3b3', '#b3b3b3' ],
