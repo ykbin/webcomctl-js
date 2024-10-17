@@ -40,11 +40,6 @@ ${DARKMODE_SELECTOR_VALUE}
   justify-content: flex-start;
   width: 100%;
   height: 100%;
-  margin: 0px;
-  border-style: solid;
-  border-width: 5px 0px;
-  border-color: ${vars.header_bor.asVar()};
-  box-sizing: border-box;
 }
 `);
 
