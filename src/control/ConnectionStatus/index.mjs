@@ -16,8 +16,8 @@ export default class UIConnectionStatusControl extends BaseControl {
 
   set value(value) {
     if (this._valueElm) {
-      this._valueElm.classList.remove(!value ? SIGNAL_STATE_ON : SIGNAL_STATE_OFF);
-      this._valueElm.classList.add(value ? SIGNAL_STATE_ON : SIGNAL_STATE_OFF);
+      this._valueElm.classList.toggle(SIGNAL_STATE_OFF, !value);
+      this._valueElm.classList.toggle(SIGNAL_STATE_ON, value);
     }
   }
 
@@ -27,5 +27,10 @@ export default class UIConnectionStatusControl extends BaseControl {
 
   set text(value) {
     this._textElm && (this._textElm.textContent = value);
+  }
+
+  setState(value, text) {
+    this.value = value;
+    this.text = text;
   }
 };
