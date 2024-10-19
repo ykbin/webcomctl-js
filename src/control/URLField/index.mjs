@@ -1,7 +1,7 @@
 import { BaseControl, NQDOM } from 'webnetq-js';
 import { ADDRESSES_INPUT, ADDRESSES_LIST, ADDRESSES_DISABLED, ADDRESSES_SHOW, CONNECT_BTN_ON, CONNECT_BTN_OFF } from 'uictmplt-loader!./template.mjs';
 
-const CLICK_EVENT = 'click';
+const STATECHANGED_EVENT = 'stateChanged';
 const URLCHANGED_EVENT = 'urlChanged';
 
 export default class UIURLFieldControl extends BaseControl {
@@ -41,13 +41,13 @@ export default class UIURLFieldControl extends BaseControl {
     if (this._buttonElm) {
       this._buttonElm.addEventListener('click', (event) => {
         const state = !this._state;
-        this._buttonElm.classList.add(state ? CONNECT_BTN_ON : CONNECT_BTN_OFF);
-        this._buttonElm.classList.remove(!state ? CONNECT_BTN_ON : CONNECT_BTN_OFF);
-        this._buttonElm.value = state ? "Connect" : "Disconnect";
+        this.element.classList.toggle(CONNECT_BTN_ON, state);
+        this.element.classList.toggle(CONNECT_BTN_OFF, !state);
+        this._buttonElm.value = state ? "Disconnect" : "Connect";
         this._state = state;
-        this.dispatchEvent(CLICK_EVENT, {state});
+        this.dispatchEvent(STATECHANGED_EVENT, {state});
       });
-      this.registerEvent(CLICK_EVENT);
+      this.registerEvent(STATECHANGED_EVENT);
     }
   
     this.registerEvent(URLCHANGED_EVENT);
