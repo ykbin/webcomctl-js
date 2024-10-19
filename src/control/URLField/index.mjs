@@ -20,7 +20,7 @@ export default class UIURLFieldControl extends BaseControl {
     if (this._inputElement) {
       let isClick = false;
       this._inputElement.addEventListener('click', () => {
-        this.show();
+        this.showURLs();
         isClick = true;
       });
       window.addEventListener('click', () => {
@@ -28,15 +28,13 @@ export default class UIURLFieldControl extends BaseControl {
           isClick = false;
         }
         else {
-          this.hide();
+          this.hideURLs();
         }
       });
+      this._inputElement.value = this._address;
       this._inputElement.addEventListener("change", (event) => {
         this._address = event.target.value;
       });
-      if (this._address) {
-        this._inputElement.value = this._address;
-      }
     }
 
     this._isShowList = this.element.classList.contains(ADDRESSES_SHOW);
@@ -94,7 +92,7 @@ export default class UIURLFieldControl extends BaseControl {
 
   setShowList(value)
   {
-    this._isShowList = this.element.classList.toggle(ADDRESSES_DISABLED, value);
+    this._isShowList = this.element.classList.toggle(ADDRESSES_SHOW, value);
   }
 
   showURLs()
