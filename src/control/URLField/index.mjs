@@ -2,10 +2,11 @@ import { BaseControl, NQDOM } from 'webnetq-js';
 import { ADDRESSES_INPUT, ADDRESSES_LIST, ADDRESSES_DISABLED, ADDRESSES_SHOW, CONNECT_BTN_ON, CONNECT_BTN_OFF } from 'uictmplt-loader!./template.mjs';
 
 const CLICK_EVENT = 'click';
+const URLCHANGED_EVENT = 'urlChanged';
 
 export default class UIURLFieldControl extends BaseControl {
   _disabled;
-  _isShowList;
+  _isShowURLs;
   _address = "";
   _inputElement;
   _listElement;
@@ -20,16 +21,12 @@ export default class UIURLFieldControl extends BaseControl {
     if (this._inputElement) {
       let isClick = false;
       this._inputElement.addEventListener('click', () => {
-        this.showURLs();
+        this._setShowURLs(!this._isShowURLs);
         isClick = true;
       });
       window.addEventListener('click', () => {
-        if (isClick) {
-          isClick = false;
-        }
-        else {
-          this.hideURLs();
-        }
+        !isClick && this.hideURLs();
+        isClick = false;
       });
       this._inputElement.value = this._address;
       this._inputElement.addEventListener("change", (event) => {
@@ -37,7 +34,7 @@ export default class UIURLFieldControl extends BaseControl {
       });
     }
 
-    this._isShowList = this.element.classList.contains(ADDRESSES_SHOW);
+    this._isShowURLs = this.element.classList.contains(ADDRESSES_SHOW);
     this._disabled = this.element.classList.contains(ADDRESSES_DISABLED);
 
     this._buttonElm = NQDOM.getElementByClassName(this.element, CONNECT_BTN_ON);
@@ -52,6 +49,8 @@ export default class UIURLFieldControl extends BaseControl {
       });
       this.registerEvent(CLICK_EVENT);
     }
+  
+    this.registerEvent(URLCHANGED_EVENT);
   }
 
   get currentURL() { return this._address; }
@@ -68,15 +67,16 @@ export default class UIURLFieldControl extends BaseControl {
     this._disabled = this.element.classList.toggle(ADDRESSES_DISABLED, value);
   }
 
-  appendURL(address)
+  appendURL(url)
   {
     if (this._listElement) {
       const item = document.createElement("li");
-      item.textContent = address;
+      item.textContent = url;
   
       item.addEventListener('click', (event) => {
-        this.value = address;
-        this.hide();
+        this.currentURL = url;
+        this.hideURLs();
+        this.dispatchEvent(URLCHANGED_EVENT, {state});
       });
   
       this._listElement.appendChild(item);
@@ -92,16 +92,16 @@ export default class UIURLFieldControl extends BaseControl {
 
   _setShowURLs(value)
   {
-    this._isShowList = this.element.classList.toggle(ADDRESSES_SHOW, value);
+    this._isShowURLs = this.element.classList.toggle(ADDRESSES_SHOW, value);
   }
 
   showURLs()
   {
-    this._setShowURLs(true);
+    this._isShowURLs && this._setShowURLs(true);
   }
 
   hideURLs()
   {
-    this._setShowURLs(false);
+    !this._isShowURLs && this._setShowURLs(false);
   }
 };
