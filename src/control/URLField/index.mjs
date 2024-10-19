@@ -41,8 +41,8 @@ export default class UIURLFieldControl extends BaseControl {
     if (this._buttonElm) {
       this._buttonElm.addEventListener('click', (event) => {
         const state = !this._state;
-        this.element.classList.toggle(CONNECT_BTN_ON, !state);
-        this.element.classList.toggle(CONNECT_BTN_OFF, state);
+        this._buttonElm.classList.toggle(CONNECT_BTN_ON, state);
+        this._buttonElm.classList.toggle(CONNECT_BTN_OFF, !state);
         this._buttonElm.value = state ? "Disconnect" : "Connect";
         this._state = state;
         this.dispatchEvent(STATECHANGED_EVENT, {state});
