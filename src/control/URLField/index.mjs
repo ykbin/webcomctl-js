@@ -92,16 +92,18 @@ export default class UIURLFieldControl extends BaseControl {
 
   _setShowURLs(value)
   {
-    this._isShowURLs = this.element.classList.toggle(ADDRESSES_SHOW, value);
+    if (this._isShowURLs != value) {
+      this._isShowURLs = this.element.classList.toggle(ADDRESSES_SHOW, value);
+    }
   }
 
   showURLs()
   {
-    this._isShowURLs && this._setShowURLs(true);
+    this._setShowURLs(true);
   }
 
   hideURLs()
   {
-    !this._isShowURLs && this._setShowURLs(false);
+    this._setShowURLs(false);
   }
 };
