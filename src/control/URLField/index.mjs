@@ -6,7 +6,7 @@ const STATECHANGED_EVENT = 'stateChanged';
 export default class UIURLFieldControl extends BaseControl {
   _disabled;
   _isShowList;
-  _value = "";
+  _address = "";
   _inputElement;
   _listElement;
   _buttonElm;
@@ -17,9 +17,9 @@ export default class UIURLFieldControl extends BaseControl {
 
   _init()
   {
-    this._inputElement = NQDOM.getElementByClassName(this.element, ADDRESSES_INPUT);
     this._listElement = NQDOM.getElementByClassName(this.element, ADDRESSES_LIST);
 
+    this._inputElement = NQDOM.getElementByClassName(this.element, ADDRESSES_INPUT);
     if (this._inputElement) {
       let isClick = false;
       this._inputElement.addEventListener('click', () => {
@@ -35,10 +35,10 @@ export default class UIURLFieldControl extends BaseControl {
         }
       });
       this._inputElement.addEventListener("change", (event) => {
-        this._value = event.target.value;
+        this._address = event.target.value;
       });
-      if (this._value) {
-        this._inputElement.value = _value;
+      if (this._address) {
+        this._inputElement.value = this._address;
       }
     }
 
@@ -59,12 +59,12 @@ export default class UIURLFieldControl extends BaseControl {
     }
   }
 
-  get value() { return this._value; }
-  set value(value)
+  get currentURL() { return this._address; }
+  set currentURL(value)
   {
     if (this._inputElement)
       this._inputElement.value = value;
-    this._value = value;
+    this._address = value;
   }
 
   get disabled() { return this._disabled; }
@@ -73,7 +73,7 @@ export default class UIURLFieldControl extends BaseControl {
     this._disabled = this.element.classList.toggle(ADDRESSES_DISABLED, value);
   }
 
-  appendItem(address)
+  appendURL(address)
   {
     if (this._listElement) {
       const item = document.createElement("li");
@@ -88,7 +88,7 @@ export default class UIURLFieldControl extends BaseControl {
     }
   }
 
-  clearList()
+  clearURLs()
   {
     if (this._listElement) {
       this._listElement.textContent = "";
@@ -100,12 +100,12 @@ export default class UIURLFieldControl extends BaseControl {
     this._isShowList = this.element.classList.toggle(ADDRESSES_DISABLED, value);
   }
 
-  showList()
+  showURLs()
   {
     this.setShow(true);
   }
 
-  hideList()
+  hideURLs()
   {
     this.setShow(false);
   }
