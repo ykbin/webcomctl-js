@@ -8,9 +8,10 @@ const clss = mk.newClassNameMap([
   "ROOT_CLASS",
   "CONNECT_BTN_ON",
   "CONNECT_BTN_OFF",
-  "FIELD_CLASS",
+  "ADDRESSES_INPUT",
   "ADDRESSES_SHOW",
   "ADDRESSES_DISABLED",
+  "ADDRESSES_LIST",
 ]);
 
 const vars = mk.newCSSVariableMap({
@@ -37,19 +38,17 @@ const vars = mk.newCSSVariableMap({
 });
 
 mk.newHTML('ROOT_HTML', `
-
-  <nav id="wsock-addresses-root" class="${clss.ROOT_CLASS}">
+  <nav class="${clss.ROOT_CLASS}">
     <span>
-      <input id="wsock-addresses-input" type="text" placeholder="Address"/>
+      <input class="${clss.ADDRESSES_INPUT}" type="text" placeholder="Address"/>
     </span>
-    
-    <div>
-      <input id="wsock-connect-btn-root" class="${clss.CONNECT_BTN_ON}" type="button" value="Connect"/>
-    </div>
-    
-    <ul id="wsock-addresses-list"></ul>
-  </nav>
 
+    <div>
+      <input class="${clss.CONNECT_BTN_ON}" type="button" value="Connect"/>
+    </div>
+
+    <ul class="${clss.ADDRESSES_LIST}"></ul>
+  </nav>
 `);
 
 mk.newCSS('CSS', `
