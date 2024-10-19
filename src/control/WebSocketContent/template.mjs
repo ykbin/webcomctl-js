@@ -32,7 +32,6 @@ ${DARKMODE_SELECTOR_VALUE}
 .${clss.ROOT_CLASS}
 {
   display: flex;
-  width: 100%;
   padding: 0px 0px 0px 30px;
   min-height: calc(100% - 150px);
   font-family: monospace;
