@@ -76,7 +76,7 @@ export default class UIURLFieldControl extends BaseControl {
       item.addEventListener('click', (event) => {
         this.currentURL = url;
         this.hideURLs();
-        this.dispatchEvent(URLCHANGED_EVENT, {state});
+        this.dispatchEvent(URLCHANGED_EVENT, {url});
       });
   
       this._listElement.appendChild(item);
