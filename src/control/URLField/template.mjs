@@ -15,7 +15,7 @@ const clss = mk.newClassNameMap([
 ]);
 
 const vars = mk.newCSSVariableMap({
-  wsock_nav_col_hov: [ '#aaa8a821', 'rgb(23, 23, 26)' ],
+  wsock_nav_col_hov: [ '#aaa8a821', '#aaa8a821' ],
   wsock_nav_col: [ '#5e5e5e', ' #dcdcdc' ],
   wsock_nav_inp_act_bg: [ '#dedede', '#d3d3d340' ],
   wsock_nav_inp_hov_bs: [ '0 1px 0 rgba(100, 100, 100, 0)', '0 1px 0 rgb(100 100 100 / 35%)' ],
