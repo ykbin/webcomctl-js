@@ -32,6 +32,7 @@ ${DARKMODE_SELECTOR_VALUE}
   width: 100%;
   height: calc(100% - 43px);
   overflow-y: auto;
+  box-sizing: border-box;
 }
 `);
 

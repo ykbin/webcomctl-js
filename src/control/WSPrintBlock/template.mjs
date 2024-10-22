@@ -30,6 +30,7 @@ ${DARKMODE_SELECTOR_VALUE}
   width: inherit;
   overflow-y: auto;
   overflow-x: hidden;
+  box-sizing: border-box;
 }
 `);
 

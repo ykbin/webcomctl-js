@@ -35,6 +35,12 @@ ${DARKMODE_SELECTOR_VALUE}
   height: 100%;
   background-color: ${vars.wsock_con_bg.asVar()};
   flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+.${clss.ROOT_CLASS} > *
+{
+  margin-top: 10px;
 }
 `);
 

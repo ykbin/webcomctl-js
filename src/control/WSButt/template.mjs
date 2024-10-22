@@ -59,6 +59,7 @@ ${DARKMODE_SELECTOR_VALUE}
   position: relative;
   left: 1px;
   padding: 20px 6px 20px 5px;
+  box-sizing: border-box;
 }
 
 .${clss.ROOT_CLASS} > div
@@ -70,6 +71,7 @@ ${DARKMODE_SELECTOR_VALUE}
   background-image: ${vars.wsock_params.asVar()};
   background-size: contain;
   background-position: center;
+  box-sizing: border-box;
 }
 
 .${clss.ROOT_CLASS}:hover
