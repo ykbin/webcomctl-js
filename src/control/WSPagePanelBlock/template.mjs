@@ -1,6 +1,6 @@
 import ControlMaker from '../../lib/ControlMaker.mjs';
 import { DARKMODE_SELECTOR_VALUE } from '../../lib/DarkMode.mjs';
-const mk = new ControlMaker('WSBlock', import.meta.url);
+const mk = new ControlMaker('WSPagePanel', import.meta.url);
 
 const clss = mk.newClassNameMap([
   "ROOT_CLASS",
@@ -12,10 +12,7 @@ const vars = mk.newCSSVariableMap({
 });
 
 mk.newHTML('ROOT_HTML', `
-<div class="${clss.ROOT_CLASS}">
-  <span></span>
-  <div class="${clss.PORT_CLASS}"></div>
-</div>
+<span class="${clss.ROOT_CLASS} ${clss.PORT_CLASS}"></span>
 `);
 
 mk.newCSS('CSS', `
@@ -31,27 +28,11 @@ ${DARKMODE_SELECTOR_VALUE}
 
 .${clss.ROOT_CLASS}
 {
-  display: flex;
-  flex-direction: row-reverse;
-  width: 100%;
-  height: calc(100% - 43px);
-  overflow-y: auto;
-}
-
-.${clss.ROOT_CLASS} > span
-{
   display: block;
   width: 40px;
   height: 100%;
   background-color: ${vars.wsock_con_bg.asVar()};
   flex-shrink: 0;
-}
-
-.${clss.ROOT_CLASS} > div
-{
-  width: inherit;
-  overflow-y: auto;
-  overflow-x: hidden;
 }
 `);
 
