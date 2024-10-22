@@ -28,7 +28,9 @@ ${DARKMODE_SELECTOR_VALUE}
 
 .${clss.ROOT_CLASS}
 {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
   width: 40px;
   height: 100%;
   background-color: ${vars.wsock_con_bg.asVar()};
