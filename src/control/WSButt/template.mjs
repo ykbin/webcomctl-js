@@ -6,6 +6,7 @@ const mk = new ControlMaker('BUTTON', import.meta.url);
 
 const clss = mk.newClassNameMap([
   "ROOT_CLASS",
+  "ACTIVE_CLASS",
   "BLOCKING_CLASS",
 ]);
 
@@ -20,11 +21,9 @@ const vars = mk.newCSSVariableMap({
 });
 
 mk.newHTML('ROOT_HTML', `
-    <nav class="${clss.ROOT_CLASS} ${clss.BLOCKING_CLASS}">
-      <div id="wsock-rpanel-button" class="">
-        <div></div>
-      </div>
-    </nav>
+<div id="wsock-rpanel-button" class="${clss.ROOT_CLASS} ${clss.BLOCKING_CLASS}">
+  <div></div>
+</div>
 `);
 
 mk.newCSS('CSS', `
@@ -38,19 +37,9 @@ ${DARKMODE_SELECTOR_VALUE}
   ${vars.toString(1)};
 }
 
-nav.${clss.ROOT_CLASS}
-{
-  display: flex;
-  align-items: flex-end;
-  flex-direction: column;
-  height: inherit;
-  width: 0px;
-}
-
-nav.${clss.ROOT_CLASS} > div
+.${clss.ROOT_CLASS}
 {
   background-color: ${vars.nav_but_bg.asVar()};
-  margin-top: 115px;
   padding: 20px 5px 20px 5px;
   box-shadow: ${vars.nav_but_bs.asVar()};
   border-top: 1px solid ${vars.nav_but_bort.asVar()};
@@ -65,14 +54,15 @@ nav.${clss.ROOT_CLASS} > div
   pointer-events: none;
 }*/
 
-nav.${clss.ROOT_CLASS} > div.active
+.${clss.ROOT_CLASS}.${clss.ACTIVE_CLASS}
 {
   position: relative;
   left: 1px;
   padding: 20px 6px 20px 5px;
+  box-sizing: border-box;
 }
 
-nav.${clss.ROOT_CLASS} > div > div
+.${clss.ROOT_CLASS} > div
 {
   height: 25px;
   width: 25px;
@@ -81,21 +71,22 @@ nav.${clss.ROOT_CLASS} > div > div
   background-image: ${vars.wsock_params.asVar()};
   background-size: contain;
   background-position: center;
+  box-sizing: border-box;
 }
 
-nav.${clss.ROOT_CLASS} > div:hover
+.${clss.ROOT_CLASS}:hover
 {
   background: ${vars.nav_but_hov.asVar()};
 }
 
 @media (device-width < 550px)
 {
-  nav.${clss.ROOT_CLASS} > div
+  .${clss.ROOT_CLASS}
   {
     padding: 30px 12px 30px 10px;
     margin-top: 230px;
   }
-  nav.${clss.ROOT_CLASS} > div > div
+  .${clss.ROOT_CLASS} > div
   {
     height: 60px;
     width: 60px;
