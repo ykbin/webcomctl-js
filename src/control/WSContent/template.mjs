@@ -33,7 +33,7 @@ ${DARKMODE_SELECTOR_VALUE}
 {
   display: flex;
   padding: 0px 0px 0px 30px;
-  min-height: calc(100% - 150px);
+  flex-grow: 1;
   font-family: monospace;
 }
 
