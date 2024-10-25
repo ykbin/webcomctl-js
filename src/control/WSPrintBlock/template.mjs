@@ -48,6 +48,8 @@ ${DARKMODE_SELECTOR_VALUE}
 
 .${clss.ROOT_CLASS}
 {
+  display: flex;
+  flex-direction: column;
   width: inherit;
   overflow-y: auto;
   overflow-x: hidden;
