@@ -28,20 +28,20 @@ ${DARKMODE_SELECTOR_VALUE}
   ${vars.toString(1)};
 }
 
-.${ROOT_CLASS}::-webkit-scrollbar
+.${clss.ROOT_CLASS}::-webkit-scrollbar
 {
   width: 10px;
   height: 10px;
 }
 
-.${ROOT_CLASS}::-webkit-scrollbar-thumb
+.${clss.ROOT_CLASS}::-webkit-scrollbar-thumb
 {
   background-color: ${SCTHBG_CLR};
   border-radius: 10px;
 }
 
-.${ROOT_CLASS}::-webkit-scrollbar-track,
-.${ROOT_CLASS}::-webkit-scrollbar-corner
+.${clss.ROOT_CLASS}::-webkit-scrollbar-track,
+.${clss.ROOT_CLASS}::-webkit-scrollbar-corner
 {
   background-color: ${SCTRBG_CLR};
 }
