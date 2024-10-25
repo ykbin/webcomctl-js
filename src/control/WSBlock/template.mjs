@@ -30,7 +30,7 @@ ${DARKMODE_SELECTOR_VALUE}
   display: flex;
   flex-direction: row-reverse;
   width: 100%;
-  height: calc(100% - 43px);
+  height: 100%;
   overflow-y: auto;
   box-sizing: border-box;
 }
