@@ -21,7 +21,7 @@ const vars = mk.newCSSVariableMap({
 });
 
 mk.newHTML('ROOT_HTML', `
-<div class="${clss.ROOT_CLASS}" draggable="false">
+<div class="${clss.ROOT_CLASS} ${clss.SHOW_BUTT2_CLASS} ${clss.SHOW_BUTT1_CLASS}" draggable="false">
   <span>
     <div><div></div></div>
     <img class="${clss.IMAGE_CLASS}" src="">
