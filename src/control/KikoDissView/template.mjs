@@ -60,6 +60,7 @@ ${DARKMODE_SELECTOR_VALUE}
   display: block;
 }
 
+
 .${clss.ROOT_CLASS} > span
 {
   display: flex;
@@ -79,7 +80,7 @@ ${DARKMODE_SELECTOR_VALUE}
 
 .${clss.ROOT_CLASS} > span > div
 {
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   width: 90px;
@@ -87,6 +88,13 @@ ${DARKMODE_SELECTOR_VALUE}
   padding-right: 9px;
   border-radius: 50%;
   flex-shrink: 0;
+}
+
+.${clss.SHOW_BUTT_CLASS} > span > div,
+.${clss.SHOW_BUTT1_CLASS} > span > div:first-child,
+.${clss.SHOW_BUTT2_CLASS} > span > div:last-child
+{
+  display: flex;
 }
 
 .${clss.ROOT_CLASS} > span > div:hover
