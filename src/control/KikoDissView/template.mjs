@@ -10,6 +10,9 @@ const clss = mk.newClassNameMap([
   "ROOT_CLASS",
   "IMAGE_CLASS",
   "SHOW_CLASS",
+  "SHOW_BUTT_CLASS",
+  "SHOW_BUTT1_CLASS",
+  "SHOW_BUTT2_CLASS",
 ]);
 
 const vars = mk.newCSSVariableMap({
@@ -55,10 +58,14 @@ ${DARKMODE_SELECTOR_VALUE}
   overflow: auto;
 }
 
-.${clss.SHOW_CLASS}
+.${clss.SHOW_CLASS},
+${clss.SHOW_BUTT_CLASS},
+.${clss.SHOW_BUTT1_CLASS},
+.${clss.SHOW_BUTT2_CLASS}
 {
   display: block;
 }
+
 
 .${clss.ROOT_CLASS} > span
 {
@@ -87,6 +94,14 @@ ${DARKMODE_SELECTOR_VALUE}
   padding-right: 9px;
   border-radius: 50%;
   flex-shrink: 0;
+  visibility: hidden;
+}
+
+.${clss.SHOW_BUTT_CLASS} > span > div,
+.${clss.SHOW_BUTT1_CLASS} > span > div:first-child,
+.${clss.SHOW_BUTT2_CLASS} > span > div:last-child
+{
+  visibility: visible;
 }
 
 .${clss.ROOT_CLASS} > span > div:hover
