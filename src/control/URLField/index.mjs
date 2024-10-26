@@ -21,7 +21,7 @@ export default class UIURLFieldControl extends BaseControl {
     if (this._inputElement) {
       let isClick = false;
       this._inputElement.addEventListener('click', () => {
-        this._setShowURLs(!this._isShowURLs);
+        this._setShowURLs(!!this._listElement.childElementCount && !this._isShowURLs);
         isClick = true;
       });
       window.addEventListener('click', () => {
