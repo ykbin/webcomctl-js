@@ -59,6 +59,7 @@ ${DARKMODE_SELECTOR_VALUE}
 }
 
 .${clss.SHOW_CLASS},
+${clss.SHOW_BUTT_CLASS},
 .${clss.SHOW_BUTT1_CLASS},
 .${clss.SHOW_BUTT2_CLASS}
 {
