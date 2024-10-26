@@ -10,6 +10,9 @@ const clss = mk.newClassNameMap([
   "ROOT_CLASS",
   "IMAGE_CLASS",
   "SHOW_CLASS",
+  "SHOW_BUTT_CLASS",
+  "SHOW_BUTT1_CLASS",
+  "SHOW_BUTT2_CLASS",
 ]);
 
 const vars = mk.newCSSVariableMap({
