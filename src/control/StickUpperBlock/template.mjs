@@ -46,6 +46,11 @@ ${DARKMODE_SELECTOR_VALUE}
   container-type: inline-size;
 }
 
+  .${clss.ROOT_CLASS} > *:first-child
+  {
+    display: none;
+  }
+
 @container function (width < 750px)
 {
   .${clss.ROOT_CLASS} > *:first-child
