@@ -48,7 +48,7 @@ ${DARKMODE_SELECTOR_VALUE}
 
 @container function (width < 750px)
 {
-  .${ROOT_CLASS} > *:first-child
+  .${clss.ROOT_CLASS} > *:first-child
   {
     display: none;
   }
