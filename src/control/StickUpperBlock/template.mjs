@@ -46,7 +46,7 @@ ${DARKMODE_SELECTOR_VALUE}
   container-type: inline-size;
 }
 
-@container function (width < 1000px)
+@container hide (width < 1000px)
 {
   .${clss.ROOT_CLASS} > *:first-child > span
   {
