@@ -42,6 +42,16 @@ ${DARKMODE_SELECTOR_VALUE}
   font-family: monospace;
   box-shadow: ${vars.wsock_nav_bs.asVar()};
   z-index: 1;
+  container-name: hide;
+  container-type: inline-size;
+}
+
+@container hide (width < 750px)
+{
+  .${clss.ROOT_CLASS} > *:first-child > span
+  {
+    display: none;
+  }
 }
 `);
 

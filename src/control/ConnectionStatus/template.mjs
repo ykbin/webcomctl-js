@@ -45,7 +45,6 @@ ${DARKMODE_SELECTOR_VALUE}
   align-items: center;
   top: 26px;
   left: 20px;
-  z-index: 1;
 }
 
 .${clss.ROOT_CLASS} > div
