@@ -118,6 +118,16 @@ ${DARKMODE_SELECTOR_VALUE}
   border-spacing: 0 5px;
 }
 
+.${clss.LIST_CLASS}
+{
+  display: inline-block;
+  padding-left: 5px;
+  margin: 0 0 5px 0;
+  font-weight: 600;
+  font-size: 19px;
+  color: ${vars.titleCol.asVar()};
+}
+
 .${clss.LIST_CLASS} span 
 {
   display: table-row-group;
