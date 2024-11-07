@@ -27,7 +27,11 @@ mk.newHTML('ROOT_HTML', `
         <div class="${clss.LIST_CLASS}">
           <span>
             <h3 class="${clss.LIST_NAME}">Height</h3><label class="${clss.LIST_VALUE}">2272 px</label>
+          </span>
+          <span>
             <h3 class="${clss.LIST_NAME}">JFIF Ver</h3><label class="${clss.LIST_VALUE}">1.1</label>
+          </span>
+          <span>
             <h3 class="${clss.LIST_NAME}">ColorSpace</h3><label class="${clss.LIST_VALUE}">YCbCr</label>
           </span>
         </div>
