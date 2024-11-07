@@ -25,6 +25,7 @@ mk.newHTML('ROOT_HTML', `
     <div class="${clss.DESCRIPTION_CLASS} notranslate" translate="no">
 
         <div class="${clss.LIST_CLASS}">
+          <h2>Properties</h2>
           <span>
             <h3 class="${clss.LIST_NAME}">Height</h3><label class="${clss.LIST_VALUE}">2272 px</label>
           </span>
