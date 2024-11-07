@@ -25,11 +25,11 @@ mk.newHTML('ROOT_HTML', `
     <div class="${clss.DESCRIPTION_CLASS} notranslate" translate="no">
 
         <div class="${clss.LIST_CLASS}">
-        
-          <h3 class="${clss.LIST_NAME}">Height</h3><label class="${clss.LIST_VALUE}">2272 px</label>
-          <h3 class="${clss.LIST_NAME}">JFIF Ver</h3><label class="${clss.LIST_VALUE}">1.1</label>
-          <h3 class="${clss.LIST_NAME}">ColorSpace</h3><label class="${clss.LIST_VALUE}">YCbCr</label>
-
+          <span>
+            <h3 class="${clss.LIST_NAME}">Height</h3><label class="${clss.LIST_VALUE}">2272 px</label>
+            <h3 class="${clss.LIST_NAME}">JFIF Ver</h3><label class="${clss.LIST_VALUE}">1.1</label>
+            <h3 class="${clss.LIST_NAME}">ColorSpace</h3><label class="${clss.LIST_VALUE}">YCbCr</label>
+          </span>
         </div>
 
     </div>
