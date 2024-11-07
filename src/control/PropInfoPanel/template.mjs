@@ -122,7 +122,7 @@ ${DARKMODE_SELECTOR_VALUE}
 {
   display: inline-block;
   padding-left: 5px;
-  margin: 0 0 5px 0;
+  margin: 0 0 10px 0;
   font-weight: 600;
   font-size: 19px;
   color: ${vars.titleCol.asVar()};
@@ -131,6 +131,7 @@ ${DARKMODE_SELECTOR_VALUE}
 .${clss.LIST_CLASS} span 
 {
   display: table-row-group;
+  font-size: 13px;
 }
 
 .${clss.LIST_CLASS} > span > h3
@@ -150,7 +151,7 @@ ${DARKMODE_SELECTOR_VALUE}
   word-break: break-all;
 }
 
-.${clss.LIST_CLASS} > span:nth-child(2n)
+.${clss.LIST_CLASS} > span:nth-child(2n + 3)
 {
   background-color: #7a7a7a29;
 }
