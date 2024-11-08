@@ -422,7 +422,7 @@ ${DARKMODE_SELECTOR_VALUE}
   background-color: ${vars.col.asVar()};
 }
 
-.${clss.ROOT_CLASS} > span > *:hover,
+.${clss.ROOT_CLASS} > span > *:hover
 {
   background-color: ${vars.hov.asVar()};
   border-color: ${vars.col.asVar()};
