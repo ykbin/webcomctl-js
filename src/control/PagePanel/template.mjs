@@ -422,8 +422,7 @@ ${DARKMODE_SELECTOR_VALUE}
   background-color: ${vars.col.asVar()};
 }
 
-.${clss.PROPERTIES_CLASS}:hover,
-.${clss.DOWNLOAD_CLASS}:hover
+.${clss.ROOT_CLASS} > span > *:hover,
 {
   background-color: ${vars.hov.asVar()};
   border-color: ${vars.col.asVar()};
