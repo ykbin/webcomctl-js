@@ -388,6 +388,16 @@ ${DARKMODE_SELECTOR_VALUE}
   transition: background-color 0.250s;
 }
 
+.${clss.ROOT_CLASS} > span > *
+{
+  width: 35px;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 25px;
+  flex-shrink: 0;
+}
+
 .${clss.PROPERTIES_CLASS}
 {
   width: 35px;
