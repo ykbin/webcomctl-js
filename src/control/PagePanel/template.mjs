@@ -10,6 +10,7 @@ const clss = mk.newClassNameMap([
   "ROOT_CLASS",
   "DOWNLOAD_CLASS",
   "PROPERTIES_CLASS",
+  "PROPERTIES2_CLASS",
   "PROPERTIES_SHOW_CLASS",
   "CODETYPE_CLASS",
   "CTSHOW_CLASS",
@@ -29,6 +30,7 @@ const clss = mk.newClassNameMap([
 
 const DOWNLOAD_IMG = await mk.loadSvgAsCssUrl('./download.svg');
 const PROPERTIES_IMG = await mk.loadSvgAsCssUrl('./properties.svg');
+const PROP_IMG = await mk.loadSvgAsCssUrl('./prop.svg');
 
 const BS1_VAR = 'rgba(0,0,0,0.13)';
 const BS2_VAR = 'rgba(0,0,0,0.11)';
@@ -60,6 +62,7 @@ mk.newHTML('ROOT_HTML', `
   <span>
     <a class="${clss.DOWNLOAD_CLASS}"></a>
     <div class="${clss.PROPERTIES_CLASS}"></div>
+    <div class="${clss.PROPERTIES2_CLASS}"></div>
   </span>
 </span>
 `);
@@ -183,7 +186,7 @@ ${DARKMODE_SELECTOR_VALUE}
   box-sizing: border-box;
 }
 
-.${clss.PROPERTIES_CLASS},
+.${clss.ROOT_CLASS} > span > div,
 .${clss.PERENTMENU_CLASS}:empty + s,
 .${clss.CODETYPE_CLASS} .${clss.MENULIST_CLASS},
 .${clss.CODETYPE_CLASS}:has(.${clss.MENULIST_CLASS}:empty),
@@ -193,7 +196,8 @@ ${DARKMODE_SELECTOR_VALUE}
   display: none;
 }
 
-.${clss.PROPERTIES_CLASS}.${clss.PROPERTIES_SHOW_CLASS},
+.${clss.ROOT_CLASS} > span > .${clss.PROPERTIES_SHOW_CLASS},
+.${clss.PROPERTIES2_CLASS}.${clss.PROPERTIES_SHOW_CLASS},
 .${clss.CODETYPE_CLASS}:has(.${clss.MENUSTYLE2_CLASS}) .${clss.MENUARROW_CLASS},
 .${clss.CODETYPE_CLASS}:has(.${clss.MENUSTYLE3_CLASS}) .${clss.MENUARROW_CLASS},
 .${clss.CODETYPE_CLASS}:has(.${clss.MENULIST_CLASS}) .${clss.MENUARROW_CLASS}::before,
@@ -388,32 +392,36 @@ ${DARKMODE_SELECTOR_VALUE}
   transition: background-color 0.250s;
 }
 
-.${clss.PROPERTIES_CLASS}
+.${clss.ROOT_CLASS} > span > *
 {
   width: 35px;
   height: 100%;
   background-repeat: no-repeat;
   background-position: center;
+  flex-shrink: 0;
+}
+
+.${clss.PROPERTIES2_CLASS}
+{
+  background-size: 25px;
+  background-image: ${PROP_IMG};
+}
+
+.${clss.PROPERTIES_CLASS}
+{
   background-size: 25px;
   background-image: ${PROPERTIES_IMG};
-  flex-shrink: 0;
 }
 
 .${clss.DOWNLOAD_CLASS}
 {
   display: block;
-  width: 35px;
-  height: 100%;
-  background-repeat: no-repeat;
-  background-position: center;
   background-size: 23px;
   background-image: ${DOWNLOAD_IMG};
   background-color: ${vars.col.asVar()};
-  flex-shrink: 0;
 }
 
-.${clss.PROPERTIES_CLASS}:hover,
-.${clss.DOWNLOAD_CLASS}:hover
+.${clss.ROOT_CLASS} > span > *:hover
 {
   background-color: ${vars.hov.asVar()};
   border-color: ${vars.col.asVar()};
