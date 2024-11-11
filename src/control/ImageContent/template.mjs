@@ -55,8 +55,8 @@ ${DARKMODE_SELECTOR_VALUE}
   max-height: calc(100% - 80px);
   border: 1px solid;
   border-color: #f3f3f3;
-  flex-shrink: 0;
   box-sizing: border-box;
+  flex-shrink: 0;
 }
 
 .${ROOT_CLASS} > div
