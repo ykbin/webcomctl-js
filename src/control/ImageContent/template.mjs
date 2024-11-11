@@ -75,7 +75,8 @@ ${DARKMODE_SELECTOR_VALUE}
   overflow: hidden;
 }
 
-.${ROOT_CLASS} > div.${ACTIV_CLASS}
+.${ROOT_CLASS} > div.${BUTT_LEFT_CLASS},
+.${ROOT_CLASS} > div.${BUTT_RIGHT_CLASS}
 {
   display: flex;
 }
