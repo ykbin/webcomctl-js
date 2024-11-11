@@ -6,6 +6,7 @@ const mk = new ControlMaker('FlyingButtons', import.meta.url);
 
 const clss = mk.newClassNameMap([
   "ROOT_CLASS",
+  "ACTIV_CLASS",
 ]);
 
 const vars = mk.newCSSVariableMap({
@@ -18,7 +19,8 @@ const vars = mk.newCSSVariableMap({
 const CLOSE_HOV_COL = '#80808042';
 
 mk.newHTML('ROOT_HTML', `
-  <div class="${clss.ROOT_CLASS}">
+  <div class="${clss.ROOT_CLASS} ${clss.ACTIV_CLASS}">
+    <div></div>
   </div>
 `);
 
@@ -42,10 +44,24 @@ ${DARKMODE_SELECTOR_VALUE}
 {
   position: absolute;
   bottom: 0;
+  display: flex;
+  height: 0;
+  width: 0;
+  overflow: hidden;
+}
+
+.${clss.ROOT_CLASS} > div
+{
   height: 40px;
   min-width: 200px;
   background-color: blueviolet;
   overflow: hidden;
+}
+
+.${clss.ACTIV_CLASS}
+{
+  justify-content: flex-end;
+  align-items: flex-end;
 }
 `);
 
