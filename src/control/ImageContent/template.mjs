@@ -55,6 +55,7 @@ ${DARKMODE_SELECTOR_VALUE}
   max-height: calc(100% - 80px);
   border: 1px solid;
   border-color: #f3f3f3;
+  flex-shrink: 0;
   box-sizing: border-box;
 }
 
@@ -73,6 +74,16 @@ ${DARKMODE_SELECTOR_VALUE}
   background-color: blueviolet;
   flex-shrink: 0;
   overflow: hidden;
+}
+
+.${BUTT_LEFT_CLASS}
+{
+  justify-content: flex-start;
+}
+
+.${BUTT_RIGHT_CLASS}
+{
+  justify-content: flex-end;
 }
 
 .${ROOT_CLASS} > div.${BUTT_LEFT_CLASS},
