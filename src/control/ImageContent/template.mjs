@@ -7,11 +7,13 @@ import { UIC_CONTENT_BACKGROUND_COLOR_DARK } from '../../lib/WickedTheme.mjs';
 const mk = new ControlMaker('ImageContent', import.meta.url);
 
 export const ROOT_CLASS = mk.newClassName("Root");
+export const PORT_CLASS = mk.newClassName("Port");
 export const CONTENT_CLASS = mk.newClassName("Content");
 
 export const ROOT_HTML = `
 <div class="${ROOT_CLASS}" draggable="false">
   <img class="${CONTENT_CLASS}"/>
+  <div class="${PORT_CLASS}"></div>
 </div>
 `;
 
@@ -28,6 +30,7 @@ ${DARKMODE_SELECTOR_VALUE}
 
 .${ROOT_CLASS}
 {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
