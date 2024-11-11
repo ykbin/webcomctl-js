@@ -55,13 +55,14 @@ ${DARKMODE_SELECTOR_VALUE}
   height: 20px;
   width: 20px;
   background-color: blueviolet;
+  flex-shrink: 0;
   overflow: hidden;
 }
 
 .${clss.ACTIV_CLASS}
 {
+  align-items: center;
   justify-content: flex-end;
-  align-items: flex-end;
 }
 `);
 

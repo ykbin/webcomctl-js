@@ -7,13 +7,19 @@ import { UIC_CONTENT_BACKGROUND_COLOR_DARK } from '../../lib/WickedTheme.mjs';
 const mk = new ControlMaker('ImageContent', import.meta.url);
 
 export const ROOT_CLASS = mk.newClassName("Root");
-export const PORT_CLASS = mk.newClassName("Port");
 export const CONTENT_CLASS = mk.newClassName("Content");
+export const BUTT_LEFT_CLASS = mk.newClassName("ButtLeft");
+export const BUTT_RIGHT_CLASS = mk.newClassName("ButtRight");
 
 export const ROOT_HTML = `
 <div class="${ROOT_CLASS}" draggable="false">
+  <div class="${BUTT_LEFT_CLASS}">
+    <div></div>
+  </div>
   <img class="${CONTENT_CLASS}"/>
-  <div class="${PORT_CLASS}"></div>
+  <div class="${BUTT_RIGHT_CLASS}">
+    <div></div>
+  </div>
 </div>
 `;
 
@@ -30,7 +36,6 @@ ${DARKMODE_SELECTOR_VALUE}
 
 .${ROOT_CLASS}
 {
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -51,5 +56,27 @@ ${DARKMODE_SELECTOR_VALUE}
   border: 1px solid;
   border-color: #f3f3f3;
   box-sizing: border-box;
+}
+
+.${ROOT_CLASS} > div
+{
+  display: none;
+  align-items: center;
+  height: 100%;
+  width: 0;
+}
+
+.${ROOT_CLASS} > div > div
+{
+  height: 20px;
+  width: 20px;
+  background-color: blueviolet;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.${ROOT_CLASS} > div.${ACTIV_CLASS}
+{
+  display: flex;
 }
 `;
