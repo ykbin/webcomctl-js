@@ -1,0 +1,55 @@
+import ControlMaker from '../../lib/ControlMaker.mjs';
+import { DARKMODE_SELECTOR_VALUE } from '../../lib/DarkMode.mjs';
+import { TOOLBAR_FONT_SANS } from '../../lib/WickedTheme.mjs';
+
+const mk = new ControlMaker('FlyingButtons', import.meta.url);
+
+const clss = mk.newClassNameMap([
+  "ROOT_CLASS",
+]);
+
+const vars = mk.newCSSVariableMap({
+  menuBg: [ '#f3f3f3', '#252525' ],
+  menuCol: [ 'black', '#b8b4b4' ],
+  pullOutBor: [ '#dedede', '#323232' ],
+  menuTitleCol: [ '#272626', '#9b9b9b' ],
+});
+
+const CLOSE_HOV_COL = '#80808042';
+
+mk.newHTML('ROOT_HTML', `
+  <div class="${clss.ROOT_CLASS}">
+  </div>
+`);
+
+mk.newCSS('CSS', `
+:root
+{
+  ${vars.toString(0)};
+}
+
+${DARKMODE_SELECTOR_VALUE}
+{
+  ${vars.toString(1)};
+}
+
+.${clss.ROOT_CLASS} *
+{
+  box-sizing: border-box;
+}
+
+.${clss.ROOT_CLASS}
+{
+  position: absolute;
+  bottom: 0;
+  height: 40px;
+  min-width: 200px;
+  background-color: blueviolet;
+  overflow: hidden;
+}
+`);
+
+export function buildComponent()
+{
+  return mk.buildComponent();
+}
