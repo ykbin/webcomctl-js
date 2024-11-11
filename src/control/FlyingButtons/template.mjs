@@ -42,9 +42,9 @@ ${DARKMODE_SELECTOR_VALUE}
 
 .${clss.ROOT_CLASS}
 {
-  position: absolute;
-  bottom: 0;
-  right: 0;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
   display: flex;
   height: 0;
   width: 0;
