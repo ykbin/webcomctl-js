@@ -42,8 +42,8 @@ ${DARKMODE_SELECTOR_VALUE}
 
 .${clss.ROOT_CLASS}
 {
-  position: fixed;
-  bottom: 10px;
+  position: absolute;
+  bottom: 50%;
   right: 10px;
   display: flex;
   height: 0;
@@ -52,8 +52,8 @@ ${DARKMODE_SELECTOR_VALUE}
 
 .${clss.ROOT_CLASS} > div
 {
-  height: 40px;
-  min-width: 200px;
+  height: 20px;
+  width: 20px;
   background-color: blueviolet;
   overflow: hidden;
 }

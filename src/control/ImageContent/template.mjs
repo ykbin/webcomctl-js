@@ -30,6 +30,7 @@ ${DARKMODE_SELECTOR_VALUE}
 
 .${ROOT_CLASS}
 {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
