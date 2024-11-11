@@ -44,10 +44,10 @@ ${DARKMODE_SELECTOR_VALUE}
 {
   position: absolute;
   bottom: 0;
+  right: 0;
   display: flex;
   height: 0;
   width: 0;
-  overflow: hidden;
 }
 
 .${clss.ROOT_CLASS} > div
