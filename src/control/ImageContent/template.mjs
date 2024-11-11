@@ -78,12 +78,12 @@ ${DARKMODE_SELECTOR_VALUE}
 
 .${BUTT_LEFT_CLASS}
 {
-  justify-content: flex-start;
+  justify-content: flex-end;
 }
 
 .${BUTT_RIGHT_CLASS}
 {
-  justify-content: flex-end;
+  justify-content: flex-start;
 }
 
 .${ROOT_CLASS} > div.${BUTT_LEFT_CLASS},
