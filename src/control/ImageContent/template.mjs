@@ -64,7 +64,7 @@ ${DARKMODE_SELECTOR_VALUE}
   display: none;
   align-items: center;
   height: 100%;
-  width: 0;
+  width: 100%;
 }
 
 .${ROOT_CLASS} > div > div
