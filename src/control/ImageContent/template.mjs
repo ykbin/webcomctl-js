@@ -10,6 +10,7 @@ export const ROOT_CLASS = mk.newClassName("Root");
 export const CONTENT_CLASS = mk.newClassName("Content");
 export const BUTT_LEFT_CLASS = mk.newClassName("ButtLeft");
 export const BUTT_RIGHT_CLASS = mk.newClassName("ButtRight");
+const PLAY = await mk.loadSvgAsCssUrl('./play.svg');
 
 export const ROOT_HTML = `
 <div class="${ROOT_CLASS}" draggable="false">
@@ -71,9 +72,17 @@ ${DARKMODE_SELECTOR_VALUE}
 {
   height: 20px;
   width: 20px;
-  background-color: blueviolet;
+  background-image: ${PLAY};
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
   flex-shrink: 0;
   overflow: hidden;
+}
+
+.${ROOT_CLASS} > div > div:first-child
+{
+  transform: scaleX(-1);
 }
 
 .${BUTT_LEFT_CLASS}
