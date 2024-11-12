@@ -33,12 +33,14 @@ export const CSS = `
 {
   --uic-imgcnt-bg: ${UIC_CONTENT_BACKGROUND_COLOR};
   --uic-imgcnt-but: #f3f3f3;
+  --uic-imgcnt-buthov: #bcbcbc;
 }
 
 ${DARKMODE_SELECTOR_VALUE}
 {
   --uic-imgcnt-bg: ${UIC_CONTENT_BACKGROUND_COLOR_DARK};
   --uic-imgcnt-but: #252525;
+  --uic-imgcnt-buthov: #424242;
 }
 
 .${ROOT_CLASS}
@@ -82,6 +84,11 @@ ${DARKMODE_SELECTOR_VALUE}
   background-color: var(--uic-imgcnt-but);
   border-radius: 5px;
   flex-shrink: 0;
+}
+
+.${ROOT_CLASS} > div > div:hover
+{
+  background-color: var(--uic-imgcnt-buthov);
 }
 
 .${ROOT_CLASS} > div > div > div
