@@ -15,7 +15,9 @@ const PLAY = await mk.loadSvgAsCssUrl('./play.svg');
 export const ROOT_HTML = `
 <div class="${ROOT_CLASS}" draggable="false">
   <div class="${BUTT_LEFT_CLASS}">
-    <div></div>
+    <div>
+      <div></div>
+    </div>
   </div>
   <img class="${CONTENT_CLASS}"/>
   <div class="${BUTT_RIGHT_CLASS}">
@@ -74,6 +76,7 @@ ${DARKMODE_SELECTOR_VALUE}
 {
   height: 100%;
   width: 20px;
+  flex-shrink: 0;
 }
 
 .${ROOT_CLASS} > div > div > div
@@ -84,7 +87,6 @@ ${DARKMODE_SELECTOR_VALUE}
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  flex-shrink: 0;
   overflow: hidden;
 }
 
