@@ -19,7 +19,9 @@ export const ROOT_HTML = `
   </div>
   <img class="${CONTENT_CLASS}"/>
   <div class="${BUTT_RIGHT_CLASS}">
-    <div></div>
+    <div>
+      <div></div>
+    </div>
   </div>
 </div>
 `;
@@ -64,11 +66,17 @@ ${DARKMODE_SELECTOR_VALUE}
 {
   display: none;
   align-items: center;
-  height: 100%;
+  height: 40px;
   width: 100%;
 }
 
 .${ROOT_CLASS} > div > div
+{
+  height: 100%;
+  width: 20px;
+}
+
+.${ROOT_CLASS} > div > div > div
 {
   height: 20px;
   width: 20px;
@@ -80,7 +88,7 @@ ${DARKMODE_SELECTOR_VALUE}
   overflow: hidden;
 }
 
-.${ROOT_CLASS} > div:first-child > div
+.${ROOT_CLASS} > div:first-child > div > div
 {
   transform: scaleX(-1);
 }
@@ -99,5 +107,7 @@ ${DARKMODE_SELECTOR_VALUE}
 .${ROOT_CLASS} > div.${BUTT_RIGHT_CLASS}
 {
   display: flex;
+  align-items: center;
+
 }
 `;
