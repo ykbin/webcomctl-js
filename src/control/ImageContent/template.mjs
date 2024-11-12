@@ -80,7 +80,7 @@ ${DARKMODE_SELECTOR_VALUE}
   overflow: hidden;
 }
 
-.${ROOT_CLASS} > div > div:first-child
+.${ROOT_CLASS} > div:first-child > div
 {
   transform: scaleX(-1);
 }
