@@ -74,6 +74,8 @@ ${DARKMODE_SELECTOR_VALUE}
 
 .${ROOT_CLASS} > div > div
 {
+  display: flex;
+  align-items: center;
   height: 100%;
   width: 20px;
   flex-shrink: 0;
@@ -109,7 +111,5 @@ ${DARKMODE_SELECTOR_VALUE}
 .${ROOT_CLASS} > div.${BUTT_RIGHT_CLASS}
 {
   display: flex;
-  align-items: center;
-
 }
 `;
