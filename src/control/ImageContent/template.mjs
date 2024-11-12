@@ -32,12 +32,13 @@ export const CSS = `
 :root
 {
   --uic-imgcnt-bg: ${UIC_CONTENT_BACKGROUND_COLOR};
-  --uic-imgcnt-but: #80808061;
+  --uic-imgcnt-but: #f3f3f3;
 }
 
 ${DARKMODE_SELECTOR_VALUE}
 {
   --uic-imgcnt-bg: ${UIC_CONTENT_BACKGROUND_COLOR_DARK};
+  --uic-imgcnt-but: #252525;
 }
 
 .${ROOT_CLASS}
