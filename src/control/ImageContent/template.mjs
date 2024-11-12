@@ -32,6 +32,7 @@ export const CSS = `
 :root
 {
   --uic-imgcnt-bg: ${UIC_CONTENT_BACKGROUND_COLOR};
+  --uic-imgcnt-but: #80808061;
 }
 
 ${DARKMODE_SELECTOR_VALUE}
@@ -67,7 +68,6 @@ ${DARKMODE_SELECTOR_VALUE}
 .${ROOT_CLASS} > div
 {
   display: none;
-  align-items: center;
   height: 40px;
   width: 100%;
 }
@@ -78,6 +78,8 @@ ${DARKMODE_SELECTOR_VALUE}
   align-items: center;
   height: 100%;
   width: 20px;
+  background-color: var(--uic-imgcnt-but);
+  border-radius: 5px;
   flex-shrink: 0;
 }
 
