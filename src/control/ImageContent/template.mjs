@@ -122,7 +122,7 @@ ${DARKMODE_SELECTOR_VALUE}
   justify-content: flex-end;
 }
 
-.${BUTT_TWO_CLASS}, 
+.${BUTT_TWO_CLASS} > div, 
 .${BUTT_LEFT_CLASS} > div:first-child,
 .${BUTT_RIGHT_CLASS} > div:last-child
 {
