@@ -116,7 +116,7 @@ ${DARKMODE_SELECTOR_VALUE}
   justify-content: flex-start;
 }
 
-.${ROOT_CLASS} > div:last-child
+.${ROOT_CLASS} > div + img + div
 {
   justify-content: flex-end;
 }
