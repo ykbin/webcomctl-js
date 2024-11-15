@@ -14,13 +14,13 @@ const PLAY = await mk.loadSvgAsCssUrl('./play.svg');
 
 export const ROOT_HTML = `
 <div class="${ROOT_CLASS}" draggable="false">
-  <div class="${BUTT_LEFT_CLASS}">
+  <div>
     <div>
       <div></div>
     </div>
   </div>
   <img class="${CONTENT_CLASS}"/>
-  <div class="${BUTT_RIGHT_CLASS}">
+  <div>
     <div>
       <div></div>
     </div>
@@ -70,9 +70,11 @@ ${DARKMODE_SELECTOR_VALUE}
 
 .${ROOT_CLASS} > div
 {
-  display: none;
+  display: flex;
   height: 40px;
   width: 100%;
+  visibility: hidden;
+  pointer-events: none;
 }
 
 .${ROOT_CLASS} > div > div
@@ -120,6 +122,7 @@ ${DARKMODE_SELECTOR_VALUE}
 .${BUTT_LEFT_CLASS} > div:first-child,
 .${BUTT_RIGHT_CLASS} > div:last-child
 {
-  display: flex;
+  visibility: visible;
+  pointer-events: auto;
 }
 `;
