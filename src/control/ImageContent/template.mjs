@@ -36,6 +36,7 @@ export const CSS = `
   --uic-imgcnt-bg: ${UIC_CONTENT_BACKGROUND_COLOR};
   --uic-imgcnt-but: #f3f3f3;
   --uic-imgcnt-buthov: #bcbcbc;
+  --uic-imgcnt-quantum: #272727;
 }
 
 ${DARKMODE_SELECTOR_VALUE}
@@ -43,6 +44,7 @@ ${DARKMODE_SELECTOR_VALUE}
   --uic-imgcnt-bg: ${UIC_CONTENT_BACKGROUND_COLOR_DARK};
   --uic-imgcnt-but: #252525;
   --uic-imgcnt-buthov: #424242;
+  --uic-imgcnt-quantum: #b8b4b4;
 }
 
 .${ROOT_CLASS}
@@ -141,5 +143,6 @@ ${DARKMODE_SELECTOR_VALUE}
   position: absolute;
   top: 5px;
   height: 20px;
+  color: #272727;
 }
 `;
