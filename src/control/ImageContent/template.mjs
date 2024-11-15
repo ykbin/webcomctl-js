@@ -46,6 +46,7 @@ ${DARKMODE_SELECTOR_VALUE}
 
 .${ROOT_CLASS}
 {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -135,7 +136,8 @@ ${DARKMODE_SELECTOR_VALUE}
 
 .${ROOT_CLASS} > span > div
 {
+  position: absolute;
+  top: 5px;
   height: 20px;
-  width: 50px;
 }
 `;
