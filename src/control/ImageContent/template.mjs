@@ -107,18 +107,18 @@ ${DARKMODE_SELECTOR_VALUE}
   transform: scaleX(-1);
 }
 
-.${BUTT_LEFT_CLASS}
+.${ROOT_CLASS} > div
 {
   justify-content: flex-start;
 }
 
-.${BUTT_RIGHT_CLASS}
+.${ROOT_CLASS} > div:last-child
 {
   justify-content: flex-end;
 }
 
-.${ROOT_CLASS} > div.${BUTT_LEFT_CLASS},
-.${ROOT_CLASS} > div.${BUTT_RIGHT_CLASS}
+.${BUTT_LEFT_CLASS} > div:first-child,
+.${BUTT_RIGHT_CLASS} > div:last-child
 {
   display: flex;
 }
