@@ -10,6 +10,7 @@ export const ROOT_CLASS = mk.newClassName("Root");
 export const CONTENT_CLASS = mk.newClassName("Content");
 export const BUTT_LEFT_CLASS = mk.newClassName("ButtLeft");
 export const BUTT_RIGHT_CLASS = mk.newClassName("ButtRight");
+export const BUTT_TWO_CLASS = mk.newClassName("ButtTwo");
 const PLAY = await mk.loadSvgAsCssUrl('./play.svg');
 
 export const ROOT_HTML = `
@@ -121,6 +122,7 @@ ${DARKMODE_SELECTOR_VALUE}
   justify-content: flex-end;
 }
 
+.${BUTT_TWO_CLASS}, 
 .${BUTT_LEFT_CLASS} > div:first-child,
 .${BUTT_RIGHT_CLASS} > div:last-child
 {
