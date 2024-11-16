@@ -10,21 +10,23 @@ export const ROOT_CLASS = mk.newClassName("Root");
 export const CONTENT_CLASS = mk.newClassName("Content");
 export const BUTT_LEFT_CLASS = mk.newClassName("ButtLeft");
 export const BUTT_RIGHT_CLASS = mk.newClassName("ButtRight");
+export const BUTT_TWO_CLASS = mk.newClassName("ButtTwo");
 const PLAY = await mk.loadSvgAsCssUrl('./play.svg');
 
 export const ROOT_HTML = `
 <div class="${ROOT_CLASS}" draggable="false">
-  <div class="${BUTT_LEFT_CLASS}">
+  <div>
     <div>
       <div></div>
     </div>
   </div>
   <img class="${CONTENT_CLASS}"/>
-  <div class="${BUTT_RIGHT_CLASS}">
+  <div>
     <div>
       <div></div>
     </div>
   </div>
+  <span><div>1/21</div></span>
 </div>
 `;
 
@@ -34,6 +36,7 @@ export const CSS = `
   --uic-imgcnt-bg: ${UIC_CONTENT_BACKGROUND_COLOR};
   --uic-imgcnt-but: #f3f3f3;
   --uic-imgcnt-buthov: #bcbcbc;
+  --uic-imgcnt-quantum: #272727;
 }
 
 ${DARKMODE_SELECTOR_VALUE}
@@ -41,10 +44,12 @@ ${DARKMODE_SELECTOR_VALUE}
   --uic-imgcnt-bg: ${UIC_CONTENT_BACKGROUND_COLOR_DARK};
   --uic-imgcnt-but: #252525;
   --uic-imgcnt-buthov: #424242;
+  --uic-imgcnt-quantum: #b8b4b4;
 }
 
 .${ROOT_CLASS}
 {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -70,9 +75,11 @@ ${DARKMODE_SELECTOR_VALUE}
 
 .${ROOT_CLASS} > div
 {
-  display: none;
+  display: flex;
   height: 40px;
   width: 100%;
+  visibility: hidden;
+  pointer-events: none;
 }
 
 .${ROOT_CLASS} > div > div
@@ -107,19 +114,35 @@ ${DARKMODE_SELECTOR_VALUE}
   transform: scaleX(-1);
 }
 
-.${BUTT_LEFT_CLASS}
+.${ROOT_CLASS} > div
 {
   justify-content: flex-start;
 }
 
-.${BUTT_RIGHT_CLASS}
+.${ROOT_CLASS} > div + img + div
 {
   justify-content: flex-end;
 }
 
-.${ROOT_CLASS} > div.${BUTT_LEFT_CLASS},
-.${ROOT_CLASS} > div.${BUTT_RIGHT_CLASS}
+.${BUTT_TWO_CLASS} > div, 
+.${BUTT_LEFT_CLASS} > div:first-child,
+.${BUTT_RIGHT_CLASS} > div:last-child
 {
-  display: flex;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.${ROOT_CLASS} > span
+{
+  height: 0px;
+  width: 0px;
+}
+
+.${ROOT_CLASS} > span > div
+{
+  position: absolute;
+  top: 5px;
+  height: 20px;
+  color: #272727;
 }
 `;
