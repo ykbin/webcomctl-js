@@ -26,7 +26,11 @@ export const ROOT_HTML = `
       <div></div>
     </div>
   </div>
-  <span><div>1/21</div></span>
+  <span>
+    <div>
+      <div>1</div>/<div>21</div>
+    </div>
+  </span>
 </div>
 `;
 
@@ -130,6 +134,7 @@ ${DARKMODE_SELECTOR_VALUE}
 {
   visibility: visible;
   pointer-events: auto;
+  transition: visibility 0.2s;
 }
 
 .${ROOT_CLASS} > span
@@ -142,6 +147,7 @@ ${DARKMODE_SELECTOR_VALUE}
 {
   position: absolute;
   top: 5px;
+  display: flex;
   height: 20px;
   color: #272727;
 }
