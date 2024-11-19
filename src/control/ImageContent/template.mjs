@@ -38,16 +38,16 @@ export const CSS = `
 :root
 {
   --uic-imgcnt-bg: ${UIC_CONTENT_BACKGROUND_COLOR};
-  --uic-imgcnt-but: #f3f3f3;
-  --uic-imgcnt-buthov: #bcbcbc;
+  --uic-imgcnt-buthov: #6c6c6c;
+  --uic-imgcnt-but: #bcbcbc;
   --uic-imgcnt-quantum: #272727;
 }
 
 ${DARKMODE_SELECTOR_VALUE}
 {
   --uic-imgcnt-bg: ${UIC_CONTENT_BACKGROUND_COLOR_DARK};
-  --uic-imgcnt-but: #252525;
-  --uic-imgcnt-buthov: #424242;
+  --uic-imgcnt-buthov: #252525;
+  --uic-imgcnt-but: #424242;
   --uic-imgcnt-quantum: #b8b4b4;
 }
 
@@ -134,7 +134,7 @@ ${DARKMODE_SELECTOR_VALUE}
 {
   visibility: visible;
   pointer-events: auto;
-  transition: visibility 0.2s;
+  transition: visibility 4s;
 }
 
 .${ROOT_CLASS} > span
