@@ -102,12 +102,13 @@ ${DARKMODE_SELECTOR_VALUE}
 .${BUTT_RIGHT_CLASS} > div > div
 {
   background-color: var(--uic-imgcnt-but);
-  transition: background-color 5s;
+  transition: background-color 1s;
 }
 
 .${ROOT_CLASS} > div > div:hover
 {
   background-color: var(--uic-imgcnt-buthov);
+  transition: background-color 0s;
 }
 
 .${ROOT_CLASS} > div > div > div
