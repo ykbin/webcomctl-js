@@ -92,9 +92,16 @@ ${DARKMODE_SELECTOR_VALUE}
   align-items: center;
   height: 100%;
   width: 20px;
-  background-color: var(--uic-imgcnt-but);
   border-radius: 5px;
   flex-shrink: 0;
+  transition: background-color 5s;
+}
+
+.${BUTT_TWO_CLASS} > div > div, 
+.${BUTT_LEFT_CLASS} > div > div,
+.${BUTT_RIGHT_CLASS} > div > div
+{
+  background-color: var(--uic-imgcnt-but);
   transition: background-color 5s;
 }
 
