@@ -139,9 +139,18 @@ ${DARKMODE_SELECTOR_VALUE}
 
 .${ROOT_CLASS} > span
 {
+  display: none;
   height: 0px;
   width: 0px;
 }
+
+.${BUTT_TWO_CLASS} > span,
+.${BUTT_LEFT_CLASS} > span,
+.${BUTT_RIGHT_CLASS} > span
+{
+  display: block;
+}
+
 
 .${ROOT_CLASS} > span > div
 {
@@ -149,6 +158,6 @@ ${DARKMODE_SELECTOR_VALUE}
   top: 5px;
   display: flex;
   height: 20px;
-  color: #272727;
+  color: var(--uic-imgcnt-quantum);
 }
 `;
