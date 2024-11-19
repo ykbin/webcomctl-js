@@ -46,8 +46,8 @@ export const CSS = `
 ${DARKMODE_SELECTOR_VALUE}
 {
   --uic-imgcnt-bg: ${UIC_CONTENT_BACKGROUND_COLOR_DARK};
-  --uic-imgcnt-buthov: #252525;
-  --uic-imgcnt-but: #424242;
+  --uic-imgcnt-buthov: #3c3b3b;
+  --uic-imgcnt-but: #252525;
   --uic-imgcnt-quantum: #b8b4b4;
 }
 
@@ -95,10 +95,12 @@ ${DARKMODE_SELECTOR_VALUE}
   background-color: var(--uic-imgcnt-but);
   border-radius: 5px;
   flex-shrink: 0;
+  transition: background-color 0.2s;
 }
 
 .${ROOT_CLASS} > div > div:hover
 {
+  transition: background-color 0.2s;
   background-color: var(--uic-imgcnt-buthov);
 }
 
@@ -134,7 +136,6 @@ ${DARKMODE_SELECTOR_VALUE}
 {
   visibility: visible;
   pointer-events: auto;
-  transition: visibility 4s;
 }
 
 .${ROOT_CLASS} > span
