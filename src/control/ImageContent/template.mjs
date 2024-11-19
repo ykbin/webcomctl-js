@@ -95,12 +95,11 @@ ${DARKMODE_SELECTOR_VALUE}
   background-color: var(--uic-imgcnt-but);
   border-radius: 5px;
   flex-shrink: 0;
-  transition: background-color 0.2s;
+  transition: background-color 5s;
 }
 
 .${ROOT_CLASS} > div > div:hover
 {
-  transition: background-color 0.2s;
   background-color: var(--uic-imgcnt-buthov);
 }
 
