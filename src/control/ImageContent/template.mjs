@@ -26,7 +26,11 @@ export const ROOT_HTML = `
       <div></div>
     </div>
   </div>
-  <span><div>1/21</div></span>
+  <span>
+    <div>
+      <div>1</div>/<div>21</div>
+    </div>
+  </span>
 </div>
 `;
 
@@ -34,16 +38,16 @@ export const CSS = `
 :root
 {
   --uic-imgcnt-bg: ${UIC_CONTENT_BACKGROUND_COLOR};
-  --uic-imgcnt-but: #f3f3f3;
-  --uic-imgcnt-buthov: #bcbcbc;
+  --uic-imgcnt-buthov: #6c6c6c;
+  --uic-imgcnt-but: #bcbcbc;
   --uic-imgcnt-quantum: #272727;
 }
 
 ${DARKMODE_SELECTOR_VALUE}
 {
   --uic-imgcnt-bg: ${UIC_CONTENT_BACKGROUND_COLOR_DARK};
+  --uic-imgcnt-buthov: #3c3b3b;
   --uic-imgcnt-but: #252525;
-  --uic-imgcnt-buthov: #424242;
   --uic-imgcnt-quantum: #b8b4b4;
 }
 
@@ -88,14 +92,23 @@ ${DARKMODE_SELECTOR_VALUE}
   align-items: center;
   height: 100%;
   width: 20px;
-  background-color: var(--uic-imgcnt-but);
   border-radius: 5px;
   flex-shrink: 0;
+  transition: background-color 5s;
+}
+
+.${BUTT_TWO_CLASS} > div > div, 
+.${BUTT_LEFT_CLASS} > div > div,
+.${BUTT_RIGHT_CLASS} > div > div
+{
+  background-color: var(--uic-imgcnt-but);
+  transition: background-color 1s;
 }
 
 .${ROOT_CLASS} > div > div:hover
 {
   background-color: var(--uic-imgcnt-buthov);
+  transition: background-color 0s;
 }
 
 .${ROOT_CLASS} > div > div > div
@@ -134,15 +147,25 @@ ${DARKMODE_SELECTOR_VALUE}
 
 .${ROOT_CLASS} > span
 {
+  display: none;
   height: 0px;
   width: 0px;
 }
+
+.${BUTT_TWO_CLASS} > span,
+.${BUTT_LEFT_CLASS} > span,
+.${BUTT_RIGHT_CLASS} > span
+{
+  display: block;
+}
+
 
 .${ROOT_CLASS} > span > div
 {
   position: absolute;
   top: 5px;
+  display: flex;
   height: 20px;
-  color: #272727;
+  color: var(--uic-imgcnt-quantum);
 }
 `;
