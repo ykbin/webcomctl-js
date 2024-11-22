@@ -105,7 +105,7 @@ ${DARKMODE_SELECTOR_VALUE}
   animation-name: left_get_out;
 }
 
-.${ROOT_CLASS} > div:last-child > div
+.${ROOT_CLASS} > div + img + div > div
 {
   animation-name: right_get_out;
 }
@@ -116,8 +116,8 @@ ${DARKMODE_SELECTOR_VALUE}
   animation-name: left_come_out;
 }
 
-.${BUTT_TWO_CLASS} > div:last-child > div, 
-.${BUTT_RIGHT_CLASS} > div:last-child > div
+.${BUTT_TWO_CLASS} > div + img + div > div, 
+.${BUTT_RIGHT_CLASS} > div + img + div > div
 {
   animation-name: right_come_out;
 }
