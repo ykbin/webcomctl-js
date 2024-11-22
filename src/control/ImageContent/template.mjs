@@ -83,7 +83,6 @@ ${DARKMODE_SELECTOR_VALUE}
   justify-content: flex-start;
   height: 40px;
   width: 100%;
-  visibility: hidden;
   pointer-events: none;
   overflow: hidden;
 }
@@ -192,7 +191,6 @@ ${DARKMODE_SELECTOR_VALUE}
 .${BUTT_RIGHT_CLASS} > div > div
 {
   background-color: var(--uic-imgcnt-but);
-  transition: background-color 1s;
 }
 
 .${ROOT_CLASS} > div > div:hover
@@ -225,7 +223,6 @@ ${DARKMODE_SELECTOR_VALUE}
 .${BUTT_LEFT_CLASS} > div:first-child,
 .${BUTT_RIGHT_CLASS} > div:last-child
 {
-  visibility: visible;
   pointer-events: auto;
 }
 
