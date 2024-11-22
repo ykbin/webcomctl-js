@@ -80,10 +80,12 @@ ${DARKMODE_SELECTOR_VALUE}
 .${ROOT_CLASS} > div
 {
   display: flex;
+  justify-content: flex-start;
   height: 40px;
   width: 100%;
   visibility: hidden;
   pointer-events: none;
+  overflow: hidden;
 }
 
 .${ROOT_CLASS} > div > div
@@ -94,7 +96,95 @@ ${DARKMODE_SELECTOR_VALUE}
   width: 20px;
   border-radius: 5px;
   flex-shrink: 0;
-  transition: background-color 5s;
+  animation-fill-mode: both;
+  animation-duration: 300ms;
+  animation-iteration-count: 1;
+}
+
+.${ROOT_CLASS} > div:first-child > div
+{
+  animation-name: left_get_out;
+}
+
+.${ROOT_CLASS} > div:last-child > div
+{
+  animation-name: right_get_out;
+}
+
+.${BUTT_TWO_CLASS} > div:first-child > div, 
+.${BUTT_LEFT_CLASS} > div:first-child > div
+{
+  animation-name: left_come_out;
+}
+
+.${BUTT_TWO_CLASS} > div:last-child > div, 
+.${BUTT_RIGHT_CLASS} > div:last-child > div
+{
+  animation-name: right_come_out;
+}
+
+@keyframes left_come_out
+{
+  0%
+  {
+    transform: translateX(-20px);
+  }
+  50%
+  {
+    transform: translateX(-10px);
+  }
+  100%
+  {
+    transform: translateX(0);
+  }
+}
+
+@keyframes left_get_out
+{
+  0%
+  {
+    transform: translateX(0);
+  }
+  50%
+  {
+    transform: translateX(-10px);
+  }
+  100%
+  {
+    transform: translateX(-20px);
+  }
+}
+
+@keyframes right_come_out
+{
+  0%
+  {
+    transform: translateX(20px);
+  }
+  50%
+  {
+    transform: translateX(10px);
+  }
+  100%
+  {
+    transform: translateX(0);
+  }
+}
+
+@keyframes right_get_out
+{
+  0%
+  {
+    transform: translateX(0);
+  }
+  50%
+  {
+    transform: translateX(10px);
+  }
+  100%
+  {
+    transform: translateX(20px);
+  }
 }
 
 .${BUTT_TWO_CLASS} > div > div, 
@@ -108,7 +198,6 @@ ${DARKMODE_SELECTOR_VALUE}
 .${ROOT_CLASS} > div > div:hover
 {
   background-color: var(--uic-imgcnt-buthov);
-  transition: background-color 0s;
 }
 
 .${ROOT_CLASS} > div > div > div
@@ -125,11 +214,6 @@ ${DARKMODE_SELECTOR_VALUE}
 .${ROOT_CLASS} > div:first-child > div > div
 {
   transform: scaleX(-1);
-}
-
-.${ROOT_CLASS} > div
-{
-  justify-content: flex-start;
 }
 
 .${ROOT_CLASS} > div + img + div
