@@ -80,10 +80,11 @@ ${DARKMODE_SELECTOR_VALUE}
 .${ROOT_CLASS} > div
 {
   display: flex;
+  justify-content: flex-start;
   height: 40px;
   width: 100%;
-  visibility: hidden;
   pointer-events: none;
+  overflow: hidden;
 }
 
 .${ROOT_CLASS} > div > div
@@ -94,7 +95,95 @@ ${DARKMODE_SELECTOR_VALUE}
   width: 20px;
   border-radius: 5px;
   flex-shrink: 0;
-  transition: background-color 5s;
+  animation-fill-mode: both;
+  animation-duration: 300ms;
+  animation-iteration-count: 1;
+}
+
+.${ROOT_CLASS} > div:first-child > div
+{
+  animation-name: left_get_out;
+}
+
+.${ROOT_CLASS} > div + img + div > div
+{
+  animation-name: right_get_out;
+}
+
+.${BUTT_TWO_CLASS} > div:first-child > div, 
+.${BUTT_LEFT_CLASS} > div:first-child > div
+{
+  animation-name: left_come_out;
+}
+
+.${BUTT_TWO_CLASS} > div + img + div > div, 
+.${BUTT_RIGHT_CLASS} > div + img + div > div
+{
+  animation-name: right_come_out;
+}
+
+@keyframes left_come_out
+{
+  0%
+  {
+    transform: translateX(-20px);
+  }
+  50%
+  {
+    transform: translateX(-10px);
+  }
+  100%
+  {
+    transform: translateX(0);
+  }
+}
+
+@keyframes left_get_out
+{
+  0%
+  {
+    transform: translateX(0);
+  }
+  50%
+  {
+    transform: translateX(-10px);
+  }
+  100%
+  {
+    transform: translateX(-20px);
+  }
+}
+
+@keyframes right_come_out
+{
+  0%
+  {
+    transform: translateX(20px);
+  }
+  50%
+  {
+    transform: translateX(10px);
+  }
+  100%
+  {
+    transform: translateX(0);
+  }
+}
+
+@keyframes right_get_out
+{
+  0%
+  {
+    transform: translateX(0);
+  }
+  50%
+  {
+    transform: translateX(10px);
+  }
+  100%
+  {
+    transform: translateX(20px);
+  }
 }
 
 .${BUTT_TWO_CLASS} > div > div, 
@@ -102,13 +191,11 @@ ${DARKMODE_SELECTOR_VALUE}
 .${BUTT_RIGHT_CLASS} > div > div
 {
   background-color: var(--uic-imgcnt-but);
-  transition: background-color 1s;
 }
 
 .${ROOT_CLASS} > div > div:hover
 {
   background-color: var(--uic-imgcnt-buthov);
-  transition: background-color 0s;
 }
 
 .${ROOT_CLASS} > div > div > div
@@ -127,11 +214,6 @@ ${DARKMODE_SELECTOR_VALUE}
   transform: scaleX(-1);
 }
 
-.${ROOT_CLASS} > div
-{
-  justify-content: flex-start;
-}
-
 .${ROOT_CLASS} > div + img + div
 {
   justify-content: flex-end;
@@ -141,13 +223,12 @@ ${DARKMODE_SELECTOR_VALUE}
 .${BUTT_LEFT_CLASS} > div:first-child,
 .${BUTT_RIGHT_CLASS} > div:last-child
 {
-  visibility: visible;
   pointer-events: auto;
 }
 
 .${ROOT_CLASS} > span
 {
-  display: none;
+  justify-content: flex-end;
   height: 0px;
   width: 0px;
 }
@@ -156,16 +237,59 @@ ${DARKMODE_SELECTOR_VALUE}
 .${BUTT_LEFT_CLASS} > span,
 .${BUTT_RIGHT_CLASS} > span
 {
-  display: block;
+  display: flex;
 }
-
 
 .${ROOT_CLASS} > span > div
 {
   position: absolute;
   top: 5px;
+  right: 10px;
   display: flex;
   height: 20px;
   color: var(--uic-imgcnt-quantum);
+  animation-name: get_out;
+  animation-fill-mode: both;
+  animation-duration: 300ms;
+  animation-iteration-count: 1;
+}
+
+.${BUTT_TWO_CLASS} > span > div,
+.${BUTT_LEFT_CLASS} > span > div,
+.${BUTT_RIGHT_CLASS} > span > div
+{
+  animation-name: come_out;
+}
+
+@keyframes come_out
+{
+  0%
+  {
+    transform: translateY(-20px);
+  }
+  50%
+  {
+    transform: translateY(-10px);
+  }
+  100%
+  {
+    transform: translateY(0);
+  }
+}
+
+@keyframes get_out
+{
+  0%
+  {
+    transform: translateY(0);
+  }
+  50%
+  {
+    transform: translateY(-10px);
+  }
+  100%
+  {
+    transform: translateY(-20px);
+  }
 }
 `;
