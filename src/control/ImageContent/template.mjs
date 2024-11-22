@@ -150,11 +150,6 @@ ${DARKMODE_SELECTOR_VALUE}
   justify-content: flex-end;
   height: 0px;
   width: 0px;
-  animation-name: get_out;
-  animation-fill-mode: both;
-  animation-duration: 300ms;
-  animation-iteration-count: 1;
-  transform: translateY(-20px);
 }
 
 .${BUTT_TWO_CLASS} > span,
@@ -162,7 +157,6 @@ ${DARKMODE_SELECTOR_VALUE}
 .${BUTT_RIGHT_CLASS} > span
 {
   display: flex;
-  animation-name: come_out;
 }
 
 .${ROOT_CLASS} > span > div
@@ -173,6 +167,17 @@ ${DARKMODE_SELECTOR_VALUE}
   display: flex;
   height: 20px;
   color: var(--uic-imgcnt-quantum);
+  animation-name: get_out;
+  animation-fill-mode: both;
+  animation-duration: 300ms;
+  animation-iteration-count: 1;
+}
+
+.${BUTT_TWO_CLASS} > span > div,
+.${BUTT_LEFT_CLASS} > span > div,
+.${BUTT_RIGHT_CLASS} > span > div
+{
+  animation-name: come_out;
 }
 
 @keyframes come_out
