@@ -147,25 +147,63 @@ ${DARKMODE_SELECTOR_VALUE}
 
 .${ROOT_CLASS} > span
 {
-  display: none;
+  justify-content: flex-end;
   height: 0px;
   width: 0px;
+  animation-name: get_out;
+  animation-fill-mode: both;
+  animation-duration: 300ms;
+  animation-iteration-count: 1;
+  transform: translateY(-20px);
 }
 
 .${BUTT_TWO_CLASS} > span,
 .${BUTT_LEFT_CLASS} > span,
 .${BUTT_RIGHT_CLASS} > span
 {
-  display: block;
+  display: flex;
+  animation-name: come_out;
 }
-
 
 .${ROOT_CLASS} > span > div
 {
   position: absolute;
   top: 5px;
+  right: 10px;
   display: flex;
   height: 20px;
   color: var(--uic-imgcnt-quantum);
+}
+
+@keyframes come_out
+{
+  0%
+  {
+    transform: translateY(-20px);
+  }
+  50%
+  {
+    transform: translateY(-10px);
+  }
+  100%
+  {
+    transform: translateY(0);
+  }
+}
+
+@keyframes get_out
+{
+  0%
+  {
+    transform: translateY(0);
+  }
+  50%
+  {
+    transform: translateY(-10px);
+  }
+  100%
+  {
+    transform: translateY(-20px);
+  }
 }
 `;
