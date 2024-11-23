@@ -3,8 +3,6 @@ import ControlMaker from '../../lib/ControlMaker.mjs';
 import { DARKMODE_SELECTOR_VALUE } from '../../lib/DarkMode.mjs';
 import { COMMON_MOBILE_DEVICE_WIDTH } from '../../lib/WickedTheme.mjs';
 import { TOOLBAR_FONT_FAMALY } from '../../lib/WickedTheme.mjs';
-import { UIC_BLUE_SQUARE_BACKGROUND } from '../../lib/WickedTheme.mjs';
-import { UIC_BLUE_SQUARE_BORDER } from '../../lib/WickedTheme.mjs';
 import { UIC_START_BACKGROUND_COLOR } from '../../lib/WickedTheme.mjs';
 import { UIC_START_BACKGROUND_COLOR_DARK } from '../../lib/WickedTheme.mjs';
 

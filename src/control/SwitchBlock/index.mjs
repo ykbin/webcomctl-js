@@ -1,5 +1,5 @@
 import { BaseControl } from 'webnetq-js';
-import { NTH1_CLASS, NTH2_CLASS } from 'module-loader!./template.mjs';
+import { NTH1_CLASS, NTH2_CLASS } from 'uictmplt-loader!./template.mjs';
 
 export default class UISwitchBlockControl  extends BaseControl {
   _isSecond = false;
