@@ -5,14 +5,16 @@ import { COMMON_MOBILE_DEVICE_WIDTH } from '../../lib/WickedTheme.mjs';
 
 const mk = new ControlMaker('Logger', import.meta.url);
 
-export const ROOT_CLASS = mk.newClassName("Root");
-export const CLOSE_CLASS = mk.newClassName("Close");
-export const TITLE_CLASS = mk.newClassName("Title");
-export const TEXT_CLASS = mk.newClassName("Text");
-export const ERROR_CLASS = mk.newClassName("Error");
-export const WARNING_CLASS = mk.newClassName("Warning");
-export const SUCCESS_CLASS = mk.newClassName("Success");
-export const INFO_CLASS = mk.newClassName("Info");
+const clss = mk.newClassNameMap([
+  "ROOT_CLASS",
+  "CLOSE_CLASS",
+  "TITLE_CLASS",
+  "TEXT_CLASS",
+  "ERROR_CLASS",
+  "WARNING_CLASS",
+  "SUCCESS_CLASS",
+  "INFO_CLASS",
+]);
 
 const ANIME1 = mk.newAnimationName("Anime1");
 const ANIME2 = mk.newAnimationName("Anime2");
@@ -40,21 +42,20 @@ const SUCCESS_MAIN_COLOR = '#005200';
 const INFO_FILL_COLOR = '#c8fffae6';
 const INFO_MAIN_COLOR = '#001e62';
 
-export const ROOT_HTML = `
-<div class="${ROOT_CLASS}"></div>
-`;
+mk.newHTML('ROOT_HTML', `
+<div class="${clss.ROOT_CLASS}"></div>
+`);
 
-export const ITEM_HTML =`
+mk.newHTML('ITEM_HTML', `
 <div>
   <div></div>
-  <span><h3 class="${TITLE_CLASS}"></h3><span class="${TEXT_CLASS}"></span></span>
-  <s><span class="${CLOSE_CLASS}"></span></s>
+  <span><h3 class="${clss.TITLE_CLASS}"></h3><span class="${clss.TEXT_CLASS}"></span></span>
+  <s><span class="${clss.CLOSE_CLASS}"></span></s>
 </div>
-`;
+`);
 
-export const CSS = `
-
-.${ROOT_CLASS}
+mk.newCSS('CSS', `
+.${clss.ROOT_CLASS}
 {
   position: fixed;
   bottom: 15px;
@@ -69,7 +70,7 @@ export const CSS = `
   z-index: 2;
 }
 
-.${ROOT_CLASS} > div
+.${clss.ROOT_CLASS} > div
 {
   animation-name: ${ANIME1};
   animation-duration: 10s;
@@ -87,7 +88,7 @@ export const CSS = `
   box-sizing: content-box;
 }
 
-.${ROOT_CLASS} h3
+.${clss.ROOT_CLASS} h3
 {
   margin: 0px;
   padding: 0px;
@@ -95,31 +96,31 @@ export const CSS = `
   font-weight: 400;
 }
 
-.${ROOT_CLASS} .${ERROR_CLASS}
+.${clss.ROOT_CLASS} .${clss.ERROR_CLASS}
 {
   background-color: ${ERROR_FILL_COLOR};
   color: ${ERROR_MAIN_COLOR};
 }
-	  
-.${ROOT_CLASS} .${WARNING_CLASS}
+
+.${clss.ROOT_CLASS} .${clss.WARNING_CLASS}
 {
   background-color: ${WARNING_FILL_COLOR};
   color: ${WARN_MAIN_COLOR};
 }
-	  
-.${ROOT_CLASS} .${INFO_CLASS}
+
+.${clss.ROOT_CLASS} .${clss.INFO_CLASS}
 {
   background-color:${INFO_FILL_COLOR};
   color: ${INFO_MAIN_COLOR};
 }
 
-.${ROOT_CLASS} .${SUCCESS_CLASS}
+.${clss.ROOT_CLASS} .${clss.SUCCESS_CLASS}
 {
   background-color: ${SUCCESS_FILL_COLOR};
   color: ${SUCCESS_MAIN_COLOR};
 }
 
-.${ROOT_CLASS} > div > div
+.${clss.ROOT_CLASS} > div > div
 {
   width: 50px;
   height: 70px;
@@ -129,27 +130,27 @@ export const CSS = `
   flex-shrink: 0;
 }
 
-.${ERROR_CLASS} > div
+.${clss.ERROR_CLASS} > div
 {
   background-image: ${ERROR_IMG};
 }
 
-.${INFO_CLASS} > div
+.${clss.INFO_CLASS} > div
 {
   background-image: ${INFO_IMG};
 }
 
-.${WARNING_CLASS} > div
+.${clss.WARNING_CLASS} > div
 {
   background-image: ${WARNING_IMG};
 }
 
-.${SUCCESS_CLASS} > div
+.${clss.SUCCESS_CLASS} > div
 {
   background-image: ${SUCCESS_IMG};
 }
 
-.${ROOT_CLASS} > div > span
+.${clss.ROOT_CLASS} > div > span
 {
   margin-top: 3px;
   width: 200px;
@@ -158,13 +159,13 @@ export const CSS = `
   flex-shrink: 0;
 }
 
-.${ROOT_CLASS} > div >  span > span
+.${clss.ROOT_CLASS} > div >  span > span
 {
   display: block;
   font-size: 14px;
 }
 
-.${ROOT_CLASS} > div > s
+.${clss.ROOT_CLASS} > div > s
 {
   display: flex;
   justify-content: center;
@@ -176,7 +177,7 @@ export const CSS = `
   flex-shrink: 0;
 }
 
-.${ROOT_CLASS} > div > s > span
+.${clss.ROOT_CLASS} > div > s > span
 {
   height: 15px;
   width: 15px;
@@ -187,60 +188,60 @@ export const CSS = `
   background-position: center;
 }
 
-.${ROOT_CLASS} .${ERROR_CLASS} > s > span:hover
+.${clss.ROOT_CLASS} .${clss.ERROR_CLASS} > s > span:hover
 {
   background-color: ${ERROR_HOVER_COLOR};
 }
 
-.${ROOT_CLASS} .${SUCCESS_CLASS} > s > span:hover
+.${clss.ROOT_CLASS} .${clss.SUCCESS_CLASS} > s > span:hover
 {
   background-color: ${SUCCESS_HOVER_COLOR};
 }
 
-.${ROOT_CLASS} .${WARNING_CLASS} > s > span:hover
+.${clss.ROOT_CLASS} .${clss.WARNING_CLASS} > s > span:hover
 {
   background-color: ${WARNING_HOVER_COLOR};
 }
 
-.${ROOT_CLASS} .${INFO_CLASS} > s > span:hover
+.${clss.ROOT_CLASS} .${clss.INFO_CLASS} > s > span:hover
 {
   background-color: ${INFO_HOVER_COLOR};
 }
 
 @media (device-width < ${COMMON_MOBILE_DEVICE_WIDTH})
 {
-  div.${ROOT_CLASS} > div > div
+  div.${clss.ROOT_CLASS} > div > div
   {
     min-width: 100px;
     height: 140px;
     background-size: 50px;
   }
-  div.${ROOT_CLASS} > div
+  div.${clss.ROOT_CLASS} > div
   {
     animation-name: ${ANIME2};
     border-radius: 20px;
   }
-  div.${ROOT_CLASS} h3
+  div.${clss.ROOT_CLASS} h3
   {
     font-size: 40px;
   }
-  div.${ROOT_CLASS} > div > span 
+  div.${clss.ROOT_CLASS} > div > span 
   {
     min-width: 380px;
     font-size: 40px;
     line-height: 34px;
   }
-  div.${ROOT_CLASS} div > span > span
+  div.${clss.ROOT_CLASS} div > span > span
   {
     font-size: 30px;
   }
-  div.${ROOT_CLASS} div > s
+  div.${clss.ROOT_CLASS} div > s
   {
     width: 60px;
     height: 100%;
     padding-top: 10px;
   }
-  div.${ROOT_CLASS} div > s > span
+  div.${clss.ROOT_CLASS} div > s > span
   {
     width: 100%;
     height: 35%;
@@ -323,4 +324,9 @@ export const CSS = `
     margin-bottom: 5px;
   }
 }
-`;
+`);
+
+export function buildComponent()
+{
+  return mk.buildComponent();
+}
