@@ -2,23 +2,25 @@ import ControlMaker from '../../lib/ControlMaker.mjs';
 
 const mk = new ControlMaker('LoadingBlock', import.meta.url);
 
-export const ROOT_CLASS = mk.newClassName("Root");
-export const PORT_CLASS = mk.newClassName("Port");
-export const UNLOAD_CLASS = mk.newClassName("Upload");
+const clss = mk.newClassNameMap([
+  "ROOT_CLASS",
+  "PORT_CLASS",
+  "UNLOAD_CLASS",
+]);
 
 const BG_IMG = await mk.loadSvgAsCssUrl('./unloading.svg');
 const BG_CLR = '#061b4366';
 
-export const ROOT_HTML = `
-<div class="${ROOT_CLASS}">
-  <div class="${PORT_CLASS}"></div>
-  <s class="${UNLOAD_CLASS}"><span></span></s>
+mk.newHTML('ROOT_HTML', `
+<div class="${clss.ROOT_CLASS}">
+  <div class="${clss.PORT_CLASS}"></div>
+  <s class="${clss.UNLOAD_CLASS}"><span></span></s>
 </div>
-`;
+`);
 
-export const CSS = `
-.${ROOT_CLASS},
-.${PORT_CLASS}
+mk.newCSS('CSS', `
+.${clss.ROOT_CLASS},
+.${clss.PORT_CLASS}
 {
   display: flex;
   flex-direction: column;
@@ -26,12 +28,12 @@ export const CSS = `
   height: inherit;
 }
 
-.${UNLOAD_CLASS} > s
+.${clss.UNLOAD_CLASS} > s
 {
   text-decoration: none;
 }
 
-.${ROOT_CLASS} > s:not(.${UNLOAD_CLASS})
+.${clss.ROOT_CLASS} > s:not(.${clss.UNLOAD_CLASS})
 {
   position: absolute;
   top: 0;
@@ -44,12 +46,12 @@ export const CSS = `
   background-color: ${BG_CLR};
 }
 
-.${UNLOAD_CLASS}
+.${clss.UNLOAD_CLASS}
 {
   display: none;
 }
 
-.${ROOT_CLASS} > s > span
+.${clss.ROOT_CLASS} > s > span
 {
   display: block;
   height: 100px;
@@ -59,4 +61,9 @@ export const CSS = `
   background-position: center;
   background-image: ${BG_IMG};
 }
-`;
+`);
+
+export function buildComponent()
+{
+  return mk.buildComponent();
+}

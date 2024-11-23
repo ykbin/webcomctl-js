@@ -1,5 +1,5 @@
 import { BaseControl, NQDOM } from 'webnetq-js';
-import { UNLOAD_CLASS } from 'module-loader!./template.mjs';
+import { UNLOAD_CLASS } from 'uictmplt-loader!./template.mjs';
 
 export default class UILoadingBlockControl extends BaseControl {
   _isLoad = false;
