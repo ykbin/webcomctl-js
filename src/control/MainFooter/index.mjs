@@ -1,5 +1,5 @@
 import { BaseControl } from "webnetq-js";
-import { LINK_ON_CLASS, LINK_OFF_CLASS } from 'module-loader!./template.mjs';
+import { LINK_ON_CLASS, LINK_OFF_CLASS } from 'uictmplt-loader!./template.mjs';
 
 function isLocationEqual(href) {
   if (typeof document === 'object') {

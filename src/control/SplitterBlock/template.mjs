@@ -4,42 +4,48 @@ import { DARKMODE_SELECTOR_VALUE } from '../../lib/DarkMode.mjs';
 
 const mk = new ControlMaker('SplitterBlock', import.meta.url);
 
-export const ROOT_CLASS = mk.newClassName("Root");
-export const PORT_CLASS = mk.newClassName("Port");
-export const NONE_CLASS = mk.newClassName("None");
-export const RIGHT_CLASS = mk.newClassName("Right");
-export const LEFT_CLASS = mk.newClassName("Left");
-export const TOP_CLASS = mk.newClassName("Top");
-export const BOTTOM_CLASS = mk.newClassName("Bottom");
+const clss = mk.newClassNameMap([
+  "ROOT_CLASS",
+  "PORT_CLASS",
+  "NONE_CLASS",
+  "RIGHT_CLASS",
+  "LEFT_CLASS",
+  "TOP_CLASS",
+  "BOTTOM_CLASS",
+]);
 
-export const ROOT_HTML = `
-<div class="${ROOT_CLASS}">
-  <div class="${PORT_CLASS}"></div>
-  <span class="${NONE_CLASS}"><div></div></span>
+const vars = mk.newCSSVariableMap({
+  bor: [ '#e6e6e6', '#3c3c3c' ],
+});
+
+mk.newHTML('ROOT_HTML', `
+<div class="${clss.ROOT_CLASS}">
+  <div class="${clss.PORT_CLASS}"></div>
+  <span class="${clss.NONE_CLASS}"><div></div></span>
 </div>
-`;
+`);
 
-export const CSS = `
+mk.newCSS('CSS', `
 :root
 {
-  --uic-spltblk-bor: #e6e6e6;
+  ${vars.toString(0)};
 }
 
 ${DARKMODE_SELECTOR_VALUE}
 {
-  --uic-spltblk-bor: #3c3c3c;
+  ${vars.toString(1)};
 }
 
-.${ROOT_CLASS}
+.${clss.ROOT_CLASS}
 {
   position: relative;
   width: 100%;
   height: 100%;
   overflow: hidden;
-  border-right: 1px solid var(--uic-spltblk-borde);
+  border-right: 1px solid ${vars.bor.asVar()};
 }
 
-.${PORT_CLASS}
+.${clss.PORT_CLASS}
 {
   display: flex;
   flex-direction: column;
@@ -47,7 +53,7 @@ ${DARKMODE_SELECTOR_VALUE}
   width: 100%;
 }
 
-.${ROOT_CLASS} > span
+.${clss.ROOT_CLASS} > span
 {
   position: absolute;
   display: flex;
@@ -56,34 +62,34 @@ ${DARKMODE_SELECTOR_VALUE}
   z-index: 11;
 }
 
-.${ROOT_CLASS} > span > div
+.${clss.ROOT_CLASS} > span > div
 {
   flex-shrink: 0;
   background-color: blue;
 }
 
-.${BOTTOM_CLASS} > div,
-.${TOP_CLASS} > div
+.${clss.BOTTOM_CLASS} > div,
+.${clss.TOP_CLASS} > div
 {
   width: 100%;
   height: 5px;
 }
 
-.${TOP_CLASS}
+.${clss.TOP_CLASS}
 {
   top: 0;
   width: 100%;
   height: 0;
 }
 
-.${BOTTOM_CLASS}
+.${clss.BOTTOM_CLASS}
 {
   bottom: 0;
   width: 100%;
   height: 0;
 }
 
-.${RIGHT_CLASS}
+.${clss.RIGHT_CLASS}
 {
   top: 0;
   right: 0;
@@ -91,18 +97,23 @@ ${DARKMODE_SELECTOR_VALUE}
   height: 100%;
 }
 
-.${LEFT_CLASS} > div,
-.${RIGHT_CLASS} > div
+.${clss.LEFT_CLASS} > div,
+.${clss.RIGHT_CLASS} > div
 {
   width: 5px;
   height: 100%;
 }
 
-.${LEFT_CLASS}
+.${clss.LEFT_CLASS}
 {
   top: 0;
   left: 0;
   width: 0;
   height: 100%;
 }
-`;
+`);
+
+export function buildComponent()
+{
+  return mk.buildComponent();
+}

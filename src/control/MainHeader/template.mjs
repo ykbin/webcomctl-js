@@ -5,14 +5,16 @@ import { COMMON_MOBILE_DEVICE_WIDTH } from '../../lib/WickedTheme.mjs';
 
 const mk = new ControlMaker('MainHeader', import.meta.url);
 
-export const ROOT_CLASS = mk.newClassName("Root");
-export const PORT_CLASS = mk.newClassName("Port");
+const clss = mk.newClassNameMap([
+  "ROOT_CLASS",
+  "PORT_CLASS",
+]);
 
-export const ROOT_HTML = `
-<header class="${ROOT_CLASS} ${PORT_CLASS}" draggable="false"></header>
-`;
+mk.newHTML('ROOT_HTML', `
+<header class="${clss.ROOT_CLASS} ${clss.PORT_CLASS}" draggable="false"></header>
+`);
 
-export const CSS = `
+mk.newCSS('CSS', `
 :root
 {
   --uic-mhdr-bg: #f9f9f9;
@@ -25,7 +27,7 @@ ${DARKMODE_SELECTOR_VALUE}
   --uic-mhdr-bor: #5f5f5f8f;
 }
 
-.${ROOT_CLASS}
+.${clss.ROOT_CLASS}
 {
   position: relative;
   display: flex;
@@ -42,9 +44,14 @@ ${DARKMODE_SELECTOR_VALUE}
 
 @media (device-width < ${COMMON_MOBILE_DEVICE_WIDTH})
 {
-  .${ROOT_CLASS}
+  .${clss.ROOT_CLASS}
   {
     height: 130px;
   }
 }
-`;
+`);
+
+export function buildComponent()
+{
+  return mk.buildComponent();
+}

@@ -1,5 +1,5 @@
 import { BaseControl, NQDOM } from 'webnetq-js';
-import { NONE_CLASS, TOP_CLASS, RIGHT_CLASS, BOTTOM_CLASS, LEFT_CLASS } from 'module-loader!./template.mjs';
+import { NONE_CLASS, TOP_CLASS, RIGHT_CLASS, BOTTOM_CLASS, LEFT_CLASS } from 'uictmplt-loader!./template.mjs';
 
 const SplitterType = {
   NONE: 0,

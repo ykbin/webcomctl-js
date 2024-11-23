@@ -4,25 +4,27 @@ import { COMMON_MOBILE_DEVICE_WIDTH } from '../../lib/WickedTheme.mjs';
 
 const mk = new ControlMaker('Loading', import.meta.url);
 
-export const ROOT_CLASS = mk.newClassName("Root");
-export const SHOW_CLASS = mk.newClassName("Show");
+const clss = mk.newClassNameMap([
+  "ROOT_CLASS",
+  "SHOW_CLASS",
+]);
 
 const MAIN_IMG = await mk.loadSvgAsCssUrl('./file-upload.svg');
 const BGROUND_COLOR = '#1e1e1e91';
 
-export const ROOT_HTML = `
-<div class="${ROOT_CLASS}">
+mk.newHTML('ROOT_HTML', `
+<div class="${clss.ROOT_CLASS}">
   <div></div>
 </div>
-`;
+`);
 
-export const CSS = `
-.${ROOT_CLASS}
+mk.newCSS('CSS', `
+.${clss.ROOT_CLASS}
 {
   display: none;
 }
 
-.${SHOW_CLASS}
+.${clss.SHOW_CLASS}
 {
   display: flex;
   align-items: center;
@@ -37,7 +39,7 @@ export const CSS = `
   background-color: ${BGROUND_COLOR};
 }
 
-.${SHOW_CLASS} > div
+.${clss.SHOW_CLASS} > div
 {
   width: 100%;
   height: 100%;
@@ -51,10 +53,15 @@ export const CSS = `
 
 @media (device-width < ${COMMON_MOBILE_DEVICE_WIDTH})
 {
-  .${SHOW_CLASS} > div
+  .${clss.SHOW_CLASS} > div
   {
     width: 320px;
     height: 320px;
   }
 }
-`;
+`);
+
+export function buildComponent()
+{
+  return mk.buildComponent();
+}

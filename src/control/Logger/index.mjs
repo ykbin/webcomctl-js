@@ -1,5 +1,5 @@
 import { NQDOM, BaseControl } from "webnetq-js";
-import { ITEM_HTML, TITLE_CLASS, TEXT_CLASS, CLOSE_CLASS, INFO_CLASS, WARNING_CLASS, SUCCESS_CLASS, ERROR_CLASS } from 'module-loader!./template.mjs';
+import { ITEM_HTML, TITLE_CLASS, TEXT_CLASS, CLOSE_CLASS, INFO_CLASS, WARNING_CLASS, SUCCESS_CLASS, ERROR_CLASS } from 'uictmplt-loader!./template.mjs';
 
 const createMessage = (level, title, text) => {
   const element = NQDOM.createElement(ITEM_HTML);
