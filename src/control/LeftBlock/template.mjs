@@ -2,15 +2,17 @@ import ControlMaker from '../../lib/ControlMaker.mjs';
 
 const mk = new ControlMaker('LeftBlock', import.meta.url);
 
-export const ROOT_CLASS = mk.newClassName("Root");
-export const PORT_CLASS = mk.newClassName("Port");
+const clss = mk.newClassNameMap([
+  "ROOT_CLASS",
+  "PORT_CLASS",
+]);
 
-export const ROOT_HTML = `
-<div class="${ROOT_CLASS} ${PORT_CLASS}"></div>
-`;
+mk.newHTML('ROOT_HTML', `
+<div class="${clss.ROOT_CLASS} ${clss.PORT_CLASS}"></div>
+`);
 
-export const CSS = `
-.${ROOT_CLASS}
+mk.newCSS('CSS', `
+.${clss.ROOT_CLASS}
 {
   display: flex;
   align-items: center;
@@ -22,9 +24,14 @@ export const CSS = `
 
 @container function (width < 240px)
 {
-  .${ROOT_CLASS} > div
+  .${clss.ROOT_CLASS} > div
   {
     display: none;
   }
 }
-`;
+`);
+
+export function buildComponent()
+{
+  return mk.buildComponent();
+}
