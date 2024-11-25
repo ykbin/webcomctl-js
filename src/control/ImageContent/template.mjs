@@ -107,18 +107,6 @@ ${DARKMODE_SELECTOR_VALUE}
    flex-shrink: 0;
 }
 
-.${BUTT_TWO_OFF_CLASS}> div:first-child > div,
-.${BUTT_LEFT_OFF_CLASS}> div:first-child > div
-{
-  animation-name: left_get_out;
-}
-
-.${BUTT_TWO_OFF_CLASS} > div + img + div > div,
-.${BUTT_RIGHT_OFF_CLASS} > div + img + div > div
-{
-  animation-name: right_get_out;
-}
-
 .${ROOT_CLASS} > div:first-child > div
 {
   transform: translateX(-30px);
@@ -139,6 +127,18 @@ ${DARKMODE_SELECTOR_VALUE}
 .${BUTT_RIGHT_CLASS} > div + img + div > div
 {
   animation-name: right_come_out;
+}
+
+.${BUTT_TWO_OFF_CLASS}> div:first-child > div,
+.${BUTT_LEFT_OFF_CLASS}> div:first-child > div
+{
+  animation-name: left_get_out;
+}
+
+.${BUTT_TWO_OFF_CLASS} > div + img + div > div,
+.${BUTT_RIGHT_OFF_CLASS} > div + img + div > div
+{
+  animation-name: right_get_out;
 }
 
 @keyframes left_come_out
