@@ -145,11 +145,11 @@ ${DARKMODE_SELECTOR_VALUE}
 {
   0%
   {
-    transform: translateX(-30px);
+    transform: translateX(-40px);
   }
   50%
   {
-    transform: translateX(-15px);
+    transform: translateX(-20px);
   }
   100%
   {
@@ -165,11 +165,11 @@ ${DARKMODE_SELECTOR_VALUE}
   }
   50%
   {
-    transform: translateX(-15px);
+    transform: translateX(-20px);
   }
   100%
   {
-    transform: translateX(-30px);
+    transform: translateX(-40px);
   }
 }
 
@@ -177,11 +177,11 @@ ${DARKMODE_SELECTOR_VALUE}
 {
   0%
   {
-    transform: translateX(30px);
+    transform: translateX(40px);
   }
   50%
   {
-    transform: translateX(15px);
+    transform: translateX(20px);
   }
   100%
   {
@@ -197,11 +197,11 @@ ${DARKMODE_SELECTOR_VALUE}
   }
   50%
   {
-    transform: translateX(15px);
+    transform: translateX(20px);
   }
   100%
   {
-    transform: translateX(30px);
+    transform: translateX(40px);
   }
 }
 
@@ -290,11 +290,11 @@ ${DARKMODE_SELECTOR_VALUE}
 {
   0%
   {
-    transform: translateY(-30px);
+    transform: translateY(-40px);
   }
   50%
   {
-    transform: translateY(-15px);
+    transform: translateY(-20px);
   }
   100%
   {
@@ -310,11 +310,11 @@ ${DARKMODE_SELECTOR_VALUE}
   }
   50%
   {
-    transform: translateY(-15px);
+    transform: translateY(-20px);
   }
   100%
   {
-    transform: translateY(-30px);
+    transform: translateY(-40px);
   }
 }
 `;
