@@ -38,7 +38,7 @@ export const ROOT_HTML = `
 export const CSS = `
 :root
 {
-  --uic-imgcnt-img:  ${PLAY};
+  --uic-imgcnt-img:  ${PLAY1};
   --uic-imgcnt-bg: ${UIC_CONTENT_BACKGROUND_COLOR};
   --uic-imgcnt-buthov: #6c6c6c;
   --uic-imgcnt-but: #f1f1f1;
@@ -47,7 +47,7 @@ export const CSS = `
 
 ${DARKMODE_SELECTOR_VALUE}
 {
-  --uic-imgcnt-img:  ${PLAY1};
+  --uic-imgcnt-img:  ${PLAY};
   --uic-imgcnt-bg: ${UIC_CONTENT_BACKGROUND_COLOR_DARK};
   --uic-imgcnt-buthov: #3c3b3b;
   --uic-imgcnt-but: #252525;
@@ -130,11 +130,11 @@ ${DARKMODE_SELECTOR_VALUE}
 {
   0%
   {
-    transform: translateX(-20px);
+    transform: translateX(-30px);
   }
   50%
   {
-    transform: translateX(-10px);
+    transform: translateX(-15px);
   }
   100%
   {
@@ -150,11 +150,11 @@ ${DARKMODE_SELECTOR_VALUE}
   }
   50%
   {
-    transform: translateX(-10px);
+    transform: translateX(-15px);
   }
   100%
   {
-    transform: translateX(-20px);
+    transform: translateX(-30px);
   }
 }
 
@@ -162,11 +162,11 @@ ${DARKMODE_SELECTOR_VALUE}
 {
   0%
   {
-    transform: translateX(20px);
+    transform: translateX(30px);
   }
   50%
   {
-    transform: translateX(10px);
+    transform: translateX(15px);
   }
   100%
   {
@@ -182,11 +182,11 @@ ${DARKMODE_SELECTOR_VALUE}
   }
   50%
   {
-    transform: translateX(10px);
+    transform: translateX(15px);
   }
   100%
   {
-    transform: translateX(20px);
+    transform: translateX(30px);
   }
 }
 
@@ -275,11 +275,11 @@ ${DARKMODE_SELECTOR_VALUE}
 {
   0%
   {
-    transform: translateY(-20px);
+    transform: translateY(-30px);
   }
   50%
   {
-    transform: translateY(-10px);
+    transform: translateY(-15px);
   }
   100%
   {
@@ -295,11 +295,11 @@ ${DARKMODE_SELECTOR_VALUE}
   }
   50%
   {
-    transform: translateY(-10px);
+    transform: translateY(-15px);
   }
   100%
   {
-    transform: translateY(-20px);
+    transform: translateY(-30px);
   }
 }
 `;
