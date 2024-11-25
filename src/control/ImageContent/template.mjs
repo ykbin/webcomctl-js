@@ -12,6 +12,7 @@ export const BUTT_LEFT_CLASS = mk.newClassName("ButtLeft");
 export const BUTT_RIGHT_CLASS = mk.newClassName("ButtRight");
 export const BUTT_TWO_CLASS = mk.newClassName("ButtTwo");
 const PLAY = await mk.loadSvgAsCssUrl('./play.svg');
+const PLAY1 = await mk.loadSvgAsCssUrl('./play1.svg');
 
 export const ROOT_HTML = `
 <div class="${ROOT_CLASS}" draggable="false">
@@ -37,14 +38,16 @@ export const ROOT_HTML = `
 export const CSS = `
 :root
 {
+  --uic-imgcnt-img:  ${PLAY};
   --uic-imgcnt-bg: ${UIC_CONTENT_BACKGROUND_COLOR};
   --uic-imgcnt-buthov: #6c6c6c;
-  --uic-imgcnt-but: #bcbcbc;
+  --uic-imgcnt-but: #f1f1f1;
   --uic-imgcnt-quantum: #272727;
 }
 
 ${DARKMODE_SELECTOR_VALUE}
 {
+  --uic-imgcnt-img:  ${PLAY1};
   --uic-imgcnt-bg: ${UIC_CONTENT_BACKGROUND_COLOR_DARK};
   --uic-imgcnt-buthov: #3c3b3b;
   --uic-imgcnt-but: #252525;
@@ -91,13 +94,14 @@ ${DARKMODE_SELECTOR_VALUE}
 {
   display: flex;
   align-items: center;
-  height: 100%;
-  width: 20px;
-  border-radius: 5px;
-  flex-shrink: 0;
+  justify-content: center;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
   animation-fill-mode: both;
   animation-duration: 300ms;
   animation-iteration-count: 1;
+   flex-shrink: 0;
 }
 
 .${ROOT_CLASS} > div:first-child > div
@@ -202,7 +206,7 @@ ${DARKMODE_SELECTOR_VALUE}
 {
   height: 20px;
   width: 20px;
-  background-image: ${PLAY};
+  background-image: var(--uic-imgcnt-img);
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -212,6 +216,12 @@ ${DARKMODE_SELECTOR_VALUE}
 .${ROOT_CLASS} > div:first-child > div > div
 {
   transform: scaleX(-1);
+  margin-right: 2px;
+}
+
+.${ROOT_CLASS} > div + img + div > div > div
+{
+  margin-left: 2px;
 }
 
 .${ROOT_CLASS} > div + img + div
