@@ -8,15 +8,17 @@ const mk = new ControlMaker('ImageContent', import.meta.url);
 
 export const ROOT_CLASS = mk.newClassName("Root");
 export const CONTENT_CLASS = mk.newClassName("Content");
-export const BUTT_START_CLASS = mk.newClassName("Start");
 export const BUTT_LEFT_CLASS = mk.newClassName("ButtLeft");
+export const BUTT_LEFT_OFF_CLASS = mk.newClassName("ButtLeft-off");
 export const BUTT_RIGHT_CLASS = mk.newClassName("ButtRight");
+export const BUTT_RIGHT_OFF_CLASS = mk.newClassName("ButtRight-off");
 export const BUTT_TWO_CLASS = mk.newClassName("ButtTwo");
+export const BUTT_TWO_OFF_CLASS = mk.newClassName("Two-off");
 const PLAY = await mk.loadSvgAsCssUrl('./play.svg');
 const PLAY1 = await mk.loadSvgAsCssUrl('./play1.svg');
 
 export const ROOT_HTML = `
-<div class="${ROOT_CLASS} ${BUTT_START_CLASS}" draggable="false">
+<div class="${ROOT_CLASS}" draggable="false">
   <div>
     <div>
       <div></div>
@@ -105,17 +107,19 @@ ${DARKMODE_SELECTOR_VALUE}
    flex-shrink: 0;
 }
 
-.${ROOT_CLASS} > div:first-child > div
+.${BUTT_TWO_OFF_CLASS}> div:first-child > div,
+.${BUTT_LEFT_OFF_CLASS}> div:first-child > div
 {
   animation-name: left_get_out;
 }
 
-.${ROOT_CLASS} > div + img + div > div
+.${BUTT_TWO_OFF_CLASS} > div + img + div > div,
+.${BUTT_RIGHT_OFF_CLASS} > div + img + div > div
 {
   animation-name: right_get_out;
 }
 
-.${BUTT_START_CLASS} > div:first-child > div
+.${ROOT_CLASS} > div:first-child > div
 {
   transform: translateX(-30px);
 }
@@ -126,7 +130,7 @@ ${DARKMODE_SELECTOR_VALUE}
   animation-name: left_come_out;
 }
 
-.${BUTT_START_CLASS} > div + img + div > div
+.${ROOT_CLASS} > div + img + div > div
 {
   transform: translateX(30px);
 }
