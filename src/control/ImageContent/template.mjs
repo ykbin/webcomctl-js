@@ -43,7 +43,7 @@ export const CSS = `
 {
   --uic-imgcnt-img:  ${PLAY1};
   --uic-imgcnt-bg: ${UIC_CONTENT_BACKGROUND_COLOR};
-  --uic-imgcnt-buthov: #6c6c6c;
+  --uic-imgcnt-buthov: #bcbcbc;
   --uic-imgcnt-but: #f1f1f1;
   --uic-imgcnt-quantum: #272727;
 }
