@@ -10,7 +10,6 @@ export const ROOT_CLASS = mk.newClassName("Root");
 export const CONTENT_CLASS = mk.newClassName("Content");
 export const BUTT_LEFT_CLASS = mk.newClassName("ButtLeft");
 export const BUTT_RIGHT_CLASS = mk.newClassName("ButtRight");
-export const BUTT_TWO_CLASS = mk.newClassName("ButtTwo");
 const PLAY = await mk.loadSvgAsCssUrl('./play.svg');
 const PLAY1 = await mk.loadSvgAsCssUrl('./play1.svg');
 
@@ -102,16 +101,13 @@ ${DARKMODE_SELECTOR_VALUE}
   flex-shrink: 0;
 }
 
-.${BUTT_TWO_CLASS} > div:first-child > div,
 .${BUTT_LEFT_CLASS}> div:first-child > div,
-.${BUTT_TWO_CLASS} > div + img + div > div,
 .${BUTT_RIGHT_CLASS} > div + img + div > div
 {
   width: 40px;
   transition: width 0.3s;
 }
 
-.${BUTT_TWO_CLASS} > div > div, 
 .${BUTT_LEFT_CLASS} > div > div,
 .${BUTT_RIGHT_CLASS} > div > div
 {
@@ -150,7 +146,6 @@ ${DARKMODE_SELECTOR_VALUE}
   justify-content: flex-end;
 }
 
-.${BUTT_TWO_CLASS} > div, 
 .${BUTT_LEFT_CLASS} > div:first-child,
 .${BUTT_RIGHT_CLASS} > div:last-child
 {
@@ -164,7 +159,6 @@ ${DARKMODE_SELECTOR_VALUE}
   width: 0px;
 }
 
-.${BUTT_TWO_CLASS} > span,
 .${BUTT_LEFT_CLASS} > span,
 .${BUTT_RIGHT_CLASS} > span
 {
@@ -181,7 +175,6 @@ ${DARKMODE_SELECTOR_VALUE}
   color: var(--uic-imgcnt-quantum);
 }
 
-.${BUTT_TWO_CLASS}  > span > div,
 .${BUTT_LEFT_CLASS}  > span > div,
 .${BUTT_RIGHT_CLASS}  > span > div
 {
