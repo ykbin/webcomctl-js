@@ -9,11 +9,8 @@ const mk = new ControlMaker('ImageContent', import.meta.url);
 export const ROOT_CLASS = mk.newClassName("Root");
 export const CONTENT_CLASS = mk.newClassName("Content");
 export const BUTT_LEFT_CLASS = mk.newClassName("ButtLeft");
-export const BUTT_LEFT_OFF_CLASS = mk.newClassName("ButtLeft-off");
 export const BUTT_RIGHT_CLASS = mk.newClassName("ButtRight");
-export const BUTT_RIGHT_OFF_CLASS = mk.newClassName("ButtRight-off");
 export const BUTT_TWO_CLASS = mk.newClassName("ButtTwo");
-export const BUTT_TWO_OFF_CLASS = mk.newClassName("Two-off");
 const PLAY = await mk.loadSvgAsCssUrl('./play.svg');
 const PLAY1 = await mk.loadSvgAsCssUrl('./play1.svg');
 
@@ -129,7 +126,10 @@ ${DARKMODE_SELECTOR_VALUE}
   overflow: hidden;
 }
 
-.${BUTT_TWO_OFF_CLASS} > div > div
+.${BUTT_TWO_CLASS} > div:first-child > div,
+.${BUTT_LEFT_CLASS}> div:first-child > div,
+.${BUTT_TWO_CLASS} > div + img + div > div,
+.${BUTT_RIGHT_CLASS} > div + img + div > div
 {
   width: 20px;
   transition: width 2s;
