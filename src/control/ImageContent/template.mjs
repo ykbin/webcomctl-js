@@ -129,10 +129,7 @@ ${DARKMODE_SELECTOR_VALUE}
   overflow: hidden;
 }
 
-.${BUTT_TWO_OFF_CLASS} > div:first-child > div,
-.${BUTT_LEFT_OFF_CLASS} > div:first-child > div,
-.${BUTT_TWO_OFF_CLASS} > div + img + div > div,
-.${BUTT_RIGHT_OFF_CLASS} > div + img + div > div
+.${BUTT_TWO_OFF_CLASS} > div > div
 {
   width: 20px;
   transition: width 2s;
