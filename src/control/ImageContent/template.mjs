@@ -9,11 +9,7 @@ const mk = new ControlMaker('ImageContent', import.meta.url);
 export const ROOT_CLASS = mk.newClassName("Root");
 export const CONTENT_CLASS = mk.newClassName("Content");
 export const BUTT_LEFT_CLASS = mk.newClassName("ButtLeft");
-export const BUTT_LEFT_OFF_CLASS = mk.newClassName("ButtLeft-off");
 export const BUTT_RIGHT_CLASS = mk.newClassName("ButtRight");
-export const BUTT_RIGHT_OFF_CLASS = mk.newClassName("ButtRight-off");
-export const BUTT_TWO_CLASS = mk.newClassName("ButtTwo");
-export const BUTT_TWO_OFF_CLASS = mk.newClassName("Two-off");
 const PLAY = await mk.loadSvgAsCssUrl('./play.svg');
 const PLAY1 = await mk.loadSvgAsCssUrl('./play1.svg');
 
@@ -99,113 +95,19 @@ ${DARKMODE_SELECTOR_VALUE}
   align-items: center;
   justify-content: center;
   height: 40px;
-  width: 40px;
+  width: 0;
+  transition: width 0.2s;
   border-radius: 50%;
-  animation-fill-mode: both;
-  animation-duration: 300ms;
-  animation-iteration-count: 1;
-   flex-shrink: 0;
+  flex-shrink: 0;
 }
 
-.${ROOT_CLASS} > div:first-child > div
-{
-  transform: translateX(-30px);
-}
-
-.${BUTT_TWO_CLASS} > div:first-child > div, 
-.${BUTT_LEFT_CLASS} > div:first-child > div
-{
-  animation-name: left_come_out;
-}
-
-.${ROOT_CLASS} > div + img + div > div
-{
-  transform: translateX(30px);
-}
-
-.${BUTT_TWO_CLASS} > div + img + div > div, 
+.${BUTT_LEFT_CLASS}> div:first-child > div,
 .${BUTT_RIGHT_CLASS} > div + img + div > div
 {
-  animation-name: right_come_out;
+  width: 40px;
+  transition: width 0.3s;
 }
 
-.${BUTT_TWO_OFF_CLASS}> div:first-child > div,
-.${BUTT_LEFT_OFF_CLASS}> div:first-child > div
-{
-  animation-name: left_get_out;
-}
-
-.${BUTT_TWO_OFF_CLASS} > div + img + div > div,
-.${BUTT_RIGHT_OFF_CLASS} > div + img + div > div
-{
-  animation-name: right_get_out;
-}
-
-@keyframes left_come_out
-{
-  0%
-  {
-    transform: translateX(-40px);
-  }
-  50%
-  {
-    transform: translateX(-20px);
-  }
-  100%
-  {
-    transform: translateX(0);
-  }
-}
-
-@keyframes left_get_out
-{
-  0%
-  {
-    transform: translateX(0);
-  }
-  50%
-  {
-    transform: translateX(-20px);
-  }
-  100%
-  {
-    transform: translateX(-40px);
-  }
-}
-
-@keyframes right_come_out
-{
-  0%
-  {
-    transform: translateX(40px);
-  }
-  50%
-  {
-    transform: translateX(20px);
-  }
-  100%
-  {
-    transform: translateX(0);
-  }
-}
-
-@keyframes right_get_out
-{
-  0%
-  {
-    transform: translateX(0);
-  }
-  50%
-  {
-    transform: translateX(20px);
-  }
-  100%
-  {
-    transform: translateX(40px);
-  }
-}
-
-.${BUTT_TWO_CLASS} > div > div, 
 .${BUTT_LEFT_CLASS} > div > div,
 .${BUTT_RIGHT_CLASS} > div > div
 {
@@ -244,7 +146,6 @@ ${DARKMODE_SELECTOR_VALUE}
   justify-content: flex-end;
 }
 
-.${BUTT_TWO_CLASS} > div, 
 .${BUTT_LEFT_CLASS} > div:first-child,
 .${BUTT_RIGHT_CLASS} > div:last-child
 {
@@ -258,7 +159,6 @@ ${DARKMODE_SELECTOR_VALUE}
   width: 0px;
 }
 
-.${BUTT_TWO_CLASS} > span,
 .${BUTT_LEFT_CLASS} > span,
 .${BUTT_RIGHT_CLASS} > span
 {
@@ -271,50 +171,14 @@ ${DARKMODE_SELECTOR_VALUE}
   top: 5px;
   right: 10px;
   display: flex;
-  height: 20px;
+  height: 0;
   color: var(--uic-imgcnt-quantum);
-  animation-name: get_out;
-  animation-fill-mode: both;
-  animation-duration: 300ms;
-  animation-iteration-count: 1;
 }
 
-.${BUTT_TWO_CLASS} > span > div,
-.${BUTT_LEFT_CLASS} > span > div,
-.${BUTT_RIGHT_CLASS} > span > div
+.${BUTT_LEFT_CLASS}  > span > div,
+.${BUTT_RIGHT_CLASS}  > span > div
 {
-  animation-name: come_out;
-}
-
-@keyframes come_out
-{
-  0%
-  {
-    transform: translateY(-40px);
-  }
-  50%
-  {
-    transform: translateY(-20px);
-  }
-  100%
-  {
-    transform: translateY(0);
-  }
-}
-
-@keyframes get_out
-{
-  0%
-  {
-    transform: translateY(0);
-  }
-  50%
-  {
-    transform: translateY(-20px);
-  }
-  100%
-  {
-    transform: translateY(-40px);
-  }
+  height: 20px;
+  transition: height 0.3s;
 }
 `;
