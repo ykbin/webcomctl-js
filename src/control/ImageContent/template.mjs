@@ -90,7 +90,6 @@ ${DARKMODE_SELECTOR_VALUE}
   overflow: hidden;
 }
 
-
 .${ROOT_CLASS} > div > div
 {
   display: flex;
@@ -189,5 +188,4 @@ ${DARKMODE_SELECTOR_VALUE}
   height: 20px;
   transition: height 0.3s;
 }
-
 `;
