@@ -105,20 +105,10 @@ ${DARKMODE_SELECTOR_VALUE}
   flex-shrink: 0;
 }
 
-.${ROOT_CLASS} > div:first-child > div
-{
-  transform: translateX(-30px);
-}
-
 .${BUTT_TWO_CLASS} > div:first-child > div, 
 .${BUTT_LEFT_CLASS} > div:first-child > div
 {
   animation-name: left_come_out;
-}
-
-.${ROOT_CLASS} > div + img + div > div
-{
-  transform: translateX(30px);
 }
 
 .${BUTT_TWO_CLASS} > div + img + div > div, 
