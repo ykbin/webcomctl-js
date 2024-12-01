@@ -93,6 +93,7 @@ ${DARKMODE_SELECTOR_VALUE}
   overflow: hidden;
 }
 
+
 .${ROOT_CLASS} > div > div
 {
   display: flex;
@@ -101,10 +102,7 @@ ${DARKMODE_SELECTOR_VALUE}
   height: 40px;
   width: 40px;
   border-radius: 50%;
-  animation-fill-mode: both;
-  animation-duration: 300ms;
-  animation-iteration-count: 1;
-   flex-shrink: 0;
+  flex-shrink: 0;
 }
 
 .${ROOT_CLASS} > div:first-child > div
@@ -129,81 +127,6 @@ ${DARKMODE_SELECTOR_VALUE}
   animation-name: right_come_out;
 }
 
-.${BUTT_TWO_OFF_CLASS}> div:first-child > div,
-.${BUTT_LEFT_OFF_CLASS}> div:first-child > div
-{
-  animation-name: left_get_out;
-}
-
-.${BUTT_TWO_OFF_CLASS} > div + img + div > div,
-.${BUTT_RIGHT_OFF_CLASS} > div + img + div > div
-{
-  animation-name: right_get_out;
-}
-
-@keyframes left_come_out
-{
-  0%
-  {
-    transform: translateX(-40px);
-  }
-  50%
-  {
-    transform: translateX(-20px);
-  }
-  100%
-  {
-    transform: translateX(0);
-  }
-}
-
-@keyframes left_get_out
-{
-  0%
-  {
-    transform: translateX(0);
-  }
-  50%
-  {
-    transform: translateX(-20px);
-  }
-  100%
-  {
-    transform: translateX(-40px);
-  }
-}
-
-@keyframes right_come_out
-{
-  0%
-  {
-    transform: translateX(40px);
-  }
-  50%
-  {
-    transform: translateX(20px);
-  }
-  100%
-  {
-    transform: translateX(0);
-  }
-}
-
-@keyframes right_get_out
-{
-  0%
-  {
-    transform: translateX(0);
-  }
-  50%
-  {
-    transform: translateX(20px);
-  }
-  100%
-  {
-    transform: translateX(40px);
-  }
-}
 
 .${BUTT_TWO_CLASS} > div > div, 
 .${BUTT_LEFT_CLASS} > div > div,
@@ -220,12 +143,22 @@ ${DARKMODE_SELECTOR_VALUE}
 .${ROOT_CLASS} > div > div > div
 {
   height: 20px;
-  width: 20px;
+  width: 0;
+  transition: width 0.2s;
   background-image: var(--uic-imgcnt-img);
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
   overflow: hidden;
+}
+
+.${BUTT_TWO_OFF_CLASS}> div:first-child > div,
+.${BUTT_LEFT_OFF_CLASS}> div:first-child > div,
+.${BUTT_TWO_OFF_CLASS} > div + img + div > div,
+.${BUTT_RIGHT_OFF_CLASS} > div + img + div > div
+{
+  width: 20px;
+  transition: width 0.2s;
 }
 
 .${ROOT_CLASS} > div:first-child > div > div
