@@ -105,19 +105,6 @@ ${DARKMODE_SELECTOR_VALUE}
   flex-shrink: 0;
 }
 
-.${BUTT_TWO_CLASS} > div:first-child > div, 
-.${BUTT_LEFT_CLASS} > div:first-child > div
-{
-  animation-name: left_come_out;
-}
-
-.${BUTT_TWO_CLASS} > div + img + div > div, 
-.${BUTT_RIGHT_CLASS} > div + img + div > div
-{
-  animation-name: right_come_out;
-}
-
-
 .${BUTT_TWO_CLASS} > div > div, 
 .${BUTT_LEFT_CLASS} > div > div,
 .${BUTT_RIGHT_CLASS} > div > div
@@ -148,7 +135,7 @@ ${DARKMODE_SELECTOR_VALUE}
 .${BUTT_RIGHT_OFF_CLASS} > div + img + div > div
 {
   width: 20px;
-  transition: width 0.2s;
+  transition: width 2s;
 }
 
 .${ROOT_CLASS} > div:first-child > div > div
