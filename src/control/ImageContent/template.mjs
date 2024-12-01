@@ -178,8 +178,16 @@ ${DARKMODE_SELECTOR_VALUE}
   top: 5px;
   right: 10px;
   display: flex;
-  height: 20px;
+  height: 0;
   color: var(--uic-imgcnt-quantum);
+}
+
+.${BUTT_TWO_CLASS}  > span > div,
+.${BUTT_LEFT_CLASS}  > span > div,
+.${BUTT_RIGHT_CLASS}  > span > div
+{
+  height: 20px;
+  transition: height 0.3s;
 }
 
 `;
