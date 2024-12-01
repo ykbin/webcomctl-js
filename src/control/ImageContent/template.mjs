@@ -100,7 +100,8 @@ ${DARKMODE_SELECTOR_VALUE}
   align-items: center;
   justify-content: center;
   height: 40px;
-  width: 40px;
+  width: 0;
+  transition: width 0.2s;
   border-radius: 50%;
   flex-shrink: 0;
 }
@@ -120,8 +121,7 @@ ${DARKMODE_SELECTOR_VALUE}
 .${ROOT_CLASS} > div > div > div
 {
   height: 20px;
-  width: 0;
-  transition: width 0.2s;
+  width: 20px;
   background-image: var(--uic-imgcnt-img);
   background-size: contain;
   background-position: center;
