@@ -103,6 +103,15 @@ ${DARKMODE_SELECTOR_VALUE}
   flex-shrink: 0;
 }
 
+.${BUTT_TWO_CLASS} > div:first-child > div,
+.${BUTT_LEFT_CLASS}> div:first-child > div,
+.${BUTT_TWO_CLASS} > div + img + div > div,
+.${BUTT_RIGHT_CLASS} > div + img + div > div
+{
+  width: 20px;
+  transition: width 0.3s;
+}
+
 .${BUTT_TWO_CLASS} > div > div, 
 .${BUTT_LEFT_CLASS} > div > div,
 .${BUTT_RIGHT_CLASS} > div > div
@@ -124,15 +133,6 @@ ${DARKMODE_SELECTOR_VALUE}
   background-position: center;
   background-repeat: no-repeat;
   overflow: hidden;
-}
-
-.${BUTT_TWO_CLASS} > div:first-child > div,
-.${BUTT_LEFT_CLASS}> div:first-child > div,
-.${BUTT_TWO_CLASS} > div + img + div > div,
-.${BUTT_RIGHT_CLASS} > div + img + div > div
-{
-  width: 20px;
-  transition: width 2s;
 }
 
 .${ROOT_CLASS} > div:first-child > div > div
@@ -180,48 +180,6 @@ ${DARKMODE_SELECTOR_VALUE}
   display: flex;
   height: 20px;
   color: var(--uic-imgcnt-quantum);
-  animation-name: get_out;
-  animation-fill-mode: both;
-  animation-duration: 300ms;
-  animation-iteration-count: 1;
 }
 
-.${BUTT_TWO_CLASS} > span > div,
-.${BUTT_LEFT_CLASS} > span > div,
-.${BUTT_RIGHT_CLASS} > span > div
-{
-  animation-name: come_out;
-}
-
-@keyframes come_out
-{
-  0%
-  {
-    transform: translateY(-40px);
-  }
-  50%
-  {
-    transform: translateY(-20px);
-  }
-  100%
-  {
-    transform: translateY(0);
-  }
-}
-
-@keyframes get_out
-{
-  0%
-  {
-    transform: translateY(0);
-  }
-  50%
-  {
-    transform: translateY(-20px);
-  }
-  100%
-  {
-    transform: translateY(-40px);
-  }
-}
 `;
