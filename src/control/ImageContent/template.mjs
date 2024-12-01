@@ -108,7 +108,7 @@ ${DARKMODE_SELECTOR_VALUE}
 .${BUTT_TWO_CLASS} > div + img + div > div,
 .${BUTT_RIGHT_CLASS} > div + img + div > div
 {
-  width: 20px;
+  width: 40px;
   transition: width 0.3s;
 }
 
