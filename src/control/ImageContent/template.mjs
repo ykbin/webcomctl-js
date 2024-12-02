@@ -6,54 +6,64 @@ import { UIC_CONTENT_BACKGROUND_COLOR_DARK } from '../../lib/WickedTheme.mjs';
 
 const mk = new ControlMaker('ImageContent', import.meta.url);
 
-export const ROOT_CLASS = mk.newClassName("Root");
-export const CONTENT_CLASS = mk.newClassName("Content");
-export const BUTT_LEFT_CLASS = mk.newClassName("ButtLeft");
-export const BUTT_RIGHT_CLASS = mk.newClassName("ButtRight");
-const PLAY = await mk.loadSvgAsCssUrl('./play.svg');
-const PLAY1 = await mk.loadSvgAsCssUrl('./play1.svg');
+const clss = mk.newClassNameMap([
+  "ROOT_CLASS",
+  "CONTENT_CLASS",
+  "BUTT_LEFT_CLASS",
+  "BUTT_RIGHT_CLASS",
+  "IMAGE_POSITION",
+  "IMAGE_NUMBERS",
+  "LEFT_CLICK",
+  "RIGHT_CLICK",
+]);
 
-export const ROOT_HTML = `
-<div class="${ROOT_CLASS}" draggable="false">
+const vars = mk.newCSSVariableMap({
+  img: [
+    await mk.loadSvgAsCssUrl('./play.svg'),
+    await mk.loadSvgAsCssUrl('./play1.svg'),
+  ],
+  bg: [
+    UIC_CONTENT_BACKGROUND_COLOR,
+    UIC_CONTENT_BACKGROUND_COLOR_DARK,
+  ],
+  buthov:  [ '#bcbcbc', '#3c3b3b' ],
+  but:     [ '#f1f1f1', '#252525' ],
+  quantum: [ '#272727', '#b8b4b4' ],
+});
+
+mk.newHTML('ROOT_HTML', `
+<div class="${clss.ROOT_CLASS}" draggable="false">
   <div>
-    <div>
+    <div class="${clss.LEFT_CLICK}">
       <div></div>
     </div>
   </div>
-  <img class="${CONTENT_CLASS}"/>
+  <img class="${clss.CONTENT_CLASS}"/>
   <div>
-    <div>
+    <div class="${clss.RIGHT_CLICK}">
       <div></div>
     </div>
   </div>
   <span>
     <div>
-      <div>1</div>/<div>21</div>
+      <div class="${clss.IMAGE_POSITION}"></div>/<div class="${clss.IMAGE_NUMBERS}"></div>
     </div>
   </span>
 </div>
-`;
+`);
 
-export const CSS = `
+mk.newCSS('CSS', `
 :root
 {
-  --uic-imgcnt-img:  ${PLAY1};
-  --uic-imgcnt-bg: ${UIC_CONTENT_BACKGROUND_COLOR};
-  --uic-imgcnt-buthov: #bcbcbc;
-  --uic-imgcnt-but: #f1f1f1;
-  --uic-imgcnt-quantum: #272727;
+  ${vars.toString(0)};
 }
 
 ${DARKMODE_SELECTOR_VALUE}
 {
-  --uic-imgcnt-img:  ${PLAY};
-  --uic-imgcnt-bg: ${UIC_CONTENT_BACKGROUND_COLOR_DARK};
-  --uic-imgcnt-buthov: #3c3b3b;
-  --uic-imgcnt-but: #252525;
-  --uic-imgcnt-quantum: #b8b4b4;
+  ${vars.toString(1)};
 }
 
-.${ROOT_CLASS}
+.${clss.ROOT_CLASS}
 {
   position: relative;
   display: flex;
@@ -63,11 +73,11 @@ ${DARKMODE_SELECTOR_VALUE}
   height: 100%;
   min-height: 600px;
   padding: 40px;
-  background-color: var(--uic-imgcnt-bg);
+  background-color: ${vars.bg.asVar()};
   box-sizing: border-box;
 }
 
-.${ROOT_CLASS} img
+.${clss.ROOT_CLASS} img
 {
   height: auto;
   width: auto;
@@ -79,7 +89,7 @@ ${DARKMODE_SELECTOR_VALUE}
   flex-shrink: 0;
 }
 
-.${ROOT_CLASS} > div
+.${clss.ROOT_CLASS} > div
 {
   display: flex;
   justify-content: flex-start;
@@ -89,7 +99,7 @@ ${DARKMODE_SELECTOR_VALUE}
   overflow: hidden;
 }
 
-.${ROOT_CLASS} > div > div
+.${clss.ROOT_CLASS} > div > div
 {
   display: flex;
   align-items: center;
@@ -101,84 +111,89 @@ ${DARKMODE_SELECTOR_VALUE}
   flex-shrink: 0;
 }
 
-.${BUTT_LEFT_CLASS}> div:first-child > div,
-.${BUTT_RIGHT_CLASS} > div + img + div > div
+.${clss.BUTT_LEFT_CLASS}> div:first-child > div,
+.${clss.BUTT_RIGHT_CLASS} > div + img + div > div
 {
   width: 40px;
   transition: width 0.3s;
 }
 
-.${BUTT_LEFT_CLASS} > div > div,
-.${BUTT_RIGHT_CLASS} > div > div
+.${clss.BUTT_LEFT_CLASS} > div > div,
+.${clss.BUTT_RIGHT_CLASS} > div > div
 {
-  background-color: var(--uic-imgcnt-but);
+  background-color:  ${vars.but.asVar()};
 }
 
-.${ROOT_CLASS} > div > div:hover
+.${clss.ROOT_CLASS} > div > div:hover
 {
-  background-color: var(--uic-imgcnt-buthov);
+  background-color: ${vars.buthov.asVar()};
 }
 
-.${ROOT_CLASS} > div > div > div
+.${clss.ROOT_CLASS} > div > div > div
 {
   height: 20px;
   width: 20px;
-  background-image: var(--uic-imgcnt-img);
+  background-image: ${vars.img.asVar()};
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
   overflow: hidden;
 }
 
-.${ROOT_CLASS} > div:first-child > div > div
+.${clss.ROOT_CLASS} > div:first-child > div > div
 {
   transform: scaleX(-1);
   margin-right: 2px;
 }
 
-.${ROOT_CLASS} > div + img + div > div > div
+.${clss.ROOT_CLASS} > div + img + div > div > div
 {
   margin-left: 2px;
 }
 
-.${ROOT_CLASS} > div + img + div
+.${clss.ROOT_CLASS} > div + img + div
 {
   justify-content: flex-end;
 }
 
-.${BUTT_LEFT_CLASS} > div:first-child,
-.${BUTT_RIGHT_CLASS} > div:last-child
+.${clss.BUTT_LEFT_CLASS} > div:first-child,
+.${clss.BUTT_RIGHT_CLASS} > div:last-child
 {
   pointer-events: auto;
 }
 
-.${ROOT_CLASS} > span
+.${clss.ROOT_CLASS} > span
 {
   justify-content: flex-end;
   height: 0px;
   width: 0px;
 }
 
-.${BUTT_LEFT_CLASS} > span,
-.${BUTT_RIGHT_CLASS} > span
+.${clss.BUTT_LEFT_CLASS} > span,
+.${clss.BUTT_RIGHT_CLASS} > span
 {
   display: flex;
 }
 
-.${ROOT_CLASS} > span > div
+.${clss.ROOT_CLASS} > span > div
 {
   position: absolute;
   top: 5px;
   right: 10px;
   display: flex;
   height: 0;
-  color: var(--uic-imgcnt-quantum);
+  color: ${vars.quantum.asVar()};
 }
 
-.${BUTT_LEFT_CLASS}  > span > div,
-.${BUTT_RIGHT_CLASS}  > span > div
+.${clss.BUTT_LEFT_CLASS}  > span > div,
+.${clss.BUTT_RIGHT_CLASS}  > span > div
 {
   height: 20px;
   transition: height 0.3s;
 }
-`;
+`);
+
+export function buildComponent()
+{
+  return mk.buildComponent();
+}
