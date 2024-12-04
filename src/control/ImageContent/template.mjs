@@ -116,6 +116,7 @@ ${DARKMODE_SELECTOR_VALUE}
 {
   width: 40px;
   transition: width 0.3s;
+  pointer-events: auto;
 }
 
 .${clss.BUTT_LEFT_CLASS} > div > div,
@@ -154,12 +155,6 @@ ${DARKMODE_SELECTOR_VALUE}
 .${clss.ROOT_CLASS} > div + img + div
 {
   justify-content: flex-end;
-}
-
-.${clss.BUTT_LEFT_CLASS} > div:first-child,
-.${clss.BUTT_RIGHT_CLASS} > div:last-child
-{
-  pointer-events: auto;
 }
 
 .${clss.ROOT_CLASS} > span

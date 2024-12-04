@@ -40,16 +40,16 @@ export default class UIImageContentControl extends BaseControl {
     if (this._currentIndex === -1) {
       this._imageElm && (this._imageElm.src = item.url);
       this._currentIndex = 0;
-      this._posElm && (this._posElm.textContent = 1);
     }
 
-    this._numsElm && (this._numsElm.textContent = this._images.length);
     this.updateButtons();
   }
 
   updateButtons() {
     this._element.classList.toggle(BUTT_LEFT_CLASS, this._currentIndex !== 0);
     this._element.classList.toggle(BUTT_RIGHT_CLASS, this._currentIndex !== (this._images.length - 1));
+    this._posElm && (this._posElm.textContent = this._currentIndex + 1);
+    this._numsElm && (this._numsElm.textContent = this._images.length);
   }
 
   clearImages() {
