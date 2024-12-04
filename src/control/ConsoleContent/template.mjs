@@ -1,9 +1,6 @@
 import ControlMaker from '../../lib/ControlMaker.mjs';
 
-import { UIC_BLUE_SQUARE_BACKGROUND } from '../../lib/WickedTheme.mjs';
-import { UIC_BLUE_SQUARE_BORDER } from '../../lib/WickedTheme.mjs';
-
-const mk = new ControlMaker('Console', import.meta.url);
+const mk = new ControlMaker('ConsoleContent', import.meta.url);
 
 const clss = mk.newClassNameMap([
   "ROOT_CLASS",
@@ -11,10 +8,10 @@ const clss = mk.newClassNameMap([
 
 mk.newHTML('ROOT_HTML', `
 <div class="${clss.ROOT_CLASS}">
-    <span>
-      <div contenteditable="false">C:\Users\Sergey\OneDrive\Desktop\test &nbsp;<span contenteditable="true"></span></div>
-    </span>
-  </div>
+  <span>
+    <div contenteditable="false">C:\Users\Sergey\OneDrive\Desktop\test &nbsp;<span contenteditable="true"></span></div>
+  </span>
+</div>
 `);
 
 mk.newCSS('CSS', `
