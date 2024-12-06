@@ -83,6 +83,7 @@ ${DARKMODE_SELECTOR_VALUE}
   width: auto;
   max-width: calc(100% - 80px);
   max-height: calc(100% - 80px);
+  padding: 0 10px;
   box-sizing: border-box;
   flex-shrink: 0;
 }
@@ -94,7 +95,6 @@ ${DARKMODE_SELECTOR_VALUE}
   border: 1px solid;
   border-color: #f3f3f3;
   box-sizing: border-box;
-  flex-shrink: 0;
 }
 
 .${clss.ROOT_CLASS} > div
@@ -120,7 +120,7 @@ ${DARKMODE_SELECTOR_VALUE}
 }
 
 .${clss.BUTT_LEFT_CLASS}> div:first-child > div,
-.${clss.BUTT_RIGHT_CLASS} > div + div + div > div
+.${clss.BUTT_RIGHT_CLASS} > div + span + div > div
 {
   width: 40px;
   transition: width 0.3s;
