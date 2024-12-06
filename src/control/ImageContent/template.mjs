@@ -38,17 +38,17 @@ mk.newHTML('ROOT_HTML', `
       <div></div>
     </div>
   </div>
-  <img class="${clss.CONTENT_CLASS}"/>
+    <span><img class="${clss.CONTENT_CLASS}"/></span>
   <div>
     <div class="${clss.RIGHT_CLICK}">
       <div></div>
     </div>
   </div>
-  <span>
+  <s>
     <div>
       <div class="${clss.IMAGE_POSITION}"></div>/<div class="${clss.IMAGE_NUMBERS}"></div>
     </div>
-  </span>
+  </s>
 </div>
 `);
 
@@ -77,16 +77,27 @@ ${DARKMODE_SELECTOR_VALUE}
   box-sizing: border-box;
 }
 
+.${clss.ROOT_CLASS} > span
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100% - 80px);
+  width: calc(100% - 80px);
+  padding: 0 10px;
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
 .${clss.ROOT_CLASS} img
 {
   height: auto;
   width: auto;
-  max-width: calc(100% - 80px);
-  max-height: calc(100% - 80px);
+  max-width: 100%;
+  max-height: 100%;
   border: 1px solid;
   border-color: #f3f3f3;
   box-sizing: border-box;
-  flex-shrink: 0;
 }
 
 .${clss.ROOT_CLASS} > div
@@ -112,7 +123,7 @@ ${DARKMODE_SELECTOR_VALUE}
 }
 
 .${clss.BUTT_LEFT_CLASS}> div:first-child > div,
-.${clss.BUTT_RIGHT_CLASS} > div + img + div > div
+.${clss.BUTT_RIGHT_CLASS} > div + span + div > div
 {
   width: 40px;
   transition: width 0.3s;
@@ -147,30 +158,32 @@ ${DARKMODE_SELECTOR_VALUE}
   margin-right: 2px;
 }
 
-.${clss.ROOT_CLASS} > div + img + div > div > div
+.${clss.ROOT_CLASS} > div + span + div > div > div
 {
   margin-left: 2px;
 }
 
-.${clss.ROOT_CLASS} > div + img + div
+.${clss.ROOT_CLASS} > div + span + div
 {
   justify-content: flex-end;
 }
 
-.${clss.ROOT_CLASS} > span
+.${clss.ROOT_CLASS} > s
 {
+  display: none;
   justify-content: flex-end;
   height: 0px;
   width: 0px;
+  text-decoration: none;
 }
 
-.${clss.BUTT_LEFT_CLASS} > span,
-.${clss.BUTT_RIGHT_CLASS} > span
+.${clss.BUTT_LEFT_CLASS} > s,
+.${clss.BUTT_RIGHT_CLASS} > s
 {
   display: flex;
 }
 
-.${clss.ROOT_CLASS} > span > div
+.${clss.ROOT_CLASS} > s > div
 {
   position: absolute;
   top: 5px;
@@ -180,8 +193,8 @@ ${DARKMODE_SELECTOR_VALUE}
   color: ${vars.quantum.asVar()};
 }
 
-.${clss.BUTT_LEFT_CLASS}  > span > div,
-.${clss.BUTT_RIGHT_CLASS}  > span > div
+.${clss.BUTT_LEFT_CLASS}  > s > div,
+.${clss.BUTT_RIGHT_CLASS}  > s > div
 {
   height: 20px;
   transition: height 0.3s;
