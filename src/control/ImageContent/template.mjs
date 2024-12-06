@@ -79,10 +79,8 @@ ${DARKMODE_SELECTOR_VALUE}
 
 .${clss.ROOT_CLASS} > span
 {
-  height: auto;
-  width: auto;
-  max-width: calc(100% - 80px);
-  max-height: calc(100% - 80px);
+  height: 100%;
+  width: 100%;
   padding: 0 10px;
   box-sizing: border-box;
   flex-shrink: 0;
@@ -90,8 +88,10 @@ ${DARKMODE_SELECTOR_VALUE}
 
 .${clss.ROOT_CLASS} img
 {
-  height: 100%;
-  width: 100%;
+  height: auto;
+  width: auto;
+  max-width: calc(100% - 80px);
+  max-height: calc(100% - 80px);
   border: 1px solid;
   border-color: #f3f3f3;
   box-sizing: border-box;
