@@ -82,8 +82,8 @@ ${DARKMODE_SELECTOR_VALUE}
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100%;
-  width: 100%;
+  height: calc(100% - 80px);
+  width: calc(100% - 80px);
   padding: 0 10px;
   box-sizing: border-box;
   flex-shrink: 0;
@@ -93,8 +93,8 @@ ${DARKMODE_SELECTOR_VALUE}
 {
   height: auto;
   width: auto;
-  max-width: calc(100% - 80px);
-  max-height: calc(100% - 80px);
+  max-width: 100%;
+  max-height: 100%;
   border: 1px solid;
   border-color: #f3f3f3;
   box-sizing: border-box;
