@@ -171,6 +171,7 @@ ${DARKMODE_SELECTOR_VALUE}
   justify-content: flex-end;
   height: 0px;
   width: 0px;
+  text-decoration: none;
 }
 
 .${clss.BUTT_LEFT_CLASS} > s,
