@@ -38,7 +38,7 @@ mk.newHTML('ROOT_HTML', `
       <div></div>
     </div>
   </div>
-  <img class="${clss.CONTENT_CLASS}"/>
+    <div><img class="${clss.CONTENT_CLASS}"/></div>
   <div>
     <div class="${clss.RIGHT_CLICK}">
       <div></div>
@@ -79,12 +79,20 @@ ${DARKMODE_SELECTOR_VALUE}
 
 .${clss.ROOT_CLASS} img
 {
+  height: 100%;
+  width: 100%;
+  border: 1px solid;
+  border-color: #f3f3f3;
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+.${clss.ROOT_CLASS} div
+{
   height: auto;
   width: auto;
   max-width: calc(100% - 80px);
   max-height: calc(100% - 80px);
-  border: 1px solid;
-  border-color: #f3f3f3;
   box-sizing: border-box;
   flex-shrink: 0;
 }
@@ -112,7 +120,7 @@ ${DARKMODE_SELECTOR_VALUE}
 }
 
 .${clss.BUTT_LEFT_CLASS}> div:first-child > div,
-.${clss.BUTT_RIGHT_CLASS} > div + img + div > div
+.${clss.BUTT_RIGHT_CLASS} > div + div + div > div
 {
   width: 40px;
   transition: width 0.3s;
@@ -147,12 +155,12 @@ ${DARKMODE_SELECTOR_VALUE}
   margin-right: 2px;
 }
 
-.${clss.ROOT_CLASS} > div + img + div > div > div
+.${clss.ROOT_CLASS} > div + div + div > div > div
 {
   margin-left: 2px;
 }
 
-.${clss.ROOT_CLASS} > div + img + div
+.${clss.ROOT_CLASS} > div + div + div
 {
   justify-content: flex-end;
 }
