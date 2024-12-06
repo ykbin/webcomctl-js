@@ -44,11 +44,11 @@ mk.newHTML('ROOT_HTML', `
       <div></div>
     </div>
   </div>
-  <span>
+  <s>
     <div>
       <div class="${clss.IMAGE_POSITION}"></div>/<div class="${clss.IMAGE_NUMBERS}"></div>
     </div>
-  </span>
+  </s>
 </div>
 `);
 
@@ -165,20 +165,21 @@ ${DARKMODE_SELECTOR_VALUE}
   justify-content: flex-end;
 }
 
-.${clss.ROOT_CLASS} > span
+.${clss.ROOT_CLASS} > s
 {
+  display: none;
   justify-content: flex-end;
   height: 0px;
   width: 0px;
 }
 
-.${clss.BUTT_LEFT_CLASS} > span,
-.${clss.BUTT_RIGHT_CLASS} > span
+.${clss.BUTT_LEFT_CLASS} > s,
+.${clss.BUTT_RIGHT_CLASS} > s
 {
   display: flex;
 }
 
-.${clss.ROOT_CLASS} > span > div
+.${clss.ROOT_CLASS} > s > div
 {
   position: absolute;
   top: 5px;
@@ -188,8 +189,8 @@ ${DARKMODE_SELECTOR_VALUE}
   color: ${vars.quantum.asVar()};
 }
 
-.${clss.BUTT_LEFT_CLASS}  > span > div,
-.${clss.BUTT_RIGHT_CLASS}  > span > div
+.${clss.BUTT_LEFT_CLASS}  > s > div,
+.${clss.BUTT_RIGHT_CLASS}  > s > div
 {
   height: 20px;
   transition: height 0.3s;
