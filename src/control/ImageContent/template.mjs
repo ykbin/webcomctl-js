@@ -20,7 +20,6 @@ const clss = mk.newClassNameMap([
 const vars = mk.newCSSVariableMap({
   img: [
     await mk.loadSvgAsCssUrl('./play.svg'),
-    await mk.loadSvgAsCssUrl('./play1.svg'),
   ],
   bg: [
     UIC_CONTENT_BACKGROUND_COLOR,
@@ -89,7 +88,7 @@ ${DARKMODE_SELECTOR_VALUE}
   flex-shrink: 0;
 }
 
-.${clss.ROOT_CLASS} img
+.${clss.ROOT_CLASS} img[src]
 {
   height: auto;
   width: auto;

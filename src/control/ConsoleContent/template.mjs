@@ -9,7 +9,7 @@ const clss = mk.newClassNameMap([
 mk.newHTML('ROOT_HTML', `
 <div class="${clss.ROOT_CLASS}">
   <span>
-    <div contenteditable="false">C:\Users\Sergey\OneDrive\Desktop\test &nbsp;<span contenteditable="true"></span></div>
+    <div contenteditable="false">C:\Users\Sergey\OneDrive\Desktop\test &nbsp;<span contenteditable="true" spellcheck="false"></span></div>
   </span>
 </div>
 `);
