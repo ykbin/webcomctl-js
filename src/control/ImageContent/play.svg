@@ -8,12 +8,6 @@
     width="309.096pt"
     height="365.472pt"
     viewBox="0 0 309.096 365.472">
-<defs>
-  <radialGradient id="gradient0" gradientUnits="objectBoundingBox" cx="0.40880798237845" cy="0.509069819820813" fx="0.395766907621626" fy="0.495276470265345" r="0.661373796019715" spreadMethod="pad">
-   <stop stop-color="#ffffff" offset="0.416999995708466" stop-opacity="1"/>
-   <stop stop-color="#d3d3d3" offset="0.806900024414063" stop-opacity="1"/>
-   <stop stop-color="#979797" offset="1" stop-opacity="1"/>
-  </radialGradient>
- </defs>
-<path id="shape0" transform="matrix(36.3525523747249 0 0 36.3525523747249 16.3473579603417 7.46215603674267)" fill="url(#gradient0)" fill-rule="evenodd" stroke-opacity="0" stroke="#000000" stroke-width="0" stroke-linecap="square" stroke-linejoin="bevel" d="M0.0863336 1.07663C-0.0390567 3.5299 -0.0258463 5.96006 0.112852 8.36931C0.413537 9.53347 1.47272 9.9765 2.76474 9.08532C4.36471 7.84777 5.96468 6.61023 7.56465 5.37268C8.06179 4.94789 8.06728 4.41872 7.5477 4.00388L2.57911 0.440178C1.50166 -0.322655 0.299547 -0.0836226 0.0863336 1.07663Z" sodipodi:nodetypes="ccccccc"/>
+<defs/>
+<path id="shape0" transform="matrix(36.3525504222275 0 0 36.3525504222275 16.3473538301846 7.46215264356895)" fill="#ffffff" fill-rule="evenodd" stroke-opacity="0" stroke="#000000" stroke-width="0" stroke-linecap="square" stroke-linejoin="bevel" d="M0.0863336 1.07663C-0.0390567 3.5299 -0.0258463 5.96006 0.112852 8.36931C0.413537 9.53347 1.47272 9.9765 2.76474 9.08532C4.36471 7.84777 5.96468 6.61023 7.56465 5.37268C8.06179 4.94789 8.06728 4.41872 7.5477 4.00388L2.57911 0.440178C1.50166 -0.322655 0.299547 -0.0836219 0.0863336 1.07663Z" sodipodi:nodetypes="ccccccc"/>
 </svg>

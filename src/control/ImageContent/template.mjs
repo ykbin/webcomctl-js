@@ -19,7 +19,7 @@ const clss = mk.newClassNameMap([
 
 const vars = mk.newCSSVariableMap({
   img: [
-    await mk.loadSvgAsCssUrl('./play1.svg'),
+    await mk.loadSvgAsCssUrl('./play.svg'),
   ],
   bg: [
     UIC_CONTENT_BACKGROUND_COLOR,
