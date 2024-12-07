@@ -9,7 +9,7 @@ const clss = mk.newClassNameMap([
 mk.newHTML('ROOT_HTML', `
 <div class="${clss.ROOT_CLASS}">
   <span>
-    <div contenteditable="false">C:\Users\Sergey\OneDrive\Desktop\test &nbsp;<span contenteditable="true"></span></div>
+    <div contenteditable="false">C:\Users\Sergey\OneDrive\Desktop\test &nbsp;<textarea contenteditable="true" spellcheck="false"></textarea></div>
   </span>
 </div>
 `);
@@ -41,12 +41,13 @@ mk.newCSS('CSS', `
   width: 100%;
 }
 
-.${clss.ROOT_CLASS} > span > div > span
+.${clss.ROOT_CLASS} > span > div > textarea
 {
   display: inline;
   width: 100%;
   outline: none;
   border: none;
+  resize: none;
   caret-color: white;
 }
 `);
