@@ -88,7 +88,7 @@ ${DARKMODE_SELECTOR_VALUE}
   flex-shrink: 0;
 }
 
-.${clss.ROOT_CLASS} img[src=""]
+.${clss.ROOT_CLASS} img[src]
 {
   height: auto;
   width: auto;
