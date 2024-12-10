@@ -16,6 +16,8 @@ const vars = mk.newCSSVariableMap({
   sep_hov_bg: ['linear-gradient(to bottom,transparent 0%, #7d7d7d30 35% 85%, transparent 100%)'],
 
   button_bg: ['#dddddd40'],
+
+  mes_pseudo_hov_bg: ['#f3e9e9'],
   /*light*/
 
   left_col: ['#494949','#ffffff9e'],
