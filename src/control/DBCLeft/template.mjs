@@ -184,7 +184,7 @@ div.${clss.ROOT_CLASS} nav div > s > h2 > s
   background-image: ${vars.dbc_mes_icon.asVar()};
 }
 
-div.${clss.ROOT_CLASS} nav div.${clss.NODE-MESSAGE-PSEUDO} > s > h2 > s
+div.${clss.ROOT_CLASS} nav div.${clss.NODE_MESSAGE_PSEUDO} > s > h2 > s
 {
   background-image: ${vars.dbc_mes_pseudo_icon.asVar()};
 }
