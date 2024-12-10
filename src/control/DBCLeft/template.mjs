@@ -3,22 +3,18 @@ import { DARKMODE_SELECTOR_VALUE } from '../../lib/DarkMode.mjs';
 const mk = new ControlMaker('DBC-left', import.meta.url);
 
 const vars = mk.newCSSVariableMap({
+  left_on_sc: ['transparent'],
   dbc_split_norm: ['url(/dbc-online/splitter.svg)'],
-
   dbc_split_hov: ['url(/dbc-online/splitter-hover.svg)'],
-
   left_but_img: ['url(/dbc-online/left-but.svg)'],
-
   left_but_hov_img: ['url(/dbc-online/left-but-hover.svg)'],
-
   sep_bg: ['linear-gradient(to bottom,transparent 0%, #bcbcbc30 35% 85%, transparent 100%)'],
-
   sep_hov_bg: ['linear-gradient(to bottom,transparent 0%, #7d7d7d30 35% 85%, transparent 100%)'],
-
   button_bg: ['#dddddd40'],
-
   mes_pseudo_hov_bg: ['#f3e9e9'],
-  /*light*/
+
+
+  left_sc_th_bg: ['#3a3a3a', '#3e3e43'],
 
   left_col: ['#494949','#ffffff9e'],
 
@@ -100,6 +96,25 @@ mk.newCSS('CSS', `
 ${DARKMODE_SELECTOR_VALUE}
 {
   ${vars.toString(1)};
+}
+
+.${clss.ROOT_CLASS} > nav::-webkit-scrollbar
+{
+  height:10px;
+  width:10px;
+  background-color: ${vars.left_on_sc.asVar()};
+}
+
+..${clss.ROOT_CLASS} > nav::-webkit-scrollbar-thumb
+{
+  background-color: ${vars.left_on_sc.asVar()};
+  border-radius: 10px;
+}
+
+..${clss.ROOT_CLASS} > nav:hover::-webkit-scrollbar-thumb
+{
+  background-color: ${vars.left_sc_th_bg.asVar()};
+  border-radius: 10px;
 }
 
 .${clss.ROOT_CLASS}
