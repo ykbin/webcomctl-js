@@ -72,7 +72,7 @@ const clss = mk.newClassNameMap([
 ]);
 
 mk.newHTML('ROOT_HTML', `
-<div class="${ROOT_CLASS}>
+<div class="${ROOT_CLASS}">
 
   <s>
     <div>
