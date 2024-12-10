@@ -37,7 +37,7 @@ ${DARKMODE_SELECTOR_VALUE}
   box-sizing: border-box;
 }
 
-.${ROOT_CLASS} *
+.${clss.ROOT_CLASS} *
 {
   box-sizing: border-box;
 }
