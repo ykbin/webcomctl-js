@@ -72,17 +72,17 @@ const clss = mk.newClassNameMap([
 ]);
 
 mk.newHTML('ROOT_HTML', `
-<div class="${ROOT_CLASS}">
+<div class="${clss.ROOT_CLASS}">
 
   <s>
     <div>
-      <div class="${dbc-bn-nav}"></div>
+      <div class="${clss.dbc-bn-nav}"></div>
     </div>
   </s>
 
-  <nav class="${dbc-tree}"></nav>
+  <nav class="${clss.dbc-tree}"></nav>
 
-  <div class="${dbc-panel-separator}"><div></div></div>
+  <div class="${clss.dbc-panel-separator}"><div></div></div>
 
   <span><div></div></span>
 
@@ -100,7 +100,7 @@ ${DARKMODE_SELECTOR_VALUE}
   ${vars.toString(1)};
 }
 
-.${ROOT_CLASS}
+.${clss.ROOT_CLASS}
 {
   display: grid;
   grid-template-rows: 35px auto min-content;
@@ -125,12 +125,12 @@ ${DARKMODE_SELECTOR_VALUE}
   box-sizing: border-box;
 }
 
-.${ROOT_CLASS} *
+.${clss.ROOT_CLASS} *
 {
   box-sizing: border-box;
 }
 
-.${ROOT_CLASS} > nav
+.${clss.ROOT_CLASS} > nav
 {
   grid-area: content;
   padding: 30px 10px 20px 15px;
@@ -139,7 +139,7 @@ ${DARKMODE_SELECTOR_VALUE}
   flex-shrink: 0;
 }
 
-div.${ROOT_CLASS} nav div s h2
+div.${clss.ROOT_CLASS} nav div s h2
 {
   display: block;
   font-weight: 500;
@@ -156,13 +156,13 @@ div[class*="dbc-state-"] > s
   user-select: none;
 }
 
-div.${ROOT_CLASS} > nav div > s + span
+div.${clss.ROOT_CLASS} > nav div > s + span
 {
   padding-left: 10px;
   display: block;
 }
 
-div.${ROOT_CLASS} nav div > s > h2 > s
+div.${clss.ROOT_CLASS} nav div > s > h2 > s
 {
   display: block;
   background-repeat: no-repeat;
@@ -174,61 +174,61 @@ div.${ROOT_CLASS} nav div > s > h2 > s
   flex-shrink: 0;
 }
 
-.${dbc-node-document}  > s > h2 > s
+.${clss.dbc-node-document}  > s > h2 > s
 {
   background-image: ${vars.dbc_doc_icon.asVar()};
 }
 
-.${NODE-MESSAGE} > s > h2 > s
+.${clss.NODE-MESSAGE} > s > h2 > s
 {
   background-image: ${vars.dbc_mes_icon.asVar()};
 }
 
-div.${ROOT_CLASS} nav div.${NODE-MESSAGE-PSEUDO} > s > h2 > s
+div.${clss.ROOT_CLASS} nav div.${clss.NODE-MESSAGE-PSEUDO} > s > h2 > s
 {
   background-image: ${vars.dbc_mes_pseudo_icon.asVar()};
 }
 
-div.${ROOT_CLASS} div.${NODE-MESSAGE-PSEUDO} div.${NODE-SIGNAL} > s > h2 > s
+div.${clss.ROOT_CLASS} div.${clss.NODE-MESSAGE-PSEUDO} div.${clss.NODE-SIGNAL} > s > h2 > s
 {
   background-image: ${vars.dbc_sig_pseudo_icon.asVar()};
 }
 
-body div.${ROOT_CLASS} nav .${NODE-MESSAGE-PSEUDO} s > h2 > div
+body div.${clss.ROOT_CLASS} nav .${clss.NODE-MESSAGE-PSEUDO} s > h2 > div
 {
   color: ${vars.mes_pseudo_list_col.asVar()};
 }
 
-div.${ROOT_CLASS} nav div.${NODE-MESSAGE-PSEUDO} s h2:hover 
+div.${clss.ROOT_CLASS} nav div.${clss.NODE-MESSAGE-PSEUDO} s h2:hover 
 {
   background-color: ${vars.mes_pseudo_hov_bg.asVar()};
 }
 
-.${NODE-GROUP} > s > h2 > s
+.${clss.NODE-GROUP} > s > h2 > s
 {
   background-image: ${vars.dbc_group_icon.asVar()};
 }
 
-.${NODE-SIGNAL} > s > h2 > s
+.${clss.NODE-SIGNAL} > s > h2 > s
 {
   background-image: ${vars.dbc_sig_icon.asVar()};
 }
 
-div.${ROOT_CLASS} nav div > s > h2 > div
+div.${clss.ROOT_CLASS} nav div > s > h2 > div
 {
   flex-shrink: 0;
   text-overflow: ellipsis;
   padding-right: 5px;
 }
 
-div.${ROOT_CLASS} nav div.${dbc-tree-active} > s > h2 > div
+div.${clss.ROOT_CLASS} nav div.${clss.dbc-tree-active} > s > h2 > div
 {
   color: ${vars.tree_act_col.asVar()};
   font-weight: 600;
   padding: 0px;
 }
 
-div.${ROOT_CLASS} nav > div s  h2
+div.${clss.ROOT_CLASS} nav > div s  h2
 {
   display: flex;
   align-items: center;
@@ -237,12 +237,12 @@ div.${ROOT_CLASS} nav > div s  h2
   margin-left: 7px;
 }
 
-div.${ROOT_CLASS} nav div s h2:hover
+div.${clss.ROOT_CLASS} nav div s h2:hover
 {
   background-color: ${vars.left_name_hov.asVar()};
 }
 
-div.${ROOT_CLASS} > nav div s b
+div.${clss.ROOT_CLASS} > nav div s b
 {
   display: flex;
   width: 15px;
@@ -252,13 +252,13 @@ div.${ROOT_CLASS} > nav div s b
   flex-shrink: 0;
 }
 
-div.${ROOT_CLASS} > nav div.${dbc-state-none} > s b
+div.${clss.ROOT_CLASS} > nav div.${clss.dbc-state-none} > s b
 {
   pointer-events: none;
   visibility: hidden;
 }
 
-div.${ROOT_CLASS} > nav div s b div
+div.${clss.ROOT_CLASS} > nav div s b div
 {
   display: block;
   width: 7px;
@@ -267,34 +267,34 @@ div.${ROOT_CLASS} > nav div s b div
   border-left: 1px solid;
 }
 
-div.${ROOT_CLASS} > nav div.${dbc-state-expand} > s b div
+div.${clss.ROOT_CLASS} > nav div.${clss.dbc-state-expand} > s b div
 {
   transform: rotate(315deg);
 }
 
-div.${ROOT_CLASS} > nav div.${dbc-state-collapse} > s b div
+div.${clss.ROOT_CLASS} > nav div.${clss.dbc-state-collapse} > s b div
 {
   transform: rotate(228deg);
 }
 
-div.${ROOT_CLASS} > nav div.${NODE-MESSAGE-PSEUDO} > s b div
+div.${clss.ROOT_CLASS} > nav div.${clss.NODE-MESSAGE-PSEUDO} > s b div
 {
   border-color: ${vars.mes_pseudo_list_bor.asVar()};
 }
 
-div.${ROOT_CLASS} > nav div.${NODE-MESSAGE-PSEUDO} s b:hover div
+div.${clss.ROOT_CLASS} > nav div.${clss.NODE-MESSAGE-PSEUDO} s b:hover div
 {
   border-color: ${vars.mes_pseudo_bor.asVar()};
   color: ${vars.mes_pseudo_bor.asVar()};
 }
 
-div.${ROOT_CLASS} > nav div s b:hover div
+div.${clss.ROOT_CLASS} > nav div s b:hover div
 {
   border-color: ${vars.tree_list_bor.asVar()};
   color: ${vars.tree_list_col.asVar()};
 }
 
-div.${ROOT_CLASS} > nav + div
+div.${clss.ROOT_CLASS} > nav + div
 {
   grid-area: stick;
   width: 10px;
@@ -304,12 +304,12 @@ div.${ROOT_CLASS} > nav + div
   cursor: e-resize;
 }
 
-div.${ROOT_CLASS} > nav + div:hover
+div.${clss.ROOT_CLASS} > nav + div:hover
 {
   background: ${vars.sep_hov_bg.asVar()};
 }
 
-div.${ROOT_CLASS} > nav + div > div
+div.${clss.ROOT_CLASS} > nav + div > div
 {
   width: 10px;
   height: 100%;
@@ -319,12 +319,12 @@ div.${ROOT_CLASS} > nav + div > div
   background-image: ${vars.dbc_split_norm.asVar()};
 }
 
-div.${ROOT_CLASS} > nav + div:hover > div
+div.${clss.ROOT_CLASS} > nav + div:hover > div
 {
   background-image: ${vars.dbc_split_hov.asVar()};
 }
 
-.${ROOT_CLASS} > s
+.${clss.ROOT_CLASS} > s
 {
   grid-area: header;
   display: flex;
@@ -335,7 +335,7 @@ div.${ROOT_CLASS} > nav + div:hover > div
   z-index: 2;
 }
 
-.${ROOT_CLASS} > s > div
+.${clss.ROOT_CLASS} > s > div
 {
   display: flex;
   align-items: center;
@@ -346,7 +346,7 @@ div.${ROOT_CLASS} > nav + div:hover > div
   border-radius: 10px;
 }
 
-.${ROOT_CLASS} > s > div > div
+.${clss.ROOT_CLASS} > s > div > div
 {
   width: 20px;
   height: 20px;
@@ -357,18 +357,18 @@ div.${ROOT_CLASS} > nav + div:hover > div
   background-position: center;
 }
 
-.${ROOT_CLASS} > s > div:hover
+.${clss.ROOT_CLASS} > s > div:hover
 {
   background-color: ${vars.button_bg.asVar()};
 }
 
-.${ROOT_CLASS} > s > div:hover > div
+.${clss.ROOT_CLASS} > s > div:hover > div
 {
   background-image: ${vars.left_but_hov_img.asVar()};
   transition: background-image 0.5s;
 }
 
-.${ROOT_CLASS} > span 
+.${clss.ROOT_CLASS} > span 
 {
   grid-area: footer;
   display: flex;
@@ -376,18 +376,17 @@ div.${ROOT_CLASS} > nav + div:hover > div
   align-items: flex-end;
 }
 
-.${ROOT_CLASS} > span > div 
+.${clss.ROOT_CLASS} > span > div 
 {
   height: 25px;
   width: 100%;
   background: ${vars.left_fog_grad.asVar()};
 }
 
-.${ROOT_CLASS} nav:hover + div + span > div 
+.${clss.ROOT_CLASS} nav:hover + div + span > div 
 {
   width: calc(100% - 20px);
 }
-
 `);
 
 export function buildComponent()
