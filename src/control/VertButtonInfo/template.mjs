@@ -6,8 +6,9 @@ const mk = new ControlMaker('VertButtonInfo', import.meta.url);
 
 const clss = mk.newClassNameMap([
   "ROOT_CLASS",
-  "ACTIVE_CLASS",
-  "BLOCKING_CLASS",
+  "ACTIVE",
+  "BLOCKING",
+  "CLICK",
 ]);
 
 const vars = mk.newCSSVariableMap({
@@ -17,12 +18,15 @@ const vars = mk.newCSSVariableMap({
   nav_but_borl: [ '#e2e2e2', '#c2c2c240' ],
   nav_but_bs: [ '-5px 0 5px -5px #cfcfcf', '-5px 0 5px -5px #cfcfcf' ],
   nav_but_hov: [ 'radial-gradient(#e1e1e1, white 70%)', 'radial-gradient(#3d3d3d, rgb(23, 23, 26) 70%)' ],
-  wsock_params: [ 'url(/websocket/info.svg)', 'url(/websocket/info_dark.svg)' ],
+  infoImg: [
+    await mk.loadSvgAsCssUrl('./info1.svg'),
+    await mk.loadSvgAsCssUrl('./info2.svg'),
+  ],
 });
 
 mk.newHTML('ROOT_HTML', `
-<div id="wsock-rpanel-button" class="${clss.ROOT_CLASS} ${clss.BLOCKING_CLASS}">
-  <div></div>
+<div class="${clss.ROOT_CLASS} ${clss.BLOCKING}">
+  <div class="${clss.CLICK}"></div>
 </div>
 `);
 
@@ -49,12 +53,12 @@ ${DARKMODE_SELECTOR_VALUE}
   border-end-start-radius: 5px;
 }
 
-/*.${clss.BLOCKING_CLASS} > div
+/*.${clss.BLOCKING} > div
 {
   pointer-events: none;
 }*/
 
-.${clss.ROOT_CLASS}.${clss.ACTIVE_CLASS}
+.${clss.ROOT_CLASS}.${clss.ACTIVE}
 {
   position: relative;
   left: 1px;
@@ -68,7 +72,7 @@ ${DARKMODE_SELECTOR_VALUE}
   width: 25px;
   border-radius: 10px;
   margin-bottom: 5px;
-  background-image: ${vars.wsock_params.asVar()};
+  background-image: ${vars.infoImg.asVar()};
   background-size: contain;
   background-position: center;
   box-sizing: border-box;
