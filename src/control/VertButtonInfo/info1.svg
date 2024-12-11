@@ -1,0 +1,46 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+
+<svg xmlns="http://www.w3.org/2000/svg" 
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    width="403pt"
+    height="400pt"
+    viewBox="0 0 403 400">
+<defs/>
+
+<ellipse id="shape0"
+  transform="translate(21.6898621264807, 22.0355377052896)"
+  rx="180.926531074769"
+  ry="180.250006960936"
+  cx="180.926531074769"
+  cy="180.250006960936"
+  fill="none"
+  stroke="#000000"
+  stroke-width="28"
+  stroke-linecap="square"
+  stroke-linejoin="bevel"/>
+
+<ellipse id="shape1"
+  transform="translate(169.878679607697, 86.7123106552316)"
+  rx="29"
+  ry="29.5"
+  cx="29"
+  cy="29.5"
+  fill="#000000"
+  fill-rule="evenodd"
+  stroke="#000000"
+  stroke-width="9.01"
+  stroke-linecap="square"
+  stroke-linejoin="bevel"/>
+
+<path id="shape2"
+transform="translate(142.277259967549, 173.566771307966)"
+fill="#000000"
+fill-rule="evenodd"
+stroke="#000000"
+stroke-width="1"
+stroke-linecap="square"
+stroke-linejoin="miter"
+stroke-miterlimit="2"
+d="M0.109384 2.96876L92 0L91.9531 121.344C91.372 128.855 93.461 134.334 103.922 133.906L120.016 133.984L120 148.953L3.00001 148.984L3.03126 134.016L22.0313 133.922C27.8018 133.675 32.4492 131.258 33.0156 120.953L33 28.9688C31.4483 17.5357 23.8471 17.944 16.9688 16.9375L0 16.9688C0 16.9688 0.0364613 12.3021 0.109384 2.96876Z"/>
+</svg>
