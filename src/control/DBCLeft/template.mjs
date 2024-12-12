@@ -55,7 +55,7 @@ const vars = mk.newCSSVariableMap({
 
 const clss = mk.newClassNameMap([
   "ROOT_CLASS",
-  "ROOT_CLASS",
+  "PORT_CLASS",
   "dbc_bn_nav",
   "dbc_tree",
   "dbc_panel_separator",
