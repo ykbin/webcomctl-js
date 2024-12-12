@@ -74,7 +74,7 @@ mk.newHTML('ROOT_HTML', `
       </h2>
     </s>
     <span>
-      <div class="${clss.dbc_node_message_pseudo} ${clss.dbc_state_collapse} ${clssdbc_tree_active}">
+      <div class="${clss.dbc_node_message_pseudo} ${clss.dbc_state_collapse} ${clss.clssdbc_tree_active}">
           <s>
             <b class="dbc_state_click"></b>
             <h2 class="dbc_showcase_click">
