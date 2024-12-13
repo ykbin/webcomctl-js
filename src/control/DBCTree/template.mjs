@@ -68,7 +68,9 @@ mk.newHTML('ROOT_HTML', `
 <div class="${clss.ROOT_CLASS}">
   <div class="${clss.dbc_node_document} ${clss.dbc_state_expand} ${clss.dbc_tree_active}">
     <s>
-      <b class="dbc_state_click"><div></div></b>
+      <b class="dbc_state_click">
+        <div></div>
+      </b>
       <h2 class="dbc_showcase_click">
         <s></s>
         <div>20160525_RMS_PM_CAN_DB</div>
@@ -88,6 +90,18 @@ mk.newHTML('ROOT_HTML', `
           <span></span>
       </div>
     </span>
+    <div class="${clss.dbc_node_message_pseudo} ${clss.dbc_state_collapse} ${clss.clssdbc_tree_active}">
+      <s>
+        <b class="dbc_state_click">
+          <div></div>
+        </b>
+        <h2 class="dbc_showcase_click">
+          <s></s>
+          <div>20160525_RMS_PM_CAN_DB</div>
+        </h2>
+      </s>
+      <span></span>
+    </div>
   </div>
 </div>
 `);
