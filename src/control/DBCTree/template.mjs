@@ -71,7 +71,7 @@ mk.newHTML('ROOT_HTML', `
       <b class="dbc_state_click"></b>
       <h2 class="dbc_showcase_click">
         <s></s>
-        <div></div>
+        <div>20160525_RMS_PM_CAN_DB</div>
       </h2>
     </s>
     <span>
@@ -80,7 +80,7 @@ mk.newHTML('ROOT_HTML', `
             <b class="dbc_state_click"></b>
             <h2 class="dbc_showcase_click">
               <s></s>
-              <div></div>
+              <div>20160525_RMS_PM_CAN_DB</div>
             </h2>
           </s>
           <span></span>
