@@ -8,7 +8,7 @@ const vars = mk.newCSSVariableMap({
   dbc_mes_pseudo_icon:  ['url(/dbc-online/lock_message.svg)','url(/dbc-online/lock_message_dark.svg)'],
   dbc_sig_pseudo_icon: ['url(/dbc-online/lock_signal.svg)','url(/dbc-online/lock_signal_dark.svg)'],
   mes_pseudo_list_col: ['#684a4acc','#ffd5d570'],
-  mes_pseudo_hov_bg: ['#f3e9e9','#f3e9e9'],
+  mes_pseudo_hov_bg: ['#f3e9e9','#2f2c2c'],
   dbc_group_icon: ['url(/dbc-online/group.svg)','url(/dbc-online/group2.svg)'],
   dbc_sig_icon: ['url(/dbc-online/signal.svg)', 'url(/dbc-online/signal2.svg)'],
   tree_act_col: ['black','#eeeeee'],
@@ -21,7 +21,7 @@ const vars = mk.newCSSVariableMap({
 
 const clss = mk.newClassNameMap([
   "ROOT_CLASS",
-  "NODE_SIGNAL",
+  "node_signal",
   "dbc_tree_active",
   "dbc_panel_separator",
   "dbc_state_collapse",
@@ -55,7 +55,7 @@ mk.newHTML('ROOT_HTML', `
             </h2>
           </s>
           <span>
-            <div class="${clss.dbc_state_none} ${clss.NODE_SIGNAL} ${clss.dbc_state_collapse}">
+            <div class="${clss.dbc_state_none} ${clss.node_signal} ${clss.dbc_state_collapse}">
               <s>
                 <b class="dbc_state_click">
                   <div></div>
@@ -148,7 +148,7 @@ div.${clss.ROOT_CLASS} div.${clss.dbc_node_message_pseudo} > s > h2 > s
   background-image: ${vars.dbc_mes_pseudo_icon.asVar()};
 }
 
-div.${clss.ROOT_CLASS} div.${clss.dbc_node_message_pseudo} div.${clss.NODE_SIGNAL} > s > h2 > s
+div.${clss.ROOT_CLASS} div.${clss.dbc_node_message_pseudo} div.${clss.node_signal} > s > h2 > s
 {
   background-image: ${vars.dbc_sig_pseudo_icon.asVar()};
 }
@@ -168,7 +168,7 @@ div.${clss.ROOT_CLASS} div.${clss.dbc_node_message_pseudo} s h2:hover
   background-image: ${vars.dbc_group_icon.asVar()};
 }
 
-.${clss.NODE_SIGNAL} > s > h2 > s
+.${clss.node_signal} > s > h2 > s
 {
   background-image: ${vars.dbc_sig_icon.asVar()};
 }
