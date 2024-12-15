@@ -60,34 +60,27 @@ ${DARKMODE_SELECTOR_VALUE}
 
 .${clss.ROOT_CLASS} > h3
 {
-  width: 35px;
-  background-image: ${vars.favicon.asVar()};
-}
-
-.${clss.ROOT_CLASS} > h3
-{
   height: 100%;
+  width: 35px;
+  margin-right: 7px;
   background-repeat: no-repeat;
   background-size: contain;
-  background-position: center;
-  margin-right: 7px;
+  background-position-y: center;
+  background-position-x: left;
+  background-image: ${vars.favicon.asVar()};
   flex-shrink: 0;
 }
 
 .${clss.ROOT_CLASS} > h2
 {
   width: 77px;
+  height: 100%;
+  margin-right: 15px;
   background-size: 180px;
+   background-repeat: no-repeat;
   background-position-y: center;
   background-position-x: left;
   background-image: ${vars.header.asVar()};
-}
-
-.${clss.ROOT_CLASS} > h2
-{
-  height: 100%;
-  background-repeat: no-repeat;
-  margin-right: 15px;
   flex-shrink: 0;
 }
 

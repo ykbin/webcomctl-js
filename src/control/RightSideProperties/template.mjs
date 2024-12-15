@@ -59,6 +59,7 @@ div.${clss.SHOW}
   position: sticky;
   top: 0;
   z-index: 1;
+  overflow: hidden;
 }
 
 .${clss.ROOT_CLASS} > div
