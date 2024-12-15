@@ -55,7 +55,7 @@ mk.newHTML('ROOT_HTML', `
             </h2>
           </s>
           <span>
-            <div class="${clss.NODE_SIGNAL} ${clss.dbc_state_collapse}">
+            <div class="${clss.dbc_state_none} ${clss.NODE_SIGNAL} ${clss.dbc_state_collapse}">
               <s>
                 <b class="dbc_state_click">
                   <div></div>
