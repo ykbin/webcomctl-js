@@ -1,6 +1,6 @@
 import ControlMaker from '../../lib/ControlMaker.mjs';
 import { DARKMODE_SELECTOR_VALUE } from '../../lib/DarkMode.mjs';
-const mk = new ControlMaker('DBC-control', import.meta.url);
+const mk = new ControlMaker('DBCControl', import.meta.url);
 
 const vars = mk.newCSSVariableMap({
 });

@@ -25,8 +25,8 @@ const vars = mk.newCSSVariableMap({
 });
 
 mk.newHTML('ROOT_HTML', `
-<div class="${clss.ROOT_CLASS} ${clss.BLOCKING}">
-  <div class="${clss.CLICK}"></div>
+<div class="${clss.ROOT_CLASS} ${clss.BLOCKING} ${clss.CLICK}">
+  <div></div>
 </div>
 `);
 

@@ -3,58 +3,25 @@ import { DARKMODE_SELECTOR_VALUE } from '../../lib/DarkMode.mjs';
 const mk = new ControlMaker('DBCTree', import.meta.url);
 
 const vars = mk.newCSSVariableMap({
-  left_on_sc: ['transparent'],
-  dbc_split_norm: ['url(/dbc-online/splitter.svg)'],
-  dbc_split_hov: ['url(/dbc-online/splitter-hover.svg)'],
-  left_but_img: ['url(/dbc-online/left-but.svg)'],
-  left_but_hov_img: ['url(/dbc-online/left-but-hover.svg)'],
-  sep_bg: ['linear-gradient(to bottom,transparent 0%, #bcbcbc30 35% 85%, transparent 100%)'],
-  sep_hov_bg: ['linear-gradient(to bottom,transparent 0%, #7d7d7d30 35% 85%, transparent 100%)'],
-  button_bg: ['#dddddd40'],
-  mes_pseudo_hov_bg: ['#f3e9e9'],
-
-
-  left_sc_th_bg: ['#3a3a3a', '#3e3e43'],
-
-  left_col: ['#494949','#ffffff9e'],
-
-  left_bg: ['#ffffff','rgb(23, 23, 26)'],
-
-  left_grad: ['linear-gradient(white 0% 69%, #ff000000 100%)','linear-gradient(rgb(23, 23, 26) 0% 69%, #ff000000 100%)'],
-
-  left_fog_grad: ['linear-gradient(#ffffff00, white)','linear-gradient(#ffffff00, rgb(23, 23, 26))'],
-
   dbc_doc_icon: ['url(/dbc-online/document.svg)','url(/dbc-online/document2.svg)'],
-
-  dbc_mes_pseudo_icon:  ['url(/dbc-online/lock_message.svg)','url(/dbc-online/lock_message_dark.svg)'],
-
-  dbc_group_icon: ['url(/dbc-online/group.svg)','url(/dbc-online/group2.svg)'],
-
-  dbc_sig_icon: ['url(/dbc-online/signal.svg)', 'url(/dbc-online/signal2.svg)'],
-
   dbc_mes_icon: ['url(/dbc-online/message.svg)','url(/dbc-online/message2.svg)'],
-
+  dbc_mes_pseudo_icon:  ['url(/dbc-online/lock_message.svg)','url(/dbc-online/lock_message_dark.svg)'],
   dbc_sig_pseudo_icon: ['url(/dbc-online/lock_signal.svg)','url(/dbc-online/lock_signal_dark.svg)'],
-
-  mes_pseudo_bor: ['#470000e3','#a77d7de0'],
-
-  mes_pseudo_col: ['#470000e3','#a77d7de0'],
-
-  tree_list_bor: ['black','white'],
-
-  tree_list_col: ['black','white'],
-
-  tree_act_col: ['black','#eeeeee'],
-
   mes_pseudo_list_col: ['#684a4acc','#ffd5d570'],
-
-  mes_pseudo_list_bor: ['#684a4acc','#ffd5d570'],
-
+  mes_pseudo_hov_bg: ['#f3e9e9','#2f2c2c'],
+  dbc_group_icon: ['url(/dbc-online/group.svg)','url(/dbc-online/group2.svg)'],
+  dbc_sig_icon: ['url(/dbc-online/signal.svg)', 'url(/dbc-online/signal2.svg)'],
+  tree_act_col: ['black','#eeeeee'],
   left_name_hov: ['#e9e9e9', '#c1c1c126'],
+  mes_pseudo_list_bor: ['#684a4acc','#ffd5d570'],
+  mes_pseudo_bor: ['#470000e3','#a77d7de0'],
+  tree_list_bor: ['black','white'],
+  tree_list_col: ['black','white'],
 });
 
 const clss = mk.newClassNameMap([
   "ROOT_CLASS",
+  "node_signal",
   "dbc_tree_active",
   "dbc_panel_separator",
   "dbc_state_collapse",
@@ -77,7 +44,7 @@ mk.newHTML('ROOT_HTML', `
       </h2>
     </s>
     <span>
-      <div class="${clss.dbc_node_message_pseudo} ${clss.dbc_state_collapse} ${clss.clssdbc_tree_active}">
+      <div class="${clss.dbc_node_message_pseudo} ${clss.dbc_state_collapse}">
           <s>
             <b class="dbc_state_click">
               <div></div>
@@ -87,10 +54,23 @@ mk.newHTML('ROOT_HTML', `
               <div>20160525_RMS_PM_CAN_DB</div>
             </h2>
           </s>
-          <span></span>
+          <span>
+            <div class="${clss.dbc_state_none} ${clss.node_signal} ${clss.dbc_state_collapse}">
+              <s>
+                <b class="dbc_state_click">
+                  <div></div>
+                </b>
+                <h2 class="dbc_showcase_click">
+                  <s></s>
+                  <div>20160525_RMS_PM_CAN_DB</div>
+                </h2>
+              </s>
+              <span></span>
+            </div>
+          </span>
       </div>
     </span>
-    <div class="${clss.dbc_node_message_pseudo} ${clss.dbc_state_collapse} ${clss.clssdbc_tree_active}">
+    <div class="${clss.dbc_node_message_pseudo} ${clss.dbc_state_collapse}">
       <s>
         <b class="dbc_state_click">
           <div></div>
@@ -168,7 +148,7 @@ div.${clss.ROOT_CLASS} div.${clss.dbc_node_message_pseudo} > s > h2 > s
   background-image: ${vars.dbc_mes_pseudo_icon.asVar()};
 }
 
-div.${clss.ROOT_CLASS} div.${clss.dbc_node_message_pseudo} div.${clss.NODE_SIGNAL} > s > h2 > s
+div.${clss.ROOT_CLASS} div.${clss.dbc_node_message_pseudo} div.${clss.node_signal} > s > h2 > s
 {
   background-image: ${vars.dbc_sig_pseudo_icon.asVar()};
 }
@@ -188,7 +168,7 @@ div.${clss.ROOT_CLASS} div.${clss.dbc_node_message_pseudo} s h2:hover
   background-image: ${vars.dbc_group_icon.asVar()};
 }
 
-.${clss.NODE_SIGNAL} > s > h2 > s
+.${clss.node_signal} > s > h2 > s
 {
   background-image: ${vars.dbc_sig_icon.asVar()};
 }
