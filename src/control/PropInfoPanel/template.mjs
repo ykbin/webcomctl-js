@@ -24,8 +24,8 @@ mk.newHTML('ROOT_HTML', `
   <div class="${clss.ROOT_CLASS} notranslate" translate="no">
     <div>
         <div class="${clss.LIST_CLASS}">
+          <h2>Properties</h2>
           <div>
-            <h2>Properties</h2>
             <span>
               <h3 class="${clss.LIST_NAME}">Height</h3><label class="${clss.LIST_VALUE}">2272 px</label>
             </span>
@@ -86,12 +86,6 @@ ${DARKMODE_SELECTOR_VALUE}
   height: 100%;
 }
 
-.${clss.ROOT_CLASS} > div h3
-{
-  margin: 0px;
-  font-weight: 400;
-}
-
 .${clss.ROOT_CLASS} > div
 {
   width: 100%;
@@ -118,7 +112,7 @@ ${DARKMODE_SELECTOR_VALUE}
   border-spacing: 0 5px;
 }
 
-.${clss.LIST_CLASS} h2
+.${clss.LIST_CLASS} > h2
 {
   display: inline-block;
   padding-left: 5px;
@@ -128,21 +122,23 @@ ${DARKMODE_SELECTOR_VALUE}
   color: ${vars.titleCol.asVar()};
 }
 
-.${clss.LIST_CLASS} span 
+.${clss.LIST_CLASS} > div > span 
 {
   display: table-row-group;
   font-size: 13px;
 }
 
-.${clss.LIST_CLASS} > span > h3
+.${clss.LIST_CLASS} > div > span > h3
 {
   display: table-cell;
   vertical-align: middle;
   padding: 3px 0 3px 10px;
   min-width: 50px;
+  margin: 0px;
+  font-weight: 400;
 }
 
-.${clss.LIST_CLASS} > span > label
+.${clss.LIST_CLASS} > div > span > label
 {
   display: table-cell;
   vertical-align: middle;
