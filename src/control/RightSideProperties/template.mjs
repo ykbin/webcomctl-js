@@ -52,6 +52,7 @@ div.${clss.SHOW}
 {
   display: flex;
   width: auto;
+  flex-shrink: 0;
 }
 
 .${clss.ROOT_CLASS}

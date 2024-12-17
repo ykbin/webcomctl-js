@@ -21,22 +21,22 @@ const SCROLLBAR_THUMB_COLOR = '#b5b5b5c7';
 const SCROLLBAR_TRACK_COLOR = 'transparent';
 
 mk.newHTML('ROOT_HTML', `
-  <div class="${clss.ROOT_CLASS}">
-    <div class="${clss.DESCRIPTION_CLASS} notranslate" translate="no">
-
+  <div class="${clss.ROOT_CLASS} notranslate" translate="no">
+    <div>
         <div class="${clss.LIST_CLASS}">
           <h2>Properties</h2>
-          <span>
-            <h3 class="${clss.LIST_NAME}">Height</h3><label class="${clss.LIST_VALUE}">2272 px</label>
-          </span>
-          <span>
-            <h3 class="${clss.LIST_NAME}">JFIF Ver</h3><label class="${clss.LIST_VALUE}">1.1</label>
-          </span>
-          <span>
-            <h3 class="${clss.LIST_NAME}">ColorSpace</h3><label class="${clss.LIST_VALUE}">YCbCr</label>
-          </span>
+          <div>
+            <span>
+              <h3 class="${clss.LIST_NAME}">Height</h3><label class="${clss.LIST_VALUE}">2272 px</label>
+            </span>
+            <span>
+              <h3 class="${clss.LIST_NAME}">JFIF Ver</h3><label class="${clss.LIST_VALUE}">1.1</label>
+            </span>
+            <span>
+              <h3 class="${clss.LIST_NAME}">ColorSpace</h3><label class="${clss.LIST_VALUE}">YCbCr</label>
+            </span>
+          </div>
         </div>
-
     </div>
   </div>
 `);
@@ -60,20 +60,20 @@ ${DARKMODE_SELECTOR_VALUE}
   ${vars.toString(1)};
 }
 
-.${clss.DESCRIPTION_CLASS}::-webkit-scrollbar
+.${clss.ROOT_CLASS} > div::-webkit-scrollbar
 {
   width: 10px;
   height: 10px;
 }
 
-.${clss.DESCRIPTION_CLASS}::-webkit-scrollbar-thumb
+.${clss.ROOT_CLASS} > div::-webkit-scrollbar-thumb
 {
   background-color: ${SCROLLBAR_THUMB_COLOR};
   border-radius: 10px;
 }
 
-.${clss.DESCRIPTION_CLASS}::-webkit-scrollbar-track,
-.${clss.DESCRIPTION_CLASS}::-webkit-scrollbar-corner
+.${clss.ROOT_CLASS} > div::-webkit-scrollbar-track,
+.${clss.ROOT_CLASS} > div::-webkit-scrollbar-corner
 {
   background-color: ${SCROLLBAR_TRACK_COLOR};
 }
@@ -86,13 +86,7 @@ ${DARKMODE_SELECTOR_VALUE}
   height: 100%;
 }
 
-.${clss.DESCRIPTION_CLASS} h3
-{
-  margin: 0px;
-  font-weight: 400;
-}
-
-.${clss.DESCRIPTION_CLASS}
+.${clss.ROOT_CLASS} > div
 {
   width: 100%;
   height: 100%;
@@ -105,7 +99,7 @@ ${DARKMODE_SELECTOR_VALUE}
   overflow: auto;
 }
 
-.${clss.DESCRIPTION_CLASS} *
+.${clss.ROOT_CLASS} > div *
 {
   box-sizing: border-box;
 }
@@ -118,7 +112,7 @@ ${DARKMODE_SELECTOR_VALUE}
   border-spacing: 0 5px;
 }
 
-.${clss.LIST_CLASS} h2
+.${clss.LIST_CLASS} > h2
 {
   display: inline-block;
   padding-left: 5px;
@@ -128,21 +122,23 @@ ${DARKMODE_SELECTOR_VALUE}
   color: ${vars.titleCol.asVar()};
 }
 
-.${clss.LIST_CLASS} span 
+.${clss.LIST_CLASS} > div > span 
 {
   display: table-row-group;
   font-size: 13px;
 }
 
-.${clss.LIST_CLASS} > span > h3
+.${clss.LIST_CLASS} > div > span > h3
 {
   display: table-cell;
   vertical-align: middle;
   padding: 3px 0 3px 10px;
   min-width: 50px;
+  margin: 0px;
+  font-weight: 400;
 }
 
-.${clss.LIST_CLASS} > span > label
+.${clss.LIST_CLASS} > div > span > label
 {
   display: table-cell;
   vertical-align: middle;
