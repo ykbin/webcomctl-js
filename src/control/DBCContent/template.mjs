@@ -212,7 +212,7 @@ ${DARKMODE_SELECTOR_VALUE}
 div.${clss.dbc_view_document} div.${clss.document},
 div.${clss.dbc_view_message} div.${clss.message},
 div.${clss.dbc_view_signal} div.${clss.signal},
-div.${clss.dbc-view-group} div.${clss.group},
+div.${clss.dbc_view_group} div.${clss.group},
 .${clss.ROOT_CLASS} > b > div span,
 {
   display: block;
