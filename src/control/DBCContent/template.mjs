@@ -19,7 +19,7 @@ const clss = mk.newClassNameMap([
   "message",
   "attribute",
   "group",
-  "dbc-title-document",
+  "dbc_title_document",
   "dbc_doc_version",
   "dbc_doc_protocol",
   "dbc_doc_protocol",
