@@ -19,6 +19,13 @@ const clss = mk.newClassNameMap([
   "message",
   "attribute",
   "group",
+  "dbc-title-document",
+  "dbc_doc_version",
+  "dbc_doc_protocol",
+  "dbc_doc_protocol",
+  "dbc_title_message",
+  "dbc_title_signal",
+  "dbc_title_group",
 ]);
 
 mk.newHTML('ROOT_HTML', `
@@ -27,11 +34,11 @@ mk.newHTML('ROOT_HTML', `
 
   <div class="${clss.document}">
 
-    <h4>Document:<u class="dbc-title-document"></u></h4>
+    <h4>Document:<u class="${clss.dbc_title_document}"></u></h4>
     
       <b>
-        <h4>Version:<u id="dbc-doc-version"></u></h4>
-        <h4>Protocol:<u id="dbc-doc-protocol"></u></h4>
+        <h4>Version:<u id="${clss.dbc_doc_version}"></u></h4>
+        <h4>Protocol:<u id="${clss.dbc_doc_protocol}"></u></h4>
                             
         <s id="dbc-bittiming">
         <h6>Bit Timing</h6>
@@ -55,7 +62,7 @@ mk.newHTML('ROOT_HTML', `
 
   <div class="${clss.message}">
 
-    <h4>Massage:<u class="dbc-title-message"></u></h4>
+    <h4>Massage:<u class="${clss.dbc_title_message}"></u></h4>
 
       <b>
         <span>
@@ -93,7 +100,7 @@ mk.newHTML('ROOT_HTML', `
 
   <div class="${clss.signal}">
 
-    <h4>Signal:<u class="dbc-title-signal"></u></h4>
+    <h4>Signal:<u class="${clss.dbc_title_signal}"></u></h4>
 
     <div>
 
@@ -166,7 +173,7 @@ mk.newHTML('ROOT_HTML', `
   </div>
 
   <div class="${clss.group}">
-    <h4>Group:<u class="dbc-title-group"></u></h4>
+    <h4>Group:<u class="${clss.dbc_title_group}"></u></h4>
     <ul id="dbc-group-signals"></ul>
   </div>
 
@@ -200,6 +207,29 @@ ${DARKMODE_SELECTOR_VALUE}
   padding: 0px 15px 15px 15px;
   font-family: "Roboto","Arial","monospace";
   font-size: 0.94em;
+  box-sizing: border-box;
+}
+
+.${clss.ROOT_CLASS} *
+{
+  box-sizing: border-box;
+}
+
+.${clss.ROOT_CLASS} h4,
+.${clss.ROOT_CLASS} h5,
+.${clss.ROOT_CLASS} h6
+{
+  font-size: 1em;
+  margin: 0px;
+  padding: 0px;
+}
+
+.${clss.ROOT_CLASS} u,
+.${clss.ROOT_CLASS} s,
+.${clss.ROOT_CLASS} b
+{
+  text-decoration: none;
+  font-weight: 400;
 }
 
 div.${clss.document},
