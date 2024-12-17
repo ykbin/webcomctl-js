@@ -25,6 +25,10 @@ const clss = mk.newClassNameMap([
   "dbc_title_message",
   "dbc_title_signal",
   "dbc_title_group",
+  "dbc_view_document",
+  "dbc_view_message",
+  "dbc_view_signal",
+  "dbc_view_group",
 ]);
 
 mk.newHTML('ROOT_HTML', `
@@ -194,6 +198,24 @@ mk.newCSS('CSS', `
 ${DARKMODE_SELECTOR_VALUE}
 {
   ${vars.toString(1)};
+}
+
+.${clss.document},
+.${clss.message},
+.${clss.signal},
+.${clss.group}
+{
+  display: none;
+}
+
+.${clss.ROOT_CLASS} b,
+div.${clss.dbc_view_document} div.${clss.document},
+div.${clss.dbc_view_message} div.${clss.message},
+div.${clss.dbc_view_signal} div.${clss.signal},
+div.${clss.dbc-view-group} div.${clss.group},
+.${clss.ROOT_CLASS} > b > div span,
+{
+  display: block;
 }
 
 .${clss.ROOT_CLASS}
@@ -386,7 +408,7 @@ div.${clss.group} b h4 > u
   padding:0px 20px 0px 20px;
 }
 
-div.dbc-panel-grid div.${clss.ROOT_CLASS} s h6 + span
+div.${clss.ROOT_CLASS} s h6 + span
 {
   display: grid;
   grid-template-columns: minmax(30px,auto) minmax(30px,auto);
