@@ -22,7 +22,6 @@ const clss = mk.newClassNameMap([
   "dbc_title_document",
   "dbc_doc_version",
   "dbc_doc_protocol",
-  "dbc_doc_protocol",
   "dbc_title_message",
   "dbc_title_signal",
   "dbc_title_group",
