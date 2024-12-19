@@ -89,6 +89,7 @@ div.${clss.SHOW}
   align-items: center;
   padding: 0px 10px 0px 20px;
   max-width: 200px;
+  overflow: hidden;
 }
 
 .${clss.ROOT_CLASS} > span > div:last-child
@@ -119,32 +120,38 @@ div.${clss.SHOW}
   0%
   {
     width: 100%;
+    padding: 0px 10px 0px 20px;
     visibility: visible;
   }
   25%
   {
     width: 75%;
+    padding: 0px 7px 0px 15px;
     visibility: hidden;
   }
   50%
   {
     width: 50%;
+    padding: 0px 5px 0px 10px;
     visibility: hidden;
   }
   75%
   {
     width: 25%;
+    padding: 0px 3px 0px 5px;
     visibility: hidden;
   }
   99%
   {
     width: 0;
+    padding: 0;
     visibility: hidden;
   }
   100%
   {
     display: none;
     width: 0;
+    padding: 0;
     visibility: hidden;
   }
 }
@@ -162,32 +169,38 @@ div.${clss.SHOW}
   0%
   {
     display: none;
-    visibility: hidden;
     width: 0;
+    padding: 0;
+    visibility: hidden;
   }
   1%
   {
     width: 0;
+    padding: 0;
     visibility: hidden;
   }
   25%
   {
     width: 25%;
+    padding: 0px 3px 0px 5px;
     visibility: hidden;
   }
   50%
   {
     width: 50%;
+    padding: 0px 5px 0px 10px;
     visibility: hidden;
   }
   75%
   {
     width: 75%;
+    padding: 0px 7px 0px 15px;
     visibility: hidden;
   }
   100%
   {
     width: 100%;
+    padding: 0px 10px 0px 20px;
     visibility: visible;
   }
 }
