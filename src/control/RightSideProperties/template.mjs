@@ -109,52 +109,8 @@ div.${clss.SHOW}
 
 .${clss.ANIME} > div  > span
 {
-  /*animation-name: message-value;
-  animation-fill-mode: forwards;
-  animation-duration: 250ms;
   animation-iteration-count: 1;*/
   transition: width 0.3s;
-}
-
-@keyframes message-value
-{
-  0%
-  {
-    width: 100%;
-    padding: 0px 10px 0px 20px;
-    visibility: visible;
-  }
-  25%
-  {
-    width: 75%;
-    padding: 0px 7px 0px 15px;
-    visibility: hidden;
-  }
-  50%
-  {
-    width: 50%;
-    padding: 0px 5px 0px 10px;
-    visibility: hidden;
-  }
-  75%
-  {
-    width: 25%;
-    padding: 0px 3px 0px 5px;
-    visibility: hidden;
-  }
-  99%
-  {
-    width: 0;
-    padding: 0;
-    visibility: hidden;
-  }
-  100%
-  {
-    display: none;
-    width: 0;
-    padding: 0;
-    visibility: hidden;
-  }
 }
 
 .${clss.SHOW} > div  > span
@@ -164,52 +120,7 @@ div.${clss.SHOW}
 
 .${clss.ANIME}.${clss.SHOW} > div  > span
 {
-  /*animation-name: message-value-back;
-  animation-fill-mode: forwards;
-  animation-duration: 250ms;
-  animation-iteration-count: 1;*/
   transition: width 0.3s;
-}
-
-@keyframes message-value-back
-{
-  0%
-  {
-    display: none;
-    width: 0;
-    padding: 0;
-    visibility: hidden;
-  }
-  1%
-  {
-    width: 0;
-    padding: 0;
-    visibility: hidden;
-  }
-  25%
-  {
-    width: 25%;
-    padding: 0px 3px 0px 5px;
-    visibility: hidden;
-  }
-  50%
-  {
-    width: 50%;
-    padding: 0px 5px 0px 10px;
-    visibility: hidden;
-  }
-  75%
-  {
-    width: 75%;
-    padding: 0px 7px 0px 15px;
-    visibility: hidden;
-  }
-  100%
-  {
-    width: 100%;
-    padding: 0px 10px 0px 20px;
-    visibility: visible;
-  }
 }
 
 @media (device-width < 550px)
@@ -231,10 +142,6 @@ div.${clss.SHOW}
   .${clss.ROOT_CLASS} > div > span
   {
     padding-top: 20px;
-  }
-  div.${clss.ROOT_CLASS} > div  > span > div
-  {
-
   }
 }
 `);
