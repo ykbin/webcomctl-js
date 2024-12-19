@@ -123,6 +123,12 @@ div.${clss.SHOW}
     padding: 0px 10px 0px 20px;
     visibility: visible;
   }
+  1%
+  {
+    width: 100%;
+    padding: 0px 10px 0px 20px;
+    visibility: hidden;
+  }
   25%
   {
     width: 75%;
@@ -195,6 +201,12 @@ div.${clss.SHOW}
   {
     width: 75%;
     padding: 0px 7px 0px 15px;
+    visibility: hidden;
+  }
+  99%
+  {
+    width: 100%;
+    padding: 0px 10px 0px 20px;
     visibility: hidden;
   }
   100%
