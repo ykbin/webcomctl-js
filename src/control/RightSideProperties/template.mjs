@@ -113,7 +113,6 @@ div.${clss.SHOW}
   animation-fill-mode: forwards;
   animation-duration: 250ms;
   animation-iteration-count: 1;*/
-  width: 0;
   transition: width 0.3s;
 }
 
