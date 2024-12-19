@@ -86,7 +86,6 @@ ${DARKMODE_SELECTOR_VALUE}
 {
   width: 100%;
   height: 100%;
-  max-width: 1200px;
   padding: 10px 25px 10px 10px;
   color: #393939;
   font-family: ${TOOLBAR_FONT_SANS};
