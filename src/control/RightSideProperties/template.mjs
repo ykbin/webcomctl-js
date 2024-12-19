@@ -109,7 +109,6 @@ div.${clss.SHOW}
 
 .${clss.ANIME} > div  > span
 {
-  animation-iteration-count: 1;*/
   transition: width 0.3s;
 }
 
