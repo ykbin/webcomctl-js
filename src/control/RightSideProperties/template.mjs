@@ -88,6 +88,7 @@ div.${clss.SHOW}
 {
   align-items: center;
   padding: 0px 10px 0px 20px;
+  max-width: 200px;
   overflow: hidden;
 }
 
@@ -118,31 +119,25 @@ div.${clss.SHOW}
 {
   0%
   {
-    width: 300px;
+    width: 100%;
     padding: 0px 10px 0px 20px;
     visibility: visible;
   }
-  1%
-  {
-    width: 300px;
-    padding: 0px 10px 0px 20px;
-    visibility: hidden;
-  }
   25%
   {
-    width: 200px;
+    width: 75%;
     padding: 0px 7px 0px 15px;
     visibility: hidden;
   }
   50%
   {
-    width: 100px;
+    width: 50%;
     padding: 0px 5px 0px 10px;
     visibility: hidden;
   }
   75%
   {
-    width: 50px;
+    width: 25%;
     padding: 0px 3px 0px 5px;
     visibility: hidden;
   }
@@ -186,31 +181,25 @@ div.${clss.SHOW}
   }
   25%
   {
-    width: 50px;
+    width: 25%;
     padding: 0px 3px 0px 5px;
     visibility: hidden;
   }
   50%
   {
-    width: 100px;
+    width: 50%;
     padding: 0px 5px 0px 10px;
     visibility: hidden;
   }
   75%
   {
-    width: 200px;
+    width: 75%;
     padding: 0px 7px 0px 15px;
-    visibility: hidden;
-  }
-  99%
-  {
-    width: 300px;
-    padding: 0px 10px 0px 20px;
     visibility: hidden;
   }
   100%
   {
-    width: 300px;
+    width: 100%;
     padding: 0px 10px 0px 20px;
     visibility: visible;
   }
@@ -235,6 +224,10 @@ div.${clss.SHOW}
   .${clss.ROOT_CLASS} > div > span
   {
     padding-top: 20px;
+  }
+  div.${clss.ROOT_CLASS} > div  > span > div
+  {
+    max-width: 400px;
   }
 }
 `);
