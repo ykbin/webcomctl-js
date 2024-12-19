@@ -109,10 +109,13 @@ div.${clss.SHOW}
 
 .${clss.ANIME} > div  > span > div
 {
-  animation-name: message-value;
+  /*animation-name: message-value;
   animation-fill-mode: forwards;
   animation-duration: 250ms;
-  animation-iteration-count: 1;
+  animation-iteration-count: 1;*/
+  width: 300px;
+  padding: 0px 10px 0px 20px;
+  transition: width 0.3s, padding 0.3s;
 }
 
 @keyframes message-value
@@ -158,10 +161,13 @@ div.${clss.SHOW}
 
 .${clss.ANIME}.${clss.SHOW} > div  > span > div
 {
-  animation-name: message-value-back;
+  /*animation-name: message-value-back;
   animation-fill-mode: forwards;
   animation-duration: 250ms;
-  animation-iteration-count: 1;
+  animation-iteration-count: 1;*/
+  width: 0;
+  padding: 0;
+  transition: width 0.3s, padding 0.3s;
 }
 
 @keyframes message-value-back
