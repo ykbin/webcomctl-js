@@ -77,7 +77,7 @@ div.${clss.SHOW}
 .${clss.ROOT_CLASS} > div > span
 {
   display: block;
-  height: initial;
+  width: 0;
   padding-top: 5px;
   flex-shrink: 0;
   overflow: hidden;
