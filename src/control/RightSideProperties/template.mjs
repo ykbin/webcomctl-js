@@ -87,6 +87,7 @@ div.${clss.SHOW}
 .${clss.ROOT_CLASS} > div  > span > div
 {
   align-items: center;
+  width: 250px;
   padding: 0px 10px 0px 20px;
   overflow: hidden;
 }
@@ -106,7 +107,7 @@ div.${clss.SHOW}
   padding-left: 5px;
 }
 
-.${clss.ANIME} > div  > span > div
+.${clss.ANIME} > div  > span
 {
   /*animation-name: message-value;
   animation-fill-mode: forwards;
@@ -158,13 +159,13 @@ div.${clss.SHOW}
   }
 }
 
-.${clss.ANIME}.${clss.SHOW} > div  > span > div
+.${clss.ANIME}.${clss.SHOW} > div  > span
 {
   /*animation-name: message-value-back;
   animation-fill-mode: forwards;
   animation-duration: 250ms;
   animation-iteration-count: 1;*/
-  width: 300px;
+  width: 250px;
   padding: 0px 10px 0px 20px;
   transition: width 0.3s, padding 0.3s;
 }
