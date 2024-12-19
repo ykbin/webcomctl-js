@@ -88,7 +88,6 @@ div.${clss.SHOW}
 {
   align-items: center;
   padding: 0px 10px 0px 20px;
-  max-width: 200px;
   overflow: hidden;
 }
 
@@ -113,8 +112,8 @@ div.${clss.SHOW}
   animation-fill-mode: forwards;
   animation-duration: 250ms;
   animation-iteration-count: 1;*/
-  width: 300px;
-  padding: 0px 10px 0px 20px;
+  width: 0;
+  padding: 0;
   transition: width 0.3s, padding 0.3s;
 }
 
@@ -165,8 +164,8 @@ div.${clss.SHOW}
   animation-fill-mode: forwards;
   animation-duration: 250ms;
   animation-iteration-count: 1;*/
-  width: 0;
-  padding: 0;
+  width: 300px;
+  padding: 0px 10px 0px 20px;
   transition: width 0.3s, padding 0.3s;
 }
 
@@ -233,7 +232,7 @@ div.${clss.SHOW}
   }
   div.${clss.ROOT_CLASS} > div  > span > div
   {
-    max-width: 400px;
+
   }
 }
 `);
