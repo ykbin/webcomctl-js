@@ -87,7 +87,7 @@ div.${clss.SHOW}
 .${clss.ROOT_CLASS} > div  > span > div
 {
   align-items: center;
-  width: 250px;
+  width: 200px;
   padding: 0px 10px 0px 20px;
   overflow: hidden;
 }
@@ -114,8 +114,7 @@ div.${clss.SHOW}
   animation-duration: 250ms;
   animation-iteration-count: 1;*/
   width: 0;
-  padding: 0;
-  transition: width 0.3s, padding 0.3s;
+  transition: width 0.3s;
 }
 
 @keyframes message-value
@@ -165,9 +164,8 @@ div.${clss.SHOW}
   animation-fill-mode: forwards;
   animation-duration: 250ms;
   animation-iteration-count: 1;*/
-  width: 250px;
-  padding: 0px 10px 0px 20px;
-  transition: width 0.3s, padding 0.3s;
+  width: 200px;
+  transition: width 0.3s;
 }
 
 @keyframes message-value-back
