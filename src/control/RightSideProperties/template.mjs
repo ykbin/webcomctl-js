@@ -158,13 +158,17 @@ div.${clss.SHOW}
   }
 }
 
+.${clss.SHOW} > div  > span
+{
+  width: 200px;
+}
+
 .${clss.ANIME}.${clss.SHOW} > div  > span
 {
   /*animation-name: message-value-back;
   animation-fill-mode: forwards;
   animation-duration: 250ms;
   animation-iteration-count: 1;*/
-  width: 200px;
   transition: width 0.3s;
 }
 
