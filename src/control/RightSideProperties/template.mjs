@@ -77,7 +77,7 @@ div.${clss.SHOW}
 .${clss.ROOT_CLASS} > div > span
 {
   display: block;
-  height: initial;
+  width: 0;
   padding-top: 5px;
   flex-shrink: 0;
   overflow: hidden;
@@ -87,8 +87,9 @@ div.${clss.SHOW}
 .${clss.ROOT_CLASS} > div  > span > div
 {
   align-items: center;
+  width: 200px;
   padding: 0px 10px 0px 20px;
-  max-width: 200px;
+  overflow: hidden;
 }
 
 .${clss.ROOT_CLASS} > span > div:last-child
@@ -106,90 +107,19 @@ div.${clss.SHOW}
   padding-left: 5px;
 }
 
-.${clss.ANIME} > div  > span > div
+.${clss.ANIME} > div  > span
 {
-  animation-name: message-value;
-  animation-fill-mode: forwards;
-  animation-duration: 250ms;
-  animation-iteration-count: 1;
+  transition: width 0.3s;
 }
 
-@keyframes message-value
+.${clss.SHOW} > div  > span
 {
-  0%
-  {
-    width: 100%;
-    visibility: visible;
-  }
-  25%
-  {
-    width: 75%;
-    visibility: hidden;
-  }
-  50%
-  {
-    width: 50%;
-    visibility: hidden;
-  }
-  75%
-  {
-    width: 25%;
-    visibility: hidden;
-  }
-  99%
-  {
-    width: 0;
-    visibility: hidden;
-  }
-  100%
-  {
-    display: none;
-    width: 0;
-    visibility: hidden;
-  }
+  width: 200px;
 }
 
-.${clss.ANIME}.${clss.SHOW} > div  > span > div
+.${clss.ANIME}.${clss.SHOW} > div  > span
 {
-  animation-name: message-value-back;
-  animation-fill-mode: forwards;
-  animation-duration: 250ms;
-  animation-iteration-count: 1;
-}
-
-@keyframes message-value-back
-{
-  0%
-  {
-    display: none;
-    visibility: hidden;
-    width: 0;
-  }
-  1%
-  {
-    width: 0;
-    visibility: hidden;
-  }
-  25%
-  {
-    width: 25%;
-    visibility: hidden;
-  }
-  50%
-  {
-    width: 50%;
-    visibility: hidden;
-  }
-  75%
-  {
-    width: 75%;
-    visibility: hidden;
-  }
-  100%
-  {
-    width: 100%;
-    visibility: visible;
-  }
+  transition: width 0.3s;
 }
 
 @media (device-width < 550px)
@@ -211,10 +141,6 @@ div.${clss.SHOW}
   .${clss.ROOT_CLASS} > div > span
   {
     padding-top: 20px;
-  }
-  div.${clss.ROOT_CLASS} > div  > span > div
-  {
-    max-width: 400px;
   }
 }
 `);
