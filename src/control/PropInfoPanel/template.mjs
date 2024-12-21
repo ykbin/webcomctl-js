@@ -21,8 +21,8 @@ const SCROLLBAR_THUMB_COLOR = '#b5b5b5c7';
 const SCROLLBAR_TRACK_COLOR = 'transparent';
 
 mk.newHTML('ROOT_HTML', `
-  <div class="${clss.ROOT_CLASS}">
-    <div class="notranslate" translate="no">
+  <div class="${clss.ROOT_CLASS} notranslate" translate="no">
+    <div>
       <h2 class="${clss.TITLE}"></h2>
       <div class="${clss.LIST_CLASS}"></div>
     </div>
