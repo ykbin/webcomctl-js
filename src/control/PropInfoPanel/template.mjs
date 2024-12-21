@@ -106,7 +106,7 @@ ${DARKMODE_SELECTOR_VALUE}
   border-spacing: 0 5px;
 }
 
-.${clss.LIST_CLASS} h2
+.${clss.ROOT_CLASS} h2
 {
   display: inline-block;
   padding-left: 5px;
