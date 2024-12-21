@@ -24,9 +24,8 @@ const SCROLLBAR_TRACK_COLOR = 'transparent';
 mk.newHTML('ROOT_HTML', `
   <div class="${clss.ROOT_CLASS}">
     <div class="${clss.DESCRIPTION_CLASS} notranslate" translate="no">
-        <div class="${clss.LIST_CLASS}">
-          <h2 class="${clss.TITLE}"></h2>
-        </div>
+      <h2 class="${clss.TITLE}"></h2>
+      <div class="${clss.LIST_CLASS}"></div>
     </div>
   </div>
 `);
