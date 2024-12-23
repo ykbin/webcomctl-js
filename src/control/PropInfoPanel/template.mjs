@@ -6,7 +6,6 @@ const mk = new ControlMaker('PropInfoPanel', import.meta.url);
 
 const clss = mk.newClassNameMap([
   "ROOT_CLASS",
-  "DESCRIPTION_CLASS", // TODO: Remove
   "LIST_CLASS",
   "LIST_NAME",
   "LIST_VALUE",
@@ -22,11 +21,10 @@ const SCROLLBAR_THUMB_COLOR = '#b5b5b5c7';
 const SCROLLBAR_TRACK_COLOR = 'transparent';
 
 mk.newHTML('ROOT_HTML', `
-  <div class="${clss.ROOT_CLASS}">
-    <div class="${clss.DESCRIPTION_CLASS} notranslate" translate="no">
-        <div class="${clss.LIST_CLASS}">
-          <h2 class="${clss.TITLE}"></h2>
-        </div>
+  <div class="${clss.ROOT_CLASS} notranslate" translate="no">
+    <div>
+      <h2 class="${clss.TITLE}"></h2>
+      <div class="${clss.LIST_CLASS}"></div>
     </div>
   </div>
 `);
@@ -50,20 +48,20 @@ ${DARKMODE_SELECTOR_VALUE}
   ${vars.toString(1)};
 }
 
-.${clss.DESCRIPTION_CLASS}::-webkit-scrollbar
+.${clss.ROOT_CLASS} > *::-webkit-scrollbar
 {
   width: 10px;
   height: 10px;
 }
 
-.${clss.DESCRIPTION_CLASS}::-webkit-scrollbar-thumb
+.${clss.ROOT_CLASS} > *::-webkit-scrollbar-thumb
 {
   background-color: ${SCROLLBAR_THUMB_COLOR};
   border-radius: 10px;
 }
 
-.${clss.DESCRIPTION_CLASS}::-webkit-scrollbar-track,
-.${clss.DESCRIPTION_CLASS}::-webkit-scrollbar-corner
+.${clss.ROOT_CLASS} > *::-webkit-scrollbar-track,
+.${clss.ROOT_CLASS} > *::-webkit-scrollbar-corner
 {
   background-color: ${SCROLLBAR_TRACK_COLOR};
 }
@@ -76,13 +74,13 @@ ${DARKMODE_SELECTOR_VALUE}
   height: 100%;
 }
 
-.${clss.DESCRIPTION_CLASS} h3
+.${clss.ROOT_CLASS} h3
 {
   margin: 0px;
   font-weight: 400;
 }
 
-.${clss.DESCRIPTION_CLASS}
+.${clss.ROOT_CLASS} > div
 {
   width: 100%;
   height: 100%;
@@ -94,7 +92,7 @@ ${DARKMODE_SELECTOR_VALUE}
   overflow: auto;
 }
 
-.${clss.DESCRIPTION_CLASS} *
+.${clss.ROOT_CLASS} *
 {
   box-sizing: border-box;
 }
@@ -107,7 +105,7 @@ ${DARKMODE_SELECTOR_VALUE}
   border-spacing: 0 5px;
 }
 
-.${clss.LIST_CLASS} h2
+.${clss.ROOT_CLASS} h2
 {
   display: inline-block;
   padding-left: 5px;
