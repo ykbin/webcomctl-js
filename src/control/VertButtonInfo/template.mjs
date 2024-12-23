@@ -51,6 +51,7 @@ ${DARKMODE_SELECTOR_VALUE}
   border-left: 1px solid ${vars.nav_but_borl.asVar()};
   border-start-start-radius: 5px;
   border-end-start-radius: 5px;
+  z-index: 2
 }
 
 /*.${clss.BLOCKING} > div

@@ -77,7 +77,7 @@ ${DARKMODE_SELECTOR_VALUE}
   height: 100%;
   margin-right: 15px;
   background-size: 180px;
-   background-repeat: no-repeat;
+  background-repeat: no-repeat;
   background-position-y: center;
   background-position-x: left;
   background-image: ${vars.header.asVar()};
