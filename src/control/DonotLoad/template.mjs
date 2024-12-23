@@ -63,9 +63,11 @@ ${DARKMODE_SELECTOR_VALUE}
 {
   display: block;
   width: 323px;
+  height: 350px;
   background-image: ${DONOT_IMG};
   background-size: contain;
   background-position: center;
+  background-repeat: no-repeat;
 }
 
 .${clss.text}
@@ -87,6 +89,7 @@ ${DARKMODE_SELECTOR_VALUE}
   .${clss.ROOT_CLASS} span
   {
     width: 461px;
+    height: 500px;
   }
   .${clss.text}
   {
