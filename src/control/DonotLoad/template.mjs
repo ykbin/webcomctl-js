@@ -2,11 +2,8 @@ import ControlMaker from '../../lib/ControlMaker.mjs';
 import { DARKMODE_SELECTOR_VALUE } from '../../lib/DarkMode.mjs';
 const mk = new ControlMaker('DonotLoad', import.meta.url);
 
+const DONOT_IMG = await mk.loadSvgAsCssUrl('./donot_load.svg');
 const vars = mk.newCSSVariableMap({
-  img: [
-    await mk.loadSvgAsCssUrl('./donot_load.svg'),
-    await mk.loadSvgAsCssUrl('./donot_load.svg'),
-  ],
 });
 
 const clss = mk.newClassNameMap([
@@ -16,7 +13,7 @@ const clss = mk.newClassNameMap([
 
 mk.newHTML('ROOT_HTML', `
   <div class="${clss.ROOT_CLASS}">
-    <img src="${vars.img.asVar()}">
+    <img src="${DONOT_IMG}">
   <div class="${clss.text}">
     <div>Sorry, your</div>
     <div>file didn't</div>
