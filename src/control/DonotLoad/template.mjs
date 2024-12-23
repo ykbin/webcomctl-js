@@ -12,7 +12,7 @@ const clss = mk.newClassNameMap([
 
 mk.newHTML('ROOT_HTML', `
   <div class="${clss.ROOT_CLASS}">
-    <img src="./donot_load.svg">
+    <img src="donot_load.svg">
   <div class="${clss.text}">
     <div>Sorry, your</div>
     <div>file didn't</div>
