@@ -2,6 +2,7 @@ import ControlMaker from '../../lib/ControlMaker.mjs';
 import { DARKMODE_SELECTOR_VALUE } from '../../lib/DarkMode.mjs';
 const mk = new ControlMaker('DonotLoad', import.meta.url);
 
+const DONOT_IMG = await mk.loadSvgAsCssUrl('./donot_load.svg');
 const vars = mk.newCSSVariableMap({
 });
 
@@ -12,12 +13,12 @@ const clss = mk.newClassNameMap([
 
 mk.newHTML('ROOT_HTML', `
   <div class="${clss.ROOT_CLASS}">
-    <img src="donot_load.svg">
-  <div class="${clss.text}">
-    <div>Sorry, your</div>
-    <div>file didn't</div>
-    <div>load</div>
-  </div>
+    <span></span>
+    <div class="${clss.text}">
+      <div>Sorry, your</div>
+      <div>file didn't</div>
+      <div>load</div>
+    </div>
   </div>
 `);
 
@@ -58,9 +59,13 @@ ${DARKMODE_SELECTOR_VALUE}
   background-color: transparent;
 }
 
-.${clss.ROOT_CLASS} img
+.${clss.ROOT_CLASS} span
 {
+  display: block;
   width: 323px;
+  background-image: ${DONOT_IMG};
+  background-size: contain;
+  background-position: center;
 }
 
 .${clss.text}
@@ -79,7 +84,7 @@ ${DARKMODE_SELECTOR_VALUE}
     align-items: center;
     flex-direction: column;
   }
-  .${clss.ROOT_CLASS} img
+  .${clss.ROOT_CLASS} span
   {
     width: 461px;
   }
