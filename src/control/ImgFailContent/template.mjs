@@ -1,6 +1,6 @@
 import ControlMaker from '../../lib/ControlMaker.mjs';
 import { DARKMODE_SELECTOR_VALUE } from '../../lib/DarkMode.mjs';
-const mk = new ControlMaker('DonotLoad', import.meta.url);
+const mk = new ControlMaker('ImgFailContent', import.meta.url);
 
 const DONOT_IMG = await mk.loadSvgAsCssUrl('./donot_load.svg');
 const vars = mk.newCSSVariableMap({

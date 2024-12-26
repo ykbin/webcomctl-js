@@ -4,7 +4,7 @@ import { DARKMODE_SELECTOR_VALUE } from '../../lib/DarkMode.mjs';
 import { TOOLBAR_FONT_SANS } from '../../lib/WickedTheme.mjs';
 export const PORT_CLASS = mk.newClassName("Port");
 
-const mk = new ControlMaker('DebugPanel', import.meta.url);
+const mk = new ControlMaker('AbsoluteBlock', import.meta.url);
 
 const ROOT_CLASS = mk.newClassName("ROOT_CLASS");
 const TOP_CLASS = mk.newClassName("TOP_CLASS");
