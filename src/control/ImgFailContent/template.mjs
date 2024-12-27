@@ -67,7 +67,7 @@ ${DARKMODE_SELECTOR_VALUE}
   display: flex;
   align-items: flex-start;
   height: 40%;
-{
+}
 
 .${clss.text} > span
 {
