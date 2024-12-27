@@ -13,13 +13,11 @@ const clss = mk.newClassNameMap([
 
 mk.newHTML('ROOT_HTML', `
   <div class="${clss.ROOT_CLASS}">
-    <div>
+    <div class="${clss.text}">
       <span></span>
-      <div class="${clss.text}">
-        <div>Sorry, your</div>
-        <div>file didn't</div>
-        <div>load</div>
-      </div>
+      <div>Sorry, your</div>
+      <div>file didn't</div>
+      <div>load</div>
     </div>
   </div>
 `);
