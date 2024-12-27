@@ -13,11 +13,13 @@ const clss = mk.newClassNameMap([
 
 mk.newHTML('ROOT_HTML', `
   <div class="${clss.ROOT_CLASS}">
-    <div class="${clss.text}">
-      <span></span>
-      <div>Sorry, your</div>
-      <div>file didn't</div>
-      <div>load</div>
+    <div>
+      <div class="${clss.text}">
+        <span></span>
+        <div>Sorry, your</div>
+        <div>file didn't</div>
+        <div>load</div>
+      </div>
     </div>
   </div>
 `);
@@ -78,6 +80,7 @@ ${DARKMODE_SELECTOR_VALUE}
   display: grid;
   grid-template-columns: auto auto;
   align-items: end;
+  height: max-content;
   font-size: 25px;
   color: #978888;
   font-family: system-ui;
