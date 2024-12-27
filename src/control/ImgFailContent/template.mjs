@@ -98,12 +98,12 @@ ${DARKMODE_SELECTOR_VALUE}
 {
   .${clss.ROOT_CLASS} span
   {
-    width: 85px;
-    height: 93px;
+    width: 120px;
+    height: 130px;
   }
   .${clss.text}
   {
-    font-size: 36px;
+    font-size: 50px;
   }
 }
 `);
