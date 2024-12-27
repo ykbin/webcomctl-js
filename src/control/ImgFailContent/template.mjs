@@ -60,8 +60,9 @@ ${DARKMODE_SELECTOR_VALUE}
   background-color: transparent;
 }
 
-.${clss.ROOT_CLASS} span
+.${clss.text} > span
 {
+  grid-row: 1 / 3;
   display: block;
   width: 85px;
   height: 95px;
@@ -74,9 +75,12 @@ ${DARKMODE_SELECTOR_VALUE}
 
 .${clss.text}
 {
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: end;
   font-size: 25px;
-  color: gray;
-  font-family: monospace;
+  color: #978888;
+  font-family: system-ui;
   flex-shrink: 0;
 }
 
