@@ -62,12 +62,19 @@ ${DARKMODE_SELECTOR_VALUE}
   background-color: transparent;
 }
 
+.${clss.ROOT_CLASS} > div
+{
+  display: flex;
+  align-items: flex-start;
+  height: 40%;
+{
+
 .${clss.text} > span
 {
   grid-row: 1 / 3;
   display: block;
-  width: 85px;
-  height: 95px;
+  width: 60px;
+  height: 65px;
   margin-right: 5px;
   background-image: ${DONOT_IMG};
   background-size: contain;
@@ -89,15 +96,10 @@ ${DARKMODE_SELECTOR_VALUE}
 
 @media (device-width < 550px)
 {
-  .${clss.ROOT_CLASS}
-  {
-    align-items: center;
-    flex-direction: column;
-  }
   .${clss.ROOT_CLASS} span
   {
-    width: 121px;
-    height: 135px;
+    width: 85px;
+    height: 93px;
   }
   .${clss.text}
   {
