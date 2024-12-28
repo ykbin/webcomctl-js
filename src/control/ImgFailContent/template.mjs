@@ -13,11 +13,13 @@ const clss = mk.newClassNameMap([
 
 mk.newHTML('ROOT_HTML', `
   <div class="${clss.ROOT_CLASS}">
-    <span></span>
-    <div class="${clss.text}">
-      <div>Sorry, your</div>
-      <div>file didn't</div>
-      <div>load</div>
+    <div>
+      <div class="${clss.text}">
+        <span></span>
+        <div>Sorry, your</div>
+        <div>file didn't</div>
+        <div>load</div>
+      </div>
     </div>
   </div>
 `);
@@ -36,7 +38,8 @@ ${DARKMODE_SELECTOR_VALUE}
 .${clss.ROOT_CLASS}
 {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
+  justify-content: center;
   height: 100%;
   width: 100%;
 }
@@ -59,11 +62,20 @@ ${DARKMODE_SELECTOR_VALUE}
   background-color: transparent;
 }
 
-.${clss.ROOT_CLASS} span
+.${clss.ROOT_CLASS} > div
 {
+  display: flex;
+  align-items: flex-start;
+  height: 40%;
+}
+
+.${clss.text} > span
+{
+  grid-row: 1 / 3;
   display: block;
-  width: 323px;
-  height: 350px;
+  width: 60px;
+  height: 65px;
+  margin-right: 5px;
   background-image: ${DONOT_IMG};
   background-size: contain;
   background-position: center;
@@ -72,29 +84,26 @@ ${DARKMODE_SELECTOR_VALUE}
 
 .${clss.text}
 {
-  width: 640px;
-  font-size: 105px;
-  color: gray;
-  font-family: monospace;
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: end;
+  height: max-content;
+  font-size: 25px;
+  color: #978888;
+  font-family: system-ui;
   flex-shrink: 0;
 }
 
 @media (device-width < 550px)
 {
-  .${clss.ROOT_CLASS}
-  {
-    align-items: center;
-    flex-direction: column;
-  }
   .${clss.ROOT_CLASS} span
   {
-    width: 461px;
-    height: 500px;
+    width: 120px;
+    height: 130px;
   }
   .${clss.text}
   {
-    width: auto;
-    font-size: 150px;
+    font-size: 50px;
   }
 }
 `);
