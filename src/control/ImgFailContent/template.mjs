@@ -71,11 +71,11 @@ ${DARKMODE_SELECTOR_VALUE}
 
 .${clss.ROOT_CLASS} span
 {
-  grid-row: 1 / 3;
   display: block;
-  width: 60px;
-  height: 65px;
+  width: 65px;
+  height: 75px;
   margin-right: 5px;
+  margin-top: 5px;
   background-image: ${DONOT_IMG};
   background-size: contain;
   background-position: center;
@@ -84,9 +84,6 @@ ${DARKMODE_SELECTOR_VALUE}
 
 .${clss.text}
 {
-  display: grid;
-  grid-template-columns: auto auto;
-  align-items: end;
   height: max-content;
   font-size: 25px;
   color: #8f8f8f;
@@ -98,8 +95,8 @@ ${DARKMODE_SELECTOR_VALUE}
 {
   .${clss.ROOT_CLASS} span
   {
-    width: 120px;
-    height: 130px;
+    width: 130px;
+    height: 150px;
   }
   .${clss.text}
   {
