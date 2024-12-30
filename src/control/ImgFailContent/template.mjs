@@ -14,8 +14,8 @@ const clss = mk.newClassNameMap([
 mk.newHTML('ROOT_HTML', `
   <div class="${clss.ROOT_CLASS}">
     <div>
+      <span></span>
       <div class="${clss.text}">
-        <span></span>
         <div>Sorry, your</div>
         <div>file didn't</div>
         <div>load</div>
@@ -69,7 +69,7 @@ ${DARKMODE_SELECTOR_VALUE}
   height: 40%;
 }
 
-.${clss.text} > span
+.${clss.ROOT_CLASS} > span
 {
   grid-row: 1 / 3;
   display: block;
