@@ -89,7 +89,7 @@ ${DARKMODE_SELECTOR_VALUE}
   align-items: end;
   height: max-content;
   font-size: 25px;
-  color: #978888;
+  color: #8f8f8f;
   font-family: system-ui;
   flex-shrink: 0;
 }
