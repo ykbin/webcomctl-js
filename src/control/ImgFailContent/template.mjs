@@ -14,11 +14,13 @@ const clss = mk.newClassNameMap([
 mk.newHTML('ROOT_HTML', `
   <div class="${clss.ROOT_CLASS}">
     <div>
-      <span></span>
-      <div class="${clss.text}">
-        <div>Sorry, your</div>
-        <div>file didn't</div>
-        <div>load</div>
+      <div>
+        <span></span>
+        <div class="${clss.text}">
+          <div>Sorry, your</div>
+          <div>file didn't</div>
+          <div>load</div>
+        </div>
       </div>
     </div>
   </div>
@@ -62,11 +64,12 @@ ${DARKMODE_SELECTOR_VALUE}
   background-color: transparent;
 }
 
-.${clss.ROOT_CLASS} > div
+.${clss.ROOT_CLASS} > div > div
 {
   display: flex;
   align-items: flex-start;
-  height: 40%;
+  background-color: #fbfbfb;
+  box-shadow: 0px 0px 4px 1px #89898945;
 }
 
 .${clss.ROOT_CLASS} span
