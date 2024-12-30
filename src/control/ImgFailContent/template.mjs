@@ -69,7 +69,7 @@ ${DARKMODE_SELECTOR_VALUE}
   height: 40%;
 }
 
-.${clss.ROOT_CLASS} > span
+.${clss.ROOT_CLASS} span
 {
   grid-row: 1 / 3;
   display: block;
