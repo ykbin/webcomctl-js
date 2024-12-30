@@ -7,28 +7,10 @@
     height="265pt"
     viewBox="0 0 242 265">
 <defs/>
-<path id="shape0"
-  transform="translate(72.8217571518126, 179.159326265326)"
-  fill="#808080"
-  fill-rule="evenodd"
-  stroke="#666666"
-  stroke-width="1.00999999999992"
-  stroke-linecap="square"
-  stroke-linejoin="bevel"
-  d="M45.1767 24.1339C45.1058 15.2213 43.1811 1.62099 36.077 0.268158C32.2946 -1.74726 -0.665337 7.86251 0.0102414 20.2006C0.733906 23.5971 4.23408 28.4311 8.54652 33.768C12.2567 37.1894 16.5681 40.0556 20.2299 41.9767C26.5024 43.5868 33.1069 43.0604 38.236 39.3057C42.4356 35.4488 44.686 30.6013 45.1767 24.1339Z"/>
-
-<path id="shape1"
-  transform="translate(90.4687530793416, 185.437506311852)"
-  fill="none"
-  stroke="#666666"
-  stroke-width="2.99999999999976"
-  stroke-linecap="round"
-  stroke-linejoin="bevel"
-  d="M0 0C9.13365 7.47166 10.444 16.7719 11.8437 21.9687"/>
 
 <path id="shape01"
   transform="matrix(0.928160978043814 0 0 0.954023054666671 41.9640855693851 57.4850985845767)"
-  fill="#808080"
+  fill="#8f8f8f"
   fill-rule="evenodd"
   stroke="#666666"
   stroke-width="1.00999999999992"
@@ -38,7 +20,7 @@
   
 <path id="shape11"
   transform="matrix(0.928160978043814 0 0 0.954023054666671 140.123290289345 57.2742873075995)"
-  fill="#808080"
+  fill="#8f8f8f"
   fill-rule="evenodd"
   stroke="#666666"
   stroke-width="1.00999999999992"
@@ -48,7 +30,7 @@
   
 <path id="shape2"
   transform="matrix(0.928160978043814 0 0 0.954023054666671 43.2693127268868 170.551737926958)"
-  fill="#808080"
+  fill="#8f8f8f"
   fill-rule="evenodd"
   stroke="#666666"
   stroke-width="1.00999999999992"
@@ -58,7 +40,7 @@
   
 <path id="shape3"
   transform="matrix(0.974446014302945 0 0 0.856071912738236 10.9440965492134 6.8030739025721)"
-  fill="#808080"
+  fill="#8f8f8f"
   fill-rule="evenodd"
   stroke="#666666"
   stroke-width="1.00999999999992"

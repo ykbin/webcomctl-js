@@ -14,11 +14,13 @@ const clss = mk.newClassNameMap([
 mk.newHTML('ROOT_HTML', `
   <div class="${clss.ROOT_CLASS}">
     <div>
-      <div class="${clss.text}">
+      <div>
         <span></span>
-        <div>Sorry, your</div>
-        <div>file didn't</div>
-        <div>load</div>
+        <div class="${clss.text}">
+          <div>Sorry, your</div>
+          <div>file didn't</div>
+          <div>load</div>
+        </div>
       </div>
     </div>
   </div>
@@ -64,18 +66,26 @@ ${DARKMODE_SELECTOR_VALUE}
 
 .${clss.ROOT_CLASS} > div
 {
-  display: flex;
-  align-items: flex-start;
   height: 40%;
 }
 
-.${clss.text} > span
+.${clss.ROOT_CLASS} > div > div
 {
-  grid-row: 1 / 3;
+  display: flex;
+  align-items: flex-start;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: #fbfbfb;
+  box-shadow: 0px 0px 4px 1px #89898945;
+}
+
+.${clss.ROOT_CLASS} span
+{
   display: block;
-  width: 60px;
-  height: 65px;
+  width: 65px;
+  height: 75px;
   margin-right: 5px;
+  margin-top: 5px;
   background-image: ${DONOT_IMG};
   background-size: contain;
   background-position: center;
@@ -84,12 +94,9 @@ ${DARKMODE_SELECTOR_VALUE}
 
 .${clss.text}
 {
-  display: grid;
-  grid-template-columns: auto auto;
-  align-items: end;
   height: max-content;
   font-size: 25px;
-  color: #978888;
+  color: #8f8f8f;
   font-family: system-ui;
   flex-shrink: 0;
 }
@@ -98,8 +105,8 @@ ${DARKMODE_SELECTOR_VALUE}
 {
   .${clss.ROOT_CLASS} span
   {
-    width: 120px;
-    height: 130px;
+    width: 130px;
+    height: 150px;
   }
   .${clss.text}
   {
