@@ -64,6 +64,11 @@ ${DARKMODE_SELECTOR_VALUE}
   background-color: transparent;
 }
 
+.${clss.ROOT_CLASS} > div
+{
+  height: 40%;
+}
+
 .${clss.ROOT_CLASS} > div > div
 {
   display: flex;
