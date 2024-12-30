@@ -3,7 +3,7 @@ import ControlMaker from '../../lib/ControlMaker.mjs';
 import { DARKMODE_SELECTOR_VALUE } from '../../lib/DarkMode.mjs';
 import { HEADER_MOBILE_DEVICE_WIDTH } from '../../lib/WickedTheme.mjs';
 
-const mk = new ControlMaker('HdrWsckLogo', import.meta.url);
+const mk = new ControlMaker('HdrWsckLogoNane', import.meta.url);
 
 const clss = mk.newClassNameMap([
   "ROOT_CLASS",
