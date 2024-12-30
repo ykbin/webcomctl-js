@@ -73,6 +73,8 @@ ${DARKMODE_SELECTOR_VALUE}
 {
   display: flex;
   align-items: flex-start;
+  padding: 5px;
+  border-radius: 5px;
   background-color: #fbfbfb;
   box-shadow: 0px 0px 4px 1px #89898945;
 }
