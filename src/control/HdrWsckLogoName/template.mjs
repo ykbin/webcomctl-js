@@ -5,6 +5,9 @@ import { HEADER_MOBILE_DEVICE_WIDTH } from '../../lib/WickedTheme.mjs';
 
 const mk = new ControlMaker('HdrWsckLogoNane', import.meta.url);
 
+const width = 509.184;
+const height = 64.584;
+
 const clss = mk.newClassNameMap([
   "ROOT_CLASS",
 ]);
@@ -37,9 +40,9 @@ ${DARKMODE_SELECTOR_VALUE}
   width: 145px;
   margin-right: 15px;
   background-size: 180px;
+  background-repeat: no-repeat;
   background-position-y: center;
   background-position-x: left;
-  background-repeat: no-repeat;
   background-image: ${vars.header.asVar()};
   flex-shrink: 0;
   margin: 0px;
