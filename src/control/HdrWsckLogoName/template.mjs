@@ -38,15 +38,14 @@ ${DARKMODE_SELECTOR_VALUE}
 {
   height: 100%;
   width: 145px;
-  margin-right: 15px;
+  margin: 0 15px 0 0;
   background-size: 180px;
   background-repeat: no-repeat;
   background-position-y: center;
   background-position-x: left;
   background-image: ${vars.header.asVar()};
   flex-shrink: 0;
-  margin: 0px;
-  padding: 0px;
+  padding: 0;
   font-size: 1em;
   font-weight: 400;
 }
