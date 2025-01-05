@@ -97,6 +97,11 @@ ${DARKMODE_SELECTOR_VALUE}
   ${vars.toString(1)};
 }
 
+.${clss.ROOT_CLASS} s
+{
+  text-decoration: none;
+}
+
 .${clss.ROOT_CLASS} div s h2
 {
   display: block;
@@ -105,7 +110,7 @@ ${DARKMODE_SELECTOR_VALUE}
   white-space: nowrap;
 }
 
-div[class*="dbc_state_"] > s
+.${clss.ROOT_CLASS} div > s
 {
   display: flex;
   align-items: center;

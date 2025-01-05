@@ -38,14 +38,14 @@ ${DARKMODE_SELECTOR_VALUE}
 {
   height: 100%;
   width: 40px;
-  margin-right: 7px;
+  margin: 0 7px 0 0;
   background-size: contain;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position-y: center;
+  background-position-x: center;
   background-image: ${vars.favicon.asVar()};
   flex-shrink: 0;
-  margin: 0px;
-  padding: 0px;
+  padding: 0;
   font-size: 1em;
   font-weight: 400;
 }
