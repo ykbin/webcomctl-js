@@ -59,8 +59,8 @@ ${DARKMODE_SELECTOR_VALUE}
   width: 40px;
   background-repeat: no-repeat;
   background-position-y: center;
-  background-position-x: left;
-  background-position: center;
+  background-position-x: center;
+  background-size: contain;
   background-image: ${vars.favicon.asVar()};
   margin-right: 7px;
   flex-shrink: 0;
