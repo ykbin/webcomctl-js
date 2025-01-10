@@ -198,6 +198,7 @@ div.${clss.ROOT_CLASS} > nav + div:hover > div
   height: 25px;
   margin-left: 10px;
   border-radius: 10px;
+  flex-shrink: 0;
 }
 
 .${clss.ROOT_CLASS} > s > div > div

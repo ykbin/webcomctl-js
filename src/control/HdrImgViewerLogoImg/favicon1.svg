@@ -1,0 +1,75 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+
+<svg xmlns="http://www.w3.org/2000/svg" 
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    width="112.968pt"
+    height="111.672pt"
+    viewBox="0 0 112.968 111.672">
+<defs>
+  <linearGradient id="gradient0" gradientUnits="objectBoundingBox" x1="0.495660919286337" y1="0" x2="0.495660919286337" y2="1" spreadMethod="pad">
+   <stop stop-color="#fafdff" offset="0" stop-opacity="1"/>
+   <stop stop-color="#ffffff" offset="0.652499973773956" stop-opacity="1"/>
+  </linearGradient>
+ </defs>
+<path id="shape0"
+  transform="matrix(0.999999856283635 0 0 0.999999856283635 5.21999973301209 4.75201251197674)"
+  fill="url(#gradient0)"
+  stroke-opacity="0"
+  stroke="#000000"
+  stroke-width="0"
+  stroke-linecap="square"
+  stroke-linejoin="bevel"
+  d="M3.44432 0L100.525 0C101.3 1.82177 102.346 2.53496 103.426 3.11334L103.426 99.6303C101.928 100.458 100.975 101.675 100.391 102.952L3.43217 102.928C3.23102 102.157 2.59309 101.372 1.8797 100.672C1.405 100.194 0.836518 99.7676 0 99.4234L0 3.51142C1.43025 2.73427 2.70623 1.74207 3.44432 0Z"/>
+  
+<rect id="shape01"
+  transform="matrix(1.0424589165374 0 0 1.02291650920255 3.0046006672339 4.67417229349179)"
+  fill="none"
+  stroke-opacity="0"
+  stroke="#000000"
+  stroke-width="0"
+  stroke-linecap="square"
+  stroke-linejoin="bevel"
+  width="103.896"
+  height="102.168"/>
+  
+<path id="shape011"
+  transform="matrix(1.04245889513476 0 0 1.02291648820114 6.46286608845517 27.6970862678933)"
+  fill="#0046aa"
+  fill-rule="evenodd"
+  stroke="#000000"
+  stroke-width="0.757499999999939"
+  stroke-linecap="square"
+  stroke-linejoin="bevel"
+  d="M31.8849 0L87.0685 72.5625L87.6779 71.7422L87.7248 70.9922L63.0568 27.4453L70.9083 15.7734L96.8089 46.9624L96.7964 74.1487C95.6509 75.4549 95.652 75.4601 94.3453 77.0607L2.90865 76.9943C1.42274 75.5036 1.43262 75.4759 0 73.9774L0.0215896 38.6836L31.8849 0"/>
+  
+<path id="shape02"
+  transform="matrix(1.04245889513476 0 0 1.02291648820114 24.4550603238265 27.7598084169721)"
+  fill="#ffffff"
+  fill-rule="evenodd"
+  stroke-opacity="0"
+  stroke="#000000"
+  stroke-width="0"
+  stroke-linecap="square"
+  stroke-linejoin="bevel"
+  d="M0 17.6666L11.4684 9.01562L15.0481 20.8818L17.9649 8.48529L28.2401 17.9649L14.7167 0L0 17.6666"/>
+  
+<path id="shape1"
+  transform="matrix(1.04245889513476 0 0 1.02291648820114 72.2335874231244 43.867954564364)"
+  fill="#ffffff"
+  fill-rule="evenodd"
+  stroke-opacity="0"
+  stroke="#000000"
+  stroke-width="0"
+  stroke-linecap="square"
+  stroke-linejoin="bevel" d="M0 11.7539L5.90625 7.06641L8.17969 12.4102L10.4531 7.08985L17.2031 11.6602L7.78124 0L0 11.7539"/>
+  
+<path id="shape021"
+  transform="matrix(0.999999856283635 0 0 0.999999856283635 5.8319996107574 4.36001179247469)"
+  fill="none"
+  stroke="#000000"
+  stroke-width="2.16"
+  stroke-linecap="square"
+  stroke-linejoin="bevel"
+  d="M3.41036 0L99.5339 0C100.929 1.56578 100.94 1.56881 102.406 3.11133L102.406 99.5659C101.067 101.043 101.06 101.043 99.4012 102.885L3.39833 102.861C1.90985 101.316 1.89099 101.295 0 99.3592L0 3.50915C1.61609 1.81668 1.6212 1.81837 3.41036 0Z"/>
+</svg>
