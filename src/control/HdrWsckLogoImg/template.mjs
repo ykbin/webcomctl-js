@@ -52,7 +52,7 @@ ${DARKMODE_SELECTOR_VALUE}
 
 @media (device-width < ${HEADER_MOBILE_DEVICE_WIDTH})
 {
-  .${clss.ROOT_CLASS} > h3
+  .${clss.ROOT_CLASS}
   {
     display: none;
   }
