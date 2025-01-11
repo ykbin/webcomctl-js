@@ -3,7 +3,7 @@ import ControlMaker from '../../lib/ControlMaker.mjs';
 import { DARKMODE_SELECTOR_VALUE } from '../../lib/DarkMode.mjs';
 import { HEADER_MOBILE_DEVICE_WIDTH } from '../../lib/WickedTheme.mjs';
 
-const mk = new ControlMaker('HdrImgViewerLogoName', import.meta.url);
+const mk = new ControlMaker('HdrCntLogoNane', import.meta.url);
 
 const width = 509.184;
 const height = 64.584;
@@ -37,7 +37,7 @@ ${DARKMODE_SELECTOR_VALUE}
 .${clss.ROOT_CLASS}
 {
   height: 100%;
-  width: 180px;
+  width: 130px;
   margin: 0 15px 0 0;
   background-size: 180px;
   background-repeat: no-repeat;
@@ -54,8 +54,8 @@ ${DARKMODE_SELECTOR_VALUE}
 {
   .${clss.ROOT_CLASS}
   {
-    width: 330px;
-    background-size: 410px;
+    width: 255px;
+    background-size: 360px;
   }
 }
 `);
