@@ -3,24 +3,24 @@ import ControlMaker from '../../lib/ControlMaker.mjs';
 import { DARKMODE_SELECTOR_VALUE } from '../../lib/DarkMode.mjs';
 import { HEADER_MOBILE_DEVICE_WIDTH } from '../../lib/WickedTheme.mjs';
 
-const mk = new ControlMaker('HdrWsckLogoImg', import.meta.url);
+const mk = new ControlMaker('HdrDBCLogoName', import.meta.url);
 
-const width = 225;
-const height = 225;
+const width = 509.184;
+const height = 64.584;
 
 const clss = mk.newClassNameMap([
   "ROOT_CLASS",
 ]);
 
 const vars = mk.newCSSVariableMap({
-  favicon: [
-    await mk.loadSvgAsCssUrl('./favicon1.svg'),
-    await mk.loadSvgAsCssUrl('./favicon2.svg'),
+  header: [
+    await mk.loadSvgAsCssUrl('./header1.svg'),
+    await mk.loadSvgAsCssUrl('./header2.svg'),
   ],
 });
 
 mk.newHTML('ROOT_HTML', `
-  <h3 class="${clss.ROOT_CLASS}"></h3>
+  <h2 class="${clss.ROOT_CLASS}"></h2>
 `);
 
 mk.newHTML('CSS', `
@@ -37,13 +37,13 @@ ${DARKMODE_SELECTOR_VALUE}
 .${clss.ROOT_CLASS}
 {
   height: 100%;
-  width: 40px;
-  margin: 0 7px 0 0;
-  background-size: contain;
+  width: 91px;
+  margin: 0 15px 0 0;
+  background-size: 180px;
   background-repeat: no-repeat;
   background-position-y: center;
-  background-position-x: center;
-  background-image: ${vars.favicon.asVar()};
+  background-position-x: left;
+  background-image: ${vars.header.asVar()};
   flex-shrink: 0;
   padding: 0;
   font-size: 1em;

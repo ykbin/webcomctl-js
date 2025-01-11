@@ -3,7 +3,7 @@ import ControlMaker from '../../lib/ControlMaker.mjs';
 import { DARKMODE_SELECTOR_VALUE } from '../../lib/DarkMode.mjs';
 import { HEADER_MOBILE_DEVICE_WIDTH } from '../../lib/WickedTheme.mjs';
 
-const mk = new ControlMaker('HdrWsckLogoImg', import.meta.url);
+const mk = new ControlMaker('HdrDBCLogoImg', import.meta.url);
 
 const width = 225;
 const height = 225;
@@ -37,7 +37,7 @@ ${DARKMODE_SELECTOR_VALUE}
 .${clss.ROOT_CLASS}
 {
   height: 100%;
-  width: 40px;
+  width: 93px;
   margin: 0 7px 0 0;
   background-size: contain;
   background-repeat: no-repeat;
@@ -54,7 +54,7 @@ ${DARKMODE_SELECTOR_VALUE}
 {
   .${clss.ROOT_CLASS}
   {
-    display: none;
+    width: 195px;
   }
 }
 `);

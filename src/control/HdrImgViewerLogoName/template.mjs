@@ -37,7 +37,7 @@ ${DARKMODE_SELECTOR_VALUE}
 .${clss.ROOT_CLASS}
 {
   height: 100%;
-  width: 145px;
+  width: 180px;
   margin: 0 15px 0 0;
   background-size: 180px;
   background-repeat: no-repeat;
