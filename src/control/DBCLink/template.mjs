@@ -37,7 +37,6 @@ ${DARKMODE_SELECTOR_VALUE}
   height: 25px;
   margin: 0 0 0 5px;
   padding: 3px;
-  border: 1px dashed;
   border-radius: 5px;
   font-size: 16px;
   cursor: pointer;
