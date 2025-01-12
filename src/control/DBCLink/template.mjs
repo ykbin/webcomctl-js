@@ -57,6 +57,14 @@ ${DARKMODE_SELECTOR_VALUE}
     display: none;
   }
 }
+
+@media (device-width < 230px)
+{
+  .${clss.ROOT_CLASS}
+  {
+    display: none;
+  }
+}
 `);
 
 export function buildComponent()
