@@ -39,7 +39,7 @@ ${DARKMODE_SELECTOR_VALUE}
   height: 100%;
   width: 91px;
   margin: 0 15px 0 0;
-  background-size: 180px;
+  background-size: contain;
   background-repeat: no-repeat;
   background-position-y: center;
   background-position-x: left;
