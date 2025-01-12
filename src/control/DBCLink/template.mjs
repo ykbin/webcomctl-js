@@ -12,7 +12,9 @@ const clss = mk.newClassNameMap([
 ]);
 
 mk.newHTML('ROOT_HTML', `
-  <a href="https://github.com/ykbin/dbc" class="${clss.ROOT_CLASS} notranslate" translate="no" target="_blank" draggable="false">Sources code (GitHub)</a>
+  <a href="https://github.com/ykbin/dbc" class="${clss.ROOT_CLASS} notranslate" translate="no" target="_blank" draggable="false">
+    Sources code <span>(GitHub)</span>
+  </a>
 `);
 
 mk.newCSS('CSS', `
@@ -49,6 +51,10 @@ ${DARKMODE_SELECTOR_VALUE}
   .${clss.ROOT_CLASS}
   {
     font-size: 25px;
+  }
+  .${clss.ROOT_CLASS} span
+  {
+    display: none;
   }
 }
 `);
