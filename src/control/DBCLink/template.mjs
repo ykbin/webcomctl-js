@@ -4,7 +4,7 @@ import { HEADER_MOBILE_DEVICE_WIDTH } from '../../lib/WickedTheme.mjs';
 const mk = new ControlMaker('DBCLink', import.meta.url);
 
 const vars = mk.newCSSVariableMap({
-  OpS: ['#f2f2f2','#252525'],
+  OpS: ['#85858526'],
   dbc_col: ['#5063b1'],
 });
 
