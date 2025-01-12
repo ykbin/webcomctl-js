@@ -4,7 +4,8 @@ import { HEADER_MOBILE_DEVICE_WIDTH } from '../../lib/WickedTheme.mjs';
 const mk = new ControlMaker('DBCLink', import.meta.url);
 
 const vars = mk.newCSSVariableMap({
-  tree_list_col: ['black','white'],
+  OpS: ['#f2f2f2','#252525'],
+  dbc_col: ['#5063b1'],
 });
 
 const clss = mk.newClassNameMap([
@@ -31,7 +32,7 @@ ${DARKMODE_SELECTOR_VALUE}
 .${clss.ROOT_CLASS}
 {
   display: block;
-  color: #5063b1;
+  color: ${vars.dbc_col.asVar()};
   width: auto;
   height: 25px;
   margin: 0 0 0 5px;
@@ -41,9 +42,13 @@ ${DARKMODE_SELECTOR_VALUE}
   font-size: 16px;
   cursor: pointer;
   font-family: Open Sans, Arial, sans-serif;
-  background-color: var(--OpS);
   text-decoration: none;
   flex-shrink: 0;
+}
+
+.${clss.ROOT_CLASS}:hover
+{
+  background-color: ${vars.OpS.asVar()};
 }
 
 @media (device-width < ${HEADER_MOBILE_DEVICE_WIDTH})
