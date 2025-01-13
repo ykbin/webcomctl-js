@@ -22,7 +22,7 @@ const clss = mk.newClassNameMap([
 
 mk.newHTML('ROOT_HTML', `
 
-  <div class="${clss.document}">
+  <div class="${clss.document} ${clss.ROOT_CLASS}">
 
     <h4>Document:<u class="${clss.dbc_title_document}"></u></h4>
     
