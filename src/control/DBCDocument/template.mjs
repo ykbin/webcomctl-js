@@ -212,6 +212,17 @@ div.${clss.document} > b > h4 + h4
   overflow: hidden;
   box-shadow: none;
 }
+
+.${clss.ROOT_CLASS} s > h6
+{
+  font-weight: 400;
+  position: relative;
+  top: 8px;
+  left: 50px;
+  color: ${vars.rpanel_col.asVar()};
+  background-color: ${vars.rpanel_bg.asVar()};
+  width: max-content;
+}
 `);
 
 export function buildComponent()
