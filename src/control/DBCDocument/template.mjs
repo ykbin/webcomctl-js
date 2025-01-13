@@ -197,6 +197,21 @@ div.${clss.document} > b > h4 + h4
 {
   gap: 5px 25px;
 }
+
+.${clss.ROOT_CLASS} s h6 + span
+{
+  display: grid;
+  grid-template-columns: minmax(30px,auto) minmax(30px,auto);
+  justify-content: start;
+  grid-gap: 5px 10px;
+  margin: 0px 0px 30px 30px;
+  padding: 10px 20px 10px 20px;
+  width: max-content;
+  border-radius: 5px;
+  border: 1px solid ${vars.rpanel_brate.asVar()};
+  overflow: hidden;
+  box-shadow: none;
+}
 `);
 
 export function buildComponent()
