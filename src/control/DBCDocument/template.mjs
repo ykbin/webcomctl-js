@@ -88,16 +88,6 @@ ${DARKMODE_SELECTOR_VALUE}
   ${vars.toString(1)};
 }
 
-.${clss.document}
-{
-  display: none;
-}
-
-div.${clss.dbc_view_document} div.${clss.document}
-{
-  display: block;
-}
-
 .${clss.ROOT_CLASS} *
 {
   box-sizing: border-box;
