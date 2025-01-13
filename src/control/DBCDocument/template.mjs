@@ -110,12 +110,12 @@ ${DARKMODE_SELECTOR_VALUE}
   font-weight: 400;
 }
 
-div.${clss.document}
+.${clss.document}
 {
   padding-top: 15px;
 }
 
-div.${clss.document} b,
+.${clss.document} b,
 .${clss.dbc_new_symbols} > s > div
 {
   border: 1px solid ${vars.rpanel_bor.asVar()};
@@ -123,14 +123,14 @@ div.${clss.document} b,
   border-radius: 3px;
 }
 
-.${clss.ROOT_CLASS} > div.${clss.document},
-.${clss.ROOT_CLASS} div.${clss.document} b > span
+.${clss.document},
+.${clss.document} b > span
 {
   border: none;
   box-shadow: none;
 }
 
-.${clss.ROOT_CLASS} div.${clss.document} b
+.${clss.document} b
 {
   padding: 15px;
 }
@@ -140,7 +140,7 @@ div.${clss.document} > b > h4 + h4
   margin: 10px 0px 5px 0px;
 }
 
-div.${clss.document} b h4
+.${clss.document} b h4
 {
   margin: 0px;
   padding-left: 20px;
@@ -148,13 +148,13 @@ div.${clss.document} b h4
   text-overflow: ellipsis;
 }
 
-div.${clss.document} b h4,
-div.${clss.document} b span h5
+.${clss.document} b h4,
+.${clss.document} b span h5
 {
   font-weight: 400;
 }
 
-div.${clss.document} b h4 > u
+.${clss.document} b h4 > u
 {
   padding-left: 5px;
 }
@@ -188,16 +188,15 @@ div.${clss.document} b h4 > u
   font-size: 0.80em;
 }
 
-.${clss.ROOT_CLASS} > div.${clss.document} span
+.${clss.document} span
 {
   gap: 5px 15px;
 }
 
-.${clss.ROOT_CLASS} > div.${clss.document} > span > span
+.${clss.document} > span > span
 {
   gap: 5px 25px;
 }
-
 `);
 
 export function buildComponent()
