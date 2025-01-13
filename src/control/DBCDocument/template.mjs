@@ -173,7 +173,7 @@ div.${clss.document} b h4 > u
   background-color: ${vars.rpanel_bg.asVar()};
 }
 
-.${clss.ROOT_CLASS} div.${clss.document} b
+.${clss.document} b
 {
   display: block;
   font-weight: 400;
