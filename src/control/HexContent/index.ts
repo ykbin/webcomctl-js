@@ -1,6 +1,5 @@
 import { BaseControl, NQDOM, FileChunkLoader } from "webnetq-js";
-// @ts-ignore
-import { ROOT_HTML, CONTENT_CLASS, OFSLIST_CLASS, BINLIST_CLASS, TXTLIST_CLASS, SCROLL_MAIN_CLASS, SCROLL_BAR_CLASS, SCROLL_THUMB_CLASS } from "uictmplt-loader!./template.ts";
+import { ROOT_CLASS, ROOT_HTML, CSS, CONTENT_CLASS, OFSLIST_CLASS, BINLIST_CLASS, TXTLIST_CLASS, SCROLL_MAIN_CLASS, SCROLL_BAR_CLASS, SCROLL_THUMB_CLASS } from "./template.node";
 
 const kThumbSizeMin = 40;
 
@@ -217,7 +216,22 @@ function makeElementList(offset: number, size: number, buffer: ArrayBuffer, padS
   return result;
 }
 
-export class HexContent extends BaseControl {
+export namespace HexContent {
+
+export const classList = {
+  ROOT_CLASS,
+};
+
+export function createElement(document: HTMLDocument): HTMLElement {
+  return NQDOM.createElement(ROOT_HTML, document) as HTMLElement;
+}
+
+export function initRules(styleSheet: CSSStyleSheet): void {
+  for (const iter of CSS)
+    styleSheet.insertRule(iter, styleSheet.cssRules.length);
+}
+
+export class Control extends BaseControl {
   private _scroll?: UIScrollControl;
   private _chunkLoader?: FileChunkLoader;
 
@@ -237,10 +251,6 @@ export class HexContent extends BaseControl {
 
   private _readyState = 'idle';
   private _visible = false;
-
-  public static createElement(document: HTMLDocument): HTMLElement {
-    return NQDOM.createElement(ROOT_HTML, document) as HTMLElement;
-  }
 
   protected _init() {
     const scrollElm = NQDOM.getElementByClassName(this.element, SCROLL_MAIN_CLASS);
@@ -516,3 +526,5 @@ export class HexContent extends BaseControl {
     this._scroll.maxPosition = this._numberOfFileLines;
   }
 };
+
+} // namespace HexContent
