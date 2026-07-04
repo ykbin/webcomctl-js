@@ -1,20 +1,30 @@
 import { BaseControl, NQDOM } from "webnetq-js";
-// @ts-ignore
-import { ROOT_HTML, DESCRIPTION_TITLE, DESCRIPTION_HISTORY, LIST_CLASS, ITEM_HTML, LIST_NAME, LIST_VALUE } from "uictmplt-loader!./template.ts";
+import { ROOT_CLASS, ROOT_HTML, ITEM_HTML, CSS, DESCRIPTION_TITLE, DESCRIPTION_HISTORY, LIST_CLASS, LIST_NAME, LIST_VALUE } from "./template.node";
 
-export class ImageInfoPanel extends BaseControl {
+export namespace ImageInfoPanel {
+
+export const classList = {
+  ROOT_CLASS,
+};
+
+export function createElement(document: HTMLDocument): HTMLElement {
+  return NQDOM.createElement(ROOT_HTML, document) as HTMLElement;
+}
+
+export function initRules(styleSheet: CSSStyleSheet): void {
+  for (const iter of CSS)
+    styleSheet.insertRule(iter, styleSheet.cssRules.length);
+}
+
+export class Control extends BaseControl {
   private _titleElm?: HTMLElement;
   private _descriptionElm?: HTMLElement;
   private _listElm?: HTMLElement;
 
-  public static createElement(document: HTMLDocument): HTMLElement {
-    return NQDOM.createElement(ROOT_HTML, document) as HTMLElement;
-  }
-
   protected _init() {
-    this._titleElm = NQDOM.getElementByClassName(this.element, DESCRIPTION_TITLE);
-    this._descriptionElm = NQDOM.getElementByClassName(this.element, DESCRIPTION_HISTORY);
-    this._listElm = NQDOM.getElementByClassName(this.element, LIST_CLASS);
+    this._titleElm = NQDOM.getElementByClassName(super.element, DESCRIPTION_TITLE);
+    this._descriptionElm = NQDOM.getElementByClassName(super.element, DESCRIPTION_HISTORY);
+    this._listElm = NQDOM.getElementByClassName(super.element, LIST_CLASS);
   }
 
   public get title(): string {
@@ -46,3 +56,5 @@ export class ImageInfoPanel extends BaseControl {
     this._listElm && this._listElm.appendChild(itemElm);
   }
 };
+
+} // namespace ImageInfoPanel

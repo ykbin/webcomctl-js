@@ -1,6 +1,5 @@
 import { BaseControl, NQDOM } from "webnetq-js";
-// @ts-ignore
-import { ROOT_HTML, NUMBERS, CONTENT, OFFSET } from "uictmplt-loader!./template.ts";
+import { ROOT_CLASS, ROOT_HTML, CSS, NUMBERS, CONTENT, OFFSET } from "./template.node";
 
 const toHexString = (value: number, numPad: number) => value.toString(16).toUpperCase().padStart(numPad, '0');
 
@@ -9,19 +8,30 @@ interface Item {
   text: string;
 };
 
-export class TextContent extends BaseControl {
+export namespace TextContent {
+
+export const classList = {
+  ROOT_CLASS,
+};
+
+export function createElement(document: HTMLDocument): HTMLElement {
+  return NQDOM.createElement(ROOT_HTML, document) as HTMLElement;
+}
+
+export function initRules(styleSheet: CSSStyleSheet): void {
+  for (const iter of CSS)
+    styleSheet.insertRule(iter, styleSheet.cssRules.length);
+}
+
+export class Control extends BaseControl {
   private _numbersElm!: HTMLElement | null;
   private _contentElm!: HTMLElement | null;
   private _scrollTop?: number;
 
-  public static createElement(document: HTMLDocument): HTMLElement {
-    return NQDOM.createElement(ROOT_HTML, document) as HTMLElement;
-  }
-
   protected _init() {
-    this._numbersElm = this.element.querySelector("." + NUMBERS);
+    this._numbersElm = super.element.querySelector("." + NUMBERS);
     this._numbersElm && (this._numbersElm.addEventListener("scroll", (e) => this._onScroll(e)));
-    this._contentElm = this.element.querySelector("." + CONTENT);
+    this._contentElm = super.element.querySelector("." + CONTENT);
     this._contentElm && (this._contentElm.addEventListener("scroll", (e) => this._onScroll(e)));
   }
 
@@ -99,3 +109,5 @@ export class TextContent extends BaseControl {
     }
   }
 };
+
+} // namespace TextContent

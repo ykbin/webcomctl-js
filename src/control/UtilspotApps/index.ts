@@ -1,6 +1,5 @@
 import { BaseControl, NQDOM } from "webnetq-js";
-// @ts-ignore
-import { ROOT_HTML, ITEM_HTML, CENT_CLASS, MAIN_CLASS, LOGO_CLASS, ICON_CLASS, TITLE_CLASS, DESC_CLASS } from "uictmplt-loader!./template.ts";
+import { ROOT_CLASS, ROOT_HTML, CSS, ITEM_HTML, CENT_CLASS, MAIN_CLASS, LOGO_CLASS, ICON_CLASS, TITLE_CLASS, DESC_CLASS } from "./template.node";
 
 interface AppParams {
   title?: string;
@@ -10,16 +9,27 @@ interface AppParams {
   description?: string;
 };
 
-export class UtilspotApps extends BaseControl {
+export namespace UtilspotApps {
+
+export const classList = {
+  ROOT_CLASS,
+};
+
+export function createElement(document: HTMLDocument): HTMLElement {
+  return NQDOM.createElement(ROOT_HTML, document) as HTMLElement;
+}
+
+export function initRules(styleSheet: CSSStyleSheet): void {
+  for (const iter of CSS)
+    styleSheet.insertRule(iter, styleSheet.cssRules.length);
+}
+
+export class Control extends BaseControl {
   private _listElm?: HTMLElement;
   private _itemTemplate?: HTMLElement;
 
-  public static createElement(document: HTMLDocument): HTMLElement {
-    return NQDOM.createElement(ROOT_HTML, document) as HTMLElement;
-  }
-
   protected _init() {
-    this._listElm = NQDOM.getElementByClassName(this.element, CENT_CLASS);
+    this._listElm = NQDOM.getElementByClassName(super.element, CENT_CLASS);
     this._itemTemplate = NQDOM.createElement(ITEM_HTML);
   }
 
@@ -67,3 +77,5 @@ export class UtilspotApps extends BaseControl {
     this._listElm.appendChild(itemElm);
   }
 };
+
+} // namespace UtilspotApps

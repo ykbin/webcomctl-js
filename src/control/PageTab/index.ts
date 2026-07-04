@@ -1,6 +1,5 @@
 import { BaseControl, Random, NQDOM } from "webnetq-js";
-// @ts-ignore
-import { ROOT_HTML, ITEM_HTML, FOCUS_CLASS, CLOSE_CLASS, TEXT_CLASS, LOADING_CLASS } from "uictmplt-loader!./template.ts";
+import { ROOT_CLASS, ROOT_HTML, ITEM_HTML, FOCUS_CLASS, CLOSE_CLASS, TEXT_CLASS, LOADING_CLASS, CSS } from "./template.node";
 
 interface TabItemInfo {
   name?: string;
@@ -46,7 +45,7 @@ class TabItemControl {
     this._element.addEventListener('dragstart', event => this.onOnDragStart(event));
 
     this._name = options.name;
-    
+
     this._focusElm = NQDOM.getElementByClassName(this._element, FOCUS_CLASS);
     this._focusElm && this._focusElm.addEventListener('click', event => this.onOnFocusClick(event), false);
 
@@ -89,7 +88,7 @@ class TabItemControl {
       this._focus = value;
     }
   }
-  
+
   public get loading() { return this._loading; }
   public set loading(value) {
     if (this._loading != value) {
@@ -162,16 +161,27 @@ interface PageTabItemParams {
   onfocus: TabItemEventListener;
 };
 
-export class PageTab extends BaseControl {
+export namespace PageTab {
+
+export const classList = {
+  ROOT_CLASS,
+};
+
+export function createElement(document: HTMLDocument): HTMLElement {
+  return NQDOM.createElement(ROOT_HTML, document) as HTMLElement;
+}
+
+export function initRules(styleSheet: CSSStyleSheet): void {
+  for (const iter of CSS)
+    styleSheet.insertRule(iter, styleSheet.cssRules.length);
+}
+
+export class Control extends BaseControl {
   private _items = [] as TabItemControl[];
   private _focusIndex = 0;
   private _focusHistory = [] as TabItemControl[];
 
   private _idCounter = 1;
-
-  public static createElement(document: HTMLDocument): HTMLElement {
-    return NQDOM.createElement(ROOT_HTML, document) as HTMLElement;
-  }
 
   protected _init() {
     this.registerEvent(EMPTY_EVENT);
@@ -211,7 +221,7 @@ export class PageTab extends BaseControl {
       onfocus: params.onfocus || (() => {}),
       focus,
     });
-    
+
     if (focus) {
       if (this._items.length)
         this._items[this._focusIndex].focus = false;
@@ -283,3 +293,5 @@ export class PageTab extends BaseControl {
     return true;
   }
 };
+
+} // namespace PageTab

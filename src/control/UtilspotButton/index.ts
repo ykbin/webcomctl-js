@@ -1,17 +1,26 @@
 import { BaseControl, NQDOM } from "webnetq-js";
-import { ROOT_HTML, ROOT_CLASS, BUTTON_ACTIVE
-// @ts-ignore
-} from "uictmplt-loader!./template.ts";
+import { ROOT_CLASS, ROOT_HTML, CSS, BUTTON_ACTIVE } from "./template.node";
 
-export class UtilspotButton extends BaseControl {
+export namespace UtilspotButton {
+
+export const classList = {
+  ROOT_CLASS,
+};
+
+export function createElement(document: HTMLDocument): HTMLElement {
+  return NQDOM.createElement(ROOT_HTML, document) as HTMLElement;
+}
+
+export function initRules(styleSheet: CSSStyleSheet): void {
+  for (const iter of CSS)
+    styleSheet.insertRule(iter, styleSheet.cssRules.length);
+}
+
+export class Control extends BaseControl {
   private _tableOfContents?: HTMLElement;
 
-  public static createElement(document: HTMLDocument): HTMLElement {
-    return NQDOM.createElement(ROOT_HTML, document) as HTMLElement;
-  }
-
   protected _init() {
-    this._tableOfContents = NQDOM.getElementByClassName(this.element, ROOT_CLASS);
+    this._tableOfContents = NQDOM.getElementByClassName(super.element, ROOT_CLASS);
 
     if (this._tableOfContents) {
       Array.prototype.forEach.call(this._tableOfContents.children, iter => {
@@ -22,3 +31,5 @@ export class UtilspotButton extends BaseControl {
     }
   }
 };
+
+} // namespace UtilspotButton

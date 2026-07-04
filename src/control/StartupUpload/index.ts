@@ -1,19 +1,29 @@
 import { NQDOM, BaseControl, Random } from "webnetq-js";
-// @ts-ignore
-import { ROOT_HTML, DHIDE_CLASS, DSHOW_CLASS, FDROP_CLASS } from "uictmplt-loader!./template.ts";
+import { ROOT_CLASS, ROOT_HTML, CSS, DHIDE_CLASS, DSHOW_CLASS, FDROP_CLASS } from "./template.node";
 
 const UPLOAD_EVENT = 'upload';
 
-export class StartupUpload extends BaseControl {
+export namespace StartupUpload {
+
+export const classList = {
+  ROOT_CLASS,
+};
+
+export function createElement(document: HTMLDocument): HTMLElement {
+  return NQDOM.createElement(ROOT_HTML, document) as HTMLElement;
+}
+
+export function initRules(styleSheet: CSSStyleSheet): void {
+  for (const iter of CSS)
+    styleSheet.insertRule(iter, styleSheet.cssRules.length);
+}
+
+export class Control extends BaseControl {
   private _fdropElm?: HTMLElement;
   private _inputElm?: HTMLInputElement;
 
-  public static createElement(document: HTMLDocument): HTMLElement {
-    return NQDOM.createElement(ROOT_HTML, document) as HTMLElement;
-  }
-
   protected _init() {
-    this._fdropElm = NQDOM.getElementByClassName(this.element, FDROP_CLASS);
+    this._fdropElm = NQDOM.getElementByClassName(super.element, FDROP_CLASS);
     if (this._fdropElm) {
       const fdropElm = this._fdropElm;
       const showDropArea = () => {
@@ -58,7 +68,7 @@ export class StartupUpload extends BaseControl {
     const lableElm = this.element.querySelector('label');
     if (lableElm) {
       const inputId = Random.nextElementId();
-    
+
       const inputElm = document.createElement('input');
       inputElm.id = inputId;
       inputElm.type = "file";
@@ -69,7 +79,7 @@ export class StartupUpload extends BaseControl {
         this.dispatchEvent(UPLOAD_EVENT, { kind: 'input', files });
         target.value = "";
       });
-  
+
       lableElm.appendChild(inputElm);
       lableElm.setAttribute('for', inputId);
     }
@@ -77,3 +87,5 @@ export class StartupUpload extends BaseControl {
     this.registerEvent(UPLOAD_EVENT);
   }
 };
+
+} // namespace StartupUpload

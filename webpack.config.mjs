@@ -112,5 +112,12 @@ export default async (env, argv) => {
     config.output.clean = false;
   }
 
+  if (process.env.npm_config_document) {
+    config.entry = path.resolve(__dirname, "src", "document", process.env.npm_config_document, "index.ts");
+    config.output.path = path.resolve(__dirname, "dist", "document");
+    config.output.filename = process.env.npm_config_document + ".mjs";
+    config.output.clean = false;
+  }
+
   return config;
 }

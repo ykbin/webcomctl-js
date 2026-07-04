@@ -1,19 +1,29 @@
 import { BaseControl, NQDOM } from "webnetq-js";
-// @ts-ignore
-import { ROOT_HTML, SHOW_CLASS, IMAGE_CLASS } from "uictmplt-loader!./template.ts";
+import { ROOT_CLASS, ROOT_HTML, CSS, SHOW_CLASS, IMAGE_CLASS } from "./template.node";
 
-export class KikoDissView extends BaseControl {
+export namespace KikoDissView {
+
+export const classList = {
+  ROOT_CLASS,
+};
+
+export function createElement(document: HTMLDocument): HTMLElement {
+  return NQDOM.createElement(ROOT_HTML, document) as HTMLElement;
+}
+
+export function initRules(styleSheet: CSSStyleSheet): void {
+  for (const iter of CSS)
+    styleSheet.insertRule(iter, styleSheet.cssRules.length);
+}
+
+export class Control extends BaseControl {
   private _visible = false;
   private _imageElm?: HTMLImageElement;
 
-  public static createElement(document: HTMLDocument): HTMLElement {
-    return NQDOM.createElement(ROOT_HTML, document) as HTMLElement;
-  }
-
   protected _init() {
-    this._visible = this.element.classList.contains(SHOW_CLASS);
-    this._imageElm = NQDOM.getElementByClassName(this.element, IMAGE_CLASS) as HTMLImageElement;
-    this.element.addEventListener("click", event => {
+    this._visible = super.element.classList.contains(SHOW_CLASS);
+    this._imageElm = NQDOM.getElementByClassName(super.element, IMAGE_CLASS) as HTMLImageElement;
+    super.element.addEventListener("click", event => {
       if (this._visible && (event.target as HTMLElement).tagName !== "IMG")
         this.visible = false;
     });
@@ -37,3 +47,5 @@ export class KikoDissView extends BaseControl {
     }
   }
 };
+
+} // namespace KikoDissView
