@@ -2,6 +2,9 @@ import path from "node:path";
 import url from "node:url";
 import webpack from 'webpack';
 
+const __filename = url.fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 async function buildEntry(scriptUrl) {
   const lines = [];
 
@@ -32,10 +35,11 @@ async function webpackBuild(config) {
 }
 
 async function buildResult(loaderContext, source) {
-  const configUrl = url.pathToFileURL(path.resolve(loaderContext.rootContext, "webpack.config.mjs"));
+  const rootDir = path.resolve(__dirname, "../..");
+  const configUrl = url.pathToFileURL(path.resolve(rootDir, "webpack.config.mjs"));
   const configModule = await import(configUrl);
 
-  const outputPath = path.join(loaderContext.rootContext, "node_modules", ".cache", "node-loader", path.relative(loaderContext.rootContext, loaderContext.context));
+  const outputPath = path.join(rootDir, "node_modules", ".cache", "node-loader", path.relative(rootDir, loaderContext.context));
   const outputFilename = path.basename(loaderContext.resourcePath, ".ts") + ".mjs";
 
   const argv = { env: {} };
@@ -57,7 +61,7 @@ async function buildResult(loaderContext, source) {
   const stats = await webpackBuild(config);
 
   console.log("--------------------------------------------------------------------------------");
-  console.log("node-loader build", path.relative(loaderContext.rootContext, loaderContext.resourcePath));
+  console.log("[node-loader] build", path.relative(rootDir, loaderContext.resourcePath));
   console.log(stats.toString({ colors: true }));
 
   const scriptPath = path.join(outputPath, outputFilename);

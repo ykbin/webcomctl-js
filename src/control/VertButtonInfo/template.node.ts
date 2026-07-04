@@ -56,11 +56,6 @@ ${DARKMODE_SELECTOR_VALUE}
   z-index: 2
 }
 
-/*.${BLOCKING} > div
-{
-  pointer-events: none;
-}*/
-
 .${ROOT_CLASS}.${ACTIVE}
 {
   position: relative;

@@ -1,5 +1,5 @@
 import { BaseControl, NQDOM } from "webnetq-js";
-import { ROOT_CLASS, ROOT_HTML, CSS, NONE_CLASS, TOP_CLASS, RIGHT_CLASS, BOTTOM_CLASS, LEFT_CLASS } from "./template.node";
+import { ROOT_CLASS, PORT_CLASS, ROOT_HTML, CSS, NONE_CLASS, TOP_CLASS, RIGHT_CLASS, BOTTOM_CLASS, LEFT_CLASS } from "./template.node";
 
 enum SplitterType {
   NONE = 0,
@@ -47,6 +47,7 @@ export namespace SplitterBlock {
 
 export const classList = {
   ROOT_CLASS,
+  PORT_CLASS,
 };
 
 export function createElement(document: HTMLDocument): HTMLElement {

@@ -36,9 +36,9 @@ export default async (env, argv) => {
 
   const config = {
     mode,
-    target: "web", // "node", // 
-    entry: "./src/index.ts", // "/mnt/c/opt/work/source/darkit-sdk/external/webcomctl-js/src/control/SwitchBlock3/maker.node.ts", // 
-    devtool: isDevelopment ? "inline-source-map" : "source-map",
+    target: "web",
+    entry: "./src/index.ts",
+    devtool: isDevelopment ? "inline-source-map" : undefined, // "source-map",
     resolveLoader: {
       alias: {
         "node-loader": path.join(__dirname, "./src/loader/NodeLoader2.mjs"),
@@ -88,8 +88,8 @@ export default async (env, argv) => {
       },
       module: true,
       iife: false,
-      path: path.resolve(__dirname, "dist"), // "/mnt/c/opt/work/source/darkit-sdk/external/webcomctl-js/node_modules/.cache/node-loader/src/control/SwitchBlock3", // 
-      filename: "bundle.mjs", // "maker.node.mjs", // 
+      path: path.resolve(__dirname, "dist"),
+      filename: "bundle.mjs",
       clean: true,
     },
     optimization: {
@@ -98,24 +98,22 @@ export default async (env, argv) => {
     experiments: {
       outputModule: true,
     },
-    externals: {
-    },
+    externals,
     plugins: [
       new webpack.DefinePlugin(globalVariables),
     ],
   };
 
-  if (process.env.npm_config_control) {
-    config.entry = path.resolve(__dirname, "src", "control", process.env.npm_config_control, "index.ts");
-    config.output.path = path.resolve(__dirname, "dist", "control");
-    config.output.filename = process.env.npm_config_control + ".mjs";
+  if (argv.config_document) {
+    config.entry = path.resolve(__dirname, "src", "document", argv.config_document, "index.ts");
+    config.output.path = path.resolve(__dirname, "dist", "document");
+    config.output.filename = argv.config_document + ".mjs",
     config.output.clean = false;
   }
-
-  if (process.env.npm_config_document) {
-    config.entry = path.resolve(__dirname, "src", "document", process.env.npm_config_document, "index.ts");
-    config.output.path = path.resolve(__dirname, "dist", "document");
-    config.output.filename = process.env.npm_config_document + ".mjs";
+  else if (argv.config_control) {
+    config.entry = path.resolve(__dirname, "src", "control", argv.config_control, "index.ts");
+    config.output.path = path.resolve(__dirname, "dist", "control");
+    config.output.filename = argv.config_control + ".mjs",
     config.output.clean = false;
   }
 

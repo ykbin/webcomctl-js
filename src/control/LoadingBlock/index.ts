@@ -1,10 +1,11 @@
 import { BaseControl, NQDOM } from "webnetq-js";
-import { ROOT_CLASS, ROOT_HTML, CSS, UNLOAD_CLASS } from "./template.node";
+import { ROOT_CLASS, PORT_CLASS, ROOT_HTML, CSS, UNLOAD_CLASS } from "./template.node";
 
 export namespace LoadingBlock {
 
 export const classList = {
   ROOT_CLASS,
+  PORT_CLASS,
 };
 
 export function createElement(document: HTMLDocument): HTMLElement {
