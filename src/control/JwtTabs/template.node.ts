@@ -57,7 +57,6 @@ export const CSS = [
   background: transparent;
   color: ${vars.TEXT2.asVar()};
   cursor: pointer;
-  transition: .15s;
 }`,
 
 `.${TAB_CLASS}:hover { color: ${vars.TEXT1.asVar()}; }`,

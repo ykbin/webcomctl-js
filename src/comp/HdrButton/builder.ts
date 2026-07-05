@@ -78,6 +78,7 @@ export function template(name: string, {type, url, anchorTarget, text, mainImage
   .${ROOT_CLASS}
   {
     display: flex;
+    align-items: center;
     width: min-content;
     height: min-content;
     margin: 0px 5px;

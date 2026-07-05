@@ -29,7 +29,7 @@ export const ROOT_CLASS: string = representClassNames("Leb128Content-ROOT_CLASS"
 export const Field_Block: string = representClassNames("Leb128Content-Field_Block");
 export const Field_Imput_Group: string = representClassNames("Leb128Content-Field_Imput_Group");
 export const Field_Imput: string = representClassNames("Leb128Content-Field_Imput");
-export const Error: string = representClassNames("Leb128Content-Error");
+export const ERROR_CLASS: string = representClassNames("Leb128Content-ERROR_CLASS");
 export const Config: string = representClassNames("Leb128Content-Config");
 export const Hidden: string = representClassNames("Leb128Content-Hidden");
 
@@ -51,7 +51,7 @@ export const ROOT_HTML = `
         <a href="#" id="leb128-copy" class="copy-link" tabindex="-1" aria-label="Copy LEB128 value"></a>
       </div>
     </div>
-    <div class="${Error} ${Hidden}">Invalid array length</div>
+    <div class="${ERROR_CLASS} ${Hidden}">Invalid array length</div>
   </div>
   <div class="${Config}">
     <label for="output-format">LEB128 Output Format:</label>
@@ -166,7 +166,7 @@ ${DARKMODE_SELECTOR_VALUE}
   background-color: ${vars.link_hover.asVar()};
 }
 
-.${Error}
+.${ERROR_CLASS}
 {
   color: ${ERROR_COLOR};
   margin-top: 0.5rem;

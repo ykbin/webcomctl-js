@@ -1,0 +1,52 @@
+<svg width="100%" viewBox="0 0 680 580" xmlns="http://www.w3.org/2000/svg" role="img">
+<title>JWT editor icon</title>
+<desc>An icon showing a token card divided into three labeled segments — header, payload, and signature — with a pencil edit badge in the corner, representing a JWT editor.</desc>
+<style>
+.card { fill: #fcfcfb; stroke: rgba(11,11,11,0.2); }
+.header-bg { fill: #fcebeb; stroke: #a32d2d; }
+.header-text { fill: #791f1f; }
+.payload-bg { fill: #eeedfe; stroke: #534ab7; }
+.payload-text { fill: #3c3489; }
+.signature-bg { fill: #e1f5ee; stroke: #0f6e56; }
+.signature-text { fill: #085041; }
+.badge-bg { fill: #faeeda; stroke: #854f0b; }
+.pencil { fill: #ffffff; }
+text { font-family: "Anthropic Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-weight: 500; font-size: 14px; }
+@media (prefers-color-scheme: dark) {
+  .card { fill: #232326; stroke: rgba(255,255,255,0.2); }
+  .header-bg { fill: #3b1f1f; stroke: #c97c7c; }
+  .header-text { fill: #f2b8b8; }
+  .payload-bg { fill: #262347; stroke: #9f97e0; }
+  .payload-text { fill: #c9c4f5; }
+  .signature-bg { fill: #16332c; stroke: #4fbfa0; }
+  .signature-text { fill: #9ee0cb; }
+  .badge-bg { fill: #3b2e17; stroke: #d9a257; }
+}
+</style>
+
+<rect x="150" y="170" width="380" height="340" rx="24" class="card" stroke-width="1"/>
+
+<g>
+<rect x="180" y="200" width="320" height="80" rx="12" class="header-bg" stroke-width="1"/>
+<text x="340" y="246" text-anchor="middle" class="header-text">header</text>
+</g>
+
+<g>
+<rect x="180" y="290" width="320" height="80" rx="12" class="payload-bg" stroke-width="1"/>
+<text x="340" y="336" text-anchor="middle" class="payload-text">payload</text>
+</g>
+
+<g>
+<rect x="180" y="380" width="320" height="80" rx="12" class="signature-bg" stroke-width="1"/>
+<text x="340" y="426" text-anchor="middle" class="signature-text">signature</text>
+</g>
+
+<g>
+<circle cx="530" cy="490" r="50" class="badge-bg" stroke-width="1"/>
+</g>
+<g transform="rotate(45 530 490)">
+<rect x="505" y="482" width="46" height="14" rx="2" class="pencil"/>
+<polygon points="505,482 505,496 493,489" class="pencil"/>
+<rect x="547" y="482" width="8" height="14" fill="#ffffffbb"/>
+</g>
+</svg>
