@@ -41,7 +41,7 @@ export default async (env, argv) => {
     devtool: isDevelopment ? "inline-source-map" : undefined, // "source-map",
     resolveLoader: {
       alias: {
-        "node-loader": path.join(__dirname, "./src/loader/NodeLoader2.mjs"),
+        "node-loader": path.join(__dirname, "./src/loader/NodeLoader.mjs"),
       },
     },
     resolve: {

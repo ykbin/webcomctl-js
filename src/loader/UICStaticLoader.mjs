@@ -1,12 +1,12 @@
 import url from 'node:url';
 
-async function makeStaticRegisterScript(module, templates)
+async function makeStaticRegisterScript(module)
 {
   const {PKG, CTLS} = module;
 
   let scriptContent = `import { ControlManager } from 'webnetq-js';\n\n`;
   for (const name in CTLS) {
-    scriptContent += `import { ${name} } from "${PKG}/controls";\n`;
+    scriptContent += `import { ${name} } from "${PKG}/control/${name}";\n`;
   };
   scriptContent += `\n`;
 
@@ -14,7 +14,7 @@ async function makeStaticRegisterScript(module, templates)
 
   for (const name in CTLS) {
     let params = `{rootClass: ${name}.classList.ROOT_CLASS, portClass: ${name}.classList.PORT_CLASS }`;
-    const ctlModule = templates[PKG][name];
+    const ctlModule = (await import(PKG))[name];
     if (ctlModule) {
       for (const iter of ['ROOT_CLASS']) {
         if (!(iter in ctlModule)) {
@@ -56,11 +56,7 @@ export default function(source) {
   const resourceUrl = url.pathToFileURL(this.resourcePath);
   const callback = this.async();
 	(async () => {
-    const templatesEntries = {};
-    for (const [key, val] of Object.entries(options)) {
-      templatesEntries[key] = await import(val);
-    }
     const module = await import(resourceUrl);
-		return await makeStaticRegisterScript(module, templatesEntries);
+		return await makeStaticRegisterScript(module);
 	})().then((res) => callback(undefined, res), (err) => callback(err));
 }

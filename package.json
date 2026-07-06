@@ -6,31 +6,13 @@
   "main": "src/index.mjs",
   "exports": {
     ".": "./src/index.mjs",
-    "./document/*": "./src/document/*/index.mjs",
-    "./document/*/template": "./src/document/*/template.mjs",
-    "./control/*": "./src/control/*/index.mjs",
-    "./control/*/template": "./src/control/*/template.mjs",
     "./loader/cmake-loader": "./src/loader/CMakeLoader.mjs",
     "./loader/module-loader": "./src/loader/ModuleLoader.mjs",
     "./loader/uic-static-loader": "./src/loader/UICStaticLoader.mjs",
-    "./loader/uic-static-loader2": "./src/loader/UICStaticLoader2.mjs",
-    "./loader/uictmplt-loader": "./src/loader/UICTemplateLoader.mjs",
-    "./loader/template-loader": "./src/loader/TemplateLoader.mjs",
-    "./builders.config.mjs": "./builders.config.mjs",
-    "./templates.config.mjs": "./templates.config.mjs",
-    "./controls.config.mjs": "./controls.config.mjs",
-    "./doc/*": "./dist/document/*.mjs",
-    "./ctl/*": "./dist/control/*.mjs"
+    "./document/*": "./dist/document/*.mjs",
+    "./control/*": "./dist/control/*.mjs"
   },
   "scripts": {
-    "build-builders-debug": "webpack --config builders.config.mjs --mode=development --output-path=dist",
-    "build-builders-release": "webpack --config builders.config.mjs --mode=production --output-path=dist",
-    "build-templates-debug": "webpack --config templates.config.mjs --mode=development --output-path=dist",
-    "build-templates-release": "webpack --config templates.config.mjs --mode=production --output-path=dist",
-    "build-controls-debug": "webpack --config controls.config.mjs --mode=development --output-path=dist",
-    "build-controls-release": "webpack --config controls.config.mjs --mode=production --output-path=dist",
-    "build:debug": "npm run build-builders-debug && npm run build-templates-debug && npm run build-controls-debug",
-    "build:release": "npm run build-builders-release && npm run build-templates-release && npm run build-controls-release",
     "build:base:dbg": "webpack --config webpack.config.mjs --mode development",
     "build:base:rls": "webpack --config webpack.config.mjs --mode production",
 
