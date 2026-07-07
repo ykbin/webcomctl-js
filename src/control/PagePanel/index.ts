@@ -1,10 +1,8 @@
 import { BaseControl, NQDOM } from "webnetq-js";
-import { ROOT_HTML, MENU_ITEM_HTML, PSNT_ITEM_HTML, CODETYPE_CLASS, DOWNLOAD_CLASS, MENULIST_CLASS, PSNTLIST_CLASS,
+import { ROOT_CLASS, ROOT_HTML, MENU_ITEM_HTML, PSNT_ITEM_HTML, CODETYPE_CLASS, DOWNLOAD_CLASS, MENULIST_CLASS, PSNTLIST_CLASS,
   CTSHOW_CLASS, PSNTACTV_CLASS, MENUTEXT_CLASS, PSNTTEXT_CLASS, PERENTMENU_CLASS, MENUNAME_CLASS, MENU_LIST_HTML,
   MENUSTYLE1_CLASS, MENUSTYLE2_CLASS, MENUSTYLE3_CLASS, MENUSTYLE4_CLASS, PROPERTIES_CLASS, PROPERTIES2_CLASS,
-  PROPERTIES_SHOW_CLASS
-// @ts-ignore
-} from "uictmplt-loader!./template.ts";
+  PROPERTIES_SHOW_CLASS, CSS } from "./template.node";
 
 type MenuStyle = "ST1" | "ST2" | "ST3" | "ST4";
 function typeToStyleClass(type: MenuStyle)
@@ -47,7 +45,22 @@ interface PagePanelSnap {
   blob?: Blob;
 };
 
-export class PagePanel extends BaseControl {
+export namespace PagePanel {
+
+export const classList = {
+  ROOT_CLASS,
+};
+
+export function createElement(document: HTMLDocument): HTMLElement {
+  return NQDOM.createElement(ROOT_HTML, document) as HTMLElement;
+}
+
+export function initRules(styleSheet: CSSStyleSheet): void {
+  for (const iter of CSS)
+    styleSheet.insertRule(iter, styleSheet.cssRules.length);
+}
+
+export class Control extends BaseControl {
   private _downloadElm?: HTMLAnchorElement;
   private _psntlistElm?: HTMLElement;
   private _parentMenuElm?: HTMLElement;
@@ -57,16 +70,12 @@ export class PagePanel extends BaseControl {
   private _filename = "";
   private _snap: PagePanelSnap = {};
 
-  public static createElement(document: HTMLDocument): HTMLElement {
-    return NQDOM.createElement(ROOT_HTML, document) as HTMLElement;
-  }
-
   protected _init() {
-    this._parentMenuElm = NQDOM.getElementByClassName(this.element, PERENTMENU_CLASS);
-    this._downloadElm = NQDOM.getElementByClassName(this.element, DOWNLOAD_CLASS) as HTMLAnchorElement;
-    this._psntlistElm = NQDOM.getElementByClassName(this.element, PSNTLIST_CLASS);
-    this._infoButElm = NQDOM.getElementByClassName(this.element, PROPERTIES_CLASS);
-    this._propButElm = NQDOM.getElementByClassName(this.element, PROPERTIES2_CLASS);
+    this._parentMenuElm = NQDOM.getElementByClassName(super.element, PERENTMENU_CLASS);
+    this._downloadElm = NQDOM.getElementByClassName(super.element, DOWNLOAD_CLASS) as HTMLAnchorElement;
+    this._psntlistElm = NQDOM.getElementByClassName(super.element, PSNTLIST_CLASS);
+    this._infoButElm = NQDOM.getElementByClassName(super.element, PROPERTIES_CLASS);
+    this._propButElm = NQDOM.getElementByClassName(super.element, PROPERTIES2_CLASS);
 
     this._updateDownloadData();
   }
@@ -119,7 +128,7 @@ export class PagePanel extends BaseControl {
         codetypeIsShow = codetypeElm.classList.toggle(CTSHOW_CLASS);
         codetypeVisibleChanged = true;
       });
-  
+
       let codetypeVisibleChanged = false;
       window.addEventListener('click', e => {
         if (!codetypeVisibleChanged && codetypeIsShow)
@@ -168,7 +177,7 @@ export class PagePanel extends BaseControl {
         newEvent.text = params.text;
         params.onclick && params.onclick(newEvent);
       });
-  
+
       this._psntlistElm.appendChild(rootElm);
     }
   }
@@ -195,3 +204,5 @@ export class PagePanel extends BaseControl {
     }
   }
 };
+
+} // namespace PagePanel

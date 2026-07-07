@@ -1,25 +1,35 @@
 import { BaseControl, NQDOM, Random } from "webnetq-js";
-// @ts-ignore
-import { ROOT_HTML, LIST_CLASS, URL_CLASS, URL_OFF_CLASS, METHOD_CLASS, COUNTER_CLASS, ITEM_HTML } from "uictmplt-loader!./template.ts";
+import { ROOT_CLASS, ROOT_HTML, CSS, LIST_CLASS, URL_CLASS, URL_OFF_CLASS, METHOD_CLASS, COUNTER_CLASS, ITEM_HTML } from "./template.node";
 
-export class RequestStatistics extends BaseControl {
+export namespace RequestStatistics {
+
+export const classList = {
+  ROOT_CLASS,
+};
+
+export function createElement(document: HTMLDocument): HTMLElement {
+  return NQDOM.createElement(ROOT_HTML, document) as HTMLElement;
+}
+
+export function initRules(styleSheet: CSSStyleSheet): void {
+  for (const iter of CSS)
+    styleSheet.insertRule(iter, styleSheet.cssRules.length);
+}
+
+export class Control extends BaseControl {
   private _umToIdMap = new Map<string,string>;
   private _listElm?: HTMLElement;
   private _itemTemplate?: HTMLElement;
 
-  public static createElement(document: HTMLDocument): HTMLElement {
-    return NQDOM.createElement(ROOT_HTML, document) as HTMLElement;
-  }
-
   protected _init() {
-    this._listElm = NQDOM.getElementByClassName(this.element, LIST_CLASS);
+    this._listElm = NQDOM.getElementByClassName(super.element, LIST_CLASS);
     this._itemTemplate = NQDOM.createElement(ITEM_HTML);
   }
 
   public setValue(url: string, method: string, counter: number) {
     if (!this._listElm || !url || !method)
       return;
-    
+
     const um = url + "$" + method;
     let id = this._umToIdMap.get(um);
 
@@ -35,7 +45,7 @@ export class RequestStatistics extends BaseControl {
       if (!counterElm)
         return;
       counterElm.id = id;
-  
+
       const urlElm = NQDOM.getElementByClassName(itemElm, URL_CLASS) as HTMLAnchorElement;
       if (urlElm) {
         urlElm.textContent = url;
@@ -53,4 +63,6 @@ export class RequestStatistics extends BaseControl {
 
     counterElm.textContent = counter.toString();
   }
-}
+};
+
+} // namespace RequestStatistics

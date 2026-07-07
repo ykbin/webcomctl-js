@@ -1,14 +1,25 @@
 import { BaseControl, NQDOM } from "webnetq-js";
-// @ts-ignore
-import { ROOT_HTML, SHOW, ANIME } from "uictmplt-loader!./template.ts";
+import { ROOT_CLASS, PORT_CLASS, ROOT_HTML, CSS, SHOW, ANIME } from "./template.node";
 
-export class RightSideProperties extends BaseControl {
+export namespace RightSideProperties {
+
+export const classList = {
+  ROOT_CLASS,
+  PORT_CLASS,
+};
+
+export function createElement(document: HTMLDocument): HTMLElement {
+  return NQDOM.createElement(ROOT_HTML, document) as HTMLElement;
+}
+
+export function initRules(styleSheet: CSSStyleSheet): void {
+  for (const iter of CSS)
+    styleSheet.insertRule(iter, styleSheet.cssRules.length);
+}
+
+export class Control extends BaseControl {
   private _visible = false;
   private _animation = false;
-
-  public static createElement(document: HTMLDocument): HTMLElement {
-    return NQDOM.createElement(ROOT_HTML, document) as HTMLElement;
-  }
 
   protected _init() {
   }
@@ -28,3 +39,5 @@ export class RightSideProperties extends BaseControl {
   public get animation() { return this._animation; }
   public set animation(value) { this._animation = value; }
 };
+
+} // namespace RightSideProperties

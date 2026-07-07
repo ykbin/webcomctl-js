@@ -1,19 +1,29 @@
 import { BaseControl, NQDOM } from "webnetq-js";
-// @ts-ignore
-import { ROOT_HTML, TITLE, ITEM_HTML, LIST_CLASS, LIST_NAME, LIST_VALUE } from "uictmplt-loader!./template.ts";
+import { ROOT_CLASS, ROOT_HTML, CSS, TITLE, ITEM_HTML, LIST_CLASS, LIST_NAME, LIST_VALUE } from "./template.node";
 
-export class PropInfoPanel extends BaseControl {
+export namespace PropInfoPanel {
+
+export const classList = {
+  ROOT_CLASS,
+};
+
+export function createElement(document: HTMLDocument): HTMLElement {
+  return NQDOM.createElement(ROOT_HTML, document) as HTMLElement;
+}
+
+export function initRules(styleSheet: CSSStyleSheet): void {
+  for (const iter of CSS)
+    styleSheet.insertRule(iter, styleSheet.cssRules.length);
+}
+
+export class Control extends BaseControl {
   private _titleElm?: HTMLElement;
   private _listElm?: HTMLElement;
   private _valueElmMap: { [name: string]: any } = {};
 
-  public static createElement(document: HTMLDocument): HTMLElement {
-    return NQDOM.createElement(ROOT_HTML, document) as HTMLElement;
-  }
-
   protected _init() {
-      this._titleElm = NQDOM.getElementByClassName(this.element, TITLE);
-      this._listElm = NQDOM.getElementByClassName(this.element, LIST_CLASS);
+    this._titleElm = NQDOM.getElementByClassName(super.element, TITLE);
+    this._listElm = NQDOM.getElementByClassName(super.element, LIST_CLASS);
   }
 
   public get title(): string {
@@ -46,3 +56,5 @@ export class PropInfoPanel extends BaseControl {
     this._listElm && (this._listElm.innerHTML = "");
   }
 };
+
+} // namespace PropInfoPanel

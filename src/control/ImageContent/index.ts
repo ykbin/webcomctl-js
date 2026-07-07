@@ -1,6 +1,20 @@
 import { BaseControl, Util, NQDOM } from "webnetq-js";
-// @ts-ignore
-import { ROOT_HTML, CONTENT_CLASS, BUTT_LEFT_CLASS, BUTT_RIGHT_CLASS, IMAGE_POSITION, IMAGE_NUMBERS, LEFT_CLICK, RIGHT_CLICK } from "uictmplt-loader!./template.ts";
+import { ROOT_CLASS, ROOT_HTML, CSS, CONTENT_CLASS, BUTT_LEFT_CLASS, BUTT_RIGHT_CLASS, IMAGE_POSITION, IMAGE_NUMBERS, LEFT_CLICK, RIGHT_CLICK } from "./template.node";
+
+export namespace ImageContent {
+
+export const classList = {
+  ROOT_CLASS,
+};
+
+export function createElement(document: HTMLDocument): HTMLElement {
+  return NQDOM.createElement(ROOT_HTML, document) as HTMLElement;
+}
+
+export function initRules(styleSheet: CSSStyleSheet): void {
+  for (const iter of CSS)
+    styleSheet.insertRule(iter, styleSheet.cssRules.length);
+}
 
 const IMAGECHANGED_EVENT = "imageChanged";
 
@@ -9,16 +23,12 @@ interface ImageInfo {
   hasRef: boolean;
 };
 
-export class ImageContent extends BaseControl {
+export class Control extends BaseControl {
   private _imageElm?: HTMLImageElement;
   private _posElm?: HTMLElement;
   private _numsElm?: HTMLElement;
   private _images: ImageInfo[] = [];
   private _currentIndex = -1;
-
-  public static createElement(document: HTMLDocument): HTMLElement {
-    return NQDOM.createElement(ROOT_HTML, document) as HTMLElement;
-  }
 
   protected _init() {
     this._imageElm = NQDOM.getElementByClassName(this.element, CONTENT_CLASS) as HTMLImageElement;
@@ -94,3 +104,5 @@ export class ImageContent extends BaseControl {
     }
   }
 };
+
+} // namespace ImageContent

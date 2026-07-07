@@ -1,11 +1,25 @@
 import { BaseControl, NQDOM } from "webnetq-js";
-// @ts-ignore
-import { ROOT_HTML, ADDRESSES_INPUT, ADDRESSES_LIST, ADDRESSES_DISABLED, ADDRESSES_SHOW, CONNECT_BTN_ON, CONNECT_BTN_OFF } from "uictmplt-loader!./template.ts";
+import { ROOT_CLASS, ROOT_HTML, CSS, ADDRESSES_INPUT, ADDRESSES_LIST, ADDRESSES_DISABLED, ADDRESSES_SHOW, CONNECT_BTN_ON, CONNECT_BTN_OFF } from "./template.node";
 
 const STATECHANGED_EVENT = 'stateChanged';
 const URLCHANGED_EVENT = 'urlChanged';
 
-export class URLField extends BaseControl {
+export namespace URLField {
+
+export const classList = {
+  ROOT_CLASS,
+};
+
+export function createElement(document: HTMLDocument): HTMLElement {
+  return NQDOM.createElement(ROOT_HTML, document) as HTMLElement;
+}
+
+export function initRules(styleSheet: CSSStyleSheet): void {
+  for (const iter of CSS)
+    styleSheet.insertRule(iter, styleSheet.cssRules.length);
+}
+
+export class Control extends BaseControl {
   private _disableURL = false;
   private _isShowURLs = false;
   private _state = false;
@@ -14,15 +28,11 @@ export class URLField extends BaseControl {
   private _listElement?: HTMLElement;
   private _buttonElm?: HTMLInputElement;
 
-  public static createElement(document: HTMLDocument): HTMLElement {
-    return NQDOM.createElement(ROOT_HTML, document) as HTMLElement;
-  }
-
   protected _init()
   {
-    this._listElement = NQDOM.getElementByClassName(this.element, ADDRESSES_LIST);
+    this._listElement = NQDOM.getElementByClassName(super.element, ADDRESSES_LIST);
 
-    this._inputElement = NQDOM.getElementByClassName(this.element, ADDRESSES_INPUT) as HTMLInputElement;
+    this._inputElement = NQDOM.getElementByClassName(super.element, ADDRESSES_INPUT) as HTMLInputElement;
     if (this._inputElement) {
       let isClick = false;
       this._inputElement.addEventListener('click', () => {
@@ -40,10 +50,10 @@ export class URLField extends BaseControl {
       });
     }
 
-    this._isShowURLs = this.element.classList.contains(ADDRESSES_SHOW);
-    this._disableURL = this.element.classList.contains(ADDRESSES_DISABLED);
+    this._isShowURLs = super.element.classList.contains(ADDRESSES_SHOW);
+    this._disableURL = super.element.classList.contains(ADDRESSES_DISABLED);
 
-    this._buttonElm = NQDOM.getElementByClassName(this.element, CONNECT_BTN_ON) as HTMLInputElement;
+    this._buttonElm = NQDOM.getElementByClassName(super.element, CONNECT_BTN_ON) as HTMLInputElement;
     if (this._buttonElm) {
       const buttonElm = this._buttonElm;
       this._buttonElm.addEventListener('click', (event) => {
@@ -56,7 +66,7 @@ export class URLField extends BaseControl {
       });
       this.registerEvent(STATECHANGED_EVENT);
     }
-  
+
     this.registerEvent(URLCHANGED_EVENT);
   }
 
@@ -79,13 +89,13 @@ export class URLField extends BaseControl {
     if (this._listElement) {
       const item = document.createElement("li");
       item.textContent = url;
-  
+
       item.addEventListener('click', (event) => {
         this.currentURL = url;
         this.hideURLs();
         this.dispatchEvent(URLCHANGED_EVENT, {url});
       });
-  
+
       this._listElement.appendChild(item);
     }
   }
@@ -114,3 +124,5 @@ export class URLField extends BaseControl {
     this.showURLsImpl(false);
   }
 };
+
+} // namespace URLField

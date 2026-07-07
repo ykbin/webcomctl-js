@@ -1,6 +1,5 @@
 import { BaseControl, NQDOM } from "webnetq-js";
-// @ts-ignore
-import { ROOT_HTML, CLOSE_CLASS, PULL_OUT_ON, PULL_OUT_RIGHT, PULL_OUT_LEFT } from 'uictmplt-loader!./template.ts';
+import { ROOT_CLASS, PORT_CLASS, ROOT_HTML, CSS, CLOSE_CLASS, PULL_OUT_ON, PULL_OUT_RIGHT, PULL_OUT_LEFT } from "./template.node";
 
 enum SideType {
   NONE_SIDE = 'node',
@@ -18,23 +17,35 @@ function sydeTypeToClassName(sideType: SideType) {
   return null;
 };
 
-export class TipInfoBlock extends BaseControl {
+export namespace TipInfoBlock {
+
+export const classList = {
+  ROOT_CLASS,
+  PORT_CLASS,
+};
+
+export function createElement(document: HTMLDocument): HTMLElement {
+  return NQDOM.createElement(ROOT_HTML, document) as HTMLElement;
+}
+
+export function initRules(styleSheet: CSSStyleSheet): void {
+  for (const iter of CSS)
+    styleSheet.insertRule(iter, styleSheet.cssRules.length);
+}
+
+export class Control extends BaseControl {
   private _closeElm?: HTMLElement;
   private _visible = false;
   private _sideType = SideType.NONE_SIDE;
 
-  public static createElement(document: HTMLDocument): HTMLElement {
-    return NQDOM.createElement(ROOT_HTML, document) as HTMLElement;
-  }
-
   protected _init() {
-    const element = (this as any).element as HTMLElement; // FIXME
+    const element = super.element;
     this._visible = element.classList.contains(PULL_OUT_ON);
     if (element.classList.contains(PULL_OUT_RIGHT))
       this._sideType = SideType.RIGHT_SIDE;
     else if (element.classList.contains(PULL_OUT_LEFT))
       this._sideType = SideType.LEFT_SIDE;
-    else 
+    else
       this._sideType = SideType.NONE_SIDE;
     this._closeElm = NQDOM.getElementByClassName(element, CLOSE_CLASS);
     this._closeElm && this._closeElm.addEventListener("click", () => this.visible = false);
@@ -45,7 +56,7 @@ export class TipInfoBlock extends BaseControl {
   }
 
   public set visible(value) {
-    const element = (this as any).element as HTMLElement; // FIXME
+    const element = this.element;
     if (this._visible != value) {
       const method = value ? 'add' : 'remove';
       element.classList[method](PULL_OUT_ON);
@@ -58,7 +69,7 @@ export class TipInfoBlock extends BaseControl {
   }
 
   public set sideType(value) {
-    const element = (this as any).element as HTMLElement; // FIXME
+    const element = this.element;
     if (this._sideType != value) {
       this.visible = false;
       const oldClass = sydeTypeToClassName(this._sideType);
@@ -69,3 +80,5 @@ export class TipInfoBlock extends BaseControl {
     }
   }
 };
+
+} // namespace TipInfoBlock

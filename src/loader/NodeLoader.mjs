@@ -1,7 +1,9 @@
 import path from "node:path";
-import fs from "node:fs";
 import url from "node:url";
 import webpack from 'webpack';
+
+const __filename = url.fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 async function buildEntry(scriptUrl) {
   const lines = [];
@@ -17,79 +19,56 @@ async function buildEntry(scriptUrl) {
   return lines.join("\n");
 }
 
+async function webpackBuild(config) {
+  const compiler = webpack(config);
+
+  const stats = await new Promise((resolve, reject) => {
+    compiler.run((err, stats) => {
+      if (err) reject(err);
+      else if (stats.hasErrors()) reject(new Error(stats.toString()));
+      else resolve(stats);
+    });
+  });
+
+  await new Promise((resolve) => compiler.close(resolve));
+  return stats;
+}
+
+async function buildResult(loaderContext, source) {
+  const rootDir = path.resolve(__dirname, "../..");
+  const configUrl = url.pathToFileURL(path.resolve(rootDir, "webpack.config.mjs"));
+  const configModule = await import(configUrl);
+
+  const outputPath = path.join(rootDir, "node_modules", ".cache", "node-loader", path.relative(rootDir, loaderContext.context));
+  const outputFilename = path.basename(loaderContext.resourcePath, ".ts") + ".mjs";
+
+  const argv = { env: {} };
+  const config = await configModule.default(argv.env, argv);
+
+  config.target = "node";
+  config.mode = loaderContext.mode;
+  config.entry = loaderContext.resourcePath;
+  config.output.path = outputPath;
+  config.output.filename = outputFilename;
+
+  const rules = [];
+  for (const iter of config.module.rules) {
+    if (iter.use !== "node-loader" && !(Array.isArray(iter.use) && iter.use.find(i => i.loader === "node-loader")))
+      rules.push(iter);
+  }
+  config.module.rules = rules;
+
+  const stats = await webpackBuild(config);
+
+  console.log("--------------------------------------------------------------------------------");
+  console.log("[node-loader] build", path.relative(rootDir, loaderContext.resourcePath));
+  console.log(stats.toString({ colors: true }));
+
+  const scriptPath = path.join(outputPath, outputFilename);
+  return await buildEntry(url.pathToFileURL(scriptPath));
+}
+
 export default function(source) {
   const callback = this.async();
-  const isDevelopment = this.mode === "development";
-  const tsconfig = isDevelopment ? "tsconfig.dev.json" : "tsconfig.json";
-  const entryPath = path.resolve(this.rootContext, this.resourcePath);
-  const entryRelative = path.relative(this.rootContext, this.resourcePath);
-
-  const config = {
-    target: "node",
-    mode: this.mode,
-    entry: entryPath,
-    resolve: {
-      extensions: [ ".ts", ".tsx", ".mjs", ".js" ],
-      alias: {
-        "@": path.resolve(this.rootContext, "src"),
-      },
-    },
-    module: {
-      rules: [
-        {
-          test: /\.tsx?$/i,
-          exclude: path.join(this.rootContext, "node_modules"),
-          use: [
-            {
-              loader: "ts-loader",
-              options: {
-                configFile: path.join(this.rootContext, tsconfig),
-              }
-            }
-          ],
-        },
-        {
-          test: /\.svg$/i,
-          use: "raw-loader",
-        },
-      ],
-    },
-    output: {
-      chunkFormat: "module",
-      library: {
-        type: "module",
-      },
-      module: true,
-      iife: false,
-      path: path.join(this.rootContext, "dist", "tmp"),
-      filename: entryRelative + ".mjs",
-    },
-    optimization: {
-        minimize: false,
-    },
-    experiments: {
-      outputModule: true,
-    },
-    externals: {
-    },
-  };
-
-  const compiler = webpack(config);
-  compiler.run(async (err, stats) => {
-    if (!err && stats.hasErrors()) {
-      switch (stats.compilation.errors.length) {
-      case 0: err = stats; break;
-      case 1: err = stats.compilation.errors[0]; break;
-      default: err = stats.compilation.errors; break;
-      }
-    }
-    if (err)
-      callback(err, undefined);
-    else {
-      const scriptPath = path.join(config.output.path, config.output.filename);
-      const context = await buildEntry(url.pathToFileURL(scriptPath));
-      await fs.promises.writeFile(path.join(config.output.path, entryRelative + ".js"), context, { encoding: "utf8", flag: "w" });
-      callback(undefined, context)
-    }
-  });
+  buildResult(this, source).then((res) => callback(undefined, res)).catch(err => callback(err));
 }

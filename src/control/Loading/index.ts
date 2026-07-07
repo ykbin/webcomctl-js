@@ -1,16 +1,26 @@
 import { BaseControl, NQDOM } from "webnetq-js";
-// @ts-ignore
-import { ROOT_HTML, SHOW_CLASS } from "uictmplt-loader!./template.ts";
+import { ROOT_CLASS, ROOT_HTML, CSS, SHOW_CLASS } from "./template.node";
 
-export class Loading extends BaseControl {
+export namespace Loading {
+
+export const classList = {
+  ROOT_CLASS,
+};
+
+export function createElement(document: HTMLDocument): HTMLElement {
+  return NQDOM.createElement(ROOT_HTML, document) as HTMLElement;
+}
+
+export function initRules(styleSheet: CSSStyleSheet): void {
+  for (const iter of CSS)
+    styleSheet.insertRule(iter, styleSheet.cssRules.length);
+}
+
+export class Control extends BaseControl {
   private _visible = false;
 
-  public static createElement(document: HTMLDocument): HTMLElement {
-    return NQDOM.createElement(ROOT_HTML, document) as HTMLElement;
-  }
-
   protected _init() {
-    this._visible = this.element.classList.contains(SHOW_CLASS);
+    this._visible = super.element.classList.contains(SHOW_CLASS);
   }
 
   public get visible() {
@@ -24,3 +34,5 @@ export class Loading extends BaseControl {
     }
   }
 };
+
+} // namespace Loading
