@@ -6,6 +6,7 @@
   "main": "src/index.mjs",
   "exports": {
     ".": "./src/index.mjs",
+    "./webpack.config.mjs":"./webpack.config.mjs",
     "./loader/cmake-loader": "./src/loader/CMakeLoader.mjs",
     "./loader/module-loader": "./src/loader/ModuleLoader.mjs",
     "./loader/uic-static-loader": "./src/loader/UICStaticLoader.mjs",
